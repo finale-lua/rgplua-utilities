@@ -30,6 +30,21 @@ properties_list = nil
 methods_list = nil
 class_methods_list = nil
 
+table.merge = function (t1, t2)
+   for k,v in pairs(t2) do
+       t1[k] = v
+   end 
+   return t1
+end
+
+local get_properties_methods = function(classname, isparent)
+    isparent = isparent or false
+    local properties = {}
+    local methods = {}
+    local class_methods = {}
+    
+end
+
 local update_lists = function(search_text)
     classes_list:Clear()
     if search_text == nil or search_text == "" then
