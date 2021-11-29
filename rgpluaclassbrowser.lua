@@ -127,7 +127,7 @@ local update_classlist = function(search_text)
     end
     local first_string = update_list(classes_list, eligible_classes, search_text)
     -- for debugging
-    local index = classes_list:GetSelectedLine()
+    local index = classes_list:GetSelectedItem()
     if index >= 0 then
         on_class_selection(classes_list, index)
     elseif first_string then
