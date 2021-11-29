@@ -11,7 +11,7 @@ function plugindef()
     return "RGP Lua Class Browser", "RGP Lua Class Browser", "RGP Lua Class Browser"
 end
 
--- require('mobdebug').start() -- uncomment this to debug
+require('mobdebug').start() -- uncomment this to debug
 
 eligible_classes = {}
 for k, v in pairs(_G.finale) do
@@ -30,32 +30,98 @@ properties_list = nil
 methods_list = nil
 class_methods_list = nil
 
-table.merge = function (t1, t2)
+current_methods = {}
+current_properties = {}
+current_class_properties = {}
+
+local table_merge = function (t1, t2)
    for k,v in pairs(t2) do
        t1[k] = v
    end 
    return t1
 end
 
-local get_properties_methods = function(classname, isparent)
+local get_edit_text = function(edit_control)
+    local str = finale.FCString()
+    edit_control:GetText(str)
+    return str.LuaString
+end
+
+
+function get_properties_methods(classname)
     isparent = isparent or false
     local properties = {}
     local methods = {}
     local class_methods = {}
-    
+    local classtable = _G.finale[classname]
+    if type(classtable) ~= "table" then return nil end
+    for k, _ in pairs(classtable.__class) do
+        methods[k] = { class = classname } -- ToDo: eventually maybe this also includes a return value and signature from xml or elsewhere
+    end
+    for k, _ in pairs(classtable.__propget) do
+        properties[k] = { class = classname, readable = true, writeable = false }
+    end
+    for k, _ in pairs(classtable.__propset) do
+        if nil == properties[k] then
+            properties[k] = { class = classname, readable = false, writeable = true }
+        else
+            properties[k].writeable = true
+        end
+    end
+    for k, _ in pairs(classtable.__static) do
+        class_methods[k] = { class = classname }
+    end
+    for k, _ in pairs(classtable.__parent) do
+        local parent_methods, parent_properties = get_properties_methods(k)
+        if type(parent_methods) == "table" then
+            methods = table_merge(methods, parent_methods)
+        end
+        if type(parent_properties) == "table" then
+            properties = table_merge(properties, parent_properties)
+        end
+    end
+    return methods, properties, class_methods
 end
 
-local update_lists = function(search_text)
-    classes_list:Clear()
+local update_list = function(list_control, source_table, search_text)
+    list_control:Clear()
+    local include_all = search_text == nil or search_text == ""
+    local first_string = nil
+    if type(source_table) == "table" then
+        for k, _ in pairsbykeys(source_table) do
+            if include_all or k:find(search_text) == 1 then
+                local fcstring = finale.FCString()
+                fcstring.LuaString = k;
+                list_control:AddString(fcstring)
+                if first_string == nil then
+                    first_string = k
+                end
+            end
+        end
+    end
+    return first_string
+end
+
+local on_classname_changed = function(new_classname)
+    current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
+    update_list(properties_list, current_properties, get_edit_text(search_properties_text))
+    update_list(methods_list, current_methods, get_edit_text(search_methods_text))
+    update_list(class_methods_list, current_class_methods, "")
+end
+
+local update_classlist = function(search_text)
     if search_text == nil or search_text == "" then
         search_text = "FC"
     end
-    for k, _ in pairsbykeys(eligible_classes) do
-        if k:find(search_text) == 1  then
-            local fcstring = finale.FCString()
-            fcstring.LuaString = k;
-            classes_list:AddString(fcstring)
-        end
+    local first_string = update_list(classes_list, eligible_classes, search_text)
+    -- for debugging
+    local index = classes_list:GetSelectedLine()
+    if index >= 0 then
+        local str = finale.FCString()
+        classes_list:GetItemText(index, str)
+        on_classname_changed(str.LuaString)
+    elseif first_string then
+        on_classname_changed(first_string)
     end
 end
 
@@ -103,9 +169,7 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(
         search_classes_text,
         function(control)
-            local str = finale.FCString()
-            control:GetText(str)
-            update_lists(str.LuaString)
+            update_classlist(get_edit_text(control))
         end
     )
     
@@ -123,10 +187,10 @@ local create_dialog = function()
     -- create lists
     x = 0
     y = y + vert_sep
-    classes_list = create_list(dialog, 450)
-    properties_list = create_list(dialog, 200)
-    methods_list = create_list(dialog, 200)
-    class_methods_list = create_list(dialog, 200)
+    classes_list = create_list(dialog, 400)
+    properties_list = create_list(dialog, 150)
+    methods_list = create_list(dialog, 150)
+    class_methods_list = create_list(dialog, 150)
     
     -- create close button
     local ok_button = dialog:CreateOkButton()
@@ -137,7 +201,7 @@ end
 
 local open_dialog = function()
     local dialog = create_dialog()
-    update_lists()
+    update_classlist()
     finenv.RegisterModelessDialog(dialog)
     dialog:ShowModeless()
 end
