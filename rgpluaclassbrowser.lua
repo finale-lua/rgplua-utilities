@@ -8,7 +8,7 @@ function plugindef()
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
     finaleplugin.Date = "November 27, 2021"
-    return "RGP Lua Class Browser", "RGP Lua Class Browser", "RGP Lua Class Browser"
+    return "RGP Lua Class Browser...", "RGP Lua Class Browser", "RGP Lua Class Browser"
 end
 
 require('mobdebug').start() -- uncomment this to debug
@@ -33,6 +33,8 @@ class_methods_list = nil
 current_methods = {}
 current_properties = {}
 current_class_properties = {}
+
+selection_funcs = {}
 
 local table_merge = function (t1, t2)
    for k,v in pairs(t2) do
@@ -109,6 +111,16 @@ local on_classname_changed = function(new_classname)
     update_list(class_methods_list, current_class_methods, "")
 end
 
+local on_class_selection = function(list_control, index)
+    if index < 0 then
+        if list_control:GetCount() <= 0 then return end
+        index = 0
+    end
+    local str = finale.FCString()
+    list_control:GetItemText(index, str)
+    on_classname_changed(str.LuaString)
+end
+
 local update_classlist = function(search_text)
     if search_text == nil or search_text == "" then
         search_text = "FC"
@@ -117,11 +129,17 @@ local update_classlist = function(search_text)
     -- for debugging
     local index = classes_list:GetSelectedLine()
     if index >= 0 then
-        local str = finale.FCString()
-        classes_list:GetItemText(index, str)
-        on_classname_changed(str.LuaString)
+        on_class_selection(classes_list, index)
     elseif first_string then
         on_classname_changed(first_string)
+    end
+end
+
+local on_list_select = function(list_control, index)
+    local sel_func = selection_funcs[list_control:GetControlID()]
+    if sel_func then
+        print(list_control:ClassName())
+        sel_func(list_control, index)
     end
 end
 
@@ -129,32 +147,48 @@ local create_dialog = function()
     local x = 0
     local y = 0
     local col_width = 160
-    local sep_width = 30
-    local vert_sep = 25
+    local col_extra = 50
+    local sep_width = 25
     
-    local create_edit = function(dialog)
+    local create_edit = function(dialog, this_col_width, search_func)
         local edit_text = dialog:CreateEdit(x, y)
-        edit_text:SetWidth(col_width)
-        x = x + col_width + sep_width
+        edit_text:SetWidth(this_col_width)
+        if search_func then
+            dialog:RegisterHandleControlEvent(edit_text, search_func)
+        end
         return edit_text
     end
     
-    local create_static = function(dialog, text)
+    local create_static = function(dialog, text, this_col_width)
         local static_text = dialog:CreateStatic(x, y)
         local fcstring = finale.FCString()
         fcstring.LuaString = text
-        static_text:SetWidth(col_width)
+        static_text:SetWidth(this_col_width)
         static_text:SetText(fcstring)
-        x = x + col_width + sep_width
         return static_text
     end
     
-    local create_list = function(dialog, height)
+    local create_list = function(dialog, height, this_col_width, sel_func)
         local list = dialog:CreateListBox(x, y)
-        list:SetWidth(col_width)
+        list:SetWidth(this_col_width)
         list:SetHeight(height)
-        x = x + col_width + sep_width
+        selection_funcs[list:GetControlID()] = sel_func
         return list
+    end
+    
+    local create_column = function(dialog, height, width, static_text, sel_func, search_func)
+        y = 0
+        local vert_sep = 25
+        local edit_text = nil
+        if search_func then
+            edit_text = create_edit(dialog, width, search_func)
+        end
+        y = y + vert_sep
+        create_static(dialog, static_text, width)
+        y = y + vert_sep
+        local list_control = create_list(dialog, height, width, sel_func)
+        x = x + width + sep_width
+        return list_control, edit_text
     end
 
     -- scratch FCString
@@ -163,34 +197,22 @@ local create_dialog = function()
     local dialog = finale.FCCustomLuaWindow()
     str.LuaString = "RGP Lua - Class Browser"
     dialog:SetTitle(str)
+    dialog:RegisterInitWindow(update_classlist)
+    dialog:RegisterHandleDataListSelect(on_list_select)
     
-    -- create search fields
-    search_classes_text = create_edit(dialog)
-    dialog:RegisterHandleControlEvent(
-        search_classes_text,
+    classes_list, search_classes_text = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
         function(control)
             update_classlist(get_edit_text(control))
-        end
-    )
-    
-    search_properties_text = create_edit(dialog)
-    search_methods_text = create_edit(dialog)
-    
-    -- create headers
-    x = 0
-    y = y + vert_sep
-    create_static(dialog, "Classes:")
-    create_static(dialog, "Properties:")
-    create_static(dialog, "Methods:")
-    create_static(dialog, "Class Methods:")
-    
-    -- create lists
-    x = 0
-    y = y + vert_sep
-    classes_list = create_list(dialog, 400)
-    properties_list = create_list(dialog, 150)
-    methods_list = create_list(dialog, 150)
-    class_methods_list = create_list(dialog, 150)
+        end)
+    properties_list, search_properties_text = create_column(dialog, 150, col_width + col_extra, "Properties:", nil,
+        function(control)
+            update_list(properties_list, current_properties, get_edit_text(control))
+        end)
+    methods_list, search_methods_text = create_column(dialog, 150, col_width + col_extra, "Methods:", nil,
+        function(control)
+                update_list(methods_list, current_methods, get_edit_text(control))
+        end)
+    class_methods_list = create_column(dialog, 150, col_width + col_extra, "Class Methods:", nil)
     
     -- create close button
     local ok_button = dialog:CreateOkButton()
@@ -201,7 +223,6 @@ end
 
 local open_dialog = function()
     local dialog = create_dialog()
-    update_classlist()
     finenv.RegisterModelessDialog(dialog)
     dialog:ShowModeless()
 end
