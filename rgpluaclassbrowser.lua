@@ -13,6 +13,15 @@ end
 
 require('mobdebug').start() -- uncomment this to debug
 
+local log_message = function(str, show_message)
+    if (nil == show_message) then
+        show_message = true
+    end
+    if show_message then
+        print(str)
+    end
+end
+
 eligible_classes = {}
 for k, v in pairs(_G.finale) do
     local kstr = tostring(k)
@@ -20,6 +29,8 @@ for k, v in pairs(_G.finale) do
         eligible_classes[kstr] = 1
     end    
 end
+
+global_dialog = nil -- keep dialog in global so it is never garbage collected until the script terminates
 
 search_classes_text = nil
 search_properties_text = nil
@@ -34,6 +45,7 @@ current_methods = {}
 current_properties = {}
 current_class_properties = {}
 current_class_name = ""
+changing_class_name_in_progress = false
 
 selection_funcs = {}
 
@@ -51,7 +63,6 @@ local get_edit_text = function(edit_control)
     edit_control:GetText(str)
     return str.LuaString
 end
-
 
 function get_properties_methods(classname)
     isparent = isparent or false
@@ -96,7 +107,7 @@ local update_list = function(list_control, source_table, search_text)
         for k, v in pairsbykeys(source_table) do
             if include_all or k:find(search_text) == 1 then
                 local fcstring = finale.FCString()
-                fcstring.LuaString = k;
+                fcstring.LuaString = k
                 if type(v) == "table" then
                     if v.class ~= current_class_name then
                         fcstring.LuaString = fcstring.LuaString .. "  *"
@@ -126,11 +137,14 @@ local update_list = function(list_control, source_table, search_text)
 end
 
 local on_classname_changed = function(new_classname)
+    if changing_class_name_in_progress then return end
+    changing_class_name_in_progress = true
     current_class_name = new_classname
     current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
     update_list(properties_list, current_properties, get_edit_text(search_properties_text))
     update_list(methods_list, current_methods, get_edit_text(search_methods_text))
     update_list(class_methods_list, current_class_methods, "")
+    changing_class_name_in_progress = false
 end
 
 local on_class_selection = function(list_control, index)
@@ -138,9 +152,12 @@ local on_class_selection = function(list_control, index)
         if list_control:GetCount() <= 0 then return end
         index = 0
     end
-    local str = finale.FCString()
-    list_control:GetItemText(index, str)
-    on_classname_changed(str.LuaString)
+    local fcstring = finale.FCString()
+    list_control:GetItemText(index, fcstring)
+    local str = fcstring.LuaString
+    if #str and str ~= current_class_name then
+        on_classname_changed(str)
+    end
 end
 
 local update_classlist = function(search_text)
@@ -148,23 +165,17 @@ local update_classlist = function(search_text)
         search_text = "FC"
     end
     local first_string = update_list(classes_list, eligible_classes, search_text)
-    -- for debugging
-    local index = classes_list:GetSelectedItem()
-    if index >= 0 then
-        on_class_selection(classes_list, index)
-    elseif first_string then
-        on_classname_changed(first_string)
-    end
 end
 
 local on_list_select = function(list_control)
     local list_info = selection_funcs[list_control:GetControlID()]
-    if list_info and list_info.selection_function then
-        --print(list_control:ClassName() .. " " .. tostring(list_control:GetControlID()))
+    if list_info and list_info.selection_function and not list_info.in_progress then
         local selected_item = list_info.list_box:GetSelectedItem()
         if list_info.current_index ~= selected_item then
+            list_info.in_progress = true
             list_info.current_index = selected_item
             list_info.selection_function(list_info.list_box, selected_item)
+            list_info.in_progress = false
         end
     end
 end
@@ -198,7 +209,7 @@ local create_dialog = function()
         local list = dialog:CreateListBox(x, y)
         list:SetWidth(this_col_width)
         list:SetHeight(height)
-        selection_funcs[list:GetControlID()] = { list_box = list, selection_function = sel_func, current_index = -1 }
+        selection_funcs[list:GetControlID()] = { list_box = list, selection_function = sel_func, current_index = -1, in_progress = false }
         return list
     end
     
@@ -228,9 +239,7 @@ local create_dialog = function()
     
     classes_list, search_classes_text = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
         function(control)
-            print("Enter edit text function")
             update_classlist(get_edit_text(control))
-            print("Exit edit text function")
         end)
     properties_list, search_properties_text = create_column(dialog, 150, col_width + col_extra, "Properties:", nil,
         function(control)
@@ -250,9 +259,9 @@ local create_dialog = function()
 end
 
 local open_dialog = function()
-    local dialog = create_dialog()
-    finenv.RegisterModelessDialog(dialog)
-    dialog:ShowModeless()
+    global_dialog = create_dialog()
+    finenv.RegisterModelessDialog(global_dialog)
+    global_dialog:ShowModeless()
 end
 
 open_dialog()
