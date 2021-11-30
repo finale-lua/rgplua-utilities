@@ -165,6 +165,14 @@ local update_classlist = function(search_text)
         search_text = "FC"
     end
     local first_string = update_list(classes_list, eligible_classes, search_text)
+    if finenv.UI():IsOnWindows() then
+        local index = classes_list:GetSelectedItem()
+        if index >= 0 then
+            on_class_selection(classes_list, index)
+        elseif first_string then
+            on_classname_changed(first_string)
+        end
+    end
 end
 
 local on_list_select = function(list_control)
