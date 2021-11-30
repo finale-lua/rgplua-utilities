@@ -135,11 +135,15 @@ local update_classlist = function(search_text)
     end
 end
 
-local on_list_select = function(list_control, index)
-    local sel_func = selection_funcs[list_control:GetControlID()]
-    if sel_func then
-        print(list_control:ClassName())
-        sel_func(list_control, index)
+local on_list_select = function(list_control)
+    local list_info = selection_funcs[list_control:GetControlID()]
+    if list_info and list_info.selection_function then
+        --print(list_control:ClassName() .. " " .. tostring(list_control:GetControlID()))
+        local selected_item = list_info.list_box:GetSelectedItem()
+        if list_info.current_index ~= selected_item then
+            list_info.current_index = selected_item
+            list_info.selection_function(list_info.list_box, selected_item)
+        end
     end
 end
 
@@ -172,7 +176,7 @@ local create_dialog = function()
         local list = dialog:CreateListBox(x, y)
         list:SetWidth(this_col_width)
         list:SetHeight(height)
-        selection_funcs[list:GetControlID()] = sel_func
+        selection_funcs[list:GetControlID()] = { list_box = list, selection_function = sel_func, current_index = -1 }
         return list
     end
     
@@ -198,7 +202,7 @@ local create_dialog = function()
     str.LuaString = "RGP Lua - Class Browser"
     dialog:SetTitle(str)
     dialog:RegisterInitWindow(update_classlist)
-    dialog:RegisterHandleDataListSelect(on_list_select)
+    dialog:RegisterHandleCommand(on_list_select)
     
     classes_list, search_classes_text = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
         function(control)
