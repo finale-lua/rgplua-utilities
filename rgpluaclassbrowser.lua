@@ -86,7 +86,7 @@ function get_properties_methods(classname)
 end
 
 local update_list = function(list_control, source_table, search_text)
-    list_control:Clear()
+    list_control:DeleteAll()
     local include_all = search_text == nil or search_text == ""
     local first_string = nil
     if type(source_table) == "table" then
@@ -94,7 +94,9 @@ local update_list = function(list_control, source_table, search_text)
             if include_all or k:find(search_text) == 1 then
                 local fcstring = finale.FCString()
                 fcstring.LuaString = k;
-                list_control:AddString(fcstring)
+                local row = finale.FCDataListRow()
+                row:AddCopy(fcstring)
+                list_control:AddRow(row)
                 if first_string == nil then
                     first_string = k
                 end
@@ -116,9 +118,10 @@ local on_class_selection = function(list_control, index)
         if list_control:GetCount() <= 0 then return end
         index = 0
     end
-    local str = finale.FCString()
-    list_control:GetItemText(index, str)
-    on_classname_changed(str.LuaString)
+    local row = list_control:GetItemAt(index)
+    if row:GetCount() > 0 then 
+        on_classname_changed(row:CreateString(nil).LuaString)
+    end
 end
 
 local update_classlist = function(search_text)
@@ -127,7 +130,7 @@ local update_classlist = function(search_text)
     end
     local first_string = update_list(classes_list, eligible_classes, search_text)
     -- for debugging
-    local index = classes_list:GetSelectedItem()
+    local index = classes_list:GetSelectedLine()
     if index >= 0 then
         on_class_selection(classes_list, index)
     elseif first_string then
@@ -169,9 +172,11 @@ local create_dialog = function()
     end
     
     local create_list = function(dialog, height, this_col_width, sel_func)
-        local list = dialog:CreateListBox(x, y)
+        local list = dialog:CreateDataList(x, y)
         list:SetWidth(this_col_width)
         list:SetHeight(height)
+        local str = finale.FCString()
+        list:AddColumn(str, this_col_width)
         selection_funcs[list:GetControlID()] = sel_func
         return list
     end
