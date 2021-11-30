@@ -8,7 +8,7 @@ function plugindef()
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
     finaleplugin.Date = "November 27, 2021"
-    return "RGP Lua Class Browser...", "RGP Lua Class Browser", "RGP Lua Class Browser"
+    return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
 require('mobdebug').start() -- uncomment this to debug
@@ -33,14 +33,17 @@ class_methods_list = nil
 current_methods = {}
 current_properties = {}
 current_class_properties = {}
+current_class_name = ""
 
 selection_funcs = {}
 
 local table_merge = function (t1, t2)
-   for k,v in pairs(t2) do
-       t1[k] = v
-   end 
-   return t1
+    for k, v in pairs(t2) do
+        if nil == t1[k] then
+            t1[k] = v
+        end
+    end 
+    return t1
 end
 
 local get_edit_text = function(edit_control)
@@ -90,10 +93,28 @@ local update_list = function(list_control, source_table, search_text)
     local include_all = search_text == nil or search_text == ""
     local first_string = nil
     if type(source_table) == "table" then
-        for k, _ in pairsbykeys(source_table) do
+        for k, v in pairsbykeys(source_table) do
             if include_all or k:find(search_text) == 1 then
                 local fcstring = finale.FCString()
                 fcstring.LuaString = k;
+                if type(v) == "table" then
+                    if v.class ~= current_class_name then
+                        fcstring.LuaString = fcstring.LuaString .. "  *"
+                    end
+                    if v.readable or v.writeable then
+                        local str = "  ["
+                        if v.readable then
+                            str = str .. "R"
+                            if v.writeable then
+                                str = str .. "/W"
+                            end
+                        elseif v.writeable then
+                            str = str .. "W"
+                        end
+                        str = str .. "]"
+                        fcstring.LuaString = fcstring.LuaString .. str
+                    end
+                end
                 list_control:AddString(fcstring)
                 if first_string == nil then
                     first_string = k
@@ -105,6 +126,7 @@ local update_list = function(list_control, source_table, search_text)
 end
 
 local on_classname_changed = function(new_classname)
+    current_class_name = new_classname
     current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
     update_list(properties_list, current_properties, get_edit_text(search_properties_text))
     update_list(methods_list, current_methods, get_edit_text(search_methods_text))
@@ -206,7 +228,9 @@ local create_dialog = function()
     
     classes_list, search_classes_text = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
         function(control)
+            print("Enter edit text function")
             update_classlist(get_edit_text(control))
+            print("Exit edit text function")
         end)
     properties_list, search_properties_text = create_column(dialog, 150, col_width + col_extra, "Properties:", nil,
         function(control)
