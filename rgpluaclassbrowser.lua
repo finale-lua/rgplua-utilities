@@ -72,15 +72,8 @@ end
 --global variables prevent garbage collection until script terminates
 
 global_dialog = nil
-
-search_classes_text = nil
-search_properties_text = nil
-search_methods_text = nil
-
-classes_list = nil
-properties_list = nil
-methods_list = nil
-class_methods_list = nil
+global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
+global_control_xref = {}    -- key: non-list control id, value: associated list control id
 
 current_methods = {}
 current_properties = {}
@@ -88,7 +81,6 @@ current_class_properties = {}
 current_class_name = ""
 changing_class_name_in_progress = false
 
-selection_funcs = {}
 
 local table_merge = function (t1, t2)
     for k, v in pairs(t2) do
@@ -100,6 +92,7 @@ local table_merge = function (t1, t2)
 end
 
 local get_edit_text = function(edit_control)
+    if not edit_control then return "" end
     local str = finale.FCString()
     edit_control:GetText(str)
     return str.LuaString
@@ -196,10 +189,14 @@ local on_classname_changed = function(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
     current_class_name = new_classname
-    current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
-    update_list(properties_list, current_properties, get_edit_text(search_properties_text))
-    update_list(methods_list, current_methods, get_edit_text(search_methods_text))
-    update_list(class_methods_list, current_class_methods, "")
+    local current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
+    global_dialog_info[global_control_xref["properties"]].current_strings = current_properties
+    global_dialog_info[global_control_xref["methods"]].current_strings = current_methods
+    global_dialog_info[global_control_xref["class_methods"]].current_strings = current_class_methods
+    for k, v in pairs({"properties", "methods", "class_methods"}) do
+        local list_info = global_dialog_info[global_control_xref[v]]
+        update_list(list_info.list_box, list_info.current_strings, get_edit_text(list_info.search_text))
+    end
     changing_class_name_in_progress = false
 end
 
@@ -220,19 +217,24 @@ local update_classlist = function(search_text)
     if search_text == nil or search_text == "" then
         search_text = "FC"
     end
-    local first_string = update_list(classes_list, eligible_classes, search_text)
-    if finenv.UI():IsOnWindows() then
-        local index = classes_list:GetSelectedItem()
-        if index >= 0 then
-            on_class_selection(classes_list, index)
-        else
-            on_classname_changed("")
+    local list_id = global_control_xref["classes"]
+    if nil == list_id then return end
+    local list_info = global_dialog_info[list_id]
+    if list_info then
+        local first_string = update_list(list_info.list_box, eligible_classes, search_text)
+        if finenv.UI():IsOnWindows() then
+            local index = list_info.list_box:GetSelectedItem()
+            if index >= 0 then
+                on_class_selection(list_info.list_box, index)
+            else
+                on_classname_changed("")
+            end
         end
     end
 end
 
 local on_list_select = function(list_control)
-    local list_info = selection_funcs[list_control:GetControlID()]
+    local list_info = global_dialog_info[list_control:GetControlID()]
     if list_info and list_info.selection_function and not list_info.in_progress then
         local selected_item = list_info.list_box:GetSelectedItem()
         if list_info.current_index ~= selected_item then
@@ -274,6 +276,7 @@ local create_dialog = function()
         if search_func then
             dialog:RegisterHandleControlEvent(edit_text, search_func)
         end
+        
         return edit_text
     end
     
@@ -290,7 +293,6 @@ local create_dialog = function()
         local list = dialog:CreateListBox(x, y)
         list:SetWidth(this_col_width)
         list:SetHeight(height)
-        selection_funcs[list:GetControlID()] = { list_box = list, selection_function = sel_func, current_index = -1, in_progress = false }
         return list
     end
     
@@ -304,8 +306,33 @@ local create_dialog = function()
         create_static(dialog, static_text, width)
         y = y + vert_sep
         local list_control = create_list(dialog, height, width, sel_func)
-        y = y + vert_sep/2 + height -- position y for more
-        return list_control, edit_text
+        global_dialog_info[list_control:GetControlID()] =
+        {
+            list_box = list_control,
+            search_text = edit_text,
+            fullname_label = nil,
+            returns_label = nil,
+            arglist_label = nil,
+            method_doc_button = nil,
+            selection_function = sel_func,
+            current_index = -1,
+            in_progress = false,
+            current_strings = {}
+        }
+        if edit_text then
+            global_control_xref[edit_text:GetControlID()] = list_control:GetControlID()
+        end
+        y = y + vert_sep/2 + height -- position y for adding more fields
+        return list_control
+    end
+    
+    local handle_edit_control = function(control)        
+        local list_id = global_control_xref[search_text:GetControlID()]
+        if nil == list_id then return end
+        local list_info = global_dialog_info[list_id]
+        if list_info then
+            update_list(list_info.list_box, list_info.current_properties, get_edit_text(control))
+        end
     end
 
     -- scratch FCString
@@ -317,11 +344,11 @@ local create_dialog = function()
     dialog:RegisterInitWindow(update_classlist)
     dialog:RegisterHandleCommand(on_list_select)
     
-    classes_list, search_classes_text = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
+    local classes_list = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
         function(control)
             update_classlist(get_edit_text(control))
         end)
-    local max_y = y
+    global_control_xref["classes"] = classes_list:GetControlID()
     local class_doc = dialog:CreateButton(x, y)
     str.LuaString = "Class Documentation"
     class_doc:SetText(str)
@@ -336,19 +363,16 @@ local create_dialog = function()
     )
     x = x + col_width + sep_width
     
-    properties_list, search_properties_text = create_column(dialog, 150, col_width + col_extra, "Properties:", nil,
-        function(control)
-            update_list(properties_list, current_properties, get_edit_text(control))
-        end)    
+    local properties_list = create_column(dialog, 150, col_width + col_extra, "Properties:", nil, handle_edit_control)
+    global_control_xref["properties"] = properties_list:GetControlID()
     x = x + col_width + col_extra + sep_width
     
-    methods_list, search_methods_text = create_column(dialog, 150, col_width + col_extra, "Methods:", nil,
-        function(control)
-                update_list(methods_list, current_methods, get_edit_text(control))
-        end)
+    methods_list = create_column(dialog, 150, col_width + col_extra, "Methods:", nil, handle_edit_control)
+    global_control_xref["methods"] = methods_list:GetControlID()
     x = x + col_width + col_extra + sep_width
     
-    class_methods_list = create_column(dialog, 150, col_width + col_extra, "Class Methods:", nil)
+    local class_methods_list = create_column(dialog, 150, col_width + col_extra, "Class Methods:", nil)
+    global_control_xref["class_methods"] = class_methods_list:GetControlID()
     
     -- create close button
     local ok_button = dialog:CreateOkButton()
