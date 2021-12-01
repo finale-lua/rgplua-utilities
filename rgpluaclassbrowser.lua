@@ -99,8 +99,9 @@ local method_info = function(class_info, method_name)
     if class_info then
         local method = class_info.__members[method_name]
         if method then
-            args = method.arglist
-            rettype = method.type
+            args = method.arglist:gsub(" override", "")
+            rettype = method.type:gsub("virtual ", "")
+            rettype = rettype:gsub("static ", "")
         end
     end
     return rettype, args
@@ -116,7 +117,7 @@ function get_properties_methods(classname)
     local class_info = global_class_index[classname]
     for k, _ in pairs(classtable.__class) do
         local rettype, args = method_info(class_info, k)
-        methods[k] = { class = classname, arglist = args, type = rettypes }
+        methods[k] = { class = classname, arglist = args, returns = rettype }
     end
     for k, _ in pairs(classtable.__propget) do
         properties[k] = { class = classname, readable = true, writeable = false }
@@ -130,7 +131,7 @@ function get_properties_methods(classname)
     end
     for k, _ in pairs(classtable.__static) do
         local rettype, args = method_info(class_info, k)
-        class_methods[k] = { class = classname, arglist = args, type = rettypes }
+        class_methods[k] = { class = classname, arglist = args, returns = rettype }
     end
     for k, _ in pairs(classtable.__parent) do
         local parent_methods, parent_properties = get_properties_methods(k)
@@ -181,6 +182,19 @@ local update_list = function(list_control, source_table, search_text)
     return first_string
 end
 
+local on_list_select = function(list_control)
+    local list_info = global_dialog_info[list_control:GetControlID()]
+    if list_info and list_info.selection_function and not list_info.in_progress then
+        local selected_item = list_info.list_box:GetSelectedItem()
+        if list_info.current_index ~= selected_item then
+            list_info.in_progress = true
+            list_info.current_index = selected_item
+            list_info.selection_function(list_info.list_box, selected_item)
+            list_info.in_progress = false
+        end
+    end
+end
+
 local on_classname_changed = function(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
@@ -192,6 +206,9 @@ local on_classname_changed = function(new_classname)
     for k, v in pairs({"properties", "methods", "class_methods"}) do
         local list_info = global_dialog_info[global_control_xref[v]]
         update_list(list_info.list_box, list_info.current_strings, get_edit_text(list_info.search_text))
+        if finenv.UI():IsOnWindows() then
+            on_list_select(list_info.list_box)
+        end
     end
     changing_class_name_in_progress = false
 end
@@ -201,12 +218,63 @@ local on_class_selection = function(list_control, index)
         on_classname_changed("")
         return
     end
-    local fcstring = finale.FCString()
-    list_control:GetItemText(index, fcstring)
-    local str = fcstring.LuaString
+    local str = get_plain_string(list_control, index)
     if str ~= current_class_name then
         on_classname_changed(str)
     end
+end
+
+local hide_show_display_area = function(list_info, show)
+    list_info.fullname_static:SetVisible(show)
+    list_info.returns_label:SetVisible(show)
+    list_info.returns_static:SetVisible(show)
+    list_info.method_doc_button:SetVisible(show)
+    if list_info.arglist_static then
+        list_info.arglist_label:SetVisible(show)
+        list_info.arglist_static:SetVisible(show)
+    end
+end
+
+function get_plain_string(list_control, index)
+    local fcstring = finale.FCString()
+    if index >= 0 then
+        list_control:GetItemText(index, fcstring)
+    end
+    return string.match(fcstring.LuaString, "%S+")
+end
+
+local on_method_selection = function(list_control, index)
+    local list_info = global_dialog_info[list_control:GetControlID()]
+    local show = false
+    if list_info and index >= 0 then
+        local method_name = get_plain_string(list_control, index)
+        if #method_name > 0 and list_info.current_strings then
+            local method_info = list_info.current_strings[method_name]
+            if method_info then
+                local is_property = nil == method_info.arglist
+                local dot = ":"
+                if is_property then dot = "." end
+                local fcstring = finale.FCString()
+                fcstring.LuaString = method_info.class .. dot .. method_name
+                list_info.fullname_static:SetText(fcstring)
+                if is_property then
+                    local methods_list_info = global_dialog_info[global_control_xref["methods"]]
+                    local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
+                    if property_getter_info then
+                        fcstring.LuaString = property_getter_info.returns
+                        list_info.returns_static:SetText(fcstring)
+                    end
+                else
+                    fcstring.LuaString = method_info.returns
+                    list_info.returns_static:SetText(fcstring)
+                    fcstring.LuaString = method_info.arglist
+                    list_info.arglist_static:SetText(fcstring)
+                end
+                show = true
+            end
+        end
+    end
+    hide_show_display_area(list_info, show)
 end
 
 local update_classlist = function(search_text)
@@ -229,25 +297,12 @@ local update_classlist = function(search_text)
     end
 end
 
-local on_list_select = function(list_control)
-    local list_info = global_dialog_info[list_control:GetControlID()]
-    if list_info and list_info.selection_function and not list_info.in_progress then
-        local selected_item = list_info.list_box:GetSelectedItem()
-        if list_info.current_index ~= selected_item then
-            list_info.in_progress = true
-            list_info.current_index = selected_item
-            list_info.selection_function(list_info.list_box, selected_item)
-            list_info.in_progress = false
-        end
-    end
-end
-
 pdk_framework_site = "https://robertgpatterson.com/-fininfo/-rgplua/pdkframework/"
 local launch_docsite = function(html_file, anchor)
     if html_file then
         local url = pdk_framework_site .. html_file
         if anchor then
-            -- add anchor to url here
+            url = url .. "#" .. anchor
         end
         if finenv.UI():IsOnWindows() then
             os.execute(string.format('start %s', url))
@@ -258,12 +313,41 @@ local launch_docsite = function(html_file, anchor)
     end
 end
 
+local on_doc_button = function(button_control)
+    local list_info = global_dialog_info[global_control_xref[button_control:GetControlID()]]
+    if list_info then
+        local index = list_info.list_box:GetSelectedItem()
+        local method_name = get_plain_string(list_info.list_box, index)
+        if #method_name > 0 then
+            local method_info = list_info.current_strings[method_name]
+            if method_info then
+                if nil == method_info.arglist then
+                    method_name = "Get" .. method_name -- use property getter for properties
+                end
+                local class_info = global_class_index[method_info.class]
+                if class_info then
+                    local filename = class_info.filename
+                    local anchor = nil
+                    local method_metadata = class_info.__members[method_name]
+                    if method_metadata then
+                        anchor = method_metadata.anchor
+                        if method_metadata.anchorfile then
+                            filename = method_metadata.anchorfile
+                        end
+                    end
+                    launch_docsite(filename, anchor)
+                end
+            end
+        end
+    end
+end
+
 local create_dialog = function()
     local y = 0
     local vert_sep = 25
     local x = 0
     local col_width = 160
-    local col_extra = 50
+    local col_extra = 70
     local sep_width = 25
     
     local create_edit = function(dialog, this_col_width, search_func)
@@ -307,7 +391,9 @@ local create_dialog = function()
             list_box = list_control,
             search_text = edit_text,
             fullname_static = nil,
+            returns_label = nil,
             returns_static = nil,
+            arglist_label = nil,
             arglist_static = nil,
             method_doc_button = nil,
             selection_function = sel_func,
@@ -327,14 +413,11 @@ local create_dialog = function()
         local fcstring = finale.FCString()
         list_info.fullname_static = dialog:CreateStatic(x, y)
         list_info.fullname_static:SetWidth(width)
-        --DBG
-        fcstring.LuaString = "ClassName:MethodName"
-        list_info.fullname_static:SetText(fcstring)
-        --DBG
+        list_info.fullname_static:SetVisible(false)
         local my_vert_sep = 15
-        y = y + my_vert_sep
+        y = y + my_vert_sep + 5 -- more vert_sep for next info
         local my_x = x
-        local return_label = dialog:CreateStatic(my_x, y)
+        list_info.returns_label = dialog:CreateStatic(my_x, y)
         if is_for_properties then
             fcstring.LuaString = "Type:"
         else
@@ -342,40 +425,39 @@ local create_dialog = function()
         end
         local label_width = 35
         if not is_for_properties then
-            label_width = 50
+            label_width = 48
         end
         local doc_button_width = 40
-        local my_x_sep = 5
+        local my_x_sep = 1
         local return_static_width = width - label_width - doc_button_width - (2*my_x_sep)
-        return_label:SetText(fcstring)
-        return_label:SetWidth(label_width)
+        list_info.returns_label:SetText(fcstring)
+        list_info.returns_label:SetWidth(label_width)
+        list_info.returns_label:SetVisible(false)
         my_x = my_x + label_width + my_x_sep
         list_info.returns_static = dialog:CreateStatic(my_x, y)
         list_info.returns_static:SetWidth(return_static_width)
-        --DBG
-        fcstring.LuaString = "FCObject *"
-        list_info.returns_static:SetText(fcstring)
-        --DBG
+        list_info.returns_static:SetVisible(false)
         my_x = my_x + return_static_width + my_x_sep
         list_info.method_doc_button = dialog:CreateButton(my_x, y)
         list_info.method_doc_button:SetWidth(doc_button_width)
+        list_info.method_doc_button:SetVisible(false)
+        global_control_xref[list_info.method_doc_button:GetControlID()] = list_info.list_box:GetControlID()
         fcstring.LuaString = "Doc."
         list_info.method_doc_button:SetText(fcstring)
-        -- ToDo: add action function to button
+        list_info.method_doc_button:SetVisible(false)
+        dialog:RegisterHandleControlEvent(list_info.method_doc_button, on_doc_button)
         if not is_for_properties then
             y = y + my_vert_sep
             my_x = x
-            local args_label = dialog:CreateStatic(my_x, y)
+            list_info.arglist_label = dialog:CreateStatic(my_x, y)
             fcstring.LuaString = "Params:"
-            args_label:SetText(fcstring)
-            args_label:SetWidth(label_width)
+            list_info.arglist_label:SetText(fcstring)
+            list_info.arglist_label:SetWidth(label_width)
+            list_info.arglist_label:SetVisible(false)
             my_x = my_x + label_width + my_x_sep
             list_info.arglist_static = dialog:CreateStatic(my_x, y)
             list_info.arglist_static:SetWidth(width - doc_button_width - my_x + x)
-            --DBG
-            fcstring.LuaString = "(int, bool)"
-            list_info.arglist_static:SetText(fcstring)
-            --DBG
+            list_info.arglist_static:SetVisible(false)
         end
         y = y + vert_sep
     end
@@ -385,7 +467,7 @@ local create_dialog = function()
         if nil == list_id then return end
         local list_info = global_dialog_info[list_id]
         if list_info then
-            update_list(list_info.list_box, list_info.current_properties, get_edit_text(control))
+            update_list(list_info.list_box, list_info.current_strings, get_edit_text(control))
         end
     end
 
@@ -417,17 +499,17 @@ local create_dialog = function()
     )
     x = x + col_width + sep_width
     
-    local properties_list = create_column(dialog, 150, col_width + col_extra, "Properties:", nil, handle_edit_control)
+    local properties_list = create_column(dialog, 170, col_width + col_extra, "Properties:", on_method_selection, handle_edit_control)
     global_control_xref["properties"] = properties_list:GetControlID()
     create_display_area (dialog, global_dialog_info[properties_list:GetControlID()], col_width + col_extra, true)
     x = x + col_width + col_extra + sep_width
     
-    local methods_list = create_column(dialog, 150, col_width + col_extra, "Methods:", nil, handle_edit_control)
+    local methods_list = create_column(dialog, 170, col_width + col_extra, "Methods:", on_method_selection, handle_edit_control)
     global_control_xref["methods"] = methods_list:GetControlID()
     create_display_area (dialog, global_dialog_info[methods_list:GetControlID()], col_width + col_extra)
     x = x + col_width + col_extra + sep_width
     
-    local class_methods_list = create_column(dialog, 150, col_width + col_extra, "Class Methods:", nil)
+    local class_methods_list = create_column(dialog, 170, col_width + col_extra, "Class Methods:", on_method_selection)
     global_control_xref["class_methods"] = class_methods_list:GetControlID()
     create_display_area (dialog, global_dialog_info[class_methods_list:GetControlID()], col_width + col_extra)
     
