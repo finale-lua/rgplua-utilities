@@ -242,9 +242,26 @@ local on_list_select = function(list_control)
     end
 end
 
+pdk_framework_site = "https://robertgpatterson.com/-fininfo/-rgplua/pdkframework/"
+local launch_docsite = function(html_file, anchor)
+    if html_file then
+        local url = pdk_framework_site .. html_file
+        if anchor then
+            -- add anchor to url here
+        end
+        if finenv.UI():IsOnWindows() then
+            os.execute(string.format('start %s', url))
+        else
+            os.execute(string.format('open "%s"', url))
+        end
+        
+    end
+end
+
 local create_dialog = function()
-    local x = 0
     local y = 0
+    local vert_sep = 25
+    local x = 0
     local col_width = 160
     local col_extra = 50
     local sep_width = 25
@@ -277,7 +294,6 @@ local create_dialog = function()
     
     local create_column = function(dialog, height, width, static_text, sel_func, search_func)
         y = 0
-        local vert_sep = 25
         local edit_text = nil
         if search_func then
             edit_text = create_edit(dialog, width, search_func)
@@ -286,7 +302,6 @@ local create_dialog = function()
         create_static(dialog, static_text, width)
         y = y + vert_sep
         local list_control = create_list(dialog, height, width, sel_func)
-        x = x + width + sep_width
         return list_control, edit_text
     end
 
@@ -303,14 +318,34 @@ local create_dialog = function()
         function(control)
             update_classlist(get_edit_text(control))
         end)
+    y = y + vert_sep/2 + 400
+    local max_y = y
+    local class_doc = dialog:CreateButton(x, y)
+    str.LuaString = "Class Documentation"
+    class_doc:SetText(str)
+    class_doc:SetWidth(col_width)
+    dialog:RegisterHandleControlEvent(class_doc,
+        function(control)
+            local class_info = global_class_index[current_class_name]
+            if class_info then
+                launch_docsite(class_info.filename)
+            end
+        end
+    )
+    x = x + col_width + sep_width
+    
     properties_list, search_properties_text = create_column(dialog, 150, col_width + col_extra, "Properties:", nil,
         function(control)
             update_list(properties_list, current_properties, get_edit_text(control))
-        end)
+        end)    
+    x = x + col_width + col_extra + sep_width
+    
     methods_list, search_methods_text = create_column(dialog, 150, col_width + col_extra, "Methods:", nil,
         function(control)
                 update_list(methods_list, current_methods, get_edit_text(control))
         end)
+    x = x + col_width + col_extra + sep_width
+    
     class_methods_list = create_column(dialog, 150, col_width + col_extra, "Class Methods:", nil)
     
     -- create close button
