@@ -75,12 +75,8 @@ global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
 
-current_methods = {}
-current_properties = {}
-current_class_properties = {}
 current_class_name = ""
 changing_class_name_in_progress = false
-
 
 local table_merge = function (t1, t2)
     for k, v in pairs(t2) do
@@ -310,9 +306,9 @@ local create_dialog = function()
         {
             list_box = list_control,
             search_text = edit_text,
-            fullname_label = nil,
-            returns_label = nil,
-            arglist_label = nil,
+            fullname_static = nil,
+            returns_static = nil,
+            arglist_static = nil,
             method_doc_button = nil,
             selection_function = sel_func,
             current_index = -1,
@@ -326,8 +322,66 @@ local create_dialog = function()
         return list_control
     end
     
+    local create_display_area = function(dialog, list_info, width, is_for_properties)
+        is_for_properties = is_for_properties or false
+        local fcstring = finale.FCString()
+        list_info.fullname_static = dialog:CreateStatic(x, y)
+        list_info.fullname_static:SetWidth(width)
+        --DBG
+        fcstring.LuaString = "ClassName:MethodName"
+        list_info.fullname_static:SetText(fcstring)
+        --DBG
+        local my_vert_sep = 15
+        y = y + my_vert_sep
+        local my_x = x
+        local return_label = dialog:CreateStatic(my_x, y)
+        if is_for_properties then
+            fcstring.LuaString = "Type:"
+        else
+            fcstring.LuaString = "Returns:"
+        end
+        local label_width = 35
+        if not is_for_properties then
+            label_width = 50
+        end
+        local doc_button_width = 40
+        local my_x_sep = 5
+        local return_static_width = width - label_width - doc_button_width - (2*my_x_sep)
+        return_label:SetText(fcstring)
+        return_label:SetWidth(label_width)
+        my_x = my_x + label_width + my_x_sep
+        list_info.returns_static = dialog:CreateStatic(my_x, y)
+        list_info.returns_static:SetWidth(return_static_width)
+        --DBG
+        fcstring.LuaString = "FCObject *"
+        list_info.returns_static:SetText(fcstring)
+        --DBG
+        my_x = my_x + return_static_width + my_x_sep
+        list_info.method_doc_button = dialog:CreateButton(my_x, y)
+        list_info.method_doc_button:SetWidth(doc_button_width)
+        fcstring.LuaString = "Doc."
+        list_info.method_doc_button:SetText(fcstring)
+        -- ToDo: add action function to button
+        if not is_for_properties then
+            y = y + my_vert_sep
+            my_x = x
+            local args_label = dialog:CreateStatic(my_x, y)
+            fcstring.LuaString = "Params:"
+            args_label:SetText(fcstring)
+            args_label:SetWidth(label_width)
+            my_x = my_x + label_width + my_x_sep
+            list_info.arglist_static = dialog:CreateStatic(my_x, y)
+            list_info.arglist_static:SetWidth(width - doc_button_width - my_x + x)
+            --DBG
+            fcstring.LuaString = "(int, bool)"
+            list_info.arglist_static:SetText(fcstring)
+            --DBG
+        end
+        y = y + vert_sep
+    end
+    
     local handle_edit_control = function(control)        
-        local list_id = global_control_xref[search_text:GetControlID()]
+        local list_id = global_control_xref[control:GetControlID()]
         if nil == list_id then return end
         local list_info = global_dialog_info[list_id]
         if list_info then
@@ -365,14 +419,17 @@ local create_dialog = function()
     
     local properties_list = create_column(dialog, 150, col_width + col_extra, "Properties:", nil, handle_edit_control)
     global_control_xref["properties"] = properties_list:GetControlID()
+    create_display_area (dialog, global_dialog_info[properties_list:GetControlID()], col_width + col_extra, true)
     x = x + col_width + col_extra + sep_width
     
-    methods_list = create_column(dialog, 150, col_width + col_extra, "Methods:", nil, handle_edit_control)
+    local methods_list = create_column(dialog, 150, col_width + col_extra, "Methods:", nil, handle_edit_control)
     global_control_xref["methods"] = methods_list:GetControlID()
+    create_display_area (dialog, global_dialog_info[methods_list:GetControlID()], col_width + col_extra)
     x = x + col_width + col_extra + sep_width
     
     local class_methods_list = create_column(dialog, 150, col_width + col_extra, "Class Methods:", nil)
     global_control_xref["class_methods"] = class_methods_list:GetControlID()
+    create_display_area (dialog, global_dialog_info[class_methods_list:GetControlID()], col_width + col_extra)
     
     -- create close button
     local ok_button = dialog:CreateOkButton()
