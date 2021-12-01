@@ -10,8 +10,47 @@ function plugindef()
     finaleplugin.Date = "November 27, 2021"
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
+    
+local path = finenv.RunningLuaFolderPath
+package.path = package.path .. ";" .. path.LuaString .. "/xml2lua/?.lua"
 
-require('mobdebug').start() -- uncomment this to debug
+local create_class_index = function()
+    local xml2lua = require("xml2lua")
+    local handler = require("xmlhandler.tree")
+
+    local jwhandler = handler:new()
+    local jwparser = xml2lua.parser(jwhandler)
+    --local jwluatags = xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml")
+    jwparser:parse(xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml")) -- this line croaks the debugger because of the size of the xml--don't try to debug it
+
+    local jwlua_compounds = jwhandler.root.tagfile.compound
+    local temp_class_index = {}
+    for i1, t1 in pairs(jwlua_compounds) do
+        if t1._attr and t1._attr.kind == "class" then
+            temp_class_index[t1.name] = t1
+            local members_index = {}
+            if t1.member then
+                if #t1.member <= 1 then
+                    if t1.member._attr and t1.member._attr.kind == "function" then
+                        members_index[t1.member.name] = t1.member
+                    end
+                elseif #t1.member > 1 then
+                    for i2, t2 in pairs(t1.member) do
+                        if t2._attr and t2._attr.kind == "function" then
+                            members_index[t2.name] = t2
+                        end
+                    end
+                end
+            end
+            temp_class_index[t1.name].__members = members_index
+        end
+    end
+    return temp_class_index
+end
+
+global_class_index = create_class_index()
+
+require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
 
 local log_message = function(str, show_message)
     if (nil == show_message) then
@@ -63,6 +102,18 @@ local get_edit_text = function(edit_control)
     edit_control:GetText(str)
     return str.LuaString
 end
+    
+local method_info = function(class_info, method_name)
+    local rettype, args
+    if class_info then
+        local method = class_info.__members[method_name]
+        if method then
+            args = method.arglist
+            rettype = method.type
+        end
+    end
+    return rettype, args
+end
 
 function get_properties_methods(classname)
     isparent = isparent or false
@@ -71,8 +122,10 @@ function get_properties_methods(classname)
     local class_methods = {}
     local classtable = _G.finale[classname]
     if type(classtable) ~= "table" then return nil end
+    local class_info = global_class_index[classname]
     for k, _ in pairs(classtable.__class) do
-        methods[k] = { class = classname } -- ToDo: eventually maybe this also includes a return value and signature from xml or elsewhere
+        local rettype, args = method_info(class_info, k)
+        methods[k] = { class = classname, arglist = args, type = rettypes }
     end
     for k, _ in pairs(classtable.__propget) do
         properties[k] = { class = classname, readable = true, writeable = false }
@@ -85,7 +138,8 @@ function get_properties_methods(classname)
         end
     end
     for k, _ in pairs(classtable.__static) do
-        class_methods[k] = { class = classname }
+        local rettype, args = method_info(class_info, k)
+        class_methods[k] = { class = classname, arglist = args, type = rettypes }
     end
     for k, _ in pairs(classtable.__parent) do
         local parent_methods, parent_properties = get_properties_methods(k)
