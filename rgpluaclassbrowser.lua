@@ -20,8 +20,8 @@ local create_class_index = function()
 
     local jwhandler = handler:new()
     local jwparser = xml2lua.parser(jwhandler)
-    --local jwluatags = xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml")
-    jwparser:parse(xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml")) -- this line croaks the debugger because of the size of the xml--don't try to debug it
+    -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
+    jwparser:parse(xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml"))
 
     local jwlua_compounds = jwhandler.root.tagfile.compound
     local temp_class_index = {}
@@ -69,7 +69,9 @@ for k, v in pairs(_G.finale) do
     end    
 end
 
-global_dialog = nil -- keep dialog in global so it is never garbage collected until the script terminates
+--global variables prevent garbage collection until script terminates
+
+global_dialog = nil
 
 search_classes_text = nil
 search_properties_text = nil
@@ -203,13 +205,13 @@ end
 
 local on_class_selection = function(list_control, index)
     if index < 0 then
-        if list_control:GetCount() <= 0 then return end
-        index = 0
+        on_classname_changed("")
+        return
     end
     local fcstring = finale.FCString()
     list_control:GetItemText(index, fcstring)
     local str = fcstring.LuaString
-    if #str and str ~= current_class_name then
+    if str ~= current_class_name then
         on_classname_changed(str)
     end
 end
@@ -223,8 +225,8 @@ local update_classlist = function(search_text)
         local index = classes_list:GetSelectedItem()
         if index >= 0 then
             on_class_selection(classes_list, index)
-        elseif first_string then
-            on_classname_changed(first_string)
+        else
+            on_classname_changed("")
         end
     end
 end
@@ -302,6 +304,7 @@ local create_dialog = function()
         create_static(dialog, static_text, width)
         y = y + vert_sep
         local list_control = create_list(dialog, height, width, sel_func)
+        y = y + vert_sep/2 + height -- position y for more
         return list_control, edit_text
     end
 
@@ -318,7 +321,6 @@ local create_dialog = function()
         function(control)
             update_classlist(get_edit_text(control))
         end)
-    y = y + vert_sep/2 + 400
     local max_y = y
     local class_doc = dialog:CreateButton(x, y)
     str.LuaString = "Class Documentation"
