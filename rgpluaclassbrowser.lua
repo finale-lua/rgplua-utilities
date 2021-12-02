@@ -14,63 +14,10 @@ end
 local path = finenv.RunningLuaFolderPath
 package.path = package.path .. ";" .. path.LuaString .. "/xml2lua/?.lua"
 
-local create_class_index = function()
-    local xml2lua = require("xml2lua")
-    local handler = require("xmlhandler.tree")
-
-    local jwhandler = handler:new()
-    local jwparser = xml2lua.parser(jwhandler)
-    -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
-    jwparser:parse(xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml"))
-
-    local jwlua_compounds = jwhandler.root.tagfile.compound
-    local temp_class_index = {}
-    for i1, t1 in pairs(jwlua_compounds) do
-        if t1._attr and t1._attr.kind == "class" then
-            temp_class_index[t1.name] = t1
-            local members_index = {}
-            if t1.member then
-                if #t1.member <= 1 then
-                    if t1.member._attr and t1.member._attr.kind == "function" then
-                        members_index[t1.member.name] = t1.member
-                    end
-                elseif #t1.member > 1 then
-                    for i2, t2 in pairs(t1.member) do
-                        if t2._attr and t2._attr.kind == "function" then
-                            members_index[t2.name] = t2
-                        end
-                    end
-                end
-            end
-            temp_class_index[t1.name].__members = members_index
-        end
-    end
-    return temp_class_index
-end
-
-global_class_index = create_class_index()
-
-require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
-
-local log_message = function(str, show_message)
-    if (nil == show_message) then
-        show_message = true
-    end
-    if show_message then
-        print(str)
-    end
-end
-
-eligible_classes = {}
-for k, v in pairs(_G.finale) do
-    local kstr = tostring(k)
-    if kstr:find("FC") == 1  then
-        eligible_classes[kstr] = 1
-    end    
-end
-
 --global variables prevent garbage collection until script terminates
 
+eligible_classes = {}
+global_class_index = nil
 global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
@@ -78,7 +25,7 @@ global_control_xref = {}    -- key: non-list control id, value: associated list 
 current_class_name = ""
 changing_class_name_in_progress = false
 
-local table_merge = function (t1, t2)
+function table_merge (t1, t2)
     for k, v in pairs(t2) do
         if nil == t1[k] then
             t1[k] = v
@@ -87,14 +34,14 @@ local table_merge = function (t1, t2)
     return t1
 end
 
-local get_edit_text = function(edit_control)
+function get_edit_text(edit_control)
     if not edit_control then return "" end
     local str = finale.FCString()
     edit_control:GetText(str)
     return str.LuaString
 end
     
-local method_info = function(class_info, method_name)
+function method_info(class_info, method_name)
     local rettype, args
     if class_info then
         local method = class_info.__members[method_name]
@@ -145,7 +92,7 @@ function get_properties_methods(classname)
     return methods, properties, class_methods
 end
 
-local update_list = function(list_control, source_table, search_text)
+function update_list(list_control, source_table, search_text)
     list_control:Clear()
     local include_all = search_text == nil or search_text == ""
     local first_string = nil
@@ -195,7 +142,7 @@ local on_list_select = function(list_control)
     end
 end
 
-local on_classname_changed = function(new_classname)
+function on_classname_changed(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
     current_class_name = new_classname
@@ -213,7 +160,7 @@ local on_classname_changed = function(new_classname)
     changing_class_name_in_progress = false
 end
 
-local on_class_selection = function(list_control, index)
+function on_class_selection(list_control, index)
     if index < 0 then
         on_classname_changed("")
         return
@@ -224,7 +171,7 @@ local on_class_selection = function(list_control, index)
     end
 end
 
-local hide_show_display_area = function(list_info, show)
+function hide_show_display_area(list_info, show)
     list_info.fullname_static:SetVisible(show)
     list_info.returns_label:SetVisible(show)
     list_info.returns_static:SetVisible(show)
@@ -243,7 +190,7 @@ function get_plain_string(list_control, index)
     return string.match(fcstring.LuaString, "%S+")
 end
 
-local on_method_selection = function(list_control, index)
+function on_method_selection(list_control, index)
     local list_info = global_dialog_info[list_control:GetControlID()]
     local show = false
     if list_info and index >= 0 then
@@ -277,7 +224,7 @@ local on_method_selection = function(list_control, index)
     hide_show_display_area(list_info, show)
 end
 
-local update_classlist = function(search_text)
+function update_classlist(search_text)
     if search_text == nil or search_text == "" then
         search_text = "FC"
     end
@@ -298,7 +245,7 @@ local update_classlist = function(search_text)
 end
 
 pdk_framework_site = "https://robertgpatterson.com/-fininfo/-rgplua/pdkframework/"
-local launch_docsite = function(html_file, anchor)
+function launch_docsite(html_file, anchor)
     if html_file then
         local url = pdk_framework_site .. html_file
         if anchor then
@@ -313,7 +260,7 @@ local launch_docsite = function(html_file, anchor)
     end
 end
 
-local on_doc_button = function(button_control)
+function on_doc_button(button_control)
     local list_info = global_dialog_info[global_control_xref[button_control:GetControlID()]]
     if list_info then
         local index = list_info.list_box:GetSelectedItem()
@@ -373,6 +320,9 @@ local create_dialog = function()
         local list = dialog:CreateListBox(x, y)
         list:SetWidth(this_col_width)
         list:SetHeight(height)
+        if finenv.UI():IsOnMac() then
+            list:UseAlternatingBackgroundRowColors(true)
+        end
         return list
     end
     
@@ -520,11 +470,62 @@ local create_dialog = function()
     return dialog
 end
 
+local get_eligible_classes = function()
+    local retval = {}
+    for k, v in pairs(_G.finale) do
+        local kstr = tostring(k)
+        if kstr:find("FC") == 1  then
+            retval[kstr] = 1
+        end    
+    end
+    return retval
+end
+
+local create_class_index = function()
+    local xml2lua = require("xml2lua")
+    local handler = require("xmlhandler.tree")
+
+    local jwhandler = handler:new()
+    local jwparser = xml2lua.parser(jwhandler)
+    -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
+    jwparser:parse(xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml"))
+
+    local jwlua_compounds = jwhandler.root.tagfile.compound
+    local temp_class_index = {}
+    for i1, t1 in pairs(jwlua_compounds) do
+        if t1._attr and t1._attr.kind == "class" then
+            temp_class_index[t1.name] = t1
+            local members_index = {}
+            if t1.member then
+                if #t1.member <= 1 then
+                    if t1.member._attr and t1.member._attr.kind == "function" then
+                        members_index[t1.member.name] = t1.member
+                    end
+                elseif #t1.member > 1 then
+                    for i2, t2 in pairs(t1.member) do
+                        if t2._attr and t2._attr.kind == "function" then
+                            members_index[t2.name] = t2
+                        end
+                    end
+                end
+            end
+            temp_class_index[t1.name].__members = members_index
+        end
+    end
+    return temp_class_index
+end
+
 local open_dialog = function()
     global_dialog = create_dialog()
     finenv.RegisterModelessDialog(global_dialog)
     global_dialog:ShowModeless()
 end
 
-open_dialog()
+--ToDo: maybe do a modal here to show progress?
 
+global_class_index = create_class_index()
+
+--require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
+
+eligible_classes = get_eligible_classes()
+open_dialog()
