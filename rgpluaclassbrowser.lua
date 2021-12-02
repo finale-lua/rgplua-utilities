@@ -3,14 +3,14 @@ function plugindef()
     -- are both reserved for the plug-in definition.
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
-    finaleplugin.HandlesUndo = true
+    finaleplugin.MinJWLuaVersion = 0.56
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
     finaleplugin.Date = "November 27, 2021"
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
-    
+
 package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
 
 --global variables prevent garbage collection until script terminates
