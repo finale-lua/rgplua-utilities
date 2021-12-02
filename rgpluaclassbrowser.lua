@@ -11,8 +11,7 @@ function plugindef()
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
     
-local path = finenv.RunningLuaFolderPath
-package.path = package.path .. ";" .. path.LuaString .. "/xml2lua/?.lua"
+package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
 
 --global variables prevent garbage collection until script terminates
 
@@ -488,7 +487,7 @@ local create_class_index = function()
     local jwhandler = handler:new()
     local jwparser = xml2lua.parser(jwhandler)
     -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
-    jwparser:parse(xml2lua.loadFile(path.LuaString .. "/jwluatagfile.xml"))
+    jwparser:parse(xml2lua.loadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml"))
 
     local jwlua_compounds = jwhandler.root.tagfile.compound
     local temp_class_index = {}
