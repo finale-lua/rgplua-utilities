@@ -515,8 +515,9 @@ local create_dialog = function()
             end
         end
     )
+    local bottom_y = y
     x = x + col_width + sep_width
-    global_progress_label = dialog:CreateStatic(x, y)
+    global_progress_label = dialog:CreateStatic(x, bottom_y)
     global_progress_label:SetWidth(2.5*col_width)
     --macOS does not update label text in real time, but Windows does.
     --Therefore on macOS this is the only text that shows in the label
@@ -535,10 +536,12 @@ local create_dialog = function()
     local class_methods_list = create_column(dialog, 170, col_width + col_extra, "Class Methods:", on_method_selection)
     global_control_xref["class_methods"] = class_methods_list:GetControlID()
     create_display_area (dialog, global_dialog_info[class_methods_list:GetControlID()], col_width + col_extra)
+    x = x + col_width + col_extra
     
     -- create close button
-    local ok_button = dialog:CreateOkButton()
-    set_text(ok_button, "Close")
+    local close_button = dialog:CreateCloseButton(x-70, bottom_y)
+    close_button:SetWidth(70)
+    set_text(close_button, "Close")
     return dialog
 end
 
