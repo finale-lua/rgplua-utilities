@@ -39,6 +39,5 @@ luac.out
 *.x86_64
 *.hex
 
-jwluatagfile.xml
 mobdebug.lua
 
