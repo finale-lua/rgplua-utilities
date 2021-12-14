@@ -10379,6 +10379,13 @@
       <anchor>aa937b980b363c1bcde2d3dbc85006943</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>ARTSLUR_INTERACTION</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>aad1a19aab927384ba44e459d552ca66e</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -10639,6 +10646,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>ARTSLUR_INTERACTION</type>
+      <name>GetSlurInteraction</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a3125cb9c65396ff1e81a182b8257dc29</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetInsideSlurs</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
@@ -10650,6 +10664,27 @@
       <name>GetAttachToTopNote</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>add08c9bf2cf29946dcd680ee106d459d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStackAutomatically</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>afc2202c44c259cee84f459c5a54bb35c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetCenterOnStemWhenStemSide</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a298ded81486ae735a737f9a84f228fec</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStemSideWhenMultipleLayers</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>afecf7eefcffb237e1b710ce28e7f7812</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -10969,6 +11004,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetSlurInteraction</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a9c59fec2c1550b0c89e0c7b6987af4de</anchor>
+      <arglist>(ARTSLUR_INTERACTION mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetInsideSlurs</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a1758e8b54f3d0cc29962fc753585c394</anchor>
@@ -10979,6 +11021,27 @@
       <name>SetAttachToTopNote</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>ad133e0bcfb1096475f962f69fcbbf4a7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStackAutomatically</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a43f5ebc16dfb4a78792aa24473c889cd</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCenterOnStemWhenStemSide</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a30d5e1d8f619b033a086c2c704066c87</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemSideWhenMultipleLayers</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a6261d10257927ed4a547482ef59a9d24</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
