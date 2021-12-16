@@ -38801,10 +38801,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>TimeEdu32</type>
       <name>GetMetronomeBeat</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>a54a80c9dd0e585e96eec11f8fbe062c2</anchor>
+      <anchor>ac33fcd703f2a8e911b22958d8522d6f3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -38860,8 +38860,8 @@
       <type>void</type>
       <name>SetMetronomeBeat</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>aa64e90daa723dd659f8266c894aaa315</anchor>
-      <arglist>(twobyte value)</arglist>
+      <anchor>ab68e6393b58be15ed4d16205f6823192</anchor>
+      <arglist>(TimeEdu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -51308,6 +51308,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>Evpu16</type>
+      <name>GetExtraSystemStartSpace</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>ab3e74fedfff65703153d8e99614cbda8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetUseOuterPlacement</name>
       <anchorfile>class_f_c_tie_prefs.html</anchorfile>
@@ -51480,6 +51487,13 @@
       <name>SetSystemRightHorizontalOffset</name>
       <anchorfile>class_f_c_tie_prefs.html</anchorfile>
       <anchor>a09d638f296f4ba157faa8454802fcee6</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraSystemStartSpace</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>a9cb0cf7f6002a1f01d98d986eff782e8</anchor>
       <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
