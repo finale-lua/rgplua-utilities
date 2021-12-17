@@ -23710,6 +23710,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
+      <anchor>a0529c50ac1614f8720cb7a3804b3ba20</anchor>
+      <arglist>(twobyte prefsNumber) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
+      <anchor>acbe310bba327d233e56daede7f0e7243</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>LoadFull</name>
       <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
       <anchor>ad08efd91b2d4f8bd2d54b57fa5223d03</anchor>
@@ -28653,6 +28667,20 @@
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>a9af244843508ed920b0cb1bd45bea143ae99d9bdd435dd3e3c21eac6f36618611</anchor>
       <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>ae506596161e48917343ef89f602173d8</anchor>
+      <arglist>(twobyte prefsNumber=0) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>acb005010e6da7885a7698ed171db0d55</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -35194,6 +35222,13 @@
     <name>FCOtherInci</name>
     <filename>class_f_c_other_inci.html</filename>
     <base>__FCInciOther</base>
+    <member kind="function">
+      <type></type>
+      <name>FCOtherInci</name>
+      <anchorfile>class_f_c_other_inci.html</anchorfile>
+      <anchor>aa27f4a351205302a5947b4d6db3b4e84</anchor>
+      <arglist>(EXTAG customTag=0)</arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
