@@ -42355,43 +42355,43 @@
       <type>twobyte</type>
       <name>CalcInset</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a91537a57a430b0fbf9264c48418badf8</anchor>
-      <arglist>(int slurlength)</arglist>
+      <anchor>afd2086b41c6b9b531f34d54693de9edd</anchor>
+      <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>CalcHeight</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a76956a4593aaf50973a433ecce4f6ae6</anchor>
-      <arglist>(int slurlength)</arglist>
+      <anchor>a48ac75977b5d563b0405dbf1bac0eb8a</anchor>
+      <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetShortSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>ac800603bb3c78d0163741d9fd74d2fb6</anchor>
-      <arglist>()</arglist>
+      <anchor>a0f140477cd0838c6811032515f34e7c3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetMediumSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a1d0c4fe61c873b6ce792605350d388e6</anchor>
-      <arglist>()</arglist>
+      <anchor>aab2c7dd9a4416abbc685104daf45e623</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>acc076bab52a93838df4a86ad41626e80</anchor>
-      <arglist>()</arglist>
+      <anchor>add94130e14fedd03a3b4c6438d3d698b</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetExtraLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a357f7dfbfb90c9daff3cef075d377cbf</anchor>
-      <arglist>()</arglist>
+      <anchor>adf8f2703a38b0b12bf0702d58052facb</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
