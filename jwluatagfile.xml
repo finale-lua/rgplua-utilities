@@ -10379,6 +10379,13 @@
       <anchor>aa937b980b363c1bcde2d3dbc85006943</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>ARTSLUR_INTERACTION</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>aad1a19aab927384ba44e459d552ca66e</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -10639,6 +10646,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>ARTSLUR_INTERACTION</type>
+      <name>GetSlurInteraction</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a3125cb9c65396ff1e81a182b8257dc29</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetInsideSlurs</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
@@ -10650,6 +10664,27 @@
       <name>GetAttachToTopNote</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>add08c9bf2cf29946dcd680ee106d459d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStackAutomatically</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>afc2202c44c259cee84f459c5a54bb35c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetCenterOnStemWhenStemSide</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a298ded81486ae735a737f9a84f228fec</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStemSideWhenMultipleLayers</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>afecf7eefcffb237e1b710ce28e7f7812</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -10969,6 +11004,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetSlurInteraction</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a9c59fec2c1550b0c89e0c7b6987af4de</anchor>
+      <arglist>(ARTSLUR_INTERACTION mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetInsideSlurs</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a1758e8b54f3d0cc29962fc753585c394</anchor>
@@ -10979,6 +11021,27 @@
       <name>SetAttachToTopNote</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>ad133e0bcfb1096475f962f69fcbbf4a7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStackAutomatically</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a43f5ebc16dfb4a78792aa24473c889cd</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCenterOnStemWhenStemSide</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a30d5e1d8f619b033a086c2c704066c87</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemSideWhenMultipleLayers</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a6261d10257927ed4a547482ef59a9d24</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -23647,6 +23710,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
+      <anchor>a0529c50ac1614f8720cb7a3804b3ba20</anchor>
+      <arglist>(twobyte prefsNumber) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
+      <anchor>acbe310bba327d233e56daede7f0e7243</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>LoadFull</name>
       <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
       <anchor>ad08efd91b2d4f8bd2d54b57fa5223d03</anchor>
@@ -28590,6 +28667,20 @@
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>a9af244843508ed920b0cb1bd45bea143ae99d9bdd435dd3e3c21eac6f36618611</anchor>
       <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>ae506596161e48917343ef89f602173d8</anchor>
+      <arglist>(twobyte prefsNumber=0) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>acb005010e6da7885a7698ed171db0d55</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -35132,6 +35223,13 @@
     <filename>class_f_c_other_inci.html</filename>
     <base>__FCInciOther</base>
     <member kind="function">
+      <type></type>
+      <name>FCOtherInci</name>
+      <anchorfile>class_f_c_other_inci.html</anchorfile>
+      <anchor>aa27f4a351205302a5947b4d6db3b4e84</anchor>
+      <arglist>(EXTAG customTag=0)</arglist>
+    </member>
+    <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_other_inci.html</anchorfile>
@@ -38738,10 +38836,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>TimeEdu32</type>
       <name>GetMetronomeBeat</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>a54a80c9dd0e585e96eec11f8fbe062c2</anchor>
+      <anchor>ac33fcd703f2a8e911b22958d8522d6f3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -38797,8 +38895,8 @@
       <type>void</type>
       <name>SetMetronomeBeat</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>aa64e90daa723dd659f8266c894aaa315</anchor>
-      <arglist>(twobyte value)</arglist>
+      <anchor>ab68e6393b58be15ed4d16205f6823192</anchor>
+      <arglist>(TimeEdu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -42257,43 +42355,43 @@
       <type>twobyte</type>
       <name>CalcInset</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a91537a57a430b0fbf9264c48418badf8</anchor>
-      <arglist>(int slurlength)</arglist>
+      <anchor>afd2086b41c6b9b531f34d54693de9edd</anchor>
+      <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>CalcHeight</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a76956a4593aaf50973a433ecce4f6ae6</anchor>
-      <arglist>(int slurlength)</arglist>
+      <anchor>a48ac75977b5d563b0405dbf1bac0eb8a</anchor>
+      <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetShortSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>ac800603bb3c78d0163741d9fd74d2fb6</anchor>
-      <arglist>()</arglist>
+      <anchor>a0f140477cd0838c6811032515f34e7c3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetMediumSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a1d0c4fe61c873b6ce792605350d388e6</anchor>
-      <arglist>()</arglist>
+      <anchor>aab2c7dd9a4416abbc685104daf45e623</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>acc076bab52a93838df4a86ad41626e80</anchor>
-      <arglist>()</arglist>
+      <anchor>add94130e14fedd03a3b4c6438d3d698b</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetExtraLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a357f7dfbfb90c9daff3cef075d377cbf</anchor>
-      <arglist>()</arglist>
+      <anchor>adf8f2703a38b0b12bf0702d58052facb</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -50684,50 +50782,50 @@
       <type>Evpu16</type>
       <name>GetSpan</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>a28564aa4543d2976057d9d3ad5146d40</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>aa3903eaec9c958105fa9539052eea33c</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>float</type>
       <name>GetLeftRelativeInset</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>ad8b13995f823b2e42270b8602f88f5e0</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>a2c9ffe24255460b6060884631de8d5c1</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetLeftHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>a95c642c7ade11e5dc3bb59dabfb21b33</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>a4aa8fbf63df17b76bf0005c51f4c3047</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetLeftFixedInset</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>a8b63f4949418cb2b842686818fa0d80b</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>a20cc85c56f0700ff9226228d643087c0</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>float</type>
       <name>GetRightRelativeInset</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>a69d48f152c4f00d067649adb058960d1</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>a2c480097e063b558e6dfb613ff63b201</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetRightHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>a6a023e2ff4e023561386644070f9e64e</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>a18ceb4193e452b2e8b9c6f2ce6aae3a5</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetRightFixedInset</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>aa29687dcd9bcb939202578bff35ecec9</anchor>
-      <arglist>(CONTOUR_INDEXES index)</arglist>
+      <anchor>a8c5c723c8afe857b26d9ab1763c6e838</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -50955,29 +51053,29 @@
       <type>Evpu16</type>
       <name>GetHorizontalStart</name>
       <anchorfile>class_f_c_tie_placement_prefs.html</anchorfile>
-      <anchor>aa149e05c66d870ed0a1ebad7f72be209</anchor>
-      <arglist>(TIEPLACEMENT_INDEXES placementtype)</arglist>
+      <anchor>a17b66263c2b149f92573fb02b9ff6741</anchor>
+      <arglist>(TIEPLACEMENT_INDEXES placementtype) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetVerticalStart</name>
       <anchorfile>class_f_c_tie_placement_prefs.html</anchorfile>
-      <anchor>a162a51d7b8f515141a72a754fa9f9e1c</anchor>
-      <arglist>(TIEPLACEMENT_INDEXES placementtype)</arglist>
+      <anchor>aaa546614bed0612b3479c6886f277b4c</anchor>
+      <arglist>(TIEPLACEMENT_INDEXES placementtype) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetHorizontalEnd</name>
       <anchorfile>class_f_c_tie_placement_prefs.html</anchorfile>
-      <anchor>a3bc9b50106bf15b316f4439ada40b054</anchor>
-      <arglist>(TIEPLACEMENT_INDEXES placementtype)</arglist>
+      <anchor>ae41d25bf5146c42d1eec65ea689ac7ee</anchor>
+      <arglist>(TIEPLACEMENT_INDEXES placementtype) const</arglist>
     </member>
     <member kind="function">
       <type>Evpu16</type>
       <name>GetVerticalEnd</name>
       <anchorfile>class_f_c_tie_placement_prefs.html</anchorfile>
-      <anchor>a79dfab5f51141beb5c9bec354b8b5fdf</anchor>
-      <arglist>(TIEPLACEMENT_INDEXES placementtype)</arglist>
+      <anchor>a9bf6b551def028439bc3d1423bfbda07</anchor>
+      <arglist>(TIEPLACEMENT_INDEXES placementtype) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -51245,6 +51343,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>Evpu16</type>
+      <name>GetExtraSystemStartSpace</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>ab3e74fedfff65703153d8e99614cbda8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetUseOuterPlacement</name>
       <anchorfile>class_f_c_tie_prefs.html</anchorfile>
@@ -51421,6 +51526,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetExtraSystemStartSpace</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>a9cb0cf7f6002a1f01d98d986eff782e8</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetUseOuterPlacement</name>
       <anchorfile>class_f_c_tie_prefs.html</anchorfile>
       <anchor>a39193fe66afcd82f9c34841cb480e3cd</anchor>
@@ -51523,6 +51635,34 @@
       <anchorfile>class_f_c_tie_prefs.html</anchorfile>
       <anchor>a5e39211e3e6a293fe6e9945338dc2b8b</anchor>
       <arglist>(fourbyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTiePlacementPrefs *</type>
+      <name>CreateTiePlacementPrefs</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>af7a5320e4c28721066007d0e94748833</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveTiePlacementPrefs</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>a3c7296d162cde617bbef7188ea132f33</anchor>
+      <arglist>(FCTiePlacementPrefs *pPlacementPrefs)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTieContourPrefs *</type>
+      <name>CreateTieContourPrefs</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>a2c2cf99359272ce8f2636339f3f1e16b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveTieContourPrefs</name>
+      <anchorfile>class_f_c_tie_prefs.html</anchorfile>
+      <anchor>a45caea3b0491fb1a8bd578d3ff9d7c3f</anchor>
+      <arglist>(FCTieContourPrefs *pPrefs)</arglist>
     </member>
   </compound>
   <compound kind="class">
