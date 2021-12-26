@@ -10259,15 +10259,29 @@
       <type>void</type>
       <name>SetHorizontalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a76cbda4397cbea7b15a27a0453842b5f</anchor>
-      <arglist>(twobyte pos)</arglist>
+      <anchor>a853b117b2a7c0a3ed8ce5ebe16ecda24</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>af126dd5c237d48ff8c5da9bf5a0d8d01</anchor>
+      <arglist>(Evpu16 pos)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetVerticalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a2e6204a202cddfcab3ec4b031e6187ce</anchor>
-      <arglist>(twobyte pos)</arglist>
+      <anchor>af0763a51e2b9b197c2f70714a52b5e6e</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>abed38316ad6b9a34c2b7612b4f96d566</anchor>
+      <arglist>(Evpu16 pos)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -10312,17 +10326,31 @@
       <arglist>(PLACEMENTMODE value)</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>GetHorizontalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>ad1ee4e8fdedd5ea71746d8467df89117</anchor>
+      <anchor>aa90e1afe2b1fe9a90b93bd2900ff972d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
+      <name>GetHorizontalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>aac84f8b5a0af1745caf43e0104a091cd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetVerticalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a485034d6a5394329859670fb1921292e</anchor>
+      <anchor>a7cce938178d2dee1e906d4c451fb58c2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetVerticalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>a4702953d2fa4f96a8d17a516bf9cb7e0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
