@@ -13689,6 +13689,20 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
+      <type>FCCellClefChange *</type>
+      <name>CreateFirstClefChange</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>aec2f2930d4bc7da4142ef01c93bf8d16</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>MakeSingleClef</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a7e0f97c4dfd2098ff12a4bf6466b1550</anchor>
+      <arglist>(const FCCellClefChange *pClefInfo)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCellClefChanges *</type>
       <name>CreateCellClefChanges</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
