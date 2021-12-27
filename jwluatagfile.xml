@@ -13579,10 +13579,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
+      <type>void</type>
       <name>InsertCellClefChange</name>
       <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
-      <anchor>a2fe52c9182d5f0b319a7aaba05f9a812</anchor>
+      <anchor>a91adc9034d30340291821bb88047503d</anchor>
       <arglist>(FCCellClefChange *pClefInfo)</arglist>
     </member>
     <member kind="function">
