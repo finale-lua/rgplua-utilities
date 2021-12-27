@@ -1424,6 +1424,13 @@
       <arglist>(CMPER cmper)</arglist>
     </member>
     <member kind="function">
+      <type>CMPER</type>
+      <name>SaveAllAsNew</name>
+      <anchorfile>class_____f_c_collection_inci_other.html</anchorfile>
+      <anchor>afb9d3dd48cde4134d0bef8b47c7d2bc4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>__FCInciOther *</type>
       <name>FindItemNo</name>
       <anchorfile>class_____f_c_collection_inci_other.html</anchorfile>
@@ -13572,6 +13579,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>InsertCellClefChange</name>
+      <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
+      <anchor>a2fe52c9182d5f0b319a7aaba05f9a812</anchor>
+      <arglist>(FCCellClefChange *pClefInfo)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCellClefChange *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
@@ -13664,8 +13678,8 @@
       <type>void</type>
       <name>SetClefShow</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>ade076541288c17eacddf64cd6529aed9</anchor>
-      <arglist>(CLEF_SHOW clef)</arglist>
+      <anchor>aa7cfc7063e09f5f6e6f23c3298cd4a87</anchor>
+      <arglist>(CLEF_SHOW value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -13690,16 +13704,16 @@
     </member>
     <member kind="function">
       <type>FCCellClefChange *</type>
-      <name>CreateFirstClefChange</name>
+      <name>CreateFirstCellClefChange</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>aec2f2930d4bc7da4142ef01c93bf8d16</anchor>
+      <anchor>ae5a04e8c759f8746db2ab6da854433e7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>MakeSingleClef</name>
+      <name>MakeCellSingleClef</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>a7e0f97c4dfd2098ff12a4bf6466b1550</anchor>
+      <anchor>a16c13fe7a5b6656f631a4df566c19f7a</anchor>
       <arglist>(const FCCellClefChange *pClefInfo)</arglist>
     </member>
     <member kind="function">
@@ -13708,6 +13722,13 @@
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
       <anchor>a0aefbbc1627d9ee2485558c7ab91797c</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetCellClefChanges</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a10cb6758de67397f2f0f1dc8af8d71b0</anchor>
+      <arglist>(FCCellClefChanges *pClefChanges)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
