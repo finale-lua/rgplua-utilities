@@ -15372,29 +15372,29 @@
       <type>int</type>
       <name>GetGroupCount</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a4a0481be1683a00b9b02083c750ef811</anchor>
-      <arglist>()</arglist>
+      <anchor>a3ca6a6a202ff9d1f4631bc3262baa4dc</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetGroupElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>af31248e7275cfa56d4784db0065409aa</anchor>
-      <arglist>(int groupindex)</arglist>
+      <anchor>a4a22a7b206b4c869b3099f7ac05bbef0</anchor>
+      <arglist>(int groupindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetGroupElementBeatDuration</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a4b526ab009b3cf71ea1342224c5bdbf8</anchor>
-      <arglist>(int groupindex, int subindex)</arglist>
+      <anchor>a0d4b35273eb774b012ab5d600342de79</anchor>
+      <arglist>(int groupindex, int subindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>afc64b7d728f476f793747bc41736de25</anchor>
-      <arglist>()</arglist>
+      <anchor>a97f6d5dd8d70f789ddf73e7845e2c5bd</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -15461,8 +15461,8 @@
       <type>int</type>
       <name>GetGroupCount</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>ac84a31c02373542f755f4db36c155aa6</anchor>
-      <arglist>()</arglist>
+      <anchor>ac28ee98a3c0e6b22e174bf8499b43b8b</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -15482,29 +15482,36 @@
       <type>int</type>
       <name>GetGroupElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a9829197548a3095c8ae7c775e4bd024e</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ab44a7c0b80c9fbec6ae43cb7e19a6995</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcTotalGroupBeats</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a41fe2c8a8b7e220d880c95f66f5c020d</anchor>
-      <arglist>(int groupindex)</arglist>
+      <anchor>a7083a4c109bc2ae4125204eb8b2dc9d0</anchor>
+      <arglist>(int groupindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetGroupElementBeats</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a1b53024173f2ffa20acdac3b23e320ac</anchor>
-      <arglist>(int groupindex, int subindex)</arglist>
+      <anchor>a76cc1af970c42d0f276dbd67e19822f6</anchor>
+      <arglist>(int groupindex, int subindex) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>GetGroupElementFraction</name>
+      <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
+      <anchor>a9fa2b0cb0a43ba70198b150aaf6aef75</anchor>
+      <arglist>(int groupindex, int subindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a56256494e43687d18f9f7cf2d6b3ca8c</anchor>
-      <arglist>()</arglist>
+      <anchor>a46f0610a9557d92057d902619b07b252</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -15512,6 +15519,13 @@
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
       <anchor>a5ca6348d6d80b36c2b8446d34208db3f</anchor>
       <arglist>(int groupindex, int subindex, twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetGroupElementFraction</name>
+      <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
+      <anchor>ab23baae9fb355bd88973ccc9bf0552d0</anchor>
+      <arglist>(int groupindex, int subindex, double value)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -51911,8 +51925,8 @@
       <type>FCCompositeTimeSigTop *</type>
       <name>CreateCompositeTop</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a25c47862d2e31b9afa8b322975c20873</anchor>
-      <arglist>()</arglist>
+      <anchor>a1da8e23347df3d251d4906eac2a04067</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -51925,8 +51939,8 @@
       <type>FCCompositeTimeSigBottom *</type>
       <name>CreateCompositeBottom</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a8b3d13dc8c499ab0c43478128e5de728</anchor>
-      <arglist>()</arglist>
+      <anchor>ae3fd242a0d6989173b9c6fc5e9d80709</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54770,6 +54784,8 @@
     <class kind="class">FCDotMods</class>
     <class kind="class">FCCrossStaffMods</class>
     <class kind="class">FCPerformanceMods</class>
+    <class kind="class">FCCompositeTimeSigTop</class>
+    <class kind="class">FCCompositeTimeSigBottom</class>
     <class kind="class">FCPages</class>
     <class kind="class">FCStaffSystems</class>
     <class kind="class">FCMeasures</class>
