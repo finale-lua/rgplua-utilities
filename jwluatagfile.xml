@@ -13380,6 +13380,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCTimeSignature *</type>
+      <name>GetTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a4391d481a5677b5cfccb39504e4c2227</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>ReAssign</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
@@ -13405,6 +13412,20 @@
       <name>AssureSavedIndependentTimeSig</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
       <anchor>af5807a859a427d3e2dfbe5e56df516ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTimeSignature *</type>
+      <name>AssureSavedIndependentTimeSigForDisplay</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a44e1f610aaf224da884d8271629b0099</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveIndependentTimeSigForDisplay</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a117d892069b593ef81ebbb764f28b335</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -15400,8 +15421,8 @@
       <type>int</type>
       <name>AddGroup</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a9514fc3301b6de6f5c80aeca8baf274c</anchor>
-      <arglist>()</arglist>
+      <anchor>ad392efb1f14c2a90b8404769671ce794</anchor>
+      <arglist>(int elementcount=1)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24070,6 +24091,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetHasTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>afcab8217e3434ab12bec58601741e24f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>eKey</type>
       <name>GetKeySignatureID</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
@@ -24085,9 +24113,23 @@
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetTimeSignatureBeatsForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a549863a4fbcec64816c83c36c8c49b6d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
       <name>GetTimeSignatureBeatDuration</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a5f308f36a90937c974f4727a3a056c91</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetTimeSignatureBeatDurationForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a5790cf0db33dace12f7384fb6c304c08</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -24099,10 +24141,45 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetTimeSignatureCompositeTopForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>ae54bd0b43d81279b749a195a23924668</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetTimeSignatureCompositeBottom</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a8f66c0ed2fbef3c9beff483770eea4a0</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTimeSignatureCompositeBottomForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>ab30ab1b82be00d7e360e594f7f46ad63</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTimeSignatureAbbreviateForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>acfc815a22130044ccce055c4335d9081</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>GetFullTimeSignature</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a084bc89ddf6f8b26ad0e775fab0f6f80</anchor>
+      <arglist>(FCTimeSignature *pTimeSig)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetFullTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a41e0adf8e9bbe4179c630ba9e7246a0e</anchor>
+      <arglist>(FCTimeSignature *pTimeSig)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24116,6 +24193,13 @@
       <name>SetHasTimeSignature</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a43ca617575553bc34d27a175dcff2cb0</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHasTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a6b699c85f9eeb3af7cd279f77a5b9228</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -24134,9 +24218,23 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetTimeSignatureBeatsForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a2135bfcf24d5efe24b1e39defa242a38</anchor>
+      <arglist>(twobyte beats)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTimeSignatureBeatDuration</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a0825477c79dc1f6381584c65b91cd94e</anchor>
+      <arglist>(twobyte beatduration)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTimeSignatureBeatDurationForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a67e314c2eb27d223379135fa2e607ce0</anchor>
       <arglist>(twobyte beatduration)</arglist>
     </member>
     <member kind="function">
@@ -24148,6 +24246,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetTimeSignatureCompositeTopForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>aa39c5d6380e12ceb4a1a8d7e21345dd9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTimeSignatureCompositeBottom</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a661ac421b8670c937e12888df6eb377a</anchor>
@@ -24155,9 +24260,30 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetTimeSignatureCompositeBottomForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a856090bbab83107de893e5aff55ca254</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTimeSignatureAbbreviateForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>aae6df990caa063a3d732eb32fb6d667b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetFullTimeSignature</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a2e471ea9824bdff1d5c8b8ea0f1078d0</anchor>
+      <arglist>(FCTimeSignature *pTimeSig)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFullTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a65ef2f068767a72586ff9e9d168d0dc1</anchor>
       <arglist>(FCTimeSignature *pTimeSig)</arglist>
     </member>
     <member kind="function">
@@ -51913,6 +52039,20 @@
       <anchorfile>class_f_c_time_signature.html</anchorfile>
       <anchor>a84c28f5482ee8b3ded2eb5faefd18b84</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveCompositeTop</name>
+      <anchorfile>class_f_c_time_signature.html</anchorfile>
+      <anchor>a6c735105e9bfcba7d9926e8a5707c701</anchor>
+      <arglist>(twobyte newNumBeats)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveCompositeBottom</name>
+      <anchorfile>class_f_c_time_signature.html</anchorfile>
+      <anchor>ac14c3bf483ade9f8c85c852163e452bc</anchor>
+      <arglist>(twobyte newBeatDuration)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
