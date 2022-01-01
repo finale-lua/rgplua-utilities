@@ -9426,6 +9426,13 @@
       <arglist></arglist>
     </member>
     <member kind="function">
+      <type>FLAG_32</type>
+      <name>_GetLastCommandModifierKeys</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>acf7344ff50d090d7e560986978364635</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>_SetLastCommandModifierKeys</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
