@@ -15529,9 +15529,9 @@
     </member>
     <member kind="function">
       <type>double</type>
-      <name>GetGroupElementFraction</name>
+      <name>GetGroupElementBeatsWithFraction</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a9fa2b0cb0a43ba70198b150aaf6aef75</anchor>
+      <anchor>a2c3b58959e39f455ab00bb69c8118521</anchor>
       <arglist>(int groupindex, int subindex) const</arglist>
     </member>
     <member kind="function">
@@ -15550,9 +15550,9 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetGroupElementFraction</name>
+      <name>SetGroupElementBeatsWithFraction</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>ab23baae9fb355bd88973ccc9bf0552d0</anchor>
+      <anchor>a063116ef73f7ddee5410a8b136db7e08</anchor>
       <arglist>(int groupindex, int subindex, double value)</arglist>
     </member>
     <member kind="function">
@@ -20779,8 +20779,8 @@
       <type>twobyte</type>
       <name>GetNameByID</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ae33b418442997f39310d8d9be2fef131</anchor>
-      <arglist>()</arglist>
+      <anchor>ae608837bf331b538b31d4c0f6a201eac</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FLAG_16</type>
@@ -20997,6 +20997,13 @@
       <name>GetHidden</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
       <anchor>a8e06a1afe5eda1ab3af3226c37f89970</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIsSMuFLFont</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>abdbc82f519333f69fe4065809d8e7afe</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
