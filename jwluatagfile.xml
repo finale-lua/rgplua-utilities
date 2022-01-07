@@ -47333,6 +47333,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>FormatCStringArgs</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>afecf0420f27b06a2993349a50392ccf4</anchor>
+      <arglist>(const char *fmt, va_list args)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>FormatCString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>ab10821656209658b6469fc7d109392d4</anchor>
