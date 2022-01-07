@@ -309,6 +309,7 @@ create_class_index = function()
     local handler = require("xmlhandler.tree")
 
     set_text(global_progress_label, "Parsing xml for class and method info...")
+    coroutine.yield()
 
     local counter = 0
     local jwhandler = handler:new()
@@ -327,6 +328,9 @@ create_class_index = function()
     local jwparser = xml2lua.parser(jwhandler)
     -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
     jwparser:parse(xml2lua.loadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml"))
+
+    set_text(global_progress_label, "Indexing class and method info...")
+    coroutine.yield()
 
     local jwlua_compounds = jwhandler.root.tagfile.compound
     local temp_class_index = {}
@@ -349,7 +353,6 @@ create_class_index = function()
                 end
             end
             temp_class_index[t1.name].__members = members_index
-            coroutine.yield()
         end
     end
     return temp_class_index
