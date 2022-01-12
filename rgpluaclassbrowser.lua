@@ -309,11 +309,28 @@ create_class_index = function()
     local handler = require("xmlhandler.tree")
 
     set_text(global_progress_label, "Parsing xml for class and method info...")
+    coroutine.yield()
 
+    local counter = 0
     local jwhandler = handler:new()
+    local org_text = jwhandler.text
+    jwhandler.text = function(handler, text)
+                if text:find("FC") == 1 or text:find("__FC") == 1 then
+                    if (counter % 25) == 0 then
+                        print("Parsing xml tags for " .. text .. "...")
+                        set_text(global_progress_label, "Parsing xml tags for " .. text .. "...")
+                        coroutine.yield()
+                    end
+                    counter = counter + 1
+                end
+                return org_text(handler, text)
+            end
     local jwparser = xml2lua.parser(jwhandler)
     -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
     jwparser:parse(xml2lua.loadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml"))
+
+    set_text(global_progress_label, "Indexing class and method info...")
+    coroutine.yield()
 
     local jwlua_compounds = jwhandler.root.tagfile.compound
     local temp_class_index = {}
@@ -341,16 +358,22 @@ create_class_index = function()
     return temp_class_index
 end
 
+coroutine_build_class_index = coroutine.create(function()
+        eligible_classes = get_eligible_classes()
+        coroutine.yield()
+        global_class_index = create_class_index()
+    end)
+
 function on_timer(timer_id)
     if timer_id ~= global_timer_id then return end
-    global_timer_id = 0 -- blocks further calls to this function
-    global_dialog:StopTimer(timer_id)
-    eligible_classes = get_eligible_classes()
-    global_class_index = create_class_index()
-    --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
-    update_classlist()
-    set_text(global_progress_label, "")
-    global_progress_label:SetVisible(false)
+    if not coroutine.resume(coroutine_build_class_index) then
+        global_timer_id = 0 -- blocks further calls to this function
+        global_dialog:StopTimer(timer_id)
+        --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
+        update_classlist()
+        set_text(global_progress_label, "")
+        global_progress_label:SetVisible(false)
+    end
 end
 
 local create_dialog = function()
