@@ -18230,6 +18230,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAccidentalCrossLayerPositioning</name>
+      <anchorfile>class_f_c_distance_prefs.html</anchorfile>
+      <anchor>a5209a4deb196e96cc14410f53060f78d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetSpaceBefore</name>
       <anchorfile>class_f_c_distance_prefs.html</anchorfile>
@@ -18515,6 +18522,13 @@
       <anchorfile>class_f_c_distance_prefs.html</anchorfile>
       <anchor>a46971aee4867387bb3d4d8b0a268e2e4</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAccidentalCrossLayerPositioning</name>
+      <anchorfile>class_f_c_distance_prefs.html</anchorfile>
+      <anchor>a84ce78816ed19ea1e2844d454028ef44</anchor>
+      <arglist>(bool value)</arglist>
     </member>
   </compound>
   <compound kind="class">
