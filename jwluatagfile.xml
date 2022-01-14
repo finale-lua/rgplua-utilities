@@ -1424,6 +1424,13 @@
       <arglist>(CMPER cmper)</arglist>
     </member>
     <member kind="function">
+      <type>CMPER</type>
+      <name>SaveAllAsNew</name>
+      <anchorfile>class_____f_c_collection_inci_other.html</anchorfile>
+      <anchor>afb9d3dd48cde4134d0bef8b47c7d2bc4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>__FCInciOther *</type>
       <name>FindItemNo</name>
       <anchorfile>class_____f_c_collection_inci_other.html</anchorfile>
@@ -9419,6 +9426,13 @@
       <arglist></arglist>
     </member>
     <member kind="function">
+      <type>FLAG_32</type>
+      <name>_GetLastCommandModifierKeys</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>acf7344ff50d090d7e560986978364635</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>_SetLastCommandModifierKeys</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -10259,15 +10273,29 @@
       <type>void</type>
       <name>SetHorizontalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a76cbda4397cbea7b15a27a0453842b5f</anchor>
-      <arglist>(twobyte pos)</arglist>
+      <anchor>a853b117b2a7c0a3ed8ce5ebe16ecda24</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>af126dd5c237d48ff8c5da9bf5a0d8d01</anchor>
+      <arglist>(Evpu16 pos)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetVerticalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a2e6204a202cddfcab3ec4b031e6187ce</anchor>
-      <arglist>(twobyte pos)</arglist>
+      <anchor>af0763a51e2b9b197c2f70714a52b5e6e</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>abed38316ad6b9a34c2b7612b4f96d566</anchor>
+      <arglist>(Evpu16 pos)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -10312,17 +10340,31 @@
       <arglist>(PLACEMENTMODE value)</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>GetHorizontalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>ad1ee4e8fdedd5ea71746d8467df89117</anchor>
+      <anchor>aa90e1afe2b1fe9a90b93bd2900ff972d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
+      <name>GetHorizontalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>aac84f8b5a0af1745caf43e0104a091cd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetVerticalPos</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a485034d6a5394329859670fb1921292e</anchor>
+      <anchor>a7cce938178d2dee1e906d4c451fb58c2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetVerticalCopyToPos</name>
+      <anchorfile>class_f_c_articulation.html</anchorfile>
+      <anchor>a4702953d2fa4f96a8d17a516bf9cb7e0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -13345,6 +13387,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCTimeSignature *</type>
+      <name>GetTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a4391d481a5677b5cfccb39504e4c2227</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>ReAssign</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
@@ -13370,6 +13419,20 @@
       <name>AssureSavedIndependentTimeSig</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
       <anchor>af5807a859a427d3e2dfbe5e56df516ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTimeSignature *</type>
+      <name>AssureSavedIndependentTimeSigForDisplay</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a44e1f610aaf224da884d8271629b0099</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveIndependentTimeSigForDisplay</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a117d892069b593ef81ebbb764f28b335</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -13544,6 +13607,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>InsertCellClefChange</name>
+      <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
+      <anchor>a91adc9034d30340291821bb88047503d</anchor>
+      <arglist>(FCCellClefChange *pClefInfo)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCellClefChange *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
@@ -13636,8 +13706,8 @@
       <type>void</type>
       <name>SetClefShow</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>ade076541288c17eacddf64cd6529aed9</anchor>
-      <arglist>(CLEF_SHOW clef)</arglist>
+      <anchor>aa7cfc7063e09f5f6e6f23c3298cd4a87</anchor>
+      <arglist>(CLEF_SHOW value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -13661,11 +13731,32 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
+      <type>FCCellClefChange *</type>
+      <name>CreateFirstCellClefChange</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>ae5a04e8c759f8746db2ab6da854433e7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>MakeCellSingleClef</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a16c13fe7a5b6656f631a4df566c19f7a</anchor>
+      <arglist>(const FCCellClefChange *pClefInfo)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCellClefChanges *</type>
       <name>CreateCellClefChanges</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
       <anchor>a0aefbbc1627d9ee2485558c7ab91797c</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetCellClefChanges</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a10cb6758de67397f2f0f1dc8af8d71b0</anchor>
+      <arglist>(FCCellClefChanges *pClefChanges)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -15309,36 +15400,36 @@
       <type>int</type>
       <name>GetGroupCount</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a4a0481be1683a00b9b02083c750ef811</anchor>
-      <arglist>()</arglist>
+      <anchor>a3ca6a6a202ff9d1f4631bc3262baa4dc</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetGroupElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>af31248e7275cfa56d4784db0065409aa</anchor>
-      <arglist>(int groupindex)</arglist>
+      <anchor>a4a22a7b206b4c869b3099f7ac05bbef0</anchor>
+      <arglist>(int groupindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetGroupElementBeatDuration</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a4b526ab009b3cf71ea1342224c5bdbf8</anchor>
-      <arglist>(int groupindex, int subindex)</arglist>
+      <anchor>a0d4b35273eb774b012ab5d600342de79</anchor>
+      <arglist>(int groupindex, int subindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>afc64b7d728f476f793747bc41736de25</anchor>
-      <arglist>()</arglist>
+      <anchor>a97f6d5dd8d70f789ddf73e7845e2c5bd</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>AddGroup</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a9514fc3301b6de6f5c80aeca8baf274c</anchor>
-      <arglist>()</arglist>
+      <anchor>ad392efb1f14c2a90b8404769671ce794</anchor>
+      <arglist>(int elementcount=1)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -15398,8 +15489,8 @@
       <type>int</type>
       <name>GetGroupCount</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>ac84a31c02373542f755f4db36c155aa6</anchor>
-      <arglist>()</arglist>
+      <anchor>ac28ee98a3c0e6b22e174bf8499b43b8b</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -15419,29 +15510,36 @@
       <type>int</type>
       <name>GetGroupElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a9829197548a3095c8ae7c775e4bd024e</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ab44a7c0b80c9fbec6ae43cb7e19a6995</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcTotalGroupBeats</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a41fe2c8a8b7e220d880c95f66f5c020d</anchor>
-      <arglist>(int groupindex)</arglist>
+      <anchor>a7083a4c109bc2ae4125204eb8b2dc9d0</anchor>
+      <arglist>(int groupindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetGroupElementBeats</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a1b53024173f2ffa20acdac3b23e320ac</anchor>
-      <arglist>(int groupindex, int subindex)</arglist>
+      <anchor>a76cc1af970c42d0f276dbd67e19822f6</anchor>
+      <arglist>(int groupindex, int subindex) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>GetGroupElementBeatsWithFraction</name>
+      <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
+      <anchor>a2c3b58959e39f455ab00bb69c8118521</anchor>
+      <arglist>(int groupindex, int subindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetElementCount</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a56256494e43687d18f9f7cf2d6b3ca8c</anchor>
-      <arglist>()</arglist>
+      <anchor>a46f0610a9557d92057d902619b07b252</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -15449,6 +15547,13 @@
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
       <anchor>a5ca6348d6d80b36c2b8446d34208db3f</anchor>
       <arglist>(int groupindex, int subindex, twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetGroupElementBeatsWithFraction</name>
+      <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
+      <anchor>a063116ef73f7ddee5410a8b136db7e08</anchor>
+      <arglist>(int groupindex, int subindex, double value)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -18125,6 +18230,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAccidentalCrossLayerPositioning</name>
+      <anchorfile>class_f_c_distance_prefs.html</anchorfile>
+      <anchor>a5209a4deb196e96cc14410f53060f78d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetSpaceBefore</name>
       <anchorfile>class_f_c_distance_prefs.html</anchorfile>
@@ -18410,6 +18522,13 @@
       <anchorfile>class_f_c_distance_prefs.html</anchorfile>
       <anchor>a46971aee4867387bb3d4d8b0a268e2e4</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAccidentalCrossLayerPositioning</name>
+      <anchorfile>class_f_c_distance_prefs.html</anchorfile>
+      <anchor>a84ce78816ed19ea1e2844d454028ef44</anchor>
+      <arglist>(bool value)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -20674,8 +20793,8 @@
       <type>twobyte</type>
       <name>GetNameByID</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ae33b418442997f39310d8d9be2fef131</anchor>
-      <arglist>()</arglist>
+      <anchor>ae608837bf331b538b31d4c0f6a201eac</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FLAG_16</type>
@@ -20892,6 +21011,13 @@
       <name>GetHidden</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
       <anchor>a8e06a1afe5eda1ab3af3226c37f89970</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIsSMuFLFont</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>abdbc82f519333f69fe4065809d8e7afe</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23993,6 +24119,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetHasTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>afcab8217e3434ab12bec58601741e24f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>eKey</type>
       <name>GetKeySignatureID</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
@@ -24008,9 +24141,23 @@
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetTimeSignatureBeatsForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a549863a4fbcec64816c83c36c8c49b6d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
       <name>GetTimeSignatureBeatDuration</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a5f308f36a90937c974f4727a3a056c91</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetTimeSignatureBeatDurationForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a5790cf0db33dace12f7384fb6c304c08</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -24022,10 +24169,45 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetTimeSignatureCompositeTopForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>ae54bd0b43d81279b749a195a23924668</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetTimeSignatureCompositeBottom</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a8f66c0ed2fbef3c9beff483770eea4a0</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTimeSignatureCompositeBottomForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>ab30ab1b82be00d7e360e594f7f46ad63</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTimeSignatureAbbreviateForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>acfc815a22130044ccce055c4335d9081</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>GetFullTimeSignature</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a084bc89ddf6f8b26ad0e775fab0f6f80</anchor>
+      <arglist>(FCTimeSignature *pTimeSig)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetFullTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a41e0adf8e9bbe4179c630ba9e7246a0e</anchor>
+      <arglist>(FCTimeSignature *pTimeSig)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24039,6 +24221,13 @@
       <name>SetHasTimeSignature</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a43ca617575553bc34d27a175dcff2cb0</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHasTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a6b699c85f9eeb3af7cd279f77a5b9228</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -24057,9 +24246,23 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetTimeSignatureBeatsForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a2135bfcf24d5efe24b1e39defa242a38</anchor>
+      <arglist>(twobyte beats)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTimeSignatureBeatDuration</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a0825477c79dc1f6381584c65b91cd94e</anchor>
+      <arglist>(twobyte beatduration)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTimeSignatureBeatDurationForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a67e314c2eb27d223379135fa2e607ce0</anchor>
       <arglist>(twobyte beatduration)</arglist>
     </member>
     <member kind="function">
@@ -24071,6 +24274,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetTimeSignatureCompositeTopForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>aa39c5d6380e12ceb4a1a8d7e21345dd9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTimeSignatureCompositeBottom</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a661ac421b8670c937e12888df6eb377a</anchor>
@@ -24078,9 +24288,30 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetTimeSignatureCompositeBottomForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a856090bbab83107de893e5aff55ca254</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTimeSignatureAbbreviateForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>aae6df990caa063a3d732eb32fb6d667b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetFullTimeSignature</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
       <anchor>a2e471ea9824bdff1d5c8b8ea0f1078d0</anchor>
+      <arglist>(FCTimeSignature *pTimeSig)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFullTimeSignatureForDisplay</name>
+      <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
+      <anchor>a65ef2f068767a72586ff9e9d168d0dc1</anchor>
       <arglist>(FCTimeSignature *pTimeSig)</arglist>
     </member>
     <member kind="function">
@@ -47116,6 +47347,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>FormatCStringArgs</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>afecf0420f27b06a2993349a50392ccf4</anchor>
+      <arglist>(const char *fmt, va_list args)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>FormatCString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>ab10821656209658b6469fc7d109392d4</anchor>
@@ -47615,6 +47853,13 @@
       <anchorfile>class_f_c_strings.html</anchorfile>
       <anchor>ac05efc9492619ccb8e3db7e02a6ee7ed</anchor>
       <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>InsertStringAt</name>
+      <anchorfile>class_f_c_strings.html</anchorfile>
+      <anchor>a803364cd6138c395a8b1c000a980f942</anchor>
+      <arglist>(FCString *pNewString, int index)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -51839,6 +52084,20 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>RemoveCompositeTop</name>
+      <anchorfile>class_f_c_time_signature.html</anchorfile>
+      <anchor>a6c735105e9bfcba7d9926e8a5707c701</anchor>
+      <arglist>(twobyte newNumBeats)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>RemoveCompositeBottom</name>
+      <anchorfile>class_f_c_time_signature.html</anchorfile>
+      <anchor>ac14c3bf483ade9f8c85c852163e452bc</anchor>
+      <arglist>(twobyte newBeatDuration)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>MakeString</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
       <anchor>adc8bc4e944227031d3da074349479c54</anchor>
@@ -51848,8 +52107,8 @@
       <type>FCCompositeTimeSigTop *</type>
       <name>CreateCompositeTop</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a25c47862d2e31b9afa8b322975c20873</anchor>
-      <arglist>()</arglist>
+      <anchor>a1da8e23347df3d251d4906eac2a04067</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -51862,8 +52121,8 @@
       <type>FCCompositeTimeSigBottom *</type>
       <name>CreateCompositeBottom</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a8b3d13dc8c499ab0c43478128e5de728</anchor>
-      <arglist>()</arglist>
+      <anchor>ae3fd242a0d6989173b9c6fc5e9d80709</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54707,6 +54966,8 @@
     <class kind="class">FCDotMods</class>
     <class kind="class">FCCrossStaffMods</class>
     <class kind="class">FCPerformanceMods</class>
+    <class kind="class">FCCompositeTimeSigTop</class>
+    <class kind="class">FCCompositeTimeSigBottom</class>
     <class kind="class">FCPages</class>
     <class kind="class">FCStaffSystems</class>
     <class kind="class">FCMeasures</class>
