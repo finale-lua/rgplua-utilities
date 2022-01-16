@@ -524,6 +524,11 @@ local create_dialog = function()
     dialog:RegisterInitWindow(
         function()
             global_dialog:SetTimer(global_timer_id, 1) -- timer can't be set until window is created
+            if nil ~= global_pos_x and nil ~= global_pos_y then
+                global_dialog:StorePosition()
+                global_dialog:SetRestorePositionOnlyData(global_pos_x, global_pos_y)
+                global_dialog:RestorePosition()
+            end
         end
     )
     dialog:RegisterHandleTimer(on_timer)
@@ -571,6 +576,14 @@ local create_dialog = function()
     local close_button = dialog:CreateCloseButton(x-70, bottom_y)
     close_button:SetWidth(70)
     set_text(close_button, "Close")
+    if dialog.RegisterHandleCloseButtonPressed then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
+        dialog:RegisterHandleCloseButtonPressed(function()
+                global_dialog:StorePosition()
+                global_pos_x = global_dialog.StoredX
+                global_pos_y = global_dialog.StoredY
+            end
+        )
+    end
     return dialog
 end
 
