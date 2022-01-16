@@ -7,8 +7,8 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.56
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.0"
-    finaleplugin.Date = "November 27, 2021"
+    finaleplugin.Version = "1.2"
+    finaleplugin.Date = "January 16, 2022"
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
@@ -19,6 +19,8 @@ package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua
 if not initialized_global_class_index then
     eligible_classes = {}
     global_class_index = nil
+else
+    --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
 end
 
 global_dialog = nil
@@ -321,7 +323,6 @@ create_class_index = function()
     jwhandler.text = function(handler, text)
                 if text:find("FC") == 1 or text:find("__FC") == 1 then
                     if (counter % 25) == 0 then
-                        print("Parsing xml tags for " .. text .. "...")
                         set_text(global_progress_label, "Parsing xml tags for " .. text .. "...")
                         coroutine.yield()
                     end
@@ -363,7 +364,7 @@ create_class_index = function()
 end
 
 coroutine_build_class_index = coroutine.create(function()
-        if nil == global_class_index then
+        if not initialized_global_class_index then
             eligible_classes = get_eligible_classes()
             coroutine.yield()
             global_class_index = create_class_index()
@@ -376,7 +377,6 @@ function on_timer(timer_id)
     if not coroutine.resume(coroutine_build_class_index) then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
-        --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
         update_classlist()
         set_text(global_progress_label, "")
         global_progress_label:SetVisible(false)
