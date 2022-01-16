@@ -2,6 +2,7 @@ function plugindef()
     -- This function and the 'finaleplugin' namespace
     -- are both reserved for the plug-in definition.
     finaleplugin.RequireDocument = false
+    finaleplugin.MaintainState = true
     finaleplugin.NoStore = true
     finaleplugin.MinJWLuaVersion = 0.56
     finaleplugin.Author = "Robert Patterson"
@@ -15,8 +16,11 @@ package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua
 
 --global variables prevent garbage collection until script terminates
 
-eligible_classes = {}
-global_class_index = nil
+if not initialized_global_class_index then
+    eligible_classes = {}
+    global_class_index = nil
+end
+
 global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
@@ -359,9 +363,12 @@ create_class_index = function()
 end
 
 coroutine_build_class_index = coroutine.create(function()
-        eligible_classes = get_eligible_classes()
-        coroutine.yield()
-        global_class_index = create_class_index()
+        if nil == global_class_index then
+            eligible_classes = get_eligible_classes()
+            coroutine.yield()
+            global_class_index = create_class_index()
+            initialized_global_class_index = true
+        end
     end)
 
 function on_timer(timer_id)
