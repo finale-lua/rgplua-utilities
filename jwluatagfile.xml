@@ -22807,13 +22807,6 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
-      <name>SaveGuides</name>
-      <anchorfile>class_f_c_grids_guides_prefs.html</anchorfile>
-      <anchor>a888861502cfb1bb0b7e6902d3835f6d7</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
       <type>FCGuides *</type>
       <name>GetHorizontalGuides</name>
       <anchorfile>class_f_c_grids_guides_prefs.html</anchorfile>
