@@ -254,6 +254,8 @@ function update_classlist()
     local list_info = global_dialog_info[list_id]
     if list_info then
         local search_text = get_edit_text(list_info.search_text)
+        if search_text == list_info.current_search_text then return end
+        list_info.current_search_text = search_text
         if search_text == nil or search_text == "" then
             search_text = "FC"
         end
@@ -447,6 +449,7 @@ local create_dialog = function()
         {
             list_box = list_control,
             search_text = edit_text,
+            current_search_text = nil,
             fullname_static = nil,
             returns_label = nil,
             returns_static = nil,
@@ -521,7 +524,11 @@ local create_dialog = function()
         if nil == list_id then return end
         local list_info = global_dialog_info[list_id]
         if list_info then
-            update_list(list_info.list_box, list_info.current_strings, get_edit_text(control))
+            local new_edit_text = get_edit_text(control)
+            if new_edit_text ~= list_info.current_search_text then
+                list_info.current_search_text = new_edit_text
+                update_list(list_info.list_box, list_info.current_strings, new_edit_text)
+            end
         end
     end
 
