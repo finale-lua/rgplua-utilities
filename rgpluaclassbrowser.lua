@@ -8,6 +8,19 @@ function plugindef()
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.2"
     finaleplugin.Date = "January 16, 2022"
+    finaleplugin.Notes = [[
+This plugin uses the built-in reflection of PDK Framework classes in RGP Lua to display all
+the framework classes and their methods and properties. Use the edit text boxes at the top
+to filter the classes and methods you are interested in. It also displays inherited methods and
+properties with an asterisk (and shows which base class they come from). Clicking one of the documentation
+links opens the documentation page for that item in a browser window.
+
+Normally the class browser only builds the class index once (since doing so takes several seconds).
+It then retains its Lua state so that all future calls inherits the same class index. If there is a Lua
+error or some other issue, you may wish to rebuild the index. In that case, click the "Close" button while
+holding down either the Shift key or the Option key (Mac) or Alt key (Windows). The next time it opens it
+will get a fresh Lua state and rebuild the class index.
+    ]]
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
@@ -232,14 +245,15 @@ function on_method_selection(list_control, index)
     hide_show_display_area(list_info, show)
 end
 
-function update_classlist(search_text)
-    if search_text == nil or search_text == "" then
-        search_text = "FC"
-    end
+function update_classlist()
     local list_id = global_control_xref["classes"]
     if nil == list_id then return end
     local list_info = global_dialog_info[list_id]
     if list_info then
+        local search_text = get_edit_text(list_info.search_text)
+        if search_text == nil or search_text == "" then
+            search_text = "FC"
+        end
         local first_string = update_list(list_info.list_box, eligible_classes, search_text)
         if finenv.UI():IsOnWindows() then
             local index = list_info.list_box:GetSelectedItem()
@@ -252,7 +266,7 @@ function update_classlist(search_text)
     end
 end
 
-pdk_framework_site = "https://robertgpatterson.com/-fininfo/-rgplua/pdkframework/"
+pdk_framework_site = "https://pdk.finalelua.com/"
 function launch_docsite(html_file, anchor)
     if html_file then
         local url = pdk_framework_site .. html_file
@@ -499,7 +513,8 @@ local create_dialog = function()
         y = y + vert_sep
     end
     
-    local handle_edit_control = function(control)        
+    local handle_edit_control = function(control)
+        if 0 ~= global_timer_id then return end
         local list_id = global_control_xref[control:GetControlID()]
         if nil == list_id then return end
         local list_info = global_dialog_info[list_id]
@@ -535,7 +550,9 @@ local create_dialog = function()
     
     local classes_list = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
         function(control)
-            update_classlist(get_edit_text(control))
+            if global_timer_id == 0 then
+                update_classlist()
+            end
         end)
     global_control_xref["classes"] = classes_list:GetControlID()
     local class_doc = dialog:CreateButton(x, y)
@@ -578,9 +595,13 @@ local create_dialog = function()
     set_text(close_button, "Close")
     if dialog.RegisterHandleCloseButtonPressed then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
         dialog:RegisterHandleCloseButtonPressed(function()
-                global_dialog:StorePosition()
-                global_pos_x = global_dialog.StoredX
-                global_pos_y = global_dialog.StoredY
+                if dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+                    finenv.RetainLuaState = false
+                else
+                    global_dialog:StorePosition()
+                    global_pos_x = global_dialog.StoredX
+                    global_pos_y = global_dialog.StoredY
+                end
             end
         )
     end
