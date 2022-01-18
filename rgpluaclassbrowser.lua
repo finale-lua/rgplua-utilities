@@ -152,6 +152,11 @@ function update_list(list_control, source_table, search_text)
             end
         end
     end
+    if finenv.UI():IsOnWindows() then
+        if (list_control:GetCount() > 0) then
+            list_control:SetSelectedItem(0)
+        end
+    end
     return first_string
 end
 
@@ -180,9 +185,6 @@ function on_classname_changed(new_classname)
     for k, v in pairs({"properties", "methods", "class_methods"}) do
         local list_info = global_dialog_info[global_control_xref[v]]
         update_list(list_info.list_box, list_info.current_strings, get_edit_text(list_info.search_text))
-        if finenv.UI():IsOnWindows() then
-            on_list_select(list_info.list_box)
-        end
     end
     changing_class_name_in_progress = false
 end
