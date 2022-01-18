@@ -172,6 +172,7 @@ function on_classname_changed(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
     current_class_name = new_classname
+    set_text(global_progress_label, current_class_name)
     local current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
     global_dialog_info[global_control_xref["properties"]].current_strings = current_properties
     global_dialog_info[global_control_xref["methods"]].current_strings = current_methods
@@ -390,9 +391,8 @@ function on_timer(timer_id)
     if not coroutine.resume(coroutine_build_class_index) then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
-        update_classlist()
         set_text(global_progress_label, "")
-        global_progress_label:SetVisible(false)
+        update_classlist()
     end
 end
 
