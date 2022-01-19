@@ -602,8 +602,8 @@ local create_dialog = function()
     local close_button = dialog:CreateCloseButton(x-70, bottom_y)
     close_button:SetWidth(70)
     set_text(close_button, "Close")
-    if dialog.RegisterHandleCloseButtonPressed then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
-        dialog:RegisterHandleCloseButtonPressed(function()
+    if dialog.RegisterCloseWindow then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
+        dialog:RegisterCloseWindow(function()
                 if dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
                     finenv.RetainLuaState = false
                 else
