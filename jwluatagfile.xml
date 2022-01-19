@@ -19225,6 +19225,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_enclosure.html</anchorfile>
+      <anchor>a1ab13a17bc456b32868630f5ce0384bb</anchor>
+      <arglist>(CMPER itemno) override</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_enclosure.html</anchorfile>
