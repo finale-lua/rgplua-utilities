@@ -39,6 +39,13 @@ if not finenv.RetainLuaState then
     global_class_index = nil
     context = 
     {
+        filter_classes_text = nil,
+        classes_index = nil,
+        filter_properties_text = nil,
+        properties_index = nil,
+        filter_methods_text = nil,
+        methods_index = nil,
+        class_methods_index = nil,
         window_pos_x = nil,
         window_pos_y = nil
     }
@@ -411,6 +418,29 @@ function on_timer(timer_id)
     end
 end
 
+function on_close()
+    if global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+        finenv.RetainLuaState = false
+    end
+    if finenv.RetainLuaState then
+        require('mobdebug').start()
+        local list_info = global_dialog_info[global_control_xref["classes"]]
+        context.filter_classes_text = get_edit_text(list_info.search_text)
+        context.classes_index = list_info.list_box:GetSelectedItem()
+        list_info = global_dialog_info[global_control_xref["properties"]]
+        context.filter_properties_text = get_edit_text(list_info.search_text)
+        context.properties_index = list_info.list_box:GetSelectedItem()
+        list_info = global_dialog_info[global_control_xref["methods"]]
+        context.filter_methods_text = get_edit_text(list_info.search_text)
+        context.methods_index = list_info.list_box:GetSelectedItem()
+        list_info = global_dialog_info[global_control_xref["class_methods"]]
+        context.class_methods_index = list_info.list_box:GetSelectedItem()
+        global_dialog:StorePosition()
+        context.window_pos_x = global_dialog.StoredX
+        context.window_pos_y = global_dialog.StoredY
+    end
+end
+
 local create_dialog = function()
     local y = 0
     local vert_sep = 25
@@ -446,11 +476,14 @@ local create_dialog = function()
         return list
     end
     
-    local create_column = function(dialog, height, width, static_text, sel_func, search_func)
+    local create_column = function(dialog, height, width, static_text, sel_func, initial_text, search_func)
         y = 0
         local edit_text = nil
         if search_func then
             edit_text = create_edit(dialog, width, search_func)
+            if type(initial_text) == "string" then
+                set_text(edit_text, initial_text)
+            end
         end
         y = y + vert_sep
         create_static(dialog, static_text, width)
@@ -568,7 +601,7 @@ local create_dialog = function()
     )
     dialog:RegisterHandleTimer(on_timer)
     
-    local classes_list = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
+    local classes_list = create_column(dialog, 400, col_width, "Classes:", on_class_selection, context.filter_classes_text,
         function(control)
             if global_timer_id == 0 then
                 update_classlist()
@@ -594,12 +627,12 @@ local create_dialog = function()
     --Therefore on macOS this is the only text that shows in the label
     set_text(global_progress_label, "initializing...")
     
-    local properties_list = create_column(dialog, 170, col_width + col_extra, "Properties:", on_method_selection, handle_edit_control)
+    local properties_list = create_column(dialog, 170, col_width + col_extra, "Properties:", on_method_selection, context.filter_properties_text, handle_edit_control)
     global_control_xref["properties"] = properties_list:GetControlID()
     create_display_area (dialog, global_dialog_info[properties_list:GetControlID()], col_width + col_extra, true)
     x = x + col_width + col_extra + sep_width
     
-    local methods_list = create_column(dialog, 170, col_width + col_extra, "Methods:", on_method_selection, handle_edit_control)
+    local methods_list = create_column(dialog, 170, col_width + col_extra, "Methods:", on_method_selection, context.filter_methods_text, handle_edit_control)
     global_control_xref["methods"] = methods_list:GetControlID()
     create_display_area (dialog, global_dialog_info[methods_list:GetControlID()], col_width + col_extra)
     x = x + col_width + col_extra + sep_width
@@ -614,16 +647,7 @@ local create_dialog = function()
     close_button:SetWidth(70)
     set_text(close_button, "Close")
     if dialog.RegisterCloseWindow then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
-        dialog:RegisterCloseWindow(function()
-                if dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
-                    finenv.RetainLuaState = false
-                else
-                    global_dialog:StorePosition()
-                    context.window_pos_x = global_dialog.StoredX
-                    context.window_pos_y = global_dialog.StoredY
-                end
-            end
-        )
+        dialog:RegisterCloseWindow(on_close)
     end
     return dialog
 end
