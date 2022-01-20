@@ -7,19 +7,25 @@ function plugindef()
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.2"
-    finaleplugin.Date = "January 16, 2022"
+    finaleplugin.Date = "January 20, 2022"
     finaleplugin.Notes = [[
-This plugin uses the built-in reflection of PDK Framework classes in RGP Lua to display all
-the framework classes and their methods and properties. Use the edit text boxes at the top
-to filter the classes and methods you are interested in. It also displays inherited methods and
-properties with an asterisk (and shows which base class they come from). Clicking one of the documentation
-links opens the documentation page for that item in a browser window.
+        This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
+        the framework classes and their methods and properties. Use the edit text boxes at the top
+        to filter the classes and methods you are interested in. It also displays inherited methods and
+        properties with an asterisk (and shows which base class they come from). Clicking one of the documentation
+        links opens the documentation page for that item in a browser window.
 
-Normally the class browser only builds the class index once (since doing so takes several seconds).
-It then retains its Lua state so that all future calls inherits the same class index. If there is a Lua
-error or some other issue, you may wish to rebuild the index. In that case, click the "Close" button while
-holding down either the Shift key or the Option key (Mac) or Alt key (Windows). The next time it opens it
-will get a fresh Lua state and rebuild the class index.
+        For the documentation links to work properly and to display the correct function signatures, you need the
+        jwluatagfile.xml file that matches the version of RGP Lua you are using. You can obtain the latest versions
+        of RGP Lua, this script, and the corresponding jwluatagfile.xml from the download link:
+        
+        https://robertgpatterson.com/-fininfo/-rgplua/vershist.html
+
+        Normally the class browser only builds the class index once (since doing so takes several seconds).
+        It then retains its Lua state so that all future calls inherits the same class index. If there is a Lua
+        error or some other issue, you may wish to rebuild the index. In that case, click the "Close" button while
+        holding down either the Shift key or the Option key (Mac) or Alt key (Windows). The next time it opens it
+        will get a fresh Lua state and rebuild the class index.
     ]]
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
@@ -31,6 +37,11 @@ package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua
 if not finenv.RetainLuaState then
     eligible_classes = {}
     global_class_index = nil
+    context = 
+    {
+        window_pos_x = nil,
+        window_pos_y = nil
+    }
 else
     --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
 end
@@ -548,9 +559,9 @@ local create_dialog = function()
     dialog:RegisterInitWindow(
         function()
             global_dialog:SetTimer(global_timer_id, 1) -- timer can't be set until window is created
-            if nil ~= global_pos_x and nil ~= global_pos_y then
+            if nil ~= context.window_pos_x and nil ~= context.window_pos_y then
                 global_dialog:StorePosition()
-                global_dialog:SetRestorePositionOnlyData(global_pos_x, global_pos_y)
+                global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
                 global_dialog:RestorePosition()
             end
         end
@@ -608,8 +619,8 @@ local create_dialog = function()
                     finenv.RetainLuaState = false
                 else
                     global_dialog:StorePosition()
-                    global_pos_x = global_dialog.StoredX
-                    global_pos_y = global_dialog.StoredY
+                    context.window_pos_x = global_dialog.StoredX
+                    context.window_pos_y = global_dialog.StoredY
                 end
             end
         )
