@@ -20,19 +20,25 @@ function plugindef()
         of RGP Lua, this script, and the corresponding jwluatagfile.xml from the download link:
         
         https://robertgpatterson.com/-fininfo/-rgplua/vershist.html
+        
+        For other versions, visit the Github repository:
+        
+        https://github.com/finale-lua/rgpluaclassbrowser
 
         Normally the class browser only builds the class index once (since doing so takes several seconds).
         It then retains its Lua state so that all future calls inherits the same class index. If there is a Lua
         error or some other issue, you may wish to rebuild the index. In that case, click the "Close" button while
-        holding down either the Shift key or the Option key (Mac) or Alt key (Windows). The next time it opens it
-        will get a fresh Lua state and rebuild the class index.
+        holding down either the Shift key or the Option key (Mac) or Alt key (Windows). It will then open the next
+        time with a fresh Lua state and rebuild the class index.
     ]]
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
-package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
+if not finenv.RetainLuaState then
+    package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
+end
 
---global variables prevent garbage collection until script terminates
+--global variables prevent garbage collection until script terminates and releases Lua State
 
 if not finenv.RetainLuaState then
     eligible_classes = {}
@@ -83,6 +89,15 @@ function set_text(control, text)
     local fcstring = finale.FCString()
     fcstring.LuaString = text
     control:SetText(fcstring)
+end
+
+function set_list_selected_item(list_control, index, selection_func)
+    if index >= 0 and list_control:GetCount() > index then
+        list_control:SetSelectedItem(index)
+        if finenv.UI():IsOnWindows() and type(selection_func) == "function" then
+            selection_func(list_control, index)
+        end
+    end
 end
     
 function method_info(class_info, method_name)
@@ -171,9 +186,7 @@ function update_list(list_control, source_table, search_text)
         end
     end
     if finenv.UI():IsOnWindows() then
-        if (list_control:GetCount() > 0) then
-            list_control:SetSelectedItem(0)
-        end
+        set_list_selected_item(list_control, 0)
     end
     return first_string
 end
@@ -203,6 +216,9 @@ function on_classname_changed(new_classname)
     for k, v in pairs({"properties", "methods", "class_methods"}) do
         local list_info = global_dialog_info[global_control_xref[v]]
         update_list(list_info.list_box, list_info.current_strings, get_edit_text(list_info.search_text))
+        if finenv.UI():IsOnWindows() then
+            on_method_selection(list_info.list_box, list_info.list_box:GetSelectedItem())
+        end
     end
     changing_class_name_in_progress = false
 end
@@ -404,6 +420,8 @@ coroutine_build_class_index = coroutine.create(function()
             eligible_classes = get_eligible_classes()
             coroutine.yield()
             global_class_index = create_class_index()
+            -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
+            -- up until we reach this statement:
             finenv.RetainLuaState = true
         end
     end)
@@ -415,6 +433,18 @@ function on_timer(timer_id)
         global_dialog:StopTimer(timer_id)
         set_text(global_progress_label, "")
         update_classlist()
+        if nil ~= context.classes_index then
+            local list_info = global_dialog_info[global_control_xref["classes"]]
+            set_list_selected_item(list_info.list_box, context.classes_index, on_class_selection)
+            list_info = global_dialog_info[global_control_xref["properties"]]
+            set_list_selected_item(list_info.list_box, context.properties_index, on_method_selection)
+            list_info = global_dialog_info[global_control_xref["methods"]]
+            set_list_selected_item(list_info.list_box, context.methods_index, on_method_selection)
+            if context.class_methods_index and context.class_methods_index >= 0 then
+                list_info = global_dialog_info[global_control_xref["class_methods"]]
+                set_list_selected_item(list_info.list_box, context.class_methods_index, on_method_selection)
+            end
+        end
     end
 end
 
@@ -423,7 +453,6 @@ function on_close()
         finenv.RetainLuaState = false
     end
     if finenv.RetainLuaState then
-        require('mobdebug').start()
         local list_info = global_dialog_info[global_control_xref["classes"]]
         context.filter_classes_text = get_edit_text(list_info.search_text)
         context.classes_index = list_info.list_box:GetSelectedItem()
