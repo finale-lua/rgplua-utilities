@@ -17188,16 +17188,16 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterHandleCloseButtonPressed</name>
+      <name>RegisterInitWindow</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a10c2064584e0fa38640d50df28e1fdb4</anchor>
+      <anchor>a2a04daf21c47505b43b39bac5d81e84a</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterInitWindow</name>
+      <name>RegisterCloseWindow</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a2a04daf21c47505b43b39bac5d81e84a</anchor>
+      <anchor>aa99161b9d5491f62dbe768115d8d8a49</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
@@ -17258,16 +17258,16 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>CloseButtonPressed</name>
+      <name>InitWindow</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a33c9f7da438b43e154875333de948756</anchor>
+      <anchor>a6249cc15838787417119d3e7bd719454</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>InitWindow</name>
+      <name>CloseWindow</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a6249cc15838787417119d3e7bd719454</anchor>
+      <anchor>a95064c4c4c43fc2019fec781ff51812f</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function">
