@@ -13741,8 +13741,8 @@
       <type>bool</type>
       <name>MakeCellSingleClef</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>a16c13fe7a5b6656f631a4df566c19f7a</anchor>
-      <arglist>(const FCCellClefChange *pClefInfo)</arglist>
+      <anchor>a05147ddf2a1d7cdea937dbbf432407ad</anchor>
+      <arglist>(const FCCellClefChange *pClefInfo=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>FCCellClefChanges *</type>
