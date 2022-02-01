@@ -6,17 +6,59 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.56
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.0"
-    finaleplugin.Date = "November 27, 2021"
+    finaleplugin.Version = "1.2"
+    finaleplugin.Date = "January 20, 2022"
+    finaleplugin.Notes = [[
+        This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
+        the framework classes and their methods and properties. Use the edit text boxes at the top
+        to filter the classes and methods you are interested in. It also displays inherited methods and
+        properties with an asterisk (and shows which base class they come from). Clicking one of the documentation
+        links opens the documentation page for that item in a browser window.
+
+        For the documentation links to work properly and to display the correct function signatures, you need the
+        jwluatagfile.xml file that matches the version of RGP Lua you are using. You can obtain the latest versions
+        of RGP Lua, this script, and the corresponding jwluatagfile.xml from the download link:
+        
+        https://robertgpatterson.com/-fininfo/-rgplua/vershist.html
+        
+        For other versions, visit the Github repository:
+        
+        https://github.com/finale-lua/rgpluaclassbrowser
+
+        Normally the class browser only builds the class index once (since doing so takes several seconds).
+        It then retains its Lua state so that all future calls inherits the same class index. If there is a Lua
+        error or some other issue, you may wish to rebuild the index. In that case, click the "Close" button while
+        holding down either the Shift key or the Option key (Mac) or Alt key (Windows). It will then open the next
+        time with a fresh Lua state and rebuild the class index.
+    ]]
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
-package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
+if not finenv.RetainLuaState then
+    package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
+end
 
---global variables prevent garbage collection until script terminates
+--global variables prevent garbage collection until script terminates and releases Lua State
 
-eligible_classes = {}
-global_class_index = nil
+if not finenv.RetainLuaState then
+    eligible_classes = {}
+    global_class_index = nil
+    context = 
+    {
+        filter_classes_text = nil,
+        classes_index = nil,
+        filter_properties_text = nil,
+        properties_index = nil,
+        filter_methods_text = nil,
+        methods_index = nil,
+        class_methods_index = nil,
+        window_pos_x = nil,
+        window_pos_y = nil
+    }
+else
+    --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
+end
+
 global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
@@ -47,6 +89,15 @@ function set_text(control, text)
     local fcstring = finale.FCString()
     fcstring.LuaString = text
     control:SetText(fcstring)
+end
+
+function set_list_selected_item(list_control, index, selection_func)
+    if index >= 0 and list_control:GetCount() > index then
+        list_control:SetSelectedItem(index)
+        if finenv.UI():IsOnWindows() and type(selection_func) == "function" then
+            selection_func(list_control, index)
+        end
+    end
 end
     
 function method_info(class_info, method_name)
@@ -134,6 +185,9 @@ function update_list(list_control, source_table, search_text)
             end
         end
     end
+    if finenv.UI():IsOnWindows() then
+        set_list_selected_item(list_control, 0)
+    end
     return first_string
 end
 
@@ -154,6 +208,7 @@ function on_classname_changed(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
     current_class_name = new_classname
+    set_text(global_progress_label, current_class_name)
     local current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
     global_dialog_info[global_control_xref["properties"]].current_strings = current_properties
     global_dialog_info[global_control_xref["methods"]].current_strings = current_methods
@@ -162,7 +217,7 @@ function on_classname_changed(new_classname)
         local list_info = global_dialog_info[global_control_xref[v]]
         update_list(list_info.list_box, list_info.current_strings, get_edit_text(list_info.search_text))
         if finenv.UI():IsOnWindows() then
-            on_list_select(list_info.list_box)
+            on_method_selection(list_info.list_box, list_info.list_box:GetSelectedItem())
         end
     end
     changing_class_name_in_progress = false
@@ -227,14 +282,17 @@ function on_method_selection(list_control, index)
     hide_show_display_area(list_info, show)
 end
 
-function update_classlist(search_text)
-    if search_text == nil or search_text == "" then
-        search_text = "FC"
-    end
+function update_classlist()
     local list_id = global_control_xref["classes"]
     if nil == list_id then return end
     local list_info = global_dialog_info[list_id]
     if list_info then
+        local search_text = get_edit_text(list_info.search_text)
+        if search_text == list_info.current_search_text then return end
+        list_info.current_search_text = search_text
+        if search_text == nil or search_text == "" then
+            search_text = "FC"
+        end
         local first_string = update_list(list_info.list_box, eligible_classes, search_text)
         if finenv.UI():IsOnWindows() then
             local index = list_info.list_box:GetSelectedItem()
@@ -247,7 +305,7 @@ function update_classlist(search_text)
     end
 end
 
-pdk_framework_site = "https://robertgpatterson.com/-fininfo/-rgplua/pdkframework/"
+pdk_framework_site = "https://pdk.finalelua.com/"
 function launch_docsite(html_file, anchor)
     if html_file then
         local url = pdk_framework_site .. html_file
@@ -317,7 +375,6 @@ create_class_index = function()
     jwhandler.text = function(handler, text)
                 if text:find("FC") == 1 or text:find("__FC") == 1 then
                     if (counter % 25) == 0 then
-                        print("Parsing xml tags for " .. text .. "...")
                         set_text(global_progress_label, "Parsing xml tags for " .. text .. "...")
                         coroutine.yield()
                     end
@@ -359,9 +416,14 @@ create_class_index = function()
 end
 
 coroutine_build_class_index = coroutine.create(function()
-        eligible_classes = get_eligible_classes()
-        coroutine.yield()
-        global_class_index = create_class_index()
+        if not finenv.RetainLuaState then
+            eligible_classes = get_eligible_classes()
+            coroutine.yield()
+            global_class_index = create_class_index()
+            -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
+            -- up until we reach this statement:
+            finenv.RetainLuaState = true
+        end
     end)
 
 function on_timer(timer_id)
@@ -369,10 +431,42 @@ function on_timer(timer_id)
     if not coroutine.resume(coroutine_build_class_index) then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
-        --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
-        update_classlist()
         set_text(global_progress_label, "")
-        global_progress_label:SetVisible(false)
+        update_classlist()
+        if nil ~= context.classes_index then
+            local list_info = global_dialog_info[global_control_xref["classes"]]
+            set_list_selected_item(list_info.list_box, context.classes_index, on_class_selection)
+            list_info = global_dialog_info[global_control_xref["properties"]]
+            set_list_selected_item(list_info.list_box, context.properties_index, on_method_selection)
+            list_info = global_dialog_info[global_control_xref["methods"]]
+            set_list_selected_item(list_info.list_box, context.methods_index, on_method_selection)
+            if context.class_methods_index and context.class_methods_index >= 0 then
+                list_info = global_dialog_info[global_control_xref["class_methods"]]
+                set_list_selected_item(list_info.list_box, context.class_methods_index, on_method_selection)
+            end
+        end
+    end
+end
+
+function on_close()
+    if global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+        finenv.RetainLuaState = false
+    end
+    if finenv.RetainLuaState then
+        local list_info = global_dialog_info[global_control_xref["classes"]]
+        context.filter_classes_text = get_edit_text(list_info.search_text)
+        context.classes_index = list_info.list_box:GetSelectedItem()
+        list_info = global_dialog_info[global_control_xref["properties"]]
+        context.filter_properties_text = get_edit_text(list_info.search_text)
+        context.properties_index = list_info.list_box:GetSelectedItem()
+        list_info = global_dialog_info[global_control_xref["methods"]]
+        context.filter_methods_text = get_edit_text(list_info.search_text)
+        context.methods_index = list_info.list_box:GetSelectedItem()
+        list_info = global_dialog_info[global_control_xref["class_methods"]]
+        context.class_methods_index = list_info.list_box:GetSelectedItem()
+        global_dialog:StorePosition()
+        context.window_pos_x = global_dialog.StoredX
+        context.window_pos_y = global_dialog.StoredY
     end
 end
 
@@ -411,11 +505,14 @@ local create_dialog = function()
         return list
     end
     
-    local create_column = function(dialog, height, width, static_text, sel_func, search_func)
+    local create_column = function(dialog, height, width, static_text, sel_func, initial_text, search_func)
         y = 0
         local edit_text = nil
         if search_func then
             edit_text = create_edit(dialog, width, search_func)
+            if type(initial_text) == "string" then
+                set_text(edit_text, initial_text)
+            end
         end
         y = y + vert_sep
         create_static(dialog, static_text, width)
@@ -425,6 +522,7 @@ local create_dialog = function()
         {
             list_box = list_control,
             search_text = edit_text,
+            current_search_text = nil,
             fullname_static = nil,
             returns_label = nil,
             returns_static = nil,
@@ -493,12 +591,17 @@ local create_dialog = function()
         y = y + vert_sep
     end
     
-    local handle_edit_control = function(control)        
+    local handle_edit_control = function(control)
+        if 0 ~= global_timer_id then return end
         local list_id = global_control_xref[control:GetControlID()]
         if nil == list_id then return end
         local list_info = global_dialog_info[list_id]
         if list_info then
-            update_list(list_info.list_box, list_info.current_strings, get_edit_text(control))
+            local new_edit_text = get_edit_text(control)
+            if new_edit_text ~= list_info.current_search_text then
+                list_info.current_search_text = new_edit_text
+                update_list(list_info.list_box, list_info.current_strings, new_edit_text)
+            end
         end
     end
 
@@ -518,13 +621,20 @@ local create_dialog = function()
     dialog:RegisterInitWindow(
         function()
             global_dialog:SetTimer(global_timer_id, 1) -- timer can't be set until window is created
+            if nil ~= context.window_pos_x and nil ~= context.window_pos_y then
+                global_dialog:StorePosition()
+                global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
+                global_dialog:RestorePosition()
+            end
         end
     )
     dialog:RegisterHandleTimer(on_timer)
     
-    local classes_list = create_column(dialog, 400, col_width, "Classes:", on_class_selection,
+    local classes_list = create_column(dialog, 400, col_width, "Classes:", on_class_selection, context.filter_classes_text,
         function(control)
-            update_classlist(get_edit_text(control))
+            if global_timer_id == 0 then
+                update_classlist()
+            end
         end)
     global_control_xref["classes"] = classes_list:GetControlID()
     local class_doc = dialog:CreateButton(x, y)
@@ -546,12 +656,12 @@ local create_dialog = function()
     --Therefore on macOS this is the only text that shows in the label
     set_text(global_progress_label, "initializing...")
     
-    local properties_list = create_column(dialog, 170, col_width + col_extra, "Properties:", on_method_selection, handle_edit_control)
+    local properties_list = create_column(dialog, 170, col_width + col_extra, "Properties:", on_method_selection, context.filter_properties_text, handle_edit_control)
     global_control_xref["properties"] = properties_list:GetControlID()
     create_display_area (dialog, global_dialog_info[properties_list:GetControlID()], col_width + col_extra, true)
     x = x + col_width + col_extra + sep_width
     
-    local methods_list = create_column(dialog, 170, col_width + col_extra, "Methods:", on_method_selection, handle_edit_control)
+    local methods_list = create_column(dialog, 170, col_width + col_extra, "Methods:", on_method_selection, context.filter_methods_text, handle_edit_control)
     global_control_xref["methods"] = methods_list:GetControlID()
     create_display_area (dialog, global_dialog_info[methods_list:GetControlID()], col_width + col_extra)
     x = x + col_width + col_extra + sep_width
@@ -565,6 +675,9 @@ local create_dialog = function()
     local close_button = dialog:CreateCloseButton(x-70, bottom_y)
     close_button:SetWidth(70)
     set_text(close_button, "Close")
+    if dialog.RegisterCloseWindow then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
+        dialog:RegisterCloseWindow(on_close)
+    end
     return dialog
 end
 

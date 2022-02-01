@@ -9807,29 +9807,29 @@
       <type>float</type>
       <name>GetStoredX</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>aabf7ca611bd4c7f96828708c1b774558</anchor>
-      <arglist>()</arglist>
+      <anchor>a6b755de0e3a7a88cc6d9d03ae1783a84</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>float</type>
       <name>GetStoredY</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a65dba0e924d762856a2395104d12e40d</anchor>
-      <arglist>()</arglist>
+      <anchor>ac0dec923a8cd6ad961f1f6187b98eda7</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>float</type>
       <name>GetStoredWidth</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a4f6782f3600214802fc2e84736ab9562</anchor>
-      <arglist>()</arglist>
+      <anchor>a6e3c12635b0b07cf18f57cfc1fdb378c</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>float</type>
       <name>GetStoredHeight</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>aba436e985b6043670b7c4893e33b50ea</anchor>
-      <arglist>()</arglist>
+      <anchor>a0ed0016a02544fbf144e79326d7010d1</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -13741,8 +13741,8 @@
       <type>bool</type>
       <name>MakeCellSingleClef</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>a16c13fe7a5b6656f631a4df566c19f7a</anchor>
-      <arglist>(const FCCellClefChange *pClefInfo)</arglist>
+      <anchor>a05147ddf2a1d7cdea937dbbf432407ad</anchor>
+      <arglist>(const FCCellClefChange *pClefInfo=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>FCCellClefChanges *</type>
@@ -17195,6 +17195,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterCloseWindow</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>aa99161b9d5491f62dbe768115d8d8a49</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleTimer</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a85578f7b660f9d6b037568a8728388f1</anchor>
@@ -17254,6 +17261,13 @@
       <name>InitWindow</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a6249cc15838787417119d3e7bd719454</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CloseWindow</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a95064c4c4c43fc2019fec781ff51812f</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function">
@@ -19209,6 +19223,13 @@
       <anchorfile>class_f_c_enclosure.html</anchorfile>
       <anchor>ac9121ba21babbcab2d77670a04d724ad</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_enclosure.html</anchorfile>
+      <anchor>a1ab13a17bc456b32868630f5ce0384bb</anchor>
+      <arglist>(CMPER itemno) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24009,6 +24030,13 @@
       <anchorfile>class_f_c_guides.html</anchorfile>
       <anchor>a9f57d611e5b82667786eaca9e73e34cc</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAll</name>
+      <anchorfile>class_f_c_guides.html</anchorfile>
+      <anchor>a399f56c0cfe90b18ecb6d638bf0d5934</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>FCGuide *</type>
