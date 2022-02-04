@@ -157,7 +157,7 @@ function update_list(list_control, source_table, search_text)
     local first_string = nil
     if type(source_table) == "table" then
         for k, v in pairsbykeys(source_table) do
-            if include_all or k:find(search_text) == 1 then
+            if include_all or string.find(string.lower(k), string.lower(search_text)) then
                 local fcstring = finale.FCString()
                 fcstring.LuaString = k
                 if type(v) == "table" then
