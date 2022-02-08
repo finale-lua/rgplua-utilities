@@ -153,11 +153,13 @@ end
 
 function update_list(list_control, source_table, search_text)
     list_control:Clear()
-    local include_all = search_text == nil or search_text == ""
+    search_text = search_text or ""
+    local include_all = search_text == ""
+    local search_case_lower = string.lower(search_text)
     local first_string = nil
     if type(source_table) == "table" then
         for k, v in pairsbykeys(source_table) do
-            if include_all or string.find(string.lower(k), string.lower(search_text)) then
+            if include_all or string.find(string.lower(k), search_case_lower) then
                 local fcstring = finale.FCString()
                 fcstring.LuaString = k
                 if type(v) == "table" then
