@@ -37822,6 +37822,324 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCPartStaffVoicing</name>
+    <filename>class_f_c_part_staff_voicing.html</filename>
+    <base>__FCNoInciOther</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>PARTWILLDISPLAY</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_ALLNOTES_IN_SINGLE_LAYER</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a793a5ca05213ffa93164288a45eff159</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_SELECTED_NOTES_MULTIPLE_LAYERS</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a3560665bde769d9e05e3f8fe962654df</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>VOICINGLAYERRULES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_ALL_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18aaa5088e0906fa6b8e941dd0748703721</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_TOP_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a0e535c89e3f3ecfe011b52c77d6e25cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_BOTTOM_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18ad86936e9291e9edfda4944afbc2cb9c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_SELECTED_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a81b4ed4f98ff7368f788a0bbe9f5af30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>VOICINGCOUNTNOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_TOP</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220aae58441cd004b57aed891d8a41babba0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_BOTTOM</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220a1d32ed588ed1b010fc89dd9ab15edacf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_ALLNOTES_IN_SINGLE_LAYER</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a793a5ca05213ffa93164288a45eff159</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_SELECTED_NOTES_MULTIPLE_LAYERS</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a3560665bde769d9e05e3f8fe962654df</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_ALL_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18aaa5088e0906fa6b8e941dd0748703721</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_TOP_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a0e535c89e3f3ecfe011b52c77d6e25cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_BOTTOM_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18ad86936e9291e9edfda4944afbc2cb9c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_SELECTED_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a81b4ed4f98ff7368f788a0bbe9f5af30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_TOP</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220aae58441cd004b57aed891d8a41babba0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_BOTTOM</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220a1d32ed588ed1b010fc89dd9ab15edacf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a1cb5d30ea71c9543a2d9eb9db7679fab</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ab16d9ade0dc7ca809d65f7949eaf6575</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCPartStaffVoicing</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>acc3d9c8c427ea8a7808de719373e7b5c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIsVoicingEnabled</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ab364aa15f94077778724b5c36c53db60</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIsVoicingEnabled</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a13ff866c51d48818d844db0252a31991</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>PARTWILLDISPLAY</type>
+      <name>GetWillDisplay</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af4d63fcdec3572703c991c246b865c0c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWillDisplay</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a2860d2fe75743e0a378f7cd16beb6f03</anchor>
+      <arglist>(PARTWILLDISPLAY value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSingleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>aaf681282980b819be2cd9ab0097ea9e0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a950e5bf69941db4b07dae5a4e7525a3c</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>VOICINGLAYERRULES</type>
+      <name>GetSingleLayerDisplayRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad7955970753cd93a0426f3fb2dbe556a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerDisplayRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad8bc80dab916f3a56e16a43b38aaf0f9</anchor>
+      <arglist>(VOICINGLAYERRULES value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetMultipleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af8f584d37528587ee8f2b9d083c6e723</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMultipleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>adbdce0e70ff0f1d00bdf1b2ff72b9cfc</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect1st</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a38351386a066a3de02e7b4bf57196393</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect1st</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a704de65fa6e588889e9d89a88185fb72</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect2nd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a106962c177f7ba595c13ae0c312deeb7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect2nd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad4a28fa9ef32018aa464ed0c90efcb0a</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect3rd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a000290cfb2b4f846b5ba183c4b8c67a9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect3rd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a5fa1f6a1141b88cec6f35d1d652cbe94</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect4th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a425b3a74f28338fe4abb6c9ed8660cac</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect4th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>aa2f1342bbc8f370b2d222fa8f8bbcc15</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect5th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a42ceea233092e231f38a382d6744fc39</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect5th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a88e2bcc6a99eb1192b1fdca12ff1205f</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>VOICINGCOUNTNOTES</type>
+      <name>GetCountNotesRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a147991ebf7a1074b4bc921f36655615e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCountNotesRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad1c1c532b10e03983721069c3c498ffe</anchor>
+      <arglist>(VOICINGCOUNTNOTES value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeSingleNotePassages</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a9113074ae6d6ee93f6170ed682728948</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeSingleNotePassages</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a3c1bbbc7ebfbf09d529d7a9fed1f77cd</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DebugDump</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a8a7ce540ad647130a1f931684e5ae98e</anchor>
+      <arglist>() override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCPDFPage</name>
     <filename>class_f_c_p_d_f_page.html</filename>
     <base>__FCBase</base>
@@ -54917,6 +55235,7 @@
     <class kind="class">FCMetatoolAssignment</class>
     <class kind="class">FCStaffSystemsLookup</class>
     <class kind="class">FCPart</class>
+    <class kind="class">FCPartStaffVoicing</class>
     <class kind="class">FCPDFPage</class>
     <class kind="class">FCPDFWriter</class>
     <class kind="class">__FCPrefsBase</class>
