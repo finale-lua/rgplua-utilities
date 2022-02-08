@@ -47728,6 +47728,13 @@
     </member>
     <member kind="function">
       <type>const char *</type>
+      <name>GetLuaString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ae69a43f6e984545f566a435dad049d70</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
       <name>GetUTF8String</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a47eab741bc102d5ccdb5aa2fdd116bf4</anchor>
@@ -47977,6 +47984,13 @@
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a58ed5724014e79f1d7b0304b4538b475</anchor>
       <arglist>(const char *pszBuffer, int maxchars=-1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLuaString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a067a72353fcc8aa3b2f7cd263401564d</anchor>
+      <arglist>(const char *pszBuffer)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
