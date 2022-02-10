@@ -17465,6 +17465,13 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetUseAfterStartTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a042fcce3f25286d149f5afb868e79d5e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetUseAfterStartTextOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
@@ -17472,11 +17479,25 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>SetAfterStartTextOffset</name>
+      <type>Evpu16</type>
+      <name>GetStartLineHorizontalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a12f1cb0dda9ab466f1889faf12787775</anchor>
+      <anchor>a35cbab4c6f913e4ef408053fa490b501</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStartLineHorizontalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>aa6cce609a601c0a1825d2b58be67d8b8</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseBeforeEndTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a909f5a2111d43d4e9e8e2e518563a65b</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17486,25 +17507,60 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>SetUseAfterContinuedTextOffset</name>
+      <type>Evpu16</type>
+      <name>GetEndLineHorizontalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a687fd6c728a4b6157b546d6ea3110406</anchor>
-      <arglist>(bool state)</arglist>
+      <anchor>a8fe265ec40f7ae6a66316dfd5df92446</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetAfterContinuedTextOffset</name>
+      <name>SetEndLineHorizontalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a2df5468765d63d0380effb6fcbba5670</anchor>
+      <anchor>a6453979c6eac57f1414650dc51c62a41</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseAfterContinuationTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a5928f4bced7c135e6ba7efdc9b860e72</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseAfterContinuationTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>accf91e07b3f0c8998088faa032a14f5b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetContinuationLineHorizontalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a22c851bdb878131d77672102121a8b07</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetContinuationLineHorizontalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>ae413bbb146e92e9291e6c5c4f207d889</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetLineVerticalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>ad3bc3a4ea869937b0409bf740a44a79f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetLineVerticalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a46366eafb5248c71ed5b95bfe8b10abc</anchor>
-      <arglist>(twobyte value)</arglist>
+      <anchor>ab60ff1322f0bf7ca5f8e0b9483c26f50</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
