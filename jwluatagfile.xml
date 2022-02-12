@@ -29913,6 +29913,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
+      <anchor>a5e26791e1c3819606526786aaa86a1d0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetShapeEndAdjust</name>
       <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
@@ -30016,6 +30023,13 @@
       <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
       <anchor>aad8cd15a76134d7a8baebee18dacae09</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
+      <anchor>a5aa04bc8f18ce4fb65b3af8d820bf536</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -30156,6 +30170,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
+      <anchor>a62da394c6f4da54e7f291ef2ea5102c4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetStartNumberingAt</name>
       <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
@@ -30210,6 +30231,13 @@
       <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
       <anchor>abc1efff5c1d4897ea10a44d8db12b189</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
+      <anchor>aa004dbb7b617a2c62cca3aeef86eebee</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
