@@ -32970,6 +32970,27 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetDownstem2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a85ebf01338ff3fc35b7403b7133c9745</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUpstem2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a25a3ea7420fe6be8b2ef65bd239a16e9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUpstemSplit</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a8b5b8e4f84e8bd849fbb871f689b0a1d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>eNoteID</type>
       <name>GetNoteID</name>
       <anchorfile>class_f_c_note.html</anchorfile>
@@ -33093,6 +33114,13 @@
       <name>SetCrossStaff</name>
       <anchorfile>class_f_c_note.html</anchorfile>
       <anchor>a22cf7a17c4e01d74c85ceb394a3d6f68</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUpstemSplit</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a836c55b377a55de5a801f090d03a342d</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -33373,6 +33401,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetSplitRest</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a6b4593287f6be1c705219eed6dfefa4a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetVoice2</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a83c02f3cdcd0a7ec08a5d403ea2a75b5</anchor>
@@ -33432,6 +33467,13 @@
       <name>SetFreezeStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>ae522ec9104e7bb89c500766cab984fb2</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSplitStem</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>abff95dd1f175be8da21ef3d1ad550765</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -33590,6 +33632,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetSplitStem</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a0e08bb1888e0b28b24de231630654f5c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetLegality</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a5a87190ebe2fe57e680a596c139ebea2</anchor>
@@ -33649,6 +33698,13 @@
       <name>GetGraceNote</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a7310a5b757143509a3a866f4599dc2e5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSplitRest</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>ae6a9d635a6b52000c0794dcaad9e3d08</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
