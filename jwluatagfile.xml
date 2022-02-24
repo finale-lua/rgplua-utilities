@@ -10691,7 +10691,7 @@
       <type>ARTSLUR_INTERACTION</type>
       <name>GetSlurInteraction</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a3125cb9c65396ff1e81a182b8257dc29</anchor>
+      <anchor>aa5dbc1a44b2e81585d8dbec8b33f3d9b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -17465,6 +17465,13 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetUseAfterStartTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a042fcce3f25286d149f5afb868e79d5e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetUseAfterStartTextOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
@@ -17472,11 +17479,25 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>SetAfterStartTextOffset</name>
+      <type>Evpu16</type>
+      <name>GetStartLineHorizontalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a12f1cb0dda9ab466f1889faf12787775</anchor>
+      <anchor>a35cbab4c6f913e4ef408053fa490b501</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStartLineHorizontalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>aa6cce609a601c0a1825d2b58be67d8b8</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseBeforeEndTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a909f5a2111d43d4e9e8e2e518563a65b</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17486,25 +17507,60 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>SetUseAfterContinuedTextOffset</name>
+      <type>Evpu16</type>
+      <name>GetEndLineHorizontalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a687fd6c728a4b6157b546d6ea3110406</anchor>
-      <arglist>(bool state)</arglist>
+      <anchor>a8fe265ec40f7ae6a66316dfd5df92446</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetAfterContinuedTextOffset</name>
+      <name>SetEndLineHorizontalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a2df5468765d63d0380effb6fcbba5670</anchor>
+      <anchor>a6453979c6eac57f1414650dc51c62a41</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseAfterContinuationTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a5928f4bced7c135e6ba7efdc9b860e72</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseAfterContinuationTextOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>accf91e07b3f0c8998088faa032a14f5b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetContinuationLineHorizontalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>a22c851bdb878131d77672102121a8b07</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetContinuationLineHorizontalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>ae413bbb146e92e9291e6c5c4f207d889</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetLineVerticalOffset</name>
+      <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
+      <anchor>ad3bc3a4ea869937b0409bf740a44a79f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetLineVerticalOffset</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a46366eafb5248c71ed5b95bfe8b10abc</anchor>
-      <arglist>(twobyte value)</arglist>
+      <anchor>ab60ff1322f0bf7ca5f8e0b9483c26f50</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -29857,6 +29913,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
+      <anchor>a5e26791e1c3819606526786aaa86a1d0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetShapeEndAdjust</name>
       <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
@@ -29960,6 +30023,13 @@
       <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
       <anchor>aad8cd15a76134d7a8baebee18dacae09</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
+      <anchor>a5aa04bc8f18ce4fb65b3af8d820bf536</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -30100,6 +30170,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
+      <anchor>a62da394c6f4da54e7f291ef2ea5102c4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetStartNumberingAt</name>
       <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
@@ -30154,6 +30231,13 @@
       <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
       <anchor>abc1efff5c1d4897ea10a44d8db12b189</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStretchHorizontally</name>
+      <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
+      <anchor>aa004dbb7b617a2c62cca3aeef86eebee</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -32886,6 +32970,27 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetDownstem2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a85ebf01338ff3fc35b7403b7133c9745</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUpstem2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a25a3ea7420fe6be8b2ef65bd239a16e9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUpstemSplit</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a8b5b8e4f84e8bd849fbb871f689b0a1d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>eNoteID</type>
       <name>GetNoteID</name>
       <anchorfile>class_f_c_note.html</anchorfile>
@@ -33009,6 +33114,13 @@
       <name>SetCrossStaff</name>
       <anchorfile>class_f_c_note.html</anchorfile>
       <anchor>a22cf7a17c4e01d74c85ceb394a3d6f68</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUpstemSplit</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a836c55b377a55de5a801f090d03a342d</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -33289,6 +33401,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetSplitRest</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a6b4593287f6be1c705219eed6dfefa4a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetVoice2</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a83c02f3cdcd0a7ec08a5d403ea2a75b5</anchor>
@@ -33348,6 +33467,13 @@
       <name>SetFreezeStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>ae522ec9104e7bb89c500766cab984fb2</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSplitStem</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>abff95dd1f175be8da21ef3d1ad550765</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -33506,6 +33632,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetSplitStem</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a0e08bb1888e0b28b24de231630654f5c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetLegality</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a5a87190ebe2fe57e680a596c139ebea2</anchor>
@@ -33565,6 +33698,13 @@
       <name>GetGraceNote</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a7310a5b757143509a3a866f4599dc2e5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSplitRest</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>ae6a9d635a6b52000c0794dcaad9e3d08</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -37819,6 +37959,324 @@
       <anchorfile>class_f_c_part_scope_prefs.html</anchorfile>
       <anchor>af1fd9ca8037e743620b3fbc192083523</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCPartStaffVoicing</name>
+    <filename>class_f_c_part_staff_voicing.html</filename>
+    <base>__FCNoInciOther</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>PARTWILLDISPLAY</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_ALLNOTES_IN_SINGLE_LAYER</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a793a5ca05213ffa93164288a45eff159</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_SELECTED_NOTES_MULTIPLE_LAYERS</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a3560665bde769d9e05e3f8fe962654df</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>VOICINGLAYERRULES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_ALL_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18aaa5088e0906fa6b8e941dd0748703721</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_TOP_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a0e535c89e3f3ecfe011b52c77d6e25cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_BOTTOM_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18ad86936e9291e9edfda4944afbc2cb9c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_SELECTED_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a81b4ed4f98ff7368f788a0bbe9f5af30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>VOICINGCOUNTNOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_TOP</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220aae58441cd004b57aed891d8a41babba0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_BOTTOM</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220a1d32ed588ed1b010fc89dd9ab15edacf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_ALLNOTES_IN_SINGLE_LAYER</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a793a5ca05213ffa93164288a45eff159</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PARTDISP_SELECTED_NOTES_MULTIPLE_LAYERS</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a47fcda74c99cd1d05dfb43ceed8fb155a3560665bde769d9e05e3f8fe962654df</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_ALL_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18aaa5088e0906fa6b8e941dd0748703721</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_TOP_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a0e535c89e3f3ecfe011b52c77d6e25cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_BOTTOM_NOTE</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18ad86936e9291e9edfda4944afbc2cb9c9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VOICINGLAYERRULE_SELECTED_NOTES</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af5741a270d4c599052e9213b500cab18a81b4ed4f98ff7368f788a0bbe9f5af30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_TOP</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220aae58441cd004b57aed891d8a41babba0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>VCOUNTNOTES_FROM_THE_BOTTOM</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a63f43a30ca75f54bd273cb4054ab8220a1d32ed588ed1b010fc89dd9ab15edacf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a1cb5d30ea71c9543a2d9eb9db7679fab</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ab16d9ade0dc7ca809d65f7949eaf6575</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCPartStaffVoicing</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>acc3d9c8c427ea8a7808de719373e7b5c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIsVoicingEnabled</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ab364aa15f94077778724b5c36c53db60</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIsVoicingEnabled</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a13ff866c51d48818d844db0252a31991</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>PARTWILLDISPLAY</type>
+      <name>GetWillDisplay</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af4d63fcdec3572703c991c246b865c0c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWillDisplay</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a2860d2fe75743e0a378f7cd16beb6f03</anchor>
+      <arglist>(PARTWILLDISPLAY value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSingleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>aaf681282980b819be2cd9ab0097ea9e0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a950e5bf69941db4b07dae5a4e7525a3c</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>VOICINGLAYERRULES</type>
+      <name>GetSingleLayerDisplayRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad7955970753cd93a0426f3fb2dbe556a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerDisplayRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad8bc80dab916f3a56e16a43b38aaf0f9</anchor>
+      <arglist>(VOICINGLAYERRULES value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetMultipleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>af8f584d37528587ee8f2b9d083c6e723</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMultipleLayerNumber</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>adbdce0e70ff0f1d00bdf1b2ff72b9cfc</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect1st</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a38351386a066a3de02e7b4bf57196393</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect1st</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a704de65fa6e588889e9d89a88185fb72</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect2nd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a106962c177f7ba595c13ae0c312deeb7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect2nd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad4a28fa9ef32018aa464ed0c90efcb0a</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect3rd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a000290cfb2b4f846b5ba183c4b8c67a9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect3rd</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a5fa1f6a1141b88cec6f35d1d652cbe94</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect4th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a425b3a74f28338fe4abb6c9ed8660cac</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect4th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>aa2f1342bbc8f370b2d222fa8f8bbcc15</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSingleLayerSelect5th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a42ceea233092e231f38a382d6744fc39</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSingleLayerSelect5th</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a88e2bcc6a99eb1192b1fdca12ff1205f</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>VOICINGCOUNTNOTES</type>
+      <name>GetCountNotesRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a147991ebf7a1074b4bc921f36655615e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCountNotesRule</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>ad1c1c532b10e03983721069c3c498ffe</anchor>
+      <arglist>(VOICINGCOUNTNOTES value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeSingleNotePassages</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a9113074ae6d6ee93f6170ed682728948</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeSingleNotePassages</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a3c1bbbc7ebfbf09d529d7a9fed1f77cd</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DebugDump</name>
+      <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
+      <anchor>a8a7ce540ad647130a1f931684e5ae98e</anchor>
+      <arglist>() override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -47410,6 +47868,13 @@
     </member>
     <member kind="function">
       <type>const char *</type>
+      <name>GetLuaString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ae69a43f6e984545f566a435dad049d70</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
       <name>GetUTF8String</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a47eab741bc102d5ccdb5aa2fdd116bf4</anchor>
@@ -47659,6 +48124,13 @@
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a58ed5724014e79f1d7b0304b4538b475</anchor>
       <arglist>(const char *pszBuffer, int maxchars=-1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLuaString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a067a72353fcc8aa3b2f7cd263401564d</anchor>
+      <arglist>(const char *pszBuffer)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -54917,6 +55389,7 @@
     <class kind="class">FCMetatoolAssignment</class>
     <class kind="class">FCStaffSystemsLookup</class>
     <class kind="class">FCPart</class>
+    <class kind="class">FCPartStaffVoicing</class>
     <class kind="class">FCPDFPage</class>
     <class kind="class">FCPDFWriter</class>
     <class kind="class">__FCPrefsBase</class>
