@@ -37934,6 +37934,13 @@
       <anchor>a9e40b170ea979fc60f96472540f586b0</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>GenerateLinkedParts</name>
+      <anchorfile>class_f_c_parts.html</anchorfile>
+      <anchor>a39a8f2ac15460b2b2478a172f2ec3746</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCPartScopePrefs</name>
