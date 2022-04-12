@@ -25215,6 +25215,13 @@
       <anchor>a8bbe25d77df28fd4d29772c4060d6a7b</anchor>
       <arglist>(bool state)</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static twobyte</type>
+      <name>GetMaxLayers</name>
+      <anchorfile>class_f_c_layer_prefs.html</anchorfile>
+      <anchor>a254deed4c1418808e6ca1a944c36ddfd</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCLuaIterator</name>
