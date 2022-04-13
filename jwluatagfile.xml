@@ -37936,9 +37936,9 @@
     </member>
     <member kind="function" static="yes">
       <type>static bool</type>
-      <name>GenerateLinkedParts</name>
+      <name>GenerateParts</name>
       <anchorfile>class_f_c_parts.html</anchorfile>
-      <anchor>a39a8f2ac15460b2b2478a172f2ec3746</anchor>
+      <anchor>a5424737d07ff0f9dc7afb919cb9e7f0c</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
