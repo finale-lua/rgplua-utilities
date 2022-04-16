@@ -45269,6 +45269,73 @@
     <name>FCStaff</name>
     <filename>class_f_c_staff.html</filename>
     <base>__FCStaffBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>STAFFAUTONUMBER_STYLE</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba0cec2e8d4b3f71c060d327e9b66b9dc1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ROMAN_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baf7d9e168125a168bf5d25d586f21aa68</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ORDINAL_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba83160a2b9b8cdfa0d048fcaa773f27b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ALPHA_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baca12cc1f21a97aa9b59f6ab28128fa16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba74a28371b8f83b36875e0a0d1d61c0f1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba0cec2e8d4b3f71c060d327e9b66b9dc1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ROMAN_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baf7d9e168125a168bf5d25d586f21aa68</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ORDINAL_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba83160a2b9b8cdfa0d048fcaa773f27b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ALPHA_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baca12cc1f21a97aa9b59f6ab28128fa16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba74a28371b8f83b36875e0a0d1d61c0f1</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -45319,11 +45386,25 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>STAFFAUTONUMBER_STYLE</type>
+      <name>GetAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>aafedc387f9002633d21dee926b846106</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetUseAutoNumberingStyle</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
       <anchor>ac9061d7d1cfa0cd443aa91350e236529</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>a1fa3aaef2b9550e2adfdd146dff2d368</anchor>
+      <arglist>(STAFFAUTONUMBER_STYLE value)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
