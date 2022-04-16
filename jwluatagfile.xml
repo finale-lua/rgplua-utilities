@@ -45312,6 +45312,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetUseAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>a5fef7f3c21daadf1c9ffe882d098b928</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ac9061d7d1cfa0cd443aa91350e236529</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>int</type>
       <name>CalcPercussionLayoutID</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
