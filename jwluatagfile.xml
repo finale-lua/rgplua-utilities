@@ -12214,6 +12214,13 @@
       <anchor>a8fff8db534546e47e696311d4b5066aa</anchor>
       <arglist>(bool leftdirection)</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLeftDirection</name>
+      <anchorfile>class_f_c_broken_beam_mod.html</anchorfile>
+      <anchor>a70eed17cbca4e976590740dce62de432</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCBrokenBeamMods</name>
@@ -55438,6 +55445,7 @@
     <class kind="class">FCCustomStemMod</class>
     <class kind="class">FCBeamMod</class>
     <class kind="class">FCPerformanceMod</class>
+    <class kind="class">FCBrokenBeamMod</class>
     <class kind="class">FCTablatureNoteMod</class>
     <class kind="class">__FCGlobals</class>
     <class kind="class">FCClefDef</class>
