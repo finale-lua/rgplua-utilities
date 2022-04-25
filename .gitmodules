@@ -1,3 +1,0 @@
-[submodule "xml2lua"]
-	path = xml2lua
-	url = git@github.com:manoelcampos/xml2lua.git
