@@ -365,56 +365,39 @@ get_eligible_classes = function()
 end
 
 create_class_index = function()
-    local xml2lua = require("xml2lua")
-    local handler = require("xmlhandler.tree")
-
-    set_text(global_progress_label, "Parsing xml for class and method info...")
-    coroutine.yield()
-
-    local counter = 0
-    local jwhandler = handler:new()
-    local org_text = jwhandler.text
-    jwhandler.text = function(handler, text)
-                if text:find("FC") == 1 or text:find("__FC") == 1 then
-                    if (counter % 25) == 0 then
-                        set_text(global_progress_label, "Parsing xml tags for " .. text .. "...")
-                        coroutine.yield()
-                    end
-                    counter = counter + 1
-                end
-                return org_text(handler, text)
+    local file, e = io.open(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml", 'r')
+    if io.type(file) ~= 'file' then
+        finenv.UI():AlertError(e, NULL)
+    end
+    local xml = file:read('*a')
+    file:close()
+    local class_collection = {}
+    for class_block in string.gmatch(xml, '<compound kind=%"class%">.-</compound>') do
+        local class_info = {_attr = {kind = 'class'}, __members = {}}
+        class_info.name = string.match(class_block, '<name>(.-)</name>')
+        class_info.filename = string.match(class_block, '<filename>(.-)</filename>')
+        class_info.base = string.match(class_block, '<base>(.-)</base>')
+        for member_block in string.gmatch(class_block, '<member.-</member>') do
+            local kind = string.match(member_block, 'kind=%"(%w+)%"')
+            if kind == 'function' then
+                local member_info = {_attr = {kind = 'function'}}
+                member_info.type = string.match(member_block, '<type>(.-)</type>')
+                member_info.name = string.match(member_block, '<name>(.-)</name>')
+                member_info.anchorfile = string.match(member_block, '<anchorfile>(.-)</anchorfile>')
+                member_info.anchor = string.match(member_block, '<anchor>(.-)</anchor>')
+                member_info._attr.protection = string.match(member_block, 'protection=%"(%w+)%"')
+                member_info._attr.static = string.match(member_block, 'static=%"(%w+)%"')
+                member_info._attr.virtualness = string.match(member_block, 'virtualness=%"(%w+)%"')
+                member_info.arglist = string.match(member_block, '<arglist>(%([^\n]*%)%s*.-)</arglist>')
+                class_info.__members[member_info.name] = member_info
             end
-    local jwparser = xml2lua.parser(jwhandler)
-    -- parsing the xml croaks the debugger because of the size of the xml--don't try to debug it
-    jwparser:parse(xml2lua.loadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml"))
-
-    set_text(global_progress_label, "Indexing class and method info...")
-    coroutine.yield()
-
-    local jwlua_compounds = jwhandler.root.tagfile.compound
-    local temp_class_index = {}
-    for i1, t1 in pairs(jwlua_compounds) do
-        if t1._attr and t1._attr.kind == "class" then
-            set_text(global_progress_label, "Indexing " .. t1.name .. "...")
-            temp_class_index[t1.name] = t1
-            local members_index = {}
-            if t1.member then
-                if #t1.member <= 1 then
-                    if t1.member._attr and t1.member._attr.kind == "function" then
-                        members_index[t1.member.name] = t1.member
-                    end
-                elseif #t1.member > 1 then
-                    for i2, t2 in pairs(t1.member) do
-                        if t2._attr and t2._attr.kind == "function" then
-                            members_index[t2.name] = t2
-                        end
-                    end
-                end
-            end
-            temp_class_index[t1.name].__members = members_index
+        end
+        class_collection[class_info.name] = class_info
+        if finenv.UI():IsOnWindows() then
+            set_text(global_progress_label, "Indexing " .. class_info.name .. "...")
         end
     end
-    return temp_class_index
+    return class_collection
 end
 
 coroutine_build_class_index = coroutine.create(function()

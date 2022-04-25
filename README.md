@@ -7,4 +7,4 @@ As a modeless dialog, the minimum version of RGP Lua required is v0.56. Beyond t
 
 The current release of both  `rpgluaclassbrowser.lua` and `jwluatagfile.xml` are available at the [download site](https://robertgpatterson.com/-fininfo/-rgplua/rgplua.html) for RGP Lua.
 
-The `jwluatagfile.xml` file and the `xml2lua` subfolder should be placed inside the same folder as `rgpluaclassbrowser.lua`. A simple way to get started with it is to download the repository to any folder on your computer, along with the `xml2lua` submodule, and point RGP Lua to the `rgpluaclassbrowser.lua` script. After restarting Finale it appears in your RGP Lua menu.
+The `jwluatagfile.xml` file should be placed inside the same folder as `rgpluaclassbrowser.lua`. A simple way to get started with it is to download the repository to any folder on your computer and point RGP Lua to the `rgpluaclassbrowser.lua` script. After restarting Finale it appears in your RGP Lua menu.
