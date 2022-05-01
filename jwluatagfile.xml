@@ -19603,6 +19603,13 @@
       <anchor>aeebbba2512dd1a3c0382831e0a3ea839</anchor>
       <arglist>(FCNoteEntry *pConnectEntry=NULL)</arglist>
     </member>
+    <member kind="function">
+      <type>FCTieMod *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_end_tie_mods.html</anchorfile>
+      <anchor>aab187be90f9b22c46f4579c4660310ca</anchor>
+      <arglist>(int index)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCEntryAlterMod</name>
@@ -47236,6 +47243,13 @@
       <anchor>a880b5162301c0c37c2a1262915564d92</anchor>
       <arglist>(FCNoteEntry *pConnectEntry=NULL)</arglist>
     </member>
+    <member kind="function">
+      <type>FCTieMod *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_start_tie_mods.html</anchorfile>
+      <anchor>a46a8bf6100c9c06488964ce22ae0f8b8</anchor>
+      <arglist>(int index)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCStaves</name>
@@ -51767,22 +51781,50 @@
       <type>bool</type>
       <name>IsStartTie</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>a9b6ee9a3164131e1604ddd88d7eaf4eb</anchor>
-      <arglist>()</arglist>
+      <anchor>a13021bd654baecfb5960e52423d52034</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsStartPointActive</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a751511459ef863c0e1fe932ffe77fccb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsEndPointActive</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a837ecf40d0435dd29312ae23d2b73004</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetStartVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>ae3706e6339ca6a4d27c5567e29d10393</anchor>
-      <arglist>()</arglist>
+      <anchor>a7f9541aab6ae600fccc72bb65b4b9d8d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetStartHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a136b52be9fa30e5bc509b7d050df1b3f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetEndVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>a4ff0402865f8144a42ea92285971d075</anchor>
-      <arglist>()</arglist>
+      <anchor>a0b6a057eb9ade33f8b940af0fdba50ff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetEndHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aa6f66aa6dd6e39897aef37b8c092a9e8</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -51793,9 +51835,23 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetStartHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a66a68b1559373fe6991ba4a7e12647ba</anchor>
+      <arglist>(twobyte pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetEndVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a818452a5a7bbb4ab0edfe663f96ac030</anchor>
+      <arglist>(twobyte pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEndHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a16e254234705d398b7a312d383ab0ddc</anchor>
       <arglist>(twobyte pos)</arglist>
     </member>
     <member kind="function">
@@ -55445,6 +55501,7 @@
     <class kind="class">FCCustomStemMod</class>
     <class kind="class">FCBeamMod</class>
     <class kind="class">FCPerformanceMod</class>
+    <class kind="class">FCTieMod</class>
     <class kind="class">FCBrokenBeamMod</class>
     <class kind="class">FCTablatureNoteMod</class>
     <class kind="class">__FCGlobals</class>
@@ -55581,6 +55638,8 @@
     <class kind="class">FCAccidentalMods</class>
     <class kind="class">FCPercussionNoteMods</class>
     <class kind="class">FCTablatureNoteMods</class>
+    <class kind="class">FCStartTieMods</class>
+    <class kind="class">FCEndTieMods</class>
     <class kind="class">FCDotMods</class>
     <class kind="class">FCCrossStaffMods</class>
     <class kind="class">FCPerformanceMods</class>
