@@ -51756,6 +51756,49 @@
     <name>FCTieMod</name>
     <filename>class_f_c_tie_mod.html</filename>
     <base>__FCEntryDetailNoteID</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>TIEMOD_DIRECTION</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_AUTOMATIC</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331ad6b35cbe4661482bf33454e91f4bc097</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_OVER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a825708e3963f55230ad408266b3e8d51</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_UNDER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_AUTOMATIC</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331ad6b35cbe4661482bf33454e91f4bc097</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_OVER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a825708e3963f55230ad408266b3e8d51</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_UNDER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -51827,6 +51870,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetTieDirection</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a4c403b539febf2d507003e2e0c51c03f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetStartVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
@@ -51853,6 +51903,13 @@
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a16e254234705d398b7a312d383ab0ddc</anchor>
       <arglist>(twobyte pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTieDirection</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>af88e0d21e9ce46e14bbc13c835f612ad</anchor>
+      <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
