@@ -14186,6 +14186,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_cell_text.html</anchorfile>
+      <anchor>a239b1eb72d67571007160744fbcff3bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetMeasurePos</name>
       <anchorfile>class_f_c_cell_text.html</anchorfile>
@@ -14198,6 +14205,13 @@
       <anchorfile>class_f_c_cell_text.html</anchorfile>
       <anchor>a8be0a00b64dbe0a189b416f271b43fd7</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_cell_text.html</anchorfile>
+      <anchor>a8e5ab77f2620ed94a52ffcf080f5e475</anchor>
+      <arglist>(bool visible)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
