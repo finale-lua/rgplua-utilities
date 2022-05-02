@@ -51758,6 +51758,31 @@
     <base>__FCEntryDetailNoteID</base>
     <member kind="enumeration">
       <type></type>
+      <name>TIEMOD_SELECTOR</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_DEFAULT</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a1e6196c4475ff8015068b9cb0be004fa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_ON</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a3dd7fbb18f764a068843ac18d1351821</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_OFF</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a9956bb475800e0467e3c8afb457fa37a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
       <name>TIEMOD_DIRECTION</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a8fd213af279301513c31488ace6b8331</anchor>
@@ -51779,6 +51804,24 @@
       <name>TIEMODDIR_UNDER</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_DEFAULT</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a1e6196c4475ff8015068b9cb0be004fa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_ON</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a3dd7fbb18f764a068843ac18d1351821</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_OFF</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a9956bb475800e0467e3c8afb457fa37a</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -51842,6 +51885,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>IsContourActive</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a9fc4aa6a38556eb77f16ff38485ca521</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetStartVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
@@ -51870,10 +51920,73 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetFixedInsetStyle</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a90f2158ad816ba404e955fc74e7e2ee7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetLeftHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a860af9f19a90df39f7abf5cc99d01227</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRightHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a4c830a9e3922c4b14e57e7c0f7a7c41d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetLeftInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a6a7f4823cea70537a4c80220f8ced06b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRightInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a65193dce427816ada294613c8b6b11cd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetTieDirection</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a4c403b539febf2d507003e2e0c51c03f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetBreakForTimeSignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a56fbb295a03983bca5219cee3d98d76f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetBreakForKeySignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>afe2fea5665af66f4acf67fbf104550b7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetOuterPlacement</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a6cd0e628c31267f04139916bdd8480a0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetAvoidStaffLines</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a081a11df4b3de97255325f9521798542</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -51906,10 +52019,73 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetFixedInsetStyle</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a5bc99cc241e53ab759f3741e9a4ca8b7</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad8defdd9de0a7f6875c61b8f14bf813c</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>add9a67d4ea82f4798a1f13b8aed93e16</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a5afe9639cb09a0df520e53871ac76d67</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a9d4f78b00adcffa5ac61d3f97b69184b</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTieDirection</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>af88e0d21e9ce46e14bbc13c835f612ad</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBreakForTimeSignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a3a16e7019a92289ba9cb0d1a92a632cd</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBreakForKeySignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aadb06ea3c87005db2e87bb7e1776b89e</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetOuterPlacement</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad53b89bfcfffdda7cf620d8d717db1d2</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAvoidStaffLines</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aec936bb3dcc3835debc654929353d9d4</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
