@@ -52134,6 +52134,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>ActivateStartPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a5f05418ce5b2f2707f65c9cd716fe7b4</anchor>
+      <arglist>(bool fortieover, TIEMOD_CONNECTION_CODES connectioncode, Evpu16 hoffset, Evpu16 voffset)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DeactivateStartPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aa4be3d82b32af1bdbc0541c5d4d6cf35</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>IsEndPointActive</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
@@ -52141,10 +52155,45 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>ActivateEndPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a9ccc33fabf9cce5f6b47f1ef31fcaedf</anchor>
+      <arglist>(bool fortieover, TIEMOD_CONNECTION_CODES connectioncode, Evpu16 hoffset, Evpu16 voffset)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DeactivateEndPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a4406337c93e7ba46d2ffd9e9a0c65bfb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>IsContourActive</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a9fc4aa6a38556eb77f16ff38485ca521</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ActivateContour</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a459d0c73c22062fb24c630c552aa64bf</anchor>
+      <arglist>(twobyte insetleft, twobyte heightleft, twobyte insetright, twobyte heightright, bool fixedinset=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DeactivateContour</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a163a355fde433ff10a5e566382a39b08</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetStartConnectionCode</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aff7d43cc25b42e4c6244220ed18a4ea5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -52159,6 +52208,13 @@
       <name>GetStartHorizontalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a136b52be9fa30e5bc509b7d050df1b3f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetEndConnectionCode</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aef909394aa9e72a76a255056dfe309a1</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
