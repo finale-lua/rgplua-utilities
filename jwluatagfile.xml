@@ -51839,6 +51839,115 @@
       <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>TIEMOD_CONNECTION_CODES</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NONE</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a255baeafb17c5fd12e4e3edf34cbc883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYLEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06595baf6ff3e87144addbbcdb82b9c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06aed71c15ad35a0eda35555e7745bf4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7d3d8a1406bfdb825bbd09d19dd57fc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64adc0178e9b20928056e208c48709623b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4c6091e9f3863020b6efe296ce7e65f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa477f57883930e8dce91588203328ebe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_DOTRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ab64000bba9d269d6dd9346a768f73cd9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ACCILEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a1f9745349d22c543c57ce8125bc8122b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aff6971028aad06eb83099ec7870b48a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a9d81a76f73d0f3e11620a7dd12b5dc28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7a165c5c9f11f965fb0a840943849d7d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a46af352aff17e71032d1af8c282bbcd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa048ce9d5d1c602fdce1ee48ac92a445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ae6d2ab2ef6a7b61e2670e23f012376a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4220b971b2d0111c746b9e004c8a3bfc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMSTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ada12fc30884634a65060a316773730cc</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumvalue">
       <name>TIEMODTYPE_TIEEND</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
@@ -51885,6 +51994,108 @@
       <name>TIEMODDIR_UNDER</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NONE</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a255baeafb17c5fd12e4e3edf34cbc883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYLEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06595baf6ff3e87144addbbcdb82b9c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06aed71c15ad35a0eda35555e7745bf4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7d3d8a1406bfdb825bbd09d19dd57fc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64adc0178e9b20928056e208c48709623b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4c6091e9f3863020b6efe296ce7e65f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa477f57883930e8dce91588203328ebe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_DOTRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ab64000bba9d269d6dd9346a768f73cd9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ACCILEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a1f9745349d22c543c57ce8125bc8122b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aff6971028aad06eb83099ec7870b48a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a9d81a76f73d0f3e11620a7dd12b5dc28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7a165c5c9f11f965fb0a840943849d7d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a46af352aff17e71032d1af8c282bbcd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa048ce9d5d1c602fdce1ee48ac92a445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ae6d2ab2ef6a7b61e2670e23f012376a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4220b971b2d0111c746b9e004c8a3bfc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMSTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ada12fc30884634a65060a316773730cc</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
