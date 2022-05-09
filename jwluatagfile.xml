@@ -51772,6 +51772,25 @@
     <base>__FCEntryDetailNoteID</base>
     <member kind="enumeration">
       <type></type>
+      <name>TIEMOD_TIETYPES</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIEEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a336f71fe0c0814acce405abde7fae0d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIESTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a3f3b250efb1ed5fd8ffa3d6c357a265c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
       <name>TIEMOD_SELECTOR</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>ad0fac682eea67d8b5d98bb0333de3e88</anchor>
@@ -51818,6 +51837,18 @@
       <name>TIEMODDIR_UNDER</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIEEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a336f71fe0c0814acce405abde7fae0d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIESTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a3f3b250efb1ed5fd8ffa3d6c357a265c</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -51874,8 +51905,8 @@
       <type></type>
       <name>FCTieMod</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>af3f41db68ec81bacf03a3fa3cc23ec85</anchor>
-      <arglist>(bool starttie)</arglist>
+      <anchor>ab225f9c9a67d0671d0539af00701fbfa</anchor>
+      <arglist>(TIEMOD_TIETYPES tietype)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
