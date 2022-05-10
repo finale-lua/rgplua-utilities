@@ -33257,6 +33257,20 @@
       <arglist>(FCNote *pPitchCompareNote)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>IsUpper2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a23c063012ce1a35bc8380bff610004a2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsLower2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>af139858c39343ca7cf1be61ab1cb1cd8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>MarkForErase</name>
       <anchorfile>class_f_c_note.html</anchorfile>
