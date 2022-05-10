@@ -33033,6 +33033,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetNoteIndex</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a57a6e93496bc87684dd239cda4dae4ba</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>GetString</name>
       <anchorfile>class_f_c_note.html</anchorfile>
