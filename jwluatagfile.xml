@@ -13732,6 +13732,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>CalcHasFrame</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a105cd0314dd96877937ee5a4c6d62cec</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcMultiLayeredCell</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>aa27cd5b21e0fb64ad7bb3d31bff00833</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>SaveNew</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
       <anchor>adc161a28a6d6fb37dfe88ade96f04682</anchor>
