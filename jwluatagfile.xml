@@ -52211,6 +52211,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>LocalizeFromPreferences</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a07690d11eb4cce6e8d82d2e6147cc96b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>IsContourActive</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
