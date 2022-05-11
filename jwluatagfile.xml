@@ -33285,6 +33285,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>IsNonAligned2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a9ee9a1fabb723a12f4a4a4167799883a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>MarkForErase</name>
       <anchorfile>class_f_c_note.html</anchorfile>
