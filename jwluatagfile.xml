@@ -13996,6 +13996,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>Evpu32</type>
+      <name>GetSystemTopPos</name>
+      <anchorfile>class_f_c_cell_metrics.html</anchorfile>
+      <anchor>a1b6c71be290b48d72da708e6cac425fd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetSlotNumber</name>
+      <anchorfile>class_f_c_cell_metrics.html</anchorfile>
+      <anchor>abf024f9458e5ce6d274e0ae5fd48d64c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetAttachment</name>
       <anchorfile>class_f_c_cell_metrics.html</anchorfile>
