@@ -13989,6 +13989,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetStaffSystem</name>
+      <anchorfile>class_f_c_cell_metrics.html</anchorfile>
+      <anchor>a6332250eb0e43b37aa9b23123b58b45f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetAttachment</name>
       <anchorfile>class_f_c_cell_metrics.html</anchorfile>
