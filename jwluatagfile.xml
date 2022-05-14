@@ -51746,6 +51746,13 @@
     </member>
     <member kind="function">
       <type>Evpu16</type>
+      <name>GetLeftRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>a6e5a319d93cbb51e34bdff7b83530dd5</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetLeftHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a4aa8fbf63df17b76bf0005c51f4c3047</anchor>
@@ -51763,6 +51770,13 @@
       <name>GetRightRelativeInset</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a2c480097e063b558e6dfb613ff63b201</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetRightRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>a1be0c8e4583372b7073fa070987735d8</anchor>
       <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
@@ -51795,6 +51809,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetLeftRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>acbf883e46e9a063086d632d48e4b8e3f</anchor>
+      <arglist>(CONTOUR_INDEXES index, Evpu16 rawvalue)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetLeftHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a30d24017c9bd307d5ac5fa6c7f57dd46</anchor>
@@ -51813,6 +51834,13 @@
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a61df126a21291a2bf4d5bc1d4ddb17de</anchor>
       <arglist>(CONTOUR_INDEXES index, float percentvalue)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>a739c04b11394238a3e679a4b37d8fdbe</anchor>
+      <arglist>(CONTOUR_INDEXES index, Evpu16 rawvalue)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
