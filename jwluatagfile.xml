@@ -11706,6 +11706,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>LoadAllForSystemStaff</name>
+      <anchorfile>class_f_c_baselines.html</anchorfile>
+      <anchor>a1d684506c6b60c2eac9ed73055bbce12</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode, eSsys systemno, eStaff staffno)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>LoadAllForSystem</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
       <anchor>aaf655c1027bea02cfabe96d9fdd61fe3</anchor>
