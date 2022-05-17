@@ -11706,6 +11706,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>LoadAllForSystemStaff</name>
+      <anchorfile>class_f_c_baselines.html</anchorfile>
+      <anchor>a1d684506c6b60c2eac9ed73055bbce12</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode, eSsys systemno, eStaff staffno)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>LoadAllForSystem</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
       <anchor>aaf655c1027bea02cfabe96d9fdd61fe3</anchor>
@@ -12213,6 +12220,13 @@
       <anchorfile>class_f_c_broken_beam_mod.html</anchorfile>
       <anchor>a8fff8db534546e47e696311d4b5066aa</anchor>
       <arglist>(bool leftdirection)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLeftDirection</name>
+      <anchorfile>class_f_c_broken_beam_mod.html</anchorfile>
+      <anchor>a70eed17cbca4e976590740dce62de432</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -13725,6 +13739,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>CalcHasFrame</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a105cd0314dd96877937ee5a4c6d62cec</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcMultiLayeredCell</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>aa27cd5b21e0fb64ad7bb3d31bff00833</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>SaveNew</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
       <anchor>adc161a28a6d6fb37dfe88ade96f04682</anchor>
@@ -13968,6 +13996,27 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetStaffSystem</name>
+      <anchorfile>class_f_c_cell_metrics.html</anchorfile>
+      <anchor>a6332250eb0e43b37aa9b23123b58b45f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetSystemTopPos</name>
+      <anchorfile>class_f_c_cell_metrics.html</anchorfile>
+      <anchor>a1b6c71be290b48d72da708e6cac425fd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetSlotNumber</name>
+      <anchorfile>class_f_c_cell_metrics.html</anchorfile>
+      <anchor>abf024f9458e5ce6d274e0ae5fd48d64c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetAttachment</name>
       <anchorfile>class_f_c_cell_metrics.html</anchorfile>
@@ -14179,6 +14228,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_cell_text.html</anchorfile>
+      <anchor>a239b1eb72d67571007160744fbcff3bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetMeasurePos</name>
       <anchorfile>class_f_c_cell_text.html</anchorfile>
@@ -14191,6 +14247,13 @@
       <anchorfile>class_f_c_cell_text.html</anchorfile>
       <anchor>a8be0a00b64dbe0a189b416f271b43fd7</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_cell_text.html</anchorfile>
+      <anchor>a8e5ab77f2620ed94a52ffcf080f5e475</anchor>
+      <arglist>(bool visible)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -19595,6 +19658,13 @@
       <anchorfile>class_f_c_end_tie_mods.html</anchorfile>
       <anchor>aeebbba2512dd1a3c0382831e0a3ea839</anchor>
       <arglist>(FCNoteEntry *pConnectEntry=NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTieMod *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_end_tie_mods.html</anchorfile>
+      <anchor>aab187be90f9b22c46f4579c4660310ca</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -25214,6 +25284,13 @@
       <anchorfile>class_f_c_layer_prefs.html</anchorfile>
       <anchor>a8bbe25d77df28fd4d29772c4060d6a7b</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static twobyte</type>
+      <name>GetMaxLayers</name>
+      <anchorfile>class_f_c_layer_prefs.html</anchorfile>
+      <anchor>a254deed4c1418808e6ca1a944c36ddfd</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -32998,6 +33075,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetNoteIndex</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a57a6e93496bc87684dd239cda4dae4ba</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>GetString</name>
       <anchorfile>class_f_c_note.html</anchorfile>
@@ -33213,6 +33297,27 @@
       <anchorfile>class_f_c_note.html</anchorfile>
       <anchor>a8472b220284325800e99a396ae438b23</anchor>
       <arglist>(FCNote *pPitchCompareNote)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsUpper2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a23c063012ce1a35bc8380bff610004a2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsLower2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>af139858c39343ca7cf1be61ab1cb1cd8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsNonAligned2nd</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a9ee9a1fabb723a12f4a4a4167799883a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -37925,6 +38030,13 @@
       <name>CountPartsOnly</name>
       <anchorfile>class_f_c_parts.html</anchorfile>
       <anchor>a9e40b170ea979fc60f96472540f586b0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>GenerateParts</name>
+      <anchorfile>class_f_c_parts.html</anchorfile>
+      <anchor>a5424737d07ff0f9dc7afb919cb9e7f0c</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
@@ -45255,6 +45367,73 @@
     <name>FCStaff</name>
     <filename>class_f_c_staff.html</filename>
     <base>__FCStaffBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>STAFFAUTONUMBER_STYLE</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba0cec2e8d4b3f71c060d327e9b66b9dc1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ROMAN_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baf7d9e168125a168bf5d25d586f21aa68</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ORDINAL_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba83160a2b9b8cdfa0d048fcaa773f27b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ALPHA_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baca12cc1f21a97aa9b59f6ab28128fa16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba74a28371b8f83b36875e0a0d1d61c0f1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba0cec2e8d4b3f71c060d327e9b66b9dc1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ROMAN_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baf7d9e168125a168bf5d25d586f21aa68</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ORDINAL_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba83160a2b9b8cdfa0d048fcaa773f27b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ALPHA_SUFFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604baca12cc1f21a97aa9b59f6ab28128fa16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFAUTONUMBER_ARABIC_PREFIX</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ae67e6d274966076c15c594787502604ba74a28371b8f83b36875e0a0d1d61c0f1</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -45296,6 +45475,34 @@
       <anchorfile>class_f_c_staff.html</anchorfile>
       <anchor>af0d96f97822806cc9d900236f3bda576</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>a5fef7f3c21daadf1c9ffe882d098b928</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>STAFFAUTONUMBER_STYLE</type>
+      <name>GetAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>aafedc387f9002633d21dee926b846106</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>ac9061d7d1cfa0cd443aa91350e236529</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutoNumberingStyle</name>
+      <anchorfile>class_f_c_staff.html</anchorfile>
+      <anchor>a1fa3aaef2b9550e2adfdd146dff2d368</anchor>
+      <arglist>(STAFFAUTONUMBER_STYLE value)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -47119,6 +47326,13 @@
       <anchorfile>class_f_c_start_tie_mods.html</anchorfile>
       <anchor>a880b5162301c0c37c2a1262915564d92</anchor>
       <arglist>(FCNoteEntry *pConnectEntry=NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTieMod *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_start_tie_mods.html</anchorfile>
+      <anchor>a46a8bf6100c9c06488964ce22ae0f8b8</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -51539,6 +51753,13 @@
     </member>
     <member kind="function">
       <type>Evpu16</type>
+      <name>GetLeftRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>a6e5a319d93cbb51e34bdff7b83530dd5</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetLeftHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a4aa8fbf63df17b76bf0005c51f4c3047</anchor>
@@ -51556,6 +51777,13 @@
       <name>GetRightRelativeInset</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a2c480097e063b558e6dfb613ff63b201</anchor>
+      <arglist>(CONTOUR_INDEXES index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetRightRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>a1be0c8e4583372b7073fa070987735d8</anchor>
       <arglist>(CONTOUR_INDEXES index) const</arglist>
     </member>
     <member kind="function">
@@ -51588,6 +51816,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetLeftRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>acbf883e46e9a063086d632d48e4b8e3f</anchor>
+      <arglist>(CONTOUR_INDEXES index, Evpu16 rawvalue)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetLeftHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>a30d24017c9bd307d5ac5fa6c7f57dd46</anchor>
@@ -51609,6 +51844,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetRightRawRelativeInset</name>
+      <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
+      <anchor>a739c04b11394238a3e679a4b37d8fdbe</anchor>
+      <arglist>(CONTOUR_INDEXES index, Evpu16 rawvalue)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetRightHeight</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
       <anchor>aa3185dcd35a407d84a57782f03199661</anchor>
@@ -51626,6 +51868,334 @@
     <name>FCTieMod</name>
     <filename>class_f_c_tie_mod.html</filename>
     <base>__FCEntryDetailNoteID</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>TIEMOD_TIETYPES</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIEEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a336f71fe0c0814acce405abde7fae0d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIESTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a3f3b250efb1ed5fd8ffa3d6c357a265c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>TIEMOD_SELECTOR</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_DEFAULT</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a1e6196c4475ff8015068b9cb0be004fa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_ON</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a3dd7fbb18f764a068843ac18d1351821</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_OFF</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a9956bb475800e0467e3c8afb457fa37a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>TIEMOD_DIRECTION</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_AUTOMATIC</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331ad6b35cbe4661482bf33454e91f4bc097</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_OVER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a825708e3963f55230ad408266b3e8d51</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_UNDER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>TIEMOD_CONNECTION_CODES</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NONE</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a255baeafb17c5fd12e4e3edf34cbc883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYLEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06595baf6ff3e87144addbbcdb82b9c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06aed71c15ad35a0eda35555e7745bf4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7d3d8a1406bfdb825bbd09d19dd57fc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64adc0178e9b20928056e208c48709623b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4c6091e9f3863020b6efe296ce7e65f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa477f57883930e8dce91588203328ebe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_DOTRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ab64000bba9d269d6dd9346a768f73cd9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ACCILEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a1f9745349d22c543c57ce8125bc8122b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aff6971028aad06eb83099ec7870b48a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a9d81a76f73d0f3e11620a7dd12b5dc28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7a165c5c9f11f965fb0a840943849d7d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a46af352aff17e71032d1af8c282bbcd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa048ce9d5d1c602fdce1ee48ac92a445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ae6d2ab2ef6a7b61e2670e23f012376a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4220b971b2d0111c746b9e004c8a3bfc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMSTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ada12fc30884634a65060a316773730cc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIEEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a336f71fe0c0814acce405abde7fae0d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODTYPE_TIESTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a176c37d72bfa9deabed7bd3b54674662a3f3b250efb1ed5fd8ffa3d6c357a265c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_DEFAULT</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a1e6196c4475ff8015068b9cb0be004fa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_ON</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a3dd7fbb18f764a068843ac18d1351821</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODSEL_OFF</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad0fac682eea67d8b5d98bb0333de3e88a9956bb475800e0467e3c8afb457fa37a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_AUTOMATIC</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331ad6b35cbe4661482bf33454e91f4bc097</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_OVER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a825708e3963f55230ad408266b3e8d51</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODDIR_UNDER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a8fd213af279301513c31488ace6b8331a62e8b850bf0085df7b5fcb884231897e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NONE</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a255baeafb17c5fd12e4e3edf34cbc883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYLEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06595baf6ff3e87144addbbcdb82b9c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a06aed71c15ad35a0eda35555e7745bf4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7d3d8a1406bfdb825bbd09d19dd57fc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64adc0178e9b20928056e208c48709623b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4c6091e9f3863020b6efe296ce7e65f6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTECENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa477f57883930e8dce91588203328ebe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_DOTRIGHT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ab64000bba9d269d6dd9346a768f73cd9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ACCILEFT_NOTECENTER</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a1f9745349d22c543c57ce8125bc8122b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aff6971028aad06eb83099ec7870b48a1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_ENTRYCENTER_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a9d81a76f73d0f3e11620a7dd12b5dc28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a7a165c5c9f11f965fb0a840943849d7d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTEBOTTOM</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a46af352aff17e71032d1af8c282bbcd8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTELEFT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64aa048ce9d5d1c602fdce1ee48ac92a445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_NOTERIGHT_NOTETOP</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ae6d2ab2ef6a7b61e2670e23f012376a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMEND</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64a4220b971b2d0111c746b9e004c8a3bfc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TIEMODCNCT_SYSTEMSTART</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a0ddf131d355cadab7f41bc081f1caf64ada12fc30884634a65060a316773730cc</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -51644,29 +52214,197 @@
       <type></type>
       <name>FCTieMod</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>af3f41db68ec81bacf03a3fa3cc23ec85</anchor>
-      <arglist>(bool starttie)</arglist>
+      <anchor>ab225f9c9a67d0671d0539af00701fbfa</anchor>
+      <arglist>(TIEMOD_TIETYPES tietype)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsStartTie</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>a9b6ee9a3164131e1604ddd88d7eaf4eb</anchor>
+      <anchor>a13021bd654baecfb5960e52423d52034</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsStartPointActive</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a751511459ef863c0e1fe932ffe77fccb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ActivateStartPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a5f05418ce5b2f2707f65c9cd716fe7b4</anchor>
+      <arglist>(bool fortieover, TIEMOD_CONNECTION_CODES connectioncode, Evpu16 hoffset, Evpu16 voffset)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DeactivateStartPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aa4be3d82b32af1bdbc0541c5d4d6cf35</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsEndPointActive</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a837ecf40d0435dd29312ae23d2b73004</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ActivateEndPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a9ccc33fabf9cce5f6b47f1ef31fcaedf</anchor>
+      <arglist>(bool fortieover, TIEMOD_CONNECTION_CODES connectioncode, Evpu16 hoffset, Evpu16 voffset)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DeactivateEndPoint</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a4406337c93e7ba46d2ffd9e9a0c65bfb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>LocalizeFromPreferences</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a07690d11eb4cce6e8d82d2e6147cc96b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsContourActive</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a9fc4aa6a38556eb77f16ff38485ca521</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ActivateContour</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a459d0c73c22062fb24c630c552aa64bf</anchor>
+      <arglist>(twobyte insetleft, twobyte heightleft, twobyte insetright, twobyte heightright, bool fixedinset=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DeactivateContour</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a163a355fde433ff10a5e566382a39b08</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetStartConnectionCode</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aff7d43cc25b42e4c6244220ed18a4ea5</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetStartVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>ae3706e6339ca6a4d27c5567e29d10393</anchor>
-      <arglist>()</arglist>
+      <anchor>a7f9541aab6ae600fccc72bb65b4b9d8d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetStartHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a136b52be9fa30e5bc509b7d050df1b3f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetEndConnectionCode</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aef909394aa9e72a76a255056dfe309a1</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetEndVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>a4ff0402865f8144a42ea92285971d075</anchor>
-      <arglist>()</arglist>
+      <anchor>a0b6a057eb9ade33f8b940af0fdba50ff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetEndHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aa6f66aa6dd6e39897aef37b8c092a9e8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetFixedInsetStyle</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a90f2158ad816ba404e955fc74e7e2ee7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetLeftHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a860af9f19a90df39f7abf5cc99d01227</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRightHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a4c830a9e3922c4b14e57e7c0f7a7c41d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetLeftInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a6a7f4823cea70537a4c80220f8ced06b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRightInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a65193dce427816ada294613c8b6b11cd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetTieDirection</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a4c403b539febf2d507003e2e0c51c03f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetBreakForTimeSignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a56fbb295a03983bca5219cee3d98d76f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetBreakForKeySignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>afe2fea5665af66f4acf67fbf104550b7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetOuterPlacement</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a6cd0e628c31267f04139916bdd8480a0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetAvoidStaffLines</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a081a11df4b3de97255325f9521798542</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -51677,10 +52415,94 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetStartHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a66a68b1559373fe6991ba4a7e12647ba</anchor>
+      <arglist>(twobyte pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetEndVerticalPos</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
       <anchor>a818452a5a7bbb4ab0edfe663f96ac030</anchor>
       <arglist>(twobyte pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEndHorizontalPos</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a16e254234705d398b7a312d383ab0ddc</anchor>
+      <arglist>(twobyte pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFixedInsetStyle</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a5bc99cc241e53ab759f3741e9a4ca8b7</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad8defdd9de0a7f6875c61b8f14bf813c</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightHeight</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>add9a67d4ea82f4798a1f13b8aed93e16</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a5afe9639cb09a0df520e53871ac76d67</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightInset</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a9d4f78b00adcffa5ac61d3f97b69184b</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTieDirection</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>af88e0d21e9ce46e14bbc13c835f612ad</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBreakForTimeSignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>a3a16e7019a92289ba9cb0d1a92a632cd</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBreakForKeySignature</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aadb06ea3c87005db2e87bb7e1776b89e</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetOuterPlacement</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>ad53b89bfcfffdda7cf620d8d717db1d2</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAvoidStaffLines</name>
+      <anchorfile>class_f_c_tie_mod.html</anchorfile>
+      <anchor>aec936bb3dcc3835debc654929353d9d4</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -55329,6 +56151,8 @@
     <class kind="class">FCCustomStemMod</class>
     <class kind="class">FCBeamMod</class>
     <class kind="class">FCPerformanceMod</class>
+    <class kind="class">FCTieMod</class>
+    <class kind="class">FCBrokenBeamMod</class>
     <class kind="class">FCTablatureNoteMod</class>
     <class kind="class">__FCGlobals</class>
     <class kind="class">FCClefDef</class>
@@ -55464,6 +56288,8 @@
     <class kind="class">FCAccidentalMods</class>
     <class kind="class">FCPercussionNoteMods</class>
     <class kind="class">FCTablatureNoteMods</class>
+    <class kind="class">FCStartTieMods</class>
+    <class kind="class">FCEndTieMods</class>
     <class kind="class">FCDotMods</class>
     <class kind="class">FCCrossStaffMods</class>
     <class kind="class">FCPerformanceMods</class>
