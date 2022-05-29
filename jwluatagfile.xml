@@ -32100,6 +32100,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>IsEmptyAndNotSinglePos</name>
+      <anchorfile>class_f_c_music_region.html</anchorfile>
+      <anchor>ab0eebd41b4946d0e28a6ae9d41defe2a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>IsMeasureIncluded</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
       <anchor>a8d8aa6dab37a9688a158f4efac24d76e</anchor>
