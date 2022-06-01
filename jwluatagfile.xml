@@ -20092,6 +20092,13 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>CalcStaffInPageView</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>a825f3f8a7bad07acecefa52eede60684</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>HasStaffValue</name>
       <anchorfile>class_f_c_expression.html</anchorfile>
