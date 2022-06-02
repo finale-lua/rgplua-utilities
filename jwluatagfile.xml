@@ -43875,6 +43875,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>CalcLyricBased</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a19c218f3f6c9b049dbd9db9fec084853</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetPresetShape</name>
       <anchorfile>class_f_c_smart_shape.html</anchorfile>
       <anchor>a227deca3949855c09a2748aef60853c9</anchor>
