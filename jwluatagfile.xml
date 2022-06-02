@@ -20092,10 +20092,24 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>eStaff</type>
       <name>CalcStaffInPageView</name>
       <anchorfile>class_f_c_expression.html</anchorfile>
-      <anchor>a825f3f8a7bad07acecefa52eede60684</anchor>
+      <anchor>aa354e644b727e757c6923b3e3790f0cc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>eStaff</type>
+      <name>CalcStaffInScrollView</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>ac0000abbc56ca1bf1ea030b33704c7ca</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>eStaff</type>
+      <name>CalcStaffInCurrentView</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>a5027606eadfc9767e67511813f9435fc</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
