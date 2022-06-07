@@ -23543,6 +23543,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCMusicRegion *</type>
+      <name>CreateMusicRegion</name>
+      <anchorfile>class_f_c_group.html</anchorfile>
+      <anchor>a239cd586952c62ae207a88294af09039</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>CMPER</type>
       <name>GetAbbreviatedNameID</name>
       <anchorfile>class_f_c_group.html</anchorfile>
