@@ -11976,6 +11976,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>LoadForBeamNumber</name>
+      <anchorfile>class_f_c_beam_mod.html</anchorfile>
+      <anchor>ab4a0bef9e670df7d25f7f648eefad8c3</anchor>
+      <arglist>(int beamnumber)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_beam_mod.html</anchorfile>
@@ -41174,6 +41181,20 @@
       <anchor>a651aa2165dbb936064baeb651154c850</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AssureAllBeamsDataExists</name>
+      <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
+      <anchor>a074a0abe1bd05369841b97d23bdcc03c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCBeamMod *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
+      <anchor>a4b3fab2ff409218ce7d02fe2438c67ab</anchor>
+      <arglist>(int index)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCSectionLyricsText</name>
@@ -56322,6 +56343,7 @@
     <class kind="class">FCBaselines</class>
     <class kind="class">FCArticulations</class>
     <class kind="class">FCPrimaryBeamMods</class>
+    <class kind="class">FCSecondaryBeamMods</class>
     <class kind="class">FCTuplets</class>
     <class kind="class">FCVerseSyllables</class>
     <class kind="class">FCChorusSyllables</class>
