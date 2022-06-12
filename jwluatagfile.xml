@@ -36920,6 +36920,24 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>TEXTASSIGN_ALL</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436a2561dc3c3039e2efd7d3fc15394869e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_ODD</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436abdae2127724ce1c8f4aaf6c86785130a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_EVEN</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436ae399bfca1bded8a4b409e1ab857c31bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>TEXTHORIZALIGN_LEFT</name>
       <anchorfile>class_f_c_page_text.html</anchorfile>
       <anchor>ad1421b2df4abcf26d2d034d6827760bbae3838d568d1549ebadd3f3f3e62ff236</anchor>
@@ -36953,6 +36971,24 @@
       <name>TEXTVERTALIGN_CENTER</name>
       <anchorfile>class_f_c_page_text.html</anchorfile>
       <anchor>aad2672cbd757582abe95c7406959b278a910d48047e564ffa97fcd841b210130c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_ALL</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436a2561dc3c3039e2efd7d3fc15394869e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_ODD</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436abdae2127724ce1c8f4aaf6c86785130a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_EVEN</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436ae399bfca1bded8a4b409e1ab857c31bd</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
