@@ -11809,6 +11809,34 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetLeftAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a3f461b746182067543485363c8837ef3</anchor>
+      <arglist>(Evpu16 adjust)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetLeftAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>aa3f2a9b6d232ef41c6dcbb7a4bbc6a60</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a3d49df1e7fa0e1e7daac618bfb04be93</anchor>
+      <arglist>(Evpu16 adjust)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetRightAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a4040e6db4b80294e694f47d802671383</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetExtend</name>
       <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
       <anchor>a26046c85342d12530eb699b3e4c97ad1</anchor>
