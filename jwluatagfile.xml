@@ -11776,6 +11776,144 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCBeamExtensionMod</name>
+    <filename>class_f_c_beam_extension_mod.html</filename>
+    <base>__FCEntryDetail</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>ac026b2f1299ddda8205d116493931f8b</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a348658ef850fa9aa4d611574ad453172</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCBeamExtensionMod</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a050d11c32acbaf8c7b41814f7c9f0d85</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNoteEntry</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>aad1a59000108084c80083b34c7c2d232</anchor>
+      <arglist>(FCNoteEntry *pEntry) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a26046c85342d12530eb699b3e4c97ad1</anchor>
+      <arglist>(int beamindex, bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtendAll</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a221ecb11f28d4917b99e14b02a1403e2</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>abf0bcc23b590fe68103634f92df314dd</anchor>
+      <arglist>(int beamindex) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend8th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>adcc0dbc5919e51db131862297fceeb58</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend8th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a2f1d738071e38298069a99465264a73b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend16th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a66d4f8942fcdce744e256ad643fbe311</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend16th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a5d64681213c8ae12283a63882cfef4ff</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend32nd</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a59a22b99d05bd347f7d9de61e1f57a8b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend32nd</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>aaf9a1eb656be3669a4d94a97b098ca96</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend64th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a99ffc412e6b6f7b869865283bfb61b81</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend64th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a25611098c2c53768578aaa6c8cbaea21</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend128th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a6b62e678108e776fc19efb7d87147fd6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend128th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a6aff261fc41550a834360b063d286660</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend256th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a2eeeed435b13d757272bd7a97108d7ad</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend256th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a4b6cb92fb21a21170c71f1ec327a3a49</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCBeamMod</name>
     <filename>class_f_c_beam_mod.html</filename>
     <base>__FCEntryDetail</base>
@@ -33737,6 +33875,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetBeamExtensionFlag</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a6a044c35e589e42ca9753c7b867319b5</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetActualDuration</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a8db844a7606d04425ce144bad6347b93</anchor>
@@ -34125,6 +34270,13 @@
       <name>GetSecondaryBeamFlag</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a1688340d1d0f93d56f47ba9aa949112d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetBeamExtensionFlag</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a1840580accf0461f103882510698d716</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -55972,6 +56124,7 @@
     <class kind="class">FCDotMod</class>
     <class kind="class">FCCrossStaffMod</class>
     <class kind="class">FCSecondaryBeamBreakMod</class>
+    <class kind="class">FCBeamExtensionMod</class>
     <class kind="class">FCStemMod</class>
     <class kind="class">FCArticulation</class>
     <class kind="class">FCTuplet</class>
@@ -56236,6 +56389,7 @@
     <class kind="class">FCDotMod</class>
     <class kind="class">FCCrossStaffMod</class>
     <class kind="class">FCSecondaryBeamBreakMod</class>
+    <class kind="class">FCBeamExtensionMod</class>
     <class kind="class">FCStemMod</class>
     <class kind="class">FCArticulation</class>
     <class kind="class">FCTuplet</class>
