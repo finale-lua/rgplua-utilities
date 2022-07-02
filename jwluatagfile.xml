@@ -55807,15 +55807,22 @@
       <type>bool</type>
       <name>IsPageView</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>ab819422f4a10f1b4b64e8852c255b7af</anchor>
-      <arglist>()</arglist>
+      <anchor>ab2101ccade59bf50712f330e1717c5a0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsPartView</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>af9e691e32f8aa6e172ad248bebb5aa9f</anchor>
-      <arglist>()</arglist>
+      <anchor>a155b5692d1f3b1f3d5f46a196d035bfe</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsLayerVisible</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>ab638ce7de614139ca3125dd4154d0a46</anchor>
+      <arglist>(twobyte layernum) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -55842,15 +55849,15 @@
       <type>bool</type>
       <name>IsOnWindows</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>a8fedcc5fd2d8e537e10d664d0242150d</anchor>
-      <arglist>()</arglist>
+      <anchor>aa31464429df573abc3e0e46c88558534</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsOnMac</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>a8f44d5bdf5acf16992407f2005749109</anchor>
-      <arglist>()</arglist>
+      <anchor>a081813059cbc9620b0287ee71a028f87</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
