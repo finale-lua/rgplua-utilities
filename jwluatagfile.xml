@@ -17012,6 +17012,13 @@
       <anchor>aec37480f98d890e5a61cafc0995f2c49</anchor>
       <arglist>(int anint)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTextColor</name>
+      <anchorfile>class_f_c_ctrl_static.html</anchorfile>
+      <anchor>a44b07b4da3586b86d8870c5dde8781ec</anchor>
+      <arglist>(int red, int green, int blue)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlSwitcher</name>
