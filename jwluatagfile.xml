@@ -15929,6 +15929,13 @@
       <anchor>ad340219136406d00c2e1abeffc683cdd</anchor>
       <arglist>(bool state)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFont</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>ab89944f4d291e1e3d05d323075e3d85f</anchor>
+      <arglist>(const FCFontInfo *fontInfo)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>SetKeyboardFocus</name>
