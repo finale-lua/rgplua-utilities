@@ -18189,6 +18189,13 @@
       <anchor>a7600fde1a4d486e0663cb603a6b19bec</anchor>
       <arglist>(float x, float y)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MoveAllControls</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>a77d3dcae1e99a68ac3cc627d338b5c20</anchor>
+      <arglist>(int horizoffset, int vertoffset)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCDataListRow</name>
