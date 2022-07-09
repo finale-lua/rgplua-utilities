@@ -11776,6 +11776,172 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCBeamExtensionMod</name>
+    <filename>class_f_c_beam_extension_mod.html</filename>
+    <base>__FCEntryDetail</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>ac026b2f1299ddda8205d116493931f8b</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a348658ef850fa9aa4d611574ad453172</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCBeamExtensionMod</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a050d11c32acbaf8c7b41814f7c9f0d85</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNoteEntry</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>aad1a59000108084c80083b34c7c2d232</anchor>
+      <arglist>(FCNoteEntry *pEntry) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a3f461b746182067543485363c8837ef3</anchor>
+      <arglist>(Evpu16 adjust)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetLeftAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>aa3f2a9b6d232ef41c6dcbb7a4bbc6a60</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a3d49df1e7fa0e1e7daac618bfb04be93</anchor>
+      <arglist>(Evpu16 adjust)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetRightAdjustment</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a4040e6db4b80294e694f47d802671383</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a26046c85342d12530eb699b3e4c97ad1</anchor>
+      <arglist>(int beamindex, bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtendAll</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a221ecb11f28d4917b99e14b02a1403e2</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>abf0bcc23b590fe68103634f92df314dd</anchor>
+      <arglist>(int beamindex) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend8th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>adcc0dbc5919e51db131862297fceeb58</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend8th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a2f1d738071e38298069a99465264a73b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend16th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a66d4f8942fcdce744e256ad643fbe311</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend16th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a5d64681213c8ae12283a63882cfef4ff</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend32nd</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a59a22b99d05bd347f7d9de61e1f57a8b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend32nd</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>aaf9a1eb656be3669a4d94a97b098ca96</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend64th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a99ffc412e6b6f7b869865283bfb61b81</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend64th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a25611098c2c53768578aaa6c8cbaea21</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend128th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a6b62e678108e776fc19efb7d87147fd6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend128th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a6aff261fc41550a834360b063d286660</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetExtend256th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a2eeeed435b13d757272bd7a97108d7ad</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtend256th</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>a4b6cb92fb21a21170c71f1ec327a3a49</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCBeamMod</name>
     <filename>class_f_c_beam_mod.html</filename>
     <base>__FCEntryDetail</base>
@@ -11974,6 +12140,13 @@
       <anchorfile>class_f_c_beam_mod.html</anchorfile>
       <anchor>a8b77bc06fc39250557e4e8a9a67dc64f</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadForBeamNumber</name>
+      <anchorfile>class_f_c_beam_mod.html</anchorfile>
+      <anchor>ab4a0bef9e670df7d25f7f648eefad8c3</anchor>
+      <arglist>(int beamnumber)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -15756,6 +15929,13 @@
       <anchor>ad340219136406d00c2e1abeffc683cdd</anchor>
       <arglist>(bool state)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFont</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>ab89944f4d291e1e3d05d323075e3d85f</anchor>
+      <arglist>(const FCFontInfo *fontInfo)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>SetKeyboardFocus</name>
@@ -16831,6 +17011,13 @@
       <anchorfile>class_f_c_ctrl_static.html</anchorfile>
       <anchor>aec37480f98d890e5a61cafc0995f2c49</anchor>
       <arglist>(int anint)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTextColor</name>
+      <anchorfile>class_f_c_ctrl_static.html</anchorfile>
+      <anchor>a44b07b4da3586b86d8870c5dde8781ec</anchor>
+      <arglist>(int red, int green, int blue)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -18001,6 +18188,13 @@
       <anchorfile>class_f_c_custom_window.html</anchorfile>
       <anchor>a7600fde1a4d486e0663cb603a6b19bec</anchor>
       <arglist>(float x, float y)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MoveAllControls</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>a77d3dcae1e99a68ac3cc627d338b5c20</anchor>
+      <arglist>(int horizoffset, int vertoffset)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -20090,6 +20284,27 @@
       <anchorfile>class_f_c_expression.html</anchorfile>
       <anchor>aba44e5a5e55f3835d8f3a0b6eb6bcf98</anchor>
       <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>eStaff</type>
+      <name>CalcStaffInPageView</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>aa354e644b727e757c6923b3e3790f0cc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>eStaff</type>
+      <name>CalcStaffInScrollView</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>ac0000abbc56ca1bf1ea030b33704c7ca</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>eStaff</type>
+      <name>CalcStaffInCurrentView</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>a5027606eadfc9767e67511813f9435fc</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -23520,6 +23735,13 @@
       <anchorfile>class_f_c_group.html</anchorfile>
       <anchor>a4ea8891e9cf0ae1595ce2f2f70ca40ef</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCMusicRegion *</type>
+      <name>CreateMusicRegion</name>
+      <anchorfile>class_f_c_group.html</anchorfile>
+      <anchor>a239cd586952c62ae207a88294af09039</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>CMPER</type>
@@ -32100,6 +32322,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>IsEmptyAndNotSinglePos</name>
+      <anchorfile>class_f_c_music_region.html</anchorfile>
+      <anchor>ab0eebd41b4946d0e28a6ae9d41defe2a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>IsMeasureIncluded</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
       <anchor>a8d8aa6dab37a9688a158f4efac24d76e</anchor>
@@ -33695,6 +33924,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetBeamExtensionFlag</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a6a044c35e589e42ca9753c7b867319b5</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetActualDuration</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a8db844a7606d04425ce144bad6347b93</anchor>
@@ -34083,6 +34319,13 @@
       <name>GetSecondaryBeamFlag</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>a1688340d1d0f93d56f47ba9aa949112d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetBeamExtensionFlag</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a1840580accf0461f103882510698d716</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -36878,6 +37121,24 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>TEXTASSIGN_ALL</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436a2561dc3c3039e2efd7d3fc15394869e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_ODD</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436abdae2127724ce1c8f4aaf6c86785130a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_EVEN</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436ae399bfca1bded8a4b409e1ab857c31bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>TEXTHORIZALIGN_LEFT</name>
       <anchorfile>class_f_c_page_text.html</anchorfile>
       <anchor>ad1421b2df4abcf26d2d034d6827760bbae3838d568d1549ebadd3f3f3e62ff236</anchor>
@@ -36911,6 +37172,24 @@
       <name>TEXTVERTALIGN_CENTER</name>
       <anchorfile>class_f_c_page_text.html</anchorfile>
       <anchor>aad2672cbd757582abe95c7406959b278a910d48047e564ffa97fcd841b210130c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_ALL</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436a2561dc3c3039e2efd7d3fc15394869e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_ODD</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436abdae2127724ce1c8f4aaf6c86785130a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>TEXTASSIGN_EVEN</name>
+      <anchorfile>class_f_c_page_text.html</anchorfile>
+      <anchor>a9be07c9222cd09c50e977a716fb9a436ae399bfca1bded8a4b409e1ab857c31bd</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -41139,6 +41418,20 @@
       <anchor>a651aa2165dbb936064baeb651154c850</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AssureAllBeamsDataExists</name>
+      <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
+      <anchor>a074a0abe1bd05369841b97d23bdcc03c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCBeamMod *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
+      <anchor>a4b3fab2ff409218ce7d02fe2438c67ab</anchor>
+      <arglist>(int index)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCSectionLyricsText</name>
@@ -43843,6 +44136,13 @@
       <name>GetEntryBased</name>
       <anchorfile>class_f_c_smart_shape.html</anchorfile>
       <anchor>a12a20b1defe227c389052872d92d9635</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcLyricBased</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a19c218f3f6c9b049dbd9db9fec084853</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -55528,15 +55828,22 @@
       <type>bool</type>
       <name>IsPageView</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>ab819422f4a10f1b4b64e8852c255b7af</anchor>
-      <arglist>()</arglist>
+      <anchor>ab2101ccade59bf50712f330e1717c5a0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsPartView</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>af9e691e32f8aa6e172ad248bebb5aa9f</anchor>
-      <arglist>()</arglist>
+      <anchor>a155b5692d1f3b1f3d5f46a196d035bfe</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsLayerVisible</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>ab638ce7de614139ca3125dd4154d0a46</anchor>
+      <arglist>(twobyte layernum) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -55563,15 +55870,15 @@
       <type>bool</type>
       <name>IsOnWindows</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>a8fedcc5fd2d8e537e10d664d0242150d</anchor>
-      <arglist>()</arglist>
+      <anchor>aa31464429df573abc3e0e46c88558534</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsOnMac</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>a8f44d5bdf5acf16992407f2005749109</anchor>
-      <arglist>()</arglist>
+      <anchor>a081813059cbc9620b0287ee71a028f87</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -55873,6 +56180,7 @@
     <class kind="class">FCDotMod</class>
     <class kind="class">FCCrossStaffMod</class>
     <class kind="class">FCSecondaryBeamBreakMod</class>
+    <class kind="class">FCBeamExtensionMod</class>
     <class kind="class">FCStemMod</class>
     <class kind="class">FCArticulation</class>
     <class kind="class">FCTuplet</class>
@@ -56137,6 +56445,7 @@
     <class kind="class">FCDotMod</class>
     <class kind="class">FCCrossStaffMod</class>
     <class kind="class">FCSecondaryBeamBreakMod</class>
+    <class kind="class">FCBeamExtensionMod</class>
     <class kind="class">FCStemMod</class>
     <class kind="class">FCArticulation</class>
     <class kind="class">FCTuplet</class>
@@ -56280,6 +56589,7 @@
     <class kind="class">FCBaselines</class>
     <class kind="class">FCArticulations</class>
     <class kind="class">FCPrimaryBeamMods</class>
+    <class kind="class">FCSecondaryBeamMods</class>
     <class kind="class">FCTuplets</class>
     <class kind="class">FCVerseSyllables</class>
     <class kind="class">FCChorusSyllables</class>
