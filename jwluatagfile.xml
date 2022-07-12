@@ -48746,6 +48746,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>EndsWithString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a296cf191498e316439d47af884de308a</anchor>
+      <arglist>(const FCString *pString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>StartsWith</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a4ee54b3b8fb90c6621519c0db42ab416</anchor>
