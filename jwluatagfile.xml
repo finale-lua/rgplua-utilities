@@ -41565,6 +41565,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetIsAlternateNumber</name>
+      <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
+      <anchor>a719256e361a3289bf98f43838011c7a3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetHorizontalPosition</name>
       <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
@@ -41618,6 +41625,13 @@
       <name>SetUseEnclosure</name>
       <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
       <anchor>aef8bed583167a6c6d9312bbffdbfeaff</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIsAlternateNumber</name>
+      <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
+      <anchor>a562019694dbcd7d6f2ac3b3f6aa2f7bc</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
