@@ -48856,6 +48856,20 @@
       <anchor>a6a4e23e04c07492bcc11b4656044e64a</anchor>
       <arglist>() override</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static int</type>
+      <name>LoadIntegerResource</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a3d577ffd0c95fbe3f111c1072733b727</anchor>
+      <arglist>(int resourceID, int defaultValue, HINSTANCE dllinstance=0)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static int</type>
+      <name>LoadIntegerResource</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a3108efb5720be6ca4c7e9817d6a7c02a</anchor>
+      <arglist>(const char *resourceID, int defaultValue, const char *pszResourceFileName=NULL, const char *pszTableName=NULL)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCStrings</name>
