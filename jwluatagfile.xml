@@ -22820,6 +22820,69 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetDottedRestsAreLegalInSimpleMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a6cce0f478c4c88e88ca014e490956642</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetDottedRestsAreLegalInCompoundMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>afece9f0a6ccb4351bd29b5907ae63e88</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopOnlyAtEndOfPiece</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a207f55ef72b94a989ef68e82ed213fa3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtEndOfRegion</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abc1d5a9992919b94fc2a765d3c9f0d3e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtKeyChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>af4cb0ffc047cd94eca58f8205ab30cc3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtTimeChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aff5b5c972a6ca2c537598f5b50c38da4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtSpecialBarline</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a238c8bb3513dbbfba503204b013e82d7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtEmptyFrame</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a50f0daa6559c84b9bd9844786e325762</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebeamOnRebar</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5c1e4ab660abbb92758a8e61357fa11e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetPitchRepresentationType</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
@@ -22895,6 +22958,69 @@
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>ad9725f9de47d44f9ba19cc7e443016aa</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDottedRestsAreLegalInSimpleMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>acc73aa97768ee383105d23c21eed60e0</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDottedRestsAreLegalInCompoundMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aefe73d2a2e817177e2059b947c2d4f6a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtEndOfRegion</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>afa3ba9bf7623f7b90b896bd3c7f0cf48</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtKeyChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aef41e3aadc5848040170c2aa7b560b5d</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtTimeChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0164cac12ac03ea2d0df66322d832cd8</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtSpecialBarline</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a969b41980c129dd50d09a3ffd812db70</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtEmptyFrame</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a21f0909dfa791842f410bb33efcdbed6</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebeamOnRebar</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>add731205f63bae58d08d68d71a7f825e</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ClearRebarStopAtOptions</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a58024bfafb0b45cd60680735289fe633</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
