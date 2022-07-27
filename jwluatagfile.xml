@@ -22721,6 +22721,147 @@
     <name>FCGeneralPrefs</name>
     <filename>class_f_c_general_prefs.html</filename>
     <base>__FCPrefsBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>GRACENOTE_QUANTIZATIONMODE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_ALLOW</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ace261bbafc15997c273cd7dfa52f21a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_REMOVE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62aed3267669a5280b48ad453bc9bfc73b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_CONVERT</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ab8f6d8316cd850c9886c06d7bb73d410</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>QUANTIZATIONMODE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_NOTUPLETS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5a4d076d7c558bb438bcc9a97c1b6de3ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_MIXRHYTHMS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5ae2c547c155665e7fe287275e2925b28b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_SPACEEVENLY</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5af4a0d2bf35d5bf763d303a84b1fae2e5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>UNDOSTATE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_OFF</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a4f72e1a2a393cb5dd2887e40b1e317ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_DISABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a6a8ea8d4dba1f52ab88a76d2ba2ddfe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_ENABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ad25bdb0253e2ccb426c4dc2fc179c291</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_SUSPENDED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ae8aef469ada3c52475c7c9cb3555103d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_ALLOW</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ace261bbafc15997c273cd7dfa52f21a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_REMOVE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62aed3267669a5280b48ad453bc9bfc73b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_CONVERT</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ab8f6d8316cd850c9886c06d7bb73d410</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_NOTUPLETS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5a4d076d7c558bb438bcc9a97c1b6de3ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_MIXRHYTHMS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5ae2c547c155665e7fe287275e2925b28b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_SPACEEVENLY</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5af4a0d2bf35d5bf763d303a84b1fae2e5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_OFF</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a4f72e1a2a393cb5dd2887e40b1e317ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_DISABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a6a8ea8d4dba1f52ab88a76d2ba2ddfe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_ENABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ad25bdb0253e2ccb426c4dc2fc179c291</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_SUSPENDED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ae8aef469ada3c52475c7c9cb3555103d</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -22820,6 +22961,27 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>TimeEdu16</type>
+      <name>GetQuantizationSmallestNoteValue</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae72f09aa7f61959e84800e576308b25f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>QUANTIZATIONMODE</type>
+      <name>GetQuantizationMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ace2bb261935a5a03746a23b60c7aff9e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>GRACENOTE_QUANTIZATIONMODE</type>
+      <name>GetGraceNoteQuantizationMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a4d58224fe0f1ad71888f36740e47abbd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetDottedRestsAreLegalInSimpleMeter</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
@@ -22831,6 +22993,55 @@
       <name>GetDottedRestsAreLegalInCompoundMeter</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>afece9f0a6ccb4351bd29b5907ae63e88</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRetainKeyVelocities</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad250bc2f5d9de333b5cccaf74d6cf9f2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRetainNoteDurations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aa484cb22a9fb0825f72e7d168b2a724c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeVoiceTwo</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a428da317377bd5f811ca9c2133b86bdf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSoftenSyncopations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a47f9199ee384b8a50e55400becd25c5b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>TimeEdu16</type>
+      <name>GetQuantizationSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a71bc12627d400b5e0d23995e56202f2a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeMIDITempoChanges</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a85e26bdbc4c7efab88bebad7fe6f61dc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeMIDIContinuousData</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>af83a81d14a914f898f2cb93d401c9818</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -22880,6 +23091,20 @@
       <name>GetRebeamOnRebar</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a5c1e4ab660abbb92758a8e61357fa11e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetKeyboardSplitPoint</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae5745fe0a886a0b3d9126cab6944f3bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>UNDOSTATE</type>
+      <name>GetUndoState</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0528c1626fc11f9985aecc4565e55a93</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -22961,6 +23186,27 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetQuantizationSmallestNoteValue</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a716f433124e10d67b9960395d99471bb</anchor>
+      <arglist>(TimeEdu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae6f0e075840f30f828c3863ca1825b45</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetGraceNoteQuantizationMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a199867a5474d4cd8dc5207a135cafb29</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetDottedRestsAreLegalInSimpleMeter</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>acc73aa97768ee383105d23c21eed60e0</anchor>
@@ -22971,6 +23217,55 @@
       <name>SetDottedRestsAreLegalInCompoundMeter</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>aefe73d2a2e817177e2059b947c2d4f6a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRetainKeyVelocities</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ab3c8237e62a28923d5e6116035404304</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRetainNoteDurations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>adb45f8bf789eb7f2fa27e599efdab42f</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeVoiceTwo</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a2b3cf4e9f53f214b869bb0e44176cbc7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSoftenSyncopations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abd003020a297f797757beb2192cedc49</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad3435442eb08fde8955c7c574fc4b443</anchor>
+      <arglist>(TimeEdu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeMIDITempoChanges</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a794e58d4111f44d0621374868ddd0bea</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeMIDIContinuousData</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aa78fd0392822032dcc134f1d0f6d9096</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -23014,6 +23309,13 @@
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>add731205f63bae58d08d68d71a7f825e</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetKeyboardSplitPoint</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abbbe33bba9bfaec4073ee4584a6aeafe</anchor>
+      <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
