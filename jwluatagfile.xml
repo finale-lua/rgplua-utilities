@@ -22976,9 +22976,9 @@
     </member>
     <member kind="function">
       <type>GRACENOTE_QUANTIZATIONMODE</type>
-      <name>GetGraceNoteQuantizationMode</name>
+      <name>GetQuantizationGraceNoteMode</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>a4d58224fe0f1ad71888f36740e47abbd</anchor>
+      <anchor>aec94f78df65ee4b09bc4a4eb24ac549d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -22997,30 +22997,30 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetRetainKeyVelocities</name>
+      <name>GetQuantizationRetainKeyVelocities</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>ad250bc2f5d9de333b5cccaf74d6cf9f2</anchor>
+      <anchor>a6f7d57ce08c0c6f88cebddf8f371d679</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetRetainNoteDurations</name>
+      <name>GetQuantizationRetainNoteDurations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>aa484cb22a9fb0825f72e7d168b2a724c</anchor>
+      <anchor>a2826ebc1009e4c22c30fba2233945e8b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetIncludeVoiceTwo</name>
+      <name>GetQuantizationIncludeVoiceTwo</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>a428da317377bd5f811ca9c2133b86bdf</anchor>
+      <anchor>a5b417f79f4f898cc2fdfe0ac7879288f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetSoftenSyncopations</name>
+      <name>GetQuantizationSoftenSyncopations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>a47f9199ee384b8a50e55400becd25c5b</anchor>
+      <anchor>a888ed17c120bef25cd9db61623262a74</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23200,9 +23200,9 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetGraceNoteQuantizationMode</name>
+      <name>SetQuantizationGraceNoteMode</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>a199867a5474d4cd8dc5207a135cafb29</anchor>
+      <anchor>ae259c727cc7fcd52aea531f03e716955</anchor>
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
@@ -23221,30 +23221,30 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetRetainKeyVelocities</name>
+      <name>SetQuantizationRetainKeyVelocities</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>ab3c8237e62a28923d5e6116035404304</anchor>
+      <anchor>a3f5253dcf76ffca4662dd123f4547e9e</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetRetainNoteDurations</name>
+      <name>SetQuantizationRetainNoteDurations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>adb45f8bf789eb7f2fa27e599efdab42f</anchor>
+      <anchor>a0399bee2d47612ec60ed4cb9bff0bbf7</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetIncludeVoiceTwo</name>
+      <name>SetQuantizationIncludeVoiceTwo</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>a2b3cf4e9f53f214b869bb0e44176cbc7</anchor>
+      <anchor>a2d9c07a2154c948e85b8c41f19439a44</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetSoftenSyncopations</name>
+      <name>SetQuantizationSoftenSyncopations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>abd003020a297f797757beb2192cedc49</anchor>
+      <anchor>ad12cc321414c7d2562f55e66bd1ee7b9</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
