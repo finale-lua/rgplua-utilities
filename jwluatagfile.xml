@@ -9426,20 +9426,6 @@
       <arglist></arglist>
     </member>
     <member kind="function">
-      <type>FLAG_32</type>
-      <name>_GetLastCommandModifierKeys</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>acf7344ff50d090d7e560986978364635</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_SetLastCommandModifierKeys</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a2d20ed5efaa401165d0d3851bdc66e2a</anchor>
-      <arglist>(FLAG_32 value)</arglist>
-    </member>
-    <member kind="function">
       <type></type>
       <name>__FCUserWindow</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -9871,27 +9857,6 @@
       <name>IsInBufferMode</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a1f444cadaa8b979df56c2b349178d01b</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_WinSetInitWindowCalled</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>abc9d317795d69f2c43d01698b588168f</anchor>
-      <arglist>(bool value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_WinSetRestorePositionCalled</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>ae9b0623a5e8c6527eff5acf5ec73fb15</anchor>
-      <arglist>(bool value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_WinPostRestorePosition</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>aee3278cc0461b8028ec15bcce6648040</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
