@@ -16260,6 +16260,20 @@
       <anchor>af44af4701033da1cdccc4bf99d5f33b9</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
+      <anchor>a28b6d5f8e196f3f335f453347b0c07f0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
+      <anchor>a615e181b71ebeb2d1f56bbd33ed34c98</anchor>
+      <arglist>(int index)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlDataList</name>
@@ -18075,6 +18089,13 @@
       <name>CreateEdit</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
       <anchor>a71ac6220339c58e4498fcd3969ccdc99</anchor>
+      <arglist>(float x, float y)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlComboBox *</type>
+      <name>CreateComboBox</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>ad4e9863d2a4a995519e51d2c38e3e0d2</anchor>
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
@@ -56889,6 +56910,7 @@
     <class kind="class">FCCtrlLine</class>
     <class kind="class">FCCtrlEdit</class>
     <class kind="class">FCCtrlPopup</class>
+    <class kind="class">FCCtrlComboBox</class>
     <class kind="class">FCDataListRow</class>
     <class kind="class">FCCtrlDataList</class>
     <class kind="class">FCCtrlListBox</class>
