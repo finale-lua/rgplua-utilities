@@ -26717,6 +26717,156 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCLuaScriptItem</name>
+    <filename>class_f_c_lua_script_item.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type></type>
+      <name>FCLuaScriptItem</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>af60d09a8fa7e485c320d31cb60257fbb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ac6df85f704ad29e6d5cf44e84b19e7cf</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetFilePath</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>aa89e448496487e620be2e41d8ae50076</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetMenuItemText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a27ea2fbd0548b614ce37b2791de9e2a4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetUndoText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>aad44af5fbdc710d84832730469951784</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetDescription</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>afe65ccbb59ee85a884868f9937300e28</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetPrefix</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a87a67806bdc1d49ea7fde824805cf8dd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetDebug</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a81f33fbdbddd599481461ccdebcdb44e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLoadAsString</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ae8da6b8d38d6f3bb4135ddfaf4005c80</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetExecutableIndex</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ac7a58dc7d574b171c892fc31a74afd0b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFilePath</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a73700e43dd43a5f2df6d24c0d5fb685d</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMenuItemText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a67cb728fabd3a3bca7bf0efc6e9f2d6b</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUndoText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a18f1b7182363828e2a018ef57c681a1f</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDescription</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a5e6a9eb33962eb2a4b5e5cf267a4058e</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPrefix</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a604725f12034a72836de2d05ce3b715b</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDebug</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a24ffeb87793551e9fbfbe872132a7f1d</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLoadAsString</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>af2e10a166f633004daf9702355ceca3b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCLuaScriptItems</name>
+    <filename>class_f_c_lua_script_items.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>a96b95ff84a08869249608b1b970b9ee9</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCLuaScriptItems</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>a70fc20d1a85d161889dc1f8542988e5a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCLuaScriptItems *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>a97c69b293d984bc6310d46391b8da061</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCLyricsPrefs</name>
     <filename>class_f_c_lyrics_prefs.html</filename>
     <base>__FCPrefsBase</base>
@@ -57019,6 +57169,7 @@
     <class kind="class">FCUI</class>
     <class kind="class">FCCustomLuaWindow</class>
     <class kind="class">FCLuaIterator</class>
+    <class kind="class">FCLuaScriptItem</class>
   </compound>
   <compound kind="group">
     <name>lua_collections</name>
@@ -57090,6 +57241,7 @@
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
     <class kind="class">FCParts</class>
+    <class kind="class">FCLuaScriptItems</class>
   </compound>
   <compound kind="page">
     <name>index</name>
