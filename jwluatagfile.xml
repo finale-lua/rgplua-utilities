@@ -26859,10 +26859,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>FCLuaScriptItems *</type>
+      <type>FCLuaScriptItem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_lua_script_items.html</anchorfile>
-      <anchor>a97c69b293d984bc6310d46391b8da061</anchor>
+      <anchor>aea4dd773dc44167fe8f25366e7240bcb</anchor>
       <arglist>(int index)</arglist>
     </member>
   </compound>
