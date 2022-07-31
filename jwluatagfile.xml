@@ -26724,8 +26724,15 @@
       <type></type>
       <name>FCLuaScriptItem</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>af60d09a8fa7e485c320d31cb60257fbb</anchor>
-      <arglist>()</arglist>
+      <anchor>a6e44dc1957cdc2e55c4c3a0619fbdeff</anchor>
+      <arglist>(const char *filePath=nullptr)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCLuaScriptItem</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a7f31e6af016b1789303524a470fc1d04</anchor>
+      <arglist>(int x)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -26789,13 +26796,6 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>ac7a58dc7d574b171c892fc31a74afd0b</anchor>
       <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetFilePath</name>
-      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>a73700e43dd43a5f2df6d24c0d5fb685d</anchor>
-      <arglist>(const char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
