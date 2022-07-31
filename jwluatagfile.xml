@@ -26721,20 +26721,6 @@
     <filename>class_f_c_lua_script_item.html</filename>
     <base>__FCBase</base>
     <member kind="function">
-      <type></type>
-      <name>FCLuaScriptItem</name>
-      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>a6e44dc1957cdc2e55c4c3a0619fbdeff</anchor>
-      <arglist>(const char *filePath=nullptr)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>FCLuaScriptItem</name>
-      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>a7f31e6af016b1789303524a470fc1d04</anchor>
-      <arglist>(int x)</arglist>
-    </member>
-    <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
@@ -26850,13 +26836,6 @@
       <anchorfile>class_f_c_lua_script_items.html</anchorfile>
       <anchor>a96b95ff84a08869249608b1b970b9ee9</anchor>
       <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>FCLuaScriptItems</name>
-      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
-      <anchor>a70fc20d1a85d161889dc1f8542988e5a</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>FCLuaScriptItem *</type>
