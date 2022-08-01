@@ -26838,6 +26838,27 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FCLuaScriptItems</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>a70fc20d1a85d161889dc1f8542988e5a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Add</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>aa481c23ed7bfa718ae40843d07bf6ee7</anchor>
+      <arglist>(FCLuaScriptItem *pNewItem)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>InsertItemAt</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>ac78320c25fc16db3b0a8452fdbe5a14e</anchor>
+      <arglist>(FCLuaScriptItem *pNewItem, int index)</arglist>
+    </member>
+    <member kind="function">
       <type>FCLuaScriptItem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_lua_script_items.html</anchorfile>
