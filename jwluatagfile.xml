@@ -56453,6 +56453,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>GetUserLocaleName</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>a5d90abfcb046d0de7fdf9c1892a50a2b</anchor>
+      <arglist>(FCString *pString)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetUseIsFontAvailableAPI</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
       <anchor>aa13212aa397e4cd00f54984b98e70d1b</anchor>
