@@ -26728,6 +26728,13 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>IsExecuting</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a8d7976aa0fa40a5e468069883595eef6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>const char *</type>
       <name>GetFilePath</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
