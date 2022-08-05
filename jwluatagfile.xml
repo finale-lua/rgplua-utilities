@@ -16872,6 +16872,13 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
+      <anchor>a227f6f9dbc2c8cdb0b99f08540658bf3</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetCheck</name>
       <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
@@ -16889,13 +16896,69 @@
   <compound kind="class">
     <name>FCCtrlRadioButtonGroup</name>
     <filename>class_f_c_ctrl_radio_button_group.html</filename>
-    <base>FCControl</base>
+    <base>__FCBase</base>
     <member kind="function">
       <type></type>
       <name>FCCtrlRadioButtonGroup</name>
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
-      <anchor>a83931f6230d8750e60ac3ce35b068453</anchor>
-      <arglist>(twobyte id, int no_of_items)</arglist>
+      <anchor>a7e53fcb9fbf57047763e6596203928a9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>afd73a96cb77bd302d6a5536aa4ed0050</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetCount</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a94d8215b5b3c3f702c7d525124886075</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Add</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a72f2a329aa82cb378ce187fd9f625530</anchor>
+      <arglist>(FCCtrlRadioButton *button)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlRadioButton *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a8a46498b2ebe043bf349e6465bb61a4f</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetText</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a0ccd930442c174252329095f75d80d0d</anchor>
+      <arglist>(FCStrings *pStrings)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a0e5e7941cb14885704a5c67fb8718fab</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a2a5003f00e7b3a6582c3d0b521d7ab6d</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MoveAllRelative</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a797aaf88b8c6e561213cc5ee33c83c5e</anchor>
+      <arglist>(float horizoffset, float vertoffset)</arglist>
     </member>
   </compound>
   <compound kind="class">
