@@ -49595,6 +49595,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>CopyFromStringTable</name>
+      <anchorfile>class_f_c_strings.html</anchorfile>
+      <anchor>a747ed4a73ada466a5aaab8d219fc4d69</anchor>
+      <arglist>(const std::vector&lt; std::string &gt; &amp;strings)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>TrimWhitespaceAll</name>
       <anchorfile>class_f_c_strings.html</anchorfile>
       <anchor>a2a352f1c4b9dec27ede32048c2c79ef3</anchor>
