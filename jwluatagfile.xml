@@ -16868,8 +16868,15 @@
       <type></type>
       <name>FCCtrlRadioButton</name>
       <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
-      <anchor>a3d5c6c1c5067b60af0e2dd2fd84292b7</anchor>
-      <arglist>(twobyte id, FCCtrlRadioButtonGroup *pButtonGroup=nullptr, int buttonIndex=-1)</arglist>
+      <anchor>a53ad26bc09ad23c7c083dabd753827e7</anchor>
+      <arglist>(twobyte id, FCCtrlRadioButtonGroup *pButtonGroup, int buttonIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlRadioButton</name>
+      <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
+      <anchor>a80b6236e2d9597563d076c419fc70427</anchor>
+      <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
