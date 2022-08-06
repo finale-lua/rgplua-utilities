@@ -57137,6 +57137,8 @@
     <class kind="class">FCTreeNode</class>
     <class kind="class">FCCtrlTree</class>
     <class kind="class">FCCtrlSwitcher</class>
+    <class kind="class">FCCtrlRadioButton</class>
+    <class kind="class">FCCtrlRadioButtonGroup</class>
     <class kind="class">FCCtrlCheckbox</class>
     <class kind="class">FCCtrlButton</class>
     <class kind="class">FCCtrlSlider</class>
