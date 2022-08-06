@@ -16868,8 +16868,8 @@
       <type></type>
       <name>FCCtrlRadioButton</name>
       <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
-      <anchor>a80b6236e2d9597563d076c419fc70427</anchor>
-      <arglist>(twobyte id)</arglist>
+      <anchor>a3d5c6c1c5067b60af0e2dd2fd84292b7</anchor>
+      <arglist>(twobyte id, FCCtrlRadioButtonGroup *pButtonGroup=nullptr, int buttonIndex=-1)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -16892,6 +16892,13 @@
       <anchor>a41acb4299d675ba4e6b1abbf0d2934fb</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>FCCtrlRadioButtonGroup *</type>
+      <name>GetRadioButtonGroup</name>
+      <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
+      <anchor>a3e5ca16f59d020840b64ebb63d352528</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlRadioButtonGroup</name>
@@ -16901,8 +16908,8 @@
       <type></type>
       <name>FCCtrlRadioButtonGroup</name>
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
-      <anchor>a7e53fcb9fbf57047763e6596203928a9</anchor>
-      <arglist>()</arglist>
+      <anchor>ac62fed81089642f6e4a0995c5bef52f9</anchor>
+      <arglist>(int groupID)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -16938,6 +16945,13 @@
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
       <anchor>a0ccd930442c174252329095f75d80d0d</anchor>
       <arglist>(FCStrings *pStrings)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWidth</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a21e8a4de7b473bba98996f8be983f224</anchor>
+      <arglist>(float width)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
