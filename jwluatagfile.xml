@@ -15793,8 +15793,8 @@
       <type></type>
       <name>FCControl</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>afba1f63143e9af920ec6a3747c2dfb5f</anchor>
-      <arglist>(twobyte id)</arglist>
+      <anchor>a7a94891462114dc2e69a445df29780a0</anchor>
+      <arglist>(twobyte id, const __FCControlTypedPtr &amp;subclassPtr)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -16257,6 +16257,13 @@
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
       <anchor>a8c80a3d1fc182d64d6d5d136a84426a0</anchor>
       <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlDataList</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a136b504c925b4c1f897d8a26a5b6e460</anchor>
+      <arglist>(twobyte id, const __FCControlTypedPtr &amp;subclassPtr)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
