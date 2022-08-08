@@ -16927,6 +16927,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>GetGroupID</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>ab4e9b44086e7e1346ac13cf2ac106bf0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>GetCount</name>
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
       <anchor>a94d8215b5b3c3f702c7d525124886075</anchor>
@@ -16959,6 +16966,13 @@
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
       <anchor>a21e8a4de7b473bba98996f8be983f224</anchor>
       <arglist>(float width)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlRadioButton *</type>
+      <name>GetSelectedButton</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>aeba6a3789fda0f2fd1b8406137763dfe</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>int</type>
