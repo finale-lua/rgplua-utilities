@@ -15796,6 +15796,13 @@
       <anchor>a7a94891462114dc2e69a445df29780a0</anchor>
       <arglist>(twobyte id, const __FCControlTypedPtr &amp;subclassPtr)</arglist>
     </member>
+    <member kind="function">
+      <type></type>
+      <name>FCControl</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>afba1f63143e9af920ec6a3747c2dfb5f</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
       <name>~FCControl</name>
