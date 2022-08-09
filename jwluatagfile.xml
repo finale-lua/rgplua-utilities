@@ -16144,6 +16144,13 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FCCtrlCheckbox</name>
+      <anchorfile>class_f_c_ctrl_checkbox.html</anchorfile>
+      <anchor>a82bcf1cb86fa1c5edaeaf35939c65356</anchor>
+      <arglist>(twobyte id, const __FCControlTypedPtr &amp;subclassPtr)</arglist>
+    </member>
+    <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_checkbox.html</anchorfile>
@@ -16507,6 +16514,13 @@
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
       <anchor>acfd2deac42bbd0dc0e43d3219f6bef3c</anchor>
       <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlEdit</name>
+      <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
+      <anchor>a3a4ff3cdb3d420b2c9c12b0684bd3b6c</anchor>
+      <arglist>(twobyte id, const __FCControlTypedPtr &amp;subclassPtr)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
