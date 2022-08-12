@@ -11525,17 +11525,17 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetVerticalOffset</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>a0d6e2fe7659b3e5f0ffec56750dbd7c8</anchor>
+      <anchor>ae559e49aa513fb0853089a3798acaa8a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>af577a17facf6bd13b82d193a5bf92dca</anchor>
+      <anchor>a7b8dc23dcabcaa4c01189b15a4b3fb36</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11570,8 +11570,8 @@
       <type>void</type>
       <name>SetVerticalOffset</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>ab0e56f3b4d7a3508a46f6f7ce9cdeefd</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a5baab81f29b95e53c9407a50fc5e8f8c</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -11626,8 +11626,8 @@
       <type>bool</type>
       <name>LoadDefaultForLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>ab14b5d12661c7d875862b3094f5bf01e</anchor>
-      <arglist>(BASELINEMODES mode, twobyte lyricno)</arglist>
+      <anchor>a180260b0b8b545f2003673b0d6948174</anchor>
+      <arglist>(BASELINEMODES mode, eLyric lyricno)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -11637,18 +11637,18 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static Evpu16</type>
+      <type>static Evpu32</type>
       <name>CalcTotalOffset</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>acae2865215c71df85a1f275238fa0396</anchor>
+      <anchor>a54849e58b7a399f3e0116a68282884bd</anchor>
       <arglist>(BASELINEMODES mode, eSsys system, eStaff staff)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static Evpu16</type>
+      <type>static Evpu32</type>
       <name>CalcTotalOffsetForLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>aa00183380085682bc6c8aeca3ac02445</anchor>
-      <arglist>(BASELINEMODES mode, eSsys system, eStaff staff, int lyricno)</arglist>
+      <anchor>a887f42da6fb0ce20472d12be36ef3b9a</anchor>
+      <arglist>(BASELINEMODES mode, eSsys system, eStaff staff, eLyric lyricno)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -11708,15 +11708,15 @@
       <type>FCBaseline *</type>
       <name>FindLyricNumber</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>a0f228a8c7df42f7c9ae83f3cc67ee669</anchor>
-      <arglist>(eStaff staffnumber, twobyte lyricnumber)</arglist>
+      <anchor>a71e3a7ac7cb62f34a2ce911d50a3c098</anchor>
+      <arglist>(eStaff staffnumber, eLyric lyricnumber)</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
       <name>AssureSavedLyricNumberForPiece</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>afd3c249a558e77368374e6c5f9f725e0</anchor>
-      <arglist>(FCBaseline::BASELINEMODES mode, eStaff staffnumber, int lyricnumber)</arglist>
+      <anchor>a51a09c668129ce68c0d3dc35eac5e1f0</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode, eStaff staffnumber, eLyric lyricnumber)</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
@@ -11729,8 +11729,8 @@
       <type>FCBaseline *</type>
       <name>AssureSavedLyricNumber</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>a11360f7d1d07974ea39e86adf757d063</anchor>
-      <arglist>(FCBaseline::BASELINEMODES mode, eSsys systemnumber, eStaff staffnumber, int lyricnumber)</arglist>
+      <anchor>ab01c6079ac67b378ca57fb0815718ad5</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode, eSsys systemnumber, eStaff staffnumber, eLyric lyricnumber)</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
