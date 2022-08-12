@@ -16671,8 +16671,22 @@
       <type>bool</type>
       <name>SetImageFromFilePath</name>
       <anchorfile>class_f_c_ctrl_image.html</anchorfile>
-      <anchor>abf54bd55f293d13ae8e72853dff79782</anchor>
-      <arglist>(const char *path)</arglist>
+      <anchor>a6bc5c3b8dec06ae09891570cafc9c700</anchor>
+      <arglist>(const char *path, const float scaleBy=1.0)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetImageFromURL</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a0791b3d6a160b9709700aa727171b5e1</anchor>
+      <arglist>(const char *url, const float scaleBy=1.0)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetImageFromBuffer</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a6d67f6b0e348f80d589003472cfedef0</anchor>
+      <arglist>(const char *data, long dataLength, const float scaleBy=1.0)</arglist>
     </member>
   </compound>
   <compound kind="class">
