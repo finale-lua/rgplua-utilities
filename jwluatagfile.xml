@@ -16650,6 +16650,32 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCtrlImage</name>
+    <filename>class_f_c_ctrl_image.html</filename>
+    <base>FCControl</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a626816354615581bc7801aa2f993cf14</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlImage</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a41b6daca2d227e281b01cacff50a623f</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetImageFromFilePath</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>abf54bd55f293d13ae8e72853dff79782</anchor>
+      <arglist>(const char *path)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCtrlLine</name>
     <filename>class_f_c_ctrl_line.html</filename>
     <base>FCControl</base>
@@ -18152,6 +18178,13 @@
       <name>CreateStatic</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
       <anchor>a3f20ade06204c59642211817b2c7f468</anchor>
+      <arglist>(float x, float y)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlImage *</type>
+      <name>CreateImage</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>a8a94765f84f982a741fa74254bc008c8</anchor>
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
@@ -41842,6 +41875,13 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
+      <type>FCCtrlImage *</type>
+      <name>AddImage</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>a27b7cf8a10da6067e11bbbfaf2741390</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCtrlComboBox *</type>
       <name>AddComboBox</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
@@ -57163,6 +57203,7 @@
     <class kind="class">FCCtrlCheckbox</class>
     <class kind="class">FCCtrlButton</class>
     <class kind="class">FCCtrlSlider</class>
+    <class kind="class">FCCtrlImage</class>
     <class kind="class">FCResourceWindow</class>
     <class kind="class">FCCustomWindow</class>
     <class kind="class">FCDocument</class>
