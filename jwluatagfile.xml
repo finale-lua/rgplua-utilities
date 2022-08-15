@@ -16676,13 +16676,6 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>SetImageFromURL</name>
-      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
-      <anchor>a802f7170bac6c8476e44b4af33304abd</anchor>
-      <arglist>(const char *url, bool preserveControlSize=false)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
       <name>SetImageFromBuffer</name>
       <anchorfile>class_f_c_ctrl_image.html</anchorfile>
       <anchor>a56179a2b5ca6fdfab9d6c4c665043bc7</anchor>
@@ -56657,6 +56650,13 @@
       <name>IsOnMac</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
       <anchor>a081813059cbc9620b0287ee71a028f87</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsDarkMode</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>a6deec0ccb8b89878de5d3d200e39c7fa</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
