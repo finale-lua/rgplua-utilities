@@ -9531,6 +9531,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>IsDarkModeAppearance</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a742c121bc63c753989dc0f1a752dfce4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetTitle</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -9611,8 +9618,8 @@
       <type>bool</type>
       <name>WindowExists</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a2c2b7364de7c99db38d4375b7fed3a97</anchor>
-      <arglist>()</arglist>
+      <anchor>a37b8f1839e27ea08d99c35e94c21f7f0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -9641,6 +9648,13 @@
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>acf3be9830b53fcb6e8fb1265b032f78f</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>DarkModeIsChanging</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>ac8948ece1337ab7b3d37cf75e705e8ff</anchor>
+      <arglist>(bool isDarkMode)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -17576,6 +17590,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterDarkModeIsChanging</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a11c713ac358fd0d864388afbf1770527</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>HandleControlEvent</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a06ea38dd1b4c631219e1c06c320eb65e</anchor>
@@ -17643,6 +17664,13 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a4ae14c8ae2cb53424f4f1f26ec1a15cb</anchor>
       <arglist>(twobyte timerID) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DarkModeIsChanging</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a7f5dc109ea48dd88f6ce2bf94def3d8f</anchor>
+      <arglist>(bool isDarkMode) override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -56650,13 +56678,6 @@
       <name>IsOnMac</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
       <anchor>a081813059cbc9620b0287ee71a028f87</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>IsDarkMode</name>
-      <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>a6deec0ccb8b89878de5d3d200e39c7fa</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
