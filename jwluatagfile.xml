@@ -16692,8 +16692,8 @@
       <type>bool</type>
       <name>SetImageFromBuffer</name>
       <anchorfile>class_f_c_ctrl_image.html</anchorfile>
-      <anchor>a56179a2b5ca6fdfab9d6c4c665043bc7</anchor>
-      <arglist>(const char *data, long dataLength, bool preserveControlSize=false)</arglist>
+      <anchor>abd21ce0a0c93a9f0397f9033f9bc4a71</anchor>
+      <arglist>(const onebyte *data, long dataLength, bool preserveControlSize=false)</arglist>
     </member>
   </compound>
   <compound kind="class">
