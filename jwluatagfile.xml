@@ -9469,13 +9469,6 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>_SetModelessEnabledState</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a2d575858f2422c6e2aa61efca0b7b837</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
       <name>SetWidth</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a1c5a4d7afdaff2025541ef60cbccd60b</anchor>
@@ -41887,6 +41880,20 @@
       <anchorfile>class_f_c_resource_window.html</anchorfile>
       <anchor>af9cd85e89cb88878f4d462f50afeddc5</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetWantsDpiAwareness</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>af998d512f9c7e39b9f4945d7d14a6265</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWantsDpiAwareness</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>a8b319e0ae59cb73b8003f6998a4355aa</anchor>
+      <arglist>(bool WINCODE(state))</arglist>
     </member>
     <member kind="function">
       <type>FCControl *</type>
