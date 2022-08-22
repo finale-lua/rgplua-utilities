@@ -15917,9 +15917,9 @@
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
-      <name>CreateFont</name>
+      <name>CreateFontInfo</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>aa1a2bc80f07ba3ccd88a4549dd877e2a</anchor>
+      <anchor>ab4416c3412de41e5c489769eeefa303a</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -48766,6 +48766,13 @@
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>aba1475f723b0437657a45529272e8f40</anchor>
       <arglist>(const char16_t *pszCString)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ac387a6868b58bcd4dc5f2f336d0d77e3</anchor>
+      <arglist>(const WCHAR *pszCString)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
