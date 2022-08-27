@@ -26893,6 +26893,85 @@
     <name>FCLuaScriptItem</name>
     <filename>class_f_c_lua_script_item.html</filename>
     <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>LUASCRIPT_REQVERSION_TYPES</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a95d9c5846a846713f66e5531c4f48455</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a59252b9539b028df1bde1b01661ed4d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a68e7becdfd0cc8a5f251279d06225147</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315aace7988135ec54bd226ea5f76d627962</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a2235d6b3cac3494b9b33050e274b1d01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a019ad6fc68c0b4d1a6e12696b395e1e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a95d9c5846a846713f66e5531c4f48455</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a59252b9539b028df1bde1b01661ed4d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a68e7becdfd0cc8a5f251279d06225147</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315aace7988135ec54bd226ea5f76d627962</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a2235d6b3cac3494b9b33050e274b1d01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a019ad6fc68c0b4d1a6e12696b395e1e7</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -26962,6 +27041,20 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>ac7a58dc7d574b171c892fc31a74afd0b</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVersionCompatible</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ab81fc55d4eb4df84377b6fc9c302a797</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>EVERSION</type>
+      <name>GetRequiredVersion</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>af71b95bb0f8094f8fb0af0c57fad21bd</anchor>
+      <arglist>(int versiontype) const</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
