@@ -26964,6 +26964,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>FCString *</type>
+      <name>CreateFinalePluginValue</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>abdd6b5d41e4d6ef63b5566d3e38a64ca</anchor>
+      <arglist>(const char *fieldname)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetMenuItemText</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
