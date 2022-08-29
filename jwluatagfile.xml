@@ -9426,20 +9426,6 @@
       <arglist></arglist>
     </member>
     <member kind="function">
-      <type>FLAG_32</type>
-      <name>_GetLastCommandModifierKeys</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>acf7344ff50d090d7e560986978364635</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_SetLastCommandModifierKeys</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a2d20ed5efaa401165d0d3851bdc66e2a</anchor>
-      <arglist>(FLAG_32 value)</arglist>
-    </member>
-    <member kind="function">
       <type></type>
       <name>__FCUserWindow</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -9480,13 +9466,6 @@
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a58135654be971249d68721b38eeeb2fb</anchor>
       <arglist>(int index)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_SetModelessEnabledState</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a2d575858f2422c6e2aa61efca0b7b837</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -9543,6 +9522,13 @@
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a111035c21270370c306aca53072db133</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsDarkModeAppearance</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a742c121bc63c753989dc0f1a752dfce4</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -9625,8 +9611,8 @@
       <type>bool</type>
       <name>WindowExists</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a2c2b7364de7c99db38d4375b7fed3a97</anchor>
-      <arglist>()</arglist>
+      <anchor>a37b8f1839e27ea08d99c35e94c21f7f0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -9655,6 +9641,13 @@
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>acf3be9830b53fcb6e8fb1265b032f78f</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>DarkModeIsChanging</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>ac8948ece1337ab7b3d37cf75e705e8ff</anchor>
+      <arglist>(bool isDarkMode)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -9871,27 +9864,6 @@
       <name>IsInBufferMode</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a1f444cadaa8b979df56c2b349178d01b</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_WinSetInitWindowCalled</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>abc9d317795d69f2c43d01698b588168f</anchor>
-      <arglist>(bool value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_WinSetRestorePositionCalled</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>ae9b0623a5e8c6527eff5acf5ec73fb15</anchor>
-      <arglist>(bool value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>_WinPostRestorePosition</name>
-      <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>aee3278cc0461b8028ec15bcce6648040</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -11560,17 +11532,17 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetVerticalOffset</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>a0d6e2fe7659b3e5f0ffec56750dbd7c8</anchor>
+      <anchor>ae559e49aa513fb0853089a3798acaa8a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>GetLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>af577a17facf6bd13b82d193a5bf92dca</anchor>
+      <anchor>a7b8dc23dcabcaa4c01189b15a4b3fb36</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11605,8 +11577,8 @@
       <type>void</type>
       <name>SetVerticalOffset</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>ab0e56f3b4d7a3508a46f6f7ce9cdeefd</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a5baab81f29b95e53c9407a50fc5e8f8c</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -11661,8 +11633,8 @@
       <type>bool</type>
       <name>LoadDefaultForLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>ab14b5d12661c7d875862b3094f5bf01e</anchor>
-      <arglist>(BASELINEMODES mode, twobyte lyricno)</arglist>
+      <anchor>a180260b0b8b545f2003673b0d6948174</anchor>
+      <arglist>(BASELINEMODES mode, eLyric lyricno)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -11672,18 +11644,18 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static Evpu16</type>
+      <type>static Evpu32</type>
       <name>CalcTotalOffset</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>acae2865215c71df85a1f275238fa0396</anchor>
+      <anchor>a54849e58b7a399f3e0116a68282884bd</anchor>
       <arglist>(BASELINEMODES mode, eSsys system, eStaff staff)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static Evpu16</type>
+      <type>static Evpu32</type>
       <name>CalcTotalOffsetForLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>aa00183380085682bc6c8aeca3ac02445</anchor>
-      <arglist>(BASELINEMODES mode, eSsys system, eStaff staff, int lyricno)</arglist>
+      <anchor>a887f42da6fb0ce20472d12be36ef3b9a</anchor>
+      <arglist>(BASELINEMODES mode, eSsys system, eStaff staff, eLyric lyricno)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -11743,15 +11715,15 @@
       <type>FCBaseline *</type>
       <name>FindLyricNumber</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>a0f228a8c7df42f7c9ae83f3cc67ee669</anchor>
-      <arglist>(eStaff staffnumber, twobyte lyricnumber)</arglist>
+      <anchor>a71e3a7ac7cb62f34a2ce911d50a3c098</anchor>
+      <arglist>(eStaff staffnumber, eLyric lyricnumber)</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
       <name>AssureSavedLyricNumberForPiece</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>afd3c249a558e77368374e6c5f9f725e0</anchor>
-      <arglist>(FCBaseline::BASELINEMODES mode, eStaff staffnumber, int lyricnumber)</arglist>
+      <anchor>a51a09c668129ce68c0d3dc35eac5e1f0</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode, eStaff staffnumber, eLyric lyricnumber)</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
@@ -11764,8 +11736,8 @@
       <type>FCBaseline *</type>
       <name>AssureSavedLyricNumber</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>a11360f7d1d07974ea39e86adf757d063</anchor>
-      <arglist>(FCBaseline::BASELINEMODES mode, eSsys systemnumber, eStaff staffnumber, int lyricnumber)</arglist>
+      <anchor>ab01c6079ac67b378ca57fb0815718ad5</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode, eSsys systemnumber, eStaff staffnumber, eLyric lyricnumber)</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
@@ -15828,6 +15800,13 @@
       <type></type>
       <name>FCControl</name>
       <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a7a94891462114dc2e69a445df29780a0</anchor>
+      <arglist>(twobyte id, const __FCControlTypedPtr &amp;subclassPtr)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCControl</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
       <anchor>afba1f63143e9af920ec6a3747c2dfb5f</anchor>
       <arglist>(twobyte id)</arglist>
     </member>
@@ -15935,6 +15914,13 @@
       <anchorfile>class_f_c_control.html</anchorfile>
       <anchor>ab89944f4d291e1e3d05d323075e3d85f</anchor>
       <arglist>(const FCFontInfo *fontInfo)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateFontInfo</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>ab4416c3412de41e5c489769eeefa303a</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -16259,6 +16245,20 @@
       <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
       <anchor>af44af4701033da1cdccc4bf99d5f33b9</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
+      <anchor>a28b6d5f8e196f3f335f453347b0c07f0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
+      <anchor>a615e181b71ebeb2d1f56bbd33ed34c98</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -16664,6 +16664,39 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCtrlImage</name>
+    <filename>class_f_c_ctrl_image.html</filename>
+    <base>FCControl</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a626816354615581bc7801aa2f993cf14</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlImage</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a41b6daca2d227e281b01cacff50a623f</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetImageFromFilePath</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>a7d00beb2f04fba803da38674bf644fac</anchor>
+      <arglist>(const char *path, bool preserveControlSize=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetImageFromBuffer</name>
+      <anchorfile>class_f_c_ctrl_image.html</anchorfile>
+      <anchor>abd21ce0a0c93a9f0397f9033f9bc4a71</anchor>
+      <arglist>(const onebyte *data, long dataLength, bool preserveControlSize=false)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCtrlLine</name>
     <filename>class_f_c_ctrl_line.html</filename>
     <base>FCControl</base>
@@ -16889,8 +16922,22 @@
       <type></type>
       <name>FCCtrlRadioButton</name>
       <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
+      <anchor>a53ad26bc09ad23c7c083dabd753827e7</anchor>
+      <arglist>(twobyte id, FCCtrlRadioButtonGroup *pButtonGroup, int buttonIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlRadioButton</name>
+      <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
       <anchor>a80b6236e2d9597563d076c419fc70427</anchor>
       <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
+      <anchor>a227f6f9dbc2c8cdb0b99f08540658bf3</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -16906,17 +16953,101 @@
       <anchor>a41acb4299d675ba4e6b1abbf0d2934fb</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>FCCtrlRadioButtonGroup *</type>
+      <name>GetRadioButtonGroup</name>
+      <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
+      <anchor>a3e5ca16f59d020840b64ebb63d352528</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlRadioButtonGroup</name>
     <filename>class_f_c_ctrl_radio_button_group.html</filename>
-    <base>FCControl</base>
+    <base>__FCBase</base>
     <member kind="function">
       <type></type>
       <name>FCCtrlRadioButtonGroup</name>
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
-      <anchor>a83931f6230d8750e60ac3ce35b068453</anchor>
-      <arglist>(twobyte id, int no_of_items)</arglist>
+      <anchor>ac62fed81089642f6e4a0995c5bef52f9</anchor>
+      <arglist>(int groupID)</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>afd73a96cb77bd302d6a5536aa4ed0050</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetGroupID</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>ab4e9b44086e7e1346ac13cf2ac106bf0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetCount</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a94d8215b5b3c3f702c7d525124886075</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Add</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a72f2a329aa82cb378ce187fd9f625530</anchor>
+      <arglist>(FCCtrlRadioButton *button)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlRadioButton *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a8a46498b2ebe043bf349e6465bb61a4f</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetText</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a0ccd930442c174252329095f75d80d0d</anchor>
+      <arglist>(FCStrings *pStrings)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWidth</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a21e8a4de7b473bba98996f8be983f224</anchor>
+      <arglist>(float width)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlRadioButton *</type>
+      <name>GetSelectedButton</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>aeba6a3789fda0f2fd1b8406137763dfe</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a0e5e7941cb14885704a5c67fb8718fab</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSelectedItem</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a2a5003f00e7b3a6582c3d0b521d7ab6d</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MoveAllRelative</name>
+      <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
+      <anchor>a797aaf88b8c6e561213cc5ee33c83c5e</anchor>
+      <arglist>(float horizoffset, float vertoffset)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -17459,6 +17590,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterDarkModeIsChanging</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a11c713ac358fd0d864388afbf1770527</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>HandleControlEvent</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a06ea38dd1b4c631219e1c06c320eb65e</anchor>
@@ -17526,6 +17664,13 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a4ae14c8ae2cb53424f4f1f26ec1a15cb</anchor>
       <arglist>(twobyte timerID) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DarkModeIsChanging</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a7f5dc109ea48dd88f6ce2bf94def3d8f</anchor>
+      <arglist>(bool isDarkMode) override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -18071,10 +18216,24 @@
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
+      <type>FCCtrlImage *</type>
+      <name>CreateImage</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>a8a94765f84f982a741fa74254bc008c8</anchor>
+      <arglist>(float x, float y)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCtrlEdit *</type>
       <name>CreateEdit</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
       <anchor>a71ac6220339c58e4498fcd3969ccdc99</anchor>
+      <arglist>(float x, float y)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlComboBox *</type>
+      <name>CreateComboBox</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>ad4e9863d2a4a995519e51d2c38e3e0d2</anchor>
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
@@ -22721,6 +22880,147 @@
     <name>FCGeneralPrefs</name>
     <filename>class_f_c_general_prefs.html</filename>
     <base>__FCPrefsBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>GRACENOTE_QUANTIZATIONMODE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_ALLOW</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ace261bbafc15997c273cd7dfa52f21a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_REMOVE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62aed3267669a5280b48ad453bc9bfc73b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_CONVERT</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ab8f6d8316cd850c9886c06d7bb73d410</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>QUANTIZATIONMODE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_NOTUPLETS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5a4d076d7c558bb438bcc9a97c1b6de3ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_MIXRHYTHMS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5ae2c547c155665e7fe287275e2925b28b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_SPACEEVENLY</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5af4a0d2bf35d5bf763d303a84b1fae2e5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>UNDOSTATE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_OFF</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a4f72e1a2a393cb5dd2887e40b1e317ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_DISABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a6a8ea8d4dba1f52ab88a76d2ba2ddfe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_ENABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ad25bdb0253e2ccb426c4dc2fc179c291</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_SUSPENDED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ae8aef469ada3c52475c7c9cb3555103d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_ALLOW</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ace261bbafc15997c273cd7dfa52f21a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_REMOVE</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62aed3267669a5280b48ad453bc9bfc73b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GRACEQUANTMODE_CONVERT</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a54c0ffb184f7b0a416a60a3eab68fb62ab8f6d8316cd850c9886c06d7bb73d410</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_NOTUPLETS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5a4d076d7c558bb438bcc9a97c1b6de3ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_MIXRHYTHMS</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5ae2c547c155665e7fe287275e2925b28b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>QUANTIZATIONMODE_SPACEEVENLY</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5ea52201dfb15e7b5c2ad0bcb03542a5af4a0d2bf35d5bf763d303a84b1fae2e5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_OFF</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a4f72e1a2a393cb5dd2887e40b1e317ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_DISABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298a6a8ea8d4dba1f52ab88a76d2ba2ddfe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_ENABLED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ad25bdb0253e2ccb426c4dc2fc179c291</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNDOSTATE_SUSPENDED</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a9851a2f8438e48ee86be6e84e7d7e298ae8aef469ada3c52475c7c9cb3555103d</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -22820,6 +23120,153 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>TimeEdu16</type>
+      <name>GetQuantizationSmallestNoteValue</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae72f09aa7f61959e84800e576308b25f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>QUANTIZATIONMODE</type>
+      <name>GetQuantizationMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ace2bb261935a5a03746a23b60c7aff9e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>GRACENOTE_QUANTIZATIONMODE</type>
+      <name>GetQuantizationGraceNoteMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aec94f78df65ee4b09bc4a4eb24ac549d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetDottedRestsAreLegalInSimpleMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a6cce0f478c4c88e88ca014e490956642</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetDottedRestsAreLegalInCompoundMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>afece9f0a6ccb4351bd29b5907ae63e88</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationRetainKeyVelocities</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a6f7d57ce08c0c6f88cebddf8f371d679</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationRetainNoteDurations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a2826ebc1009e4c22c30fba2233945e8b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationIncludeVoiceTwo</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5b417f79f4f898cc2fdfe0ac7879288f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationSoftenSyncopations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a888ed17c120bef25cd9db61623262a74</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>TimeEdu16</type>
+      <name>GetQuantizationSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a71bc12627d400b5e0d23995e56202f2a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeMIDITempoChanges</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a85e26bdbc4c7efab88bebad7fe6f61dc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIncludeMIDIContinuousData</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>af83a81d14a914f898f2cb93d401c9818</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopOnlyAtEndOfPiece</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a207f55ef72b94a989ef68e82ed213fa3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtEndOfRegion</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abc1d5a9992919b94fc2a765d3c9f0d3e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtKeyChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>af4cb0ffc047cd94eca58f8205ab30cc3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtTimeChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aff5b5c972a6ca2c537598f5b50c38da4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtSpecialBarline</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a238c8bb3513dbbfba503204b013e82d7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebarStopAtEmptyFrame</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a50f0daa6559c84b9bd9844786e325762</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRebeamOnRebar</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5c1e4ab660abbb92758a8e61357fa11e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetKeyboardSplitPoint</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae5745fe0a886a0b3d9126cab6944f3bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>UNDOSTATE</type>
+      <name>GetUndoState</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0528c1626fc11f9985aecc4565e55a93</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetPitchRepresentationType</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
@@ -22895,6 +23342,146 @@
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>ad9725f9de47d44f9ba19cc7e443016aa</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationSmallestNoteValue</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a716f433124e10d67b9960395d99471bb</anchor>
+      <arglist>(TimeEdu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae6f0e075840f30f828c3863ca1825b45</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationGraceNoteMode</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ae259c727cc7fcd52aea531f03e716955</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDottedRestsAreLegalInSimpleMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>acc73aa97768ee383105d23c21eed60e0</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDottedRestsAreLegalInCompoundMeter</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aefe73d2a2e817177e2059b947c2d4f6a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationRetainKeyVelocities</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a3f5253dcf76ffca4662dd123f4547e9e</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationRetainNoteDurations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0399bee2d47612ec60ed4cb9bff0bbf7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationIncludeVoiceTwo</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a2d9c07a2154c948e85b8c41f19439a44</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationSoftenSyncopations</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad12cc321414c7d2562f55e66bd1ee7b9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad3435442eb08fde8955c7c574fc4b443</anchor>
+      <arglist>(TimeEdu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeMIDITempoChanges</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a794e58d4111f44d0621374868ddd0bea</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIncludeMIDIContinuousData</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aa78fd0392822032dcc134f1d0f6d9096</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtEndOfRegion</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>afa3ba9bf7623f7b90b896bd3c7f0cf48</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtKeyChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aef41e3aadc5848040170c2aa7b560b5d</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtTimeChange</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0164cac12ac03ea2d0df66322d832cd8</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtSpecialBarline</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a969b41980c129dd50d09a3ffd812db70</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebarStopAtEmptyFrame</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a21f0909dfa791842f410bb33efcdbed6</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRebeamOnRebar</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>add731205f63bae58d08d68d71a7f825e</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetKeyboardSplitPoint</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abbbe33bba9bfaec4073ee4584a6aeafe</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ClearRebarStopAtOptions</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a58024bfafb0b45cd60680735289fe633</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -26300,6 +26887,263 @@
       <anchorfile>class_f_c_lua_iterator.html</anchorfile>
       <anchor>a926ccbb9b32603f79311af8a512f86ae</anchor>
       <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCLuaScriptItem</name>
+    <filename>class_f_c_lua_script_item.html</filename>
+    <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>LUASCRIPT_REQVERSION_TYPES</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a95d9c5846a846713f66e5531c4f48455</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a59252b9539b028df1bde1b01661ed4d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a68e7becdfd0cc8a5f251279d06225147</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315aace7988135ec54bd226ea5f76d627962</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a2235d6b3cac3494b9b33050e274b1d01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a019ad6fc68c0b4d1a6e12696b395e1e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a95d9c5846a846713f66e5531c4f48455</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a59252b9539b028df1bde1b01661ed4d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a68e7becdfd0cc8a5f251279d06225147</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_FINALE_MAJOR</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315aace7988135ec54bd226ea5f76d627962</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MINIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a2235d6b3cac3494b9b33050e274b1d01</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>REQVERSIONTYPE_MAXIMUM_LUAX1000</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a3b3b06fb0b96f55f726231018a12d315a019ad6fc68c0b4d1a6e12696b395e1e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ac6df85f704ad29e6d5cf44e84b19e7cf</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsExecuting</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a8d7976aa0fa40a5e468069883595eef6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetFilePath</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>aa89e448496487e620be2e41d8ae50076</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetMenuItemText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a27ea2fbd0548b614ce37b2791de9e2a4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetUndoText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>aad44af5fbdc710d84832730469951784</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetDescription</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>afe65ccbb59ee85a884868f9937300e28</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetPrefix</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a87a67806bdc1d49ea7fde824805cf8dd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetDebug</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a81f33fbdbddd599481461ccdebcdb44e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLoadAsString</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ae8da6b8d38d6f3bb4135ddfaf4005c80</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetExecutableIndex</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ac7a58dc7d574b171c892fc31a74afd0b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVersionCompatible</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ab81fc55d4eb4df84377b6fc9c302a797</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>EVERSION</type>
+      <name>GetRequiredVersion</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>af71b95bb0f8094f8fb0af0c57fad21bd</anchor>
+      <arglist>(int versiontype) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateFinalePluginValue</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>abdd6b5d41e4d6ef63b5566d3e38a64ca</anchor>
+      <arglist>(const char *fieldname)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMenuItemText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a67cb728fabd3a3bca7bf0efc6e9f2d6b</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUndoText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a18f1b7182363828e2a018ef57c681a1f</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDescription</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a5e6a9eb33962eb2a4b5e5cf267a4058e</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPrefix</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a604725f12034a72836de2d05ce3b715b</anchor>
+      <arglist>(const char *value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDebug</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a24ffeb87793551e9fbfbe872132a7f1d</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLoadAsString</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>af2e10a166f633004daf9702355ceca3b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCLuaScriptItems</name>
+    <filename>class_f_c_lua_script_items.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>a96b95ff84a08869249608b1b970b9ee9</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCLuaScriptItems</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>a70fc20d1a85d161889dc1f8542988e5a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Add</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>aa481c23ed7bfa718ae40843d07bf6ee7</anchor>
+      <arglist>(FCLuaScriptItem *pNewItem)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>InsertItemAt</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>ac78320c25fc16db3b0a8452fdbe5a14e</anchor>
+      <arglist>(FCLuaScriptItem *pNewItem, int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCLuaScriptItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_lua_script_items.html</anchorfile>
+      <anchor>aea4dd773dc44167fe8f25366e7240bcb</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -41145,6 +41989,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetWantsDpiAwareness</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>af998d512f9c7e39b9f4945d7d14a6265</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWantsDpiAwareness</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>a8b319e0ae59cb73b8003f6998a4355aa</anchor>
+      <arglist>(bool WINCODE(state))</arglist>
+    </member>
+    <member kind="function">
       <type>FCControl *</type>
       <name>AddCtrl</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
@@ -41163,6 +42021,13 @@
       <name>AddStatic</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
       <anchor>a534ed4d60ac40e67256144eb1496a48d</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlImage *</type>
+      <name>AddImage</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>a27b7cf8a10da6067e11bbbfaf2741390</anchor>
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
@@ -41565,6 +42430,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetIsAlternateNumber</name>
+      <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
+      <anchor>a719256e361a3289bf98f43838011c7a3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetHorizontalPosition</name>
       <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
@@ -41618,6 +42490,13 @@
       <name>SetUseEnclosure</name>
       <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
       <anchor>aef8bed583167a6c6d9312bbffdbfeaff</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIsAlternateNumber</name>
+      <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
+      <anchor>a562019694dbcd7d6f2ac3b3f6aa2f7bc</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -47988,6 +48867,13 @@
       <anchor>aba1475f723b0437657a45529272e8f40</anchor>
       <arglist>(const char16_t *pszCString)</arglist>
     </member>
+    <member kind="function">
+      <type></type>
+      <name>FCString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ac387a6868b58bcd4dc5f2f336d0d77e3</anchor>
+      <arglist>(const WCHAR *pszCString)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
       <name>~FCString</name>
@@ -48746,6 +49632,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>EndsWithString</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a296cf191498e316439d47af884de308a</anchor>
+      <arglist>(const FCString *pString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>StartsWith</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a4ee54b3b8fb90c6621519c0db42ab416</anchor>
@@ -48835,6 +49728,20 @@
       <anchor>a6a4e23e04c07492bcc11b4656044e64a</anchor>
       <arglist>() override</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static int</type>
+      <name>LoadIntegerResource</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a3d577ffd0c95fbe3f111c1072733b727</anchor>
+      <arglist>(int resourceID, int defaultValue, HINSTANCE dllinstance=0)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static int</type>
+      <name>LoadIntegerResource</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a3108efb5720be6ca4c7e9817d6a7c02a</anchor>
+      <arglist>(const char *resourceID, int defaultValue, const char *pszResourceFileName=NULL, const char *pszTableName=NULL)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCStrings</name>
@@ -48923,6 +49830,13 @@
       <anchorfile>class_f_c_strings.html</anchorfile>
       <anchor>aa570a4639dc7eaae7a2fc7a9a3705766</anchor>
       <arglist>(FCStrings *pSourceStrings)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>CopyFromStringTable</name>
+      <anchorfile>class_f_c_strings.html</anchorfile>
+      <anchor>a747ed4a73ada466a5aaab8d219fc4d69</anchor>
+      <arglist>(const std::vector&lt; std::string &gt; &amp;strings)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -55854,6 +56768,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>GetUserLocaleName</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>a5d90abfcb046d0de7fdf9c1892a50a2b</anchor>
+      <arglist>(FCString *pString)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetUseIsFontAvailableAPI</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
       <anchor>aa13212aa397e4cd00f54984b98e70d1b</anchor>
@@ -56426,15 +57347,19 @@
     <class kind="class">FCCtrlLine</class>
     <class kind="class">FCCtrlEdit</class>
     <class kind="class">FCCtrlPopup</class>
+    <class kind="class">FCCtrlComboBox</class>
     <class kind="class">FCDataListRow</class>
     <class kind="class">FCCtrlDataList</class>
     <class kind="class">FCCtrlListBox</class>
     <class kind="class">FCTreeNode</class>
     <class kind="class">FCCtrlTree</class>
     <class kind="class">FCCtrlSwitcher</class>
+    <class kind="class">FCCtrlRadioButton</class>
+    <class kind="class">FCCtrlRadioButtonGroup</class>
     <class kind="class">FCCtrlCheckbox</class>
     <class kind="class">FCCtrlButton</class>
     <class kind="class">FCCtrlSlider</class>
+    <class kind="class">FCCtrlImage</class>
     <class kind="class">FCResourceWindow</class>
     <class kind="class">FCCustomWindow</class>
     <class kind="class">FCDocument</class>
@@ -56569,6 +57494,7 @@
     <class kind="class">FCUI</class>
     <class kind="class">FCCustomLuaWindow</class>
     <class kind="class">FCLuaIterator</class>
+    <class kind="class">FCLuaScriptItem</class>
   </compound>
   <compound kind="group">
     <name>lua_collections</name>
@@ -56640,6 +57566,7 @@
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
     <class kind="class">FCParts</class>
+    <class kind="class">FCLuaScriptItems</class>
   </compound>
   <compound kind="page">
     <name>index</name>
