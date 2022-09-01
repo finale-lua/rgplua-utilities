@@ -23093,6 +23093,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetAutomaticMusicSpacing</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad1947085463922c8fb3ebab458028818</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetRetainFrozenMeasures</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a6769ae000c89eaf241b1a1fc1aac4e2c</anchor>
@@ -23134,10 +23141,24 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>TimeEdu16</type>
+      <name>GetQuantizationSmallestNoteValueToRemove</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abde2f7171f9aef1aafbe4a680189e1a8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>GRACENOTE_QUANTIZATIONMODE</type>
       <name>GetQuantizationGraceNoteMode</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>aec94f78df65ee4b09bc4a4eb24ac549d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationMinimizeRests</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0dc2a5aff6572deec6cb31d98443c79d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23180,6 +23201,13 @@
       <name>GetQuantizationSoftenSyncopations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a888ed17c120bef25cd9db61623262a74</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationUseSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a1670a8bbe15b559337457f116bb4b74a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23260,6 +23288,41 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetTransposeMIDIOnInput</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ac258756ae541bca99813a78449f3fa5e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetHiddenObjectShading</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad24501f07de5b042b25dd9d276a6996c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetCustomZoom1</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad419fd5e4812e572f9a89b64fb016c90</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetCustomZoom2</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a7e49f7116fdfa6ea5a5d395bedd33bb0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetCustomZoom3</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aa1d144efef733b8787573cdac7b42136</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>UNDOSTATE</type>
       <name>GetUndoState</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
@@ -23317,6 +23380,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetAutomaticMusicSpacing</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a4256250f03364e9856a00db5c2a89d71</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetRetainFrozenMeasures</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a6705eaca90315b313b665a020b2eccb1</anchor>
@@ -23359,10 +23429,24 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetQuantizationSmallestNoteValueToRemove</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ac09e00d21003b3c2ee69cc0f812fdcb0</anchor>
+      <arglist>(TimeEdu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetQuantizationGraceNoteMode</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>ae259c727cc7fcd52aea531f03e716955</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationMinimizeRests</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ade916f726f20f05ecc8ad5ed8a0941f7</anchor>
+      <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -23404,6 +23488,13 @@
       <name>SetQuantizationSoftenSyncopations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>ad12cc321414c7d2562f55e66bd1ee7b9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationUseSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5b00d56d47c969bdbf5700aa0642df23</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -23475,6 +23566,41 @@
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>abbbe33bba9bfaec4073ee4584a6aeafe</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTransposeMIDIOnInput</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abb527811e65b9098339e254f6dbd2385</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHiddenObjectShading</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a834c4acf2290a9bd6b04695fcdb42d2a</anchor>
+      <arglist>(twobyte percent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCustomZoom1</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0982a03529dc0b83e2895d741f408b5a</anchor>
+      <arglist>(ePercent percent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCustomZoom2</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a529ce175919a49a0359e614e1de91072</anchor>
+      <arglist>(ePercent percent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCustomZoom3</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a3a6bb5fca7535e3063c0d1e52f455692</anchor>
+      <arglist>(ePercent percent)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
