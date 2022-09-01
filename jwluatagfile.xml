@@ -606,8 +606,8 @@
       <type>EXTAG</type>
       <name>GetCustomTag</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a556df781a2de5ede611e5b4b242e492e</anchor>
-      <arglist>()</arglist>
+      <anchor>a1fe2bef96fa3497cfb8df6eef2c68eb3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -42759,6 +42759,13 @@
       <anchorfile>class_f_c_separate_placement.html</anchorfile>
       <anchor>aec80f09ac69c73e8960d92a9f94eebb5</anchor>
       <arglist>(SEPARATEPLACEMENT_MODES mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>SEPARATEPLACEMENT_MODES</type>
+      <name>GetMode</name>
+      <anchorfile>class_f_c_separate_placement.html</anchorfile>
+      <anchor>a18d7b2fe7128c5ee071d840ead10a7ee</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>eStaff</type>
