@@ -46588,6 +46588,20 @@
       <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
+      <type>FCSlurContourPrefs *</type>
+      <name>CreateSlurContourPrefs</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>aa16560e0feed2a6e700c9ee48e178640</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveSlurContourPrefs</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>af64fa7c817b03f116f7feaa801a0639e</anchor>
+      <arglist>(FCSlurContourPrefs *pPrefs)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
@@ -57755,8 +57769,8 @@
     <class kind="class">FCMusicSpacingPrefs</class>
     <class kind="class">FCFontPrefs</class>
     <class kind="class">FCMultiMeasureRestPrefs</class>
-    <class kind="class">FCSmartShapePrefs</class>
     <class kind="class">FCSlurContourPrefs</class>
+    <class kind="class">FCSmartShapePrefs</class>
     <class kind="class">FCTiePlacementPrefs</class>
     <class kind="class">FCTieContourPrefs</class>
     <class kind="class">FCTiePrefs</class>
