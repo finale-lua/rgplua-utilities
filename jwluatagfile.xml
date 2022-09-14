@@ -44486,6 +44486,13 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FCSlurContourPrefs</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>af47dba88e24f5941f4900450b827f55f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>CalcInset</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
@@ -44493,39 +44500,179 @@
       <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>CalcHeight</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a48ac75977b5d563b0405dbf1bac0eb8a</anchor>
+      <anchor>a2e1b9b309ca83663adeda42acc61fcd3</anchor>
       <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>GetShortSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a0f140477cd0838c6811032515f34e7c3</anchor>
+      <anchor>a53ac526e80b0edee23870c65339692c5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetShortInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ac373b16f6b7e4371d2ea4c78c13a0b0d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetShortHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a24e8476c7fcc51e48683d1ab92a6140d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetMediumSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>aab2c7dd9a4416abbc685104daf45e623</anchor>
+      <anchor>a62cccada16d8174199c223424b7de02f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetMediumInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a77f7714f5b189a23abe4e63d77549a41</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetMediumHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a3f25fae268a77057698e940524551baf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>add94130e14fedd03a3b4c6438d3d698b</anchor>
+      <anchor>a6ff8a3f269b427ec81eb183c85e5e187</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>af2e7b406e12a471f536981a3a88d48c6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ab198d0a5a5f278a7d750d06d89b97935</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetExtraLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>adf8f2703a38b0b12bf0702d58052facb</anchor>
+      <anchor>a28426f7d2d9a1768f2e6b016a2584693</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetExtraLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a9de3a19f2f0b3426589aef327b1dca58</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetExtraLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a558219de5534e736cac57d2f9ce4c598</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShortSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ad20017180f7133e3c4d71bee7a786f79</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShortInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>afec7ed60d080a80b93035b04bac2a2b2</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShortHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>abdc6bddb4cbceeec730406fe5bb36769</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMediumSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a7c948df89c18d0d22d1ba0be64610a01</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMediumInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a236dd96a4bc7088c3613d54b0c9ff07a</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMediumHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>afaff4533a2180c0e621a78b40e582923</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLongSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a05917da893ed0b10be8399fd141621d7</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a97ada8e1ae16b42dfdde557a83028794</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a4ce6944b9efdb211ba050efedf6eb0bf</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraLongSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a5e5ace0645a4d5e985b17062dfb28e5d</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ab0fdd9fc733076387957278523644dab</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a020f8951ad8730be44c1b9b5041044de</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46077,10 +46224,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>fourbyte</type>
+      <type>Int10000ths32</type>
       <name>GetSlurTipWidth</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>aefe43c121798f3e5a27a6c2cb82a4c18</anchor>
+      <anchor>a239c27d0d517d3fd3b31f1774296ac30</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -46151,6 +46298,13 @@
       <name>GetGuitarBendReplaceWithFull</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
       <anchor>a1a73b215f914b07dd33ab25900b91b50</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetArticulationAvoidSlursBy</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>acfac1db8774870945529d5a14e021d78</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -46276,8 +46430,8 @@
       <type>void</type>
       <name>SetEngraverSlurSpaceAround</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a25435b267e19de1c4beb616527425ac7</anchor>
-      <arglist>(Evpu16 spacevalue)</arglist>
+      <anchor>a2acacc0336a252bbdbdc8920a91c602d</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46290,8 +46444,8 @@
       <type>void</type>
       <name>SetEngraverSlurAccidentalSpace</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a08afb88af993a457fadfe2d4881ab675</anchor>
-      <arglist>(Evpu16 spacevalue)</arglist>
+      <anchor>a460a97794028aca77fb5f93ef8c01ae3</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46318,15 +46472,15 @@
       <type>void</type>
       <name>SetEngraverSlurMaxStretchFixed</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a1d75163835cc97818a28897c5b3af260</anchor>
-      <arglist>(Efix32 maxvalue)</arglist>
+      <anchor>a34aaf28990606e932672259a5050c0d2</anchor>
+      <arglist>(Efix32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEngraverSlurMaxLift</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a2f9a7b40b85fd1e2d9e48e97eebb56ca</anchor>
-      <arglist>(Efix32 maxlift)</arglist>
+      <anchor>a93f26058804a6116ad15926bd5724e6c</anchor>
+      <arglist>(Efix32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46353,8 +46507,8 @@
       <type>void</type>
       <name>SetSlurTipWidth</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a14e59dc983dedaf210f044dc0984171c</anchor>
-      <arglist>(fourbyte value)</arglist>
+      <anchor>a201eb2daf26fa7ac9ff0d814e64caa03</anchor>
+      <arglist>(Int10000ths32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46425,6 +46579,13 @@
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
       <anchor>a55f7d013325af45d3fa1f2bb56906e28</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetArticulationAvoidSlursBy</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>adfe74ddf46d457fa09d2f1c6cb70e9aa</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -57595,6 +57756,7 @@
     <class kind="class">FCFontPrefs</class>
     <class kind="class">FCMultiMeasureRestPrefs</class>
     <class kind="class">FCSmartShapePrefs</class>
+    <class kind="class">FCSlurContourPrefs</class>
     <class kind="class">FCTiePlacementPrefs</class>
     <class kind="class">FCTieContourPrefs</class>
     <class kind="class">FCTiePrefs</class>
