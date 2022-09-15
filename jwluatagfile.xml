@@ -45745,6 +45745,312 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCSmartShapeEntryConnectStyle</name>
+    <filename>class_f_c_smart_shape_entry_connect_style.html</filename>
+    <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>SSENTCNCTSTYLE_INDICES</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa817d9537072ba259026d41b2a2e3cf77</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aad9b24cd8741c14fe5e389a936e8000e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa42c883966f8ce371253e4ab8db0400c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa428bdd438499a179c7fb347995bb3fcd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa6ff1a8fee34a9c6bbd667a4c7b611619</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaa065f2af9e6eeb7963f799d5049bdfb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa91d987da91e6a937513aab4348f8edf9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aafc5841b757ec2ff7f5108d101f9815a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa75e46f6ed4e99c8ec43154699ed787e9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa15396039a71ac0c6eb861b7c256e9ecb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa30ff9733f24f86651c4fe0288908b869</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaabe6604af0dac7dcad473452c809fa9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa67c548066ff885ddf53c529edaf168cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aae7318392b7251b0e4d982c1974bea6bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa3111134967bd3749fc336868f94b6434</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa8b67dd660ba36c8ae895a533a283bc7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa12409e7b481bb45fa2c5c92796c85107</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa4a5e4d88e337615b33725d9eb95daa60</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_DURATION_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa2df1cb887fa73e0f8382533a3b9df40f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_LEFT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa52f88071e74c1bc76d6b8971a7422e52</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_RIGHT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa694ff6ee8e1e588a5324077800879352</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa817d9537072ba259026d41b2a2e3cf77</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aad9b24cd8741c14fe5e389a936e8000e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa42c883966f8ce371253e4ab8db0400c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa428bdd438499a179c7fb347995bb3fcd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa6ff1a8fee34a9c6bbd667a4c7b611619</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaa065f2af9e6eeb7963f799d5049bdfb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa91d987da91e6a937513aab4348f8edf9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aafc5841b757ec2ff7f5108d101f9815a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa75e46f6ed4e99c8ec43154699ed787e9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa15396039a71ac0c6eb861b7c256e9ecb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa30ff9733f24f86651c4fe0288908b869</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaabe6604af0dac7dcad473452c809fa9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa67c548066ff885ddf53c529edaf168cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aae7318392b7251b0e4d982c1974bea6bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa3111134967bd3749fc336868f94b6434</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa8b67dd660ba36c8ae895a533a283bc7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa12409e7b481bb45fa2c5c92796c85107</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa4a5e4d88e337615b33725d9eb95daa60</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_DURATION_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa2df1cb887fa73e0f8382533a3b9df40f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_LEFT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa52f88071e74c1bc76d6b8971a7422e52</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_RIGHT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa694ff6ee8e1e588a5324077800879352</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>ade81ea2b0134fd5815b4a46ae7bb295b</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>SSENTCNCTSTYLE_INDICES</type>
+      <name>GetConnectionIndex</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a6278223c0bc9b64b5bc5114f93aab573</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetHorizontalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>ab46b13b9855e3abff71c127fd671145c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetVerticalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>afa3bf1ee85fbee0c0ff3051224906ac7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>af03e062a833c46df777c18540e2ca157</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a892fc308a1ebe44870ba45d05660d3bd</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCSmartShapeEntryMark</name>
     <filename>class_f_c_smart_shape_entry_mark.html</filename>
     <base>__FCEntryDetail</base>
@@ -46006,6 +46312,61 @@
     <name>FCSmartShapePrefs</name>
     <filename>class_f_c_smart_shape_prefs.html</filename>
     <base>__FCPrefsBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>SSENTCNCTSTYLE_TYPES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_SLURS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca22f1300a13a03a5aee080d2aff23850b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_TAB_SLIDES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca6c5a3042dce8ddd0e5dcf7108145c3b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_GLISSANDOS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949cae813a8f1f9bd609a5f0a865676102e6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_BEND_CURVES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca8026d216599731da69c560ad99f82b28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_SLURS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca22f1300a13a03a5aee080d2aff23850b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_TAB_SLIDES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca6c5a3042dce8ddd0e5dcf7108145c3b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_GLISSANDOS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949cae813a8f1f9bd609a5f0a865676102e6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_BEND_CURVES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca8026d216599731da69c560ad99f82b28</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -46600,6 +46961,27 @@
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
       <anchor>af64fa7c817b03f116f7feaa801a0639e</anchor>
       <arglist>(FCSlurContourPrefs *pPrefs)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetEntryConnectStyleCount</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>a6247d7b0801e86de9339e947aa9b04ed</anchor>
+      <arglist>(twobyte styleType) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCSmartShapeEntryConnectStyle *</type>
+      <name>CreateEntryConnectStyle</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>a637aa7890b1ab8ff1af3d6d544180d48</anchor>
+      <arglist>(twobyte styleType, utwobyte index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveEntryConnectStyle</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>a7fa28895c91adda4bc230ba91b49507f</anchor>
+      <arglist>(const FCSmartShapeEntryConnectStyle *inpConnectStyle, twobyte styleType, utwobyte index)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -57770,6 +58152,7 @@
     <class kind="class">FCFontPrefs</class>
     <class kind="class">FCMultiMeasureRestPrefs</class>
     <class kind="class">FCSlurContourPrefs</class>
+    <class kind="class">FCSmartShapeEntryConnectStyle</class>
     <class kind="class">FCSmartShapePrefs</class>
     <class kind="class">FCTiePlacementPrefs</class>
     <class kind="class">FCTieContourPrefs</class>
