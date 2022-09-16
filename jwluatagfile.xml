@@ -13984,6 +13984,90 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>Evpu16</type>
+      <name>GetHorizontalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a32d71925d70fba72b3a3b71456521668</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetVerticalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>ae062617dc585cbcb5c49e5803461e6d1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetWidth</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>ad457858c882c67bb077804b32dcc5ff5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetHeight</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a657ca80ff2b7964d3775a44f895be1ec</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetOriginalWidth</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a23ff10e52717a85122543b41fa0cedb5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetOriginalHeight</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a9ba271d2069e3069506c50d14786995d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a6e5d41e6120c9cae9c5c9c340ec01983</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a586ac81f25b6510c18a8817c45956ad9</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a06d821a6c1f5cdaf5531782296e387c8</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWidth</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a2b93a3b13c128604125eb13bb629bb65</anchor>
+      <arglist>(Evpu16 width)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHeight</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>af968b04339f5741078731a208a47b3f8</anchor>
+      <arglist>(Evpu16 height)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a0c898f448736dba2fb37ab7cf67c3238</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_cell_graphic.html</anchorfile>
@@ -58024,6 +58108,7 @@
     <class kind="class">FCSeparateMeasureNumber</class>
     <class kind="class">FCCellFrameHold</class>
     <class kind="class">FCChord</class>
+    <class kind="class">FCCellGraphic</class>
     <class kind="class">FCCellText</class>
     <class kind="class">__FCNoInciDetail</class>
     <class kind="class">FCGroup</class>
@@ -58200,6 +58285,7 @@
     <class kind="class">FCStrings</class>
     <class kind="class">FCCells</class>
     <class kind="class">FCSeparateMeasureNumbers</class>
+    <class kind="class">FCCellGraphics</class>
     <class kind="class">FCCellTexts</class>
     <class kind="class">FCMidiExpressions</class>
     <class kind="class">FCChords</class>
