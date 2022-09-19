@@ -11242,6 +11242,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_backward_repeat.html</anchorfile>
+      <anchor>a9f666a1ea6ded9009fa3697705a4a7aa</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetTotalPasses</name>
       <anchorfile>class_f_c_backward_repeat.html</anchorfile>
@@ -11309,6 +11316,13 @@
       <name>SetIndividualPositioning</name>
       <anchorfile>class_f_c_backward_repeat.html</anchorfile>
       <anchor>a6a6dd3ea7a0f017ee9e10163a235d4c6</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_backward_repeat.html</anchorfile>
+      <anchor>a5e0baef164e630fae84dffcb37e1d662</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -19863,6 +19877,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_ending_repeat.html</anchorfile>
+      <anchor>a257557983b1c9bdc78d4588205ec2a85</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>Evpu16</type>
       <name>GetVerticalTopBracketPosition</name>
       <anchorfile>class_f_c_ending_repeat.html</anchorfile>
@@ -19958,6 +19979,13 @@
       <name>SetIndividualPositioning</name>
       <anchorfile>class_f_c_ending_repeat.html</anchorfile>
       <anchor>ac27119d413d4203a25bd6bde838d7ba7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_ending_repeat.html</anchorfile>
+      <anchor>a3691c9b5b28c4ffd9bfacb7d8aba5cd5</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -42942,6 +42970,20 @@
       <anchor>a4a100cde9c5c27e4496bd3cb15b6896a</anchor>
       <arglist>(Evpu16 value)</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_separate_placement.html</anchorfile>
+      <anchor>a76cb11cc499df8bd9b993fae4f9a2cb6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_separate_placement.html</anchorfile>
+      <anchor>a2ac204de3a83c69bb8ecc8f47dc66cfb</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCSeparatePlacements</name>
@@ -53183,6 +53225,20 @@
       <name>SetIndividualPositioning</name>
       <anchorfile>class_f_c_text_repeat.html</anchorfile>
       <anchor>acd5c119e0fca9b4c49885d2b4cf3a713</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_text_repeat.html</anchorfile>
+      <anchor>a9f42b9cb27b04a1cbc86257fba60c08b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_text_repeat.html</anchorfile>
+      <anchor>a6c8aa16dbe7f2f53073549d70bb91d09</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
