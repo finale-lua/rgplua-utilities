@@ -52061,6 +52061,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CONTROLLER</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea72877bb3c9ef69c6b77683bb20086ebc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_TRANSPOSE</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4a0a64efd49a337c7fd7cb8e9dfbbc8b</anchor>
@@ -52073,6 +52079,18 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_MIDICHANNEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea135db6b87d65037cc58f5b1edb98701e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_RESTRIKEKEYS</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eae549d18edf5b6955e711d10a363118cb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_PLAYTEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4fa96dbcfe5cb652b311daeb2e698659</anchor>
@@ -52082,6 +52100,54 @@
       <name>EXPPLAYTYPE_IGNORETEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea14d33e51659079aad30849f8b1dd7539</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PATCHCHANGE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea78ef01e06808c8375fe2f7e7e6c7c96b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CHANNELPRESSURE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ead07217901c57b13fe76b23f315bdf3f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PITCHWHEEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eab1477563ef0d76523988cc2d37c0bc6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PERCUSSIONMAP</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea0a935c4b56fe908d0ab46ba0aaf3a7b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_SWING</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9272eefef9d39c509acc096edf3a3b32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKON</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9a7acc6321b255a87cee3edce63a099e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKOFF</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eafc481cc4d0b7f532d821f7522a23316c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_NONE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea4098ff0764b2d37c6cec6cf99c84d621</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -52145,6 +52211,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CONTROLLER</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea72877bb3c9ef69c6b77683bb20086ebc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_TRANSPOSE</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4a0a64efd49a337c7fd7cb8e9dfbbc8b</anchor>
@@ -52157,6 +52229,18 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_MIDICHANNEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea135db6b87d65037cc58f5b1edb98701e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_RESTRIKEKEYS</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eae549d18edf5b6955e711d10a363118cb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_PLAYTEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4fa96dbcfe5cb652b311daeb2e698659</anchor>
@@ -52166,6 +52250,54 @@
       <name>EXPPLAYTYPE_IGNORETEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea14d33e51659079aad30849f8b1dd7539</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PATCHCHANGE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea78ef01e06808c8375fe2f7e7e6c7c96b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CHANNELPRESSURE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ead07217901c57b13fe76b23f315bdf3f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PITCHWHEEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eab1477563ef0d76523988cc2d37c0bc6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PERCUSSIONMAP</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea0a935c4b56fe908d0ab46ba0aaf3a7b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_SWING</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9272eefef9d39c509acc096edf3a3b32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKON</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9a7acc6321b255a87cee3edce63a099e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKOFF</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eafc481cc4d0b7f532d821f7522a23316c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_NONE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea4098ff0764b2d37c6cec6cf99c84d621</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -52414,6 +52546,20 @@
       <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetPlaybackControllerValue</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>a9115c6fa7a80cfda95b62bed297dfd81</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetPlaybackControllerNumber</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>a505ab37d5b0259ea8ef064893a42d8aa</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetPlaybackController</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
@@ -52426,6 +52572,34 @@
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>a75601043ecace6a59f088dca9694f142</anchor>
       <arglist>(TimeEdu32 eduduration, int tempo)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetPlaybackTransposition</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ac2ec1caa578122d8472143df8f83f1ad</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPlaybackTransposition</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab6663b65145c87387027fad40c1ff818</anchor>
+      <arglist>(twobyte halfsteps)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetPitchWheelValue</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>abf115ae49dd29375c1df31e891351721</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPitchWheelValue</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>abf7d1696203f421460709d7bc0c30602</anchor>
+      <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
