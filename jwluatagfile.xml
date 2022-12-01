@@ -20201,8 +20201,8 @@
       <type>bool</type>
       <name>Load</name>
       <anchorfile>class_f_c_entry_metrics.html</anchorfile>
-      <anchor>ae930f913606a793444382fd884dfadd2</anchor>
-      <arglist>(FCNoteEntry *pEntry)</arglist>
+      <anchor>adbea52326043ac5bfdcb0a85a31b43cc</anchor>
+      <arglist>(const FCNoteEntry *pEntry)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -35257,6 +35257,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>CalcNumberOfVisibleNotes</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a5572b9730ab230cd3441a831c14416eb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcDisplaysAsRest</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a1b423e1fc4a01ca6d15bc240b3cca7dc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>CalcHighestStaffPosition</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
@@ -35477,8 +35491,8 @@
       <type>bool</type>
       <name>IsRest</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>ae01d6307fad474af19b815fba707e63c</anchor>
-      <arglist>()</arglist>
+      <anchor>aa4126619e8b31d1a5f292168358d0176</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
