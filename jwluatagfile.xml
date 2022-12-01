@@ -34582,6 +34582,27 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>CalcVisibleInPart</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a4e113aac92074611fd4831bc4a84d160</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcIsTopNote</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a8fb1252531e817e0ba9be9803d505301</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcIsBottomNote</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a7ebdef12d97f4abb3277f65a932edee8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetMIDIKey</name>
       <anchorfile>class_f_c_note.html</anchorfile>
