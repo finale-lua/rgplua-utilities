@@ -13528,7 +13528,14 @@
       <type>TimeEdu32</type>
       <name>CalcDuration</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
-      <anchor>a32669e4f3675fbbffbdbb5ccebd26445</anchor>
+      <anchor>a32c9a4886a8418588ff297cc7f314b44</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcContainsEntries</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a706ad0b0dbe625a54779ed41cbd7e758</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -13900,8 +13907,15 @@
       <type>bool</type>
       <name>CalcHasFrame</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>a105cd0314dd96877937ee5a4c6d62cec</anchor>
-      <arglist>()</arglist>
+      <anchor>aa383ebbf979a7c0a8580fb12245dde57</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcHasFrameAtLayer</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a30e2fb1c8f3c3d83276a9e9f18c71cf6</anchor>
+      <arglist>(int layernum) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
