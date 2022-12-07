@@ -606,8 +606,8 @@
       <type>EXTAG</type>
       <name>GetCustomTag</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a556df781a2de5ede611e5b4b242e492e</anchor>
-      <arglist>()</arglist>
+      <anchor>a1fe2bef96fa3497cfb8df6eef2c68eb3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -11242,6 +11242,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_backward_repeat.html</anchorfile>
+      <anchor>a9f666a1ea6ded9009fa3697705a4a7aa</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetTotalPasses</name>
       <anchorfile>class_f_c_backward_repeat.html</anchorfile>
@@ -11309,6 +11316,13 @@
       <name>SetIndividualPositioning</name>
       <anchorfile>class_f_c_backward_repeat.html</anchorfile>
       <anchor>a6a6dd3ea7a0f017ee9e10163a235d4c6</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_backward_repeat.html</anchorfile>
+      <anchor>a5e0baef164e630fae84dffcb37e1d662</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -13514,7 +13528,14 @@
       <type>TimeEdu32</type>
       <name>CalcDuration</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
-      <anchor>a32669e4f3675fbbffbdbb5ccebd26445</anchor>
+      <anchor>a32c9a4886a8418588ff297cc7f314b44</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcContainsEntries</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>a706ad0b0dbe625a54779ed41cbd7e758</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -13886,8 +13907,15 @@
       <type>bool</type>
       <name>CalcHasFrame</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>a105cd0314dd96877937ee5a4c6d62cec</anchor>
-      <arglist>()</arglist>
+      <anchor>aa383ebbf979a7c0a8580fb12245dde57</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcHasFrameAtLayer</name>
+      <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
+      <anchor>a30e2fb1c8f3c3d83276a9e9f18c71cf6</anchor>
+      <arglist>(int layernum) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -13982,6 +14010,90 @@
       <anchorfile>class_f_c_cell_graphic.html</anchorfile>
       <anchor>a3121bc2016dd8581830acf87973f0c84</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetHorizontalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a32d71925d70fba72b3a3b71456521668</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetVerticalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>ae062617dc585cbcb5c49e5803461e6d1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetWidth</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>ad457858c882c67bb077804b32dcc5ff5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetHeight</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a657ca80ff2b7964d3775a44f895be1ec</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetOriginalWidth</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a23ff10e52717a85122543b41fa0cedb5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetOriginalHeight</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a9ba271d2069e3069506c50d14786995d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a6e5d41e6120c9cae9c5c9c340ec01983</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a586ac81f25b6510c18a8817c45956ad9</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalPos</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a06d821a6c1f5cdaf5531782296e387c8</anchor>
+      <arglist>(Evpu16 pos)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWidth</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a2b93a3b13c128604125eb13bb629bb65</anchor>
+      <arglist>(Evpu16 width)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHeight</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>af968b04339f5741078731a208a47b3f8</anchor>
+      <arglist>(Evpu16 height)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_cell_graphic.html</anchorfile>
+      <anchor>a0c898f448736dba2fb37ab7cf67c3238</anchor>
+      <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -19779,6 +19891,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_ending_repeat.html</anchorfile>
+      <anchor>a257557983b1c9bdc78d4588205ec2a85</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>Evpu16</type>
       <name>GetVerticalTopBracketPosition</name>
       <anchorfile>class_f_c_ending_repeat.html</anchorfile>
@@ -19874,6 +19993,13 @@
       <name>SetIndividualPositioning</name>
       <anchorfile>class_f_c_ending_repeat.html</anchorfile>
       <anchor>ac27119d413d4203a25bd6bde838d7ba7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_ending_repeat.html</anchorfile>
+      <anchor>a3691c9b5b28c4ffd9bfacb7d8aba5cd5</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -20089,8 +20215,8 @@
       <type>bool</type>
       <name>Load</name>
       <anchorfile>class_f_c_entry_metrics.html</anchorfile>
-      <anchor>ae930f913606a793444382fd884dfadd2</anchor>
-      <arglist>(FCNoteEntry *pEntry)</arglist>
+      <anchor>adbea52326043ac5bfdcb0a85a31b43cc</anchor>
+      <arglist>(const FCNoteEntry *pEntry)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -23093,6 +23219,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetAutomaticMusicSpacing</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad1947085463922c8fb3ebab458028818</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetRetainFrozenMeasures</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a6769ae000c89eaf241b1a1fc1aac4e2c</anchor>
@@ -23134,10 +23267,24 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>TimeEdu16</type>
+      <name>GetQuantizationSmallestNoteValueToRemove</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abde2f7171f9aef1aafbe4a680189e1a8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>GRACENOTE_QUANTIZATIONMODE</type>
       <name>GetQuantizationGraceNoteMode</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>aec94f78df65ee4b09bc4a4eb24ac549d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationMinimizeRests</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0dc2a5aff6572deec6cb31d98443c79d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23180,6 +23327,13 @@
       <name>GetQuantizationSoftenSyncopations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a888ed17c120bef25cd9db61623262a74</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetQuantizationUseSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a1670a8bbe15b559337457f116bb4b74a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23260,6 +23414,41 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetTransposeMIDIOnInput</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ac258756ae541bca99813a78449f3fa5e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetHiddenObjectShading</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad24501f07de5b042b25dd9d276a6996c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetCustomZoom1</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ad419fd5e4812e572f9a89b64fb016c90</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetCustomZoom2</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a7e49f7116fdfa6ea5a5d395bedd33bb0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetCustomZoom3</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>aa1d144efef733b8787573cdac7b42136</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>UNDOSTATE</type>
       <name>GetUndoState</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
@@ -23317,6 +23506,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetAutomaticMusicSpacing</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a4256250f03364e9856a00db5c2a89d71</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetRetainFrozenMeasures</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>a6705eaca90315b313b665a020b2eccb1</anchor>
@@ -23359,10 +23555,24 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetQuantizationSmallestNoteValueToRemove</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ac09e00d21003b3c2ee69cc0f812fdcb0</anchor>
+      <arglist>(TimeEdu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetQuantizationGraceNoteMode</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>ae259c727cc7fcd52aea531f03e716955</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationMinimizeRests</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>ade916f726f20f05ecc8ad5ed8a0941f7</anchor>
+      <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -23404,6 +23614,13 @@
       <name>SetQuantizationSoftenSyncopations</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>ad12cc321414c7d2562f55e66bd1ee7b9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetQuantizationUseSensitivityLevel</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a5b00d56d47c969bdbf5700aa0642df23</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -23475,6 +23692,41 @@
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
       <anchor>abbbe33bba9bfaec4073ee4584a6aeafe</anchor>
       <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTransposeMIDIOnInput</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>abb527811e65b9098339e254f6dbd2385</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHiddenObjectShading</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a834c4acf2290a9bd6b04695fcdb42d2a</anchor>
+      <arglist>(twobyte percent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCustomZoom1</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a0982a03529dc0b83e2895d741f408b5a</anchor>
+      <arglist>(ePercent percent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCustomZoom2</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a529ce175919a49a0359e614e1de91072</anchor>
+      <arglist>(ePercent percent)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCustomZoom3</name>
+      <anchorfile>class_f_c_general_prefs.html</anchorfile>
+      <anchor>a3a6bb5fca7535e3063c0d1e52f455692</anchor>
+      <arglist>(ePercent percent)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -34344,6 +34596,27 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>CalcVisibleInPart</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a4e113aac92074611fd4831bc4a84d160</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcIsTopNote</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a8fb1252531e817e0ba9be9803d505301</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcIsBottomNote</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a7ebdef12d97f4abb3277f65a932edee8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetMIDIKey</name>
       <anchorfile>class_f_c_note.html</anchorfile>
@@ -34998,6 +35271,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>CalcNumberOfVisibleNotes</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a5572b9730ab230cd3441a831c14416eb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcDisplaysAsRest</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a1b423e1fc4a01ca6d15bc240b3cca7dc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>CalcHighestStaffPosition</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
@@ -35218,8 +35505,8 @@
       <type>bool</type>
       <name>IsRest</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>ae01d6307fad474af19b815fba707e63c</anchor>
-      <arglist>()</arglist>
+      <anchor>aa4126619e8b31d1a5f292168358d0176</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -42635,6 +42922,13 @@
       <arglist>(SEPARATEPLACEMENT_MODES mode)</arglist>
     </member>
     <member kind="function">
+      <type>SEPARATEPLACEMENT_MODES</type>
+      <name>GetMode</name>
+      <anchorfile>class_f_c_separate_placement.html</anchorfile>
+      <anchor>a18d7b2fe7128c5ee071d840ead10a7ee</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>eStaff</type>
       <name>GetStaff</name>
       <anchorfile>class_f_c_separate_placement.html</anchorfile>
@@ -42724,6 +43018,20 @@
       <anchorfile>class_f_c_separate_placement.html</anchorfile>
       <anchor>a4a100cde9c5c27e4496bd3cb15b6896a</anchor>
       <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_separate_placement.html</anchorfile>
+      <anchor>a76cb11cc499df8bd9b993fae4f9a2cb6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_separate_placement.html</anchorfile>
+      <anchor>a2ac204de3a83c69bb8ecc8f47dc66cfb</anchor>
+      <arglist>(bool state)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -44353,6 +44661,13 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FCSlurContourPrefs</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>af47dba88e24f5941f4900450b827f55f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>CalcInset</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
@@ -44360,39 +44675,179 @@
       <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>CalcHeight</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a48ac75977b5d563b0405dbf1bac0eb8a</anchor>
+      <anchor>a2e1b9b309ca83663adeda42acc61fcd3</anchor>
       <arglist>(int slurlength) const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>GetShortSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>a0f140477cd0838c6811032515f34e7c3</anchor>
+      <anchor>a53ac526e80b0edee23870c65339692c5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetShortInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ac373b16f6b7e4371d2ea4c78c13a0b0d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetShortHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a24e8476c7fcc51e48683d1ab92a6140d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetMediumSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>aab2c7dd9a4416abbc685104daf45e623</anchor>
+      <anchor>a62cccada16d8174199c223424b7de02f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetMediumInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a77f7714f5b189a23abe4e63d77549a41</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetMediumHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a3f25fae268a77057698e940524551baf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>add94130e14fedd03a3b4c6438d3d698b</anchor>
+      <anchor>a6ff8a3f269b427ec81eb183c85e5e187</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
+      <name>GetLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>af2e7b406e12a471f536981a3a88d48c6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ab198d0a5a5f278a7d750d06d89b97935</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
       <name>GetExtraLongSpan</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>adf8f2703a38b0b12bf0702d58052facb</anchor>
+      <anchor>a28426f7d2d9a1768f2e6b016a2584693</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetExtraLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a9de3a19f2f0b3426589aef327b1dca58</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetExtraLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a558219de5534e736cac57d2f9ce4c598</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShortSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ad20017180f7133e3c4d71bee7a786f79</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShortInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>afec7ed60d080a80b93035b04bac2a2b2</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShortHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>abdc6bddb4cbceeec730406fe5bb36769</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMediumSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a7c948df89c18d0d22d1ba0be64610a01</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMediumInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a236dd96a4bc7088c3613d54b0c9ff07a</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMediumHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>afaff4533a2180c0e621a78b40e582923</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLongSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a05917da893ed0b10be8399fd141621d7</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a97ada8e1ae16b42dfdde557a83028794</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a4ce6944b9efdb211ba050efedf6eb0bf</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraLongSpan</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a5e5ace0645a4d5e985b17062dfb28e5d</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraLongInset</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>ab0fdd9fc733076387957278523644dab</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExtraLongHeight</name>
+      <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
+      <anchor>a020f8951ad8730be44c1b9b5041044de</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -45465,6 +45920,312 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCSmartShapeEntryConnectStyle</name>
+    <filename>class_f_c_smart_shape_entry_connect_style.html</filename>
+    <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>SSENTCNCTSTYLE_INDICES</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa817d9537072ba259026d41b2a2e3cf77</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aad9b24cd8741c14fe5e389a936e8000e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa42c883966f8ce371253e4ab8db0400c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa428bdd438499a179c7fb347995bb3fcd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa6ff1a8fee34a9c6bbd667a4c7b611619</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaa065f2af9e6eeb7963f799d5049bdfb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa91d987da91e6a937513aab4348f8edf9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aafc5841b757ec2ff7f5108d101f9815a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa75e46f6ed4e99c8ec43154699ed787e9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa15396039a71ac0c6eb861b7c256e9ecb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa30ff9733f24f86651c4fe0288908b869</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaabe6604af0dac7dcad473452c809fa9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa67c548066ff885ddf53c529edaf168cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aae7318392b7251b0e4d982c1974bea6bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa3111134967bd3749fc336868f94b6434</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa8b67dd660ba36c8ae895a533a283bc7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa12409e7b481bb45fa2c5c92796c85107</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa4a5e4d88e337615b33725d9eb95daa60</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_DURATION_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa2df1cb887fa73e0f8382533a3b9df40f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_LEFT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa52f88071e74c1bc76d6b8971a7422e52</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_RIGHT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa694ff6ee8e1e588a5324077800879352</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa817d9537072ba259026d41b2a2e3cf77</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aad9b24cd8741c14fe5e389a936e8000e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa42c883966f8ce371253e4ab8db0400c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa428bdd438499a179c7fb347995bb3fcd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa6ff1a8fee34a9c6bbd667a4c7b611619</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaa065f2af9e6eeb7963f799d5049bdfb0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa91d987da91e6a937513aab4348f8edf9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_STEM_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aafc5841b757ec2ff7f5108d101f9815a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa75e46f6ed4e99c8ec43154699ed787e9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_TOP</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa15396039a71ac0c6eb861b7c256e9ecb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa30ff9733f24f86651c4fe0288908b869</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aaabe6604af0dac7dcad473452c809fa9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa67c548066ff885ddf53c529edaf168cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_NOTE_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aae7318392b7251b0e4d982c1974bea6bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa3111134967bd3749fc336868f94b6434</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_LEFT_CENTER</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa8b67dd660ba36c8ae895a533a283bc7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_LYRIC_RIGHT_BOTTOM</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa12409e7b481bb45fa2c5c92796c85107</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_HEAD_RIGHT_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa4a5e4d88e337615b33725d9eb95daa60</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_DURATION_LYRBASELINE</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa2df1cb887fa73e0f8382533a3b9df40f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_LEFT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa52f88071e74c1bc76d6b8971a7422e52</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLE_SYSTEM_RIGHT</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a97f05209b5d0f788e27b902bc5d5189aa694ff6ee8e1e588a5324077800879352</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>ade81ea2b0134fd5815b4a46ae7bb295b</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>SSENTCNCTSTYLE_INDICES</type>
+      <name>GetConnectionIndex</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a6278223c0bc9b64b5bc5114f93aab573</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetHorizontalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>ab46b13b9855e3abff71c127fd671145c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetVerticalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>afa3bf1ee85fbee0c0ff3051224906ac7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>af03e062a833c46df777c18540e2ca157</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalOffset</name>
+      <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
+      <anchor>a892fc308a1ebe44870ba45d05660d3bd</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCSmartShapeEntryMark</name>
     <filename>class_f_c_smart_shape_entry_mark.html</filename>
     <base>__FCEntryDetail</base>
@@ -45726,6 +46487,61 @@
     <name>FCSmartShapePrefs</name>
     <filename>class_f_c_smart_shape_prefs.html</filename>
     <base>__FCPrefsBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>SSENTCNCTSTYLE_TYPES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_SLURS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca22f1300a13a03a5aee080d2aff23850b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_TAB_SLIDES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca6c5a3042dce8ddd0e5dcf7108145c3b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_GLISSANDOS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949cae813a8f1f9bd609a5f0a865676102e6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_BEND_CURVES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca8026d216599731da69c560ad99f82b28</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_SLURS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca22f1300a13a03a5aee080d2aff23850b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_TAB_SLIDES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca6c5a3042dce8ddd0e5dcf7108145c3b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_GLISSANDOS</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949cae813a8f1f9bd609a5f0a865676102e6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SSENTCNCTSTYLETYPE_BEND_CURVES</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>ae3d5f6dbdbed91c8650decee23a8949ca8026d216599731da69c560ad99f82b28</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -45944,10 +46760,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>fourbyte</type>
+      <type>Int10000ths32</type>
       <name>GetSlurTipWidth</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>aefe43c121798f3e5a27a6c2cb82a4c18</anchor>
+      <anchor>a239c27d0d517d3fd3b31f1774296ac30</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -46018,6 +46834,13 @@
       <name>GetGuitarBendReplaceWithFull</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
       <anchor>a1a73b215f914b07dd33ab25900b91b50</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetArticulationAvoidSlursBy</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>acfac1db8774870945529d5a14e021d78</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -46143,8 +46966,8 @@
       <type>void</type>
       <name>SetEngraverSlurSpaceAround</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a25435b267e19de1c4beb616527425ac7</anchor>
-      <arglist>(Evpu16 spacevalue)</arglist>
+      <anchor>a2acacc0336a252bbdbdc8920a91c602d</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46157,8 +46980,8 @@
       <type>void</type>
       <name>SetEngraverSlurAccidentalSpace</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a08afb88af993a457fadfe2d4881ab675</anchor>
-      <arglist>(Evpu16 spacevalue)</arglist>
+      <anchor>a460a97794028aca77fb5f93ef8c01ae3</anchor>
+      <arglist>(Evpu16 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46185,15 +47008,15 @@
       <type>void</type>
       <name>SetEngraverSlurMaxStretchFixed</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a1d75163835cc97818a28897c5b3af260</anchor>
-      <arglist>(Efix32 maxvalue)</arglist>
+      <anchor>a34aaf28990606e932672259a5050c0d2</anchor>
+      <arglist>(Efix32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEngraverSlurMaxLift</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a2f9a7b40b85fd1e2d9e48e97eebb56ca</anchor>
-      <arglist>(Efix32 maxlift)</arglist>
+      <anchor>a93f26058804a6116ad15926bd5724e6c</anchor>
+      <arglist>(Efix32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46220,8 +47043,8 @@
       <type>void</type>
       <name>SetSlurTipWidth</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a14e59dc983dedaf210f044dc0984171c</anchor>
-      <arglist>(fourbyte value)</arglist>
+      <anchor>a201eb2daf26fa7ac9ff0d814e64caa03</anchor>
+      <arglist>(Int10000ths32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -46292,6 +47115,48 @@
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
       <anchor>a55f7d013325af45d3fa1f2bb56906e28</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetArticulationAvoidSlursBy</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>adfe74ddf46d457fa09d2f1c6cb70e9aa</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCSlurContourPrefs *</type>
+      <name>CreateSlurContourPrefs</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>aa16560e0feed2a6e700c9ee48e178640</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveSlurContourPrefs</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>af64fa7c817b03f116f7feaa801a0639e</anchor>
+      <arglist>(FCSlurContourPrefs *pPrefs)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetEntryConnectStyleCount</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>a6247d7b0801e86de9339e947aa9b04ed</anchor>
+      <arglist>(twobyte styleType) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCSmartShapeEntryConnectStyle *</type>
+      <name>CreateEntryConnectStyle</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>a637aa7890b1ab8ff1af3d6d544180d48</anchor>
+      <arglist>(twobyte styleType, utwobyte index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveEntryConnectStyle</name>
+      <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
+      <anchor>a7fa28895c91adda4bc230ba91b49507f</anchor>
+      <arglist>(const FCSmartShapeEntryConnectStyle *inpConnectStyle, twobyte styleType, utwobyte index)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -51245,6 +52110,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CONTROLLER</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea72877bb3c9ef69c6b77683bb20086ebc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_TRANSPOSE</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4a0a64efd49a337c7fd7cb8e9dfbbc8b</anchor>
@@ -51257,6 +52128,18 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_MIDICHANNEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea135db6b87d65037cc58f5b1edb98701e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_RESTRIKEKEYS</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eae549d18edf5b6955e711d10a363118cb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_PLAYTEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4fa96dbcfe5cb652b311daeb2e698659</anchor>
@@ -51266,6 +52149,54 @@
       <name>EXPPLAYTYPE_IGNORETEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea14d33e51659079aad30849f8b1dd7539</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PATCHCHANGE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea78ef01e06808c8375fe2f7e7e6c7c96b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CHANNELPRESSURE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ead07217901c57b13fe76b23f315bdf3f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PITCHWHEEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eab1477563ef0d76523988cc2d37c0bc6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PERCUSSIONMAP</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea0a935c4b56fe908d0ab46ba0aaf3a7b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_SWING</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9272eefef9d39c509acc096edf3a3b32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKON</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9a7acc6321b255a87cee3edce63a099e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKOFF</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eafc481cc4d0b7f532d821f7522a23316c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_NONE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea4098ff0764b2d37c6cec6cf99c84d621</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -51329,6 +52260,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CONTROLLER</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea72877bb3c9ef69c6b77683bb20086ebc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_TRANSPOSE</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4a0a64efd49a337c7fd7cb8e9dfbbc8b</anchor>
@@ -51341,6 +52278,18 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>EXPPLAYTYPE_MIDICHANNEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea135db6b87d65037cc58f5b1edb98701e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_RESTRIKEKEYS</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eae549d18edf5b6955e711d10a363118cb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>EXPPLAYTYPE_PLAYTEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea4fa96dbcfe5cb652b311daeb2e698659</anchor>
@@ -51350,6 +52299,54 @@
       <name>EXPPLAYTYPE_IGNORETEMPOTOOL</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>ab76cd672bcf68373b8aaad8c3216531ea14d33e51659079aad30849f8b1dd7539</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PATCHCHANGE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea78ef01e06808c8375fe2f7e7e6c7c96b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_CHANNELPRESSURE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ead07217901c57b13fe76b23f315bdf3f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PITCHWHEEL</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eab1477563ef0d76523988cc2d37c0bc6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_PERCUSSIONMAP</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea0a935c4b56fe908d0ab46ba0aaf3a7b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_SWING</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9272eefef9d39c509acc096edf3a3b32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKON</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea9a7acc6321b255a87cee3edce63a099e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_HUMANPLAYBACKOFF</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531eafc481cc4d0b7f532d821f7522a23316c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXPPLAYTYPE_NONE</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab76cd672bcf68373b8aaad8c3216531ea4098ff0764b2d37c6cec6cf99c84d621</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -51598,6 +52595,20 @@
       <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetPlaybackControllerValue</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>a9115c6fa7a80cfda95b62bed297dfd81</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetPlaybackControllerNumber</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>a505ab37d5b0259ea8ef064893a42d8aa</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetPlaybackController</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
@@ -51610,6 +52621,34 @@
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
       <anchor>a75601043ecace6a59f088dca9694f142</anchor>
       <arglist>(TimeEdu32 eduduration, int tempo)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetPlaybackTransposition</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ac2ec1caa578122d8472143df8f83f1ad</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPlaybackTransposition</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>ab6663b65145c87387027fad40c1ff818</anchor>
+      <arglist>(twobyte halfsteps)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetPitchWheelValue</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>abf115ae49dd29375c1df31e891351721</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPitchWheelValue</name>
+      <anchorfile>class_f_c_text_expression_def.html</anchorfile>
+      <anchor>abf7d1696203f421460709d7bc0c30602</anchor>
+      <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -52409,6 +53448,20 @@
       <name>SetIndividualPositioning</name>
       <anchorfile>class_f_c_text_repeat.html</anchorfile>
       <anchor>acd5c119e0fca9b4c49885d2b4cf3a713</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetVisible</name>
+      <anchorfile>class_f_c_text_repeat.html</anchorfile>
+      <anchor>a9f42b9cb27b04a1cbc86257fba60c08b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVisible</name>
+      <anchorfile>class_f_c_text_repeat.html</anchorfile>
+      <anchor>a6c8aa16dbe7f2f53073549d70bb91d09</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -57334,6 +58387,7 @@
     <class kind="class">FCSeparateMeasureNumber</class>
     <class kind="class">FCCellFrameHold</class>
     <class kind="class">FCChord</class>
+    <class kind="class">FCCellGraphic</class>
     <class kind="class">FCCellText</class>
     <class kind="class">__FCNoInciDetail</class>
     <class kind="class">FCGroup</class>
@@ -57461,6 +58515,8 @@
     <class kind="class">FCMusicSpacingPrefs</class>
     <class kind="class">FCFontPrefs</class>
     <class kind="class">FCMultiMeasureRestPrefs</class>
+    <class kind="class">FCSlurContourPrefs</class>
+    <class kind="class">FCSmartShapeEntryConnectStyle</class>
     <class kind="class">FCSmartShapePrefs</class>
     <class kind="class">FCTiePlacementPrefs</class>
     <class kind="class">FCTieContourPrefs</class>
@@ -57508,6 +58564,7 @@
     <class kind="class">FCStrings</class>
     <class kind="class">FCCells</class>
     <class kind="class">FCSeparateMeasureNumbers</class>
+    <class kind="class">FCCellGraphics</class>
     <class kind="class">FCCellTexts</class>
     <class kind="class">FCMidiExpressions</class>
     <class kind="class">FCChords</class>
