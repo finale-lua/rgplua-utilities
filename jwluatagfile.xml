@@ -49799,8 +49799,8 @@
       <type>void</type>
       <name>AppendFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a91ffd55ecb5a0610db09a179f2792948</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a6027b7ad2be32a90ff3d76af56e4b700</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -50181,10 +50181,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae793aa0d3aab62b79dad578d0ad1fd64</anchor>
+      <anchor>a8efb9979b771ffa835329153581d7928</anchor>
       <arglist>(int index=0)</arglist>
     </member>
     <member kind="function">
@@ -50436,21 +50436,21 @@
       <type>void</type>
       <name>SetFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5021ca3d213b1b82046220bb63966650</anchor>
-      <arglist>(float f)</arglist>
+      <anchor>a84685274840351fd7a9a45965edb73af</anchor>
+      <arglist>(double f)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetMeasurement</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a70ac1239dd30806a8386820a15b57c5f</anchor>
-      <arglist>(float value, twobyte unit)</arglist>
+      <anchor>aec27084cd1608c7877db17ad2c89aa74</anchor>
+      <arglist>(double value, twobyte unit)</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetMeasurement</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a4d07ffc2ed8416efb8f4e64605eb6e23</anchor>
+      <anchor>aeacc2d9a31b963b298b92c86357d96de</anchor>
       <arglist>(_ENUMCODE(MEASUREMENTUNITS) _LUACODE(twobyte) unit)</arglist>
     </member>
     <member kind="function">
