@@ -57988,6 +57988,13 @@
       <arglist>(CMPER cmperinit=0)</arglist>
     </member>
     <member kind="function">
+      <type>std::pair&lt; CMPER, bool &gt;</type>
+      <name>DisplayExpressionDialog</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>af5b0e9579fd581039926f8782965adf4</anchor>
+      <arglist>(CMPER cmperinit=0, bool isshape=false)</arglist>
+    </member>
+    <member kind="function">
       <type>CMPER</type>
       <name>DisplayArticulationDialog</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
