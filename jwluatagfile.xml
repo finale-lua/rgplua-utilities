@@ -3728,6 +3728,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>CalcTopStaffLinePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>acdedc5ee6c6806bd02741952ac3020bb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>CalcBottomStaffLinePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a1e99a7eb6cbfaaa6a8fa4d914c5ee7b5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>SaveFullNameString</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
@@ -34531,6 +34545,13 @@
       <anchorfile>class_f_c_note.html</anchorfile>
       <anchor>a836c55b377a55de5a801f090d03a342d</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>CalcNumberOfLedgerLines</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a6fbcbfaf00cdf83d1e38daa2ff2a234d</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
