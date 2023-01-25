@@ -3731,15 +3731,15 @@
       <type>int</type>
       <name>CalcTopStaffLinePosition</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
-      <anchor>acdedc5ee6c6806bd02741952ac3020bb</anchor>
-      <arglist>() const</arglist>
+      <anchor>a7506104f9973ce285052cea817d9b2b7</anchor>
+      <arglist>(bool forledgerlines=false) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcBottomStaffLinePosition</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
-      <anchor>a1e99a7eb6cbfaaa6a8fa4d914c5ee7b5</anchor>
-      <arglist>() const</arglist>
+      <anchor>af6cc00f4c73adad4a9cc801fa971421b</anchor>
+      <arglist>(bool forledgerlines=false) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
