@@ -25880,7 +25880,7 @@
   <compound kind="class">
     <name>FCKeySignature</name>
     <filename>class_f_c_key_signature.html</filename>
-    <base>__FCBaseData</base>
+    <base>__FCBase</base>
     <member kind="function">
       <type></type>
       <name>FCKeySignature</name>
@@ -26089,13 +26089,6 @@
       <name>DebugDump</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
       <anchor>ae2775786a50978061f8713a68c5e1c9d</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>LoadFirst</name>
-      <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ae1f68b81cab5454eee914efa8d50fb04</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -55523,7 +55516,7 @@
   <compound kind="class">
     <name>FCTimeSignature</name>
     <filename>class_f_c_time_signature.html</filename>
-    <base>__FCBaseData</base>
+    <base>__FCBase</base>
     <member kind="function">
       <type></type>
       <name>FCTimeSignature</name>
@@ -55747,13 +55740,6 @@
       <anchorfile>class_f_c_time_signature.html</anchorfile>
       <anchor>a563a4ef8ecc8460d2dd00e944b0343e2</anchor>
       <arglist>(TimeEdu32 duration)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>LoadFirst</name>
-      <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>aaf440161da02d7f067359aa6d0ab19df</anchor>
-      <arglist>() override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -58201,7 +58187,6 @@
     <class kind="class">FCBrokenBeamMod</class>
     <class kind="class">FCTablatureNoteMod</class>
     <class kind="class">FCClefDef</class>
-    <class kind="class">FCKeySignature</class>
     <class kind="class">FCNote</class>
     <class kind="class">FCNotePitch</class>
     <class kind="class">FCNoteEntry</class>
@@ -58251,7 +58236,6 @@
     <class kind="class">FCSectionLyricsText</class>
     <class kind="class">FCChorusLyricsText</class>
     <class kind="class">FCFileInfoText</class>
-    <class kind="class">FCTimeSignature</class>
   </compound>
   <compound kind="group">
     <name>text_classes</name>
