@@ -10165,15 +10165,15 @@
       <type>void</type>
       <name>SetWidth</name>
       <anchorfile>class_f_c_allotment.html</anchorfile>
-      <anchor>ac6857d4463785127c730ca70777c2b5a</anchor>
-      <arglist>(twobyte width)</arglist>
+      <anchor>a0477b9014d55fe6aa3c70dcbbafbdcf0</anchor>
+      <arglist>(Evpu16 width)</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>GetWidth</name>
       <anchorfile>class_f_c_allotment.html</anchorfile>
-      <anchor>a06237f89fabc0d644b43e3796239b754</anchor>
-      <arglist>()</arglist>
+      <anchor>aefb5e4227c03a30555674c275a0eed18</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -10193,6 +10193,13 @@
       <anchorfile>class_f_c_allotments.html</anchorfile>
       <anchor>a6277f59651f6082d4bcb190babc232ff</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCAllotment *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_allotments.html</anchorfile>
+      <anchor>aa79ccd7f07c1a3c2dbf4fe3b5a180b51</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -58618,6 +58625,7 @@
     <class kind="class">FCStaffStyleAssigns</class>
     <class kind="class">FCMultiMeasureRests</class>
     <class kind="class">FCMultiStaffInstruments</class>
+    <class kind="class">FCAllotments</class>
     <class kind="class">FCPageGraphics</class>
     <class kind="class">FCTextRepeatDefs</class>
     <class kind="class">FCFretInstrumentDefs</class>
