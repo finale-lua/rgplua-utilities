@@ -58496,6 +58496,7 @@
     <class kind="class">FCStaffStyleAssign</class>
     <class kind="class">FCMultiMeasureRest</class>
     <class kind="class">FCMultiStaffInstrument</class>
+    <class kind="class">FCAllotment</class>
     <class kind="class">FCPageGraphic</class>
     <class kind="class">FCTextRepeatDef</class>
     <class kind="class">FCTextRepeat</class>
