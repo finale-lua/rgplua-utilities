@@ -10660,6 +10660,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetOnStemDistanceFromStemEnd</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>aaa8a532b9cb50b42d9278d03961facfc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetAvoidStaffLines</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
@@ -11147,6 +11154,13 @@
       <name>SetBottomVelocity</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a7081c5ce30bae84fdb51fd58de1ed1ce</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetOnStemDistanceFromStemEnd</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a09b97905d258da745f528c3b5c18b03b</anchor>
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
