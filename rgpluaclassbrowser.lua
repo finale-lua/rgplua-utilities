@@ -19,7 +19,7 @@ function plugindef()
         jwluatagfile.xml file that matches the version of RGP Lua you are using. You can obtain the latest versions
         of RGP Lua, this script, and the corresponding jwluatagfile.xml from the download link:
         
-        https://robertgpatterson.com/-fininfo/-rgplua/vershist.html
+        https://robertgpatterson.com/-fininfo/-rgplua/rgplua.html
         
         For other versions, visit the Github repository:
         
