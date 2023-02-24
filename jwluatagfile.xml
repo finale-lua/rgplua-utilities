@@ -36744,6 +36744,13 @@
       <arglist>(FCFontInfo *pInfo)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetEnharmonicFlip</name>
+      <anchorfile>class_f_c_notehead_mod.html</anchorfile>
+      <anchor>a717abfd0098c7ff74df85ec56959403c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetHorizontalPos</name>
       <anchorfile>class_f_c_notehead_mod.html</anchorfile>
@@ -36833,6 +36840,13 @@
       <anchorfile>class_f_c_notehead_mod.html</anchorfile>
       <anchor>ace7b98effaaa46ea6202e48d47f677a2</anchor>
       <arglist>(eUniChar32 ch)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEnharmonicFlip</name>
+      <anchorfile>class_f_c_notehead_mod.html</anchorfile>
+      <anchor>a1b6e11ba4ede0d98fe7b6ffb2ca48593</anchor>
+      <arglist>(bool status)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
