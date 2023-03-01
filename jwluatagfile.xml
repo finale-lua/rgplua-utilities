@@ -34750,6 +34750,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>MatchSpellingToScore</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a6942c0dc633827ed07829ac62a3e1e67</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>MarkForErase</name>
       <anchorfile>class_f_c_note.html</anchorfile>
