@@ -17779,6 +17779,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterHandleActivate</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>af8d2038087d6db20e27c30a63110ca76</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleTimer</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a85578f7b660f9d6b037568a8728388f1</anchor>
@@ -17853,6 +17860,13 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a95064c4c4c43fc2019fec781ff51812f</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HandleActivate</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a3c6c513a1199d8a87710f716b43be74e</anchor>
+      <arglist>(bool activated) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
