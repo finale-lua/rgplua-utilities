@@ -50037,15 +50037,15 @@
       <type>void</type>
       <name>SetRunningLuaFolderPath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa57db881cc96481776b35174cdbfc4c5</anchor>
-      <arglist>()</arglist>
+      <anchor>a5e72d7113fdc61592ecf914077e3d2cd</anchor>
+      <arglist>(_LUACODE(lua_State *L))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetRunningLuaFilePath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a8709fa9ea5613bdac8da07ee5429d3a1</anchor>
-      <arglist>()</arglist>
+      <anchor>a93225e73f960a111aeb8ebe4672e7a5a</anchor>
+      <arglist>(_LUACODE(lua_State *L))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
