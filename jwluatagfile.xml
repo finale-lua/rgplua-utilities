@@ -19305,8 +19305,8 @@
       <type>bool</type>
       <name>SwitchTo</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a261731843ab6715fc5fdc6d931bf32db</anchor>
-      <arglist>(FCString *pUndoString, bool saveedits)</arglist>
+      <anchor>a99b01b7d1084e941d243a7deab8002d4</anchor>
+      <arglist>(FCString *pUndoString, bool saveedits, _state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -19389,15 +19389,15 @@
       <type>static void</type>
       <name>_SetLastUndoString</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a722dec6ae977251ef0643302afe5e456</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a70d75cd9d067ca3ff7924fefaf9e4f24</anchor>
+      <arglist>(const FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>GetLastUndoString</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>af88557885de0249fd3c5aae13a61a619</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a353a26a4def8bd679d4c81f5bac544cf</anchor>
+      <arglist>(FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -19422,8 +19422,8 @@
       <type>int</type>
       <name>ForEachWithScope</name>
       <anchorfile>class_f_c_documents.html</anchorfile>
-      <anchor>aaf0737f7bc0c36983f59974f3b04511e</anchor>
-      <arglist>(FCIteratorHandler *pIterator, FCString *pUndoString)</arglist>
+      <anchor>a1f9f2bcb614fb344b65a814ca0089bd6</anchor>
+      <arglist>(FCIteratorHandler *pIterator, FCString *pUndoString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function">
       <type>FCDocument *</type>
