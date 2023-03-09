@@ -19305,8 +19305,8 @@
       <type>bool</type>
       <name>SwitchTo</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a99b01b7d1084e941d243a7deab8002d4</anchor>
-      <arglist>(FCString *pUndoString, bool saveedits, _state_ptr S _NOLUACODE(=nullptr))</arglist>
+      <anchor>ac367776ec9bd6e9bc9b4358ee8627345</anchor>
+      <arglist>(FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -19398,6 +19398,13 @@
       <anchorfile>class_f_c_document.html</anchorfile>
       <anchor>a353a26a4def8bd679d4c81f5bac544cf</anchor>
       <arglist>(FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>RemoveLastUndoString</name>
+      <anchorfile>class_f_c_document.html</anchorfile>
+      <anchor>af0794e87cb554d1f5be7e860f0aca8dd</anchor>
+      <arglist>(_state_ptr S)</arglist>
     </member>
   </compound>
   <compound kind="class">
