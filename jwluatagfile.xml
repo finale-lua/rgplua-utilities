@@ -3728,6 +3728,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>CalcTopStaffLinePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a7506104f9973ce285052cea817d9b2b7</anchor>
+      <arglist>(bool forledgerlines=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>CalcBottomStaffLinePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>af6cc00f4c73adad4a9cc801fa971421b</anchor>
+      <arglist>(bool forledgerlines=false) const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>SaveFullNameString</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
@@ -10151,15 +10165,15 @@
       <type>void</type>
       <name>SetWidth</name>
       <anchorfile>class_f_c_allotment.html</anchorfile>
-      <anchor>ac6857d4463785127c730ca70777c2b5a</anchor>
-      <arglist>(twobyte width)</arglist>
+      <anchor>a0477b9014d55fe6aa3c70dcbbafbdcf0</anchor>
+      <arglist>(Evpu16 width)</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu16</type>
       <name>GetWidth</name>
       <anchorfile>class_f_c_allotment.html</anchorfile>
-      <anchor>a06237f89fabc0d644b43e3796239b754</anchor>
-      <arglist>()</arglist>
+      <anchor>aefb5e4227c03a30555674c275a0eed18</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -10179,6 +10193,13 @@
       <anchorfile>class_f_c_allotments.html</anchorfile>
       <anchor>a6277f59651f6082d4bcb190babc232ff</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCAllotment *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_allotments.html</anchorfile>
+      <anchor>aa79ccd7f07c1a3c2dbf4fe3b5a180b51</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -10636,6 +10657,13 @@
       <name>GetBottomVelocity</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a96d0fb27c53eabe6c87be6fa5f829aa7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetOnStemDistanceFromStemEnd</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>aaa8a532b9cb50b42d9278d03961facfc</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11126,6 +11154,13 @@
       <name>SetBottomVelocity</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a7081c5ce30bae84fdb51fd58de1ed1ce</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetOnStemDistanceFromStemEnd</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>a09b97905d258da745f528c3b5c18b03b</anchor>
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
@@ -12183,16 +12218,9 @@
     </member>
     <member kind="function">
       <type>Evpu16</type>
-      <name>GetFullSpan</name>
+      <name>GetNextHorizontalPosition</name>
       <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
-      <anchor>ae4f30ff9426812c360e6173e330fb0a5</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>Evpu16</type>
-      <name>GetReferenceWidth</name>
-      <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
-      <anchor>a645ee5f390c601b04640bdf5b27d01ee</anchor>
+      <anchor>aa0efceac694fe646ca67bda7d478cae5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -12203,10 +12231,31 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
-      <name>GetNextHorizontalPosition</name>
+      <type>TimeEdu32</type>
+      <name>GetTotalDuration</name>
       <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
-      <anchor>aa0efceac694fe646ca67bda7d478cae5</anchor>
+      <anchor>abb17da97b98af40b4b781b2ba0bf8e9f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetFullSpan</name>
+      <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
+      <anchor>ae4f30ff9426812c360e6173e330fb0a5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetMinimumWidth</name>
+      <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
+      <anchor>abba8089f3223cad346d109898bb7d46d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>GetReferenceWidth</name>
+      <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
+      <anchor>a645ee5f390c601b04640bdf5b27d01ee</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -12253,6 +12302,20 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetMinimumPosition</name>
+      <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
+      <anchor>a3e4cf626d524104d865b1ad0dc900484</anchor>
+      <arglist>(Evpu16 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTotalDuration</name>
+      <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
+      <anchor>af7141cd68010debb9776e17bbffb33d2</anchor>
+      <arglist>(TimeEdu32 dura)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetFullSpan</name>
       <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
       <anchor>a99b65c17d081a722cdd2076166f9169a</anchor>
@@ -12260,17 +12323,17 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetReferenceWidth</name>
+      <name>SetMinimumWidth</name>
       <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
-      <anchor>ae35247bc90f0891044fbcc47458c8193</anchor>
+      <anchor>ad57c2e343179953f06254eeac03d13c1</anchor>
       <arglist>(Evpu16 width)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetMinimumPosition</name>
+      <name>SetReferenceWidth</name>
       <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
-      <anchor>a3e4cf626d524104d865b1ad0dc900484</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>ae35247bc90f0891044fbcc47458c8193</anchor>
+      <arglist>(Evpu16 width)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -12311,6 +12374,27 @@
       <anchorfile>class_f_c_beat_chart_elements.html</anchorfile>
       <anchor>a8c58cbfbf665e80add5f07ade297ff42</anchor>
       <arglist>(TimeEdu32 durationpos)</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu16</type>
+      <name>CalcElementWidth</name>
+      <anchorfile>class_f_c_beat_chart_elements.html</anchorfile>
+      <anchor>aa0f16ba7b668a5ba91bc974ed2459ea2</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcIsManual</name>
+      <anchorfile>class_f_c_beat_chart_elements.html</anchorfile>
+      <anchor>a528f98075b897aa476738c3faadcaec8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>TransitionToManual</name>
+      <anchorfile>class_f_c_beat_chart_elements.html</anchorfile>
+      <anchor>ae614669b32cf47bdf9cb17e4e8440448</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -17695,6 +17779,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterHandleActivate</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>af8d2038087d6db20e27c30a63110ca76</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleTimer</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a85578f7b660f9d6b037568a8728388f1</anchor>
@@ -17769,6 +17860,13 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a95064c4c4c43fc2019fec781ff51812f</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HandleActivate</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a3c6c513a1199d8a87710f716b43be74e</anchor>
+      <arglist>(bool activated) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -19207,8 +19305,8 @@
       <type>bool</type>
       <name>SwitchTo</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a261731843ab6715fc5fdc6d931bf32db</anchor>
-      <arglist>(FCString *pUndoString, bool saveedits)</arglist>
+      <anchor>ac367776ec9bd6e9bc9b4358ee8627345</anchor>
+      <arglist>(FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -19291,15 +19389,22 @@
       <type>static void</type>
       <name>_SetLastUndoString</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a722dec6ae977251ef0643302afe5e456</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a70d75cd9d067ca3ff7924fefaf9e4f24</anchor>
+      <arglist>(const FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>GetLastUndoString</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>af88557885de0249fd3c5aae13a61a619</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a353a26a4def8bd679d4c81f5bac544cf</anchor>
+      <arglist>(FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>RemoveLastUndoString</name>
+      <anchorfile>class_f_c_document.html</anchorfile>
+      <anchor>af0794e87cb554d1f5be7e860f0aca8dd</anchor>
+      <arglist>(_state_ptr S)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -19324,8 +19429,8 @@
       <type>int</type>
       <name>ForEachWithScope</name>
       <anchorfile>class_f_c_documents.html</anchorfile>
-      <anchor>aaf0737f7bc0c36983f59974f3b04511e</anchor>
-      <arglist>(FCIteratorHandler *pIterator, FCString *pUndoString)</arglist>
+      <anchor>a1f9f2bcb614fb344b65a814ca0089bd6</anchor>
+      <arglist>(FCIteratorHandler *pIterator, FCString *pUndoString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function">
       <type>FCDocument *</type>
@@ -25866,7 +25971,7 @@
   <compound kind="class">
     <name>FCKeySignature</name>
     <filename>class_f_c_key_signature.html</filename>
-    <base>__FCBaseData</base>
+    <base>__FCBase</base>
     <member kind="function">
       <type></type>
       <name>FCKeySignature</name>
@@ -26075,13 +26180,6 @@
       <name>DebugDump</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
       <anchor>ae2775786a50978061f8713a68c5e1c9d</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>LoadFirst</name>
-      <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ae1f68b81cab5454eee914efa8d50fb04</anchor>
       <arglist>() override</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -34533,6 +34631,13 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>CalcNumberOfLedgerLines</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a6fbcbfaf00cdf83d1e38daa2ff2a234d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>CalcOnLedgerLine</name>
       <anchorfile>class_f_c_note.html</anchorfile>
@@ -34664,6 +34769,13 @@
       <anchorfile>class_f_c_note.html</anchorfile>
       <anchor>a9ee9a1fabb723a12f4a4a4167799883a</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>MatchSpellingToScore</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a6942c0dc633827ed07829ac62a3e1e67</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -36660,6 +36772,13 @@
       <arglist>(FCFontInfo *pInfo)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetEnharmonicFlip</name>
+      <anchorfile>class_f_c_notehead_mod.html</anchorfile>
+      <anchor>a717abfd0098c7ff74df85ec56959403c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetHorizontalPos</name>
       <anchorfile>class_f_c_notehead_mod.html</anchorfile>
@@ -36749,6 +36868,13 @@
       <anchorfile>class_f_c_notehead_mod.html</anchorfile>
       <anchor>ace7b98effaaa46ea6202e48d47f677a2</anchor>
       <arglist>(eUniChar32 ch)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEnharmonicFlip</name>
+      <anchorfile>class_f_c_notehead_mod.html</anchorfile>
+      <anchor>a1b6e11ba4ede0d98fe7b6ffb2ca48593</anchor>
+      <arglist>(bool status)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -49799,8 +49925,8 @@
       <type>void</type>
       <name>AppendFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a91ffd55ecb5a0610db09a179f2792948</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a6027b7ad2be32a90ff3d76af56e4b700</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -49918,15 +50044,15 @@
       <type>void</type>
       <name>SetRunningLuaFolderPath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa57db881cc96481776b35174cdbfc4c5</anchor>
-      <arglist>()</arglist>
+      <anchor>a5e72d7113fdc61592ecf914077e3d2cd</anchor>
+      <arglist>(_LUACODE(lua_State *L))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetRunningLuaFilePath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a8709fa9ea5613bdac8da07ee5429d3a1</anchor>
-      <arglist>()</arglist>
+      <anchor>a93225e73f960a111aeb8ebe4672e7a5a</anchor>
+      <arglist>(_LUACODE(lua_State *L))</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -50181,10 +50307,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae793aa0d3aab62b79dad578d0ad1fd64</anchor>
+      <anchor>a8efb9979b771ffa835329153581d7928</anchor>
       <arglist>(int index=0)</arglist>
     </member>
     <member kind="function">
@@ -50436,21 +50562,21 @@
       <type>void</type>
       <name>SetFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5021ca3d213b1b82046220bb63966650</anchor>
-      <arglist>(float f)</arglist>
+      <anchor>a84685274840351fd7a9a45965edb73af</anchor>
+      <arglist>(double f)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetMeasurement</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a70ac1239dd30806a8386820a15b57c5f</anchor>
-      <arglist>(float value, twobyte unit)</arglist>
+      <anchor>aec27084cd1608c7877db17ad2c89aa74</anchor>
+      <arglist>(double value, twobyte unit)</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetMeasurement</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a4d07ffc2ed8416efb8f4e64605eb6e23</anchor>
+      <anchor>aeacc2d9a31b963b298b92c86357d96de</anchor>
       <arglist>(_ENUMCODE(MEASUREMENTUNITS) _LUACODE(twobyte) unit)</arglist>
     </member>
     <member kind="function">
@@ -55502,7 +55628,7 @@
   <compound kind="class">
     <name>FCTimeSignature</name>
     <filename>class_f_c_time_signature.html</filename>
-    <base>__FCBaseData</base>
+    <base>__FCBase</base>
     <member kind="function">
       <type></type>
       <name>FCTimeSignature</name>
@@ -55726,13 +55852,6 @@
       <anchorfile>class_f_c_time_signature.html</anchorfile>
       <anchor>a563a4ef8ecc8460d2dd00e944b0343e2</anchor>
       <arglist>(TimeEdu32 duration)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>LoadFirst</name>
-      <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>aaf440161da02d7f067359aa6d0ab19df</anchor>
-      <arglist>() override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -57967,6 +58086,13 @@
       <arglist>(CMPER cmperinit=0)</arglist>
     </member>
     <member kind="function">
+      <type>std::pair&lt; CMPER, bool &gt;</type>
+      <name>DisplayExpressionDialog</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>af5b0e9579fd581039926f8782965adf4</anchor>
+      <arglist>(CMPER cmperinit=0, bool isshape=false)</arglist>
+    </member>
+    <member kind="function">
       <type>CMPER</type>
       <name>DisplayArticulationDialog</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
@@ -58173,7 +58299,6 @@
     <class kind="class">FCBrokenBeamMod</class>
     <class kind="class">FCTablatureNoteMod</class>
     <class kind="class">FCClefDef</class>
-    <class kind="class">FCKeySignature</class>
     <class kind="class">FCNote</class>
     <class kind="class">FCNotePitch</class>
     <class kind="class">FCNoteEntry</class>
@@ -58223,7 +58348,6 @@
     <class kind="class">FCSectionLyricsText</class>
     <class kind="class">FCChorusLyricsText</class>
     <class kind="class">FCFileInfoText</class>
-    <class kind="class">FCTimeSignature</class>
   </compound>
   <compound kind="group">
     <name>text_classes</name>
@@ -58477,6 +58601,7 @@
     <class kind="class">FCStaffStyleAssign</class>
     <class kind="class">FCMultiMeasureRest</class>
     <class kind="class">FCMultiStaffInstrument</class>
+    <class kind="class">FCAllotment</class>
     <class kind="class">FCPageGraphic</class>
     <class kind="class">FCTextRepeatDef</class>
     <class kind="class">FCTextRepeat</class>
@@ -58606,6 +58731,7 @@
     <class kind="class">FCStaffStyleAssigns</class>
     <class kind="class">FCMultiMeasureRests</class>
     <class kind="class">FCMultiStaffInstruments</class>
+    <class kind="class">FCAllotments</class>
     <class kind="class">FCPageGraphics</class>
     <class kind="class">FCTextRepeatDefs</class>
     <class kind="class">FCFretInstrumentDefs</class>
