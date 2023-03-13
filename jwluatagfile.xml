@@ -37082,35 +37082,35 @@
       <type></type>
       <name>FCNumber</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a7d8ad1672d66c65b48e82f203133b1c8</anchor>
-      <arglist>(decltype(_floatvalue) value)</arglist>
+      <anchor>a40340fda31d680ff65c2fe80d2f260d9</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetInt</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a8e67bfd5878affe96f07ef3ef585a7ab</anchor>
-      <arglist>(decltype(_intvalue) value)</arglist>
+      <anchor>a82c79a6ffbe3b80f18661e737a288f7d</anchor>
+      <arglist>(int value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetFloat</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a0564d12344cf19c710ece9d8b85ae012</anchor>
-      <arglist>(decltype(_floatvalue) value)</arglist>
+      <anchor>abd8f8d1bc12e0048c42c40c767659015</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
-      <type>decltype(_intvalue)</type>
+      <type>int</type>
       <name>GetInt</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a1276d50c6e54946ded5a9b5ffcdec165</anchor>
+      <anchor>a328b09d218456b055b0a9797396aeb2a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>decltype(_floatvalue)</type>
+      <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a0065197df6a32e0fa5d0c75ad5f5f326</anchor>
+      <anchor>a243f56f71587a2fe3b210b0e60106141</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
