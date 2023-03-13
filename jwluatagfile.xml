@@ -440,8 +440,8 @@
       <type>static void</type>
       <name>DebugOutFloat</name>
       <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>abb59d3133d6ff5a087ab530feac72e65</anchor>
-      <arglist>(const char *pszPrefixText, float f)</arglist>
+      <anchor>ac31af9b9986b8f3f0297843dff0a2e62</anchor>
+      <arglist>(const char *pszPrefixText, double f)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
@@ -37082,35 +37082,35 @@
       <type></type>
       <name>FCNumber</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a2d5a673f2f26e3ded582bb7be5d36e80</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a7d8ad1672d66c65b48e82f203133b1c8</anchor>
+      <arglist>(decltype(_floatvalue) value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetInt</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a82c79a6ffbe3b80f18661e737a288f7d</anchor>
-      <arglist>(int value)</arglist>
+      <anchor>a8e67bfd5878affe96f07ef3ef585a7ab</anchor>
+      <arglist>(decltype(_intvalue) value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetFloat</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>ac6ac8a0d43d67c5a12a011b2f971926e</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a0564d12344cf19c710ece9d8b85ae012</anchor>
+      <arglist>(decltype(_floatvalue) value)</arglist>
     </member>
     <member kind="function">
-      <type>int</type>
+      <type>decltype(_intvalue)</type>
       <name>GetInt</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>a328b09d218456b055b0a9797396aeb2a</anchor>
+      <anchor>a1276d50c6e54946ded5a9b5ffcdec165</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>decltype(_floatvalue)</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>af4cb8d91a2111a35cebdba888fcd2eda</anchor>
+      <anchor>a0065197df6a32e0fa5d0c75ad5f5f326</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -37197,8 +37197,8 @@
       <type>void</type>
       <name>AddFloat</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>a9aaa1f2849136c899ec658e68270e710</anchor>
-      <arglist>(float afloat)</arglist>
+      <anchor>a98fe1656ec454e00df286402f6c50d86</anchor>
+      <arglist>(double afloat)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
