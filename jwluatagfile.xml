@@ -41969,31 +41969,31 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetForwardSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>ad3cd0d6dd0e5fcccc3c16d3d7059e24c</anchor>
+      <anchor>abb5c1b10d392204d0c9a28b4bef9e062</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetBackwardSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a78a0de9a2718600311a76739e0611ec5</anchor>
+      <anchor>a39be846874189f46cc215cb3bf8319d5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetVerticalTopDotAdjustment</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>ac5999c3d554f2d787282857cb21a3716</anchor>
+      <anchor>a8de7b90bc69bdc9692696fb70014d213</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetVerticalBottomDotAdjustment</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>aa3822725e6f38aec62e5d03b3906a469</anchor>
+      <anchor>ae8366d0992b6df782ba539c366d2d9fe</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42011,38 +42011,38 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetAfterKeySpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>ab5df4199938b3882025fe722ff61c190</anchor>
+      <anchor>a3b8f0db557dd6248d31052ecf709fe64</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetAfterTimeSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a203b0babbc3f46789d10a75302e47318</anchor>
+      <anchor>a9e10be13a90d2877f4aa6ce4d28c03c2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetEndingBracketHeight</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a61c9a34a48ec10acb173228747eaa486</anchor>
+      <anchor>a2846a2a89d12bfdef5552d59c0f1b945</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetEndingFrontHookLength</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a59568cf71d0081adc0377138bb36ffc4</anchor>
+      <anchor>a7aa0326317ccfa4a10271b710e42fc5a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetEndingBackHookLength</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>aac478b0762e57edbc38215c9f5bdadb0</anchor>
+      <anchor>abddc162cc2022f9fe3f572ac5cc611fe</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42053,24 +42053,24 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu32</type>
       <name>GetEndingInsetStart</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a28057ba78b01c4749c50e1a49e5b65a6</anchor>
+      <anchor>ac71060361036213ba39b656cc6ecfa66</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>Evpu32</type>
       <name>GetEndingInsetEnd</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>af25c28e84f1c142fc50cfd4330d3ec1f</anchor>
+      <anchor>a6061e2366d28736cf0664faa51b13a23</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>Evpu16</type>
+      <type>Evpu32</type>
       <name>GetEndingHorizontalText</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a3dc0fe3b0b32b0acf0699f45b10a9fcf</anchor>
+      <anchor>ac51b228d0e9a13d5fa12e02690108d93</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42099,6 +42099,20 @@
       <name>GetThinInnerBracketReference</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
       <anchor>aaa73e013eb97caa64f85a5bd8ceea989</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetShowOnTopStaffOnly</name>
+      <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
+      <anchor>a83448aab4a290572b412c9aed5c11f8d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetShowOnStaffListID</name>
+      <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
+      <anchor>adc59a6b03514ec4c4de2c620bbcbd1cf</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42133,29 +42147,29 @@
       <type>void</type>
       <name>SetForwardSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>acaf2149584579649cab7c57ebe628308</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a799708ab1fca69d308d491eb41e1b5f9</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetBackwardSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>ae2c72613b36155f2488795580ee4047e</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a1837ba5e28aeadc54dba0211825c44ed</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetVerticalTopDotAdjustment</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a43c100268ac038fe1c585fd63da07843</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a8dfdf9e6f8e9fc8ec7923017a0e2039f</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetVerticalBottomDotAdjustment</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>ad08213abdbc9bbc46d8451ee1f8a4ad9</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a44c98024cee4335cdecbaaba7e0f495e</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -42168,78 +42182,78 @@
       <type>void</type>
       <name>SetAfterClefSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a1296ecc7621cb95298a9145151e6cecd</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a3653adb67d74c7c7586e5fa72a7140ce</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetAfterKeySpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a41c8a4308f1d56f364d6efad27bb0576</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a78c2a91da8d6164cb1341312733838ea</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetAfterTimeSpace</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>af86a3b00d45b55bbf27b5258ee54eb03</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a20bdde0bfc5431afd3c815c65cb701ea</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingBracketHeight</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a7e20e6f9ba513b8f54e44cae0725817f</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>adb2ae143fcc037f59c8df12df9849ee9</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingFrontHookLength</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>aeb64c0e3330b3508adfbb6028c9f2830</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a0eb16ee38fd1a35fd48dd9f18bf40991</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingBackHookLength</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>ab4f537f5ebfd26a84717684da5a1f94b</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>a8573e9cabce9f051d069623bc18288cf</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingLineThickness</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>aa64b1768ab6b5e229cd72c4f29e188ce</anchor>
-      <arglist>(Efix16 value)</arglist>
+      <anchor>a78cb8f3f3c2e0c3c1d8fe90c4b736315</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingInsetStart</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a4c4553d8b3ec22ab4a7be803ecf04516</anchor>
-      <arglist>(twobyte value)</arglist>
+      <anchor>a7f5fe1f5d348143b5b94d3c12373bd48</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingInsetEnd</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a7abb9801fa5157d9a0208942f7e14915</anchor>
-      <arglist>(twobyte value)</arglist>
+      <anchor>ad158772102ac6728ddcbecd91fd94f95</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingHorizontalText</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a6d1c3a22b36288af4857dd13a5d384a7</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>aa4ec91950eed54b4f1842cc7fa8ccb44</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetEndingVerticalText</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a75c0b3a469dd0c0acffb4e299a1debd6</anchor>
-      <arglist>(Evpu16 value)</arglist>
+      <anchor>ac6076ed48635cfd2ac8377378f4e30f7</anchor>
+      <arglist>(Evpu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -42261,6 +42275,20 @@
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
       <anchor>aa7b71ab134ce8776ce46db206705ca72</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShowOnTopStaffOnly</name>
+      <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
+      <anchor>a9d4f37c376f68b8f5bbf0ed8704e23b0</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShowOnStaffListID</name>
+      <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
+      <anchor>a4ca601a20b10d06aa44c15e3a7ad14d9</anchor>
+      <arglist>(twobyte value)</arglist>
     </member>
   </compound>
   <compound kind="class">
