@@ -687,6 +687,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>RelinkToCurrentView</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>abf525f99ec0be4d7402eeb88b881bebc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RelinkToScore</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>add885a30a80d36888424d08e7aa9211b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>__FCBaseData *</type>
       <name>CreateClone</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
@@ -11591,7 +11605,7 @@
       <type>twobyte</type>
       <name>GetLyricNumber</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>a7b8dc23dcabcaa4c01189b15a4b3fb36</anchor>
+      <anchor>af577a17facf6bd13b82d193a5bf92dca</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11645,6 +11659,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>IsLyricMode</name>
+      <anchorfile>class_f_c_baseline.html</anchorfile>
+      <anchor>a7534c4930a005421aa6966c041cd2271</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>Load</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
       <anchor>af1e12ca8d5d816da823055aff2abf64a</anchor>
@@ -11691,6 +11712,13 @@
       <anchorfile>class_f_c_baseline.html</anchorfile>
       <anchor>acbe29cae6b88faed0b2d0d02a3a664b5</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>IsModeLyricMode</name>
+      <anchorfile>class_f_c_baseline.html</anchorfile>
+      <anchor>ae9775afe2846c21e94953c769b708197</anchor>
+      <arglist>(BASELINEMODES mode)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static Evpu32</type>
@@ -11744,6 +11772,13 @@
       <name>LoadAllForPiece</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
       <anchor>ac50916eb80d53b93fb920613a40a4aa3</anchor>
+      <arglist>(FCBaseline::BASELINEMODES mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>LoadAllDefaultsForLyrics</name>
+      <anchorfile>class_f_c_baselines.html</anchorfile>
+      <anchor>a3dd901c87a778c78b3a97e213d15bb68</anchor>
       <arglist>(FCBaseline::BASELINEMODES mode)</arglist>
     </member>
     <member kind="function">
