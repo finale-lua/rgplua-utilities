@@ -34949,6 +34949,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>RelinkToCurrentView</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a138750e249a67f71f6ea2fa30493d52a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RelinkToScore</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a9cb690209c94f10e785c915fc7e9e21d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetNoteFlag</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
