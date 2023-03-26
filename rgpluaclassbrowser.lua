@@ -432,9 +432,6 @@ create_class_index_str = function()
             end
         end
         class_collection[class_info.name] = class_info
-        if finenv.UI():IsOnWindows() then
-            set_text(global_progress_label, "Indexing " .. class_info.name .. "...")
-        end
     end
     return class_collection
 end
@@ -443,12 +440,10 @@ coroutine_build_class_index = coroutine.create(function()
         if not finenv.RetainLuaState then
             eligible_classes = get_eligible_classes()
             coroutine.yield()
---            global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
---            global_class_index = create_class_index_str() --tinyxml2 and create_class_index_xml() or create_class_index_str()
-            global_class_index = create_class_index_xml() --tinyxml2 and create_class_index_xml() or create_class_index_str()
+            global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
             -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
             -- up until we reach this statement:
-            --finenv.RetainLuaState = true
+            finenv.RetainLuaState = true
         end
     end)
 
