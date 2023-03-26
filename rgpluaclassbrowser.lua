@@ -54,9 +54,6 @@ if not finenv.RetainLuaState then
     }
 end
 
-require('mobdebug').start()
-
-
 global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
@@ -364,38 +361,41 @@ end
 
 create_class_index_xml = function()
     local xml = tinyxml2.XMLDocument(true, tinyxml2.PRESERVE_WHITESPACE) -- these are the default arguments in C++
-    if xml:LoadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml") ~= tinyxml2.XML_SUCCESS then
+    local result = xml:LoadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml")
+    if result ~= tinyxml2.XML_SUCCESS then
         error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
     end
     local class_collection = {}
     local compound = tinyxml2.XMLHandle(xml)
                                     :FirstChildElement("tagfile")
                                     :FirstChildElement("compound")
-    while (compound) do
+                                    :ToElement()
+    while compound do
         if compound:Attribute("kind", "class") then
             local class_info = { _attr = { kind = 'class' }, __members = {} }
-            class_info.name = compound:FirstChildElement("name"):ToElement():GetText()
-            class_info.filename = compound:FirstChildElement("filename"):ToElement():GetText()
-            class_info.base = compound:FirstChildElement("filename"):ToElement():GetText()
+            class_info.name = compound:FirstChildElement("name"):GetText()
+            class_info.filename = compound:FirstChildElement("filename"):GetText()
+            class_info.base = compound:FirstChildElement("filename"):GetText()
             local member = compound:FirstChildElement("member")
             while member do
+                member = member:ToElement()
                 if member:Attribute("kind", "function") then
                     local member_info = { _attr = { kind = 'function' } }
-                    member_info.type = member:FirstChildElement("type"):ToElement():GetText()
-                    member_info.name = member:FirstChildElement("name"):ToElement():GetText()
-                    member_info.anchorfile = member:FirstChildElement("anchorfile"):ToElement():GetText()
-                    member_info.anchor = member:FirstChildElement("anchor"):ToElement():GetText()
-                    member_info._attr.protection = member:ToElement():Attribute("protection")
-                    member_info._attr.static = member:ToElement():Attribute("static")
-                    member_info._attr.virtualness = member:ToElement():Attribute("virtualness")
-                    member_info.arglist = member:FirstChildElement("arglist"):ToElement():GetText()
+                    member_info.type = member:FirstChildElement("type"):GetText()
+                    member_info.name = member:FirstChildElement("name"):GetText()
+                    member_info.anchorfile = member:FirstChildElement("anchorfile"):GetText()
+                    member_info.anchor = member:FirstChildElement("anchor"):GetText()
+                    member_info._attr.protection = member:Attribute("protection", nil)
+                    member_info._attr.static = member:Attribute("static", nil)
+                    member_info._attr.virtualness = member:Attribute("virtualness", nil)
+                    member_info.arglist = member:FirstChildElement("arglist"):GetText()
                     class_info.__members[member_info.name] = member_info
                 end
-                member = member:NextSibling()
+                member = tinyxml2.XMLHandle(member):NextSibling():ToElement()
             end
             class_collection[class_info.name] = class_info
         end
-        compound = compound:NextSibling()
+        compound = tinyxml2.XMLHandle(compound):NextSibling():ToElement()
     end
     return class_collection
 end
@@ -443,16 +443,22 @@ coroutine_build_class_index = coroutine.create(function()
         if not finenv.RetainLuaState then
             eligible_classes = get_eligible_classes()
             coroutine.yield()
-            global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
+--            global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
+--            global_class_index = create_class_index_str() --tinyxml2 and create_class_index_xml() or create_class_index_str()
+            global_class_index = create_class_index_xml() --tinyxml2 and create_class_index_xml() or create_class_index_str()
             -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
             -- up until we reach this statement:
-            finenv.RetainLuaState = true
+            --finenv.RetainLuaState = true
         end
     end)
 
 function on_timer(timer_id)
     if timer_id ~= global_timer_id then return end
-    if not coroutine.resume(coroutine_build_class_index) then
+    local success, errmsg = coroutine.resume(coroutine_build_class_index)
+    if not success then
+        error(errmsg)
+    end
+    if coroutine.status(coroutine_build_class_index) == "dead" then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
         set_text(global_progress_label, "")
