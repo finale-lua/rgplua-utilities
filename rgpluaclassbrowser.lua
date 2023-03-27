@@ -3,6 +3,7 @@ function plugindef()
     -- are both reserved for the plug-in definition.
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
+    finaleplugin.LoadTinyXML2 = true
     finaleplugin.MinJWLuaVersion = 0.56
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
@@ -34,10 +35,6 @@ function plugindef()
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
-if not finenv.RetainLuaState then
-    package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
-end
-
 --global variables prevent garbage collection until script terminates and releases Lua State
 
 if not finenv.RetainLuaState then
@@ -55,8 +52,6 @@ if not finenv.RetainLuaState then
         window_pos_x = nil,
         window_pos_y = nil
     }
-else
-    --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
 end
 
 global_dialog = nil
@@ -118,7 +113,7 @@ function get_properties_methods(classname)
     local properties = {}
     local methods = {}
     local class_methods = {}
-    local classtable = _G.finale[classname]
+    local classtable = finale[classname]
     if type(classtable) ~= "table" then return nil end
     local class_info = global_class_index[classname]
     for k, _ in pairs(classtable.__class) do
@@ -355,7 +350,7 @@ end
 get_eligible_classes = function()
     set_text(global_progress_label, "Getting eligible classes from Lua state...")
     local retval = {}
-    for k, v in pairs(_G.finale) do
+    for k, v in pairs(finale) do
         local kstr = tostring(k)
         if kstr:find("FC") == 1  then
             retval[kstr] = 1
@@ -364,23 +359,67 @@ get_eligible_classes = function()
     return retval
 end
 
-create_class_index = function()
+create_class_index_xml = function()
+    local xml = tinyxml2.XMLDocument(true, tinyxml2.PRESERVE_WHITESPACE) -- these are the default arguments in C++
+    local result = xml:LoadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml")
+    if result ~= tinyxml2.XML_SUCCESS then
+        error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
+    end
+    local class_collection = {}
+    local compound = tinyxml2.XMLHandle(xml)
+                                    :FirstChildElement("tagfile")
+                                    :FirstChildElement("compound")
+                                    :ToElement()
+    while compound do
+        if compound:Attribute("kind", "class") then
+            local class_info = { _attr = { kind = 'class' }, __members = {} }
+            class_info.name = compound:FirstChildElement("name"):GetText()
+            class_info.filename = compound:FirstChildElement("filename"):GetText()
+            class_info.base = compound:FirstChildElement("filename"):GetText()
+            local member = compound:FirstChildElement("member")
+            while member do
+                member = member:ToElement()
+                if member:Attribute("kind", "function") then
+                    local member_info = { _attr = { kind = 'function' } }
+                    member_info.type = member:FirstChildElement("type"):GetText()
+                    member_info.name = member:FirstChildElement("name"):GetText()
+                    member_info.anchorfile = member:FirstChildElement("anchorfile"):GetText()
+                    member_info.anchor = member:FirstChildElement("anchor"):GetText()
+                    member_info._attr.protection = member:Attribute("protection", nil)
+                    member_info._attr.static = member:Attribute("static", nil)
+                    member_info._attr.virtualness = member:Attribute("virtualness", nil)
+                    member_info.arglist = member:FirstChildElement("arglist"):GetText()
+                    class_info.__members[member_info.name] = member_info
+                end
+                member = tinyxml2.XMLHandle(member):NextSibling():ToElement()
+            end
+            class_collection[class_info.name] = class_info
+        end
+        compound = tinyxml2.XMLHandle(compound):NextSibling():ToElement()
+    end
+    return class_collection
+end
+
+create_class_index_str = function()
     local file, e = io.open(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml", 'r')
+    if not file then
+        error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
+    end
     if io.type(file) ~= 'file' then
-        finenv.UI():AlertError(e, NULL)
+        finenv.UI():AlertError(e, nil)
     end
     local xml = file:read('*a')
     file:close()
     local class_collection = {}
     for class_block in string.gmatch(xml, '<compound kind=%"class%">.-</compound>') do
-        local class_info = {_attr = {kind = 'class'}, __members = {}}
+        local class_info = { _attr = { kind = 'class' }, __members = {} }
         class_info.name = string.match(class_block, '<name>(.-)</name>')
         class_info.filename = string.match(class_block, '<filename>(.-)</filename>')
         class_info.base = string.match(class_block, '<base>(.-)</base>')
         for member_block in string.gmatch(class_block, '<member.-</member>') do
             local kind = string.match(member_block, 'kind=%"(%w+)%"')
             if kind == 'function' then
-                local member_info = {_attr = {kind = 'function'}}
+                local member_info = { _attr = { kind = 'function' } }
                 member_info.type = string.match(member_block, '<type>(.-)</type>')
                 member_info.name = string.match(member_block, '<name>(.-)</name>')
                 member_info.anchorfile = string.match(member_block, '<anchorfile>(.-)</anchorfile>')
@@ -393,9 +432,6 @@ create_class_index = function()
             end
         end
         class_collection[class_info.name] = class_info
-        if finenv.UI():IsOnWindows() then
-            set_text(global_progress_label, "Indexing " .. class_info.name .. "...")
-        end
     end
     return class_collection
 end
@@ -404,7 +440,7 @@ coroutine_build_class_index = coroutine.create(function()
         if not finenv.RetainLuaState then
             eligible_classes = get_eligible_classes()
             coroutine.yield()
-            global_class_index = create_class_index()
+            global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
             -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
             -- up until we reach this statement:
             finenv.RetainLuaState = true
@@ -413,7 +449,11 @@ coroutine_build_class_index = coroutine.create(function()
 
 function on_timer(timer_id)
     if timer_id ~= global_timer_id then return end
-    if not coroutine.resume(coroutine_build_class_index) then
+    local success, errmsg = coroutine.resume(coroutine_build_class_index)
+    if not success then
+        error(errmsg)
+    end
+    if coroutine.status(coroutine_build_class_index) == "dead" then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
         set_text(global_progress_label, "")
