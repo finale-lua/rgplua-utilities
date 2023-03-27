@@ -8,7 +8,7 @@ function plugindef()
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.2"
-    finaleplugin.Date = "January 20, 2022"
+    finaleplugin.Date = "March 26, 2023"
     finaleplugin.Notes = [[
         This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
         the framework classes and their methods and properties. Use the edit text boxes at the top
@@ -378,7 +378,6 @@ create_class_index_xml = function()
             class_info.base = compound:FirstChildElement("filename"):GetText()
             local member = compound:FirstChildElement("member")
             while member do
-                member = member:ToElement()
                 if member:Attribute("kind", "function") then
                     local member_info = { _attr = { kind = 'function' } }
                     member_info.type = member:FirstChildElement("type"):GetText()
