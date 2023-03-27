@@ -360,7 +360,7 @@ get_eligible_classes = function()
 end
 
 create_class_index_xml = function()
-    local xml = tinyxml2.XMLDocument(true, tinyxml2.PRESERVE_WHITESPACE) -- these are the default arguments in C++
+    local xml = tinyxml2.XMLDocument()
     local result = xml:LoadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml")
     if result ~= tinyxml2.XML_SUCCESS then
         error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
