@@ -366,18 +366,14 @@ create_class_index_xml = function()
         error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
     end
     local class_collection = {}
-    local compound = tinyxml2.XMLHandle(xml)
-                                    :FirstChildElement("tagfile")
-                                    :FirstChildElement("compound")
-                                    :ToElement()
-    while compound do
+    local tagfile = tinyxml2.XMLHandle(xml):FirstChildElement("tagfile"):ToNode()
+    for compound in xmlelements(tagfile, "compound") do
         if compound:Attribute("kind", "class") then
             local class_info = { _attr = { kind = 'class' }, __members = {} }
             class_info.name = compound:FirstChildElement("name"):GetText()
             class_info.filename = compound:FirstChildElement("filename"):GetText()
             class_info.base = compound:FirstChildElement("filename"):GetText()
-            local member = compound:FirstChildElement("member")
-            while member do
+            for member in xmlelements(compound, "member") do
                 if member:Attribute("kind", "function") then
                     local member_info = { _attr = { kind = 'function' } }
                     member_info.type = member:FirstChildElement("type"):GetText()
@@ -390,11 +386,9 @@ create_class_index_xml = function()
                     member_info.arglist = member:FirstChildElement("arglist"):GetText()
                     class_info.__members[member_info.name] = member_info
                 end
-                member = tinyxml2.XMLHandle(member):NextSibling():ToElement()
             end
             class_collection[class_info.name] = class_info
         end
-        compound = tinyxml2.XMLHandle(compound):NextSibling():ToElement()
     end
     return class_collection
 end
