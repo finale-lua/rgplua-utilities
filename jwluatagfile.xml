@@ -55956,6 +55956,48 @@
       <anchor>aa928d0adf9004933aaa9ed8b58e76110</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DiatonicTranspose</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a5836649342ebcf9b003b5d669ee85fc9</anchor>
+      <arglist>(eHarmLev interval)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>OctaveTranspose</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a3a8291d14b451a0332d57d9e5434f452</anchor>
+      <arglist>(twobyte numberofoctaves)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>EnharmonicTranspose</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a7329ccd6bfd42911556aebb54f289070</anchor>
+      <arglist>(twobyte direction)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DefaultEnharmonicTranspose</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a458aaf91c78c70981c03c8933d56c30c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ChromaticTranspose</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a51f87facf91f5959a830cd1fb777158d</anchor>
+      <arglist>(eHarmLev interval, eHarmAlt alteration, bool simplify=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>EDOStepTranspose</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a1d77b57613c977161b19c3a04faabc8a</anchor>
+      <arglist>(twobyte numberofsteps)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCTreeNode</name>
