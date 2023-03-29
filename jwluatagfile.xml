@@ -55932,6 +55932,32 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCTransposer</name>
+    <filename>class_f_c_transposer.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type></type>
+      <name>FCTransposer</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a0ee44b012460af69a3245d2c9c97d250</anchor>
+      <arglist>(eHarmLev displacement, eHarmAlt raiselower, FCKeySignature *key)</arglist>
+    </member>
+    <member kind="function">
+      <type>eHarmLev</type>
+      <name>GetDisplacement</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>ab737bb4e4691a425f4936e41490441d4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>eHarmLev</type>
+      <name>GetRaiseLower</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>aa928d0adf9004933aaa9ed8b58e76110</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCTreeNode</name>
     <filename>class_f_c_tree_node.html</filename>
     <base>__FCCollection</base>
@@ -58579,6 +58605,7 @@
     <class kind="class">FCPoint</class>
     <class kind="class">FCPrintSettings</class>
     <class kind="class">FCFontDialog</class>
+    <class kind="class">FCTransposer</class>
     <class kind="class">FCCell</class>
     <class kind="class">FCCellPos</class>
     <class kind="class">__FCCellDetail</class>
