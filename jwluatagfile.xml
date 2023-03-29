@@ -26109,50 +26109,50 @@
       <type>int</type>
       <name>CalcScaleRootIndex</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a2326859ad5d8134bec1e334c78fc4a9b</anchor>
-      <arglist>()</arglist>
+      <anchor>a18802618e0ffee53bdc97fb6ee7d8814</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcRootRelationIndex</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a99220cc854e2fdde3b293b047fc46d77</anchor>
-      <arglist>()</arglist>
+      <anchor>a62d570c54e483db5fde97c9429722830</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcRootRelationAbsoluteIndex</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>abb71be8055a555583b21bbe872845f36</anchor>
-      <arglist>()</arglist>
+      <anchor>a5367808c6d7224b284c01cbd67a7e16a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>CalcSharps</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a58a1a73cbe4d9985c4dad3a56feb4af1</anchor>
-      <arglist>()</arglist>
+      <anchor>a6241e358015ee3634deb10a76da0863c</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>CalcFlats</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a3cf38b5d6cd3d49abc3614a7b7c0bbca</anchor>
-      <arglist>()</arglist>
+      <anchor>a83af59f291026ad784a962620b9162ff</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
       <name>CalcTotalChromaticSteps</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ad81c3331f3c379db8079174231365a0d</anchor>
-      <arglist>()</arglist>
+      <anchor>aa8e39f2112eb716271848c12b41e0348</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; eHarmLev &gt;</type>
       <name>CalcDiatonicStepsMap</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>aaab3305370dc0c89177cf8293d80b3d7</anchor>
-      <arglist>()</arglist>
+      <anchor>ac73960a31643845256937c3228b35d9c</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -26172,15 +26172,15 @@
       <type>bool</type>
       <name>IsMajor</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a06c96239d42406b9a7f98eec2b13ec30</anchor>
-      <arglist>()</arglist>
+      <anchor>ac2b6518ef788ef342f820fe1cee77d6a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsMinor</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a16f2c64151ef663f2b7c392c77937130</anchor>
-      <arglist>()</arglist>
+      <anchor>a2ba0f40c5ccb788e06e7757a64c306c9</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -26193,22 +26193,22 @@
       <type>bool</type>
       <name>IsSharpNote</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ac9c23aca0679f4fb1b4520a30532a00a</anchor>
-      <arglist>(int letterindex)</arglist>
+      <anchor>ad48402e5052a4ae00621687b1f0e7de4</anchor>
+      <arglist>(int letterindex) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsFlatNote</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a5aae4743fc5ae29391a43eea4cd398c5</anchor>
-      <arglist>(int letterindex)</arglist>
+      <anchor>a628f593650e6ccc213f6f39777d28b41</anchor>
+      <arglist>(int letterindex) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>MakeString</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>af86efce3ea428c6e0e337e335bad7275</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a734561ae1d9908ee5f1736fd5d8a9d25</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -26221,8 +26221,8 @@
       <type>twobyte</type>
       <name>KeyMode</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a8dfb8549fb7abdb9674b0a6a12dfee6f</anchor>
-      <arglist>()</arglist>
+      <anchor>acc6eefb2cb504f24817fd90df67988d4</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
