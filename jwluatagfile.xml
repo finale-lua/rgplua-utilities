@@ -26218,6 +26218,13 @@
       <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
+      <type>eHarmLev</type>
+      <name>CalcScaleNumber</name>
+      <anchorfile>class_f_c_key_signature.html</anchorfile>
+      <anchor>a05f21fb72d299b2b9937a4caafb2bdeb</anchor>
+      <arglist>(eHarmLev displacement) const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
