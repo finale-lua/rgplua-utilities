@@ -160,8 +160,8 @@
       <type>virtual const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>aacfbbd1979a79ad07a240b696d16d50f</anchor>
-      <arglist>()</arglist>
+      <anchor>a156d7f9dda47ce7db7dbdb0a1dc090d8</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -564,8 +564,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a6bdcc52c0f70a66fa7603fce2af27a49</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2d6c921584ca9d5a36ac67dfaefc84fa</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -854,8 +854,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_browser_base.html</anchorfile>
-      <anchor>a203e84ce36fde06abc128cad5d7dfdc5</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4d17a2ac11d1a0dd31070f0e565a0849</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -866,8 +866,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_browser_base_data.html</anchorfile>
-      <anchor>a999091302dfd9b47c6c9a6d2c429255e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a316aa9dc7dbefeacbbfde52710b5b550</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>__FCBase *</type>
@@ -899,8 +899,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_browser_no_inci_other.html</anchorfile>
-      <anchor>a078740b262662d33b574e8ccb89250f8</anchor>
-      <arglist>() override</arglist>
+      <anchor>a5f0d7d25e2735c1826665d90a2e9fab8</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -958,8 +958,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_cell_detail.html</anchorfile>
-      <anchor>a61e4f06d0a420e764c6487417d2fdd75</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7fceac7feb38a0ff93c45c36827166af</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1047,8 +1047,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>a419dc5f536257e86b386f0a0861d7a49</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0c4c39e4c9ddd318e1e84261fac92ea1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1241,8 +1241,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_cell_detail.html</anchorfile>
-      <anchor>a8f06b05438c589b0b843a5e6fcca8f12</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1c12b8674fedf81a9141ee82644e57c6</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1288,8 +1288,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_data.html</anchorfile>
-      <anchor>a0bd6d50cc499262d11e4f087b1afeeca</anchor>
-      <arglist>() override</arglist>
+      <anchor>a865f6f1a8759d8ff46f277917159b6dd</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual int</type>
@@ -1321,8 +1321,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_detail.html</anchorfile>
-      <anchor>a21d4ce00110b5cb9828f54ef7f9edb4d</anchor>
-      <arglist>() override</arglist>
+      <anchor>afeaf7ca1c3a53b468631bb90d7b1b385</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1340,8 +1340,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_entry_detail.html</anchorfile>
-      <anchor>a46cff2e6a8b439edd7bcd6080d35ee0c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3f0f3be682e12d3940d6ef9a6d171dd0</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1394,8 +1394,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_global.html</anchorfile>
-      <anchor>a3323987a6cd3cd74e12a2ee275ed4cfb</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3dc2e4f1a3a68eab255de10256dfc633</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1406,8 +1406,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_inci_other.html</anchorfile>
-      <anchor>a2c8ef569ad0276f57b580889f9697a3c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2b72bea28bf6550ded9fad23afad8795</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
@@ -1460,8 +1460,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_no_inci_cell_detail.html</anchorfile>
-      <anchor>a645de62da2593f3af30e1d45a59aaec3</anchor>
-      <arglist>() override</arglist>
+      <anchor>a25d7ce6fd23215937bad3253547348fe</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1486,8 +1486,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_no_inci_detail.html</anchorfile>
-      <anchor>a2f7719b554cfcc2073dbfb2b70042ea5</anchor>
-      <arglist>() override</arglist>
+      <anchor>a55ae14fda672da1a996a581343a347cc</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1512,8 +1512,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_no_inci_other.html</anchorfile>
-      <anchor>a40cce3e04c54dccdce748ba37c0c8adb</anchor>
-      <arglist>() override</arglist>
+      <anchor>a202449480fcc91a859e0dde513fc2359</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>__FCNoInciOther *</type>
@@ -1531,8 +1531,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_collection_prefs.html</anchorfile>
-      <anchor>add5b013db7e5ecb79eb0394baf9ea5dd</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9382146717bbba4f4970ccf62bf4248f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1576,8 +1576,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_composite_time_sig_bottom_element.html</anchorfile>
-      <anchor>a1b9bf2cbe02df52581d36956bc678320</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9a39f98b96cd9af9c412cbd786932a8a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -1630,8 +1630,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_composite_time_sig_top_element.html</anchorfile>
-      <anchor>a7ffff88c1713c22c468e227951e2d151</anchor>
-      <arglist>() override</arglist>
+      <anchor>a00eca38140e317f28053372c933d12ba</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -1677,8 +1677,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_detail.html</anchorfile>
-      <anchor>aec55e80d85f14a512936764658a7a573</anchor>
-      <arglist>() override</arglist>
+      <anchor>a085bc33ab5caa29ba4110380a1f14c40</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1696,8 +1696,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_entry_detail.html</anchorfile>
-      <anchor>a2d7bc906e2bc3fa7f42dabd7cfbd3007</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7a37ca01dcd00cbabda14ad889f978a6</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1799,8 +1799,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_entry_detail_note_i_d.html</anchorfile>
-      <anchor>aabc9b467a830518c29faf85622d6583c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a908314d11698ff51e811855044a102bf</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -1846,8 +1846,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_file_dialog_base.html</anchorfile>
-      <anchor>a7c70de1171f191579b94f76ec005a2fc</anchor>
-      <arglist>() override</arglist>
+      <anchor>a64439230a6262363ad7cd30014ae5370</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1935,8 +1935,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_globals.html</anchorfile>
-      <anchor>aa24f99d468a1bdd7b9d76bd60fdbe35e</anchor>
-      <arglist>() override</arglist>
+      <anchor>aee917034681d8442ba36c1e99e11ebaa</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -1975,8 +1975,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_inci.html</anchorfile>
-      <anchor>a0bdf49fa3d9f9ea156abab01a569575e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7fb9c543676cf8061cbadca650955323</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -2001,8 +2001,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_inci_other.html</anchorfile>
-      <anchor>afa5656126f8e9d29550e2a22654860aa</anchor>
-      <arglist>() override</arglist>
+      <anchor>a097e7eda72f1dd61472fed14cac4eeeb</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
@@ -2090,8 +2090,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_iterator_base.html</anchorfile>
-      <anchor>a175d1e8c57b6f1885018d275dfc47382</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2e7c14146763c6b60021e3395c9e6576</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -2130,8 +2130,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>a3ba580c47c68f275822994b60416bd23</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab939fd7634859ff84c24edc47d680e2f</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -2142,8 +2142,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_no_inci_cell_detail.html</anchorfile>
-      <anchor>a8ce6f3e071d9036954a75819a5af6ae0</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa07bb11131ff68ae1c28a096ec74947e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -2161,8 +2161,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_no_inci_detail.html</anchorfile>
-      <anchor>ad76e52ce1b3c64dbb870d0578c770372</anchor>
-      <arglist>() override</arglist>
+      <anchor>a92c192d14786b100c07e24ced12b1c28</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -2194,8 +2194,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_no_inci_other.html</anchorfile>
-      <anchor>afdd012af497eb6a59d0fe7f13f2cfd7b</anchor>
-      <arglist>() override</arglist>
+      <anchor>abb5a548f496298d7881fa4e12a8262e3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -2283,8 +2283,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_note_entry_collection.html</anchorfile>
-      <anchor>abede4aa239f58ee2bd2629fd87d93bc6</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7211aa77da6d989f4c1e62323c6cfe7a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCNoteEntry *</type>
@@ -2316,8 +2316,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_other.html</anchorfile>
-      <anchor>aad17ffaee4f04f49e94da6243202360d</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa07806e03bc36ef9fcf511c32bc4c1a4</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -2342,8 +2342,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_other_text.html</anchorfile>
-      <anchor>a47767d1562702ec567003f5222a30989</anchor>
-      <arglist>() override</arglist>
+      <anchor>aefac8dd094ee53694c79ce48bcc7c424</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
@@ -2375,8 +2375,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_prefs_base.html</anchorfile>
-      <anchor>aecd36c14ec77186ba178d9c5af810a8b</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae8dd1d801fdce12d09866dd82e390812</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -2611,8 +2611,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
-      <anchor>ae58fef61c33aa6e77d7cd2b2e1b1e75d</anchor>
-      <arglist>() override</arglist>
+      <anchor>a75a51f08e11d60f69dc48b5cc6a4de9b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -9464,8 +9464,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>ac4e886c9375f0110ef867a349f1ae203</anchor>
-      <arglist>() override</arglist>
+      <anchor>aeb0ebb108d63ee8ddf7f117f88faa3b3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -9910,8 +9910,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_accidental_mod.html</anchorfile>
-      <anchor>a78160220ee69d8f3dbf854627dedddb5</anchor>
-      <arglist>() override</arglist>
+      <anchor>a70fa3a63c792eb3cc8cb0d805584d634</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -10132,8 +10132,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_accidental_mods.html</anchorfile>
-      <anchor>a9af503acfeac414902cd4d885f9c96b9</anchor>
-      <arglist>() override</arglist>
+      <anchor>a53fbba98b00f8fd97873a67c53e463ed</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -10158,8 +10158,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_allotment.html</anchorfile>
-      <anchor>a655d71d0a009f2fcd8db504039c2788c</anchor>
-      <arglist>() override</arglist>
+      <anchor>aca48d31d2443b798c39653d6bb179d60</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -10205,8 +10205,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_allotments.html</anchorfile>
-      <anchor>a6277f59651f6082d4bcb190babc232ff</anchor>
-      <arglist>() override</arglist>
+      <anchor>adf5d56daa1170718d1eeea0be8561adc</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCAllotment *</type>
@@ -10245,8 +10245,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>a36a9d9269f6cc8d148c2ef7e9897a3c5</anchor>
-      <arglist>() override</arglist>
+      <anchor>adf48aebc3458df4ed5a11bfa4892fb78</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -10439,8 +10439,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>afaf1ec79eeebf2e5c3242bb8da9ed01a</anchor>
-      <arglist>() override</arglist>
+      <anchor>af5ccc3d4d1860bb41e7c0bfc2a6ffdf2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -11200,8 +11200,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_articulation_defs.html</anchorfile>
-      <anchor>a76d44a783628230c462cd54dde67f0bb</anchor>
-      <arglist>() override</arglist>
+      <anchor>a695667f1f544d22b8f2052e1605536d3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -11226,8 +11226,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_articulations.html</anchorfile>
-      <anchor>a7f9322c9f8d05780887196197a759dc6</anchor>
-      <arglist>() override</arglist>
+      <anchor>aac7047f65aab4694bb973de6d6983193</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -11259,8 +11259,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_backward_repeat.html</anchorfile>
-      <anchor>abec6130ce3d789647b84c7e939917e96</anchor>
-      <arglist>() override</arglist>
+      <anchor>aab768392933f4bab80030c0d4ffd9548</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -11577,8 +11577,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_baseline.html</anchorfile>
-      <anchor>a8a3f0c6f18675dc6bc04291301d0fe73</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0554abc977e796c4243600f05151ca44</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -11743,8 +11743,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>a1a3739f274f39d85230a8bba8d3acd20</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2a1fadb88232e3007032396167ea1b6e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -11839,8 +11839,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
-      <anchor>ac026b2f1299ddda8205d116493931f8b</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae447ee176506a45703b7c733b465c52e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -12005,8 +12005,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_beam_mod.html</anchorfile>
-      <anchor>a63323d8fca78541da4fd111dd6733c15</anchor>
-      <arglist>() override</arglist>
+      <anchor>a97e2c79e0e38771e05331878bb47f5e1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -12220,8 +12220,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_beat_chart_element.html</anchorfile>
-      <anchor>ac1b4fb67f5147ac80845424511647716</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6603ec3dcad2a9780cd6670a54bf5e94</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -12400,8 +12400,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_beat_chart_elements.html</anchorfile>
-      <anchor>a426c3919199301d779f0554e62d7678e</anchor>
-      <arglist>() override</arglist>
+      <anchor>aefc228efe276720c1059d7d6fd869ae0</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCBeatChartElement *</type>
@@ -12475,8 +12475,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_broken_beam_mod.html</anchorfile>
-      <anchor>a04f2f084580d1efaca1c02f6180bc831</anchor>
-      <arglist>() override</arglist>
+      <anchor>a76e0cd00541a50522c4b4b2c9f46f611</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -12515,8 +12515,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_broken_beam_mods.html</anchorfile>
-      <anchor>ac4aece01b2add3351b859c2bfc40ca04</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6de982b8cf135ef8946be8247589ecc8</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -12527,8 +12527,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_browser_articulation_defs.html</anchorfile>
-      <anchor>af9a8c0b9335c54ee60751a96a95aff19</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2127467f76356b932f2185badaf8f85a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>__FCNoInciOther *</type>
@@ -12577,8 +12577,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_browser_measures.html</anchorfile>
-      <anchor>a4eabe7b2ad608e34056cce1e12fa0588</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac880afa216feeb985a50a74e9a8acdc1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>__FCNoInciOther *</type>
@@ -12655,8 +12655,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_browser_pages.html</anchorfile>
-      <anchor>a1ff5931a23fc61337d2febb088f1ae00</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1d1e6f0e53e064b1036dc1ac441d2ab7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>__FCNoInciOther *</type>
@@ -12674,8 +12674,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_browser_staff_systems.html</anchorfile>
-      <anchor>a0155f16dc02bf85e6604b8ded7fad923</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9b21eff3c91fa6629d2b96275b4d143c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>__FCNoInciOther *</type>
@@ -12693,8 +12693,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_browser_staves.html</anchorfile>
-      <anchor>a6c58840ffd4bbb388d4f25adec60e880</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0e276431fbdc893da107d9769bb56150</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>__FCNoInciOther *</type>
@@ -13203,8 +13203,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_category_def.html</anchorfile>
-      <anchor>afcddd211958cab30d36beedf28bd23cd</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4549c49f5f991d5ae1803c9915d5ec0e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -13565,8 +13565,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_category_defs.html</anchorfile>
-      <anchor>a5db994196ae42ecbca47cd97b252ac21</anchor>
-      <arglist>() override</arglist>
+      <anchor>a926c39e2a389fa059fda8a798ea3c1a9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCCategoryDef *</type>
@@ -13612,8 +13612,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
-      <anchor>a5083cfc46077c705a16fb2688702394f</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad228464c6f7ba936c2d3220091c8cac2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -13750,8 +13750,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_clef_change.html</anchorfile>
-      <anchor>ac28ca47a8cb28622e3bcd373edf2c9c1</anchor>
-      <arglist>() override</arglist>
+      <anchor>acb0288c87b266781a0ac12068c877b4c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -13895,8 +13895,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
-      <anchor>a133ae6f26e1d225f533e7c2641016194</anchor>
-      <arglist>() override</arglist>
+      <anchor>adac5fe1d925fca64c10020b7ab1d9240</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -13935,8 +13935,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_frame_hold.html</anchorfile>
-      <anchor>a731b7eff5b42c6ac4a4a7fba3812d8ee</anchor>
-      <arglist>() override</arglist>
+      <anchor>a06e790229634e5bb0cdb789cae91f1a7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -14094,8 +14094,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_frame_holds.html</anchorfile>
-      <anchor>a6bdd0aaa969a49889647508a6a2b7a40</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8a1d8213eaaa87ecfc48f2fa46fce048</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -14106,8 +14106,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_graphic.html</anchorfile>
-      <anchor>a6191ca58d7ade6a3bb5f9cfadb762811</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6cacce23bd790aef97fe08770f230c3d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -14230,8 +14230,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_graphics.html</anchorfile>
-      <anchor>a366f3923faa92601eedf34bd2dd1e07b</anchor>
-      <arglist>() override</arglist>
+      <anchor>acf360e6d532d9e10092c735774858720</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCCellGraphic *</type>
@@ -14249,8 +14249,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_metrics.html</anchorfile>
-      <anchor>a489a55910b08a57292faa123cc9b2ba6</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7838bcf848b2c8cfb718c25d68b276b1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -14436,8 +14436,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_pos.html</anchorfile>
-      <anchor>a69e0eeee7e102d7a4fb22b50094a97bf</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1169271cc4564ac19059d7fe35979702</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>eMeas</type>
@@ -14476,8 +14476,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cells.html</anchorfile>
-      <anchor>aaa6e103b23e1a228753c97d651298da1</anchor>
-      <arglist>() override</arglist>
+      <anchor>a34bd28f34d46405a520dbcd0a7000e94</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -14530,8 +14530,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_text.html</anchorfile>
-      <anchor>a2b13c2acb02702755e7d207096c9298d</anchor>
-      <arglist>() override</arglist>
+      <anchor>afd0b1d127ee7b44096520c2dd61f0503</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -14654,8 +14654,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cell_texts.html</anchorfile>
-      <anchor>a9323adea526ccb7868d40fa5ab549fcc</anchor>
-      <arglist>() override</arglist>
+      <anchor>a766180f8a06c42da132007dfff9668b7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCCellText *</type>
@@ -14673,8 +14673,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_center_smart_shape.html</anchorfile>
-      <anchor>aa83bc5d5cc7bcd93c8f23b695eb1644b</anchor>
-      <arglist>() override</arglist>
+      <anchor>adf0a580b3fd7f1b7b169cdcf106c1124</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -14720,8 +14720,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
-      <anchor>a1df568509347a435b129f340cab05cbd</anchor>
-      <arglist>() override</arglist>
+      <anchor>a804aa17e4b6f305bee4224d2e55a2462</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -14770,6 +14770,13 @@
       <name>CreateChordSuffixElements</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
       <anchor>aa5ce94b09a2aeb8af38080b15a9d36d6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTransposer *</type>
+      <name>GetTransposer</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>a3f4cc3bcf0f43b831a2121d832326160</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -15269,8 +15276,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chord_prefs.html</anchorfile>
-      <anchor>aed46803fe112a7b6f615f59ead8f1021</anchor>
-      <arglist>() override</arglist>
+      <anchor>a24dc390963680a1d67f0aaf38bbe84cb</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -15379,8 +15386,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chords.html</anchorfile>
-      <anchor>a6409646063fdf6c8fa1da8cff554d395</anchor>
-      <arglist>() override</arglist>
+      <anchor>abcf4b4ade4f3caa9db70dbc88d10fc00</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCChord *</type>
@@ -15405,8 +15412,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
-      <anchor>a9f312a8495d6f93ee29f0a7415549c3c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0ecf0401d6ce2b74c19938a303e6908c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -15564,8 +15571,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chord_suffix_elements.html</anchorfile>
-      <anchor>a6d40a01a22812cb1aa52d81a71892655</anchor>
-      <arglist>() override</arglist>
+      <anchor>aaada3ec9942ff338933c33b0dec3f16e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCChordSuffixElement *</type>
@@ -15583,8 +15590,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chorus_lyrics_text.html</anchorfile>
-      <anchor>a07e8f6f1b22f2d0a5f87f899f3a6cf92</anchor>
-      <arglist>() override</arglist>
+      <anchor>aea024ca0b98bf275e7092408ff576cf5</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -15609,8 +15616,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chorus_syllable.html</anchorfile>
-      <anchor>a99b78eb74ab62b5912c181af69a6d2af</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1a6e26f5dbfd2f8229348257a44563a9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -15635,8 +15642,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_chorus_syllables.html</anchorfile>
-      <anchor>ac8303cfe8cfa6b3db93e30f4e804037f</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae3861789c0b8c927c385bf6e59e64fe1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -15799,8 +15806,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_clef_defs.html</anchorfile>
-      <anchor>af7d21f822e10ff8ee03b2f2d86bd793f</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae7cda124dfe613af8ed2814d331fb288</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCClefDef *</type>
@@ -15818,8 +15825,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_composite_time_sig_bottom.html</anchorfile>
-      <anchor>a6ba4e2d5280b9bc46482ad7c97731c9f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7dcc743c84bcac3949e32513961eacf9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -15907,8 +15914,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_composite_time_sig_top.html</anchorfile>
-      <anchor>a1885f86fdaacc2898a9089d1c1bc40cc</anchor>
-      <arglist>() override</arglist>
+      <anchor>a044f5aa20bf684f659f41f9a02ddce9e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16024,8 +16031,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a034544fbbe481322555c87212b8c1449</anchor>
-      <arglist>() override</arglist>
+      <anchor>a985f3cd82dc219f9407afd731e81e840</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16286,8 +16293,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cross_staff_mod.html</anchorfile>
-      <anchor>ac42b1dbbff34aed8adfd4936f2384c87</anchor>
-      <arglist>() override</arglist>
+      <anchor>aec412b28d2893fd8ad88fdd6313536ff</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -16333,8 +16340,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_cross_staff_mods.html</anchorfile>
-      <anchor>a10e8b7361059eeab69f1ff9a3b1e8bc2</anchor>
-      <arglist>() override</arglist>
+      <anchor>a5086666713bf141a8bb3375ebb89730b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16366,8 +16373,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_button.html</anchorfile>
-      <anchor>ac4ac003d214ce56d5177f4852097790f</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad7303d16e4b1b77699638d2b7ec247fb</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -16399,8 +16406,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_checkbox.html</anchorfile>
-      <anchor>a799d50428210c4133efbcb0503b3b40e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a049a9334da3a2f3ed9c1b5251fe038f9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -16439,8 +16446,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
-      <anchor>a7109d5c5d7782bb39e93e8aa79a4cb5b</anchor>
-      <arglist>() override</arglist>
+      <anchor>a427177eb0769f075c586a1b13352eda3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16500,8 +16507,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
-      <anchor>a530412b568f24839cbbcb4fb89b8a4e3</anchor>
-      <arglist>() override</arglist>
+      <anchor>a28ac6c80179de6a5e38f066c2f83b2a3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16743,8 +16750,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
-      <anchor>ac3f7ad2f8cfcf3cc935ce0c489be2d66</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2c9c9753d71628d3ba9feca4831461c7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16902,8 +16909,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_image.html</anchorfile>
-      <anchor>a626816354615581bc7801aa2f993cf14</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7f4d41e7f2bea9c449689140523b8680</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16935,8 +16942,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_line.html</anchorfile>
-      <anchor>abe0a41ba040123fcf85e23e28c5a0dd2</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9399456503947490147ac8f6563fabd9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -16968,8 +16975,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_list_box.html</anchorfile>
-      <anchor>a0bdb8f9f7309268c42a3ed7521a0ad7b</anchor>
-      <arglist>() override</arglist>
+      <anchor>a563ac7773f613ba01b177af0d7fe387b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -17071,8 +17078,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
-      <anchor>ae8e0b160e7bcbcd0cfe8e212525ca9eb</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9f6a8f624e6d998770cc141f3a47ab77</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -17167,8 +17174,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_radio_button.html</anchorfile>
-      <anchor>a227f6f9dbc2c8cdb0b99f08540658bf3</anchor>
-      <arglist>() override</arglist>
+      <anchor>a179e5ec0033d5e34617a3e92780e7270</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17207,8 +17214,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
-      <anchor>afd73a96cb77bd302d6a5536aa4ed0050</anchor>
-      <arglist>() override</arglist>
+      <anchor>a43e20c9161ab9e61f0d2e41a5e56ea96</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -17296,8 +17303,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_slider.html</anchorfile>
-      <anchor>aacdd88a4c5cb38113c5840f4d0558806</anchor>
-      <arglist>() override</arglist>
+      <anchor>a123ddd6df5c2cea968cffc8254af6b74</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -17350,8 +17357,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_static.html</anchorfile>
-      <anchor>a6a6ae4fca5be16cdf7236ac206873fa5</anchor>
-      <arglist>() override</arglist>
+      <anchor>aecf8fe8dd211679960f8510d35afe525</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -17397,8 +17404,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_switcher.html</anchorfile>
-      <anchor>a1a06f8dec8f44e38752a72c9df5e6f38</anchor>
-      <arglist>() override</arglist>
+      <anchor>aead84576e148cdecd0f55b8c9d77e2e6</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17458,8 +17465,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_tree.html</anchorfile>
-      <anchor>a02a4714f09838b92c71917b956b99bcb</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1433341c68e4d12c87076761f570aa10</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTreeNode *</type>
@@ -17617,8 +17624,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ctrl_up_down.html</anchorfile>
-      <anchor>a86819513c7b4f4c18c804949c6ec1700</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae5e34981803cc9a6048e91f895dbdf71</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17685,8 +17692,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_current_staff_spec.html</anchorfile>
-      <anchor>a6a93de9061ddaa946e4afea2e9e2e5dc</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa6d33dca0da013f44c9eacb7a0035836</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -17739,8 +17746,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>ae94886a7c0883d1422f8fde4d20c7869</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3ce4032281965cf69f88cde2e3317427</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -17933,8 +17940,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_custom_smart_line_def.html</anchorfile>
-      <anchor>a615c297df25545def183fc7b87b8ac9c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3016077f6abdc0f3361b1b315a6b13a3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -18330,8 +18337,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_custom_smart_line_defs.html</anchorfile>
-      <anchor>a254e203b6d7bc1e713cdd10ba952b370</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2bb21c9b11d11e1b9a2fc6a3d4596a08</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCCustomSmartLineDef *</type>
@@ -18349,8 +18356,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_custom_stem_mod.html</anchorfile>
-      <anchor>a8151337d577cf5ffe18ffca630a16487</anchor>
-      <arglist>() override</arglist>
+      <anchor>a5c943846c8a984bf2ff99ca50b89d993</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -18396,8 +18403,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_custom_stem_mods.html</anchorfile>
-      <anchor>a31145256a0ff24d633df03b343388f0b</anchor>
-      <arglist>() override</arglist>
+      <anchor>adaab5caa42f0b2e84a2f4882aa736a99</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -18415,8 +18422,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
-      <anchor>a9490769fe85b8242ab3eb8a7a90855fc</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2da9042e866d342eb82bc8f11c793a14</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -18616,8 +18623,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_data_list_row.html</anchorfile>
-      <anchor>a0faa11cbcb0124df35a41231aef9c819</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4c706b30e3da57b72125bb067e58585b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -18656,8 +18663,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_distance_prefs.html</anchorfile>
-      <anchor>ace0fc0a43b53c27c2fb4646d44e1d552</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9906d873858bc8806ae9e8bbc7240fd3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -19270,8 +19277,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a6e7018940443fa04edc4ee9c4199237e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1b372f366c31ad37b9dcf6d458894657</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -19450,8 +19457,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_documents.html</anchorfile>
-      <anchor>a8e7e09a4a808d8eaaef78643e29ed503</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4827dfa3a930bb15521be866f07c8436</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -19497,8 +19504,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_dot_mod.html</anchorfile>
-      <anchor>a760c7f0eb7625cd6c90f1c7472f107a8</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab21616e67cd7b436acdfcd6e1ac67071</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -19586,8 +19593,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_dot_mods.html</anchorfile>
-      <anchor>ab1366b804d764f52eec927335a0df3f2</anchor>
-      <arglist>() override</arglist>
+      <anchor>a57041d67c6dc39c356f5ecc398b0179f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -19770,8 +19777,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_enclosure.html</anchorfile>
-      <anchor>a19c309e16de09b61143dc35e8e65beb7</anchor>
-      <arglist>() override</arglist>
+      <anchor>a821c70d3da2aa35f87a8da972ae08114</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -19971,8 +19978,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ending_repeat.html</anchorfile>
-      <anchor>afa15e9ca2109b6696b6857f06a81d6db</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4d64621258e056651746fa9b9a145cb9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -20256,8 +20263,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_ending_repeat_text.html</anchorfile>
-      <anchor>a696330a3f780b354bdf6a23214d2ed8c</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab1ef5f9a5f39bc25789cbe82eb882c5b</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -20268,8 +20275,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_end_tie_mods.html</anchorfile>
-      <anchor>afb54c0a32f0613493212ee3a34efcabe</anchor>
-      <arglist>() override</arglist>
+      <anchor>adbf33bbcf3e058358d3feaf5e73da795</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -20294,8 +20301,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_entry_alter_mod.html</anchorfile>
-      <anchor>a0a9af0d63ac8d93416204c55c7da4bbf</anchor>
-      <arglist>() override</arglist>
+      <anchor>abde5a7baf9ff0aea6ecf18d59728ca09</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -20341,8 +20348,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_entry_metrics.html</anchorfile>
-      <anchor>aa5620fda0a20b3ba1f016503cfb97182</anchor>
-      <arglist>() override</arglist>
+      <anchor>aca2440185d89f2023c9ac7410c8a31a3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -20549,8 +20556,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_executable_shape_def.html</anchorfile>
-      <anchor>ae0aa2726f320d1bf458118deccced4c2</anchor>
-      <arglist>() override</arglist>
+      <anchor>aaea135d7ffd16fc5396c877e5b6403f1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -20596,8 +20603,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_executable_shape_defs.html</anchorfile>
-      <anchor>acb8c1cbbdf0a55e081ce6d223f3d7b88</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8f5787541da9153a1772591fefcb797c</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -20651,8 +20658,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_expression.html</anchorfile>
-      <anchor>a67bda66d1ee1c46aa0834fc6a147f96b</anchor>
-      <arglist>() override</arglist>
+      <anchor>adfd2eb1c09e4dc2cb326cec1baf6c312</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -21048,8 +21055,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_expressions.html</anchorfile>
-      <anchor>aeca02ca56e4db87f04c0a370e7cb86ba</anchor>
-      <arglist>() override</arglist>
+      <anchor>a544c74b7c1b3973fc1e910d7ec136b6d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -21081,8 +21088,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_file_info_text.html</anchorfile>
-      <anchor>a1f34c6e92d5086385ff00433eecdc817</anchor>
-      <arglist>() override</arglist>
+      <anchor>adb3fe3943cffc89d38769041b60f1b36</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21205,8 +21212,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_file_open_dialog.html</anchorfile>
-      <anchor>a9b2ef584d786ccd6ddfe16657bb384b2</anchor>
-      <arglist>() override</arglist>
+      <anchor>a30053ccc1f8c54b33e3d13de70e6d610</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -21259,8 +21266,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_file_save_as_dialog.html</anchorfile>
-      <anchor>a7b879f453e9abbcaae3b258d8cb21ab8</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4e7dc1cfb3e782bfa09a03365ff1a362</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21360,8 +21367,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_folder_browse_dialog.html</anchorfile>
-      <anchor>a4f37fcc89b2766b996270f0e3c348c13</anchor>
-      <arglist>() override</arglist>
+      <anchor>a29380c1356ee8f0fd1df3dfd780ac08b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -21421,8 +21428,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_font_dialog.html</anchorfile>
-      <anchor>a5562a94941a464fede5c49b52d55e573</anchor>
-      <arglist>() override</arglist>
+      <anchor>a16807b4dea41cfa7066b5e711c7c23ce</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -21503,8 +21510,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>afca26f6f74b1f39cecc60dbafe7f25f8</anchor>
-      <arglist>() override</arglist>
+      <anchor>aec0e69dae7f230ec20523941e3a5e79a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22391,8 +22398,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_font_prefs.html</anchorfile>
-      <anchor>aed7493f60392c1537c7bff8cc4f9d3ae</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1d9744b12c53c3513314931757c914ad</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22438,8 +22445,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_freeze_system.html</anchorfile>
-      <anchor>aa97eb7749ee48aee0ece4239f6815d89</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa58f1d9dfdccbc2f73a9c07e58e1eea0</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22485,8 +22492,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_freeze_systems.html</anchorfile>
-      <anchor>a72d3438efd1ba81210b33049f8307c1f</anchor>
-      <arglist>() override</arglist>
+      <anchor>aea0b7e93145d42b249067521f344b2c8</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -22497,8 +22504,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
-      <anchor>aaa92f92a5f60512b4d677f21228e25ea</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0bfff7ca10b651a42b3c009672c35192</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22544,8 +22551,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_fretboard_group_defs.html</anchorfile>
-      <anchor>ab410f12f17390a0e64da8bf8818bc0b3</anchor>
-      <arglist>() override</arglist>
+      <anchor>a26b09675afdd0b1de7c97958fc1a501f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22570,8 +22577,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>a1d29fa59e941357be83457be85e2dc4a</anchor>
-      <arglist>() override</arglist>
+      <anchor>aba08d6eb26acbe25fe52e2a56d679d49</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22953,8 +22960,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_fretboard_style_defs.html</anchorfile>
-      <anchor>a80fa6e8a5c68ea37851dcf7465fc4bd3</anchor>
-      <arglist>() override</arglist>
+      <anchor>aeabb97181c7d3a383dd85ea36d200c13</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -22979,8 +22986,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_fret_instrument_def.html</anchorfile>
-      <anchor>af1eb0fa355752f40d8a152a025ccd9dc</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4c6cbbfb1ab4f226a67d509db0f1f498</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -23131,8 +23138,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_fret_instrument_defs.html</anchorfile>
-      <anchor>a94686524c39e3ab230ad10ee602fa80f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9334a9b74a186ad4d29fd0b6096d3763</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCFretInstrumentDef *</type>
@@ -23291,8 +23298,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_general_prefs.html</anchorfile>
-      <anchor>a31672012e56a548891bad7922f4405f3</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae878309b6f62eafd52e9e1218b895780</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -24102,8 +24109,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_grids_guides_prefs.html</anchorfile>
-      <anchor>ace6372442e729df258b71222025d8e02</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0786c6fa134b5c74825db576d6c4b366</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -24649,8 +24656,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_group.html</anchorfile>
-      <anchor>a13671f3ca2b3cb5bd621d0dd20488365</anchor>
-      <arglist>() override</arglist>
+      <anchor>af62be56a3040ee07b94a4ea344414f31</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -25165,8 +25172,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_group_name_position_prefs.html</anchorfile>
-      <anchor>a8af3d1bec4994cb07b9ab0ca68fdbeb4</anchor>
-      <arglist>() override</arglist>
+      <anchor>a22f21cce758ae19f2bef3d275eaeae13</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -25289,8 +25296,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_groups.html</anchorfile>
-      <anchor>afbb1445511669c7f1b163c378572dbb4</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0d1b3480858178f69f5f06794510d15c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -25329,8 +25336,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_guide.html</anchorfile>
-      <anchor>a66c7c4399fd958609727dfef896d4ac3</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa08685c5940a76022ff288307beca8a7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>Efix32</type>
@@ -25355,8 +25362,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_guides.html</anchorfile>
-      <anchor>a9f57d611e5b82667786eaca9e73e34cc</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8012e1ad5ee5b657573adef7253f3335</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -25395,8 +25402,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_human_playback_prefs.html</anchorfile>
-      <anchor>af48466ed390310ef23ca751710239d64</anchor>
-      <arglist>() override</arglist>
+      <anchor>aff2bdb071e75100d52ae76160efe8772</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -25442,8 +25449,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_independent_cell_detail.html</anchorfile>
-      <anchor>af22bed8fca8068890e7d3133c1087c26</anchor>
-      <arglist>() override</arglist>
+      <anchor>a792f2f7b8c8531c58132d1911be9135c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -25692,8 +25699,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_instrument_def.html</anchorfile>
-      <anchor>a006bc6b443c0cd2c029e7811e73fceb0</anchor>
-      <arglist>() override</arglist>
+      <anchor>abb00e23a782b828403b75bf1dffc6e61</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -25774,8 +25781,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_instrument_defs.html</anchorfile>
-      <anchor>a7c7534d1b6ec0f4aad61db627decb6b3</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3e1d3a82f2190cc7c7858f003f366b4d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCInstrumentDef *</type>
@@ -25793,8 +25800,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_instrument_def_text.html</anchorfile>
-      <anchor>a76b367f55e0ba02f571aea1a2abf0ab3</anchor>
-      <arglist>() override</arglist>
+      <anchor>afc259b105b67f3cf1760813ef6810623</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -25812,8 +25819,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_instrument_playback_data.html</anchorfile>
-      <anchor>ac9a9f76f5f0d27f9108754c780a6a8e4</anchor>
-      <arglist>() override</arglist>
+      <anchor>a34607636232461ebb49ce0ca97b7677e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -25873,8 +25880,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_iterator_handler.html</anchorfile>
-      <anchor>a2391b1006d2a00fb6946fc3d52fcc47e</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa9290a15cee439a00bf971e2582eb597</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -26018,8 +26025,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a8f501b415ac3d01a6b162450ca817fcd</anchor>
-      <arglist>() override</arglist>
+      <anchor>a095299ab36479674c72b5e430c89c056</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -26240,8 +26247,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_layer_playback_data.html</anchorfile>
-      <anchor>abc48e347568ca53f3ab1581bfe771712</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1010062ea37125ba8f28f6e201bfe576</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>ePlaybackRoute</type>
@@ -26294,8 +26301,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_layer_prefs.html</anchorfile>
-      <anchor>a3260451549af3f5d2992ddd9eeb9fdec</anchor>
-      <arglist>() override</arglist>
+      <anchor>a848879b454d274235090d1bfcaee4ed2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -26871,8 +26878,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_lua_iterator.html</anchorfile>
-      <anchor>ad232748f804c2f76beaddd4f34fc81c4</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac1e50a3b9b7ecf6f883a3295a27454c3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -27361,8 +27368,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>ac6df85f704ad29e6d5cf44e84b19e7cf</anchor>
-      <arglist>() override</arglist>
+      <anchor>abbd5a9760a5dfbd452b827f7709df977</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -27499,8 +27506,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_lua_script_items.html</anchorfile>
-      <anchor>a96b95ff84a08869249608b1b970b9ee9</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7bbc35b30aaa2f60df223b2cd18ba9d4</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -28091,8 +28098,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_measure.html</anchorfile>
-      <anchor>ae29f39ae0622dc424eca07d256c9ba7c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1f6720bb3f6640ee2d8e1a9eb7935c1a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -28855,8 +28862,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
-      <anchor>a2359661268764d9fb6a715cabe2af2a5</anchor>
-      <arglist>() override</arglist>
+      <anchor>a226b62455442d4dbfd9f413e180b98a6</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -29658,8 +29665,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_measure_number_regions.html</anchorfile>
-      <anchor>a04940bb5afc80586d93777d9d59e10e0</anchor>
-      <arglist>() override</arglist>
+      <anchor>a23adacdb8b86d70bf2bcb6fb04063a63</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCMeasureNumberRegion *</type>
@@ -29733,8 +29740,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_measures.html</anchorfile>
-      <anchor>a6f44dfad39600b1efef3df46f780a35b</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad9922a72b92fc19ff1d310af229e41f2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCMeasure *</type>
@@ -29859,8 +29866,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_metatool_assignment.html</anchorfile>
-      <anchor>acda6ce6c66d9c6a255da1ef44100ab3b</anchor>
-      <arglist>() override</arglist>
+      <anchor>a93f18331acb5135ee64c9ef897cb26c3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -30011,8 +30018,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_metatool_assignments.html</anchorfile>
-      <anchor>ab63da24f0e0f4e8ad33d7aea4f8c0f8b</anchor>
-      <arglist>() override</arglist>
+      <anchor>adc86fea7217d8d80f945e08ef023b531</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCMetatoolAssignment *</type>
@@ -30128,8 +30135,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_midi_expression.html</anchorfile>
-      <anchor>a26c821d48b24cccca255063473fc675e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a118495d0b8e15075a12c6df406a84a53</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -30343,8 +30350,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_midi_expressions.html</anchorfile>
-      <anchor>a7187551b778257d3ec1d6f5cf9eed9a5</anchor>
-      <arglist>() override</arglist>
+      <anchor>aecfdc384d0dc36d4a0702869b8540e43</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCMidiExpression *</type>
@@ -30536,8 +30543,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
-      <anchor>a468b8bb3f3b0b144466e16c46c737bb8</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac259ee93acc384a1ada2dd08de9232fd</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -31381,8 +31388,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_multi_measure_rest.html</anchorfile>
-      <anchor>a73bdd330ca16b39d98e1c397a3b1e364</anchor>
-      <arglist>() override</arglist>
+      <anchor>a94c15fd66a5efca47353abcb5e83c74d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -31624,8 +31631,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_multi_measure_rest_prefs.html</anchorfile>
-      <anchor>a0368ea68cd9cf92fa4a5e656a4faca83</anchor>
-      <arglist>() override</arglist>
+      <anchor>a99e476a32fc83e850e2cf4159fb677f5</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -31846,8 +31853,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_multi_measure_rests.html</anchorfile>
-      <anchor>ae30af301483a84e61799ec65644f8970</anchor>
-      <arglist>() override</arglist>
+      <anchor>a76d54a081f3f77d2ccc07d3879a19eb9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCMultiMeasureRest *</type>
@@ -31865,8 +31872,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_multi_staff_instrument.html</anchorfile>
-      <anchor>af861f393ac5627e5122fbb845bf8ac03</anchor>
-      <arglist>() override</arglist>
+      <anchor>acc91385a642ff168e2018c8e95f52cf8</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -31982,8 +31989,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_multi_staff_instruments.html</anchorfile>
-      <anchor>ae70fe1f67fefbf00666c9e6fa6e52ebb</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab0d788526a9d7189c401e73ceb79904d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -32015,8 +32022,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_music_character_prefs.html</anchorfile>
-      <anchor>a77b20cdb82c74652929d99fd120520ef</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3dd6bdacad91802bcddbe5ddd70caf49</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -33504,8 +33511,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>aaa33a0f0491a302fbdb701d4d16ab6c9</anchor>
-      <arglist>() override</arglist>
+      <anchor>a67e0e39d97ea7b16bc9233c60475077a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -34034,8 +34041,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
-      <anchor>a96d9d86f167efca313078315b00074f0</anchor>
-      <arglist>() override</arglist>
+      <anchor>a98f46345bafedd7eca8460e8f5d2202e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -34410,8 +34417,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note.html</anchorfile>
-      <anchor>ab34953584997ea457e81e360e1f6cd95</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad3e56ac998e0b15320a4af88237c7e24</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -34573,6 +34580,13 @@
       <anchorfile>class_f_c_note.html</anchorfile>
       <anchor>adad2add118f7e8656fdbf295293bef69</anchor>
       <arglist>(FCString *pString, FCKeySignature *pKey, bool writtenpitch)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCTransposer *</type>
+      <name>GetTransposer</name>
+      <anchorfile>class_f_c_note.html</anchorfile>
+      <anchor>a9a95f9bc85ec58be46b70566267d0508</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -34835,8 +34849,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_entries.html</anchorfile>
-      <anchor>ac65a06886d3a79842357943dc744dfa8</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac947ecd00b6e19484750b63066789a11</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -34861,8 +34875,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>a6d47f5f6ae7fe3d7ebb0ebd484077b2a</anchor>
-      <arglist>() override</arglist>
+      <anchor>a45bffb71881de41b66722083d048f178</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -36083,8 +36097,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_entry_cell.html</anchorfile>
-      <anchor>a9c3208a9a78ba2d63a39b692ad61389a</anchor>
-      <arglist>() override</arglist>
+      <anchor>acc7279cf3a6a6a2c9e47dfe765b30677</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -36403,8 +36417,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_entry_cell_metrics.html</anchorfile>
-      <anchor>addcb65e2339a90e9918fe400b67c57a3</anchor>
-      <arglist>() override</arglist>
+      <anchor>adbf1c8029666cd3aff40ca7b841c7ad5</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -36443,8 +36457,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_entry_layer.html</anchorfile>
-      <anchor>a9012adf214e5720fa521259f2e9b9227</anchor>
-      <arglist>() override</arglist>
+      <anchor>a04385d0efae1ff7ff3a59ed7070741c3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -36712,8 +36726,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_notehead_mod.html</anchorfile>
-      <anchor>a1374c8efc0512a516836c5fc80af608f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7f5869dc424ff6a5af836d9a6f308530</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -36948,8 +36962,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_notehead_mods.html</anchorfile>
-      <anchor>a52ef643c50b51554a1bb6109de96af48</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8572ce5ce176b7c09ac0c35dac0a1fdd</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -36974,8 +36988,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_pitch.html</anchorfile>
-      <anchor>a0efe42d51a47ba03d3f5b69f6e56731e</anchor>
-      <arglist>() override</arglist>
+      <anchor>af80ad3a8aa90856af2831e614a829aaa</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -37007,8 +37021,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_note_pitches.html</anchorfile>
-      <anchor>a6347f73949112d7f2ee4dd231b56be95</anchor>
-      <arglist>() override</arglist>
+      <anchor>a49f9d9b0b3524e80bee36816103d45e0</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -37117,8 +37131,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_number.html</anchorfile>
-      <anchor>aa687ea6ef852397a786307f902bf38fa</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3d3c19b114ca9ab06cdd1959366f3831</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -37178,8 +37192,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_number_collection.html</anchorfile>
-      <anchor>acaa2565424e33b69f84c0532308ff5d2</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad68dd491530d9654a9c6f878eaeb2e10</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -37190,8 +37204,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>ab4eac43fa687b096d4c1553719bdd5b6</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac13385c8988ee6a87fccd17b93216281</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -37286,8 +37300,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_other_inci.html</anchorfile>
-      <anchor>acb2fe0766d5d78d926ee7b4c81aa4397</anchor>
-      <arglist>() override</arglist>
+      <anchor>a36fba0d553dbabc5c1b74bdfd768ca52</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -37305,8 +37319,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_other_incis.html</anchorfile>
-      <anchor>ae854dd7e15b2d2c31f3ad411e1536dc6</anchor>
-      <arglist>() override</arglist>
+      <anchor>a52d3be92a4cc95e092d1a3a15a49a1a7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -37359,8 +37373,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_page.html</anchorfile>
-      <anchor>add0c2ec32d680cfe03e3d7afbf3e5e8c</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa1494725e988ae3e060a6c5730720022</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -37560,8 +37574,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_page_format_prefs.html</anchorfile>
-      <anchor>a70ab8dce1c042d877b6c5f7ea44c7a4e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1f6a3f7eacc90b464f9465d7188c441a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -38050,8 +38064,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_page_graphic.html</anchorfile>
-      <anchor>a033992ccc6075019dd77dac851ddc17e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3a9ef485811aac66f2c0e814eddf6d0e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -38314,8 +38328,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_page_graphics.html</anchorfile>
-      <anchor>a3d21b671b0eb585e56cf91919c71853c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a393e12acf72783cf4421f16a2f7c0282</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCPageGraphic *</type>
@@ -38340,8 +38354,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_pages.html</anchorfile>
-      <anchor>afd886d15e318ceff9a144dcad8f2977e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a958a1df45e5491a7d6759cc5e5afcb16</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCPage *</type>
@@ -38502,8 +38516,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_page_text.html</anchorfile>
-      <anchor>a14f1497f23cc38459dd9db85461e547f</anchor>
-      <arglist>() override</arglist>
+      <anchor>af4b740de3e1d9d61fbc874db041ca8fc</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -38794,8 +38808,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_page_texts.html</anchorfile>
-      <anchor>a2eea572c3acc5b1cc61e264df3753a22</anchor>
-      <arglist>() override</arglist>
+      <anchor>aaf53a4590fee676c6041d49618a54aa2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCPageText *</type>
@@ -38856,8 +38870,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_part.html</anchorfile>
-      <anchor>a94a2e3969f396b6233fc7039dd764039</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6fc567ad97ce733ee42066fa230b9aaf</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -39182,8 +39196,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_part_extract_prefs.html</anchorfile>
-      <anchor>ac9616cfb31f3848e841562311b6c9a83</anchor>
-      <arglist>() override</arglist>
+      <anchor>a83b712046e4e14c942cce501617795bd</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -39544,8 +39558,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_parts.html</anchorfile>
-      <anchor>a6308541ffd1da6448f32818a3a1cf9fa</anchor>
-      <arglist>() override</arglist>
+      <anchor>a962600be399ec7d0639875754e57cf34</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -39633,8 +39647,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_part_scope_prefs.html</anchorfile>
-      <anchor>ae22138c2e8af7777cdffa1d48b986008</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa60cf9df7ad3c1477e2143cee994bb6b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -39783,8 +39797,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_part_staff_voicing.html</anchorfile>
-      <anchor>a1cb5d30ea71c9543a2d9eb9db7679fab</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad7dbf790dfcdff1b3fe9ac2d205d5d19</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -40232,8 +40246,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_layout_note.html</anchorfile>
-      <anchor>a9fcefa908868c00fc6b03286eae4f5b5</anchor>
-      <arglist>() override</arglist>
+      <anchor>afe50004422ea8cd5b8db4cd524f72f2e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -40391,8 +40405,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_layout_notes.html</anchorfile>
-      <anchor>ac7e327ed939d843261489c6f7cf70805</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9dc972a44fcf16bdcc429e3b18642ba9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>CMPER</type>
@@ -40452,8 +40466,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_layout_notes_lookup.html</anchorfile>
-      <anchor>a684a4bb7a801389ff362e1f0d18ae316</anchor>
-      <arglist>() override</arglist>
+      <anchor>af3b78f00e069a7e14b7af1297e651050</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -40492,8 +40506,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_layout_notes_text.html</anchorfile>
-      <anchor>a368ddc998a0f2ccfa98361f9ce7d4345</anchor>
-      <arglist>() override</arglist>
+      <anchor>a299445bc7e6f1e95cc4dc925d38acfe2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -40525,8 +40539,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_map_note.html</anchorfile>
-      <anchor>a71bce3be0937f06d967281eb7e994e41</anchor>
-      <arglist>() override</arglist>
+      <anchor>a98e94aa652240101ff50cd89630670c5</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>PERC_NOTE_TYPE</type>
@@ -40586,8 +40600,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_map_notes.html</anchorfile>
-      <anchor>a26233472c0812662925be45dd33dd9ca</anchor>
-      <arglist>() override</arglist>
+      <anchor>a894a1d4ea97c486b84118cf681c9936b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCPercussionMapNote *</type>
@@ -40619,8 +40633,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_map_notes_lookup.html</anchorfile>
-      <anchor>ac6f1634888254cd3485794f7e2c75ea1</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2241a60fff084532d4782496ea137658</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -40645,8 +40659,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_note_mod.html</anchorfile>
-      <anchor>a1bfdfc4521e21a9afda6bb0e1aab120c</anchor>
-      <arglist>() override</arglist>
+      <anchor>af26e3ecc58c95e5ed5a38087feec57f9</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -40692,8 +40706,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_note_mods.html</anchorfile>
-      <anchor>a5f7f505fa2f02daf522c893791054816</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad618384392b57d7e6d8e99af070812cf</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -40833,8 +40847,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_percussion_staff.html</anchorfile>
-      <anchor>a3bd469afb0ca0bf105cb350958d6588c</anchor>
-      <arglist>() override</arglist>
+      <anchor>af427a91d12c0f60211abb9095afefac5</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -40887,8 +40901,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_performance_mod.html</anchorfile>
-      <anchor>aba38e408a5822eedd756c1c9e2c817aa</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1691559a423ba2a6fbe24c2549ed7d24</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -40976,8 +40990,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_performance_mods.html</anchorfile>
-      <anchor>acb55fafc5b42683bbc05b38f2d14aa75</anchor>
-      <arglist>() override</arglist>
+      <anchor>a286ca9313345fb06ad06cca5bdf0e174</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -41002,8 +41016,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_piano_brace_prefs.html</anchorfile>
-      <anchor>a7a62b4b67729f44df66b5346618d47b0</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa93795e8e8cb7f662dabff8ba6af29fa</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -41225,8 +41239,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>aa3e9c729d9f97bd0583a822e50557ac7</anchor>
-      <arglist>() override</arglist>
+      <anchor>a245704d8837de9e47ed025804f883dda</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -41356,8 +41370,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>a6e0994ba2b69f697b0f161367a165b9b</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6418b9c7916c10bec9a12aedd501ad40</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -41417,8 +41431,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_primary_beam_mods.html</anchorfile>
-      <anchor>a64306c5405b96ff8af2f3c22c010faa0</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac5158fb6bca90e728c3c4c7a493b589c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -41486,8 +41500,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_print_settings.html</anchorfile>
-      <anchor>a9fdb1d58f25deb6b27e150945c2bc3cf</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2553d85e7e2f4321b7b0577ad47ef9e6</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -41715,8 +41729,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>a5ad6523f9d020cb4f9bfd3cfb471277c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3427cd15e35d53c0bbe4ae51ca130ff4</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -41972,8 +41986,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_repeat_prefs.html</anchorfile>
-      <anchor>a57c740bf95d523c431ac1b7a9ab7dad9</anchor>
-      <arglist>() override</arglist>
+      <anchor>a291119d0883f6d7b6d1e0ac5300beeb8</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -42405,8 +42419,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
-      <anchor>a1d9925f44afdf7c640dc6d241ed23639</anchor>
-      <arglist>() override</arglist>
+      <anchor>a06e45adb5552755d7927e65319ce8cbe</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -42606,8 +42620,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_secondary_beam_break_mod.html</anchorfile>
-      <anchor>ad8ba2a6ded041222d5c2a05a36657b9e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a33f6f2301a1d6857ddd144cc2e483d2e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -42723,8 +42737,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_secondary_beam_break_mods.html</anchorfile>
-      <anchor>ab80127aa288ecb472a8fd8dc39930973</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa8461c7f20c51b4a80ec22e8cce1622e</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -42735,8 +42749,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
-      <anchor>a8d813b37c9b1aaf7d62d917056222804</anchor>
-      <arglist>() override</arglist>
+      <anchor>a511b03c297f2fefd9a1ea24bb08e53be</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -42796,8 +42810,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_section_lyrics_text.html</anchorfile>
-      <anchor>ad7b2fbcc62971917338d636786b6b150</anchor>
-      <arglist>() override</arglist>
+      <anchor>a99c89fdef623657aa87689a38d8331f3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -42822,8 +42836,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_section_syllable.html</anchorfile>
-      <anchor>aba40c008992eb52e324a330f1446da1e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a69c4464d7aa85b6443cb24068486bc15</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -42848,8 +42862,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_section_syllables.html</anchorfile>
-      <anchor>aa400aa84c4d8423fa82f52f2711d4288</anchor>
-      <arglist>() override</arglist>
+      <anchor>a58b31ae1e63a9085d066a86dbf5f2bf7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -42874,8 +42888,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_separate_measure_number.html</anchorfile>
-      <anchor>a35377651012dad90d86c4e8ba6da68d2</anchor>
-      <arglist>() override</arglist>
+      <anchor>a442a0e1e3444ed639d431175f9c25a58</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -43026,8 +43040,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_separate_measure_numbers.html</anchorfile>
-      <anchor>ac3ca9b2bb5551094a59e34e20a630578</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6926b97123253f63eebf82edd88ea190</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCSeparateMeasureNumber *</type>
@@ -43100,8 +43114,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_separate_placement.html</anchorfile>
-      <anchor>a5d649a9748f9da520e3b1f8224fe31ca</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8db56c31de78785151786dcab022bb4a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -43252,8 +43266,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_separate_placements.html</anchorfile>
-      <anchor>ab7a83f1f0d17c94a8ce80bfb433df478</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7bbe6a73ed8d576c872e9354e1bda2f4</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -43332,8 +43346,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_settings_pairs.html</anchorfile>
-      <anchor>aa5f954f619320b8fa654a07f139e0d51</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad924b479852ae38dd4cd98779e9c6678</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCSettingsPair *</type>
@@ -43400,8 +43414,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_shape_def.html</anchorfile>
-      <anchor>aefc2fa1d647699d618eb1f7c3bee70ad</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1d4c26eb183b6d5c7000a8cad9fd3346</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -43815,8 +43829,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_shape_def_instruction.html</anchorfile>
-      <anchor>aef1da4329993a93591c7f96342987664</anchor>
-      <arglist>() override</arglist>
+      <anchor>a367bc4ffb0ad3935d26c4952abbc5b3e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -44030,8 +44044,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_shape_def_instructions.html</anchorfile>
-      <anchor>a4b0685ba33d8895d9631c83dae4ed814</anchor>
-      <arglist>() override</arglist>
+      <anchor>a55645cfb5ec94e7a5f96c69a675a7088</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCShapeDefInstruction *</type>
@@ -44217,8 +44231,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_shape_defs.html</anchorfile>
-      <anchor>a3dc6717a4e69d0086ab02ca4d62d3512</anchor>
-      <arglist>() override</arglist>
+      <anchor>aace1d814af13ae453e8c876f88f79c4f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCShapeDef *</type>
@@ -44514,8 +44528,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_shape_expression_defs.html</anchorfile>
-      <anchor>a591c5549ca8bdb26d8f3969927dc89f6</anchor>
-      <arglist>() override</arglist>
+      <anchor>add2d58a6b7b53e161154e6046104029e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCShapeExpressionDef *</type>
@@ -44533,8 +44547,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_size_prefs.html</anchorfile>
-      <anchor>a1303aff7ddee55965ca243cb43dd518c</anchor>
-      <arglist>() override</arglist>
+      <anchor>acbfee3bfc0c134c65fc6c38e07748f60</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -44853,8 +44867,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_slur_contour_prefs.html</anchorfile>
-      <anchor>aebd32579d68155111a13af67887abc11</anchor>
-      <arglist>() override</arglist>
+      <anchor>af209a8210f8f6ae9f97097416e27e3fd</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -45574,8 +45588,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape.html</anchorfile>
-      <anchor>ac462eaf76a71158fd163aaf437f6afe9</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac83a34292f81f363bf89af1e328c3137</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -45999,8 +46013,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_ctrl_point_adjust.html</anchorfile>
-      <anchor>a3b9774515cd45be0faee0f79324319e4</anchor>
-      <arglist>() override</arglist>
+      <anchor>aaa13d16b18cefc1461d7c578f0d29833</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -46389,8 +46403,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_entry_connect_style.html</anchorfile>
-      <anchor>ade81ea2b0134fd5815b4a46ae7bb295b</anchor>
-      <arglist>() override</arglist>
+      <anchor>acd0491a5fef92ae2c041ca019a03190c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>SSENTCNCTSTYLE_INDICES</type>
@@ -46436,8 +46450,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_entry_mark.html</anchorfile>
-      <anchor>aacc716422393f0e505c1da3dbb2fdc9d</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac621620c9759644be51e8dffff2ec918</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -46504,8 +46518,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_entry_marks.html</anchorfile>
-      <anchor>ae9158a5ebbedd41964c5649697a28a82</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad92a9e17943d6f9c01e530574d02ae2d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -46530,8 +46544,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_measure_mark.html</anchorfile>
-      <anchor>abe3a59ad0be2a0de6f1f81d5fdac0f84</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8a592cd7f6e18a04b2466d8eac5657ee</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -46612,8 +46626,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_measure_marks.html</anchorfile>
-      <anchor>a191888478bc1efd00a446c170c81ef9f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a42be84daa4551787532f104cf3c4e053</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -46749,8 +46763,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_prefs.html</anchorfile>
-      <anchor>a863c06f2e479882e0fd157bbf6c0d911</anchor>
-      <arglist>() override</arglist>
+      <anchor>a58912c9acaea7fe2c5d1d9512bb5b516</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -47377,8 +47391,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shapes.html</anchorfile>
-      <anchor>a786b607529ed4cedc920f76d9281b5fd</anchor>
-      <arglist>() override</arglist>
+      <anchor>a23b73f93598f833f210480e4697b71e1</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCSmartShape *</type>
@@ -47396,8 +47410,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_smart_shape_segment.html</anchorfile>
-      <anchor>a25a412642d72065d01e911fb21792e01</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8c1c2a153b2fa041c0a914e8c4cc6f8e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -47685,8 +47699,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>afb9662a834c24e18d75fba8786a8f9cf</anchor>
-      <arglist>() override</arglist>
+      <anchor>afedc3ecd3fc8e25027f8713e375ce1f6</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -47823,8 +47837,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_list.html</anchorfile>
-      <anchor>a5324e04df8354438e90005c4eb98946a</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad55e2f7bcb9f27c793cbd4fc6223efd0</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -48010,8 +48024,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_list_category_text.html</anchorfile>
-      <anchor>a57c07a4f2d1ab57288c6a60ce9e553da</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6dc503e21cfa2ca08c59f9f5cb616797</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -48029,8 +48043,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_list_lookup.html</anchorfile>
-      <anchor>aabae005978bf29b9acd74d20f15e9afc</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae9952c5d12b5c196b684a28350789030</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -48090,8 +48104,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_lists.html</anchorfile>
-      <anchor>a97a6d764ebea170eb4447d5441c39f85</anchor>
-      <arglist>() override</arglist>
+      <anchor>adaae0f387c2fcb8631f4f076c0164a39</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCStaffList *</type>
@@ -48109,8 +48123,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_list_staff_assign_text.html</anchorfile>
-      <anchor>a47014ad5e42a51915e25c5d0e53062a5</anchor>
-      <arglist>() override</arglist>
+      <anchor>a5a30b634f2ca6cff2c079b0b7d950eb4</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -48121,8 +48135,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_list_text.html</anchorfile>
-      <anchor>a742c9f62f8e527c48135bb9f35cacd60</anchor>
-      <arglist>() override</arglist>
+      <anchor>ac24258830456940c111a8e81d3e2c55f</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -48133,8 +48147,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_name_position.html</anchorfile>
-      <anchor>a920bc798745633bdb3ab1f1b977baa87</anchor>
-      <arglist>() override</arglist>
+      <anchor>a5766e2e9aae907b55a6dcec611e30ac8</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -48257,8 +48271,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_name_position_prefs.html</anchorfile>
-      <anchor>a3784c1e35bc5407bc889567aba7017f5</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa00d040826643f3b4355ac6abb909a7c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -48367,8 +48381,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_style_assign.html</anchorfile>
-      <anchor>a245c448eccf1e6c9512af3f50a0aeba6</anchor>
-      <arglist>() override</arglist>
+      <anchor>a521e9e9656df081d3144b46153725d20</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -48491,8 +48505,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_style_assigns.html</anchorfile>
-      <anchor>a8d8d97327c138dfbf6eee87503716665</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae32386a3a3ab32ff6c28652a46f862ed</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCStaffStyleAssign *</type>
@@ -48510,8 +48524,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_style_def.html</anchorfile>
-      <anchor>ad7593e469c4cc0e5cd458d7138bec02e</anchor>
-      <arglist>() override</arglist>
+      <anchor>a36167e30aaa19e86f891d0728700c25e</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -49152,8 +49166,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_style_defs.html</anchorfile>
-      <anchor>a36b59421f81e6fcec29fbd0bd826b0bb</anchor>
-      <arglist>() override</arglist>
+      <anchor>af65d25095a2cabebe01b047d582e63e0</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCStaffStyleDef *</type>
@@ -49171,8 +49185,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_system.html</anchorfile>
-      <anchor>a0bcf8336dbb4f2f20f2461df890dba7a</anchor>
-      <arglist>() override</arglist>
+      <anchor>a081c5b31462c3f139b0f9c50d2493193</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -49498,8 +49512,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_systems.html</anchorfile>
-      <anchor>a4140d65dd1fcffe57c51fd6617c5721d</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9601586ddb67c2de60f47caac69dcf16</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCStaffSystem *</type>
@@ -49545,8 +49559,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staff_systems_lookup.html</anchorfile>
-      <anchor>a5870951f2a9bcb18554304700e9e6e11</anchor>
-      <arglist>() override</arglist>
+      <anchor>af6c6458a970662a071454d41c6c8565c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCStaffSystems *</type>
@@ -49564,8 +49578,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_start_tie_mods.html</anchorfile>
-      <anchor>a99ba3eafabc5431ec8779b363b03fa13</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa184d6e8123e287cc84c10beb56f291f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -49597,8 +49611,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_staves.html</anchorfile>
-      <anchor>af116ce629e98b02c8f46286785f0f663</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4273c3fd5b0bd7344bb0c9ecb791a2a5</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCStaff *</type>
@@ -49644,8 +49658,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_stem_connection_table.html</anchorfile>
-      <anchor>a69511eb7427912c543e2ddfe2c4f6c28</anchor>
-      <arglist>() override</arglist>
+      <anchor>a81c412ca38745acfca33a1336f4864c2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -49796,8 +49810,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_stem_mod.html</anchorfile>
-      <anchor>a52b7e0198b88cf75c36c32dfd532ebd8</anchor>
-      <arglist>() override</arglist>
+      <anchor>aaf8c896124a8c1a9cb7b250ccbebdb0d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -49885,8 +49899,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_stem_mods.html</anchorfile>
-      <anchor>a825caf38815732e308814f8d3262b878</anchor>
-      <arglist>() override</arglist>
+      <anchor>abc12349e3413aff6dfac5f6eca34b261</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -49897,8 +49911,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5bb32b255e8fb131a20ac274e2460fbf</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7cdf6ec1b2b8ae64c54d3c4a82ddc913</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -50833,8 +50847,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_strings.html</anchorfile>
-      <anchor>afe7094847059379d8eb42f8283a6f503</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7c3c126224c5cef1bbea8894127e3104</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
@@ -50978,8 +50992,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a30f22f8acba1d5dc4211e8cdfb9b417c</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0c9b8df77791e9cc1e8d2ab61b83ac28</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -51303,8 +51317,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_syllable_entry_mod.html</anchorfile>
-      <anchor>a979c0570d370aacfaa47b446f944ba08</anchor>
-      <arglist>() override</arglist>
+      <anchor>a08c9156d99d221ca3fbb3eb170cfa273</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -51495,8 +51509,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_system_staff.html</anchorfile>
-      <anchor>af678e70312a90dbea732526d4ddb2c71</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9e8f3beb1e062c46d6e936842e055696</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -51612,8 +51626,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_system_staves.html</anchorfile>
-      <anchor>a565b9c897052c0ef00565ed3b882c9de</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7221f043db904fb8e98c5a0ccf8738ee</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCSystemStaff *</type>
@@ -51687,8 +51701,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tablature_note_mod.html</anchorfile>
-      <anchor>ac84a07317a945145c041f46a3df3f97f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1b3daf42b32fc9b120802760ce2a2d1c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -51734,8 +51748,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tablature_note_mods.html</anchorfile>
-      <anchor>a598c4039b24680c265580dd234f2b3fa</anchor>
-      <arglist>() override</arglist>
+      <anchor>a363efb036ee106a57de40246fba793fc</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -51760,8 +51774,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tempo_element.html</anchorfile>
-      <anchor>a0952eec90a754dc96e28b574f3a2fe63</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9c1cad14cec02d8660684271b995f843</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -51856,8 +51870,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tempo_elements.html</anchorfile>
-      <anchor>a488bfcba78322644afd1cd3fef8d93d6</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3472b39f026f93c193af0b9578e769b2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTempoElement *</type>
@@ -51889,8 +51903,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_block.html</anchorfile>
-      <anchor>a3736fa7fc3b50b0cc786101f0ac5bbda</anchor>
-      <arglist>() override</arglist>
+      <anchor>a95346e1bb45000028f7f9b4533acd09f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -52223,8 +52237,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_blocks.html</anchorfile>
-      <anchor>a3a9e2cd38fad4fe61610289686be57dd</anchor>
-      <arglist>() override</arglist>
+      <anchor>adccb95c8f53b8b882c2acbdcb056ac90</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTextBlock *</type>
@@ -52556,8 +52570,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_expression_def.html</anchorfile>
-      <anchor>abb1bc66b1c74c613051b24a43f16b37b</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab331eb33084ff72d791a1be210555b13</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -53051,8 +53065,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_expression_defs.html</anchorfile>
-      <anchor>a0d13742a1018a70a93cfcf1bd9d9b4d1</anchor>
-      <arglist>() override</arglist>
+      <anchor>a003c4d8b7b4ab0e9af2c299a10440c36</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTextExpressionDef *</type>
@@ -53311,8 +53325,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a9f93165541404a624b5ae34c31f67927</anchor>
-      <arglist>() override</arglist>
+      <anchor>a0e2ae52e4efdd6c378df190f79bf7da7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -53531,8 +53545,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_repeat.html</anchorfile>
-      <anchor>ad96959b1a194845ca99721f62cf59366</anchor>
-      <arglist>() override</arglist>
+      <anchor>acba524e647aeb6978d853bef0275ecc2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -53879,8 +53893,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_repeat_def.html</anchorfile>
-      <anchor>a9f5d925f41a4b4cb1212929d684a01c4</anchor>
-      <arglist>() override</arglist>
+      <anchor>add10d6d56aa2cf512f515fea8d384ee3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -54024,8 +54038,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_repeat_defs.html</anchorfile>
-      <anchor>a8f953a62e6d01f8927cb4a9c99fa025c</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad5601f80a0b793744235424eb3c06ded</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTextRepeatDef *</type>
@@ -54050,8 +54064,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_repeats.html</anchorfile>
-      <anchor>a6081cbf7f783010cc69e18930b2f6260</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6f0c0a717cf593dc8232aa64c4320b5a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTextRepeat *</type>
@@ -54069,8 +54083,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_text_repeat_text.html</anchorfile>
-      <anchor>a731bfac5fda5724ff658edecafb98574</anchor>
-      <arglist>() override</arglist>
+      <anchor>aba84aa77d8b60186f5325f83518293a7</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -54190,8 +54204,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tie_contour_prefs.html</anchorfile>
-      <anchor>a4e6ac731e3e454e34c75b2821cb24670</anchor>
-      <arglist>() override</arglist>
+      <anchor>a57880aa77e84c492522aa65eed05826d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -54670,8 +54684,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tie_mod.html</anchorfile>
-      <anchor>af63fee1957f5f8eb54cc0eecaad4787a</anchor>
-      <arglist>() override</arglist>
+      <anchor>a319c1731791101437ff2cbe3f9708f99</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -55069,8 +55083,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tie_placement_prefs.html</anchorfile>
-      <anchor>a720a33873ab90fd6220cef33387437bb</anchor>
-      <arglist>() override</arglist>
+      <anchor>abc0d7f0fafe21d5d4690a68acae9ea4a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -55292,8 +55306,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tie_prefs.html</anchorfile>
-      <anchor>a1e90ca9193b9770d931f1452ad02c1de</anchor>
-      <arglist>() override</arglist>
+      <anchor>a54b83ebe0be164a135fe84373d372f66</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -55717,8 +55731,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>ad56ec9c592dc50a813b2bee6b4e8a847</anchor>
-      <arglist>() override</arglist>
+      <anchor>a2f7d3bb6fccff6967c98906b46e8698c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -55939,8 +55953,8 @@
       <type></type>
       <name>FCTransposer</name>
       <anchorfile>class_f_c_transposer.html</anchorfile>
-      <anchor>a0ee44b012460af69a3245d2c9c97d250</anchor>
-      <arglist>(eHarmLev displacement, eHarmAlt raiselower, FCKeySignature *key)</arglist>
+      <anchor>a94a37a2d5b976d4cdf368472655ccbb4</anchor>
+      <arglist>(eHarmLev displacement, eHarmAlt raiselower, const FCKeySignature *key)</arglist>
     </member>
     <member kind="function">
       <type>eHarmLev</type>
@@ -55986,6 +56000,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>SimplifySpelling</name>
+      <anchorfile>class_f_c_transposer.html</anchorfile>
+      <anchor>a441ee71e76f32e59da4b5f16b6193709</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>ChromaticTranspose</name>
       <anchorfile>class_f_c_transposer.html</anchorfile>
       <anchor>a51f87facf91f5959a830cd1fb777158d</anchor>
@@ -56021,8 +56042,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tree_node.html</anchorfile>
-      <anchor>aecd622e2ed71bbc5f283a8c5080f2fcc</anchor>
-      <arglist>() override</arglist>
+      <anchor>ae49de2a850a4baa4fd08661e4cc064f3</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>FCTreeNode *</type>
@@ -56145,8 +56166,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tuplet.html</anchorfile>
-      <anchor>a5befcc6dbeddbc6603d5c93ac55ce979</anchor>
-      <arglist>() override</arglist>
+      <anchor>a97b341c9c26d70adf021bd2b3bf1c50f</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -56591,8 +56612,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tuplet_prefs.html</anchorfile>
-      <anchor>a9770988c7b6574fd23ca198b0f9feb6f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a762ce075adfdba53fd37d69503553000</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -57023,8 +57044,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_tuplets.html</anchorfile>
-      <anchor>a0b57360feefbb609333a89373594f680</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6745b28e733c54874036613d1f9f433d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -57898,8 +57919,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>a0d93d155e9643eef2388969f91f1e4df</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab5a91a51af0c39d7788437f3c0640a58</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -58342,8 +58363,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_verse_lyrics_text.html</anchorfile>
-      <anchor>ad2ba95a8bc88f28a12667f6f82c5d45a</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa237bd466a586c6362787175ad4a95af</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -58368,8 +58389,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_verse_syllable.html</anchorfile>
-      <anchor>a3c9234afa9a62d7299ca494811c53fe9</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9728ba271445495af16db49312e6bb16</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const PDKFRAMEWORK_CLASSID</type>
@@ -58394,8 +58415,8 @@
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_verse_syllables.html</anchorfile>
-      <anchor>a0846b8c105d59c685680ea8bd074257f</anchor>
-      <arglist>() override</arglist>
+      <anchor>af995e555a4b59d594ad283d86a007dfd</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -58647,7 +58668,6 @@
     <class kind="class">FCPoint</class>
     <class kind="class">FCPrintSettings</class>
     <class kind="class">FCFontDialog</class>
-    <class kind="class">FCTransposer</class>
     <class kind="class">FCCell</class>
     <class kind="class">FCCellPos</class>
     <class kind="class">__FCCellDetail</class>
@@ -58659,6 +58679,7 @@
     <class kind="class">FCChord</class>
     <class kind="class">FCCellGraphic</class>
     <class kind="class">FCCellText</class>
+    <class kind="class">FCTransposer</class>
     <class kind="class">__FCNoInciDetail</class>
     <class kind="class">FCGroup</class>
     <class kind="class">FCBaseline</class>
