@@ -156,19 +156,12 @@
       <anchor>af6614232541d894894a764bb6b59ff32</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
+    <member kind="function" virtualness="pure">
       <type>virtual const char *</type>
       <name>ClassName</name>
       <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>a156d7f9dda47ce7db7dbdb0a1dc090d8</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>__FCBase</name>
-      <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>a19492e2b21a7db8115c11e9f82f935f5</anchor>
-      <arglist>()</arglist>
+      <anchor>ae6707619ce470379b707bf2337d0791e</anchor>
+      <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -505,6 +498,13 @@
       <anchorfile>class_____f_c_base.html</anchorfile>
       <anchor>aa1c9b53579e02fdd8f5deea1726c0781</anchor>
       <arglist>(const char *pszLine)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>__FCBase</name>
+      <anchorfile>class_____f_c_base.html</anchorfile>
+      <anchor>a19492e2b21a7db8115c11e9f82f935f5</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -26875,18 +26875,18 @@
       <arglist></arglist>
     </member>
     <member kind="function">
-      <type></type>
-      <name>FCLuaIterator</name>
-      <anchorfile>class_f_c_lua_iterator.html</anchorfile>
-      <anchor>a74d9e33d53c19566b358fe8c3bfa6c42</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
       <anchorfile>class_f_c_lua_iterator.html</anchorfile>
       <anchor>ac1e50a3b9b7ecf6f883a3295a27454c3</anchor>
       <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCLuaIterator</name>
+      <anchorfile>class_f_c_lua_iterator.html</anchorfile>
+      <anchor>a74d9e33d53c19566b358fe8c3bfa6c42</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -40736,6 +40736,13 @@
     <filename>class_f_c_percussion_note_type.html</filename>
     <base>__FCBase</base>
     <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_percussion_note_type.html</anchorfile>
+      <anchor>a298a57132f293083d78d19516cff0b60</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>FormatName</name>
       <anchorfile>class_f_c_percussion_note_type.html</anchorfile>
@@ -43309,6 +43316,13 @@
     <name>FCSettingsPair</name>
     <filename>class_f_c_settings_pair.html</filename>
     <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_settings_pair.html</anchorfile>
+      <anchor>a89bec7962d96fd1b520dab19c82552b1</anchor>
+      <arglist>() const override</arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>FCSettingsPair</name>
@@ -53156,6 +53170,13 @@
     <filename>class_f_c_text_file_u_t_f8_stream.html</filename>
     <base>FCTextFileStream</base>
     <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_text_file_u_t_f8_stream.html</anchorfile>
+      <anchor>a056748ade889bf7f789797df087fa88f</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
       <type></type>
       <name>FCTextFileUTF8Stream</name>
       <anchorfile>class_f_c_text_file_u_t_f8_stream.html</anchorfile>
@@ -53169,26 +53190,26 @@
       <anchor>aa60da8e27b6cd147d1645049400f0605</anchor>
       <arglist>(FCString *pFolder, FCString *pFileName)</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual FCString *</type>
+    <member kind="function">
+      <type>FCString *</type>
       <name>ReadString</name>
       <anchorfile>class_f_c_text_file_u_t_f8_stream.html</anchorfile>
-      <anchor>a3f388b2fbee9e98584271eb63346abb2</anchor>
-      <arglist>()</arglist>
+      <anchor>abcf0a2f59fe2fcfcf00bdbeba0044cf4</anchor>
+      <arglist>() override</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
+    <member kind="function">
+      <type>bool</type>
       <name>WriteStrings</name>
       <anchorfile>class_f_c_text_file_u_t_f8_stream.html</anchorfile>
-      <anchor>a160995836bd80b868e529ad3168d5228</anchor>
-      <arglist>(FCStrings *pStrings)</arglist>
+      <anchor>acd791591e55f4a573dd2c12f93b15867</anchor>
+      <arglist>(FCStrings *pStrings) override</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
+    <member kind="function">
+      <type>bool</type>
       <name>WriteText</name>
       <anchorfile>class_f_c_text_file_u_t_f8_stream.html</anchorfile>
-      <anchor>a265081b1d897c02605e9d11e0ad7ffbf</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a9d770ab173d29097086184095223ac01</anchor>
+      <arglist>(FCString *pString) override</arglist>
     </member>
   </compound>
   <compound kind="class">
