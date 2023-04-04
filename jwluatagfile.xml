@@ -9902,11 +9902,6 @@
       <arglist>()</arglist>
     </member>
   </compound>
-  <compound kind="struct">
-    <name>luabridge::Enum</name>
-    <filename>structluabridge_1_1_enum.html</filename>
-    <templarg>typename T</templarg>
-  </compound>
   <compound kind="class">
     <name>FCAccidentalMod</name>
     <filename>class_f_c_accidental_mod.html</filename>
