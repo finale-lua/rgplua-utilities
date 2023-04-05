@@ -363,7 +363,7 @@ create_class_index_xml = function()
     local xml = tinyxml2.XMLDocument()
     local result = xml:LoadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml")
     if result ~= tinyxml2.XML_SUCCESS then
-        error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
+        error("Unable to find jwluatagfile.xml. Is it in the same folder with this script?")
     end
     local class_collection = {}
     local tagfile = tinyxml2.XMLHandle(xml):FirstChildElement("tagfile"):ToNode()
@@ -390,13 +390,14 @@ create_class_index_xml = function()
             class_collection[class_info.name] = class_info
         end
     end
+    xml:Clear()
     return class_collection
 end
 
 create_class_index_str = function()
     local file, e = io.open(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml", 'r')
     if not file then
-        error("Unable to find jwtagfile.xml. Is it in the same folder with this script?")
+        error("Unable to find jwluatagfile.xml. Is it in the same folder with this script?")
     end
     if io.type(file) ~= 'file' then
         finenv.UI():AlertError(e, nil)
