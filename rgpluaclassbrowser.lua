@@ -444,12 +444,12 @@ coroutine_build_class_index = coroutine.create(function()
 function on_timer(timer_id)
     if timer_id ~= global_timer_id then return end
     local success, errmsg = coroutine.resume(coroutine_build_class_index)
-    if not success then
-        error(errmsg)
-    end
     if coroutine.status(coroutine_build_class_index) == "dead" then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
+        if not success then
+            error(errmsg)
+        end
         set_text(global_progress_label, "")
         update_classlist()
         if nil ~= context.classes_index then

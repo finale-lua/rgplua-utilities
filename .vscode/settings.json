@@ -18,7 +18,8 @@
         "bit32",
         "utf8",
         "socket",
-        "tinyxml2"
+        "tinyxml2",
+        "xmlelements"
     ],
     "files.exclude": {
         "decoder.lua": true,
