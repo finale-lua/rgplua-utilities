@@ -380,9 +380,9 @@ create_class_index_xml = function()
                     member_info.name = member:FirstChildElement("name"):GetText()
                     member_info.anchorfile = member:FirstChildElement("anchorfile"):GetText()
                     member_info.anchor = member:FirstChildElement("anchor"):GetText()
-                    member_info._attr.protection = member:Attribute("protection", nil)
-                    member_info._attr.static = member:Attribute("static", nil)
-                    member_info._attr.virtualness = member:Attribute("virtualness", nil)
+                    member_info._attr.protection = member:Attribute("protection")
+                    member_info._attr.static = member:Attribute("static")
+                    member_info._attr.virtualness = member:Attribute("virtualness")
                     member_info.arglist = member:FirstChildElement("arglist"):GetText()
                     class_info.__members[member_info.name] = member_info
                 end
