@@ -246,12 +246,12 @@ end
 
 function hide_show_display_area(list_info, show)
     list_info.fullname_static:SetVisible(show)
-    list_info.returns_label:SetVisible(show)
-    list_info.returns_static:SetVisible(show)
+    list_info.returns_label:SetVisible(show and get_edit_text(list_info.returns_static) ~= "")
+    list_info.returns_static:SetVisible(show and get_edit_text(list_info.returns_static) ~= "")
     list_info.method_doc_button:SetVisible(show)
     if list_info.arglist_static then
-        list_info.arglist_label:SetVisible(show)
-        list_info.arglist_static:SetVisible(show)
+        list_info.arglist_label:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
+        list_info.arglist_static:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
     end
 end
 
@@ -268,19 +268,15 @@ function on_method_selection(list_control, index)
     local show = false
     if list_info and index >= 0 then
         local method_name = get_plain_string(list_control, index)
-        if method_name == "SetCData" then
-            require('mobdebug').start()
-        end
         if #method_name > 0 and list_info.current_strings then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                local is_property = nil == method_info.arglist
-                local dot = ":"
-                if is_property then dot = "." end
+                local dot = list_info.is_property and "." or ":"
                 set_text(list_info.fullname_static, method_info.class .. dot .. method_name)
-                if is_property then
+                if list_info.is_property then
                     local methods_list_info = global_dialog_info[global_control_xref["methods"]]
-                    local property_getter_info = methods_list_info.current_strings["Get" .. method_name] or methods_list_info.current_strings[method_name]
+                    local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
+                                                    or methods_list_info.current_strings[method_name]
                     if property_getter_info then
                         set_text(list_info.returns_static, property_getter_info.returns)
                     end
@@ -288,7 +284,9 @@ function on_method_selection(list_control, index)
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
                 end
-                show = true
+                if get_edit_text(list_info.fullname_static) ~= "" then
+                    show = true
+                end
             end
         end
     end
@@ -561,6 +559,7 @@ local create_dialog = function()
             list_box = list_control,
             search_text = edit_text,
             current_search_text = nil,
+            is_property = false,
             fullname_static = nil,
             returns_label = nil,
             returns_static = nil,
@@ -581,6 +580,7 @@ local create_dialog = function()
     
     local create_display_area = function(dialog, list_info, width, is_for_properties)
         is_for_properties = is_for_properties or false
+        list_info.is_property = is_for_properties
         list_info.fullname_static = dialog:CreateStatic(x, y)
         list_info.fullname_static:SetWidth(width)
         list_info.fullname_static:SetVisible(false)
@@ -659,7 +659,7 @@ local create_dialog = function()
     dialog:RegisterInitWindow(
         function()
             global_dialog:SetTimer(global_timer_id, 1) -- timer can't be set until window is created
-            if nil ~= context.window_pos_x and nil ~= context.window_pos_y then
+            if context.window_pos_x and context.window_pos_y then
                 global_dialog:StorePosition()
                 global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
                 global_dialog:RestorePosition()
