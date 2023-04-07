@@ -81,7 +81,7 @@ end
 function set_text(control, text)
     if not control then return end
     local fcstring = finale.FCString()
-    fcstring.LuaString = text
+    fcstring.LuaString = text or ""
     control:SetText(fcstring)
 end
 
@@ -268,6 +268,9 @@ function on_method_selection(list_control, index)
     local show = false
     if list_info and index >= 0 then
         local method_name = get_plain_string(list_control, index)
+        if method_name == "SetCData" then
+            require('mobdebug').start()
+        end
         if #method_name > 0 and list_info.current_strings then
             local method_info = list_info.current_strings[method_name]
             if method_info then
@@ -277,7 +280,7 @@ function on_method_selection(list_control, index)
                 set_text(list_info.fullname_static, method_info.class .. dot .. method_name)
                 if is_property then
                     local methods_list_info = global_dialog_info[global_control_xref["methods"]]
-                    local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
+                    local property_getter_info = methods_list_info.current_strings["Get" .. method_name] or methods_list_info.current_strings[method_name]
                     if property_getter_info then
                         set_text(list_info.returns_static, property_getter_info.returns)
                     end
@@ -361,20 +364,17 @@ end
 get_eligible_classes = function()
     set_text(global_progress_label, "Getting eligible classes from Lua state...")
     local retval = {}
-    for k, v in pairs(finale) do
-        local kstr = tostring(k)
-        if kstr:find("FC") == 1 then
-            retval[kstr] = "finale"
-        end
-    end
-    if tinyxml2 then
-        for k, v in pairs(tinyxml2) do
+    local function process_namespace(namespace, startswith)
+        if not _G[namespace] then return end
+        for k, v in pairs(_G[namespace]) do
             local kstr = tostring(k)
-            if kstr:find("XML") == 1 then
-                retval[kstr] = "tinyxml2"
+            if kstr:find(startswith) == 1 then
+                retval[kstr] = namespace
             end
         end
     end
+    process_namespace("finale", "FC")
+    process_namespace("tinyxml2", "XML")
     return retval
 end
 
