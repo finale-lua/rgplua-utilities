@@ -112,7 +112,10 @@ function get_properties_methods(classname)
     local properties = {}
     local methods = {}
     local class_methods = {}
-    local classtable = finale[classname]
+    local namespace = eligible_classes[classname]
+    namespace = namespace or "finale"
+    if type(namespace) ~= "string" then return nil end
+    local classtable = _G[namespace][classname]
     if type(classtable) ~= "table" then return nil end
     local class_info = global_class_index[classname]
     for k, _ in pairs(classtable.__class) do
@@ -204,7 +207,18 @@ function on_classname_changed(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
     current_class_name = new_classname
-    set_text(global_progress_label, current_class_name)
+    local name_for_display = current_class_name
+    local namespace = eligible_classes[new_classname]
+    if namespace then
+        name_for_display = namespace.."."..name_for_display
+        local classtable = _G[namespace][current_class_name]
+        if type(classtable) == "table" then
+            for k, _ in pairs(classtable.__parent) do
+                name_for_display = name_for_display.." : "..k
+            end
+        end
+    end
+    set_text(global_progress_label, name_for_display)
     local current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
     global_dialog_info[global_control_xref["properties"]].current_strings = current_properties
     global_dialog_info[global_control_xref["methods"]].current_strings = current_methods
@@ -286,9 +300,7 @@ function update_classlist()
         local search_text = get_edit_text(list_info.search_text)
         if search_text == list_info.current_search_text then return end
         list_info.current_search_text = search_text
-        if search_text == nil or search_text == "" then
-            search_text = "FC"
-        end
+        search_text = search_text or ""
         local first_string = update_list(list_info.list_box, eligible_classes, search_text)
         if finenv.UI():IsOnWindows() then
             local index = list_info.list_box:GetSelectedItem()
@@ -351,9 +363,17 @@ get_eligible_classes = function()
     local retval = {}
     for k, v in pairs(finale) do
         local kstr = tostring(k)
-        if kstr:find("FC") == 1  then
-            retval[kstr] = 1
-        end    
+        if kstr:find("FC") == 1 then
+            retval[kstr] = "finale"
+        end
+    end
+    if tinyxml2 then
+        for k, v in pairs(tinyxml2) do
+            local kstr = tostring(k)
+            if kstr:find("XML") == 1 then
+                retval[kstr] = "tinyxml2"
+            end
+        end
     end
     return retval
 end
