@@ -327,8 +327,7 @@ end
 function launch_docsite(namespace, html_file, anchor)
     local doc_site = documentation_sites[namespace]
     if type(doc_site) ~= "string" then
-        finenv.UI():AlertError("No documentation site is available for namespace '" .. namespace .. "'.", "")
-        return
+        error("no documentation site provided for namespace "..tostring(namespace), 2)
     end
     if html_file then
         local url = doc_site .. html_file
