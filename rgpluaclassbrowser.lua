@@ -6,7 +6,7 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.56
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.2"
+    finaleplugin.Version = "1.3"
     finaleplugin.Date = "March 26, 2023"
     finaleplugin.Notes = [[
         This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
@@ -34,9 +34,19 @@ function plugindef()
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
+
 --global variables prevent garbage collection until script terminates and releases Lua State
 
 if not finenv.RetainLuaState then
+    luaosutils = nil
+    if finenv.MajorVersion > 0 or finenv.MinorVersion >= 0.67 then
+        luaosutils = require('luaosutils')    
+    end
+    documentation_sites =
+    {
+        finale = "https://pdk.finalelua.com/",
+        tinyxml2 = "http://leethomason.github.io/tinyxml2/",
+    }
     eligible_classes = {}
     global_class_index = nil
     context = 
@@ -314,17 +324,33 @@ function update_classlist()
     end
 end
 
-pdk_framework_site = "https://pdk.finalelua.com/"
-function launch_docsite(html_file, anchor)
+function launch_docsite(namespace, html_file, anchor)
+    local doc_site = documentation_sites[namespace]
+    if type(doc_site) ~= "string" then
+        finenv.UI():AlertError("No documentation site is available for namespace '" .. namespace .. "'.", "")
+        return
+    end
     if html_file then
-        local url = pdk_framework_site .. html_file
+        local url = doc_site .. html_file
         if anchor then
             url = url .. "#" .. anchor
         end
+        local function open_url(cmd)
+            if luaosutils then
+                if finenv.UI():IsOnWindows() then
+                    cmd = "cmd /c " .. cmd
+                end
+                print("luaosutils")
+                luaosutils.process.launch(cmd)
+            else
+                print("os.execute")
+                os.execute(cmd)
+            end
+        end
         if finenv.UI():IsOnWindows() then
-            os.execute(string.format('start %s', url))
+            open_url(string.format('start %s', url))
         else
-            os.execute(string.format('open "%s"', url))
+            open_url(string.format('open "%s"', url))
         end
         
     end
@@ -338,7 +364,8 @@ function on_doc_button(button_control)
         if #method_name > 0 then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                if nil == method_info.arglist then
+                if list_info.is_property then
+                    -- ToDo: validate that getter starts with "Get"
                     method_name = "Get" .. method_name -- use property getter for properties
                 end
                 local class_info = global_class_index[method_info.class]
@@ -352,7 +379,7 @@ function on_doc_button(button_control)
                             filename = method_metadata.anchorfile
                         end
                     end
-                    launch_docsite(filename, anchor)
+                    launch_docsite(eligible_classes[current_class_name], filename, anchor)
                 end
             end
         end
@@ -411,6 +438,21 @@ create_class_index_xml = function()
     return class_collection
 end
 
+add_xml_classes_to_index = function(class_collection)
+    if tinyxml2 then
+        for k, _ in pairs(tinyxml2) do
+            kstr = tostring(k)
+            if kstr:find("XML") == 1 then
+                local class_info = { _attr = { kind = 'class' }, __members = {} }
+                class_info.name = kstr
+                class_info.filename = "classtinyxml2_1_1_x_m_l_"..kstr:sub(4):lower()..".html"
+                class_collection[class_info.name] = class_info
+                -- no hard-coded method anchors: too unreliable
+            end
+        end
+    end
+end
+
 create_class_index_str = function()
     local file, e = io.open(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml", 'r')
     if not file then
@@ -452,6 +494,7 @@ coroutine_build_class_index = coroutine.create(function()
             eligible_classes = get_eligible_classes()
             coroutine.yield()
             global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
+            add_xml_classes_to_index(global_class_index)
             -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
             -- up until we reach this statement:
             finenv.RetainLuaState = true
@@ -682,7 +725,7 @@ local create_dialog = function()
         function(control)
             local class_info = global_class_index[current_class_name]
             if class_info then
-                launch_docsite(class_info.filename)
+                launch_docsite(eligible_classes[current_class_name], class_info.filename)
             end
         end
     )
