@@ -4,6 +4,7 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.MinJWLuaVersion = 0.56
+    finaleplugin.LoadLuaOSUtils = true
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.3"
@@ -39,7 +40,7 @@ end
 
 if not finenv.RetainLuaState then
     luaosutils = nil
-    if finenv.MajorVersion > 0 or finenv.MinorVersion >= 0.67 then
+    if finenv.MajorVersion > 0 or finenv.MinorVersion >= 0.66 then
         luaosutils = require('luaosutils')    
     end
     documentation_sites =
