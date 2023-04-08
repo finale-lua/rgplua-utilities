@@ -702,11 +702,6 @@ local create_dialog = function()
     dialog:RegisterInitWindow(
         function()
             global_dialog:SetTimer(global_timer_id, 1) -- timer can't be set until window is created
-            if context.window_pos_x and context.window_pos_y then
-                global_dialog:StorePosition()
-                global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
-                global_dialog:RestorePosition()
-            end
         end
     )
     dialog:RegisterHandleTimer(on_timer)
@@ -765,6 +760,12 @@ end
 local open_dialog = function()
     global_dialog = create_dialog()
     finenv.RegisterModelessDialog(global_dialog)
+    -- For some reason we need to do this here rather than in InitWindow.
+    if context.window_pos_x and context.window_pos_y then
+        global_dialog:StorePosition()
+        global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
+        global_dialog:RestorePosition()
+    end
     global_dialog:ShowModeless()
 end
 
