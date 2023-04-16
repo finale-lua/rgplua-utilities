@@ -335,24 +335,19 @@ function launch_docsite(namespace, html_file, anchor)
         if anchor then
             url = url .. "#" .. anchor
         end
-        local function open_url(cmd)
-            if luaosutils then
-                if finenv.UI():IsOnWindows() then
-                    cmd = "cmd /c " .. cmd
-                end
-                print("luaosutils")
-                luaosutils.process.launch(cmd)
+        local function open_url(url)
+            if luaosutils and luaosutils.internet.launch_website then
+                luaosutils.internet.launch_website(url)
             else
-                print("os.execute")
-                os.execute(cmd)
+                if finenv.UI():IsOnWindows() then
+                    url = "start " .. url
+                else
+                    url = "open " .. url
+                end
+                os.execute(url)
             end
         end
-        if finenv.UI():IsOnWindows() then
-            open_url(string.format('start %s', url))
-        else
-            open_url(string.format('open "%s"', url))
-        end
-        
+        open_url(url)        
     end
 end
 
