@@ -4,10 +4,11 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.MinJWLuaVersion = 0.56
+    finaleplugin.LoadLuaOSUtils = true
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.2"
-    finaleplugin.Date = "January 20, 2022"
+    finaleplugin.Version = "1.3"
+    finaleplugin.Date = "March 26, 2023"
     finaleplugin.Notes = [[
         This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
         the framework classes and their methods and properties. Use the edit text boxes at the top
@@ -34,13 +35,19 @@ function plugindef()
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
-if not finenv.RetainLuaState then
-    package.path = package.path .. ";" .. finenv.RunningLuaFolderPath() .. "/xml2lua/?.lua"
-end
 
 --global variables prevent garbage collection until script terminates and releases Lua State
 
 if not finenv.RetainLuaState then
+    luaosutils = nil
+    if finenv.MajorVersion > 0 or finenv.MinorVersion >= 0.66 then
+        luaosutils = require('luaosutils')    
+    end
+    documentation_sites =
+    {
+        finale = "https://pdk.finalelua.com/",
+        tinyxml2 = "http://leethomason.github.io/tinyxml2/",
+    }
     eligible_classes = {}
     global_class_index = nil
     context = 
@@ -55,8 +62,6 @@ if not finenv.RetainLuaState then
         window_pos_x = nil,
         window_pos_y = nil
     }
-else
-    --require('mobdebug').start() -- uncomment this to debug (after creation of global_class_index because it takes forever in debugger to parse the xml)
 end
 
 global_dialog = nil
@@ -87,7 +92,7 @@ end
 function set_text(control, text)
     if not control then return end
     local fcstring = finale.FCString()
-    fcstring.LuaString = text
+    fcstring.LuaString = text or ""
     control:SetText(fcstring)
 end
 
@@ -118,7 +123,10 @@ function get_properties_methods(classname)
     local properties = {}
     local methods = {}
     local class_methods = {}
-    local classtable = _G.finale[classname]
+    local namespace = eligible_classes[classname]
+    namespace = namespace or "finale"
+    if type(namespace) ~= "string" then return nil end
+    local classtable = _G[namespace][classname]
     if type(classtable) ~= "table" then return nil end
     local class_info = global_class_index[classname]
     for k, _ in pairs(classtable.__class) do
@@ -210,7 +218,18 @@ function on_classname_changed(new_classname)
     if changing_class_name_in_progress then return end
     changing_class_name_in_progress = true
     current_class_name = new_classname
-    set_text(global_progress_label, current_class_name)
+    local name_for_display = current_class_name
+    local namespace = eligible_classes[new_classname]
+    if namespace then
+        name_for_display = namespace.."."..name_for_display
+        local classtable = _G[namespace][current_class_name]
+        if type(classtable) == "table" then
+            for k, _ in pairs(classtable.__parent) do
+                name_for_display = name_for_display.." : "..k
+            end
+        end
+    end
+    set_text(global_progress_label, name_for_display)
     local current_methods, current_properties, current_class_methods = get_properties_methods(new_classname)
     global_dialog_info[global_control_xref["properties"]].current_strings = current_properties
     global_dialog_info[global_control_xref["methods"]].current_strings = current_methods
@@ -238,12 +257,12 @@ end
 
 function hide_show_display_area(list_info, show)
     list_info.fullname_static:SetVisible(show)
-    list_info.returns_label:SetVisible(show)
-    list_info.returns_static:SetVisible(show)
+    list_info.returns_label:SetVisible(show and get_edit_text(list_info.returns_static) ~= "")
+    list_info.returns_static:SetVisible(show and get_edit_text(list_info.returns_static) ~= "")
     list_info.method_doc_button:SetVisible(show)
     if list_info.arglist_static then
-        list_info.arglist_label:SetVisible(show)
-        list_info.arglist_static:SetVisible(show)
+        list_info.arglist_label:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
+        list_info.arglist_static:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
     end
 end
 
@@ -263,13 +282,12 @@ function on_method_selection(list_control, index)
         if #method_name > 0 and list_info.current_strings then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                local is_property = nil == method_info.arglist
-                local dot = ":"
-                if is_property then dot = "." end
+                local dot = list_info.is_property and "." or ":"
                 set_text(list_info.fullname_static, method_info.class .. dot .. method_name)
-                if is_property then
+                if list_info.is_property then
                     local methods_list_info = global_dialog_info[global_control_xref["methods"]]
                     local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
+                                                    or methods_list_info.current_strings[method_name]
                     if property_getter_info then
                         set_text(list_info.returns_static, property_getter_info.returns)
                     end
@@ -277,7 +295,9 @@ function on_method_selection(list_control, index)
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
                 end
-                show = true
+                if get_edit_text(list_info.fullname_static) ~= "" then
+                    show = true
+                end
             end
         end
     end
@@ -292,9 +312,7 @@ function update_classlist()
         local search_text = get_edit_text(list_info.search_text)
         if search_text == list_info.current_search_text then return end
         list_info.current_search_text = search_text
-        if search_text == nil or search_text == "" then
-            search_text = "FC"
-        end
+        search_text = search_text or ""
         local first_string = update_list(list_info.list_box, eligible_classes, search_text)
         if finenv.UI():IsOnWindows() then
             local index = list_info.list_box:GetSelectedItem()
@@ -307,19 +325,26 @@ function update_classlist()
     end
 end
 
-pdk_framework_site = "https://pdk.finalelua.com/"
-function launch_docsite(html_file, anchor)
+function launch_docsite(namespace, html_file, anchor)
+    local doc_site = documentation_sites[namespace]
+    if type(doc_site) ~= "string" then
+        error("no documentation site provided for namespace "..tostring(namespace), 2)
+    end
     if html_file then
-        local url = pdk_framework_site .. html_file
+        local url = doc_site .. html_file
         if anchor then
             url = url .. "#" .. anchor
         end
-        if finenv.UI():IsOnWindows() then
-            os.execute(string.format('start %s', url))
+        if luaosutils and luaosutils.internet.launch_website then
+            luaosutils.internet.launch_website(url)
         else
-            os.execute(string.format('open "%s"', url))
+            if finenv.UI():IsOnWindows() then
+                url = "start " .. url
+            else
+                url = "open " .. url
+            end
+            os.execute(url)
         end
-        
     end
 end
 
@@ -331,7 +356,8 @@ function on_doc_button(button_control)
         if #method_name > 0 then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                if nil == method_info.arglist then
+                if list_info.is_property then
+                    -- ToDo: validate that getter starts with "Get"
                     method_name = "Get" .. method_name -- use property getter for properties
                 end
                 local class_info = global_class_index[method_info.class]
@@ -345,7 +371,7 @@ function on_doc_button(button_control)
                             filename = method_metadata.anchorfile
                         end
                     end
-                    launch_docsite(filename, anchor)
+                    launch_docsite(eligible_classes[current_class_name], filename, anchor)
                 end
             end
         end
@@ -355,32 +381,90 @@ end
 get_eligible_classes = function()
     set_text(global_progress_label, "Getting eligible classes from Lua state...")
     local retval = {}
-    for k, v in pairs(_G.finale) do
-        local kstr = tostring(k)
-        if kstr:find("FC") == 1  then
-            retval[kstr] = 1
-        end    
+    local function process_namespace(namespace, startswith)
+        if not _G[namespace] then return end
+        for k, v in pairs(_G[namespace]) do
+            local kstr = tostring(k)
+            if kstr:find(startswith) == 1 then
+                retval[kstr] = namespace
+            end
+        end
     end
+    process_namespace("finale", "FC")
+    process_namespace("tinyxml2", "XML")
     return retval
 end
 
-create_class_index = function()
+create_class_index_xml = function()
+    local xml = tinyxml2.XMLDocument()
+    local result = xml:LoadFile(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml")
+    if result ~= tinyxml2.XML_SUCCESS then
+        error("Unable to find jwluatagfile.xml. Is it in the same folder with this script?")
+    end
+    local class_collection = {}
+    local tagfile = tinyxml2.XMLHandle(xml):FirstChildElement("tagfile"):ToNode()
+    for compound in xmlelements(tagfile, "compound") do
+        if compound:Attribute("kind", "class") then
+            local class_info = { _attr = { kind = 'class' }, __members = {} }
+            class_info.name = compound:FirstChildElement("name"):GetText()
+            class_info.filename = compound:FirstChildElement("filename"):GetText()
+            class_info.base = compound:FirstChildElement("filename"):GetText()
+            for member in xmlelements(compound, "member") do
+                if member:Attribute("kind", "function") then
+                    local member_info = { _attr = { kind = 'function' } }
+                    member_info.type = member:FirstChildElement("type"):GetText()
+                    member_info.name = member:FirstChildElement("name"):GetText()
+                    member_info.anchorfile = member:FirstChildElement("anchorfile"):GetText()
+                    member_info.anchor = member:FirstChildElement("anchor"):GetText()
+                    member_info._attr.protection = member:Attribute("protection")
+                    member_info._attr.static = member:Attribute("static")
+                    member_info._attr.virtualness = member:Attribute("virtualness")
+                    member_info.arglist = member:FirstChildElement("arglist"):GetText()
+                    class_info.__members[member_info.name] = member_info
+                end
+            end
+            class_collection[class_info.name] = class_info
+        end
+    end
+    xml:Clear()
+    return class_collection
+end
+
+add_xml_classes_to_index = function(class_collection)
+    if tinyxml2 then
+        for k, _ in pairs(tinyxml2) do
+            kstr = tostring(k)
+            if kstr:find("XML") == 1 then
+                local class_info = { _attr = { kind = 'class' }, __members = {} }
+                class_info.name = kstr
+                class_info.filename = "classtinyxml2_1_1_x_m_l_"..kstr:sub(4):lower()..".html"
+                class_collection[class_info.name] = class_info
+                -- no hard-coded method anchors: too unreliable
+            end
+        end
+    end
+end
+
+create_class_index_str = function()
     local file, e = io.open(finenv.RunningLuaFolderPath() .. "/jwluatagfile.xml", 'r')
+    if not file then
+        error("Unable to find jwluatagfile.xml. Is it in the same folder with this script?")
+    end
     if io.type(file) ~= 'file' then
-        finenv.UI():AlertError(e, NULL)
+        finenv.UI():AlertError(e, nil)
     end
     local xml = file:read('*a')
     file:close()
     local class_collection = {}
     for class_block in string.gmatch(xml, '<compound kind=%"class%">.-</compound>') do
-        local class_info = {_attr = {kind = 'class'}, __members = {}}
+        local class_info = { _attr = { kind = 'class' }, __members = {} }
         class_info.name = string.match(class_block, '<name>(.-)</name>')
         class_info.filename = string.match(class_block, '<filename>(.-)</filename>')
         class_info.base = string.match(class_block, '<base>(.-)</base>')
         for member_block in string.gmatch(class_block, '<member.-</member>') do
             local kind = string.match(member_block, 'kind=%"(%w+)%"')
             if kind == 'function' then
-                local member_info = {_attr = {kind = 'function'}}
+                local member_info = { _attr = { kind = 'function' } }
                 member_info.type = string.match(member_block, '<type>(.-)</type>')
                 member_info.name = string.match(member_block, '<name>(.-)</name>')
                 member_info.anchorfile = string.match(member_block, '<anchorfile>(.-)</anchorfile>')
@@ -393,9 +477,6 @@ create_class_index = function()
             end
         end
         class_collection[class_info.name] = class_info
-        if finenv.UI():IsOnWindows() then
-            set_text(global_progress_label, "Indexing " .. class_info.name .. "...")
-        end
     end
     return class_collection
 end
@@ -404,7 +485,8 @@ coroutine_build_class_index = coroutine.create(function()
         if not finenv.RetainLuaState then
             eligible_classes = get_eligible_classes()
             coroutine.yield()
-            global_class_index = create_class_index()
+            global_class_index = tinyxml2 and create_class_index_xml() or create_class_index_str()
+            add_xml_classes_to_index(global_class_index)
             -- if our coroutine aborts (due to user closing the window), we will start from scratch with a new Lua state,
             -- up until we reach this statement:
             finenv.RetainLuaState = true
@@ -413,9 +495,13 @@ coroutine_build_class_index = coroutine.create(function()
 
 function on_timer(timer_id)
     if timer_id ~= global_timer_id then return end
-    if not coroutine.resume(coroutine_build_class_index) then
+    local success, errmsg = coroutine.resume(coroutine_build_class_index)
+    if coroutine.status(coroutine_build_class_index) == "dead" then
         global_timer_id = 0 -- blocks further calls to this function
         global_dialog:StopTimer(timer_id)
+        if not success then
+            error(errmsg)
+        end
         set_text(global_progress_label, "")
         update_classlist()
         if nil ~= context.classes_index then
@@ -508,6 +594,7 @@ local create_dialog = function()
             list_box = list_control,
             search_text = edit_text,
             current_search_text = nil,
+            is_property = false,
             fullname_static = nil,
             returns_label = nil,
             returns_static = nil,
@@ -528,6 +615,7 @@ local create_dialog = function()
     
     local create_display_area = function(dialog, list_info, width, is_for_properties)
         is_for_properties = is_for_properties or false
+        list_info.is_property = is_for_properties
         list_info.fullname_static = dialog:CreateStatic(x, y)
         list_info.fullname_static:SetWidth(width)
         list_info.fullname_static:SetVisible(false)
@@ -606,11 +694,6 @@ local create_dialog = function()
     dialog:RegisterInitWindow(
         function()
             global_dialog:SetTimer(global_timer_id, 1) -- timer can't be set until window is created
-            if nil ~= context.window_pos_x and nil ~= context.window_pos_y then
-                global_dialog:StorePosition()
-                global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
-                global_dialog:RestorePosition()
-            end
         end
     )
     dialog:RegisterHandleTimer(on_timer)
@@ -629,7 +712,7 @@ local create_dialog = function()
         function(control)
             local class_info = global_class_index[current_class_name]
             if class_info then
-                launch_docsite(class_info.filename)
+                launch_docsite(eligible_classes[current_class_name], class_info.filename)
             end
         end
     )
@@ -669,6 +752,12 @@ end
 local open_dialog = function()
     global_dialog = create_dialog()
     finenv.RegisterModelessDialog(global_dialog)
+    -- For some reason we need to do this here rather than in InitWindow.
+    if context.window_pos_x and context.window_pos_y then
+        global_dialog:StorePosition()
+        global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
+        global_dialog:RestorePosition()
+    end
     global_dialog:ShowModeless()
 end
 
