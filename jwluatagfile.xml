@@ -35104,6 +35104,20 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetUpStemReverse</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a697d70db8c471b73c7a0a2edbe8c4c7a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDownStemReverse</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a064160a38c3b4173cd9cea9214beac26</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetSplitStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>abff95dd1f175be8da21ef3d1ad550765</anchor>
@@ -35268,6 +35282,20 @@
       <name>GetFreezeStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
       <anchor>aa2d2754f61f2b6a6f809eb611749b3cb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUpStemReverse</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a1188c8c4da023fb56b7bc3d308987221</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetDownStemReverse</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a0b25088f7bedc89ab755017b2f4d44b6</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
