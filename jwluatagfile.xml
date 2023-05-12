@@ -35104,16 +35104,16 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetUpStemReverse</name>
+      <name>SetReverseUpStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>a697d70db8c471b73c7a0a2edbe8c4c7a</anchor>
+      <anchor>a998ed6eb47c1b2741429cd77827ea0f7</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetDownStemReverse</name>
+      <name>SetReverseDownStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>a064160a38c3b4173cd9cea9214beac26</anchor>
+      <anchor>afe916831e7637de47b6e85efdbdb6533</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -35286,16 +35286,16 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetUpStemReverse</name>
+      <name>GetReverseUpStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>a1188c8c4da023fb56b7bc3d308987221</anchor>
+      <anchor>a609212bd2ad9afae8931f3440a1bf0c3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetDownStemReverse</name>
+      <name>GetReverseDownStem</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>a0b25088f7bedc89ab755017b2f4d44b6</anchor>
+      <anchor>a57c504732734a9d06061f13ab3b72613</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
