@@ -12650,11 +12650,51 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>IsForPageView</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>ab5296fa1039f16c9af22789acba30034</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsForScrollView</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a545f9050f187b92e45e45d5c925b5268</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_bookmark.html</anchorfile>
       <anchor>a3e97205fac9abecfe2d3dafc9c0289ee</anchor>
       <arglist>() override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCBookmarks</name>
+    <filename>class_f_c_bookmarks.html</filename>
+    <base>__FCCollectionNoInciOther</base>
+    <member kind="function">
+      <type></type>
+      <name>FCBookmarks</name>
+      <anchorfile>class_f_c_bookmarks.html</anchorfile>
+      <anchor>ae4e7d1d85e8a4176108cf8c0410fc3dd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_bookmarks.html</anchorfile>
+      <anchor>a6b0b3d507f751823fb2ed0a8db73db03</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCBookmark *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_bookmarks.html</anchorfile>
+      <anchor>a8eeda32e5f3abea4ae8841c9f93050eb</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -58860,6 +58900,7 @@
     <class kind="class">FCCellClefChanges</class>
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
+    <class kind="class">FCBookmarks</class>
     <class kind="class">FCSmartShapeMeasureMarks</class>
     <class kind="class">FCSmartShapeEntryMarks</class>
     <class kind="class">FCCustomSmartLineDefs</class>
@@ -59182,6 +59223,7 @@
     <class kind="class">FCCellClefChanges</class>
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
+    <class kind="class">FCBookmarks</class>
     <class kind="class">FCParts</class>
     <class kind="class">FCLuaScriptItems</class>
   </compound>
