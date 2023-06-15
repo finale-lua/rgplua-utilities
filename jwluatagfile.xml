@@ -12468,6 +12468,215 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCBookmark</name>
+    <filename>class_f_c_bookmark.html</filename>
+    <base>__FCNoInciOther</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>BOOKMARKTYPES</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>abb6a579d5da333d002471d01e1ff6b61</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>BOOKMARKTYPE_PAGEVIEW</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>abb6a579d5da333d002471d01e1ff6b61a2d0889fea7aafe4ebcea8e9ac001db21</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>BOOKMARKTYPE_SCROLLVIEW</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>abb6a579d5da333d002471d01e1ff6b61a2e7f7e0804e48c6499f37418416c4c8f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>BOOKMARKTYPE_PAGEVIEW</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>abb6a579d5da333d002471d01e1ff6b61a2d0889fea7aafe4ebcea8e9ac001db21</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>BOOKMARKTYPE_SCROLLVIEW</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>abb6a579d5da333d002471d01e1ff6b61a2e7f7e0804e48c6499f37418416c4c8f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a73daeaad328ce8d3764c0eb97bdd79dd</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a957f185097ff90666a3d1485350a25de</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCBookmark</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a0042b919e03999dce89990702723b4b2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateNameString</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>aea40fb63115ee01704df95af7b0846c9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveNameString</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>ab5db63eb3c3f69db2d1032767d9d45da</anchor>
+      <arglist>(const FCString *pString)</arglist>
+    </member>
+    <member kind="function">
+      <type>BOOKMARKTYPES</type>
+      <name>GetViewType</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a929f96794027d80602a1fd718a501827</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ePercent</type>
+      <name>GetViewPercent</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a2fa67d6a582444ca96c4d0fe7f73dc16</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseViewPercent</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>aef0a93fba65d4f35ea633ebd1406e1f0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetLocator</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a4b5387352f4590528fdf1bb460549bf4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetHorizontalPosInst</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a38e75449dc6fdaf671486849e1c93468</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseHorizontalPosInst</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a8891cadf914781b3c72b02ee9a135465</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetVerticalPosStaffSet</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a8439f2b2265400c518f53cd72ca7d1ce</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseVerticalPosStaffSet</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>aa1c67487323011916b9ceeda75a77c70</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetViewType</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a0468b4c7d62b09a45bfb2a94d1c7daf9</anchor>
+      <arglist>(BOOKMARKTYPES value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetViewPercent</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a45b175f8f6a57b50b613b91d35ba905a</anchor>
+      <arglist>(ePercent value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseViewPercent</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>ae9f1d84e1131db763c91b1eee70ccc24</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLocator</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a552a18bc566edcf26c0731ec8f2ae61c</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHorizontalPosInst</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a90fe9a37c5ec1e31159c9001b096ebc0</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseHorizontalPosInst</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>ae277a1c6197079259a449d288c2b4ed5</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVerticalPosStaffSet</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>ae9bf52dd3e9a773213b2a9706272ad81</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseVerticalPosStaffSet</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>ad066458087e660e4d00fe097da2ee773</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DebugDump</name>
+      <anchorfile>class_f_c_bookmark.html</anchorfile>
+      <anchor>a3e97205fac9abecfe2d3dafc9c0289ee</anchor>
+      <arglist>() override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCBookmarkText</name>
+    <filename>class_f_c_bookmark_text.html</filename>
+    <base>FCRawText</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_bookmark_text.html</anchorfile>
+      <anchor>aa8092a3b50f6108b64f4b50b1be853ed</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>EXTAG</type>
+      <name>Tag</name>
+      <anchorfile>class_f_c_bookmark_text.html</anchorfile>
+      <anchor>a7356f0b44242242ddddcd1cd567d1465</anchor>
+      <arglist>() override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCBrokenBeamMod</name>
     <filename>class_f_c_broken_beam_mod.html</filename>
     <base>__FCEntryDetail</base>
@@ -58561,6 +58770,7 @@
     <class kind="class">FCFretInstrumentDef</class>
     <class kind="class">FCCellClefChange</class>
     <class kind="class">FCMetatoolAssignment</class>
+    <class kind="class">FCBookmark</class>
     <class kind="class">FCSmartShapeMeasureMark</class>
     <class kind="class">FCSmartShapeEntryMark</class>
     <class kind="class">FCSmartShape</class>
@@ -58847,6 +59057,7 @@
     <class kind="class">FCCellClefChange</class>
     <class kind="class">FCGuide</class>
     <class kind="class">FCMetatoolAssignment</class>
+    <class kind="class">FCBookmark</class>
     <class kind="class">FCStaffSystemsLookup</class>
     <class kind="class">FCPart</class>
     <class kind="class">FCPartStaffVoicing</class>
