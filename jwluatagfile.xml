@@ -9679,6 +9679,13 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
+      <name>OSMenuCommandExecuted</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a0eb14d6fbfc5a939f31a1ea2ca0d9ea1</anchor>
+      <arglist>(EMENUID menuCommand)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>CloseButtonPressed</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a465a2939c1f15b254269e990b59e7020</anchor>
@@ -18091,6 +18098,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterOSMenuCommandExecuted</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a7f941e207cd7e4397c7f30adfd21fb43</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>HandleControlEvent</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a06ea38dd1b4c631219e1c06c320eb65e</anchor>
@@ -18172,6 +18186,13 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a7f5dc109ea48dd88f6ce2bf94def3d8f</anchor>
       <arglist>(bool isDarkMode) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>OSMenuCommandExecuted</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ae12b02735c262794722e7fc826c912a5</anchor>
+      <arglist>(EMENUID menuCommand) override</arglist>
     </member>
   </compound>
   <compound kind="class">
