@@ -9431,15 +9431,15 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
-      <name>MENUCMD_MENU_SELECTION</name>
+      <name>MENUCMDTYPE_SELECTION</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a61f9a0867484da5aadd4edaa8af0df14</anchor>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a75efccf4c69bb04ffaa2b8bf1d412edf</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
-      <name>MENUCMD_ACCELERATOR_KEY</name>
+      <name>MENUCMDTYPE_ACCELERATOR</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a9a171dc853e96baf43ad19fb58d98381</anchor>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a254296e881047929a424332df899f42e</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -9473,15 +9473,15 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
-      <name>MENUCMD_MENU_SELECTION</name>
+      <name>MENUCMDTYPE_SELECTION</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a61f9a0867484da5aadd4edaa8af0df14</anchor>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a75efccf4c69bb04ffaa2b8bf1d412edf</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
-      <name>MENUCMD_ACCELERATOR_KEY</name>
+      <name>MENUCMDTYPE_ACCELERATOR</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a9a171dc853e96baf43ad19fb58d98381</anchor>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a254296e881047929a424332df899f42e</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
