@@ -9423,6 +9423,25 @@
       <anchor>af07ed05132bac987ff3acab63a001e47ab84767045658b4788f39fd87c73bdaa9</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>MENU_COMMAND_TYPES</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>MENUCMD_MENU_SELECTION</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a61f9a0867484da5aadd4edaa8af0df14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>MENUCMD_ACCELERATOR_KEY</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a9a171dc853e96baf43ad19fb58d98381</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumvalue">
       <name>CMDMODKEY_SHIFT</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -9451,6 +9470,18 @@
       <name>CMDMODKEY_FUNCTION</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>af07ed05132bac987ff3acab63a001e47ab84767045658b4788f39fd87c73bdaa9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>MENUCMD_MENU_SELECTION</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a61f9a0867484da5aadd4edaa8af0df14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>MENUCMD_ACCELERATOR_KEY</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a92e80ad5ed72d3f4376c9ad9ceec19b9a9a171dc853e96baf43ad19fb58d98381</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -9681,8 +9712,8 @@
       <type>virtual void</type>
       <name>OSMenuCommandExecuted</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a0eb14d6fbfc5a939f31a1ea2ca0d9ea1</anchor>
-      <arglist>(EMENUID menuCommand)</arglist>
+      <anchor>a8077e384efaa9d56633ae9235a8fda32</anchor>
+      <arglist>(EMENUID menuCommand, int menuCommandType)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -18191,8 +18222,8 @@
       <type>void</type>
       <name>OSMenuCommandExecuted</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>ae12b02735c262794722e7fc826c912a5</anchor>
-      <arglist>(EMENUID menuCommand) override</arglist>
+      <anchor>aacc4b3823a52f731c5b0a1808d4647ce</anchor>
+      <arglist>(EMENUID menuCommand, int menuCommandType) override</arglist>
     </member>
   </compound>
   <compound kind="class">
