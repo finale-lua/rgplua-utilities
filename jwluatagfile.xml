@@ -47967,6 +47967,13 @@
       <arglist>(bool rightside)</arglist>
     </member>
     <member kind="function">
+      <type>TimeEdu32</type>
+      <name>CalcMeasurePos</name>
+      <anchorfile>class_f_c_smart_shape_segment.html</anchorfile>
+      <anchor>a0daa073c3fea6cd43aaf4567d6a2f89f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_smart_shape_segment.html</anchorfile>
