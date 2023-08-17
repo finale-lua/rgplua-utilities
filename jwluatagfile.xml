@@ -28941,6 +28941,20 @@
       <anchor>ad1e00914516f0c6e3d8689be72e320ed</anchor>
       <arglist>(bool value)</arglist>
     </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateNumberString</name>
+      <anchorfile>class_f_c_measure.html</anchorfile>
+      <anchor>af00497366053e2fda3d2a585ec9aa28f</anchor>
+      <arglist>(bool showAllRepeatPasses=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateNumberStringUnqualified</name>
+      <anchorfile>class_f_c_measure.html</anchorfile>
+      <anchor>a9f89a0304191eabd4a0986a1e6b8746f</anchor>
+      <arglist>(bool showAllRepeatPasses=false)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCMeasureNumberRegion</name>
