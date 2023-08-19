@@ -36591,6 +36591,13 @@
       <arglist>(int index, FCMusicRegion *pRegion)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>ReduceEntries</name>
+      <anchorfile>class_f_c_note_entry_cell.html</anchorfile>
+      <anchor>a968142ef0fab728ab794ac4214faa5ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>int</type>
       <name>GetLoadLayerMode</name>
       <anchorfile>class_f_c_note_entry_cell.html</anchorfile>
