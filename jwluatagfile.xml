@@ -13952,6 +13952,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCKeySignature *</type>
+      <name>CreateVisibleKeySignature</name>
+      <anchorfile>class_f_c_cell.html</anchorfile>
+      <anchor>ac9e3a33bd99ce172e28223b3a84b6c5a</anchor>
+      <arglist>(bool concertpitch=false) const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>HasIndependentTimeSig</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
