@@ -13953,9 +13953,9 @@
     </member>
     <member kind="function">
       <type>FCKeySignature *</type>
-      <name>CreateVisibleKeySignature</name>
+      <name>CreateCurrentVisibleKeySignature</name>
       <anchorfile>class_f_c_cell.html</anchorfile>
-      <anchor>ac9e3a33bd99ce172e28223b3a84b6c5a</anchor>
+      <anchor>a6fbdcdcb00690c3ddcf268c0bdf54eb1</anchor>
       <arglist>(bool concertpitch=false) const</arglist>
     </member>
     <member kind="function">
