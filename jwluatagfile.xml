@@ -33917,15 +33917,15 @@
       <type>bool</type>
       <name>IsStaffIncluded</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>a250558241c1bc28ca09e7af2e261e193</anchor>
-      <arglist>(twobyte staffnumber)</arglist>
+      <anchor>a37875072a4e1f3d0ee48262b3f719d62</anchor>
+      <arglist>(twobyte staffnumber) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsSlotIncluded</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>a6cf72ed5d6b0e20b49714a8abce72426</anchor>
-      <arglist>(twobyte slotnumber)</arglist>
+      <anchor>a2706910ddbb821cec5df0d8a77a5fad3</anchor>
+      <arglist>(twobyte slotnumber) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -34204,8 +34204,8 @@
       <type>twobyte</type>
       <name>CalcSlotNumber</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>aab63b44742eb4db7bb98c93510bca67d</anchor>
-      <arglist>(twobyte staff)</arglist>
+      <anchor>a56bec94a3dea165343ebaf372566c5fc</anchor>
+      <arglist>(twobyte staff) const</arglist>
     </member>
     <member kind="function">
       <type>TimeEdu32</type>
@@ -34332,6 +34332,20 @@
       <anchorfile>class_f_c_music_region.html</anchorfile>
       <anchor>ac60e2e8a33221b9da272c4e4949c65aa</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Playback</name>
+      <anchorfile>class_f_c_music_region.html</anchorfile>
+      <anchor>acae742fc106edf91dd9ab3acbffe3a53</anchor>
+      <arglist>(bool playtoend=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>PlaybackSingleStaff</name>
+      <anchorfile>class_f_c_music_region.html</anchorfile>
+      <anchor>abe6efe31a193a41de51f00587cc539f0</anchor>
+      <arglist>(eStaff staffnum, bool playtoend=false) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -52058,6 +52072,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>LoadTemporaryInstrumentList</name>
+      <anchorfile>class_f_c_system_staves.html</anchorfile>
+      <anchor>a0762eb2747950d253702d065078f1b98</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>LoadStaffSet</name>
       <anchorfile>class_f_c_system_staves.html</anchorfile>
       <anchor>a994e7fb5d607e62859dab42c354450fb</anchor>
@@ -52067,8 +52088,15 @@
       <type>int</type>
       <name>LoadAllForRegion</name>
       <anchorfile>class_f_c_system_staves.html</anchorfile>
-      <anchor>a2005805c9012128278f83ab2516baabe</anchor>
-      <arglist>(FCMusicRegion *pRegion)</arglist>
+      <anchor>ace9dd9ce1bb2d89c4dad6e4f9818aada</anchor>
+      <arglist>(const FCMusicRegion *pRegion)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveToTemporaryInstrumentList</name>
+      <anchorfile>class_f_c_system_staves.html</anchorfile>
+      <anchor>aeedf0bd7d776f18fea50917e479c0745</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -52076,6 +52104,13 @@
       <anchorfile>class_f_c_system_staves.html</anchorfile>
       <anchor>ab0e09aacf5b30ecd65d349014d5a3949</anchor>
       <arglist>(FCSystemStaves *pOtherSystemStaves)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCMusicRegion *</type>
+      <name>CreateMusicRegion</name>
+      <anchorfile>class_f_c_system_staves.html</anchorfile>
+      <anchor>abaf1ee42ce8638639bcf633370f06290</anchor>
+      <arglist>(bool forwholedocument=false)</arglist>
     </member>
   </compound>
   <compound kind="class">
