@@ -9499,6 +9499,13 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type>FCUI *</type>
+      <name>CreateChildUI</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a6cefd9a5e0581d2501ce05a77289317e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetPointsMeasurement</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -26807,6 +26814,74 @@
       <anchorfile>class_f_c_layer_prefs.html</anchorfile>
       <anchor>a254deed4c1418808e6ca1a944c36ddfd</anchor>
       <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCListenToMidiResult</name>
+    <filename>class_f_c_listen_to_midi_result.html</filename>
+    <base protection="private">__FCBase</base>
+    <member kind="function">
+      <type></type>
+      <name>FCListenToMidiResult</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>ac9476e904d048be706fd2980f350cb87</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type>eMidiChannel</type>
+      <name>GetMidiChannel</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>a8141a4e49222be2967070e7c318a5ed1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMidiChannel</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>a540579e3ac22d98dc9c10401d779eb89</anchor>
+      <arglist>(eMidiChannel value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetStatus</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>aeecb1976941d7d64cd6f872bad7f7fa5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStatus</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>aa0273e33c687239f614c658dd10300c2</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetData1</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>ac5e98ea658e11d5c523012f3cd98dab5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetData1</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>aa24d766e369db64fd2290bfd5e0230fd</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetData2</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>aecd70aeacf013391129f184c6b97f5db</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetData2</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>afd5d9fb04ac0a2ffb07e87d820fbb881</anchor>
+      <arglist>(int value)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -58705,6 +58780,13 @@
       <anchorfile>class_f_c_u_i.html</anchorfile>
       <anchor>a37302a54705ad30e2cf8ea5fe4cfe813</anchor>
       <arglist>(FCFontInfo *pFontInfo, eUniChar32 symbolinit=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DisplayListenToMidiDialog</name>
+      <anchorfile>class_f_c_u_i.html</anchorfile>
+      <anchor>acf997b466be7d1d8592b8bbd9f2db9c7</anchor>
+      <arglist>(FCListenToMidiResult *result)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
