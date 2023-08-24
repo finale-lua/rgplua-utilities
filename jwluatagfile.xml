@@ -26151,13 +26151,6 @@
       <anchor>aa437e87dec779ab209570b4dc7266ea1</anchor>
       <arglist>()</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~FCInstrumentPlaybackData</name>
-      <anchorfile>class_f_c_instrument_playback_data.html</anchorfile>
-      <anchor>af1c14b16fd5aa04c4469e7c7c9913061</anchor>
-      <arglist>()</arglist>
-    </member>
     <member kind="function">
       <type>FCLayerPlaybackData *</type>
       <name>GetChordLayerData</name>
