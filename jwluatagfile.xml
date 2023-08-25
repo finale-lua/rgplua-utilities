@@ -41859,6 +41859,27 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetSyncReceiveMidi</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ab0bc722c4a9d1f341543f12005c776d7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSyncChasePatches</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a8075b45f3c682d16826d866020daea29</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSyncChaseContinuousData</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a2f10cb17190907623f96e7e0a546ac54</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetScrollingPlayback</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a85b13e9a24940784d94b9189cf609ce0</anchor>
@@ -41967,6 +41988,27 @@
       <name>SetSendPatchesToMidi</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a5719451380114b56661fcc9eb8335e4c</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSyncReceiveMidi</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>acd33deca32b47af96557da1ab02b066c</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSyncChasePatches</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aed76477f087b388e865afe8c5a6dbf07</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSyncChaseContinuousData</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ae919bb8904afaa0afd74c9149163e980</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
