@@ -41760,9 +41760,51 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetPlayNoteDurations</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a0e9aaf1b8d0619b412e549b8f21f3032</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetPlayKeyVelocities</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aea6b7ff5a14c7a20d0af1bf7e7ed89c0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetPlayContinuousData</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a3d98bcb62b2f75d7b0ee31e9b849a647</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetPlayTempoChanges</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ae222aa455a40a092a3fca99d3e249f7b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetResetRepeats</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ac7f52de6d5a0d19546ecc5434f88e0db</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetSendPatchesToMidi</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a9478c57185365d58704ebb9a21e1d4f5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetScrollingPlayback</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a85b13e9a24940784d94b9189cf609ce0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -41813,6 +41855,55 @@
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>ac7a99d4c7f3271302c5798b8a9e7e88f</anchor>
       <arglist>(PLAYBACKSTARTMODE mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPlayNoteDurations</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a6adb5161c750d4ab19bbf06622eda616</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPlayKeyVelocities</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aaa4f4030a7ca14b7f62b4105f2d08f1e</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPlayContinuousData</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a65b45697857681bdc599c10f1f52baa1</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPlayTempoChanges</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a92f681abcb55a9345adeb302635870dd</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetResetRepeats</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ad3c6bff6bd66a09bf699214ca5355bd3</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSendPatchesToMidi</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5719451380114b56661fcc9eb8335e4c</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetScrollingPlayback</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a8c3a08da73b627cbb36aea478b844d7a</anchor>
+      <arglist>(bool state)</arglist>
     </member>
   </compound>
   <compound kind="class">
