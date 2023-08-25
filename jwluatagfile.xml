@@ -41788,9 +41788,16 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetResetRepeats</name>
+      <name>GetRepeatsIgnore</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>ac7f52de6d5a0d19546ecc5434f88e0db</anchor>
+      <anchor>aa9e57298f548fe0b0c2aa0be16131ed1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRepeatsReset</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a8364142245825a61e69dc60242463795</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -41886,9 +41893,16 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetResetRepeats</name>
+      <name>SetRepeatsIgnore</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>ad3c6bff6bd66a09bf699214ca5355bd3</anchor>
+      <anchor>a006089759935cd90120ac7e143cc0941</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRepeatsReset</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aafc1c9688cd99b1c24ff2f91ae2703cf</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
