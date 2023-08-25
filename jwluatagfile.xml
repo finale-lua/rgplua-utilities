@@ -41670,6 +41670,31 @@
       <anchor>a791647afa928b19e8652c0785b2233d8a48c2a3cfba41b7fc5c75a808a37c8247</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>PLAYBACKEXPSMODE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLAYBACKEXPS_CHASE_FROM_ONE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23a53f8aca57e7dd6a9384ec5f1bfee1ca3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLAYBACKEXPS_RESET</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23a0583ef601f82a0533630b2b2d82ddb9c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLAYBACKEXPS_USECURRENT</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23ac39dc1d3ffaf22221ada160f2e78e85c</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumvalue">
       <name>PLAYBACKSTART_MEASURE</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
@@ -41686,6 +41711,24 @@
       <name>PLAYBACKSTART_CURRENTCOUNTER</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a791647afa928b19e8652c0785b2233d8a48c2a3cfba41b7fc5c75a808a37c8247</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLAYBACKEXPS_CHASE_FROM_ONE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23a53f8aca57e7dd6a9384ec5f1bfee1ca3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLAYBACKEXPS_RESET</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23a0583ef601f82a0533630b2b2d82ddb9c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PLAYBACKEXPS_USECURRENT</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa1a7c97d2e0c5e882640435e73eb5a23ac39dc1d3ffaf22221ada160f2e78e85c</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -41756,6 +41799,13 @@
       <name>GetStartMode</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a64531f9c9477439fa1b3bfa887a69397</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>PLAYBACKEXPSMODE</type>
+      <name>GetExpressionsMode</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a08b95e810bd2b70dc9e03709887ae67c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -41862,6 +41912,13 @@
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>ac7a99d4c7f3271302c5798b8a9e7e88f</anchor>
       <arglist>(PLAYBACKSTARTMODE mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExpressionsMode</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>af378543f7fbb92465c68190acb5b399b</anchor>
+      <arglist>(PLAYBACKEXPSMODE mode)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
