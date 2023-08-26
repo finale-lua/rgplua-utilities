@@ -41695,6 +41695,43 @@
       <anchor>aa1a7c97d2e0c5e882640435e73eb5a23ac39dc1d3ffaf22221ada160f2e78e85c</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>SMPTEFRAMERATE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_24</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a9859e11c41d9a308dd88144edf21db9d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_25</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a4f2c7d2cc038618d0281e19f55ebc034</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_2997_DROP</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a08b8ab38b4da48f3879bf768b75c4ed9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_30</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4ab9c273c3adf196c6de3b045850744f35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_2997_NONDROP</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a7fe43d3a8845905b6a97a446a644ff02</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumvalue">
       <name>PLAYBACKSTART_MEASURE</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
@@ -41729,6 +41766,36 @@
       <name>PLAYBACKEXPS_USECURRENT</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>aa1a7c97d2e0c5e882640435e73eb5a23ac39dc1d3ffaf22221ada160f2e78e85c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_24</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a9859e11c41d9a308dd88144edf21db9d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_25</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a4f2c7d2cc038618d0281e19f55ebc034</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_2997_DROP</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a08b8ab38b4da48f3879bf768b75c4ed9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_30</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4ab9c273c3adf196c6de3b045850744f35</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SMPTETIMETYPE_2997_NONDROP</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a7fe43d3a8845905b6a97a446a644ff02</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -41879,6 +41946,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>SMPTEFRAMERATE</type>
+      <name>GetSMPTEFrameRate</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a9d3c17b3a2bade184317bf4c7d41b167</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>TimeRtu32</type>
+      <name>GetSMPTEStartTime</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a9b7c5659de5469b44d3fd07a13f88ab8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetScrollingPlayback</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
@@ -42010,6 +42091,20 @@
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>ae919bb8904afaa0afd74c9149163e980</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSMPTEFrameRate</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4032cee1090e55ab1fc822d0ace427db</anchor>
+      <arglist>(SMPTEFRAMERATE mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSMPTEStartTime</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aae19c8d8865bd416cb909535a97a14ad</anchor>
+      <arglist>(TimeRtu32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
