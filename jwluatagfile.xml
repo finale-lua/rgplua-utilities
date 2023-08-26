@@ -41855,10 +41855,24 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>TimeEdu32</type>
+      <name>GetStartMeasurePos</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a02b33974c5c95551ca7f50eaf60f1f9d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>eMeas</type>
       <name>GetStopMeasure</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>ac7af6b390ac53d517d898ed857f1e27d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>TimeEdu32</type>
+      <name>GetStopMeasurePos</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a51aa84d3b5753daf9bcccdb1c6d98793</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42003,10 +42017,38 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetStartMeasurePos</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a83baaaa7a4531e85bb379929867dc9f2</anchor>
+      <arglist>(TimeEdu32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetStopMeasure</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a367785ce26f17b5ceca8b6fd0c53f424</anchor>
       <arglist>(eMeas measure)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStopMeasurePos</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ac5cb4fba719880e6d2174ef040daffc2</anchor>
+      <arglist>(TimeEdu32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConfigurePlaybackToEnd</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>adafd7ce5b2cf7a21076e26368bb841a3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ConfigurePlaybackToRegion</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a0ae3db8a1fe57ba36624b93fccd9a204</anchor>
+      <arglist>(const FCMusicRegion *pRegion, bool startOnly=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
