@@ -42045,6 +42045,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>ConfigurePlaybackToDocument</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa8bf410373c7ce05c1a6ea100296e893</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>ConfigurePlaybackToRegion</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a0ae3db8a1fe57ba36624b93fccd9a204</anchor>
