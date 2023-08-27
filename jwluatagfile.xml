@@ -42073,16 +42073,16 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>ConfigurePlaybackToDocument</name>
+      <name>ConfigurePlaybackDocument</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>aa8bf410373c7ce05c1a6ea100296e893</anchor>
+      <anchor>a0225a4e061af97265d7de6d031ac014c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>ConfigurePlaybackToRegion</name>
+      <name>ConfigurePlaybackRegion</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>a0ae3db8a1fe57ba36624b93fccd9a204</anchor>
+      <anchor>a38872c985dfe7267e799284446322459</anchor>
       <arglist>(const FCMusicRegion *pRegion, bool startOnly=false)</arglist>
     </member>
     <member kind="function">
