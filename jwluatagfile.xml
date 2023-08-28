@@ -41732,6 +41732,31 @@
       <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a7fe43d3a8845905b6a97a446a644ff02</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>METSOUNDSOURCE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>METSOURCE_FINALECLICK</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9da2f941cd5e0c130a9fd13fca02b4c761c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>METSOURCE_MIDINOTE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9da51b3eafbd2ae18453f5ced9c497184f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>METSOURCE_MIDIDATA</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9da0fdd888a37bbcb299ce926868c0a8283</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumvalue">
       <name>PLAYBACKSTART_MEASURE</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
@@ -41796,6 +41821,24 @@
       <name>SMPTETIMETYPE_2997_NONDROP</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a5cee0dc4cc7a2e1a5f6ca356e94ba4c4a7fe43d3a8845905b6a97a446a644ff02</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>METSOURCE_FINALECLICK</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9da2f941cd5e0c130a9fd13fca02b4c761c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>METSOURCE_MIDINOTE</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9da51b3eafbd2ae18453f5ced9c497184f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>METSOURCE_MIDIDATA</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a4410055563075c37cb2cad321e2f7c9da0fdd888a37bbcb299ce926868c0a8283</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -41985,6 +42028,48 @@
       <name>GetSMPTEStartTime</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a9b7c5659de5469b44d3fd07a13f88ab8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetCountOffMeasures</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a1658139caadb86980262da53de1fa308</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetCountOffWhenRecording</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a853a3065c89183be0b861bd6244131cd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetCountOffWhenPlaying</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aed500b3a81ed1c3451cc269208635f96</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetClickWhenRecording</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a1e8817065585292b64f11acd8bb63fdd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetClickWhenPlaying</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>abbf4862dc7162ad232431b7e8fdb930b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>METSOUNDSOURCE</type>
+      <name>GetMetronomeSoundSource</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a1481dd2c86d9d1134c40f69a01db77a2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42182,6 +42267,48 @@
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>aae19c8d8865bd416cb909535a97a14ad</anchor>
       <arglist>(TimeRtu32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCountOffMeasures</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a81f6a88818c733ff1b791f7f0f9ccf3a</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCountOffWhenRecording</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ae0cdcb96f503c43f693dade1ef28739d</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetCountOffWhenPlaying</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa0e69be06744b3f7133918611c8b85dc</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetClickWhenRecording</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ad92c15ef7459ddff378c96af2ce065c5</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetClickWhenPlaying</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a10dd5fc4cef59ace0e8b72b8c86fbde2</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMetronomeSoundSource</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>ad23d538cade9788273ffb6ab0a38f951</anchor>
+      <arglist>(METSOUNDSOURCE value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
