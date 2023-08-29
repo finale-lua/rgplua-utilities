@@ -25771,6 +25771,88 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCHyperClick</name>
+    <filename>class_f_c_hyper_click.html</filename>
+    <base protection="private">__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>a6418388fa2c1b18ce25b39100d2723b1</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetVirtualChannel</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>ac9fbd3cc962c1085a555431321075005</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVirtualChannel</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>ad3b56ce72d13b8756467d0e890361c2a</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetDuration</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>ad031233bace69df87194e001ca94a959</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDuration</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>aeaa2169fe49f14c35928965bf7564b83</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetMidiStatus</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>a2b44b2750f62e7724c3c34e39de43463</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMidiStatus</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>a24565078f6ab22e62b9dd45a67eca633</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetMidiData1</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>ad235385317dd63374f13655f5cb91607</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMidiData1</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>a8775ee328b5bcd7bf1158b994e8ecabf</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetMidiData2</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>a0cf7af502424f9d3e6562560b06af2da</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMidiData2</name>
+      <anchorfile>class_f_c_hyper_click.html</anchorfile>
+      <anchor>af201a17000045402f0024508dcb4d7d9</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCIndependentCellDetail</name>
     <filename>class_f_c_independent_cell_detail.html</filename>
     <base>__FCNoInciCellDetail</base>
@@ -26827,6 +26909,13 @@
     <name>FCListenToMidiResult</name>
     <filename>class_f_c_listen_to_midi_result.html</filename>
     <base protection="private">__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_listen_to_midi_result.html</anchorfile>
+      <anchor>a70cc5471605cd45ad144737373b613ec</anchor>
+      <arglist>() const override</arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>FCListenToMidiResult</name>
@@ -42091,6 +42180,34 @@
       <name>GetScrollingPlayback</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a85b13e9a24940784d94b9189cf609ce0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCHyperClick *</type>
+      <name>GetClickInfoForMidiNotesOnDownBeats</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>a57b5baa22b637a510f762ffe8e9a8d3a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCHyperClick *</type>
+      <name>GetClickInfoForMidiNotesOnOtherBeats</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aa778df201efb9a59879fefbebce93a59</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCHyperClick *</type>
+      <name>GetClickInfoForMidiDataOnDownBeats</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>abb6e735451120565d7f751f105399244</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCHyperClick *</type>
+      <name>GetClickInfoForMidiDataOnOtherBeats</name>
+      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
+      <anchor>aaf6f336fcf8cc4694a563d1f0d942983</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -59818,6 +59935,8 @@
     <class kind="class">FCPartStaffVoicing</class>
     <class kind="class">FCPDFPage</class>
     <class kind="class">FCPDFWriter</class>
+    <class kind="class">FCListenToMidiResult</class>
+    <class kind="class">FCHyperClick</class>
     <class kind="class">__FCPrefsBase</class>
     <class kind="class">FCPlaybackPrefs</class>
     <class kind="class">FCDistancePrefs</class>
