@@ -2413,6 +2413,20 @@
       <anchor>ad36db2829fbcd56ef34673248db80dca</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>__FCPrefsBase</name>
+      <anchorfile>class_____f_c_prefs_base.html</anchorfile>
+      <anchor>a1d5f274cc404a612b93e515731dd4677</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>__FCPrefsBase</name>
+      <anchorfile>class_____f_c_prefs_base.html</anchorfile>
+      <anchor>a5c9072eb7409d79ce054c0ce5491eb43</anchor>
+      <arglist>(bool use26)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>__FCStaffBase</name>
