@@ -18073,6 +18073,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>ShowModelessWithGrabbyFocus</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a726de8e45417d82413175d97aa9439b7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleCommand</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>add0856d52b9ecf89a63826b3754034ee</anchor>
