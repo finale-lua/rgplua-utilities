@@ -17210,6 +17210,25 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCtrlEditText</name>
+    <filename>class_f_c_ctrl_edit_text.html</filename>
+    <base>FCControl</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a62806faea7474de85d63142ae569b761</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlEditText</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a28f3b1c005828de6589d2a142425044e</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCtrlImage</name>
     <filename>class_f_c_ctrl_image.html</filename>
     <base>FCControl</base>
@@ -18808,6 +18827,13 @@
       <name>CreateEdit</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
       <anchor>a71ac6220339c58e4498fcd3969ccdc99</anchor>
+      <arglist>(float x, float y)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCtrlEditText *</type>
+      <name>CreateEditText</name>
+      <anchorfile>class_f_c_custom_window.html</anchorfile>
+      <anchor>ae102364f16ea898038d76478b9b30009</anchor>
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
@@ -43636,6 +43662,13 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
+      <type>FCCtrlEditText *</type>
+      <name>AddEditText</name>
+      <anchorfile>class_f_c_resource_window.html</anchorfile>
+      <anchor>a428958bdeefec84798cdd73fb2edfde5</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
       <type>FCCtrlPopup *</type>
       <name>AddPopup</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
@@ -59831,6 +59864,7 @@
     <class kind="class">FCCtrlEdit</class>
     <class kind="class">FCCtrlPopup</class>
     <class kind="class">FCCtrlComboBox</class>
+    <class kind="class">FCCtrlEditText</class>
     <class kind="class">FCDataListRow</class>
     <class kind="class">FCCtrlDataList</class>
     <class kind="class">FCCtrlListBox</class>
