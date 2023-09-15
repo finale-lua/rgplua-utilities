@@ -9759,6 +9759,13 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
+      <name>HandleTextSelectionChanged</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>ac1a691f8616137cbe611f1293f172f21</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>HandleSwitcherSelect</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a57f2d0f4e70c0e7673c5066a71501375</anchor>
@@ -17227,6 +17234,20 @@
       <anchor>a28f3b1c005828de6589d2a142425044e</anchor>
       <arglist>(twobyte id)</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSelectedText</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>af4bf80f39ebcc83970b45ca53efb9ce8</anchor>
+      <arglist>(FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ReplaceSelectedText</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a29b0b1a2f431914ff94ccf4c592a81e4</anchor>
+      <arglist>(const FCString *pText)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlImage</name>
@@ -18106,6 +18127,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterHandleTextSelectionChanged</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ac7d1bebcc5153b77fe2bc44cd08fd0ae</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleUpDownPressed</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>acdf33efe695e6699dcedce3987362af5</anchor>
@@ -18193,6 +18221,13 @@
       <name>HandleCommand</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>ab1cb54662cbdec351cae106e5a3a480f</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HandleTextSelectionChanged</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>aa4a6a1c771d4021de6901f8679db8687</anchor>
       <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
