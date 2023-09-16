@@ -17276,6 +17276,13 @@
       <anchor>a8ec69739fc1698a70f954cd86828e796</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTabstopWidth</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a99cbf76ef658c5d3c2526c12e89f0726</anchor>
+      <arglist>(int value)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlImage</name>
