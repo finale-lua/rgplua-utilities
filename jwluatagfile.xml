@@ -16388,15 +16388,15 @@
       <type>bool</type>
       <name>WindowExists</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>abaf474fa24351ac10193d26760510ef7</anchor>
-      <arglist>()</arglist>
+      <anchor>a5d464b0bc95befd4c2089d0c3183a26c</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>HWND</type>
       <name>_GetWinControlHandle</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>aa386f5ff47c4ef4fdb23a17117a21bcd</anchor>
-      <arglist>()</arglist>
+      <anchor>aeb915adc5498921403e41348d8285958</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -16409,22 +16409,22 @@
       <type>int</type>
       <name>GetControlID</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a6f7c1819972984a1ec0027e591dad0a7</anchor>
-      <arglist>()</arglist>
+      <anchor>a1424f08f1631ddb03ad2c5f916176145</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetAssignedID</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a512eab022c7766a25b4f1702b6accec3</anchor>
-      <arglist>()</arglist>
+      <anchor>a57db8a7019d69b3c2aef744f4863d9b5</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>CONTROL_ACTIONS</type>
       <name>GetAction</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a73edd87514533a5d8b81fd8cc3e1c8ef</anchor>
-      <arglist>()</arglist>
+      <anchor>a4c875764a12e76c5cc113ac17183396c</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17235,6 +17235,13 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>SetParent</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a95bf9b90ade8f4db4566351a463979f3</anchor>
+      <arglist>(__FCUserWindow *parentptr) override</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetSelectedText</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
@@ -17247,6 +17254,27 @@
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>a29b0b1a2f431914ff94ccf4c592a81e4</anchor>
       <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>InsertTextAtCursor</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a885bea7dfd50b4be3a614dd15968548a</anchor>
+      <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetReadOnly</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>aa843ca699d4e2f401fad24cd6a785f0f</anchor>
+      <arglist>(bool readonly)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetReadOnly</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a8ec69739fc1698a70f954cd86828e796</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
