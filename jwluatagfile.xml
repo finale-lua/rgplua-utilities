@@ -17284,6 +17284,13 @@
       <arglist>(bool wordwrap)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetWordWrap</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a348b8b36239d03b77c2b745e02d92807</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetTabstopWidth</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
