@@ -17278,6 +17278,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetWordWrap</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a667371f5a5365af6e66bba77225523d9</anchor>
+      <arglist>(bool wordwrap)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTabstopWidth</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>a99cbf76ef658c5d3c2526c12e89f0726</anchor>
