@@ -16461,15 +16461,15 @@
       <anchor>ad340219136406d00c2e1abeffc683cdd</anchor>
       <arglist>(bool state)</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>SetFont</name>
       <anchorfile>class_f_c_control.html</anchorfile>
       <anchor>ab89944f4d291e1e3d05d323075e3d85f</anchor>
       <arglist>(const FCFontInfo *fontInfo)</arglist>
     </member>
-    <member kind="function">
-      <type>FCFontInfo *</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual FCFontInfo *</type>
       <name>CreateFontInfo</name>
       <anchorfile>class_f_c_control.html</anchorfile>
       <anchor>ab4416c3412de41e5c489769eeefa303a</anchor>
@@ -17294,8 +17294,22 @@
       <type>void</type>
       <name>SetTabstopWidth</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a99cbf76ef658c5d3c2526c12e89f0726</anchor>
-      <arglist>(int value)</arglist>
+      <anchor>a60c5edc299b7bc732ec0cb97231be4d9</anchor>
+      <arglist>(double value)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>SetFont</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a96eab963a3202d28ba693db84c5b9734</anchor>
+      <arglist>(const FCFontInfo *fontInfo) override</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>FCFontInfo *</type>
+      <name>CreateFontInfo</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a3ce4542def34a39164539db919c29a68</anchor>
+      <arglist>() override</arglist>
     </member>
   </compound>
   <compound kind="class">
