@@ -42378,13 +42378,6 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetStartRepeatPass</name>
-      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>a741f7d9f6434b248087828a097babd7c</anchor>
-      <arglist>(int value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
       <name>SetStopMeasure</name>
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>a367785ce26f17b5ceca8b6fd0c53f424</anchor>
@@ -42396,13 +42389,6 @@
       <anchorfile>class_f_c_playback_prefs.html</anchorfile>
       <anchor>ac5cb4fba719880e6d2174ef040daffc2</anchor>
       <arglist>(TimeEdu32 value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetStopRepeatPass</name>
-      <anchorfile>class_f_c_playback_prefs.html</anchorfile>
-      <anchor>ab213488fe8c92396a8168d6b3456e540</anchor>
-      <arglist>(int value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
