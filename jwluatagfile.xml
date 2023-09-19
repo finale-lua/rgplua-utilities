@@ -21981,6 +21981,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FCFontInfo</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>adf69432afb53e025168e6a8b75249dd6</anchor>
+      <arglist>(const FCString &amp;name, float size)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>CopyFrom</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
@@ -22124,8 +22131,8 @@
       <type>void</type>
       <name>SetNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a655d49e3b5382cbd0f0a5aa7e25903eb</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a3beee4aa5fabcd88958e504287850dca</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -54470,101 +54477,101 @@
       <arglist>(FCTextMetrics *pTextMetrics)</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetAdvanceWidthPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>ad3ae94204f44ba84bd46d3ee2cd7f024</anchor>
+      <anchor>a3256f30eb7bec0c5ba4d513b73ae99ff</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetLeftPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a1f6f0a1a7b0681c66eb2c3e4835cf043</anchor>
+      <anchor>a32789d83f80cdc0191b45e3191c53667</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetRightPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a1f315bc87f917a593a89b92b2d2a5d62</anchor>
+      <anchor>aa2dc491c88297dec4585fc057856ac52</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetTopPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a816121f531d3a5271941bd023f9a4ac1</anchor>
+      <anchor>ab559729e72a1165ebe215a34c1dfbfdc</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetBottomPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>ad29ac696cb5bef8e5ac1608df02bdbd5</anchor>
+      <anchor>abcf89b589bb49f794d433c1556c4108f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetAdvanceWidthEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a6905a0ca7943f1a4e15c21ff1181ca29</anchor>
+      <anchor>a50a1411521cc1693d7013f0f271ec18c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetLeftEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a5ba41410af312efd72c2e636d33cf3e8</anchor>
+      <anchor>a3d7e1c0238a40a33d90d0bdb954ea5ba</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetRightEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a3e33a8b2b3d422e77d12ede53c1718f0</anchor>
+      <anchor>a6b5c3934a141244e5df095c2e76c0654</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetTopEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>adc40ecd6d4d47cb85af54937b3a10f0f</anchor>
+      <anchor>a2feccacb2f776555a69e7e74be49a1cd</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetBottomEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>acad5c21c53639e3921470fa7966bd1c6</anchor>
+      <anchor>a130cbc64f366c2b49450b92f1c26c3d2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>CalcHeightPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a8bd4dc2a7db3eec3eca879af0a3d3c00</anchor>
+      <anchor>aabfcfc330734383fc2ac678d89401357</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>CalcWidthPoints</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>aab282a914184745ef5e095e0f9d14859</anchor>
+      <anchor>ab9aaac2679f6f2b701c1f7ff7419cc17</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>CalcHeightEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a19449764f5d3b3f90fa2f6f7c9698fcf</anchor>
+      <anchor>a0d8434e24d12c033a60be8745677d5f9</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>CalcWidthEVPUs</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a839afffda43a36ce9dc2c57e29f684f1</anchor>
+      <anchor>a00b3fc5d744a60decbef31b519e76e7c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
