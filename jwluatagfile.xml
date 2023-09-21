@@ -43040,6 +43040,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetEnd</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>ae5b8ae22bd49c740def6102fe2dd8fe9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetStart</name>
       <anchorfile>class_f_c_range.html</anchorfile>
@@ -43148,6 +43155,13 @@
       <anchorfile>class_f_c_raw_text.html</anchorfile>
       <anchor>a2645facba7c54b6b111534cca0a739bb</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSubString</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>aade5a87428bb6479760f34b8e5a660fa</anchor>
+      <arglist>(FCString *pString, const FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
