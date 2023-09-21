@@ -2171,8 +2171,8 @@
       <anchor>a3a3f2bfb26068c69b38b84b8b2ec2299</anchor>
       <arglist>(CMPER cmper1, CMPER cmper2)</arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
       <name>SaveNew</name>
       <anchorfile>class_____f_c_no_inci_detail.html</anchorfile>
       <anchor>a5b88c7b3d2a48342a07365e4fd56b01d</anchor>
@@ -10207,6 +10207,67 @@
       <anchorfile>class_f_c_accidental_mods.html</anchorfile>
       <anchor>a7ab40d6c3229f618c3a843893790dad1</anchor>
       <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCActiveLyric</name>
+    <filename>class_f_c_active_lyric.html</filename>
+    <base>__FCNoInciDetail</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>ad82d8bf44fae90baffbc9d03c7c5f769</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a4c086e961416e9dedea69d5039ae7d9f</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a7dc50981b0bd091be637f820b115e20b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a0dd0951b0df9a27daddcd3b4cba930af</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetTextBlockID</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a934b007d18440dc6efb51630d93cfd9b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSyllable</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a16d7ffe12a491c13f94c72240073d520</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTextBlockID</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>ac64d6c83c2c742213037cdbf48222926</anchor>
+      <arglist>(CMPER value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSyllable</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>accccba57309f17b3da1e3832cf4344f0</anchor>
+      <arglist>(int value)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -59702,6 +59763,7 @@
     <class kind="class">FCChord</class>
     <class kind="class">FCGroup</class>
     <class kind="class">FCBaseline</class>
+    <class kind="class">FCActiveLyric</class>
     <class kind="class">FCNoteheadMod</class>
     <class kind="class">FCDotMod</class>
     <class kind="class">FCCrossStaffMod</class>
@@ -59945,6 +60007,7 @@
     <class kind="class">__FCNoInciDetail</class>
     <class kind="class">FCGroup</class>
     <class kind="class">FCBaseline</class>
+    <class kind="class">FCActiveLyric</class>
     <class kind="class">__FCFileDialogBase</class>
     <class kind="class">FCFileOpenDialog</class>
     <class kind="class">FCFileSaveAsDialog</class>
