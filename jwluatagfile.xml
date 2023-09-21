@@ -536,8 +536,8 @@
       <type>virtual EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a079831695c81acd9d30e80a9f8857834</anchor>
-      <arglist>()=0</arglist>
+      <anchor>a98d542c0310c8d0c092281380a4a3c94</anchor>
+      <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual EVERSION</type>
@@ -2123,8 +2123,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae7b75f809a9bbe2f8673387c3bc7d723</anchor>
-      <arglist>() override</arglist>
+      <anchor>a41016b596289a21665cdef42d408d134</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -2363,8 +2363,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_____f_c_other_text.html</anchorfile>
-      <anchor>abd63b99bc8b58a172f1d9661df54eb3f</anchor>
-      <arglist>() override</arglist>
+      <anchor>a05ba4082b31a5f9517d94ec2ee6b23e8</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -10358,8 +10358,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_articulation.html</anchorfile>
-      <anchor>ae6070e0e05de57417f7b6e86c10310f1</anchor>
-      <arglist>() override</arglist>
+      <anchor>a184abf94aa929b261860c6090ffc68de</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -12832,8 +12832,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_bookmark_text.html</anchorfile>
-      <anchor>a7356f0b44242242ddddcd1cd567d1465</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa1b69d5a58f41de90c3194c8ceee1a90</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -15089,8 +15089,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
-      <anchor>aa641a2be9ffa458d0fef994595467422</anchor>
-      <arglist>() override</arglist>
+      <anchor>a1e8bfde4393b246a9899570418b4ef6b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -15973,8 +15973,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_chorus_lyrics_text.html</anchorfile>
-      <anchor>a2417e29ef61a0041a22fe45fd7977582</anchor>
-      <arglist>() override</arglist>
+      <anchor>a4e31f34780fc2d5ea240647f391f1a7d</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -15985,8 +15985,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_chorus_syllable.html</anchorfile>
-      <anchor>ab5ee4fc06e6cfb9d4649e5f38e602931</anchor>
-      <arglist>() override</arglist>
+      <anchor>a30d97bfff8aede98fddc0e6ac0c0d49a</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -16006,8 +16006,8 @@
       <type>bool</type>
       <name>IsChorus</name>
       <anchorfile>class_f_c_chorus_syllable.html</anchorfile>
-      <anchor>a9e4fa841f4a31e18b964a56192336514</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7686e15216035e8484b053c27b83d21e</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -21186,8 +21186,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_expression.html</anchorfile>
-      <anchor>a8e72d9a790bc76e3f3523c3d08ce454d</anchor>
-      <arglist>() override</arglist>
+      <anchor>adfc0184adef03034c860b293c19bbe7b</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -21707,8 +21707,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_file_info_text.html</anchorfile>
-      <anchor>aec1042146f971e2e8a7345bc16b51d43</anchor>
-      <arglist>() override</arglist>
+      <anchor>ad5bb743580d8fd31b0f3192b6244309e</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -26410,8 +26410,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_instrument_def_text.html</anchorfile>
-      <anchor>aa7006675a712bbba5f7912d977118ff7</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6944f32013e0ac06c5cc4376f993db8a</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -41254,8 +41254,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_percussion_layout_notes_text.html</anchorfile>
-      <anchor>a6394b5762bf5e26db23e7949df9b104a</anchor>
-      <arglist>() override</arglist>
+      <anchor>a10fa33ce8669690df474af3df61af781</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -43127,8 +43127,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>adf46b65ff4851653cdabc00469ea53dc</anchor>
-      <arglist>() override</arglist>
+      <anchor>af468e7bb6eee1736b627f0478d0cfe05</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>__FCBaseData *</type>
@@ -44089,8 +44089,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_section_lyrics_text.html</anchorfile>
-      <anchor>abfcf8622845d4cc150fe48de372fbc5a</anchor>
-      <arglist>() override</arglist>
+      <anchor>a3df6eff7e1a1d9bfbf0343a405cebc4a</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -44101,8 +44101,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_section_syllable.html</anchorfile>
-      <anchor>ac67ceb41622e5e06d0c9b68ef79bb7a4</anchor>
-      <arglist>() override</arglist>
+      <anchor>a7cffed1dded48225095884465a328f3d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -44122,8 +44122,8 @@
       <type>bool</type>
       <name>IsSection</name>
       <anchorfile>class_f_c_section_syllable.html</anchorfile>
-      <anchor>aa6157b6f15e76e1265c2e53f2c5e1df1</anchor>
-      <arglist>() override</arglist>
+      <anchor>a92f73a31e8d2b9e0fd2bd6936fd6f906</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -52267,12 +52267,12 @@
     <name>FCSyllableBase</name>
     <filename>class_f_c_syllable_base.html</filename>
     <base>__FCEntryDetail</base>
-    <member kind="function">
+    <member kind="function" virtualness="pure">
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a9e01f055e1520c9117df73b35051d7dd</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab42577e7d58eafd9e53d17560f408c69</anchor>
+      <arglist>() const override=0</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -52397,22 +52397,22 @@
       <type>virtual bool</type>
       <name>IsVerse</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a59be2ceae5eee5abdac182353e9754ae</anchor>
-      <arglist>()</arglist>
+      <anchor>ac7035da3d1f1b531bb08e1f7b8f66a47</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>IsChorus</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a8c2d932d7224d8c1588f0eae181a0edf</anchor>
-      <arglist>()</arglist>
+      <anchor>ac92a3f1e7224b19143a41c2f7f7f78e0</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>IsSection</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a0cb97efbbc505dfd8a6c8feff70b77f5</anchor>
-      <arglist>()</arglist>
+      <anchor>ad2e3b860073b05a9694ced7bd4223e10</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -52425,50 +52425,50 @@
       <type>int</type>
       <name>CalcStringPos</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>ae86a1e6795ac1b60a537a369bcf361cd</anchor>
-      <arglist>()</arglist>
+      <anchor>aab7f2478f13aa01d935b239b73074b13</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcNextStringPos</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a846bedd4e0cfeb00c23c22b77f305f2e</anchor>
-      <arglist>()</arglist>
+      <anchor>a92201532724eb6ddce6f1817d69cceca</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>__FCLyricsBase *</type>
       <name>CreateLyricText</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a8364186f4317846dd7719da5dcd46713</anchor>
-      <arglist>()</arglist>
+      <anchor>a62619662f9115027def82f1ef764c672</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
       <name>CreateFontInfo</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>ae7c001fd71cac1c3f27ac3608a0ad7a1</anchor>
-      <arglist>()</arglist>
+      <anchor>a232eddd88bfb003373dbee909332f2d2</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
       <name>CreateNextFontInfo</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a915c8fda57e4206ee977dbbd3c3e959e</anchor>
-      <arglist>()</arglist>
+      <anchor>a105d918417f4e5e1f413224b00b12f85</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>GetText</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a4fabe7a507e620baa929504324cd72d3</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a44040ad8e87eedd18ca0ecad80f62e83</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>GetRawText</name>
       <anchorfile>class_f_c_syllable_base.html</anchorfile>
-      <anchor>a5d9a488ec5f4fe7999801643540b721f</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a6b1f9eb056cd53b8ff1d3e6d984eb59d</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -55404,8 +55404,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_text_repeat_text.html</anchorfile>
-      <anchor>a96b8e69b8c401d82b9216b082be0a2e8</anchor>
-      <arglist>() override</arglist>
+      <anchor>aa7578e9661e5d8b6f2cf4c72ebd556c0</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -57473,8 +57473,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_tuplet.html</anchorfile>
-      <anchor>a9880ce40160fe2b169b1de64d964015e</anchor>
-      <arglist>() override</arglist>
+      <anchor>affc92fce50496e02035764cff0a5b15d</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -59691,8 +59691,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_verse_lyrics_text.html</anchorfile>
-      <anchor>a799902558dc12871959d612934c8f87b</anchor>
-      <arglist>() override</arglist>
+      <anchor>a265f3e75f16fe966edcf8397ec958149</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -59703,8 +59703,8 @@
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_f_c_verse_syllable.html</anchorfile>
-      <anchor>a71b31474eb5b22c7c8ab1ba7be8e8377</anchor>
-      <arglist>() override</arglist>
+      <anchor>a8bfbb97d0291663a9627b9e1d88edefb</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -59724,8 +59724,8 @@
       <type>bool</type>
       <name>IsVerse</name>
       <anchorfile>class_f_c_verse_syllable.html</anchorfile>
-      <anchor>a8f7c87072ad2ee1f9369cd601d17b0a2</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6c9bea34a4db9eb2d3a46c1386e040a0</anchor>
+      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
