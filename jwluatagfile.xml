@@ -2135,10 +2135,24 @@
     </member>
     <member kind="function">
       <type>int</type>
-      <name>GetLyricOffset</name>
+      <name>CalcSyllableOffset</name>
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>a6708d62445183d6833f2ac14a2eb6474</anchor>
-      <arglist>(int syllableno, int searchfromindex=0) const</arglist>
+      <anchor>a52e34e14184b13031a4f11bb3fe61060</anchor>
+      <arglist>(int syllableindex, int searchfromindex=0) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateSyllableFontInfo</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>a2df9b48998d39cc632035a55513eeb27</anchor>
+      <arglist>(int syllableindex, int searchfromindex=0) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcSyllableRange</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>a20d04a31ab8fe5db13a28131d5af3fec</anchor>
+      <arglist>(FCRange *pRange, int syllableindex, int searchfromindex=0) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -43071,6 +43085,13 @@
       <anchorfile>class_f_c_raw_text.html</anchorfile>
       <anchor>ac58665231159dae726bbc02e37147990</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetNumChars</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>ab0f13ae4b0e054956650f12191ad407c</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
