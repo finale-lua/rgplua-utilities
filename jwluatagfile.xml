@@ -543,22 +543,22 @@
       <type>virtual EVERSION</type>
       <name>EnigmaVersion</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a72cee2892c0b13ddac2ae0cfa5ffda2b</anchor>
-      <arglist>()</arglist>
+      <anchor>a87085b43c86b3629dfe211ab5a1b8a46</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual int</type>
       <name>DataSizeLoad</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a19b6cc2d1afdcb52f417aaae83e1d159</anchor>
-      <arglist>()=0</arglist>
+      <anchor>a935c048038fc083774982d55cf5e5b7c</anchor>
+      <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual int</type>
       <name>DataSizeSave</name>
       <anchorfile>class_____f_c_base_data.html</anchorfile>
-      <anchor>a50759c8d94df137f70f365f348b9b716</anchor>
-      <arglist>()</arglist>
+      <anchor>a94ddc1f765b7f985463216d6cb1123bc</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -2132,6 +2132,13 @@
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
       <anchor>ab939fd7634859ff84c24edc47d680e2f</anchor>
       <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetLyricOffset</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>a6708d62445183d6833f2ac14a2eb6474</anchor>
+      <arglist>(int syllableno, int searchfromindex=0) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -42642,50 +42649,50 @@
       <type></type>
       <name>FCPoint</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>a1d4148a2d42554857b2a49bae730c621</anchor>
-      <arglist>(float x, float y)</arglist>
+      <anchor>a83f770354edb6e85121daaad50779fe3</anchor>
+      <arglist>(double x, double y)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetX</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>ad7dd9556e23fd3582393c4d9e62973c1</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a65d31fbb91ddfe7e2980a92edb59e3fe</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetY</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>addc7c391095ccac4ad46ee5d9b4e3361</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a4f372285b6c3c30566c13e10f1f99aad</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetX</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>ae6e51a7ff4da7a6f64794c77028d4caf</anchor>
+      <anchor>aac438cd41576436a59fcaec949f15f92</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetY</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>af7edb03f094fe0a990fd08bd2b0ad6b9</anchor>
+      <anchor>a15b2f16108cc44b5047cf471cc12166b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>MoveX</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>a81239d69294242ac1d505ee9b8e76b2b</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a76f71d164ac4e88a75e3d564810c6dc4</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>MoveY</name>
       <anchorfile>class_f_c_point.html</anchorfile>
-      <anchor>a603dd2737c154adc2cf5b8a0f746bc65</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>a04d75be73c9a80ea8548d4d2a049370c</anchor>
+      <arglist>(double value)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -42987,6 +42994,53 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCRange</name>
+    <filename>class_f_c_range.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>a85c5316b05ee20a311d9de3e7bfd66d6</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCRange</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>adcca2cc12adb291047473f187f05ae4d</anchor>
+      <arglist>(int start=0, int length=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetStart</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>a3dc87841ab7f79317da1cb9cd53b1ae7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetLength</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>acf6a9b18a35c436913fe77acc172e52c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStart</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>a23df5b6a78444f15015f5fdc3ac2de19</anchor>
+      <arglist>(int val)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLength</name>
+      <anchorfile>class_f_c_range.html</anchorfile>
+      <anchor>ae93511f5367344f3d48d58de98653dbe</anchor>
+      <arglist>(int val)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCRawText</name>
     <filename>class_f_c_raw_text.html</filename>
     <base>__FCBaseData</base>
@@ -43057,8 +43111,8 @@
       <type>void</type>
       <name>GetText</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>a63a79bc64962f4294f7128f335601838</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a033681ca4d56d312fdf2ae6443e37922</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual twobyte</type>
@@ -43071,8 +43125,8 @@
       <type>FCString *</type>
       <name>CreateString</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>a05c04d43991ef827047327b5b521cd12</anchor>
-      <arglist>()</arglist>
+      <anchor>a2645facba7c54b6b111534cca0a739bb</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -43092,8 +43146,8 @@
       <type>int</type>
       <name>DataSizeLoad</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>a8c3feeea8514a6b03f93e4c0758cc65e</anchor>
-      <arglist>() override</arglist>
+      <anchor>abfe12bf1a390c29db5d3eb93883971a2</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void *</type>
@@ -43120,8 +43174,8 @@
       <type>EVERSION</type>
       <name>EnigmaVersion</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>a035ab300b5fd3eda5b9ad6eb99cc1692</anchor>
-      <arglist>() override</arglist>
+      <anchor>a9458b08c399b42551f28e89995367602</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>EXTAG</type>
@@ -43141,8 +43195,8 @@
       <type>virtual bool</type>
       <name>HasUnicodeSupport</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>a6795de283f02fcf424bfbf11036dbd84</anchor>
-      <arglist>()</arglist>
+      <anchor>a31a954265492fa7b7d1b3b84666d1aad</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -59992,6 +60046,7 @@
     <class kind="class">FCPoint</class>
     <class kind="class">FCPrintSettings</class>
     <class kind="class">FCFontDialog</class>
+    <class kind="class">FCRange</class>
     <class kind="class">FCCell</class>
     <class kind="class">FCCellPos</class>
     <class kind="class">__FCCellDetail</class>
