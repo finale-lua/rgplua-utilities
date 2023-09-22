@@ -10327,6 +10327,13 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
+      <type>__FCLyricsBase::LYRICSTEXTBLOCKTYPES</type>
+      <name>GetBlockType</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a6d2e468ea097bd11578b9b13291bb0e3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>CMPER</type>
       <name>GetTextBlockID</name>
       <anchorfile>class_f_c_active_lyric.html</anchorfile>
@@ -10339,6 +10346,13 @@
       <anchorfile>class_f_c_active_lyric.html</anchorfile>
       <anchor>a16d7ffe12a491c13f94c72240073d520</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBlockType</name>
+      <anchorfile>class_f_c_active_lyric.html</anchorfile>
+      <anchor>a3ae85563b66648e007bdd089d424ca4f</anchor>
+      <arglist>(__FCLyricsBase::LYRICSTEXTBLOCKTYPES value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
