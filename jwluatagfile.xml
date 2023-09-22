@@ -2149,10 +2149,17 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>CalcSyllableRange</name>
+      <name>GetSyllableRange</name>
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>a20d04a31ab8fe5db13a28131d5af3fec</anchor>
+      <anchor>a9c462dcfb1c92a31793e02384dc250e4</anchor>
       <arglist>(FCRange *pRange, int syllableindex, int searchfromindex=0) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSyllableText</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>a32c59dd3b60e3c21b8970734ba787f4b</anchor>
+      <arglist>(FCString *pString, int syllableno) const</arglist>
     </member>
   </compound>
   <compound kind="class">
