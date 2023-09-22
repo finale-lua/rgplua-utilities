@@ -2119,12 +2119,55 @@
     <name>__FCLyricsBase</name>
     <filename>class_____f_c_lyrics_base.html</filename>
     <base>FCRawText</base>
-    <member kind="function">
+    <member kind="enumeration">
+      <type></type>
+      <name>LYRICSTEXTBLOCKTYPES</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LYRICSTEXTBLOCKVERSE</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0ada288cbafab529818862de7d135e7c66</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LYRICSTEXTBLOCKCHORUS</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a88d624c5b3558ccf406ecaf9f6c6ac14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LYRICSTEXTBLOCKSECTION</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a8b7ea99fea5b31dae7058dad96761739</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LYRICSTEXTBLOCKVERSE</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0ada288cbafab529818862de7d135e7c66</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LYRICSTEXTBLOCKCHORUS</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a88d624c5b3558ccf406ecaf9f6c6ac14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>LYRICSTEXTBLOCKSECTION</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a8b7ea99fea5b31dae7058dad96761739</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="pure">
       <type>EXTAG</type>
       <name>Tag</name>
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>a41016b596289a21665cdef42d408d134</anchor>
-      <arglist>() const override</arglist>
+      <anchor>a36eb695128effd16f488861bd62b6e1f</anchor>
+      <arglist>() const override=0</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -2132,6 +2175,13 @@
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
       <anchor>ab939fd7634859ff84c24edc47d680e2f</anchor>
       <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetBlockType</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>a5def2c30b8be8b121fd512b45a7ec5a6</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -2160,6 +2210,13 @@
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
       <anchor>a32c59dd3b60e3c21b8970734ba787f4b</anchor>
       <arglist>(FCString *pString, int syllableno) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>__FCLyricsBase</name>
+      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
+      <anchor>a4258f6adabd89c1d0a44c5ee0c8dc976</anchor>
+      <arglist>(int type)</arglist>
     </member>
   </compound>
   <compound kind="class">
