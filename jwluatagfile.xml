@@ -60181,6 +60181,7 @@
     <class kind="class">FCFileSaveAsDialog</class>
     <class kind="class">FCFolderBrowseDialog</class>
     <class kind="class">__FCUserWindow</class>
+    <class kind="class">FCControl</class>
     <class kind="class">FCCtrlUpDown</class>
     <class kind="class">FCCtrlLine</class>
     <class kind="class">FCCtrlEdit</class>
