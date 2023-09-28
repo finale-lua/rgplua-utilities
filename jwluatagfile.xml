@@ -17452,6 +17452,34 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetRichText</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a328e98320d08d8179d06a30b966cfea9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRichText</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>afed3003e3fc29ee34e7329f65f92b15c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutomaticEditing</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ae30e3dc5dee2169e50765916bcc49ba1</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetAutomaticEditing</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a929a2fb587c2381eedf66005c5750081</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetTabstopWidth</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>a60c5edc299b7bc732ec0cb97231be4d9</anchor>
