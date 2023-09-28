@@ -17452,16 +17452,16 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetRichText</name>
+      <name>SetUseRichText</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a328e98320d08d8179d06a30b966cfea9</anchor>
+      <anchor>ad8719cedb38f7c20388ccf5c91a768af</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetRichText</name>
+      <name>GetUseRichText</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>afed3003e3fc29ee34e7329f65f92b15c</anchor>
+      <anchor>a1aa3bf14ea1750f2d9712cd1e6465af9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -17484,20 +17484,6 @@
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>a60c5edc299b7bc732ec0cb97231be4d9</anchor>
       <arglist>(double value)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>SetFont</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a96eab963a3202d28ba693db84c5b9734</anchor>
-      <arglist>(const FCFontInfo *fontInfo) override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>FCFontInfo *</type>
-      <name>CreateFontInfo</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a3ce4542def34a39164539db919c29a68</anchor>
-      <arglist>() override</arglist>
     </member>
   </compound>
   <compound kind="class">
