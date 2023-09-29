@@ -17403,6 +17403,41 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetTotalTextRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a57b075404ae87d95a17478661c8c9103</anchor>
+      <arglist>(FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSelection</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>aa5d9b70f749a7be0478b090ce86d9db4</anchor>
+      <arglist>(FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetSelection</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a79bda545347711656c779609636717de</anchor>
+      <arglist>(const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTextInRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>afeb5b078f95eef9f8d1e3e806288c322</anchor>
+      <arglist>(FCString *pText, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ReplaceTextInRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>aa66bdfe372060b7834795e63b377bd22</anchor>
+      <arglist>(const FCString *pText, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetSelectedText</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>af4bf80f39ebcc83970b45ca53efb9ce8</anchor>
