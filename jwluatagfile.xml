@@ -17424,6 +17424,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>SelectAll</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a7adc8a46b109f4aa1a598f47825994a2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetTextInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>afeb5b078f95eef9f8d1e3e806288c322</anchor>
@@ -17456,6 +17463,20 @@
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>a885bea7dfd50b4be3a614dd15968548a</anchor>
       <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AppendText</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>aba3953f6796d6c56d856e3eabec8a112</anchor>
+      <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AppendTextWithFontInfo</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a5db32ba6b3a6a7893ba7516b378898c9</anchor>
+      <arglist>(const FCString *pText, const FCFontInfo *pFont)</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
