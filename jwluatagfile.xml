@@ -17458,6 +17458,20 @@
       <arglist>(const FCString *pText)</arglist>
     </member>
     <member kind="function">
+      <type>FCString *</type>
+      <name>CreateEnigmaString</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>abe241adee81778577b42b414f2119773</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetEnigmaString</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a7d94d460d8b1678ce5270cc899c0f642</anchor>
+      <arglist>(const FCString *pString, const FCRawText *pRawText=NULL)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetReadOnly</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
@@ -22195,6 +22209,13 @@
       <anchorfile>class_f_c_font_info.html</anchorfile>
       <anchor>adf69432afb53e025168e6a8b75249dd6</anchor>
       <arglist>(const FCString &amp;name, float size)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFontInfo</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>a8fb1548783e617f2daec3b62b2d5888b</anchor>
+      <arglist>(const ETextStyle &amp;style)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -43337,13 +43358,6 @@
       <name>EnigmaVersion</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
       <anchor>a9458b08c399b42551f28e89995367602</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>EXTAG</type>
-      <name>Tag</name>
-      <anchorfile>class_f_c_raw_text.html</anchorfile>
-      <anchor>af468e7bb6eee1736b627f0478d0cfe05</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function" protection="protected">
