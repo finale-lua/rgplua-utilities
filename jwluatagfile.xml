@@ -16541,8 +16541,8 @@
       <type>__FCUserWindow *</type>
       <name>GetParent</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a69439d0b26fa6a2fa5f4582e4ed07761</anchor>
-      <arglist>()</arglist>
+      <anchor>a87f9683be8b927461ce203126eee125a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -16632,8 +16632,8 @@
       <type>virtual FCFontInfo *</type>
       <name>CreateFontInfo</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>ab4416c3412de41e5c489769eeefa303a</anchor>
-      <arglist>()</arglist>
+      <anchor>a0a5733d02889ad95cb7fa34d609fe827</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -17405,15 +17405,15 @@
       <type>bool</type>
       <name>GetTotalTextRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a57b075404ae87d95a17478661c8c9103</anchor>
-      <arglist>(FCRange *pRange)</arglist>
+      <anchor>a1e84581445bceb5b2bd98eb58cb55b2b</anchor>
+      <arglist>(FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>GetSelection</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>aa5d9b70f749a7be0478b090ce86d9db4</anchor>
-      <arglist>(FCRange *pRange)</arglist>
+      <anchor>a4561e8de7a00d22a1d85eeebd63c916c</anchor>
+      <arglist>(FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -17433,8 +17433,8 @@
       <type>bool</type>
       <name>GetTextInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>afeb5b078f95eef9f8d1e3e806288c322</anchor>
-      <arglist>(FCString *pText, const FCRange *pRange)</arglist>
+      <anchor>a177560ae6c71d6c90b3ad29d93a03160</anchor>
+      <arglist>(FCString *pText, const FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -17447,8 +17447,8 @@
       <type>bool</type>
       <name>GetSelectedText</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>af4bf80f39ebcc83970b45ca53efb9ce8</anchor>
-      <arglist>(FCString *pText)</arglist>
+      <anchor>ad8616ab3d446cc1b041d24a134b37531</anchor>
+      <arglist>(FCString *pText) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
