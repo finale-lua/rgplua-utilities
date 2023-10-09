@@ -16653,8 +16653,8 @@
       <type>virtual void</type>
       <name>SetText</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>ad2efaed1dc28c0f0beafcac7f1031f4b</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a881bbeaec570ff344b37bb00a7388ead</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
