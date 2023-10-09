@@ -17493,6 +17493,20 @@
       <arglist>(const FCString *pString, const FCRawText *pRawText=NULL)</arglist>
     </member>
     <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateFontInfoAtIndex</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>aa212f5b19756aabacd8d246632a96fcd</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontForRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a51bc6bc9705460466b4a967bdd1e6a6e</anchor>
+      <arglist>(const FCFontInfo *pFont, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetReadOnly</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
@@ -22228,8 +22242,8 @@
       <type></type>
       <name>FCFontInfo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>adf69432afb53e025168e6a8b75249dd6</anchor>
-      <arglist>(const FCString &amp;name, float size)</arglist>
+      <anchor>a9ecbf3035ac03421486430bf90243f76</anchor>
+      <arglist>(const FCString &amp;name, double size)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -22267,17 +22281,17 @@
       <arglist>(int prefsID)</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>int</type>
       <name>GetSize</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a27c9ebbbbbbe91a8b4858b73eada2673</anchor>
+      <anchor>a7b71859a704be1e87ea7f2e1eb99de57</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetSizeFloat</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ad192adedc1443d4ff524fd98255f6aad</anchor>
+      <anchor>a2e711a98721c1103c7a8eda187334761</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -22365,6 +22379,13 @@
       <arglist>(FLAG_16 fontstyles)</arglist>
     </member>
     <member kind="function">
+      <type>FCString *</type>
+      <name>CreateDescription</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>a222dace75097a81ca52939454a40764f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
@@ -22396,15 +22417,15 @@
       <type>void</type>
       <name>SetSize</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a73ee76d025336da644a3af98683f54bf</anchor>
-      <arglist>(twobyte fontsize)</arglist>
+      <anchor>a6039083d35633a25285d6a407dabfe14</anchor>
+      <arglist>(int fontsize)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetSizeFloat</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a143a593d3108c58b1e4510c2699a0ef1</anchor>
-      <arglist>(float fontsize)</arglist>
+      <anchor>a94ff24c0a6f189def5487a0e8d981aa9</anchor>
+      <arglist>(double fontsize)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
