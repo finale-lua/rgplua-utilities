@@ -17507,6 +17507,55 @@
       <arglist>(const FCFontInfo *pFont, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>SetFontForSelection</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ae8b3c5e402426128730a4fee831ab9ed</anchor>
+      <arglist>(const FCFontInfo *pFont)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontSizeForRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a6852b94a84f87e0967b18e7cbc9fc584</anchor>
+      <arglist>(int size, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontSizeForSelection</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a2a1663239ca9113863ca08a21c49ba0e</anchor>
+      <arglist>(int size)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontBoldForRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a0e55313708aef983ad8eff3885c0aaae</anchor>
+      <arglist>(bool state, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontBoldForSelection</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ac674332ffd551b78f986f94f06461786</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontItalicForRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a8408672444401a3da975e93503b17662</anchor>
+      <arglist>(bool state, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontItalicForSelection</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ab5c30d399c1138ed9192df613fec5902</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetReadOnly</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
