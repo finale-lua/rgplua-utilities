@@ -17380,6 +17380,37 @@
     <name>FCCtrlEditText</name>
     <filename>class_f_c_ctrl_edit_text.html</filename>
     <base>FCControl</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>STRINGFINDOPTIONS</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a59688eaa60e7d7265653675433c59f7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_IGNORECASE</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a59688eaa60e7d7265653675433c59f7aa7383c93d40f4fcc67417940dd7c0cdcb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_WHOLEWORDS</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a59688eaa60e7d7265653675433c59f7aaa92f3e6ba2b7b3533bc8fbd6d2842169</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_IGNORECASE</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a59688eaa60e7d7265653675433c59f7aa7383c93d40f4fcc67417940dd7c0cdcb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_WHOLEWORDS</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a59688eaa60e7d7265653675433c59f7aaa92f3e6ba2b7b3533bc8fbd6d2842169</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -17617,6 +17648,13 @@
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
       <anchor>a60c5edc299b7bc732ec0cb97231be4d9</anchor>
       <arglist>(double value)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCRanges *</type>
+      <name>CreateRangesForString</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a14f757a334340acaf99ebd1d77cc5087</anchor>
+      <arglist>(const FCString *pSearchString, FLAG_32 options) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -43301,6 +43339,32 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCRanges</name>
+    <filename>class_f_c_ranges.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ranges.html</anchorfile>
+      <anchor>acc888d42c8a482b966ee62524724fc41</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCRanges</name>
+      <anchorfile>class_f_c_ranges.html</anchorfile>
+      <anchor>a264b8931b197035412c137134a886257</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCRange *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_ranges.html</anchorfile>
+      <anchor>a002b9b8f2adab67b05fb6993ec5a859e</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCRawText</name>
     <filename>class_f_c_raw_text.html</filename>
     <base>__FCBaseData</base>
@@ -60506,6 +60570,7 @@
     <class kind="class">__FCCollectionInciOther</class>
     <class kind="class">__FCCollectionNoInciOther</class>
     <class kind="class">FCStrings</class>
+    <class kind="class">FCRanges</class>
     <class kind="class">FCCells</class>
     <class kind="class">FCSeparateMeasureNumbers</class>
     <class kind="class">FCCellGraphics</class>
