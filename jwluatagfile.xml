@@ -17653,8 +17653,8 @@
       <type>FCRanges *</type>
       <name>CreateRangesForString</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a14f757a334340acaf99ebd1d77cc5087</anchor>
-      <arglist>(const FCString *pSearchString, FLAG_32 options) const</arglist>
+      <anchor>a2eee458c4234782bcdb83b157567bf31</anchor>
+      <arglist>(const FCString *pSearchString, FLAG_32 options, const FCRange *pRange=nullptr) const</arglist>
     </member>
   </compound>
   <compound kind="class">
