@@ -17663,6 +17663,27 @@
       <anchor>afafca0221e140184f95a02ca4f6a8449</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetTextColorForRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a2d7519da55cdc923fe4fa61baa9558a2</anchor>
+      <arglist>(int red, int green, int blue, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::tuple&lt; int, int, int &gt;</type>
+      <name>GetTextColorAtIndex</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ade4057c127a8fd5182864be6d04bd00a</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCNumbers *</type>
+      <name>GetTextColorChanges</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ad61e8b79753c7b196a68ee4eab23f55e</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlImage</name>
