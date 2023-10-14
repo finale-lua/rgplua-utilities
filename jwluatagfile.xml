@@ -17656,6 +17656,13 @@
       <anchor>a2eee458c4234782bcdb83b157567bf31</anchor>
       <arglist>(const FCString *pSearchString, FLAG_32 options, const FCRange *pRange=nullptr) const</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ResetUndoState</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>afafca0221e140184f95a02ca4f6a8449</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlImage</name>
