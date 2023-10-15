@@ -16604,8 +16604,8 @@
       <type>virtual bool</type>
       <name>GetEnable</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a487eb31581c68205dc8f985510b9df39</anchor>
-      <arglist>()</arglist>
+      <anchor>a0a8494b7487932f35abe68e84edb2785</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -17532,9 +17532,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>SetFontForRange</name>
+      <name>SetFontInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a51bc6bc9705460466b4a967bdd1e6a6e</anchor>
+      <anchor>a0426a7f806a7cb9d9d2095c96984011d</anchor>
       <arglist>(const FCFontInfo *pFont, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
@@ -17546,9 +17546,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>SetFontSizeForRange</name>
+      <name>SetFontSizeInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a6852b94a84f87e0967b18e7cbc9fc584</anchor>
+      <anchor>a9a8d4fc994c31b53a7b55f38d4fa3213</anchor>
       <arglist>(int size, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
@@ -17560,9 +17560,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>SetFontBoldForRange</name>
+      <name>SetFontBoldInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a0e55313708aef983ad8eff3885c0aaae</anchor>
+      <anchor>a6ddbc612fac11e51c736fb6f60d5b1ea</anchor>
       <arglist>(bool state, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
@@ -17574,9 +17574,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>SetFontItalicForRange</name>
+      <name>SetFontItalicInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a8408672444401a3da975e93503b17662</anchor>
+      <anchor>a4e28df26b8be3390e46179c054243800</anchor>
       <arglist>(bool state, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
@@ -17665,9 +17665,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>SetTextColorForRange</name>
+      <name>SetTextColorInRange</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a2d7519da55cdc923fe4fa61baa9558a2</anchor>
+      <anchor>ae37b608fbd3c634744837b2f46854f6b</anchor>
       <arglist>(int red, int green, int blue, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
@@ -17678,10 +17678,10 @@
       <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
-      <type>FCNumbers *</type>
+      <type>FCRanges *</type>
       <name>GetTextColorChanges</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ad61e8b79753c7b196a68ee4eab23f55e</anchor>
+      <anchor>a2c6873e66902b09870bd1c0279e825f1</anchor>
       <arglist>() const</arglist>
     </member>
   </compound>
