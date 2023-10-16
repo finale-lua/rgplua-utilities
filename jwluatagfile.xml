@@ -17671,6 +17671,13 @@
       <arglist>(int red, int green, int blue, const FCRange *pRange)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>ResetTextColorInRange</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ad02a007ebff1da69717394bae613982e</anchor>
+      <arglist>(const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
       <type>std::tuple&lt; int, int, int &gt;</type>
       <name>GetTextColorAtIndex</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
