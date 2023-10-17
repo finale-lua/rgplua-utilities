@@ -28482,13 +28482,6 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetOptionalScriptText</name>
-      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>a222ef80d9781cdd49cf4a3f649a4e266</anchor>
-      <arglist>(const char *value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
       <name>SetMenuItemText</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>a67cb728fabd3a3bca7bf0efc6e9f2d6b</anchor>
