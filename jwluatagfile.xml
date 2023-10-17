@@ -28398,6 +28398,13 @@
     </member>
     <member kind="function">
       <type>const char *</type>
+      <name>GetOptionalScriptText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ac2a47dae8dd92e5b066ffe19249c5c1b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
       <name>GetMenuItemText</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>a27ea2fbd0548b614ce37b2791de9e2a4</anchor>
@@ -28472,6 +28479,13 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>abdd6b5d41e4d6ef63b5566d3e38a64ca</anchor>
       <arglist>(const char *fieldname)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetOptionalScriptText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a222ef80d9781cdd49cf4a3f649a4e266</anchor>
+      <arglist>(const char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
