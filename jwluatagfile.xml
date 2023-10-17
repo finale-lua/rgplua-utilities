@@ -28460,6 +28460,13 @@
       <arglist>(int versiontype) const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAutomaticallyReportErrors</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a066a42d8fbb7f0e3f6e03f4fe50b7492</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>FCString *</type>
       <name>CreateFinalePluginValue</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
@@ -28506,6 +28513,13 @@
       <name>SetLoadAsString</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>af2e10a166f633004daf9702355ceca3b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutomaticallyReportErrors</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>aeb90eab77830abf76814fa0657c410aa</anchor>
       <arglist>(bool state)</arglist>
     </member>
   </compound>
