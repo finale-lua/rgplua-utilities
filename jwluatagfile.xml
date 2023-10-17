@@ -28474,6 +28474,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetTrusted</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a0e36ca73e0a6bd77421d078d63581688</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>FCString *</type>
       <name>CreateFinalePluginValue</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
@@ -28528,6 +28535,20 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>aeb90eab77830abf76814fa0657c410aa</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTrusted</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a9b43bd184762d6064c474af2854d436c</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterPrintFunction</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a30d50229c8f46db470e9f24e54aa2390</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
   </compound>
   <compound kind="class">
