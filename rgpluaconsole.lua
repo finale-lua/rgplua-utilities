@@ -85,10 +85,14 @@ function on_execution_will_start(item)
     output_to_console("Running " .. item.MenuItemText .. " ======>")
 end
 
-function on_execution_did_stop(item, success)
+function on_execution_did_stop(item, success, msg, msgtype)
     if success then
         output_to_console("<======= "..item.MenuItemText.." succeeded (Processing time: 0.000 s).") -- ToDo: calculate processing time.
     else
+        -- script results have already been sent to ouput by Lua, so skip them
+        if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
+            output_to_console(msg)
+        end
         output_to_console("<======= "..item.MenuItemText.." FAILED.")
     end
 end
@@ -105,15 +109,9 @@ local function run_script(control)
         script_item.Debug = true
         script_item:RegisterPrintFunction(output_to_console)
         script_item:RegisterOnExecutionWillStart(on_execution_will_start)
-        script_item:RegisterOnExecutionWDidStop(on_execution_did_stop)
+        script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
         --script_item.Trusted = true
-        local success, msg, msgtype = finenv.ExecuteLuaScriptItem(script_item)
-        if not success then
-            if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
-                output_to_console(msg)
-            end
-            script_item:StopExecuting()
-        end
+        finenv.ExecuteLuaScriptItem(script_item)
     end
     control:SetEnable(true) -- ToDo: leave it disabled if the script item is still running
 end
@@ -125,9 +123,9 @@ local create_dialog = function()
     local y_separator = 10
     local curr_y = 0
     local edit_text_height = 280
-    local output_height = edit_text_height / 2
-    local line_number_width = 100
-    local total_width = 900
+    local output_height = edit_text_height / 2.5
+    local line_number_width = 90
+    local total_width = 960
     line_number_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), line_number_width, edit_text_height, false)
     edit_text = setup_edittext_control(dialog:CreateEditText(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
@@ -146,6 +144,7 @@ local create_dialog = function()
         if context.script_text then
             edit_text:SetText(finale.FCString(context.script_text))
         end
+        edit_text:SetKeyboardFocus()
     end)
     dialog:RegisterCloseWindow(function()
         if global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then

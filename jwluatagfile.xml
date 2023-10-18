@@ -28390,6 +28390,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>StopExecuting</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a123888498bed662272f5fd8c58d45a33</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>const char *</type>
       <name>GetFilePath</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
@@ -28549,6 +28556,34 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>a30d50229c8f46db470e9f24e54aa2390</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterOnExecutionWillStart</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a4772ff5e30982e9359e7d4cce7aad848</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterOnExecutionDidStop</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a7ce6e2e64e2796603d1d1b02971a277f</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>OnExecutionWillStart</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a4812982be90e0b122fb5f5cd9fb4ed6c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>OnExecutionDidStop</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>aa78a2334c523728b7396fac1b1a07373</anchor>
+      <arglist>(bool success, const char *msg, int msgtype) const</arglist>
     </member>
   </compound>
   <compound kind="class">
