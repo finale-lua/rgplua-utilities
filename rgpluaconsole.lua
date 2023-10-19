@@ -3,6 +3,7 @@ function plugindef()
     -- are both reserved for the plug-in definition.
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
+    finaleplugin.HandlesUndo = true
     finaleplugin.MinJWLuaVersion = 0.68
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
@@ -24,8 +25,10 @@ if not finenv.RetainLuaState then
     {
         tabstop_width = 4,
         output_tabstop_width = 8,
+        clear_output = false,
         script_text = nil,
         script_file = nil,
+        output_text = nil,
         recent_files = {},
         window_pos_x = nil,
         window_pos_y = nil
@@ -37,7 +40,8 @@ global_dialog = nil
 local edit_text             -- text editor
 local line_number_text      -- line mumbers
 local output_text           -- print output area
-local run_script_cmd        -- Run Script command button
+local clear_output_chk      -- Clear Before Run checkbox
+
 
 local function win_mac(winval, macval)
     if finenv.UI():IsOnWindows() then return winval end
@@ -48,7 +52,8 @@ local function calc_tab_width(font, numchars) -- assumes fixed_width font
     local adv_points = 0
     local curr_doc = finale.FCDocument()
     if curr_doc.ID <= 0 then
-        adv_points = win_mac(4.9482421875, 6.60107421875) -- win 10pt Cortana is 5.498046875
+        -- if no document, use hard-coded values derived from when we did have a document.
+        adv_points = win_mac(4.9482421875, 6.60107421875) -- win 10pt Consolas is 5.498046875
     else
         local text_met = finale.FCTextMetrics()
         text_met:LoadString(finale.FCString("a"), font, 100)
@@ -82,21 +87,21 @@ function output_to_console(...)
 end
 
 function on_execution_will_start(item)
-    output_to_console("Running " .. item.MenuItemText .. " ======>")
+    output_to_console("Running [" .. item.MenuItemText .. "] ======>")
 end
 
 function on_execution_did_stop(item, success, msg, msgtype)
     if success then
-        output_to_console("<======= "..item.MenuItemText.." succeeded (Processing time: 0.000 s).") -- ToDo: calculate processing time.
+        output_to_console("<======= ["..item.MenuItemText.."] succeeded (Processing time: 0.000 s).") -- ToDo: calculate processing time.
     else
-        -- script results have already been sent to ouput by Lua, so skip them
+        -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
             if msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION then
                 output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
             end
         end
-        output_to_console("<======= "..item.MenuItemText.." FAILED.")
+        output_to_console("<======= ["..item.MenuItemText.."] FAILED.")
     end
 end
 
@@ -114,6 +119,9 @@ local function run_script(control)
         script_item:RegisterOnExecutionWillStart(on_execution_will_start)
         script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
         --script_item.Trusted = true
+        if clear_output_chk:GetCheck() ~= 0 then
+            output_text:SetText(finale.FCString(""))
+        end
         finenv.ExecuteLuaScriptItem(script_item)
         if script_item:IsExecuting() then
             script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
@@ -138,17 +146,36 @@ local create_dialog = function()
     curr_y = curr_y + y_separator + edit_text_height
     local button_width = 100
     local button_height = 20
-    run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)
+    local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)
     run_script_cmd:SetText(finale.FCString("Run Script"))
     run_script_cmd:SetWidth(button_width)
     dialog:RegisterHandleControlEvent(run_script_cmd, run_script)
     curr_y = curr_y + button_height + y_separator
+    local output_desc = dialog:CreateStatic(0, curr_y)
+    output_desc:SetWidth(100)
+    output_desc:SetText(finale.FCString("Execution Output:"))
+    local clear_output_chk_width = win_mac(105, 120)
+    local clear_now = dialog:CreateButton(120, curr_y - win_mac(5,1))
+    clear_now:SetText(finale.FCString("Clear"))
+    dialog:RegisterHandleControlEvent(clear_now, function(control)
+        output_text:SetText(finale.FCString(""))
+    end)
+    clear_output_chk = dialog:CreateCheckbox(total_width - clear_output_chk_width, curr_y)
+    clear_output_chk:SetWidth(clear_output_chk_width)
+    clear_output_chk:SetText(finale.FCString("Clear Before Run"))
+    curr_y = curr_y + button_height
     output_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), total_width, output_height, false,
         context.output_tabstop_width)
-    dialog:CreateOkButton()
+    local ok_btn = dialog:CreateOkButton()
+    ok_btn:SetText(finale.FCString("Close"))
     dialog:RegisterInitWindow(function()
+        clear_output_chk:SetCheck(context.clear_output and 1 or 0)
         if context.script_text then
             edit_text:SetText(finale.FCString(context.script_text))
+        end
+        if context.output_text then
+            output_text:SetText(finale.FCString(""))
+            output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
         end
         edit_text:SetKeyboardFocus()
     end)
@@ -159,9 +186,12 @@ local create_dialog = function()
             finenv.RetainLuaState = true
         end
         if finenv.RetainLuaState then
+            context.clear_output = clear_output_chk:GetCheck() ~= 0
             local text = finale.FCString()
             edit_text:GetText(text)
             context.script_text = text.LuaString
+            output_text:GetText(text)
+            context.output_text = text.LuaString
             global_dialog:StorePosition()
             context.window_pos_x = global_dialog.StoredX
             context.window_pos_y = global_dialog.StoredY
@@ -183,4 +213,3 @@ local open_dialog = function()
 end
 
 open_dialog()
-
