@@ -17918,15 +17918,15 @@
       <type>int</type>
       <name>GetCount</name>
       <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
-      <anchor>ae631e27b165d917fd96dd2e1bd872f63</anchor>
-      <arglist>()</arglist>
+      <anchor>a60484c22d98241297f896ff556406179</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetSelectedItem</name>
       <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
-      <anchor>a74202df4b8379c6867fdaafd39495a0e</anchor>
-      <arglist>()</arglist>
+      <anchor>aa123302bb6cbb7366f7168559d88a6f8</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17934,6 +17934,13 @@
       <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
       <anchor>a60ef96c737e24344b9f931a5d0489466</anchor>
       <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetItemText</name>
+      <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
+      <anchor>a160086d21729fd109187ae86aff9b38a</anchor>
+      <arglist>(int index, FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -28493,6 +28500,13 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>abdd6b5d41e4d6ef63b5566d3e38a64ca</anchor>
       <arglist>(const char *fieldname)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetOptionalScriptText</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a222ef80d9781cdd49cf4a3f649a4e266</anchor>
+      <arglist>(const char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -51829,6 +51843,13 @@
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>af4f743c5420a8e811fd44f060d53fbac</anchor>
       <arglist>(FCString *pPathPart, FCString *pFilePart)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUserPath</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ab7d66247a81989feeb8ccaa8ad411c84</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>

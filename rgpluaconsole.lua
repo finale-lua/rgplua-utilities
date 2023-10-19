@@ -18,7 +18,148 @@ end
 
 require('mobdebug').start()
 
---global variables prevent garbage collection until script terminates and releases Lua State
+--local variables with script-wide scope: reset each time the script is run
+
+local file_menu             -- file menu
+local script_menu           -- script menu
+local edit_text             -- text editor
+local line_number_text      -- line mumbers
+local output_text           -- print output area
+local clear_output_chk      -- Clear Before Run checkbox
+
+local function select_script(fullpath, scripts_items_index)
+    local original_fullpath = fullpath
+    local fc_fullpath = finale.FCString(fullpath)
+    local fc_path = finale.FCString()
+    local fc_name = finale.FCString()
+    local file_exists = true
+    if fc_fullpath:SplitToPathAndFile(fc_path, fc_name) then
+        context.working_directory = fc_path.LuaString
+    else
+        fc_path.LuaString = context.working_directory
+        fc_path:AssureEndingPathDelimiter()
+        fc_path:AppendString(fc_fullpath)
+        fullpath = fc_path.LuaString
+        file_exists = false
+    end
+    local script_text = ""
+    if file_exists then
+        local file <close> = io.open(fullpath, "r")
+        if file then
+            script_text = file:read("a")
+        end
+    end
+    local script_items = finenv.CreateLuaScriptItemsFromFilePath(fullpath, script_text)
+    assert(script_items.Count > 0, "No script items returned for " .. fullpath .. ".")
+    if not context.script_items_list[scripts_items_index] then
+        context.script_items_list[scripts_items_index] = {}
+    end
+    context.script_items_list[scripts_items_index].items = script_items
+    context.script_items_list[scripts_items_index].exists = file_exists
+    context.selected_script_item = scripts_items_index
+    edit_text:SetText(finale.FCString(script_text))
+    output_text:SetText(finale.FCString(""))
+    script_menu:Clear()
+    for item in each(script_items) do
+        --local item_string = string.gsub(item.MenuItemText, "%.{3}$", "") -- remove trailing dots, if any
+        script_menu:AddString(finale.FCString(item.MenuItemText))
+    end
+    script_menu:SetSelectedItem(0)
+    local file_menu_index = scripts_items_index + context.first_script_in_menu - 1
+    if file_menu_index < file_menu:GetCount() then
+        file_menu:SetItemText(file_menu_index, original_fullpath)
+    else
+        file_menu:AddString(finale.FCString(original_fullpath))
+        assert(file_menu:GetCount() == file_menu_index + 1,
+            "Adding string to file_menu and file_menu_index is beyond the end of it.")
+    end
+    file_menu:SetSelectedItem(file_menu_index)
+end
+
+local function file_new()
+    select_script("Untitled" .. context.untitled_counter .. ".lua",
+        file_menu:GetCount() - context.first_script_in_menu + 1)
+    context.untitled_counter = context.untitled_counter + 1
+end
+
+local function file_open()
+    local file_open = finale.FCFileOpenDialog(global_dialog:CreateChildUI())
+    file_open:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
+    file_open:SetInitFolder(finale.FCString(context.working_directory))
+    file_open:SetTitle(finale.FCString("Open Lua Source File"))
+    if file_open:Execute() then
+        local fc_name = finale.FCString()
+        file_open:GetFileName(fc_name)
+        select_script(fc_name.LuaString, file_menu:GetCount() - context.first_script_in_menu + 1)
+    end
+end
+
+local file_save_as -- forward reference
+local function file_save()
+    local script_item_index = context.selected_script_item
+    assert(script_item_index > 0, "invalid script_item_index")
+    assert(context.script_items_list[script_item_index], "no context for script item index")
+    if not context.script_items_list[script_item_index].exists then
+        file_save_as()
+        return
+    end
+    local menu_index = script_item_index - 1 + context.first_script_in_menu
+    local file_path = finale.FCString()
+    local result = file_menu:GetItemText(menu_index, file_path)
+    assert(result, "no text found in file_menu at index " .. menu_index)
+    local file <close> = io.open(file_path.LuaString, "w")
+    if file then
+        local contents = finale.FCString()
+        edit_text:GetText(contents)
+        file:write(contents.LuaString)
+        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents)
+        assert(items.Count > 0, "no items returned for "..file_path.LuaString)
+        context.script_items_list[script_item_index].items = items
+    else
+        global_dialog:CreateChildUI():AlertError("Unable to write file " .. file_path.LuaString, "Save Error")
+    end
+    file_menu:SetSelectedItem(menu_index)
+end
+
+function file_save_as()
+    local script_item_index = context.selected_script_item
+    assert(script_item_index > 0, "invalid script_item_index")
+    assert(context.script_items_list[script_item_index], "no context for script item index")
+    local menu_index = script_item_index - 1 + context.first_script_in_menu
+    local fc_path = finale.FCString()
+    local got_menu_text = file_menu:GetItemText(menu_index, fc_path)
+    assert(got_menu_text, "unable to get popup item text for item" .. menu_index)
+    local fc_folder = finale.FCString()
+    local fc_name = finale.FCString()
+    fc_path:SplitToPathAndFile(fc_folder, fc_name)
+    local file_save = finale.FCFileSaveAsDialog(global_dialog:CreateChildUI())
+    file_save:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
+    file_save:SetInitFolder(finale.FCString(fc_folder.LuaString))
+    file_save:SetTitle(finale.FCString("Save Lua Source File As"))
+    if file_save:Execute() then
+        context.script_items_list[script_item_index].exists = true
+        local fc_new_path = finale.FCString()
+        file_save:GetFileName(fc_new_path)
+        fc_new_path:SplitToPathAndFile(fc_folder)
+        context.working_directory = fc_folder.LuaString
+        file_menu:SetItemText(menu_index, fc_new_path)
+        file_save()
+    end
+    file_menu:SetSelectedItem(menu_index)
+end
+
+local function file_close()
+    local script_item_index = context.selected_script_item
+    assert(script_item_index > 0, "invalid script_item_index")
+    assert(context.script_items_list[script_item_index], "no context for script item index")
+    local menu_index = script_item_index - 1 + context.first_script_in_menu
+    -- ToDo: file close
+    file_menu:SetSelectedItem(menu_index)
+end
+
+--global variables that persist (thru Lua garbage collection) until the script releases its Lua State
+
+global_dialog = nil         -- persists thru the running of the modeless window, so reset each time the script runs
 
 if not finenv.RetainLuaState then
     context =
@@ -27,21 +168,40 @@ if not finenv.RetainLuaState then
         output_tabstop_width = 8,
         clear_output = false,
         script_text = nil,
-        script_file = nil,
         output_text = nil,
-        recent_files = {},
+        script_items_list = {}, -- each member is a table of 'items' (script items) and 'exists' (boolean)
+        selected_script_item = 0, -- 1-based Lua index into script_items_list
+        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-" },
+        first_script_in_menu = 6,
+        untitled_counter = 1,
+        working_directory = (function()
+            local str = finale.FCString()
+            str:SetUserPath()
+            if #str.LuaString <= 0 then
+                return finenv.RunningLuaFolderPath()
+            end
+            return str.LuaString
+        end)(),
         window_pos_x = nil,
         window_pos_y = nil
     }
+    file_menu_base_handler =
+    {
+        file_new,
+        file_open,
+        file_save,
+        file_save_as,
+        file_close,
+        function() -- nop function for divider
+            local script_item_index = context.selected_script_item
+            assert(script_item_index > 0, "invalid script_item_index")
+            assert(context.script_items_list[script_item_index], "no context for script item index")
+            local menu_index = script_item_index - 1 + context.first_script_in_menu
+            -- ToDo: file close
+            file_menu:SetSelectedItem(menu_index)      
+        end
+    }
 end
-
-global_dialog = nil
-
-local edit_text             -- text editor
-local line_number_text      -- line mumbers
-local output_text           -- print output area
-local clear_output_chk      -- Clear Before Run checkbox
-
 
 local function win_mac(winval, macval)
     if finenv.UI():IsOnWindows() then return winval end
@@ -105,52 +265,113 @@ function on_execution_did_stop(item, success, msg, msgtype)
     end
 end
 
-local function run_script(control)
+local function on_run_script(control)
     control:SetEnable(false)
-    local script_path = finenv.RunningLuaFolderPath() .. "/untitled.lua" -- ToDo: get actual path
     local script_text = finale.FCString()
     edit_text:GetText(script_text)
-    local script_items = finenv.CreateLuaScriptItemsFromFilePath(script_path, script_text.LuaString)
-    if script_items.Count > 0 then
-        local script_item = script_items:GetItemAt(0)
-        script_item.AutomaticallyReportErrors = false
-        script_item.Debug = true
-        script_item:RegisterPrintFunction(output_to_console)
-        script_item:RegisterOnExecutionWillStart(on_execution_will_start)
-        script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
-        --script_item.Trusted = true
-        if clear_output_chk:GetCheck() ~= 0 then
-            output_text:SetText(finale.FCString(""))
-        end
-        finenv.ExecuteLuaScriptItem(script_item)
-        if script_item:IsExecuting() then
-            script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
-        end
+    local script_items = context.script_items_list[context.selected_script_item].items
+    local x = script_items.Count
+    local s = script_menu:GetSelectedItem()
+    local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
+    script_item.OptionalScriptText = script_text.LuaString
+    script_item.AutomaticallyReportErrors = false
+    script_item.Debug = true
+    script_item:RegisterPrintFunction(output_to_console)
+    script_item:RegisterOnExecutionWillStart(on_execution_will_start)
+    script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
+    --script_item.Trusted = true
+    if clear_output_chk:GetCheck() ~= 0 then
+        output_text:SetText(finale.FCString(""))
     end
-    control:SetEnable(true) -- ToDo: leave it disabled if the script item is still running
+    finenv.ExecuteLuaScriptItem(script_item)
+    if script_item:IsExecuting() then
+        script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
+    end
+    control:SetEnable(true) -- ToDo: leave it disabled if the script item is still running?
+end
+
+local function on_init_window()
+    for idx, str in pairsbykeys(context.file_menu_base) do
+        file_menu:AddString(finale.FCString(str))
+    end
+    for idx, itemcontext in pairsbykeys(context.script_items_list) do
+        local items = itemcontext.items
+        local str = items:GetItemAt(0).FilePath
+        if not itemcontext.exists then
+            local fc_str = finale.FCString(str)
+            local fc_name = finale.FCString()
+            fc_str:SplitToPathAndFile(nil, fc_name)
+            str = fc_name.LuaString
+        end
+        file_menu:AddString(finale.FCString(str))
+    end
+    if file_menu:GetCount() <= context.first_script_in_menu then
+        file_new()
+    else
+        select_script(context.script_items_list[context.selected_script_item].items:GetItemAt(0).FilePath, context.selected_script_item)
+    end
+    clear_output_chk:SetCheck(context.clear_output and 1 or 0)
+    if context.script_text then
+        edit_text:SetText(finale.FCString(context.script_text))
+    end
+    if context.output_text then
+        output_text:SetText(finale.FCString(""))
+        output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
+    end
+    edit_text:SetKeyboardFocus()
+end
+
+local function on_close_window()
+    if global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+        finenv.RetainLuaState = false
+    else
+        finenv.RetainLuaState = true
+    end
+    if finenv.RetainLuaState then
+        context.clear_output = clear_output_chk:GetCheck() ~= 0
+        local text = finale.FCString()
+        edit_text:GetText(text)
+        context.script_text = text.LuaString
+        output_text:GetText(text)
+        context.output_text = text.LuaString
+        global_dialog:StorePosition()
+        context.window_pos_x = global_dialog.StoredX
+        context.window_pos_y = global_dialog.StoredY
+    end 
 end
 
 local create_dialog = function()
     local dialog = finale.FCCustomLuaWindow()
     dialog:SetTitle(finale.FCString("RGP Lua - Console"))
+    -- positioning parameters
     local x_separator = 10
     local y_separator = 10
-    local curr_y = 0
+    local button_width = 100
+    local button_height = 20
     local edit_text_height = 280
     local output_height = edit_text_height / 2.5
     local line_number_width = 90
-    local total_width = 960
+    local total_width = 960 -- make divisible by 3
+    local curr_y = 0
+    -- script selection
+    file_menu = dialog:CreatePopup(0, curr_y)
+    local one_third_width = total_width / 3
+    file_menu:SetWidth(2*one_third_width - x_separator/2)
+    script_menu = dialog:CreatePopup(total_width - one_third_width + 5, curr_y)
+    script_menu:SetWidth(one_third_width - x_separator/2)
+    curr_y = curr_y + button_height + y_separator
+    -- editor
     line_number_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), line_number_width, edit_text_height, false)
     edit_text = setup_edittext_control(dialog:CreateEditText(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
     curr_y = curr_y + y_separator + edit_text_height
-    local button_width = 100
-    local button_height = 20
+    -- command buttons, misc.
     local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)
     run_script_cmd:SetText(finale.FCString("Run Script"))
     run_script_cmd:SetWidth(button_width)
-    dialog:RegisterHandleControlEvent(run_script_cmd, run_script)
+    dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
     curr_y = curr_y + button_height + y_separator
+    -- output console
     local output_desc = dialog:CreateStatic(0, curr_y)
     output_desc:SetWidth(100)
     output_desc:SetText(finale.FCString("Execution Output:"))
@@ -166,37 +387,12 @@ local create_dialog = function()
     curr_y = curr_y + button_height
     output_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), total_width, output_height, false,
         context.output_tabstop_width)
+    -- close button
     local ok_btn = dialog:CreateOkButton()
     ok_btn:SetText(finale.FCString("Close"))
-    dialog:RegisterInitWindow(function()
-        clear_output_chk:SetCheck(context.clear_output and 1 or 0)
-        if context.script_text then
-            edit_text:SetText(finale.FCString(context.script_text))
-        end
-        if context.output_text then
-            output_text:SetText(finale.FCString(""))
-            output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
-        end
-        edit_text:SetKeyboardFocus()
-    end)
-    dialog:RegisterCloseWindow(function()
-        if global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
-            finenv.RetainLuaState = false
-        else
-            finenv.RetainLuaState = true
-        end
-        if finenv.RetainLuaState then
-            context.clear_output = clear_output_chk:GetCheck() ~= 0
-            local text = finale.FCString()
-            edit_text:GetText(text)
-            context.script_text = text.LuaString
-            output_text:GetText(text)
-            context.output_text = text.LuaString
-            global_dialog:StorePosition()
-            context.window_pos_x = global_dialog.StoredX
-            context.window_pos_y = global_dialog.StoredY
-        end 
-    end)
+    -- registrations
+    dialog:RegisterInitWindow(on_init_window)
+    dialog:RegisterCloseWindow(on_close_window)
     return dialog
 end
 
