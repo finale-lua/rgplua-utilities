@@ -21,11 +21,21 @@ require('mobdebug').start()
 --local variables with script-wide scope: reset each time the script is run
 
 local file_menu             -- file menu
+local file_menu_cursel = -1 -- needed because Windows calls our on_popop routine more than just for selections
 local script_menu           -- script menu
 local edit_text             -- text editor
 local line_number_text      -- line mumbers
 local output_text           -- print output area
 local clear_output_chk      -- Clear Before Run checkbox
+
+local function get_edit_text(control)
+    -- We can't use GetText because on Windows it has a hard-coded 5000 char limit
+    local range = finale.FCRange()
+    control:GetTotalTextRange(range)
+    local retval = finale.FCString()
+    control:GetTextInRange(retval, range)
+    return retval
+end
 
 local function select_script(fullpath, scripts_items_index)
     local original_fullpath = fullpath
@@ -112,8 +122,7 @@ local function file_save()
     assert(result, "no text found in file_menu at index " .. menu_index)
     local file <close> = io.open(file_path.LuaString, "w")
     if file then
-        local contents = finale.FCString()
-        edit_text:GetText(contents)
+        local contents = get_edit_text(edit_text)
         file:write(contents.LuaString)
         local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
         assert(items.Count > 0, "no items returned for "..file_path.LuaString)
@@ -280,8 +289,7 @@ end
 
 local function on_run_script(control)
     control:SetEnable(false)
-    local script_text = finale.FCString()
-    edit_text:GetText(script_text)
+    local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
     local x = script_items.Count
     local s = script_menu:GetSelectedItem()
@@ -305,6 +313,10 @@ end
 
 local function on_file_popup(control)
     local selected_item = control:GetSelectedItem()
+    if file_menu_cursel == selected_item then
+        return
+    end
+    file_menu_cursel = selected_item
     if selected_item < context.first_script_in_menu then
         file_menu_base_handler[selected_item + 1]()
         return
@@ -353,11 +365,8 @@ local function on_close_window()
     end
     if finenv.RetainLuaState then
         context.clear_output = clear_output_chk:GetCheck() ~= 0
-        local text = finale.FCString()
-        edit_text:GetText(text)
-        context.script_text = text.LuaString
-        output_text:GetText(text)
-        context.output_text = text.LuaString
+        context.script_text = get_edit_text(edit_text).LuaString
+        context.output_text = get_edit_text(output_text).LuaString
         global_dialog:StorePosition()
         context.window_pos_x = global_dialog.StoredX
         context.window_pos_y = global_dialog.StoredY
