@@ -35,6 +35,7 @@ local function select_script(fullpath, scripts_items_index)
     local file_exists = true
     if fc_fullpath:SplitToPathAndFile(fc_path, fc_name) then
         context.working_directory = fc_path.LuaString
+        context.working_directory_valid = true
     else
         fc_path.LuaString = context.working_directory
         fc_path:AssureEndingPathDelimiter()
@@ -67,7 +68,7 @@ local function select_script(fullpath, scripts_items_index)
     script_menu:SetSelectedItem(0)
     local file_menu_index = scripts_items_index + context.first_script_in_menu - 1
     if file_menu_index < file_menu:GetCount() then
-        file_menu:SetItemText(file_menu_index, original_fullpath)
+        file_menu:SetItemText(file_menu_index, finale.FCString(original_fullpath))
     else
         file_menu:AddString(finale.FCString(original_fullpath))
         assert(file_menu:GetCount() == file_menu_index + 1,
@@ -83,13 +84,15 @@ local function file_new()
 end
 
 local function file_open()
-    local file_open = finale.FCFileOpenDialog(global_dialog:CreateChildUI())
-    file_open:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
-    file_open:SetInitFolder(finale.FCString(context.working_directory))
-    file_open:SetTitle(finale.FCString("Open Lua Source File"))
-    if file_open:Execute() then
+    local file_open_dlg = finale.FCFileOpenDialog(global_dialog:CreateChildUI())
+    file_open_dlg:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
+    if context.working_directory_valid then
+        file_open_dlg:SetInitFolder(finale.FCString(context.working_directory))
+    end
+    file_open_dlg:SetWindowTitle(finale.FCString("Open Lua Source File"))
+    if file_open_dlg:Execute() then
         local fc_name = finale.FCString()
-        file_open:GetFileName(fc_name)
+        file_open_dlg:GetFileName(fc_name)
         select_script(fc_name.LuaString, file_menu:GetCount() - context.first_script_in_menu + 1)
     end
 end
@@ -112,7 +115,7 @@ local function file_save()
         local contents = finale.FCString()
         edit_text:GetText(contents)
         file:write(contents.LuaString)
-        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents)
+        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
         assert(items.Count > 0, "no items returned for "..file_path.LuaString)
         context.script_items_list[script_item_index].items = items
     else
@@ -129,19 +132,27 @@ function file_save_as()
     local fc_path = finale.FCString()
     local got_menu_text = file_menu:GetItemText(menu_index, fc_path)
     assert(got_menu_text, "unable to get popup item text for item" .. menu_index)
+    local file_save_dlg = finale.FCFileSaveAsDialog(global_dialog:CreateChildUI())
     local fc_folder = finale.FCString()
     local fc_name = finale.FCString()
-    fc_path:SplitToPathAndFile(fc_folder, fc_name)
-    local file_save = finale.FCFileSaveAsDialog(global_dialog:CreateChildUI())
-    file_save:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
-    file_save:SetInitFolder(finale.FCString(fc_folder.LuaString))
-    file_save:SetTitle(finale.FCString("Save Lua Source File As"))
-    if file_save:Execute() then
+    if fc_path:SplitToPathAndFile(fc_folder, fc_name) then
+        file_save_dlg:SetInitFolder(fc_folder)
+        file_save_dlg:SetFileName(fc_name)
+    else
+        if context.working_directory_valid then
+            file_save_dlg:SetInitFolder(finale.FCString(context.working_directory))
+        end
+        file_save_dlg:SetFileName(fc_path)
+    end
+    file_save_dlg:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
+    file_save_dlg:SetWindowTitle(finale.FCString("Save Lua Source File As"))
+    if file_save_dlg:Execute() then
         context.script_items_list[script_item_index].exists = true
         local fc_new_path = finale.FCString()
-        file_save:GetFileName(fc_new_path)
-        fc_new_path:SplitToPathAndFile(fc_folder)
+        file_save_dlg:GetFileName(fc_new_path, nil)
+        fc_new_path:SplitToPathAndFile(fc_folder, nil)
         context.working_directory = fc_folder.LuaString
+        context.working_directory_valid = true
         file_menu:SetItemText(menu_index, fc_new_path)
         file_save()
     end
@@ -182,6 +193,7 @@ if not finenv.RetainLuaState then
             end
             return str.LuaString
         end)(),
+        working_directory_valid = false,
         window_pos_x = nil,
         window_pos_y = nil
     }
@@ -228,6 +240,7 @@ local function setup_edittext_control(control, width, height, editable, tabstop_
     control:SetReadOnly(not editable)
     control:SetUseRichText(false)
     control:SetWordWrap(false)
+    control:SetAutomaticEditing(false)
     local font = win_mac(finale.FCFontInfo("Consolas", 9), finale.FCFontInfo("Monaco", 11))
     control:SetFont(font)
     if tabstop_width then
@@ -288,6 +301,17 @@ local function on_run_script(control)
         script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
     end
     control:SetEnable(true) -- ToDo: leave it disabled if the script item is still running?
+end
+
+local function on_file_popup(control)
+    local selected_item = control:GetSelectedItem()
+    if selected_item < context.first_script_in_menu then
+        file_menu_base_handler[selected_item + 1]()
+        return
+    end
+    local filepath = finale.FCString()
+    file_menu:GetItemText(file_menu:GetSelectedItem(), filepath)
+    select_script(filepath.LuaString, selected_item - context.first_script_in_menu + 1)
 end
 
 local function on_init_window()
@@ -391,6 +415,7 @@ local create_dialog = function()
     local ok_btn = dialog:CreateOkButton()
     ok_btn:SetText(finale.FCString("Close"))
     -- registrations
+    dialog:RegisterHandleControlEvent(file_menu, on_file_popup)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     return dialog
