@@ -48,7 +48,7 @@ local function calc_tab_width(font, numchars) -- assumes fixed_width font
     local adv_points = 0
     local curr_doc = finale.FCDocument()
     if curr_doc.ID <= 0 then
-        adv_points = win_mac(4, 6.60107421875) -- ToDo: hard-code for win based on hard-coded fonts below
+        adv_points = win_mac(4.9482421875, 6.60107421875) -- win 10pt Cortana is 5.498046875
     else
         local text_met = finale.FCTextMetrics()
         text_met:LoadString(finale.FCString("a"), font, 100)
@@ -63,7 +63,7 @@ local function setup_edittext_control(control, width, height, editable, tabstop_
     control:SetReadOnly(not editable)
     control:SetUseRichText(false)
     control:SetWordWrap(false)
-    local font = win_mac(finale.FCFontInfo("Consolas", 10), finale.FCFontInfo("Monaco", 11))
+    local font = win_mac(finale.FCFontInfo("Consolas", 9), finale.FCFontInfo("Monaco", 11))
     control:SetFont(font)
     if tabstop_width then
         control:SetTabstopWidth(calc_tab_width(font, tabstop_width))
@@ -92,6 +92,9 @@ function on_execution_did_stop(item, success, msg, msgtype)
         -- script results have already been sent to ouput by Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
+            if msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION then
+                output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
+            end
         end
         output_to_console("<======= "..item.MenuItemText.." FAILED.")
     end
@@ -112,6 +115,9 @@ local function run_script(control)
         script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
         --script_item.Trusted = true
         finenv.ExecuteLuaScriptItem(script_item)
+        if script_item:IsExecuting() then
+            script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
+        end
     end
     control:SetEnable(true) -- ToDo: leave it disabled if the script item is still running
 end
