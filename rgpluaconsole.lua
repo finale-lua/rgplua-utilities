@@ -29,11 +29,8 @@ local output_text           -- print output area
 local clear_output_chk      -- Clear Before Run checkbox
 
 local function get_edit_text(control)
-    -- We can't use GetText because on Windows it has a hard-coded 5000 char limit
-    local range = finale.FCRange()
-    control:GetTotalTextRange(range)
     local retval = finale.FCString()
-    control:GetTextInRange(retval, range)
+    control:GetText(retval)
     return retval
 end
 
@@ -321,9 +318,12 @@ local function on_file_popup(control)
         file_menu_base_handler[selected_item + 1]()
         return
     end
-    local filepath = finale.FCString()
-    file_menu:GetItemText(file_menu:GetSelectedItem(), filepath)
-    select_script(filepath.LuaString, selected_item - context.first_script_in_menu + 1)
+    local selected_script = selected_item - context.first_script_in_menu + 1
+    if selected_script ~= context.selected_script_item then
+        local filepath = finale.FCString()
+        file_menu:GetItemText(file_menu:GetSelectedItem(), filepath)
+        select_script(filepath.LuaString, selected_item - context.first_script_in_menu + 1)
+    end
 end
 
 local function on_init_window()
