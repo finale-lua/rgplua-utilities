@@ -34,6 +34,13 @@ local function get_edit_text(control)
     return retval
 end
 
+local function menu_index_from_current_script()
+    local script_item_index = context.selected_script_item
+    assert(script_item_index > 0, "invalid script_item_index")
+    assert(context.script_items_list[script_item_index], "no context for script item index")
+    return script_item_index - 1 + context.first_script_in_menu
+end
+
 local function select_script(fullpath, scripts_items_index)
     local original_fullpath = fullpath
     local fc_fullpath = finale.FCString(fullpath)
@@ -58,6 +65,7 @@ local function select_script(fullpath, scripts_items_index)
         end
     end
     local script_items = finenv.CreateLuaScriptItemsFromFilePath(fullpath, script_text)
+    context.original_script_text = script_text
     assert(script_items.Count > 0, "No script items returned for " .. fullpath .. ".")
     if not context.script_items_list[scripts_items_index] then
         context.script_items_list[scripts_items_index] = {}
@@ -66,6 +74,7 @@ local function select_script(fullpath, scripts_items_index)
     context.script_items_list[scripts_items_index].exists = file_exists
     context.selected_script_item = scripts_items_index
     edit_text:SetText(finale.FCString(script_text))
+    edit_text:ResetUndoState()
     output_text:SetText(finale.FCString(""))
     script_menu:Clear()
     for item in each(script_items) do
@@ -97,6 +106,7 @@ end
 
 local function file_open()
     if not check_save() then
+        file_menu:SetSelectedItem(menu_index_from_current_script())
         return
     end
     local file_open_dlg = finale.FCFileOpenDialog(global_dialog:CreateChildUI())
@@ -109,44 +119,56 @@ local function file_open()
         local fc_name = finale.FCString()
         file_open_dlg:GetFileName(fc_name)
         select_script(fc_name.LuaString, file_menu:GetCount() - context.first_script_in_menu + 1)
+    else
+        file_menu:SetSelectedItem(menu_index_from_current_script())
     end
 end
 
 local file_save_as -- forward reference
 local function file_save()
     local script_item_index = context.selected_script_item
-    assert(script_item_index > 0, "invalid script_item_index")
-    assert(context.script_items_list[script_item_index], "no context for script item index")
     if not context.script_items_list[script_item_index].exists then
-        file_save_as()
-        return
+        return file_save_as()
     end
-    local menu_index = script_item_index - 1 + context.first_script_in_menu
+    local menu_index = menu_index_from_current_script()
     local file_path = finale.FCString()
     local result = file_menu:GetItemText(menu_index, file_path)
     assert(result, "no text found in file_menu at index " .. menu_index)
     local file <close> = io.open(file_path.LuaString, "w")
+    local retval = true
     if file then
         local contents = get_edit_text(edit_text)
         file:write(contents.LuaString)
         local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
+        context.original_script_text = contents.LuaString
         assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
         context.script_items_list[script_item_index].items = items
     else
         global_dialog:CreateChildUI():AlertError("Unable to write file " .. file_path.LuaString, "Save Error")
+        retval = false
     end
     file_menu:SetSelectedItem(menu_index)
+    return retval
 end
 
 function check_save()
+    if context.selected_script_item <= 0 then
+        return true -- nothing has been loaded yet if here
+    end
+    local fcstr = finale.FCString()
+    edit_text:GetText(fcstr)
+    if fcstr.LuaString ~= context.original_script_text then
+        local result = global_dialog:CreateChildUI():AlertYesNo("Would you like to save your changes to this script?", "Save Changes?")
+        if result == finale.YESRETURN then
+            return file_save()
+        end
+    end
     return true -- ToDo: check if we need to save changes
 end
 
 function file_save_as()
     local script_item_index = context.selected_script_item
-    assert(script_item_index > 0, "invalid script_item_index")
-    assert(context.script_items_list[script_item_index], "no context for script item index")
-    local menu_index = script_item_index - 1 + context.first_script_in_menu
+    local menu_index = menu_index_from_current_script()
     local fc_path = finale.FCString()
     local got_menu_text = file_menu:GetItemText(menu_index, fc_path)
     assert(got_menu_text, "unable to get popup item text for item" .. menu_index)
@@ -164,7 +186,8 @@ function file_save_as()
     end
     file_save_dlg:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
     file_save_dlg:SetWindowTitle(finale.FCString("Save Lua Source File As"))
-    if file_save_dlg:Execute() then
+    local result = file_save_dlg:Execute()
+    if result then
         context.script_items_list[script_item_index].exists = true
         local fc_new_path = finale.FCString()
         file_save_dlg:GetFileName(fc_new_path, nil)
@@ -175,16 +198,14 @@ function file_save_as()
         file_save()
     end
     file_menu:SetSelectedItem(menu_index)
+    return result
 end
 
 local function file_close()
     if not check_save() then
         return
     end
-    local script_item_index = context.selected_script_item
-    assert(script_item_index > 0, "invalid script_item_index")
-    assert(context.script_items_list[script_item_index], "no context for script item index")
-    local menu_index = script_item_index - 1 + context.first_script_in_menu
+    local menu_index = menu_index_from_current_script()
     file_menu:DeleteItem(menu_index)
     table.remove(context.script_items_list, context.selected_script_item)
     if menu_index >= file_menu:GetCount() then
@@ -219,6 +240,7 @@ if not finenv.RetainLuaState then
         output_tabstop_width = 8,
         clear_output = false,
         script_text = nil,
+        original_script_text = "",
         output_text = nil,
         script_items_list = {}, -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0, -- 1-based Lua index into script_items_list
@@ -245,12 +267,7 @@ if not finenv.RetainLuaState then
         file_save_as,
         file_close,
         function() -- nop function for divider
-            local script_item_index = context.selected_script_item
-            assert(script_item_index > 0, "invalid script_item_index")
-            assert(context.script_items_list[script_item_index], "no context for script item index")
-            local menu_index = script_item_index - 1 + context.first_script_in_menu
-            -- ToDo: file close
-            file_menu:SetSelectedItem(menu_index)      
+            file_menu:SetSelectedItem(menu_index_from_current_script())      
         end
     }
 end
@@ -352,10 +369,12 @@ local function on_file_popup(control)
         file_menu_base_handler[selected_item + 1]()
     else
         local selected_script = selected_item - context.first_script_in_menu + 1
-        if selected_script ~= context.selected_script_item then
-            local filepath = finale.FCString()
-            file_menu:GetItemText(file_menu:GetSelectedItem(), filepath)
-            select_script(filepath.LuaString, selected_item - context.first_script_in_menu + 1)
+        if check_save() then -- check_save() may change context.first_script_in_menu
+            if selected_script ~= context.selected_script_item then
+                local filepath = finale.FCString()
+                file_menu:GetItemText(selected_item, filepath)
+                select_script(filepath.LuaString, selected_script)
+            end
         end
     end
     in_popup_handler = false
@@ -385,6 +404,7 @@ local function on_init_window()
     if context.script_text then
         edit_text:SetText(finale.FCString(context.script_text))
     end
+    edit_text:ResetUndoState()
     if context.output_text then
         output_text:SetText(finale.FCString(""))
         output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
