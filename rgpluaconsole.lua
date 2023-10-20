@@ -21,7 +21,7 @@ require('mobdebug').start()
 --local variables with script-wide scope: reset each time the script is run
 
 local file_menu             -- file menu
-local file_menu_cursel = -1 -- needed because Windows calls our on_popop routine more than just for selections
+local in_popup_handler      -- needed because Windows calls our on_popop routine more than just for selections
 local script_menu           -- script menu
 local edit_text             -- text editor
 local line_number_text      -- line mumbers
@@ -84,13 +84,21 @@ local function select_script(fullpath, scripts_items_index)
     file_menu:SetSelectedItem(file_menu_index)
 end
 
+local check_save -- forward reference to check_save function
+
 local function file_new()
+    if not check_save() then
+        return
+    end
     select_script("Untitled" .. context.untitled_counter .. ".lua",
         file_menu:GetCount() - context.first_script_in_menu + 1)
     context.untitled_counter = context.untitled_counter + 1
 end
 
 local function file_open()
+    if not check_save() then
+        return
+    end
     local file_open_dlg = finale.FCFileOpenDialog(global_dialog:CreateChildUI())
     file_open_dlg:AddFilter(finale.FCString("*.lua"), finale.FCString("Lua source files"))
     if context.working_directory_valid then
@@ -122,12 +130,16 @@ local function file_save()
         local contents = get_edit_text(edit_text)
         file:write(contents.LuaString)
         local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
-        assert(items.Count > 0, "no items returned for "..file_path.LuaString)
+        assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
         context.script_items_list[script_item_index].items = items
     else
         global_dialog:CreateChildUI():AlertError("Unable to write file " .. file_path.LuaString, "Save Error")
     end
     file_menu:SetSelectedItem(menu_index)
+end
+
+function check_save()
+    return true -- ToDo: check if we need to save changes
 end
 
 function file_save_as()
@@ -166,11 +178,33 @@ function file_save_as()
 end
 
 local function file_close()
+    if not check_save() then
+        return
+    end
     local script_item_index = context.selected_script_item
     assert(script_item_index > 0, "invalid script_item_index")
     assert(context.script_items_list[script_item_index], "no context for script item index")
     local menu_index = script_item_index - 1 + context.first_script_in_menu
-    -- ToDo: file close
+    file_menu:DeleteItem(menu_index)
+    table.remove(context.script_items_list, context.selected_script_item)
+    if menu_index >= file_menu:GetCount() then
+        menu_index = menu_index - 1
+        assert(menu_index < file_menu:GetCount(), "menu index is out of range after deletion: " .. menu_index)
+        context.selected_script_item = context.selected_script_item - 1
+        if menu_index < context.first_script_in_menu then
+            file_new()
+            return -- file_new() sets the correct selection
+        else
+            assert(context.selected_script_item > 0, "context.selected_script_item has gone to zero")
+            local filepath = finale.FCString()
+            file_menu:GetItemText(menu_index, filepath)
+            select_script(filepath.LuaString, context.selected_script_item)
+        end
+    else
+        local filepath = finale.FCString()
+        file_menu:GetItemText(menu_index, filepath)
+        select_script(filepath.LuaString, context.selected_script_item)        
+    end
     file_menu:SetSelectedItem(menu_index)
 end
 
@@ -310,20 +344,21 @@ end
 
 local function on_file_popup(control)
     local selected_item = control:GetSelectedItem()
-    if file_menu_cursel == selected_item then
+    if in_popup_handler then
         return
     end
-    file_menu_cursel = selected_item
+    in_popup_handler = true
     if selected_item < context.first_script_in_menu then
         file_menu_base_handler[selected_item + 1]()
-        return
+    else
+        local selected_script = selected_item - context.first_script_in_menu + 1
+        if selected_script ~= context.selected_script_item then
+            local filepath = finale.FCString()
+            file_menu:GetItemText(file_menu:GetSelectedItem(), filepath)
+            select_script(filepath.LuaString, selected_item - context.first_script_in_menu + 1)
+        end
     end
-    local selected_script = selected_item - context.first_script_in_menu + 1
-    if selected_script ~= context.selected_script_item then
-        local filepath = finale.FCString()
-        file_menu:GetItemText(file_menu:GetSelectedItem(), filepath)
-        select_script(filepath.LuaString, selected_item - context.first_script_in_menu + 1)
-    end
+    in_popup_handler = false
 end
 
 local function on_init_window()
@@ -363,6 +398,7 @@ local function on_close_window()
     else
         finenv.RetainLuaState = true
     end
+    check_save()
     if finenv.RetainLuaState then
         context.clear_output = clear_output_chk:GetCheck() ~= 0
         context.script_text = get_edit_text(edit_text).LuaString
