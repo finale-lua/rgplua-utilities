@@ -16747,6 +16747,13 @@
       <anchor>ade6d50db38ae0b704e44273cc1de83cb</anchor>
       <arglist>(float horizresize, float vertresize)</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RedrawImmediate</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>abf6d4998e4aabec5f068272df4523c22</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCppGarbageCollector</name>
