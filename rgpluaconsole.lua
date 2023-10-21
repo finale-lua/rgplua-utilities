@@ -139,7 +139,7 @@ local function file_save()
     if file then
         local contents = get_edit_text(edit_text)
         file:write(contents.LuaString)
-        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
+        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents)
         context.original_script_text = contents.LuaString
         assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
         context.script_items_list[script_item_index].items = items
@@ -310,10 +310,27 @@ function output_to_console(...)
     local args = { ... } -- Pack all arguments into a table
     local formatted_args = {}
     for i, arg in ipairs(args) do
-        formatted_args[i] = tostring(arg)                             -- Convert each argument to a string
+        formatted_args[i] = tostring(arg)                               -- Convert each argument to a string
     end
     local formatted_string = table.concat(formatted_args, "\t") .. "\n" -- Concatenate arguments with tabs
     output_text:AppendText(finale.FCString(formatted_string))
+end
+
+function on_text_change(control)
+    local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
+    local function format_number(num, width)
+        local str_num = tostring(num)
+        local leading_spaces = width - #str_num
+        if leading_spaces < 0 then
+            leading_spaces = 0
+        end
+        return string.rep(" ", leading_spaces) .. str_num
+    end
+    local numbers_text = ""
+    for i = 1, num_lines do
+        numbers_text = numbers_text .. format_number(i, 6) .. "\n"
+    end
+    line_number_text:SetText(finale.FCString(numbers_text))
 end
 
 function on_execution_will_start(item)
@@ -481,6 +498,7 @@ local create_dialog = function()
     ok_btn:SetText(finale.FCString("Close"))
     -- registrations
     dialog:RegisterHandleControlEvent(file_menu, on_file_popup)
+    dialog:RegisterHandleControlEvent(edit_text, on_text_change)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     return dialog

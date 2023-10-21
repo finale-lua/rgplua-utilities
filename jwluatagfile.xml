@@ -17691,6 +17691,13 @@
       <anchor>a2c6873e66902b09870bd1c0279e825f1</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetNumberOfLines</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ab2899b9290bac6ce3cffab6bf38807eb</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlImage</name>
