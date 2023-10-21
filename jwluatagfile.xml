@@ -17650,6 +17650,20 @@
       <arglist>(double value)</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetConvertTabsToSpaces</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>ac35cdcea9cf6e49025798d5ef090907f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetConvertTabsToSpaces</name>
+      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
+      <anchor>a2c783eb1c163634cafaba92a03d89968</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
       <type>FCRanges *</type>
       <name>CreateRangesForString</name>
       <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>

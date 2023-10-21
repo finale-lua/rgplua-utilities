@@ -366,6 +366,14 @@ function on_execution_did_stop(item, success, msg, msgtype)
 end
 
 local function on_run_script(control)
+    --DBG
+    local tab_spaces = edit_text:GetConvertTabsToSpaces()
+    if tab_spaces <= 0 then
+        edit_text:SetConvertTabsToSpaces(context.tabstop_width)
+    else
+        edit_text:SetConvertTabsToSpaces(0)
+    end
+    --END DBG
     control:SetEnable(false)
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
@@ -473,7 +481,7 @@ local create_dialog = function()
     local button_width = 100
     local button_height = 20
     local edit_text_height = 280
-    local output_height = edit_text_height / 2.5
+    local output_height = edit_text_height / 2.2
     local line_number_width = 75
     local total_width = 960 -- make divisible by 3
     local curr_y = 0
@@ -488,6 +496,7 @@ local create_dialog = function()
     line_number_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), line_number_width, edit_text_height, false)
     edit_text = setup_edittext_control(dialog:CreateEditText(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
+    edit_text:SetConvertTabsToSpaces(context.tabstop_width) -- ToDo: make this an option
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
     local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)
