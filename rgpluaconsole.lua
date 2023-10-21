@@ -143,7 +143,7 @@ local function file_save()
     if file then
         local contents = get_edit_text(edit_text)
         file:write(contents.LuaString)
-        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents)
+        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
         context.original_script_text = contents.LuaString
         assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
         context.script_items_list[script_item_index].items = items
@@ -320,9 +320,12 @@ function output_to_console(...)
     local args = { ... } -- Pack all arguments into a table
     local formatted_args = {}
     for i, arg in ipairs(args) do
-        formatted_args[i] = tostring(arg)                               -- Convert each argument to a string
+        formatted_args[i] = tostring(arg) -- Convert each argument to a string
     end
-    local formatted_string = table.concat(formatted_args, "\t") .. "\n" -- Concatenate arguments with tabs
+    local range = finale.FCRange()
+    output_text:GetTotalTextRange(range)
+    local new_line = range.Length > 0 and "\n" or ""
+    local formatted_string = new_line .. table.concat(formatted_args, "\t") -- Concatenate arguments with tabs
     output_text:AppendText(finale.FCString(formatted_string))
 end
 
