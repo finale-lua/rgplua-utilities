@@ -301,7 +301,7 @@ local function calc_tab_width(font, numchars) -- assumes fixed_width font
     return numchars * adv_points
 end
 
-local function setup_edittext_control(control, width, height, editable, tabstop_width)
+local function setup_editor_control(control, width, height, editable, tabstop_width)
     control:SetWidth(width)
     control:SetHeight(height)
     control:SetReadOnly(not editable)
@@ -497,8 +497,8 @@ local create_dialog = function()
     script_menu:SetWidth(one_third_width - x_separator/2)
     curr_y = curr_y + button_height + y_separator
     -- editor
-    line_number_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), line_number_width, edit_text_height, false)
-    edit_text = setup_edittext_control(dialog:CreateEditText(line_number_width + x_separator, curr_y),
+    line_number_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), line_number_width, edit_text_height, false)
+    edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
     edit_text:SetConvertTabsToSpaces(context.tabstop_width) -- ToDo: make this an option
     curr_y = curr_y + y_separator + edit_text_height
@@ -522,7 +522,7 @@ local create_dialog = function()
     clear_output_chk:SetWidth(clear_output_chk_width)
     clear_output_chk:SetText(finale.FCString("Clear Before Run"))
     curr_y = curr_y + button_height
-    output_text = setup_edittext_control(dialog:CreateEditText(0, curr_y), total_width, output_height, false,
+    output_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), total_width, output_height, false,
         context.output_tabstop_width)
     -- close button
     local ok_btn = dialog:CreateOkButton()

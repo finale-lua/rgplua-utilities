@@ -16,6 +16,6 @@ The `jwluatagfile.xml` file should be placed inside the same folder as `rgpluacl
 ### RGP Lua Console
 Console editor for quick-starting Lua scripts in Finale.
 
-RGP Lua Console mimics the Development tab of [JW Lua](http://jwmusic.nu/jwplugins/wiki/doku.php?id=jw_lua). It has a pane for line numbers, for editing, and for print output. It is dependent on the `FCCtrlEditText` control, introduced into the PDK Framework with RGP Lua version 0.68. Therefore, it requires 0.68 as a minimum version.
+RGP Lua Console mimics the Development tab of [JW Lua](http://jwmusic.nu/jwplugins/wiki/doku.php?id=jw_lua). It has a pane for line numbers, for editing, and for print output. It is dependent on the `FCCtrlTextEditor` control, introduced into the PDK Framework with RGP Lua version 0.68. Therefore, it requires 0.68 as a minimum version.
 
 The current release of `rgpluaconsole.lua` is available at the [download site](https://robertgpatterson.com/-fininfo/-rgplua/rgplua.html) for RGP Lua.

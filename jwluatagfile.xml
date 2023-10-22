@@ -17384,343 +17384,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>FCCtrlEditText</name>
-    <filename>class_f_c_ctrl_edit_text.html</filename>
-    <base>FCControl</base>
-    <member kind="enumeration">
-      <type></type>
-      <name>STRINGFINDOPTIONS</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a59688eaa60e7d7265653675433c59f7a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>STRFINDOPT_IGNORECASE</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a59688eaa60e7d7265653675433c59f7aa7383c93d40f4fcc67417940dd7c0cdcb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>STRFINDOPT_WHOLEWORDS</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a59688eaa60e7d7265653675433c59f7aaa92f3e6ba2b7b3533bc8fbd6d2842169</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>STRFINDOPT_IGNORECASE</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a59688eaa60e7d7265653675433c59f7aa7383c93d40f4fcc67417940dd7c0cdcb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>STRFINDOPT_WHOLEWORDS</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a59688eaa60e7d7265653675433c59f7aaa92f3e6ba2b7b3533bc8fbd6d2842169</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>const char *</type>
-      <name>ClassName</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a62806faea7474de85d63142ae569b761</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>FCCtrlEditText</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a28f3b1c005828de6589d2a142425044e</anchor>
-      <arglist>(twobyte id)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetParent</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a95bf9b90ade8f4db4566351a463979f3</anchor>
-      <arglist>(__FCUserWindow *parentptr) override</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetTotalTextRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a1e84581445bceb5b2bd98eb58cb55b2b</anchor>
-      <arglist>(FCRange *pRange) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetSelection</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a4561e8de7a00d22a1d85eeebd63c916c</anchor>
-      <arglist>(FCRange *pRange) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetSelection</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a79bda545347711656c779609636717de</anchor>
-      <arglist>(const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SelectAll</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a7adc8a46b109f4aa1a598f47825994a2</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetTextInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a177560ae6c71d6c90b3ad29d93a03160</anchor>
-      <arglist>(FCString *pText, const FCRange *pRange) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>ReplaceTextInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>aa66bdfe372060b7834795e63b377bd22</anchor>
-      <arglist>(const FCString *pText, const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetSelectedText</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ad8616ab3d446cc1b041d24a134b37531</anchor>
-      <arglist>(FCString *pText) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>ReplaceSelectedText</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a29b0b1a2f431914ff94ccf4c592a81e4</anchor>
-      <arglist>(const FCString *pText)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>InsertTextAtCursor</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a885bea7dfd50b4be3a614dd15968548a</anchor>
-      <arglist>(const FCString *pText)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>AppendText</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>aba3953f6796d6c56d856e3eabec8a112</anchor>
-      <arglist>(const FCString *pText)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>AppendTextWithFontInfo</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a5db32ba6b3a6a7893ba7516b378898c9</anchor>
-      <arglist>(const FCString *pText, const FCFontInfo *pFont)</arglist>
-    </member>
-    <member kind="function">
-      <type>FCString *</type>
-      <name>CreateEnigmaString</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>abe241adee81778577b42b414f2119773</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetEnigmaString</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a7d94d460d8b1678ce5270cc899c0f642</anchor>
-      <arglist>(const FCString *pString, const FCRawText *pRawText=NULL)</arglist>
-    </member>
-    <member kind="function">
-      <type>FCFontInfo *</type>
-      <name>CreateFontInfoAtIndex</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>aa212f5b19756aabacd8d246632a96fcd</anchor>
-      <arglist>(int index) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a0426a7f806a7cb9d9d2095c96984011d</anchor>
-      <arglist>(const FCFontInfo *pFont, const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontForSelection</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ae8b3c5e402426128730a4fee831ab9ed</anchor>
-      <arglist>(const FCFontInfo *pFont)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontSizeInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a9a8d4fc994c31b53a7b55f38d4fa3213</anchor>
-      <arglist>(int size, const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontSizeForSelection</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a2a1663239ca9113863ca08a21c49ba0e</anchor>
-      <arglist>(int size)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontBoldInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a6ddbc612fac11e51c736fb6f60d5b1ea</anchor>
-      <arglist>(bool state, const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontBoldForSelection</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ac674332ffd551b78f986f94f06461786</anchor>
-      <arglist>(bool state)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontItalicInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a4e28df26b8be3390e46179c054243800</anchor>
-      <arglist>(bool state, const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetFontItalicForSelection</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ab5c30d399c1138ed9192df613fec5902</anchor>
-      <arglist>(bool state)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetReadOnly</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>aa843ca699d4e2f401fad24cd6a785f0f</anchor>
-      <arglist>(bool readonly)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetReadOnly</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a8ec69739fc1698a70f954cd86828e796</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetWordWrap</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a667371f5a5365af6e66bba77225523d9</anchor>
-      <arglist>(bool wordwrap)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetWordWrap</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a348b8b36239d03b77c2b745e02d92807</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetUseRichText</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ad8719cedb38f7c20388ccf5c91a768af</anchor>
-      <arglist>(bool state)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetUseRichText</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a1aa3bf14ea1750f2d9712cd1e6465af9</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetAutomaticEditing</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ae30e3dc5dee2169e50765916bcc49ba1</anchor>
-      <arglist>(bool state)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>GetAutomaticEditing</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a929a2fb587c2381eedf66005c5750081</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetTabstopWidth</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a60c5edc299b7bc732ec0cb97231be4d9</anchor>
-      <arglist>(double value)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>GetConvertTabsToSpaces</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ac35cdcea9cf6e49025798d5ef090907f</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetConvertTabsToSpaces</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a2c783eb1c163634cafaba92a03d89968</anchor>
-      <arglist>(int value)</arglist>
-    </member>
-    <member kind="function">
-      <type>FCRanges *</type>
-      <name>CreateRangesForString</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a2eee458c4234782bcdb83b157567bf31</anchor>
-      <arglist>(const FCString *pSearchString, FLAG_32 options, const FCRange *pRange=nullptr) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>ResetUndoState</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>afafca0221e140184f95a02ca4f6a8449</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SetTextColorInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ae37b608fbd3c634744837b2f46854f6b</anchor>
-      <arglist>(int red, int green, int blue, const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>ResetTextColorInRange</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ad02a007ebff1da69717394bae613982e</anchor>
-      <arglist>(const FCRange *pRange)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::tuple&lt; int, int, int &gt;</type>
-      <name>GetTextColorAtIndex</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ade4057c127a8fd5182864be6d04bd00a</anchor>
-      <arglist>(int index) const</arglist>
-    </member>
-    <member kind="function">
-      <type>FCRanges *</type>
-      <name>GetTextColorChanges</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>a2c6873e66902b09870bd1c0279e825f1</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>GetNumberOfLines</name>
-      <anchorfile>class_f_c_ctrl_edit_text.html</anchorfile>
-      <anchor>ab2899b9290bac6ce3cffab6bf38807eb</anchor>
-      <arglist>() const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>FCCtrlImage</name>
     <filename>class_f_c_ctrl_image.html</filename>
     <base>FCControl</base>
@@ -18274,6 +17937,343 @@
       <anchorfile>class_f_c_ctrl_switcher.html</anchorfile>
       <anchor>a1781859afd8146c22729a56ffbc69929</anchor>
       <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCCtrlTextEditor</name>
+    <filename>class_f_c_ctrl_text_editor.html</filename>
+    <base>FCControl</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>STRINGFINDOPTIONS</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_IGNORECASE</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba0e4ebb2a448f2e743d817bf024b247b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_WHOLEWORDS</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbebaaf42098a6f97da349475892af530a9fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_IGNORECASE</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba0e4ebb2a448f2e743d817bf024b247b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_WHOLEWORDS</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbebaaf42098a6f97da349475892af530a9fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a85e58668c46ff773133a921daed18dd6</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlTextEditor</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a2e3ebaf2d17f3d809218317a54b58da1</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetParent</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ae12a95ca138309cf30a4c71d40ebf42d</anchor>
+      <arglist>(__FCUserWindow *parentptr) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTotalTextRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a971c0a647525d0c30274518574213ebf</anchor>
+      <arglist>(FCRange *pRange) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSelection</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a54f2ab935cd24c9c34dcdb231a40cc58</anchor>
+      <arglist>(FCRange *pRange) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetSelection</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a79123f61cb46fb35cd4ebb16624a1bea</anchor>
+      <arglist>(const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SelectAll</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a82b3fc37661856bd9a9ee2261ca95657</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetTextInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa4764ccf573c90f01f1660abea3d60bb</anchor>
+      <arglist>(FCString *pText, const FCRange *pRange) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ReplaceTextInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a85fefdf7b5beffa2a145ba7ec43d337e</anchor>
+      <arglist>(const FCString *pText, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSelectedText</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a69bdb12002ef585b490f4edc78fa12c9</anchor>
+      <arglist>(FCString *pText) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ReplaceSelectedText</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a7b9697d11222e59212d34a62d0392632</anchor>
+      <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>InsertTextAtCursor</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ab355ec6adf1b5a54c4c7485121045ae2</anchor>
+      <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AppendText</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a6c4addf550e358ec251c3292d42ac92d</anchor>
+      <arglist>(const FCString *pText)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AppendTextWithFontInfo</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa1ae3878a724c0253378396ffd73bf9a</anchor>
+      <arglist>(const FCString *pText, const FCFontInfo *pFont)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateEnigmaString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ae4daa13de257492e58b21adae9e62362</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetEnigmaString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a92cf4261eea6b76e3e2bfeaab86e1ac0</anchor>
+      <arglist>(const FCString *pString, const FCRawText *pRawText=NULL)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateFontInfoAtIndex</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ade885738aa6b192d12e5583fefdb5971</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a605a1d0f1a466d2b318234d305a47dfb</anchor>
+      <arglist>(const FCFontInfo *pFont, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontForSelection</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a60777a903eaa2b78f7a96055ec5d78d5</anchor>
+      <arglist>(const FCFontInfo *pFont)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontSizeInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ac24c4b107eba49ea410a2cd62a1ebff7</anchor>
+      <arglist>(int size, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontSizeForSelection</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aed4d8cb79652aee798688c161ecdcb3f</anchor>
+      <arglist>(int size)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontBoldInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a07986a3b0895f00add04c847d572ea95</anchor>
+      <arglist>(bool state, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontBoldForSelection</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a4c45d381534a56e9c643a2bfbabe8edc</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontItalicInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa3dfed2f818ffac2cc40afaffcb33719</anchor>
+      <arglist>(bool state, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFontItalicForSelection</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a9af1590420b39c45d19d09cb5145521e</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetReadOnly</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a656714f0d501bf66da92ff6ec879b23d</anchor>
+      <arglist>(bool readonly)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetReadOnly</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aed20f875346275254ce8856b56d61633</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetWordWrap</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a347168a9ef0ba961f117cce93eebf5aa</anchor>
+      <arglist>(bool wordwrap)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetWordWrap</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a2b0c464e9623fb2b29d4149ab7b8e1b1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseRichText</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a03b022b5c107678b0184629c313e0849</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetUseRichText</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a400c755882f5b62b634d6a2bfcdec5fe</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutomaticEditing</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ae091b74af9558defa27d676b601587e9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetAutomaticEditing</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>af902198307f9e77c2ebbe301b7c88d5b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTabstopWidth</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ab274bd6f70a4de3d4664a460b745b2ed</anchor>
+      <arglist>(double value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetConvertTabsToSpaces</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a0c5936fff9ed434311d6cbca8b83a046</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetConvertTabsToSpaces</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>abd391110de9bd31d5bd4c1144722a60c</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCRanges *</type>
+      <name>CreateRangesForString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ab0ecffd230e71fbca52ca237087b00e7</anchor>
+      <arglist>(const FCString *pSearchString, FLAG_32 options, const FCRange *pRange=nullptr) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ResetUndoState</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ab86c0731fab2db4116344847c8a67983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetTextColorInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>adaed93917f817792160270e6c4f08931</anchor>
+      <arglist>(int red, int green, int blue, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ResetTextColorInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>af040755fb448f2c5c38e4200ee383f96</anchor>
+      <arglist>(const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::tuple&lt; int, int, int &gt;</type>
+      <name>GetTextColorAtIndex</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ae6b7daa66996240f9bcdef320d731c4e</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCRanges *</type>
+      <name>GetTextColorChanges</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ae6497a68101b6245bcbea757b6cfe5b5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetNumberOfLines</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a76bb0675c897283f191f12a48f0c4bfe</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -19343,10 +19343,10 @@
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
-      <type>FCCtrlEditText *</type>
-      <name>CreateEditText</name>
+      <type>FCCtrlTextEditor *</type>
+      <name>CreateTextEditor</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
-      <anchor>ae102364f16ea898038d76478b9b30009</anchor>
+      <anchor>acc6efe9f83e00e910815782d94aa00af</anchor>
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
@@ -44353,10 +44353,10 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
-      <type>FCCtrlEditText *</type>
-      <name>AddEditText</name>
+      <type>FCCtrlTextEditor *</type>
+      <name>AddTextEditor</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
-      <anchor>a428958bdeefec84798cdd73fb2edfde5</anchor>
+      <anchor>a98ccf8397562bb7851be840756c38d1a</anchor>
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
@@ -60566,7 +60566,7 @@
     <class kind="class">FCCtrlEdit</class>
     <class kind="class">FCCtrlPopup</class>
     <class kind="class">FCCtrlComboBox</class>
-    <class kind="class">FCCtrlEditText</class>
+    <class kind="class">FCCtrlTextEditor</class>
     <class kind="class">FCDataListRow</class>
     <class kind="class">FCCtrlDataList</class>
     <class kind="class">FCCtrlListBox</class>
