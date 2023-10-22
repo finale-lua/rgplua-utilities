@@ -501,6 +501,7 @@ local create_dialog = function()
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
     edit_text:SetConvertTabsToSpaces(context.tabstop_width) -- ToDo: make this an option
+    edit_text:SetAutomaticallyIndent(true)
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
     local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)

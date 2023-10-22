@@ -18255,6 +18255,20 @@
       <arglist>(int value)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAutomaticallyIndent</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a697f0ccd01de86545dddfa2bb5695543</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutomaticallyIndent</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ae1d70f5dbb75dd3ca2572a537c663a1e</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>FCRanges *</type>
       <name>CreateRangesForString</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
