@@ -18003,6 +18003,27 @@
       <arglist>(FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetLineAtPosition</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a8f355b5a03364bc2c66984fedb83c109</anchor>
+      <arglist>(int pos) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetCurrentLine</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ac89ad08a857da519f966476a70d06786</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLineRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa420beda89ca3284c5add9d6bce2dc5c</anchor>
+      <arglist>(int line, FCRange *pRange) const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetSelection</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
