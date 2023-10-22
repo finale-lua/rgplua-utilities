@@ -18004,9 +18004,9 @@
     </member>
     <member kind="function">
       <type>int</type>
-      <name>GetLineAtPosition</name>
+      <name>GetLineForPosition</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>a8f355b5a03364bc2c66984fedb83c109</anchor>
+      <anchor>ae3e5bcf9fa830c04b558df4da0df276b</anchor>
       <arglist>(int pos) const</arglist>
     </member>
     <member kind="function">
@@ -18018,10 +18018,17 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetLineRange</name>
+      <name>GetLineRangeForLine</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>aa420beda89ca3284c5add9d6bce2dc5c</anchor>
+      <anchor>a7958646adf539ae25b5df57e6083b3e5</anchor>
       <arglist>(int line, FCRange *pRange) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLineRangeForPosition</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>af7778764e5c771c005be5ec51b1e71bf</anchor>
+      <arglist>(int pos, FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
