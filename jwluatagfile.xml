@@ -18317,6 +18317,20 @@
       <anchor>a76bb0675c897283f191f12a48f0c4bfe</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ScrollToTop</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa5b930275bcdf37f91acafcbaa4ae9c5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ScrollToBottom</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa8c93396e018c28e74f47da848a52fe9</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlTree</name>

@@ -327,6 +327,7 @@ function output_to_console(...)
     local formatted_string = new_line .. table.concat(formatted_args, "\t") -- Concatenate arguments with tabs
     output_text:AppendText(finale.FCString(formatted_string))
     output_text:RedrawImmediate()
+    output_text:ScrollToBottom()
 end
 
 function on_text_change(control)
@@ -366,6 +367,19 @@ function on_execution_did_stop(item, success, msg, msgtype)
         end
         output_to_console("<======= ["..item.MenuItemText.."] FAILED.")
     end
+end
+
+local function on_clear_output(control)
+    output_text:SetText(finale.FCString(""))
+    edit_text:SetKeyboardFocus()
+end
+
+local function on_copy_output(control)
+    local text = finale.FCString()
+    output_text:GetText(text)
+    local line_ending = #text.LuaString > 0 and "\n" or ""
+    finenv.UI():TextToClipboard(text.LuaString .. line_ending)
+    edit_text:SetKeyboardFocus()
 end
 
 local function on_run_script(control)
@@ -410,6 +424,7 @@ local function on_file_popup(control)
     local selected_item = control:GetSelectedItem()
     if file_menu_cursel ~= selected_item then -- avoid Windows churn
         file_menu_cursel = selected_item
+        file_menu:SetEnable(false)
         if selected_item < context.first_script_in_menu then
             file_menu_base_handler[selected_item + 1]()
         else
@@ -422,6 +437,7 @@ local function on_file_popup(control)
                 end
             end
         end
+        file_menu:SetEnable(true)
         file_menu_cursel = control:GetSelectedItem()
     end
     edit_text:SetKeyboardFocus()
@@ -474,7 +490,7 @@ local function on_close_window()
         global_dialog:StorePosition()
         context.window_pos_x = global_dialog.StoredX
         context.window_pos_y = global_dialog.StoredY
-    end 
+    end
 end
 
 local create_dialog = function()
@@ -484,12 +500,14 @@ local create_dialog = function()
     local x_separator = 10
     local y_separator = 10
     local button_width = 100
+    local small_button_width = 70
     local button_height = 20
     local edit_text_height = 280
     local output_height = edit_text_height / 2.2
     local line_number_width = 75
     local total_width = 960 -- make divisible by 3
     local curr_y = 0
+    local curr_x = 0
     -- script selection
     file_menu = dialog:CreatePopup(0, curr_y)
     local one_third_width = total_width / 3
@@ -508,40 +526,62 @@ local create_dialog = function()
     local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)
     run_script_cmd:SetText(finale.FCString("Run Script"))
     run_script_cmd:SetWidth(button_width)
-    dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
     curr_y = curr_y + button_height + y_separator
     -- output console
-    local output_desc = dialog:CreateStatic(0, curr_y)
+    curr_x = 0
+    local output_desc = dialog:CreateStatic(curr_x, curr_y)
     output_desc:SetWidth(100)
     output_desc:SetText(finale.FCString("Execution Output:"))
-    local clear_output_chk_width = win_mac(105, 120)
-    local clear_now = dialog:CreateButton(120, curr_y - win_mac(5,1))
+    curr_x = curr_x + 100 + x_separator
+    local clear_now = dialog:CreateButton(curr_x, curr_y - win_mac(5,1))
     clear_now:SetText(finale.FCString("Clear"))
-    dialog:RegisterHandleControlEvent(clear_now, function(control)
-        output_text:SetText(finale.FCString(""))
-        edit_text:SetKeyboardFocus()
-    end)
-    local copy_output = dialog:CreateButton(190, curr_y - win_mac(5, 1))
+    clear_now:SetWidth(small_button_width)
+    curr_x = curr_x + small_button_width + x_separator
+    local copy_output = dialog:CreateButton(curr_x, curr_y - win_mac(5, 1))
     copy_output:SetText(finale.FCString("Copy"))
-    dialog:RegisterHandleControlEvent(copy_output, function(control)
-        local text = finale.FCString()
-        output_text:GetText(text)
-        local line_ending = #text.LuaString > 0 and "\n" or ""
-        finenv.UI():TextToClipboard(text.LuaString .. line_ending)
-        edit_text:SetKeyboardFocus()
-    end)
+    copy_output:SetWidth(small_button_width)
+    local clear_output_chk_width = win_mac(105, 120)
     clear_output_chk = dialog:CreateCheckbox(total_width - clear_output_chk_width, curr_y)
     clear_output_chk:SetWidth(clear_output_chk_width)
     clear_output_chk:SetText(finale.FCString("Clear Before Run"))
     curr_y = curr_y + button_height
     output_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), total_width, output_height, false,
         context.output_tabstop_width)
-    -- close button
-    local ok_btn = dialog:CreateOkButton()
-    ok_btn:SetText(finale.FCString("Close"))
+    curr_y = curr_y + output_height + y_separator
+    -- close button line
+    curr_x = 0
+    local config_btn = dialog:CreateButton(curr_x, curr_y)
+    config_btn:SetText(finale.FCString("..."))
+    config_btn:SetWidth(small_button_width)
+    curr_x = curr_x + small_button_width + x_separator
+--DBG Code
+    local to_top = dialog:CreateButton(curr_x, curr_y)
+    to_top:SetText(finale.FCString("Top"))
+    to_top:SetWidth(small_button_width)
+    dialog:RegisterHandleControlEvent(to_top, function(control)
+        edit_text:ScrollToTop()
+        line_number_text:ScrollToTop()
+        edit_text:SetKeyboardFocus()
+    end)
+    curr_x = curr_x + small_button_width + x_separator
+    local to_bot = dialog:CreateButton(curr_x, curr_y)
+    to_bot:SetText(finale.FCString("Bottom"))
+    to_bot:SetWidth(small_button_width)
+    dialog:RegisterHandleControlEvent(to_bot, function(control)
+        edit_text:ScrollToBottom()
+        line_number_text:ScrollToBottom()
+        edit_text:SetKeyboardFocus()
+    end)
+    curr_x = curr_x + small_button_width + x_separator
+--DBG Code End
+    local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
+    close_btn:SetWidth(small_button_width)
     -- registrations
+    dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
     dialog:RegisterHandleControlEvent(file_menu, on_file_popup)
     dialog:RegisterHandleControlEvent(edit_text, on_text_change)
+    dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
+    dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     return dialog
