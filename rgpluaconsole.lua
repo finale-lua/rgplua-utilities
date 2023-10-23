@@ -399,7 +399,8 @@ local function on_run_script(control)
     if script_item:IsExecuting() then
         script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
     end
-    control:SetEnable(true) -- ToDo: leave it disabled if the script item is still running?
+    control:SetEnable(true)         -- ToDo: leave it disabled if the script item is still running?
+    edit_text:SetKeyboardFocus()
 end
 
 local function on_file_popup(control)
