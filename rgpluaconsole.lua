@@ -77,7 +77,6 @@ local function select_script(fullpath, scripts_items_index)
     edit_text:SetText(finale.FCString(script_text))
     context.original_script_text = get_edit_text(edit_text).LuaString -- rotate thru control to match line endings
     edit_text:ResetUndoState()
-    output_text:SetText(finale.FCString(""))
     script_menu:Clear()
     for item in each(script_items) do
         --local item_string = string.gsub(item.MenuItemText, "%.{3}$", "") -- remove trailing dots, if any
@@ -425,6 +424,7 @@ local function on_file_popup(control)
         end
         file_menu_cursel = control:GetSelectedItem()
     end
+    edit_text:SetKeyboardFocus()
     in_popup_handler = false
 end
 
@@ -519,6 +519,16 @@ local create_dialog = function()
     clear_now:SetText(finale.FCString("Clear"))
     dialog:RegisterHandleControlEvent(clear_now, function(control)
         output_text:SetText(finale.FCString(""))
+        edit_text:SetKeyboardFocus()
+    end)
+    local copy_output = dialog:CreateButton(190, curr_y - win_mac(5, 1))
+    copy_output:SetText(finale.FCString("Copy"))
+    dialog:RegisterHandleControlEvent(copy_output, function(control)
+        local text = finale.FCString()
+        output_text:GetText(text)
+        local line_ending = #text.LuaString > 0 and "\n" or ""
+        finenv.UI():TextToClipboard(text.LuaString .. line_ending)
+        edit_text:SetKeyboardFocus()
     end)
     clear_output_chk = dialog:CreateCheckbox(total_width - clear_output_chk_width, curr_y)
     clear_output_chk:SetWidth(clear_output_chk_width)
