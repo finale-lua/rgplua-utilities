@@ -29,6 +29,7 @@ local line_number_text      -- line mumbers
 local output_text           -- print output area
 local clear_output_chk      -- Clear Before Run checkbox
 local hires_timer           -- For timing scripts
+local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 
 local function get_edit_text(control)
     local retval = finale.FCString()
@@ -440,8 +441,22 @@ local function on_file_popup(control)
         file_menu:SetEnable(true)
         file_menu_cursel = control:GetSelectedItem()
     end
-    edit_text:SetKeyboardFocus()
     in_popup_handler = false
+    -- do not put edit_text in focus here, because messes up Windows
+end
+
+local function on_scroll(control)
+    if in_scroll_handler then
+        return
+    end
+    in_scroll_handler = true
+    local target_pos = control:GetVerticalScrollPosition()
+    if control:GetControlID() == edit_text:GetControlID() then
+        line_number_text:ScrollToVerticalPosition(target_pos)
+    elseif control:GetControlID() == line_number_text:GetControlID() then
+        edit_text:ScrollToVerticalPosition(target_pos)
+    end
+    in_scroll_handler = false
 end
 
 local function on_init_window()
@@ -552,8 +567,8 @@ local create_dialog = function()
     curr_x = 0
     local config_btn = dialog:CreateButton(curr_x, curr_y)
     config_btn:SetText(finale.FCString("..."))
-    config_btn:SetWidth(small_button_width)
-    curr_x = curr_x + small_button_width + x_separator
+    config_btn:SetWidth(40)
+    curr_x = curr_x + 40 + x_separator
 --DBG Code
     local to_top = dialog:CreateButton(curr_x, curr_y)
     to_top:SetText(finale.FCString("Top"))
@@ -573,6 +588,15 @@ local create_dialog = function()
         edit_text:SetKeyboardFocus()
     end)
     curr_x = curr_x + small_button_width + x_separator
+    local to_x = dialog:CreateButton(curr_x, curr_y)
+    to_x:SetText(finale.FCString("Scroll To"))
+    to_x:SetWidth(small_button_width)
+    dialog:RegisterHandleControlEvent(to_x, function(control)
+        edit_text:ScrollToVerticalPosition(490)
+        line_number_text:ScrollToVerticalPosition(490)
+        edit_text:SetKeyboardFocus()
+    end)
+    curr_x = curr_x + small_button_width + x_separator
 --DBG Code End
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
@@ -580,6 +604,8 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
     dialog:RegisterHandleControlEvent(file_menu, on_file_popup)
     dialog:RegisterHandleControlEvent(edit_text, on_text_change)
+    dialog:RegisterHandleScrollChanged(edit_text, on_scroll)
+    dialog:RegisterHandleScrollChanged(line_number_text, on_scroll)
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterInitWindow(on_init_window)
