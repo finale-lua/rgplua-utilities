@@ -352,9 +352,7 @@ function on_text_change(control)
         numbers_text = numbers_text .. format_number(i, 6) .. line_ending
     end
     line_number_text:SetText(finale.FCString(numbers_text))
-    local range = finale.FCRange()
-    line_number_text:GetTotalTextRange(range)
-    line_number_text:ResetTextColorInRange(range) -- mainly needed on macOS
+    line_number_text:ResetColors() -- mainly needed on macOS
 end
 
 function on_execution_will_start(item)
@@ -362,19 +360,30 @@ function on_execution_will_start(item)
     hires_timer = finale.FCUI.GetHiResTimer()
 end
 
-function on_execution_did_stop(item, success, msg, msgtype)
+function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     if success then
         local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
-        output_to_console("<======= [" .. item.MenuItemText .. "] succeeded (Processing time: " .. string.format("%.3f", proc_time) .. " s).") -- ToDo: calculate processing time.
+        output_to_console("<======= [" ..
+            item.MenuItemText .. "] succeeded (Processing time: " .. string.format("%.3f", proc_time) .. " s).") -- ToDo: calculate processing time.
     else
         -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
             if msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION then
-                output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
+                output_to_console(
+                    "The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
             end
+        elseif line_number > 0 and (not source or source == item.OptionalScriptText) then
+            line_range = finale.FCRange()
+            line_number_text:GetLineRangeForLine(line_number, line_range)
+            total_range = finale.FCRange()
+            line_number_text:GetTotalTextRange(total_range)
+            if line_range.End < total_range.End then
+                line_range.Length = line_range.Length + 1
+            end
+            line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
         end
-        output_to_console("<======= ["..item.MenuItemText.."] FAILED.")
+        output_to_console("<======= [" .. item.MenuItemText .. "] FAILED.")
     end
 end
 
@@ -417,6 +426,7 @@ local function on_run_script(control)
     if clear_output_chk:GetCheck() ~= 0 then
         output_text:SetText(finale.FCString(""))
     end
+    line_number_text:ResetColors()
     finenv.ExecuteLuaScriptItem(script_item)
     if script_item:IsExecuting() then
         script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
@@ -590,9 +600,6 @@ local create_dialog = function()
         local line_range = finale.FCRange()
         line_number_text:GetLineRangeForLine(line, line_range)
         line_range.Length = line_range.Length + 1
-        -- This combo has a contrast ratio of 6.38:1, which exceeds the WCAG accessibility standard
-        -- line_number_text:SetTextColorInRange(102, 51, 0, line_range) -- Dark brown foreground
-        -- line_number_text:SetBackgroundColorInRange(255, 191, 0, line_range) -- Amber background
         line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
         output_to_console("color set for line "..line.." "..tostring(line_range))
         edit_text:SetKeyboardFocus()

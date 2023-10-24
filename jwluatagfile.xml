@@ -28750,8 +28750,8 @@
       <type>void</type>
       <name>OnExecutionDidStop</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>aa78a2334c523728b7396fac1b1a07373</anchor>
-      <arglist>(bool success, const char *msg, int msgtype) const</arglist>
+      <anchor>ac5e05e23c391c7fdb833753f3f39141b</anchor>
+      <arglist>(bool success, const char *msg, int msgtype, int linenumber, const char *source) const</arglist>
     </member>
   </compound>
   <compound kind="class">
