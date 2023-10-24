@@ -331,20 +331,15 @@ function output_to_console(...)
     output_text:ScrollToBottom()
 end
 
-function on_text_change(control)
-    local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
-    if num_lines == line_number_text:GetNumberOfLines() then
-        -- this avoids churn and also avoids rewriting the line numbers and destroying higlights on them.
-        -- mainly this is a problem on Windows, which churns events into this function far more than macOS does.
-        return
-    end
+local function write_line_numbers(num_lines)
     local function format_number(num, width)
         local str_num = tostring(num)
         local leading_spaces = width - #str_num
         if leading_spaces < 0 then
             leading_spaces = 0
         end
-        return string.rep(" ", leading_spaces) .. str_num
+        local trailing_space = finenv.UI():IsOnWindows() and " " or ""
+        return string.rep(" ", leading_spaces) .. str_num .. trailing_space
     end
     local numbers_text = ""
     for i = 1, num_lines do
@@ -353,6 +348,15 @@ function on_text_change(control)
     end
     line_number_text:SetText(finale.FCString(numbers_text))
     line_number_text:ResetColors() -- mainly needed on macOS
+end
+
+function on_text_change(control)
+    local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
+    if num_lines < 1 then num_lines = 1 end
+    if num_lines ~= line_number_text:GetNumberOfLines() then
+        -- checking if the number of lines changed avoids churn.
+        write_line_numbers(num_lines)
+    end
 end
 
 function on_execution_will_start(item)
@@ -415,7 +419,11 @@ local function on_run_script(control)
     local x = script_items.Count
     local s = script_menu:GetSelectedItem()
     local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
-    script_item.OptionalScriptText = script_text.LuaString
+    if script_text.LuaString == context.original_script_text then
+        script_item.OptionalScriptText = nil -- this allows the filename to be used for error reporting
+    else
+        script_item.OptionalScriptText = script_text.LuaString
+    end
     script_item.AutomaticallyReportErrors = false
     script_item.Debug = true
     script_item.Trusted = true
@@ -498,6 +506,7 @@ local function on_init_window()
         select_script(context.script_items_list[context.selected_script_item].items:GetItemAt(0).FilePath, context.selected_script_item)
     end
     clear_output_chk:SetCheck(context.clear_output and 1 or 0)
+    write_line_numbers(1)
     if context.script_text then
         edit_text:SetText(finale.FCString(context.script_text))
     end
@@ -596,7 +605,8 @@ local create_dialog = function()
     to_top:SetWidth(small_button_width)
     dialog:RegisterHandleControlEvent(to_top, function(control)
         local num_lines = line_number_text:GetNumberOfLines()
-        local line = num_lines % 17 + 1
+        local line = num_lines % 17
+        --if line == 0 then line = 1 end
         local line_range = finale.FCRange()
         line_number_text:GetLineRangeForLine(line, line_range)
         line_range.Length = line_range.Length + 1
