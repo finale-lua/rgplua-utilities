@@ -18298,10 +18298,31 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>SetBackgroundColorInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>adc44a049b668a50adb3782f5a53c40a1</anchor>
+      <arglist>(int red, int green, int blue, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>ResetTextColorInRange</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>af040755fb448f2c5c38e4200ee383f96</anchor>
       <arglist>(const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ResetBackgroundColorInRange</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a2d506ae85838bdf7656360ed206e1316</anchor>
+      <arglist>(const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ResetColors</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a1aa6fcd667b80bc2539adbf6237ba338</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>std::tuple&lt; int, int, int &gt;</type>
@@ -18311,10 +18332,24 @@
       <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
-      <type>FCRanges *</type>
-      <name>GetTextColorChanges</name>
+      <type>std::tuple&lt; int, int, int &gt;</type>
+      <name>GetBackgroundColorAtIndex</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>ae6497a68101b6245bcbea757b6cfe5b5</anchor>
+      <anchor>a2ef81422e1a05c168098652f5ba87d82</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCRanges *</type>
+      <name>CreateTextColorChanges</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a8be58a468b5b5d728aa1acac6c686c76</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCRanges *</type>
+      <name>CreateBackgroundColorChanges</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a5bfacbb6f43f1d2e5f8b81b525f2df93</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">

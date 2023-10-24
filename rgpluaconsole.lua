@@ -589,8 +589,11 @@ local create_dialog = function()
         local line = num_lines % 17 + 1
         local line_range = finale.FCRange()
         line_number_text:GetLineRangeForLine(line, line_range)
-        line_range.Length = line_range.Length * 12
-        line_number_text:SetTextColorInRange(255, 0, 0, line_range)
+        line_range.Length = line_range.Length + 1
+        -- This combo has a contrast ratio of 6.38:1, which exceeds the WCAG accessibility standard
+        -- line_number_text:SetTextColorInRange(102, 51, 0, line_range) -- Dark brown foreground
+        -- line_number_text:SetBackgroundColorInRange(255, 191, 0, line_range) -- Amber background
+        line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
         output_to_console("color set for line "..line.." "..tostring(line_range))
         edit_text:SetKeyboardFocus()
     end)
