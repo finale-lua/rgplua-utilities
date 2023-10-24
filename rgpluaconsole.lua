@@ -333,6 +333,11 @@ end
 
 function on_text_change(control)
     local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
+    if num_lines == line_number_text:GetNumberOfLines() then
+        -- this avoids churn and also avoids rewriting the line numbers and destroying higlights on them.
+        -- mainly this is a problem on Windows, which churns events into this function far more than macOS does.
+        return
+    end
     local function format_number(num, width)
         local str_num = tostring(num)
         local leading_spaces = width - #str_num
@@ -347,6 +352,9 @@ function on_text_change(control)
         numbers_text = numbers_text .. format_number(i, 6) .. line_ending
     end
     line_number_text:SetText(finale.FCString(numbers_text))
+    local range = finale.FCRange()
+    line_number_text:GetTotalTextRange(range)
+    line_number_text:ResetTextColorInRange(range) -- mainly needed on macOS
 end
 
 function on_execution_will_start(item)
@@ -532,6 +540,9 @@ local create_dialog = function()
     curr_y = curr_y + button_height + y_separator
     -- editor
     line_number_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), line_number_width, edit_text_height, false)
+    if finenv.UI():IsOnWindows() then
+        line_number_text:SetUseRichText(true) -- this is needed on Windows for color flagging.
+    end
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
     edit_text:SetConvertTabsToSpaces(context.tabstop_width) -- ToDo: make this an option
@@ -569,6 +580,22 @@ local create_dialog = function()
     config_btn:SetText(finale.FCString("..."))
     config_btn:SetWidth(40)
     curr_x = curr_x + 40 + x_separator
+--DBG Code
+    local to_top = dialog:CreateButton(curr_x, curr_y)
+    to_top:SetText(finale.FCString("Flag"))
+    to_top:SetWidth(small_button_width)
+    dialog:RegisterHandleControlEvent(to_top, function(control)
+        local num_lines = line_number_text:GetNumberOfLines()
+        local line = num_lines % 17 + 1
+        local line_range = finale.FCRange()
+        line_number_text:GetLineRangeForLine(line, line_range)
+        line_range.Length = line_range.Length * 12
+        line_number_text:SetTextColorInRange(255, 0, 0, line_range)
+        output_to_console("color set for line "..line.." "..tostring(line_range))
+        edit_text:SetKeyboardFocus()
+    end)
+    curr_x = curr_x + small_button_width + x_separator
+--DBG Code End
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
