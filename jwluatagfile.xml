@@ -9851,6 +9851,13 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
+      <name>HandleScrollChanged</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>aaa561fed61b53b79802927e5b432c1e3</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>HandleSwitcherSelect</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>a57f2d0f4e70c0e7673c5066a71501375</anchor>
@@ -18318,6 +18325,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>double</type>
+      <name>GetVerticalScrollPosition</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ad26f5862b282934807a13d6bcebffdba</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>ScrollToTop</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
@@ -18330,6 +18344,13 @@
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>aa8c93396e018c28e74f47da848a52fe9</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ScrollToVerticalPosition</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a0948e72cfea2c2936878eb0e0995bbb5</anchor>
+      <arglist>(double vpos)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -18668,6 +18689,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterHandleScrollChanged</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a20ca4c95268f32b8010e7ccf3b1fdd84</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleUpDownPressed</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>acdf33efe695e6699dcedce3987362af5</anchor>
@@ -18762,6 +18790,13 @@
       <name>HandleTextSelectionChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>aa4a6a1c771d4021de6901f8679db8687</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HandleScrollChanged</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a6a7bc5a846b3e1a6cbad8469ea5d89ce</anchor>
       <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
