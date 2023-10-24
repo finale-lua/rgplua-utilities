@@ -18387,6 +18387,13 @@
       <anchor>a0948e72cfea2c2936878eb0e0995bbb5</anchor>
       <arglist>(double vpos)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ScrollLineIntoView</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a80dbe71b44ba03760f91ee862d6e3098</anchor>
+      <arglist>(int line)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlTree</name>

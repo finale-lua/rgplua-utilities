@@ -377,7 +377,7 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
                 output_to_console(
                     "The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
             end
-        elseif line_number > 0 and (not source or source == item.OptionalScriptText) then
+        elseif line_number > 0 then
             line_range = finale.FCRange()
             line_number_text:GetLineRangeForLine(line_number, line_range)
             total_range = finale.FCRange()
@@ -386,6 +386,7 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
                 line_range.Length = line_range.Length + 1
             end
             line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
+            line_number_text:ScrollLineIntoView(line_number)
         end
         output_to_console("<======= [" .. item.MenuItemText .. "] FAILED.")
     end
