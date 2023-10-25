@@ -2119,49 +2119,6 @@
     <name>__FCLyricsBase</name>
     <filename>class_____f_c_lyrics_base.html</filename>
     <base>FCRawText</base>
-    <member kind="enumeration">
-      <type></type>
-      <name>LYRICSTEXTBLOCKTYPES</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>LYRICSTEXTBLOCKVERSE</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0ada288cbafab529818862de7d135e7c66</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>LYRICSTEXTBLOCKCHORUS</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a88d624c5b3558ccf406ecaf9f6c6ac14</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>LYRICSTEXTBLOCKSECTION</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a8b7ea99fea5b31dae7058dad96761739</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>LYRICSTEXTBLOCKVERSE</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0ada288cbafab529818862de7d135e7c66</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>LYRICSTEXTBLOCKCHORUS</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a88d624c5b3558ccf406ecaf9f6c6ac14</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>LYRICSTEXTBLOCKSECTION</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>ae9ee3648bf41981657b2bbea42eed9b0a8b7ea99fea5b31dae7058dad96761739</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="function" virtualness="pure">
       <type>EXTAG</type>
       <name>Tag</name>
@@ -2175,13 +2132,6 @@
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
       <anchor>ab939fd7634859ff84c24edc47d680e2f</anchor>
       <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>GetBlockType</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>a5def2c30b8be8b121fd512b45a7ec5a6</anchor>
-      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -2210,13 +2160,6 @@
       <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
       <anchor>a32c59dd3b60e3c21b8970734ba787f4b</anchor>
       <arglist>(FCString *pString, int syllableno) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type></type>
-      <name>__FCLyricsBase</name>
-      <anchorfile>class_____f_c_lyrics_base.html</anchorfile>
-      <anchor>a4258f6adabd89c1d0a44c5ee0c8dc976</anchor>
-      <arglist>(int type)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -10334,10 +10277,10 @@
       <arglist>() override</arglist>
     </member>
     <member kind="function">
-      <type>__FCLyricsBase::LYRICSTEXTBLOCKTYPES</type>
+      <type>FCRawText::RAWTEXTTYPES</type>
       <name>GetBlockType</name>
       <anchorfile>class_f_c_active_lyric.html</anchorfile>
-      <anchor>a6d2e468ea097bd11578b9b13291bb0e3</anchor>
+      <anchor>a496273c8af3f24d5577ac3d8749d8157</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -18118,8 +18061,8 @@
       <type>bool</type>
       <name>SetEnigmaString</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>a92cf4261eea6b76e3e2bfeaab86e1ac0</anchor>
-      <arglist>(const FCString *pString, const FCRawText *pRawText=NULL)</arglist>
+      <anchor>a8f2bce6cc35071f8f8e7ed292f1a0e08</anchor>
+      <arglist>(const FCString *pString, int rawtexttype=0)</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
@@ -43655,6 +43598,109 @@
     <name>FCRawText</name>
     <filename>class_f_c_raw_text.html</filename>
     <base>__FCBaseData</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>RAWTEXTTYPES</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_TEXTBLOCK</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faecf9ccc4fad7bb0b9ff0b2f0f24ae9ae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_VERSELYRIC</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa0ba7c44f85d29f8112a883e7547d7e7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_CHORUSLYRIC</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1189c66819466853a6285f568ece2ecd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_SECTIONLYRIC</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faa2e3c67e5a14894b9463a3ad710a2af1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_CUSTOMLINE</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1edc6dd96d5641b7e2b4866569ecfb5f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_EXPRESSION</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa949a96a7a89b7248f3a14d7ad6601090</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_FILEINFO</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faa587ebbd9122b5a0a97f3e1a64cd9daa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_BOOKMARK</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1b644cfb3ac5779e6f1b31b961f406ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_TEXTBLOCK</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faecf9ccc4fad7bb0b9ff0b2f0f24ae9ae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_VERSELYRIC</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa0ba7c44f85d29f8112a883e7547d7e7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_CHORUSLYRIC</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1189c66819466853a6285f568ece2ecd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_SECTIONLYRIC</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faa2e3c67e5a14894b9463a3ad710a2af1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_CUSTOMLINE</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1edc6dd96d5641b7e2b4866569ecfb5f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_EXPRESSION</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa949a96a7a89b7248f3a14d7ad6601090</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_FILEINFO</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faa587ebbd9122b5a0a97f3e1a64cd9daa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_BOOKMARK</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1b644cfb3ac5779e6f1b31b961f406ba</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -43682,6 +43728,13 @@
       <anchorfile>class_f_c_raw_text.html</anchorfile>
       <anchor>ac58665231159dae726bbc02e37147990</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>RAWTEXTTYPES</type>
+      <name>GetBlockType</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a27393cb749b3a6bdfd84c6cc6e116f7d</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
