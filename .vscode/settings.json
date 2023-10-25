@@ -19,7 +19,9 @@
         "utf8",
         "socket",
         "tinyxml2",
-        "xmlelements"
+        "xmlelements",
+        "xmlattributes",
+        "prettyformatjson"
     ],
     "files.exclude": {
         "decoder.lua": true,

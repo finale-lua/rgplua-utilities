@@ -33,6 +33,8 @@ local edit_text             -- text editor
 local line_number_text      -- line mumbers
 local output_text           -- print output area
 local clear_output_chk      -- Clear Before Run checkbox
+local run_as_trusted_chk    -- Run As Trusted checkbox
+local run_as_debug_chk      -- Run As Debug checkbox
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 
@@ -95,11 +97,11 @@ local function config_read()
         local function table_to_config(jt, ct)
             if type(jt) == "table" then
                 for k, v in pairs(jt) do
-                    if config[k] ~= nil and type(v) == type(config[k]) then
+                    if ct[k] == nil or type(v) == type(ct[k]) then
                         if type(v) ~= "table" then
-                            config[k] = v
+                            ct[k] = v
                         else
-                            table_to_config(v, config[k])
+                            table_to_config(v, ct[k])
                         end
                     end
                 end
@@ -114,7 +116,7 @@ local function config_write()
     if file then
         local json_text = cjson.encode(config)
         if json_text and #json_text > 0 then
-            file:write(json_text)
+            file:write(prettyformatjson(json_text, 4))
         end
     end
 end
@@ -348,10 +350,10 @@ local function calc_tab_width(font, numchars) -- assumes fixed_width font
         adv_points = config.font_advance_points
     else
         local text_met = finale.FCTextMetrics()
-        text_met:LoadString(finale.FCString("a"), font, 100)
-        adv_points = text_met:GetAdvanceWidthEVPUs() / 4 -- GetAdvanceWidthPoints does not return points on Windows
+        text_met:LoadString(finale.FCString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"), font, 100)
+        config.font_advance_points = (text_met:GetAdvanceWidthEVPUs() / 4) / 52 -- GetAdvanceWidthPoints does not return points on Windows
     end
-    return numchars * adv_points
+    return numchars * config.font_advance_points
 end
 
 local function setup_editor_control(control, width, height, editable, tabstop_width)
@@ -459,14 +461,6 @@ local function on_copy_output(control)
 end
 
 local function on_run_script(control)
-    --DBG
-    local tab_spaces = edit_text:GetConvertTabsToSpaces()
-    if tab_spaces <= 0 then
-        edit_text:SetConvertTabsToSpaces(config.tabstop_width)
-    else
-        edit_text:SetConvertTabsToSpaces(0)
-    end
-    --END DBG
     control:SetEnable(false)
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
@@ -479,8 +473,8 @@ local function on_run_script(control)
         script_item.OptionalScriptText = script_text.LuaString
     end
     script_item.AutomaticallyReportErrors = false
-    script_item.Debug = config.run_as_debug -- ToDo: needs to be a checkbox
-    script_item.Trusted = config.run_as_trusted -- ToDo: needs to be a checkbox
+    script_item.Debug = run_as_debug_chk:GetCheck() ~= 0
+    script_item.Trusted = run_as_trusted_chk:GetCheck() ~= 0
     script_item:RegisterPrintFunction(output_to_console)
     script_item:RegisterOnExecutionWillStart(on_execution_will_start)
     script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
@@ -560,6 +554,8 @@ local function on_init_window()
         select_script(context.script_items_list[context.selected_script_item].items:GetItemAt(0).FilePath, context.selected_script_item)
     end
     clear_output_chk:SetCheck(config.clear_output_before_run and 1 or 0)
+    run_as_debug_chk:SetCheck(config.run_as_debug and 1 or 0)
+    run_as_trusted_chk:SetCheck(config.run_as_trusted and run_as_trusted_chk:GetEnable() and 1 or 0)
     write_line_numbers(1)
     if context.script_text then
         edit_text:SetText(finale.FCString(context.script_text))
@@ -580,7 +576,16 @@ local function on_close_window()
     end
     check_save(true) -- true: is closing
     config.clear_output_before_run = clear_output_chk:GetCheck() ~= 0
-    -- ToDo: capture other writable config values here
+    config.run_as_debug = run_as_debug_chk:GetCheck() ~= 0
+    config.run_as_trusted = run_as_trusted_chk:GetCheck() ~= 0
+    local recent_files_index = 0
+    for idx, items_entry in ipairs(context.script_items_list) do
+        if items_entry.exists and items_entry.items.Count > 0 then
+            recent_files_index = recent_files_index + 1
+            local fp = items_entry.items:GetItemAt(0).FilePath
+            config.recent_files[recent_files_index] =  items_entry.items:GetItemAt(0).FilePath
+        end
+    end
     config_write()
     if finenv.RetainLuaState then
         context.script_text = get_edit_text(edit_text).LuaString
@@ -600,6 +605,7 @@ local create_dialog = function()
     local button_width = 100
     local small_button_width = 70
     local button_height = 20
+    local check_box_width = win_mac(105, 120)
     local edit_text_height = 280
     local output_height = edit_text_height / 2.2
     local line_number_width = 75
@@ -620,11 +626,21 @@ local create_dialog = function()
     end
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, config.tabstop_width)
-    edit_text:SetConvertTabsToSpaces(config.tabstop_width) -- ToDo: make this an option
+    edit_text:SetConvertTabsToSpaces(config.tabs_to_spaces and config.tabstop_width or 0) -- ToDo: make this an option
     edit_text:SetAutomaticallyIndent(true)
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
-    local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y)
+    curr_x = 0
+    run_as_trusted_chk = dialog:CreateCheckbox(curr_x, curr_y)
+    run_as_trusted_chk:SetText(finale.FCString("Run As Trusted"))
+    run_as_trusted_chk:SetWidth(check_box_width)
+    run_as_trusted_chk:SetEnable(finenv.TrustedMode ~= finenv.TrustedModeType.UNTRUSTED)
+    curr_x = curr_x + check_box_width + x_separator
+    run_as_debug_chk = dialog:CreateCheckbox(curr_x, curr_y)
+    run_as_debug_chk:SetText(finale.FCString("Run As Debug"))
+    run_as_debug_chk:SetWidth(check_box_width)
+    curr_x = curr_x + check_box_width + x_separator
+    local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y - win_mac(5, 1))
     run_script_cmd:SetText(finale.FCString("Run Script"))
     run_script_cmd:SetWidth(button_width)
     curr_y = curr_y + button_height + y_separator
@@ -641,9 +657,8 @@ local create_dialog = function()
     local copy_output = dialog:CreateButton(curr_x, curr_y - win_mac(5, 1))
     copy_output:SetText(finale.FCString("Copy"))
     copy_output:SetWidth(small_button_width)
-    local clear_output_chk_width = win_mac(105, 120)
-    clear_output_chk = dialog:CreateCheckbox(total_width - clear_output_chk_width, curr_y)
-    clear_output_chk:SetWidth(clear_output_chk_width)
+    clear_output_chk = dialog:CreateCheckbox(total_width - check_box_width, curr_y)
+    clear_output_chk:SetWidth(check_box_width)
     clear_output_chk:SetText(finale.FCString("Clear Before Run"))
     curr_y = curr_y + button_height
     output_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), total_width, output_height, false,
@@ -655,23 +670,6 @@ local create_dialog = function()
     config_btn:SetText(finale.FCString("..."))
     config_btn:SetWidth(40)
     curr_x = curr_x + 40 + x_separator
---DBG Code
-    local to_top = dialog:CreateButton(curr_x, curr_y)
-    to_top:SetText(finale.FCString("Flag"))
-    to_top:SetWidth(small_button_width)
-    dialog:RegisterHandleControlEvent(to_top, function(control)
-        local num_lines = line_number_text:GetNumberOfLines()
-        local line = num_lines % 17
-        --if line == 0 then line = 1 end
-        local line_range = finale.FCRange()
-        line_number_text:GetLineRangeForLine(line, line_range)
-        line_range.Length = line_range.Length + 1
-        line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
-        output_to_console("color set for line "..line.." "..tostring(line_range))
-        edit_text:SetKeyboardFocus()
-    end)
-    curr_x = curr_x + small_button_width + x_separator
---DBG Code End
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
@@ -688,6 +686,21 @@ end
 
 local open_console = function()
     config_read()
+    if not finenv.RetainLuaState then
+        local script_items_index = 0
+        for _, file_path in ipairs(config.recent_files) do
+            local items = finenv.CreateLuaScriptItemsFromFilePath(file_path)
+            if items and items.Count > 0 then
+                script_items_index = script_items_index + 1
+                context.script_items_list[script_items_index] = {}
+                context.script_items_list[script_items_index].items = items
+                context.script_items_list[script_items_index].exists = true
+            end
+        end
+        if script_items_index > 0 then
+            context.selected_script_item = 1
+        end
+    end
     global_dialog = create_dialog()
     finenv.RegisterModelessDialog(global_dialog)
     -- For some reason we need to do this here rather than in InitWindow.
