@@ -16,7 +16,12 @@ function plugindef()
     return "RGP Lua Console...", "RGP Lua Console", "Allows immediate editing and testing of scripts in RGP Lua."
 end
 
-require('mobdebug').start()
+local cjson = require('cjson')
+
+local function win_mac(winval, macval)
+    if finenv.UI():IsOnWindows() then return winval end
+    return macval
+end
 
 --local variables with script-wide scope: reset each time the script is run
 
@@ -30,6 +35,89 @@ local output_text           -- print output area
 local clear_output_chk      -- Clear Before Run checkbox
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
+
+--global variables that persist (thru Lua garbage collection) until the script releases its Lua State
+
+global_dialog = nil         -- persists thru the running of the modeless window, so reset each time the script runs
+
+require('mobdebug').start()
+
+if not finenv.RetainLuaState then
+    config =
+    {
+        tabstop_width = 4,
+        tabs_to_spaces = true,
+        output_tabstop_width = 8,
+        clear_output_before_run = false,
+        run_as_trusted = false,
+        run_as_debug = false,
+        font_name = win_mac("Consolas", "Monaco"),
+        font_size = win_mac(9, 11),
+        font_advance_points = win_mac(4.9482421875, 6.60107421875), -- win 10pt Consolas is 5.498046875
+        recent_files = {}
+    }
+    context =
+    {
+        script_text = nil,          -- holds current contents of edit box when our window is not open
+        original_script_text = "",  -- used to check if the text has been modified
+        output_text = nil,          -- holds current contents of output box when our window is not open
+        script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
+        selected_script_item = 0,   -- 1-based Lua index into script_items_list
+        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-" },
+        first_script_in_menu = 6,
+        untitled_counter = 1,
+        working_directory = (function()     -- this gets modified as we go
+            local str = finale.FCString()
+            str:SetUserPath()
+            if #str.LuaString <= 0 then
+                return finenv.RunningLuaFolderPath()
+            end
+            return str.LuaString
+        end)(),
+        working_directory_valid = false,
+        window_pos_x = nil,
+        window_pos_y = nil
+    }
+end
+
+local function config_filepath()
+    local fcstr = finale.FCString()
+    fcstr:SetUserOptionsPath()
+    fcstr:AssureEndingPathDelimiter()
+    return fcstr.LuaString .. "com.robertgpatterson.rgpluaconsole.json"
+end
+
+local function config_read()
+    local file <close> = io.open(config_filepath(), "r")
+    if file then
+        local json_text = file:read("a")
+        local json = cjson.decode(json_text)
+        local function table_to_config(jt, ct)
+            if type(jt) == "table" then
+                for k, v in pairs(jt) do
+                    if config[k] ~= nil and type(v) == type(config[k]) then
+                        if type(v) ~= "table" then
+                            config[k] = v
+                        else
+                            table_to_config(v, config[k])
+                        end
+                    end
+                end
+            end
+        end
+        table_to_config(json, config)
+    end
+end
+
+local function config_write()
+    local file <close> = io.open(config_filepath(), "w")
+    if file then
+        local json_text = cjson.encode(config)
+        if json_text and #json_text > 0 then
+            file:write(json_text)
+        end
+    end
+end
 
 local function get_edit_text(control)
     local retval = finale.FCString()
@@ -235,65 +323,29 @@ local function file_close()
     else
         local filepath = finale.FCString()
         file_menu:GetItemText(menu_index, filepath)
-        select_script(filepath.LuaString, context.selected_script_item)        
+        select_script(filepath.LuaString, context.selected_script_item)
     end
     file_menu:SetSelectedItem(menu_index)
 end
 
---global variables that persist (thru Lua garbage collection) until the script releases its Lua State
-
-global_dialog = nil         -- persists thru the running of the modeless window, so reset each time the script runs
-
-if not finenv.RetainLuaState then
-    context =
-    {
-        tabstop_width = 4,
-        output_tabstop_width = 8,
-        clear_output = false,
-        script_text = nil,
-        original_script_text = "",
-        output_text = nil,
-        script_items_list = {}, -- each member is a table of 'items' (script items) and 'exists' (boolean)
-        selected_script_item = 0, -- 1-based Lua index into script_items_list
-        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-" },
-        first_script_in_menu = 6,
-        untitled_counter = 1,
-        working_directory = (function()
-            local str = finale.FCString()
-            str:SetUserPath()
-            if #str.LuaString <= 0 then
-                return finenv.RunningLuaFolderPath()
-            end
-            return str.LuaString
-        end)(),
-        working_directory_valid = false,
-        window_pos_x = nil,
-        window_pos_y = nil
-    }
-    file_menu_base_handler =
-    {
-        file_new,
-        file_open,
-        file_save,
-        file_save_as,
-        file_close,
-        function() -- nop function for divider
-            file_menu:SetSelectedItem(menu_index_from_current_script())      
-        end
-    }
-end
-
-local function win_mac(winval, macval)
-    if finenv.UI():IsOnWindows() then return winval end
-    return macval
-end
+file_menu_base_handler =
+{
+    file_new,
+    file_open,
+    file_save,
+    file_save_as,
+    file_close,
+    function() -- nop function for divider
+        file_menu:SetSelectedItem(menu_index_from_current_script())
+    end
+}
 
 local function calc_tab_width(font, numchars) -- assumes fixed_width font
     local adv_points = 0
     local curr_doc = finale.FCDocument()
     if curr_doc.ID <= 0 then
         -- if no document, use hard-coded values derived from when we did have a document.
-        adv_points = win_mac(4.9482421875, 6.60107421875) -- win 10pt Consolas is 5.498046875
+        adv_points = config.font_advance_points
     else
         local text_met = finale.FCTextMetrics()
         text_met:LoadString(finale.FCString("a"), font, 100)
@@ -309,7 +361,7 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
     control:SetUseRichText(false)
     control:SetWordWrap(false)
     control:SetAutomaticEditing(false)
-    local font = win_mac(finale.FCFontInfo("Consolas", 9), finale.FCFontInfo("Monaco", 11))
+    local font = finale.FCFontInfo(config.font_name, config.font_size)
     control:SetFont(font)
     if tabstop_width then
         control:SetTabstopWidth(calc_tab_width(font, tabstop_width))
@@ -410,7 +462,7 @@ local function on_run_script(control)
     --DBG
     local tab_spaces = edit_text:GetConvertTabsToSpaces()
     if tab_spaces <= 0 then
-        edit_text:SetConvertTabsToSpaces(context.tabstop_width)
+        edit_text:SetConvertTabsToSpaces(config.tabstop_width)
     else
         edit_text:SetConvertTabsToSpaces(0)
     end
@@ -427,8 +479,8 @@ local function on_run_script(control)
         script_item.OptionalScriptText = script_text.LuaString
     end
     script_item.AutomaticallyReportErrors = false
-    script_item.Debug = true
-    script_item.Trusted = true
+    script_item.Debug = config.run_as_debug -- ToDo: needs to be a checkbox
+    script_item.Trusted = config.run_as_trusted -- ToDo: needs to be a checkbox
     script_item:RegisterPrintFunction(output_to_console)
     script_item:RegisterOnExecutionWillStart(on_execution_will_start)
     script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
@@ -507,7 +559,7 @@ local function on_init_window()
     else
         select_script(context.script_items_list[context.selected_script_item].items:GetItemAt(0).FilePath, context.selected_script_item)
     end
-    clear_output_chk:SetCheck(context.clear_output and 1 or 0)
+    clear_output_chk:SetCheck(config.clear_output_before_run and 1 or 0)
     write_line_numbers(1)
     if context.script_text then
         edit_text:SetText(finale.FCString(context.script_text))
@@ -527,8 +579,10 @@ local function on_close_window()
         finenv.RetainLuaState = true
     end
     check_save(true) -- true: is closing
+    config.clear_output_before_run = clear_output_chk:GetCheck() ~= 0
+    -- ToDo: capture other writable config values here
+    config_write()
     if finenv.RetainLuaState then
-        context.clear_output = clear_output_chk:GetCheck() ~= 0
         context.script_text = get_edit_text(edit_text).LuaString
         context.output_text = get_edit_text(output_text).LuaString
         global_dialog:StorePosition()
@@ -565,8 +619,8 @@ local create_dialog = function()
         line_number_text:SetUseRichText(true) -- this is needed on Windows for color flagging.
     end
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
-        total_width - line_number_width - x_separator, edit_text_height, true, context.tabstop_width)
-    edit_text:SetConvertTabsToSpaces(context.tabstop_width) -- ToDo: make this an option
+        total_width - line_number_width - x_separator, edit_text_height, true, config.tabstop_width)
+    edit_text:SetConvertTabsToSpaces(config.tabstop_width) -- ToDo: make this an option
     edit_text:SetAutomaticallyIndent(true)
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
@@ -593,7 +647,7 @@ local create_dialog = function()
     clear_output_chk:SetText(finale.FCString("Clear Before Run"))
     curr_y = curr_y + button_height
     output_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), total_width, output_height, false,
-        context.output_tabstop_width)
+        config.output_tabstop_width)
     curr_y = curr_y + output_height + y_separator
     -- close button line
     curr_x = 0
@@ -632,7 +686,8 @@ local create_dialog = function()
     return dialog
 end
 
-local open_dialog = function()
+local open_console = function()
+    config_read()
     global_dialog = create_dialog()
     finenv.RegisterModelessDialog(global_dialog)
     -- For some reason we need to do this here rather than in InitWindow.
@@ -644,4 +699,4 @@ local open_dialog = function()
     global_dialog:ShowModeless()
 end
 
-open_dialog()
+open_console()
