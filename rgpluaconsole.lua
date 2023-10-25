@@ -78,6 +78,7 @@ local function select_script(fullpath, scripts_items_index)
     edit_text:SetText(finale.FCString(script_text))
     context.original_script_text = get_edit_text(edit_text).LuaString -- rotate thru control to match line endings
     edit_text:ResetUndoState()
+    line_number_text:ScrollToVerticalPosition(0)
     script_menu:Clear()
     for item in each(script_items) do
         --local item_string = string.gsub(item.MenuItemText, "%.{3}$", "") -- remove trailing dots, if any
