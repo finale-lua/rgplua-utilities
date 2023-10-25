@@ -10301,8 +10301,8 @@
       <type>void</type>
       <name>SetBlockType</name>
       <anchorfile>class_f_c_active_lyric.html</anchorfile>
-      <anchor>a3ae85563b66648e007bdd089d424ca4f</anchor>
-      <arglist>(__FCLyricsBase::LYRICSTEXTBLOCKTYPES value)</arglist>
+      <anchor>a85ae2a65b251cde38e2ba8cdc5b0ca0c</anchor>
+      <arglist>(FCRawText::RAWTEXTTYPES value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -43654,6 +43654,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>RAWTEXTTYPE_UNKNOWN</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fab6ad26ce75609777be55ab5a07139e32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>RAWTEXTTYPE_TEXTBLOCK</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
       <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61faecf9ccc4fad7bb0b9ff0b2f0f24ae9ae</anchor>
@@ -43699,6 +43705,12 @@
       <name>RAWTEXTTYPE_BOOKMARK</name>
       <anchorfile>class_f_c_raw_text.html</anchorfile>
       <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fa1b644cfb3ac5779e6f1b31b961f406ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RAWTEXTTYPE_UNKNOWN</name>
+      <anchorfile>class_f_c_raw_text.html</anchorfile>
+      <anchor>a9d3f3a7ed1fa3214f712445ce3a0a61fab6ad26ce75609777be55ab5a07139e32</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
