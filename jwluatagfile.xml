@@ -22475,8 +22475,8 @@
       <type></type>
       <name>FCFontInfo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a9ecbf3035ac03421486430bf90243f76</anchor>
-      <arglist>(const FCString &amp;name, double size)</arglist>
+      <anchor>a02c6398596ae3c6bd5f01ff6e9857195</anchor>
+      <arglist>(const FCString &amp;name, double size, FLAG_16 enigmastyles=0)</arglist>
     </member>
     <member kind="function">
       <type></type>
