@@ -246,7 +246,7 @@ local function file_save()
     return retval
 end
 
-function check_save(is_closing)
+function check_save(is_closing) -- "local" omitted because check_save is defined as local above
     if context.selected_script_item <= 0 then
         return true -- nothing has been loaded yet if here
     end
@@ -342,16 +342,11 @@ file_menu_base_handler =
     end
 }
 
-local function calc_tab_width(font, numchars) -- assumes fixed_width font
-    local adv_points = 0
-    local curr_doc = finale.FCDocument()
-    if curr_doc.ID <= 0 then
-        -- if no document, use hard-coded values derived from when we did have a document.
-        adv_points = config.font_advance_points
-    else
-        local text_met = finale.FCTextMetrics()
-        text_met:LoadString(finale.FCString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"), font, 100)
-        config.font_advance_points = (text_met:GetAdvanceWidthEVPUs() / 4) / 52 -- GetAdvanceWidthPoints does not return points on Windows
+local function calc_tab_width(font, numchars)
+    if finale.FCDocument().ID > 0 then
+        --update value if we have a document
+        local font_info = finale.FCFontInfo(config.font_name, config.font_size)
+        config.font_advance_points = font_info:CalcAverageRomanCharacterWidthPoints()
     end
     return numchars * config.font_advance_points
 end
@@ -519,6 +514,67 @@ local function on_file_popup(control)
     -- do not put edit_text in focus here, because messes up Windows
 end
 
+local function on_config_dialog()
+    if finale.FCDocument().ID <= 0 then
+        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.", "Document Required")
+        return
+    end
+    local curr_y = 0
+    local y_separator = 30 -- includes control height
+    local x_rightcol = 160 --
+    local dlg = finale.FCCustomLuaWindow()
+    dlg:SetTitle(finale.FCString("Console Preferences"))
+    local tab_stop_width_label = dlg:CreateStatic(0, curr_y)
+    tab_stop_width_label:SetText(finale.FCString("Tabstop width: "))
+    tab_stop_width_label:SetWidth(x_rightcol-20)
+    local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    tab_stop_width:SetInteger(config.tabstop_width)
+    curr_y = curr_y + y_separator
+    local tabs_to_spaces = dlg:CreateCheckbox(0, curr_y)
+    tabs_to_spaces:SetText(finale.FCString("Use spaces for tabs"))
+    tabs_to_spaces:SetWidth(x_rightcol - 20)
+    tabs_to_spaces:SetCheck(config.tabs_to_spaces and 1 or 0)
+    curr_y = curr_y + y_separator
+    local output_tab_width_label = dlg:CreateStatic(0, curr_y)
+    output_tab_width_label:SetText(finale.FCString("Output tabstop width: "))
+    output_tab_width_label:SetWidth(x_rightcol-20)
+    local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    output_tab_width:SetInteger(config.output_tabstop_width)
+    curr_y = curr_y + y_separator
+    local font_label = dlg:CreateStatic(0, curr_y)
+    font_label:SetWidth(x_rightcol-20)
+    local function set_font_text(font_info)
+        local font_label_text = finale.FCString("Font: ")
+        font_label_text:AppendString(font_info:CreateDescription())
+        font_label:SetText(font_label_text)
+    end
+    local font = finale.FCFontInfo(config.font_name, config.font_size)
+    set_font_text(font)
+    local font_change = dlg:CreateButton(x_rightcol, curr_y - win_mac(5, 1))
+    font_change:SetText(finale.FCString("Change..."))
+    font_change:SetWidth(70)
+    dlg:RegisterHandleControlEvent(font_change, function(control)
+        local font_selector = finale.FCFontDialog(dlg:CreateChildUI(), font)
+        if font_selector:Execute() then
+            font:SetEnigmaStyles(0)
+            set_font_text(font)
+        end
+    end)
+    dlg:CreateOkButton()
+    dlg:CreateCancelButton()
+    if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
+        config.tabstop_width = tab_stop_width:GetInteger()
+        config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
+        config.output_tabstop_width = output_tab_width:GetInteger()
+        local fcstr = finale.FCString()
+        font:GetNameString(fcstr)
+        config.font_name = fcstr.LuaString
+        config.font_size = font:GetSize()
+        config.font_advance_points = font:CalcAverageRomanCharacterWidthPoints()
+        global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.", "Changes Accepted")
+    end
+end
+
 local function on_scroll(control)
     if in_scroll_handler then
         return
@@ -556,10 +612,11 @@ local function on_init_window()
     clear_output_chk:SetCheck(config.clear_output_before_run and 1 or 0)
     run_as_debug_chk:SetCheck(config.run_as_debug and 1 or 0)
     run_as_trusted_chk:SetCheck(config.run_as_trusted and run_as_trusted_chk:GetEnable() and 1 or 0)
-    write_line_numbers(1)
     if context.script_text then
         edit_text:SetText(finale.FCString(context.script_text))
     end
+    local num_lines = edit_text:GetNumberOfLines()
+    write_line_numbers(math.max(edit_text:GetNumberOfLines(), 1))
     edit_text:ResetUndoState()
     if context.output_text then
         output_text:SetText(finale.FCString(""))
@@ -608,7 +665,7 @@ local create_dialog = function()
     local check_box_width = win_mac(105, 120)
     local edit_text_height = 280
     local output_height = edit_text_height / 2.2
-    local line_number_width = 75
+    local line_number_width = math.ceil(config.font_advance_points * win_mac(7, 6) + 35)
     local total_width = 960 -- make divisible by 3
     local curr_y = 0
     local curr_x = 0
@@ -678,6 +735,7 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(edit_text, on_text_change)
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
+    dialog:RegisterHandleControlEvent(config_btn, on_config_dialog)
     dialog:RegisterHandleScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)

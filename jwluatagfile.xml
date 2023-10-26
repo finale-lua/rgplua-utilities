@@ -22794,6 +22794,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>double</type>
+      <name>CalcAverageRomanCharacterWidthEVPUs</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>a079b50432f1c56e987b3eb8556f43f35</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>CalcAverageRomanCharacterWidthPoints</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>a018fb22beb88470afaee6f2a9ad49227</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
@@ -55257,8 +55271,8 @@
       <type>bool</type>
       <name>LoadString</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a8dc5e3d4150e7181ab70b2f05217569b</anchor>
-      <arglist>(FCString *pText, FCFontInfo *pFont, float percent)</arglist>
+      <anchor>a78ac3277f682be59e35437e623a54e2f</anchor>
+      <arglist>(const FCString *pText, const FCFontInfo *pFont, float percent)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
