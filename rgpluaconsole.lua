@@ -37,6 +37,7 @@ local run_as_trusted_chk    -- Run As Trusted checkbox
 local run_as_debug_chk      -- Run As Debug checkbox
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
+local in_text_change_event  -- needed to prevent infinite text_change handleer loop
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -53,9 +54,9 @@ if not finenv.RetainLuaState then
         clear_output_before_run = false,
         run_as_trusted = false,
         run_as_debug = false,
-        font_name = win_mac("Consolas", "Monaco"),
+        font_name = win_mac("Consolas", "Menlo"),
         font_size = win_mac(9, 11),
-        font_advance_points = win_mac(4.9482421875, 6.60107421875), -- win 10pt Consolas is 5.498046875
+        font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -415,12 +416,21 @@ local function write_line_numbers(num_lines)
 end
 
 function on_text_change(control)
+    if in_text_change_event then
+        return
+    end
+    in_text_change_event = true
+    assert(control:GetControlID() == edit_text:GetControlID(), "on_text_change called for wrong control")
     local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
     if num_lines < 1 then num_lines = 1 end
     if num_lines ~= line_number_text:GetNumberOfLines() then
         -- checking if the number of lines changed avoids churn.
         write_line_numbers(num_lines)
     end
+    -- Syntax highlighting could happen here, but it is non-trivial due issues
+    -- around performance and disruption of the Undo stack. (Not to mention the need
+    -- to intelligently parse Lua code.)
+    in_text_change_event = false
 end
 
 function on_execution_will_start(item)

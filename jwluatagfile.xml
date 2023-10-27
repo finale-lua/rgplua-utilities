@@ -17974,6 +17974,13 @@
       <arglist>(int line, FCRange *pRange) const</arglist>
     </member>
     <member kind="function">
+      <type>FCRanges *</type>
+      <name>CreateLineRanges</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a09e0befb0483e3da229e25daa404fad1</anchor>
+      <arglist>(const FCRange *pRange=nullptr) const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetLineRangeForPosition</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
@@ -18336,6 +18343,13 @@
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>a80dbe71b44ba03760f91ee862d6e3098</anchor>
       <arglist>(int line)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetCharacterAtIndex</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a826d70ab29f57494725b6245e8195392</anchor>
+      <arglist>(int pos) const</arglist>
     </member>
   </compound>
   <compound kind="class">
