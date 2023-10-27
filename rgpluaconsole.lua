@@ -377,8 +377,8 @@ function output_to_console(...)
     local new_line = range.Length > 0 and "\n" or ""
     local formatted_string = new_line .. table.concat(formatted_args, "\t") -- Concatenate arguments with tabs
     output_text:AppendText(finale.FCString(formatted_string))
-    output_text:RedrawImmediate()
     output_text:ScrollToBottom()
+    output_text:RedrawImmediate()
 end
 
 local function write_line_numbers(num_lines)
