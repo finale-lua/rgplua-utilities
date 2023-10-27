@@ -17,6 +17,7 @@ function plugindef()
 end
 
 local cjson = require('cjson')
+local lfs = require("lfs")
 
 local function win_mac(winval, macval)
     if finenv.UI():IsOnWindows() then return winval end
@@ -66,6 +67,7 @@ if not finenv.RetainLuaState then
     {
         script_text = nil,          -- holds current contents of edit box when our window is not open
         original_script_text = "",  -- used to check if the text has been modified
+        modification_time = nil,    -- used to check if the file has been modified
         output_text = nil,          -- holds current contents of output box when our window is not open
         script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0,   -- 1-based Lua index into script_items_list
@@ -169,6 +171,12 @@ local function select_script(fullpath, scripts_items_index)
     context.selected_script_item = scripts_items_index
     edit_text:SetText(finale.FCString(script_text))
     context.original_script_text = get_edit_text(edit_text).LuaString -- rotate thru control to match line endings
+    if file_exists then
+        local file_info = lfs.attributes(fullpath)
+        if file_info then
+            context.modification_time = file_info.modification
+        end
+    end
     edit_text:ResetUndoState()
     line_number_text:ScrollToVerticalPosition(0)
     script_menu:Clear()
@@ -238,6 +246,10 @@ local function file_save()
         file:write(contents.LuaString)
         local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
         context.original_script_text = contents.LuaString
+        local file_info = lfs.attributes(file_path.LuaString)
+        if file_info then
+            context.modification_time = file_info.modification
+        end
         assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
         context.script_items_list[script_item_index].items = items
     else
