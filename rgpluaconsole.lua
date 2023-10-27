@@ -56,6 +56,9 @@ if not finenv.RetainLuaState then
         font_name = win_mac("Consolas", "Monaco"),
         font_size = win_mac(9, 11),
         font_advance_points = win_mac(4.9482421875, 6.60107421875), -- win 10pt Consolas is 5.498046875
+        window_pos_valid = false,
+        window_pos_x = 0, -- must be non-nil so config reader captures it
+        window_pos_y = 0, -- must be non-nil so config reader captures it
         recent_files = {}
     }
     context =
@@ -65,8 +68,8 @@ if not finenv.RetainLuaState then
         output_text = nil,          -- holds current contents of output box when our window is not open
         script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0,   -- 1-based Lua index into script_items_list
-        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-" },
-        first_script_in_menu = 6,
+        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "< Close All >", "-" },
+        first_script_in_menu = 7,
         untitled_counter = 1,
         working_directory = (function()     -- this gets modified as we go
             local str = finale.FCString()
@@ -76,9 +79,7 @@ if not finenv.RetainLuaState then
             end
             return str.LuaString
         end)(),
-        working_directory_valid = false,
-        window_pos_x = nil,
-        window_pos_y = nil
+        working_directory_valid = false
     }
 end
 
@@ -301,34 +302,42 @@ function file_save_as()
     return result
 end
 
-local function file_close()
+local function do_file_close(all_files)
     if not check_save() then
         file_menu:SetSelectedItem(menu_index_from_current_script())
         return
     end
-    local menu_index = menu_index_from_current_script()
-    file_menu:DeleteItem(menu_index)
-    table.remove(context.script_items_list, context.selected_script_item)
-    if menu_index >= file_menu:GetCount() then
-        menu_index = menu_index - 1
-        assert(menu_index < file_menu:GetCount(), "menu index is out of range after deletion: " .. menu_index)
+    local first_menu_index = all_files and context.first_script_in_menu or menu_index_from_current_script()
+    local last_menu_index = all_files and file_menu:GetCount() - 1 or first_menu_index
+    assert(last_menu_index >= first_menu_index, "attempt to close more files than there are")
+    for menu_index = last_menu_index, first_menu_index, -1 do
+        assert(menu_index >= context.first_script_in_menu, "attempt to delete base file menu item")
+        file_menu:DeleteItem(menu_index)
+        table.remove(context.script_items_list, first_menu_index - context.first_script_in_menu + 1)
+    end
+    if all_files then
+        context.selected_script_item = 1
+    end
+    if first_menu_index >= file_menu:GetCount() then
+        first_menu_index = first_menu_index - 1
+        assert(first_menu_index < file_menu:GetCount(), "menu index is out of range after deletion: " .. first_menu_index)
         context.selected_script_item = context.selected_script_item - 1
-        if menu_index < context.first_script_in_menu then
+        if first_menu_index < context.first_script_in_menu then
             file_new()
             return -- file_new() sets the correct selection
         else
             assert(context.selected_script_item > 0, "context.selected_script_item has gone to zero")
             local filepath = finale.FCString()
-            file_menu:GetItemText(menu_index, filepath)
+            file_menu:GetItemText(first_menu_index, filepath)
             select_script(filepath.LuaString, context.selected_script_item)
         end
     else
         local filepath = finale.FCString()
-        file_menu:GetItemText(menu_index, filepath)
+        file_menu:GetItemText(first_menu_index, filepath)
         select_script(filepath.LuaString, context.selected_script_item)
     end
-    file_menu:SetSelectedItem(menu_index)
-end
+    file_menu:SetSelectedItem(first_menu_index)
+end    
 
 file_menu_base_handler =
 {
@@ -336,7 +345,12 @@ file_menu_base_handler =
     file_open,
     file_save,
     file_save_as,
-    file_close,
+    function()
+        do_file_close(false)
+    end,
+    function()
+        do_file_close(true)
+    end,
     function() -- nop function for divider
         file_menu:SetSelectedItem(menu_index_from_current_script())
     end
@@ -607,7 +621,10 @@ local function on_init_window()
     if file_menu:GetCount() <= context.first_script_in_menu then
         file_new()
     else
-        select_script(context.script_items_list[context.selected_script_item].items:GetItemAt(0).FilePath, context.selected_script_item)
+        local menu_idx = menu_index_from_current_script()
+        local fc_str = finale.FCString()
+        file_menu:GetItemText(menu_idx, fc_str)
+        select_script(fc_str.LuaString, context.selected_script_item)
     end
     clear_output_chk:SetCheck(config.clear_output_before_run and 1 or 0)
     run_as_debug_chk:SetCheck(config.run_as_debug and 1 or 0)
@@ -636,6 +653,7 @@ local function on_close_window()
     config.run_as_debug = run_as_debug_chk:GetCheck() ~= 0
     config.run_as_trusted = run_as_trusted_chk:GetCheck() ~= 0
     local recent_files_index = 0
+    config.recent_files = {}
     for idx, items_entry in ipairs(context.script_items_list) do
         if items_entry.exists and items_entry.items.Count > 0 then
             recent_files_index = recent_files_index + 1
@@ -643,13 +661,14 @@ local function on_close_window()
             config.recent_files[recent_files_index] =  items_entry.items:GetItemAt(0).FilePath
         end
     end
+    global_dialog:StorePosition()
+    config.window_pos_x = global_dialog.StoredX
+    config.window_pos_y = global_dialog.StoredY
+    config.window_pos_valid = true
     config_write()
     if finenv.RetainLuaState then
         context.script_text = get_edit_text(edit_text).LuaString
         context.output_text = get_edit_text(output_text).LuaString
-        global_dialog:StorePosition()
-        context.window_pos_x = global_dialog.StoredX
-        context.window_pos_y = global_dialog.StoredY
     end
 end
 
@@ -683,7 +702,7 @@ local create_dialog = function()
     end
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, config.tabstop_width)
-    edit_text:SetConvertTabsToSpaces(config.tabs_to_spaces and config.tabstop_width or 0) -- ToDo: make this an option
+    edit_text:SetConvertTabsToSpaces(config.tabs_to_spaces and config.tabstop_width or 0)
     edit_text:SetAutomaticallyIndent(true)
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
@@ -762,9 +781,9 @@ local open_console = function()
     global_dialog = create_dialog()
     finenv.RegisterModelessDialog(global_dialog)
     -- For some reason we need to do this here rather than in InitWindow.
-    if context.window_pos_x and context.window_pos_y then
+    if config.window_pos_valid then
         global_dialog:StorePosition()
-        global_dialog:SetRestorePositionOnlyData(context.window_pos_x, context.window_pos_y)
+        global_dialog:SetRestorePositionOnlyData(config.window_pos_x, config.window_pos_y)
         global_dialog:RestorePosition()
     end
     global_dialog:ShowModeless()
