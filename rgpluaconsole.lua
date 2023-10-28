@@ -36,6 +36,7 @@ local output_text           -- print output area
 local clear_output_chk      -- Clear Before Run checkbox
 local run_as_trusted_chk    -- Run As Trusted checkbox
 local run_as_debug_chk      -- Run As Debug checkbox
+local line_ending_show      -- Static control to show line endings
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
@@ -70,6 +71,7 @@ if not finenv.RetainLuaState then
         output_text = nil,          -- holds current contents of output box when our window is not open
         script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0,   -- 1-based Lua index into script_items_list
+        line_ending_type = 0,       -- tracks the line ending type (used in Windows only)
         file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "< Close All >", "-" },
         first_script_in_menu = 7,
         untitled_counter = 1,
@@ -124,10 +126,51 @@ local function config_write()
     end
 end
 
+local LINE_ENDINGS_DOS = 1
+local LINE_ENDINGS_MAC = 2
+local LINE_ENDINGS_UNIX = 3
+local LINE_ENDINGS_UNKNOWN = 4
+
+local line_ending_text = {"DOS (CRLF)", "MacOS (CR)", "Unix (LF)", ""}
+
+function calc_line_ending_type(fcstr)
+    if fcstr then
+        if fcstr:ContainsLuaString("\r\n") then
+            return LINE_ENDINGS_DOS
+        elseif fcstr:ContainsLuaString("\r") then
+            return LINE_ENDINGS_MAC
+        elseif fcstr:ContainsLuaString("\n") then
+            return LINE_ENDINGS_UNIX
+        end
+    end
+    return LINE_ENDINGS_UNKNOWN
+end
+
 local function get_edit_text(control)
     local retval = finale.FCString()
     control:GetText(retval)
+    if finenv.UI():IsOnWindows() then
+        -- Windows always returns CRLF, no matter what line endings we put in,
+        -- so we have to massage the text based on the line endings we captured going in.
+        if context.line_ending_type == LINE_ENDINGS_MAC then
+            retval.LuaString = retval.LuaString:gsub("\r\n", "\r")
+        elseif context.line_ending_type == LINE_ENDINGS_UNIX then
+            retval.LuaString = retval.LuaString:gsub("\r\n", "\n")
+        end
+    end
+    local line_ending = calc_line_ending_type(retval)
+    line_ending_show:SetText(finale.FCString(line_ending_text[line_ending]))
     return retval
+end
+
+local function set_edit_text(control, fcstr, options)
+    options = options or {}
+    assert(type(options) == "table", "argument 3 (options) should be a table: got " .. type(options))
+    context.line_ending_type = calc_line_ending_type(fcstr)
+    control:SetText(fcstr)
+    if not options.nocache then
+        context.original_script_text = get_edit_text(control).LuaString
+    end
 end
 
 local function menu_index_from_current_script()
@@ -155,7 +198,7 @@ local function select_script(fullpath, scripts_items_index)
     end
     local script_text = ""
     if file_exists then
-        local file <close> = io.open(fullpath, "r")
+        local file <close> = io.open(fullpath, "rb")
         if file then
             script_text = file:read("a")
         end
@@ -168,8 +211,7 @@ local function select_script(fullpath, scripts_items_index)
     context.script_items_list[scripts_items_index].items = script_items
     context.script_items_list[scripts_items_index].exists = file_exists
     context.selected_script_item = scripts_items_index
-    edit_text:SetText(finale.FCString(script_text))
-    context.original_script_text = get_edit_text(edit_text).LuaString -- rotate thru control to match line endings
+    set_edit_text(edit_text, finale.FCString(script_text))
     if file_exists then
         local file_info = lfs.attributes(fullpath)
         if file_info then
@@ -244,11 +286,8 @@ local function file_save()
     end)()
     local retval = false
     if not modified_externally or global_dialog:CreateChildUI():AlertYesNo("Saving will overwrite changes made with another editor.", "Continue?") == finale.YESRETURN then
-    local file <close> = io.open(file_path.LuaString, "w")
-    local file <close> = io.open(file_path.LuaString, "w")
-    local retval = true
-        local file <close> = io.open(file_path.LuaString, "w")
-    local retval = true
+        local retval = true
+        local file <close> = io.open(file_path.LuaString, "wb")
         if file then
             local contents = get_edit_text(edit_text)
             file:write(contents.LuaString)
@@ -274,8 +313,7 @@ function check_save(is_closing) -- "local" omitted because check_save is defined
     if context.selected_script_item <= 0 then
         return true -- nothing has been loaded yet if here
     end
-    local fcstr = finale.FCString()
-    edit_text:GetText(fcstr)
+    local fcstr = get_edit_text(edit_text)
     if fcstr.LuaString ~= context.original_script_text then
         local ui = global_dialog:CreateChildUI()
         local function_name = is_closing and "AlertYesNo" or "AlertYesNoCancel"
@@ -662,9 +700,8 @@ local function on_init_window()
     run_as_debug_chk:SetCheck(config.run_as_debug and 1 or 0)
     run_as_trusted_chk:SetCheck(config.run_as_trusted and run_as_trusted_chk:GetEnable() and 1 or 0)
     if context.script_text then
-        edit_text:SetText(finale.FCString(context.script_text))
+        set_edit_text(edit_text, finale.FCString(context.script_text), {nocache = true})
     end
-    local num_lines = edit_text:GetNumberOfLines()
     write_line_numbers(math.max(edit_text:GetNumberOfLines(), 1))
     edit_text:ResetUndoState()
     if context.output_text then
@@ -717,12 +754,11 @@ local function on_timer(timer_id)
         if file_info and file_info.modification ~= context.modification_time then
             local script_text = get_edit_text(edit_text)
             if context.original_script_text == script_text.LuaString then -- no modifications here
-                local file <close> = io.open(filepath, "r")
+                local file <close> = io.open(filepath, "rb")
                 if file then
                     local modified_text = file:read("a")
                     local curr_scroll_pos = line_number_text:GetVerticalScrollPosition()
-                    edit_text:SetText(finale.FCString(modified_text))
-                    context.original_script_text = get_edit_text(edit_text).LuaString
+                    set_edit_text(edit_text, finale.FCString(modified_text))
                     context.modification_time = file_info.modification
                     line_number_text:ScrollToVerticalPosition(curr_scroll_pos)
                 end
@@ -774,6 +810,9 @@ local create_dialog = function()
     run_as_debug_chk = dialog:CreateCheckbox(curr_x, curr_y)
     run_as_debug_chk:SetText(finale.FCString("Run As Debug"))
     run_as_debug_chk:SetWidth(check_box_width)
+    curr_x = curr_x + check_box_width + x_separator
+    line_ending_show = dialog:CreateStatic(curr_x, curr_y)
+    line_ending_show:SetWidth(button_width)
     curr_x = curr_x + check_box_width + x_separator
     local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y - win_mac(5, 1))
     run_script_cmd:SetText(finale.FCString("Run Script"))
