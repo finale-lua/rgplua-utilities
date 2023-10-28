@@ -45,8 +45,6 @@ local in_text_change_event  -- needed to prevent infinite text_change handleer l
 global_dialog = nil         -- persists thru the running of the modeless window, so reset each time the script runs
 global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
 
-require('mobdebug').start()
-
 if not finenv.RetainLuaState then
     config =
     {
@@ -240,22 +238,33 @@ local function file_save()
     local file_path = finale.FCString()
     local result = file_menu:GetItemText(menu_index, file_path)
     assert(result, "no text found in file_menu at index " .. menu_index)
+    local modified_externally = (function()
+        local file_info = lfs.attributes(file_path.LuaString)
+        return file_info and file_info.modification ~= context.modification_time
+    end)()
+    local retval = false
+    if not modified_externally or global_dialog:CreateChildUI():AlertYesNo("Saving will overwrite changes made with another editor.", "Continue?") == finale.YESRETURN then
+    local file <close> = io.open(file_path.LuaString, "w")
     local file <close> = io.open(file_path.LuaString, "w")
     local retval = true
-    if file then
-        local contents = get_edit_text(edit_text)
-        file:write(contents.LuaString)
-        local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
-        context.original_script_text = contents.LuaString
-        local file_info = lfs.attributes(file_path.LuaString)
-        if file_info then
-            context.modification_time = file_info.modification
+        local file <close> = io.open(file_path.LuaString, "w")
+    local retval = true
+        if file then
+            local contents = get_edit_text(edit_text)
+            file:write(contents.LuaString)
+            local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
+            context.original_script_text = contents.LuaString
+            local file_info = lfs.attributes(file_path.LuaString)
+            if file_info then
+                context.modification_time = file_info.modification
+            end
+            assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
+            context.script_items_list[script_item_index].items = items
+            retval = true
+        else
+            global_dialog:CreateChildUI():AlertError("Unable to write file " .. file_path.LuaString, "Save Error")
+            retval = false
         end
-        assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
-        context.script_items_list[script_item_index].items = items
-    else
-        global_dialog:CreateChildUI():AlertError("Unable to write file " .. file_path.LuaString, "Save Error")
-        retval = false
     end
     file_menu:SetSelectedItem(menu_index)
     return retval
@@ -703,13 +712,20 @@ local function on_timer(timer_id)
     if list_item.exists then
         assert(list_item.items.Count > 0, "list items exist but there are no script items")
         assert(context.modification_time, "modification time was not set")
-        local filepath = list_item.item:GetItemAt(0).FilePath
+        local filepath = list_item.items:GetItemAt(0).FilePath
         local file_info = lfs.attributes(filepath)
-        assert(file_info, "unable to get file attributes for " .. filepath)
-        if file_info.modification ~= context.modification_time then
+        if file_info and file_info.modification ~= context.modification_time then
             local script_text = get_edit_text(edit_text)
-            if context.original_script_text == script_text then -- no modifications here
-                -- ToDo: read the file in, update the control, and maintain scroll position
+            if context.original_script_text == script_text.LuaString then -- no modifications here
+                local file <close> = io.open(filepath, "r")
+                if file then
+                    local modified_text = file:read("a")
+                    local curr_scroll_pos = line_number_text:GetVerticalScrollPosition()
+                    edit_text:SetText(finale.FCString(modified_text))
+                    context.original_script_text = get_edit_text(edit_text).LuaString
+                    context.modification_time = file_info.modification
+                    line_number_text:ScrollToVerticalPosition(curr_scroll_pos)
+                end
             end
         end
     end
@@ -786,8 +802,8 @@ local create_dialog = function()
     -- close button line
     curr_x = 0
     local config_btn = dialog:CreateButton(curr_x, curr_y)
-    config_btn:SetText(finale.FCString("..."))
-    config_btn:SetWidth(40)
+    config_btn:SetText(finale.FCString("Preferences..."))
+    config_btn:SetWidth(100)
     curr_x = curr_x + 40 + x_separator
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)

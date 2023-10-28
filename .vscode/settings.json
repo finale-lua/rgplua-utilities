@@ -37,5 +37,6 @@
     "[lua]": {
         "editor.defaultFormatter": "Koihik.vscode-lua-format"
     },
-    "Lua.runtime.version": "Lua 5.4"
+    "Lua.runtime.version": "Lua 5.4",
+    "Lua.workspace.checkThirdParty": false
 }
