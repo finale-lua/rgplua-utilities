@@ -667,6 +667,7 @@ local function on_init_window()
 end
 
 local function on_close_window()
+    global_dialog:StopTimer(global_timer_id)
     if global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_ALT) or global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
         finenv.RetainLuaState = false
     else
