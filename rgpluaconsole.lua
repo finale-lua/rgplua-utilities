@@ -43,6 +43,7 @@ local in_text_change_event  -- needed to prevent infinite text_change handleer l
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
 global_dialog = nil         -- persists thru the running of the modeless window, so reset each time the script runs
+global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
 
 require('mobdebug').start()
 
@@ -662,6 +663,7 @@ local function on_init_window()
         output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
     end
     edit_text:SetKeyboardFocus()
+    global_dialog:SetTimer(global_timer_id, 100) --100ms should be plenty for checking if the file has been written externally
 end
 
 local function on_close_window()
@@ -680,7 +682,7 @@ local function on_close_window()
         if items_entry.exists and items_entry.items.Count > 0 then
             recent_files_index = recent_files_index + 1
             local fp = items_entry.items:GetItemAt(0).FilePath
-            config.recent_files[recent_files_index] =  items_entry.items:GetItemAt(0).FilePath
+            config.recent_files[recent_files_index] = items_entry.items:GetItemAt(0).FilePath
         end
     end
     global_dialog:StorePosition()
@@ -691,6 +693,24 @@ local function on_close_window()
     if finenv.RetainLuaState then
         context.script_text = get_edit_text(edit_text).LuaString
         context.output_text = get_edit_text(output_text).LuaString
+    end
+end
+
+local function on_timer(timer_id)
+    if timer_id ~= global_timer_id then return end
+    local list_item = context.script_items_list[context.selected_script_item]
+    if list_item.exists then
+        assert(list_item.items.Count > 0, "list items exist but there are no script items")
+        assert(context.modification_time, "modification time was not set")
+        local filepath = list_item.item:GetItemAt(0).FilePath
+        local file_info = lfs.attributes(filepath)
+        assert(file_info, "unable to get file attributes for " .. filepath)
+        if file_info.modification ~= context.modification_time then
+            local script_text = get_edit_text(edit_text)
+            if context.original_script_text == script_text then -- no modifications here
+                -- ToDo: read the file in, update the control, and maintain scroll position
+            end
+        end
     end
 end
 
@@ -780,6 +800,7 @@ local create_dialog = function()
     dialog:RegisterHandleScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
+    dialog:RegisterHandleTimer(on_timer)
     return dialog
 end
 
