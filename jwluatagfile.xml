@@ -52919,8 +52919,8 @@
       <type>void</type>
       <name>InsertStringAt</name>
       <anchorfile>class_f_c_strings.html</anchorfile>
-      <anchor>a803364cd6138c395a8b1c000a980f942</anchor>
-      <arglist>(FCString *pNewString, int index)</arglist>
+      <anchor>a840f1510a63b815f40296101d28e4cd7</anchor>
+      <arglist>(const FCString *pNewString, int index)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
