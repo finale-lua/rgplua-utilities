@@ -18059,6 +18059,13 @@
     </member>
     <member kind="function">
       <type>FCString *</type>
+      <name>CreateRTFString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a7aad9577f95921cb0b75852f41954460</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCString *</type>
       <name>CreateEnigmaString</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>ae4daa13de257492e58b21adae9e62362</anchor>
