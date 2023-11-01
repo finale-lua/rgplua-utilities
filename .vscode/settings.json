@@ -19,7 +19,9 @@
         "utf8",
         "socket",
         "tinyxml2",
-        "xmlelements"
+        "xmlelements",
+        "xmlattributes",
+        "prettyformatjson"
     ],
     "files.exclude": {
         "decoder.lua": true,
@@ -35,5 +37,6 @@
     "[lua]": {
         "editor.defaultFormatter": "Koihik.vscode-lua-format"
     },
-    "Lua.runtime.version": "Lua 5.4"
+    "Lua.runtime.version": "Lua 5.4",
+    "Lua.workspace.checkThirdParty": false
 }
