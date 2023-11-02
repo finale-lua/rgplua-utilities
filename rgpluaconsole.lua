@@ -18,6 +18,8 @@ end
 
 local cjson = require('cjson')
 local lfs = require("lfs")
+local osutils = require("luaosutils")
+local text = osutils.text
 
 local function win_mac(winval, macval)
     if finenv.UI():IsOnWindows() then return winval end
@@ -72,8 +74,8 @@ if not finenv.RetainLuaState then
         script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0,   -- 1-based Lua index into script_items_list
         line_ending_type = 0,       -- tracks the line ending type (used in Windows only)
-        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "< Close All >", "-" },
-        first_script_in_menu = 7,
+        file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-", "< Close All >", "-" },
+        first_script_in_menu = 8,
         untitled_counter = 1,
         working_directory = (function()     -- this gets modified as we go
             local str = finale.FCString()
@@ -87,6 +89,13 @@ if not finenv.RetainLuaState then
     }
 end
 
+local function encode_file_path(file_path)
+    if text.get_default_codepage() ~=  text.get_utf8_codepage() then
+        return text.convert_encoding(file_path, text.get_utf8_codepage(), text.get_default_codepage())
+    end
+    return file_path
+end
+
 local function config_filepath()
     local fcstr = finale.FCString()
     fcstr:SetUserOptionsPath()
@@ -95,7 +104,7 @@ local function config_filepath()
 end
 
 local function config_read()
-    local file <close> = io.open(config_filepath(), "r")
+    local file <close> = io.open(encode_file_path(config_filepath()), "r")
     if file then
         local json_text = file:read("a")
         local json = cjson.decode(json_text)
@@ -117,7 +126,7 @@ local function config_read()
 end
 
 local function config_write()
-    local file <close> = io.open(config_filepath(), "w")
+    local file <close> = io.open(encode_file_path(config_filepath()), "w")
     if file then
         local json_text = cjson.encode(config)
         if json_text and #json_text > 0 then
@@ -173,6 +182,19 @@ local function set_edit_text(control, fcstr, options)
     end
 end
 
+local function update_script_menu(items, new_index)
+    assert(items.Count > 0, "items collection contains no items")
+    local curr_script_index = new_index or script_menu:GetSelectedItem()
+    script_menu:Clear()
+    for item in each(items) do
+        --local item_string = string.gsub(item.MenuItemText, "%.{3}$", "") -- remove trailing dots, if any
+        script_menu:AddString(finale.FCString(item.MenuItemText))
+    end
+    if curr_script_index < script_menu:GetCount() then
+        script_menu:SetSelectedItem(curr_script_index)
+    end
+end
+
 local function menu_index_from_current_script()
     local script_item_index = context.selected_script_item
     assert(script_item_index > 0, "invalid script_item_index")
@@ -198,9 +220,12 @@ local function select_script(fullpath, scripts_items_index)
     end
     local script_text = ""
     if file_exists then
-        local file <close> = io.open(fullpath, "rb")
+        local file <close> = io.open(encode_file_path(fullpath), "rb")
         if file then
             script_text = file:read("a")
+        else
+            global_dialog:CreateChildUI():AlertInfo("Unable to read filepath " .. encode_file_path(fullpath), "File Path Encoding Error")
+            return false
         end
     end
     local script_items = finenv.CreateLuaScriptItemsFromFilePath(fullpath, script_text)
@@ -213,19 +238,14 @@ local function select_script(fullpath, scripts_items_index)
     context.selected_script_item = scripts_items_index
     set_edit_text(edit_text, finale.FCString(script_text))
     if file_exists then
-        local file_info = lfs.attributes(fullpath)
+        local file_info = lfs.attributes(encode_file_path(fullpath))
         if file_info then
             context.modification_time = file_info.modification
         end
     end
     edit_text:ResetUndoState()
     line_number_text:ScrollToVerticalPosition(0)
-    script_menu:Clear()
-    for item in each(script_items) do
-        --local item_string = string.gsub(item.MenuItemText, "%.{3}$", "") -- remove trailing dots, if any
-        script_menu:AddString(finale.FCString(item.MenuItemText))
-    end
-    script_menu:SetSelectedItem(0)
+    update_script_menu(script_items, 0)
     local file_menu_index = scripts_items_index + context.first_script_in_menu - 1
     if file_menu_index < file_menu:GetCount() then
         file_menu:SetItemText(file_menu_index, finale.FCString(original_fullpath))
@@ -236,6 +256,7 @@ local function select_script(fullpath, scripts_items_index)
     end
     file_menu:SetSelectedItem(file_menu_index)
     file_menu_cursel = file_menu_index
+    return true
 end
 
 local check_save -- forward reference to check_save function
@@ -264,7 +285,9 @@ local function file_open()
     if file_open_dlg:Execute() then
         local fc_name = finale.FCString()
         file_open_dlg:GetFileName(fc_name)
-        select_script(fc_name.LuaString, file_menu:GetCount() - context.first_script_in_menu + 1)
+        if not select_script(fc_name.LuaString, file_menu:GetCount() - context.first_script_in_menu + 1) then
+            file_menu:SetSelectedItem(menu_index_from_current_script())
+        end
     else
         file_menu:SetSelectedItem(menu_index_from_current_script())
     end
@@ -281,25 +304,26 @@ local function file_save()
     local result = file_menu:GetItemText(menu_index, file_path)
     assert(result, "no text found in file_menu at index " .. menu_index)
     local modified_externally = (function()
-        local file_info = lfs.attributes(file_path.LuaString)
+        local file_info = lfs.attributes(encode_file_path(file_path.LuaString))
         return file_info and file_info.modification ~= context.modification_time
     end)()
     local retval = false
     if not modified_externally or global_dialog:CreateChildUI():AlertYesNo("Saving will overwrite changes made with another editor.", "Continue?") == finale.YESRETURN then
         local retval = true
-        local file <close> = io.open(file_path.LuaString, "wb")
+        local file <close> = io.open(encode_file_path(file_path.LuaString), "wb")
         if file then
             local contents = get_edit_text(edit_text)
             file:write(contents.LuaString)
             local items = finenv.CreateLuaScriptItemsFromFilePath(file_path.LuaString, contents.LuaString)
             context.original_script_text = contents.LuaString
-            local file_info = lfs.attributes(file_path.LuaString)
+            local file_info = lfs.attributes(encode_file_path(file_path.LuaString))
             if file_info then
                 context.modification_time = file_info.modification
             end
             assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
             context.script_items_list[script_item_index].items = items
             retval = true
+            update_script_menu(items)
         else
             global_dialog:CreateChildUI():AlertError("Unable to write file " .. file_path.LuaString, "Save Error")
             retval = false
@@ -409,6 +433,9 @@ file_menu_base_handler =
     function()
         do_file_close(false)
     end,
+    function() -- nop function for divider
+        file_menu:SetSelectedItem(menu_index_from_current_script())
+    end,
     function()
         do_file_close(true)
     end,
@@ -502,14 +529,13 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     if success then
         local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
         output_to_console("<======= [" ..
-            item.MenuItemText .. "] succeeded (Processing time: " .. string.format("%.3f", proc_time) .. " s).") -- ToDo: calculate processing time.
+            item.MenuItemText .. "] succeeded (Processing time: " .. string.format("%.3f", proc_time) .. " s).")
     else
         -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
             if msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION then
-                output_to_console(
-                    "The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
+                output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
             end
         elseif line_number > 0 then
             line_range = finale.FCRange()
@@ -532,10 +558,10 @@ local function on_clear_output(control)
 end
 
 local function on_copy_output(control)
-    local text = finale.FCString()
-    output_text:GetText(text)
-    local line_ending = #text.LuaString > 0 and "\n" or ""
-    finenv.UI():TextToClipboard(text.LuaString .. line_ending)
+    local text_for_output = finale.FCString()
+    text_for_output:GetText(text_for_output)
+    local line_ending = #text_for_output.LuaString > 0 and "\n" or ""
+    finenv.UI():TextToClipboard(text_for_output.LuaString .. line_ending)
     edit_text:SetKeyboardFocus()
 end
 
@@ -557,7 +583,6 @@ local function on_run_script(control)
     script_item:RegisterPrintFunction(output_to_console)
     script_item:RegisterOnExecutionWillStart(on_execution_will_start)
     script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
-    --script_item.Trusted = true
     if clear_output_chk:GetCheck() ~= 0 then
         output_text:SetText(finale.FCString(""))
     end
@@ -587,7 +612,9 @@ local function on_file_popup(control)
                 if selected_script ~= context.selected_script_item then
                     local filepath = finale.FCString()
                     file_menu:GetItemText(selected_item, filepath)
-                    select_script(filepath.LuaString, selected_script)
+                    if not select_script(filepath.LuaString, selected_script) then
+                        file_menu:SetSelectedItem(menu_index_from_current_script())
+                    end
                 end
             end
         end
@@ -595,7 +622,7 @@ local function on_file_popup(control)
         file_menu_cursel = control:GetSelectedItem()
     end
     in_popup_handler = false
-    -- do not put edit_text in focus here, because messes up Windows
+    -- do not put edit_text in focus here, because it messes up Windows
 end
 
 local function on_config_dialog()
@@ -750,17 +777,19 @@ local function on_timer(timer_id)
         assert(list_item.items.Count > 0, "list items exist but there are no script items")
         assert(context.modification_time, "modification time was not set")
         local filepath = list_item.items:GetItemAt(0).FilePath
-        local file_info = lfs.attributes(filepath)
+        local file_info = lfs.attributes(encode_file_path(filepath))
         if file_info and file_info.modification ~= context.modification_time then
             local script_text = get_edit_text(edit_text)
             if context.original_script_text == script_text.LuaString then -- no modifications here
-                local file <close> = io.open(filepath, "rb")
+                local file <close> = io.open(encode_file_path(filepath), "rb")
                 if file then
                     local modified_text = file:read("a")
                     local curr_scroll_pos = line_number_text:GetVerticalScrollPosition()
                     set_edit_text(edit_text, finale.FCString(modified_text))
                     context.modification_time = file_info.modification
                     line_number_text:ScrollToVerticalPosition(curr_scroll_pos)
+                    list_item.items = finenv.CreateLuaScriptItemsFromFilePath(filepath, modified_text)
+                    update_script_menu(list_item.items)
                 end
             end
         end
