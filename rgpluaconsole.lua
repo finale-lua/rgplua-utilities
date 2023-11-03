@@ -55,6 +55,7 @@ if not finenv.RetainLuaState then
         tabs_to_spaces = true,
         output_tabstop_width = 8,
         clear_output_before_run = false,
+        word_wrap = false,
         run_as_trusted = false,
         run_as_debug = false,
         font_name = win_mac("Consolas", "Menlo"),
@@ -76,6 +77,7 @@ if not finenv.RetainLuaState then
         output_text = nil,          -- holds current contents of output box when our window is not open
         script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0,   -- 1-based Lua index into script_items_list
+        line_numbers = {},
         line_ending_type = 0,       -- tracks the line ending type (used in Windows only)
         file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-", "< Close All >", "-" },
         first_script_in_menu = 8,
@@ -497,9 +499,27 @@ local function write_line_numbers(num_lines)
         return string.rep(" ", leading_spaces) .. str_num .. trailing_space
     end
     local numbers_text = ""
+    line_number = 1
+    context.line_numbers = {}
     for i = 1, num_lines do
+        local do_number = true
+        if config.word_wrap and i > 1 then
+            local line_range = finale.FCRange()
+            edit_text:GetLineRangeForLine(i, line_range)
+            local unichar = edit_text:GetCharacterAtIndex(line_range.Start - 1)
+            if unichar ~= string.byte("\n") and unichar ~= string.byte("\r") then
+                do_number = false
+            end
+            print (line_number, unichar, do_number)
+        end
         local line_ending = i < num_lines and "\n" or ""
-        numbers_text = numbers_text .. format_number(i, 6) .. line_ending
+        if do_number then
+            context.line_numbers[line_number] = i
+            numbers_text = numbers_text .. format_number(line_number, 6) .. line_ending
+            line_number = line_number + 1
+        else
+            numbers_text = numbers_text .. line_ending
+        end
     end
     line_number_text:SetText(finale.FCString(numbers_text))
     line_number_text:ResetColors() -- mainly needed on macOS
@@ -513,7 +533,7 @@ function on_text_change(control)
     assert(control:GetControlID() == edit_text:GetControlID(), "on_text_change called for wrong control")
     local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
     if num_lines < 1 then num_lines = 1 end
-    if num_lines ~= line_number_text:GetNumberOfLines() then
+    if config.word_wrap or num_lines ~= line_number_text:GetNumberOfLines() then
         -- checking if the number of lines changed avoids churn.
         write_line_numbers(num_lines)
     end
@@ -541,15 +561,16 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
                 output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
             end
         elseif line_number > 0 then
+            actual_line_number = context.line_numbers[line_number]
             line_range = finale.FCRange()
-            line_number_text:GetLineRangeForLine(line_number, line_range)
+            line_number_text:GetLineRangeForLine(actual_line_number, line_range)
             total_range = finale.FCRange()
             line_number_text:GetTotalTextRange(total_range)
             if line_range.End < total_range.End then
                 line_range.Length = line_range.Length + 1
             end
             line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
-            line_number_text:ScrollLineIntoView(line_number)
+            line_number_text:ScrollLineIntoView(actual_line_number)
         end
         output_to_console("<======= [" .. item.MenuItemText .. "] FAILED.")
     end
@@ -673,6 +694,12 @@ local function on_config_dialog()
     tabs_to_spaces:SetCheck(config.tabs_to_spaces and 1 or 0)
     curr_y = curr_y + y_separator
     --
+    local word_wrap = dlg:CreateCheckbox(0, curr_y)
+    word_wrap:SetText(finale.FCString("Wrap Text In Editor"))
+    word_wrap:SetWidth(x_rightcol - 20)
+    word_wrap:SetCheck(config.word_wrap and 1 or 0)
+    curr_y = curr_y + y_separator
+    --
     local output_tab_width_label = dlg:CreateStatic(0, curr_y)
     output_tab_width_label:SetText(finale.FCString("Output Tabstop Width: "))
     output_tab_width_label:SetWidth(x_rightcol-20)
@@ -708,6 +735,7 @@ local function on_config_dialog()
         config.output_console_height = math.max(60, output_height:GetInteger())
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
+        config.word_wrap = word_wrap:GetCheck() ~= 0
         config.output_tabstop_width = math.max(0, output_tab_width:GetInteger())
         local fcstr = finale.FCString()
         font:GetNameString(fcstr)
@@ -856,10 +884,12 @@ local create_dialog = function()
     if finenv.UI():IsOnWindows() then
         line_number_text:SetUseRichText(true) -- this is needed on Windows for color flagging.
     end
+    line_number_text:SetWordWrap(config.word_wrap) -- this matches the presence/absence of a horizonal scrollbar on the editor
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, config.tabstop_width)
     edit_text:SetConvertTabsToSpaces(config.tabs_to_spaces and config.tabstop_width or 0)
     edit_text:SetAutomaticallyIndent(true)
+    edit_text:SetWordWrap(config.word_wrap)
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
     curr_x = 0
