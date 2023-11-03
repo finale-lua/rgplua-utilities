@@ -60,6 +60,9 @@ if not finenv.RetainLuaState then
         font_name = win_mac("Consolas", "Menlo"),
         font_size = win_mac(9, 11),
         font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
+        total_width = 960,
+        editor_height = 280,
+        output_console_height = 130,
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -635,23 +638,48 @@ local function on_config_dialog()
     local x_rightcol = 160 --
     local dlg = finale.FCCustomLuaWindow()
     dlg:SetTitle(finale.FCString("Console Preferences"))
+    --
+    local total_width_label = dlg:CreateStatic(0, curr_y)
+    total_width_label:SetText(finale.FCString("Total Width: "))
+    total_width_label:SetWidth(x_rightcol-20)
+    local total_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    total_width:SetInteger(config.total_width)
+    curr_y = curr_y + y_separator
+    --
+    local editor_height_label = dlg:CreateStatic(0, curr_y)
+    editor_height_label:SetText(finale.FCString("Editor Height: "))
+    editor_height_label:SetWidth(x_rightcol-20)
+    local editor_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    editor_height:SetInteger(config.editor_height)
+    curr_y = curr_y + y_separator
+    --
+    local output_height_label = dlg:CreateStatic(0, curr_y)
+    output_height_label:SetText(finale.FCString("Output Console Height: "))
+    output_height_label:SetWidth(x_rightcol-20)
+    local output_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    output_height:SetInteger(config.output_console_height)
+    curr_y = curr_y + y_separator
+    --
     local tab_stop_width_label = dlg:CreateStatic(0, curr_y)
-    tab_stop_width_label:SetText(finale.FCString("Tabstop width: "))
+    tab_stop_width_label:SetText(finale.FCString("Tabstop Width: "))
     tab_stop_width_label:SetWidth(x_rightcol-20)
     local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
     tab_stop_width:SetInteger(config.tabstop_width)
     curr_y = curr_y + y_separator
+    --
     local tabs_to_spaces = dlg:CreateCheckbox(0, curr_y)
-    tabs_to_spaces:SetText(finale.FCString("Use spaces for tabs"))
+    tabs_to_spaces:SetText(finale.FCString("Use Spaces for Tabs"))
     tabs_to_spaces:SetWidth(x_rightcol - 20)
     tabs_to_spaces:SetCheck(config.tabs_to_spaces and 1 or 0)
     curr_y = curr_y + y_separator
+    --
     local output_tab_width_label = dlg:CreateStatic(0, curr_y)
-    output_tab_width_label:SetText(finale.FCString("Output tabstop width: "))
+    output_tab_width_label:SetText(finale.FCString("Output Tabstop Width: "))
     output_tab_width_label:SetWidth(x_rightcol-20)
     local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
     output_tab_width:SetInteger(config.output_tabstop_width)
     curr_y = curr_y + y_separator
+    --
     local font_label = dlg:CreateStatic(0, curr_y)
     font_label:SetWidth(x_rightcol-20)
     local function set_font_text(font_info)
@@ -671,12 +699,16 @@ local function on_config_dialog()
             set_font_text(font)
         end
     end)
+    --
     dlg:CreateOkButton()
     dlg:CreateCancelButton()
     if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
-        config.tabstop_width = tab_stop_width:GetInteger()
+        config.total_width = math.max(500, total_width:GetInteger())
+        config.editor_height = math.max(120, editor_height:GetInteger())
+        config.output_console_height = math.max(60, output_height:GetInteger())
+        config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
-        config.output_tabstop_width = output_tab_width:GetInteger()
+        config.output_tabstop_width = math.max(0, output_tab_width:GetInteger())
         local fcstr = finale.FCString()
         font:GetNameString(fcstr)
         config.font_name = fcstr.LuaString
@@ -806,10 +838,10 @@ local create_dialog = function()
     local small_button_width = 70
     local button_height = 20
     local check_box_width = win_mac(105, 120)
-    local edit_text_height = 280
-    local output_height = edit_text_height / 2.2
+    local edit_text_height = config.editor_height
+    local output_height = config.output_console_height
     local line_number_width = math.ceil(config.font_advance_points * win_mac(7, 6) + 35)
-    local total_width = 960 -- make divisible by 3
+    local total_width = config.total_width
     local curr_y = 0
     local curr_x = 0
     -- script selection
