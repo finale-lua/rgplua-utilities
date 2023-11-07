@@ -510,7 +510,7 @@ local function write_line_numbers(num_lines)
             if unichar ~= string.byte("\n") and unichar ~= string.byte("\r") then
                 do_number = false
             end
-            print (line_number, unichar, do_number)
+            print(line_number, unichar, do_number)
         end
         local line_ending = i < num_lines and "\n" or ""
         if do_number then
