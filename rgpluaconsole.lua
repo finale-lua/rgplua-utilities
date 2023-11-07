@@ -525,6 +525,69 @@ local function write_line_numbers(num_lines)
     line_number_text:ResetColors() -- mainly needed on macOS
 end
 
+function parse_lua_code()
+    local keywords = { "and", "break", "do", "else", "elseif", "end", "false", "for", "function", "if", "in", "local",
+        "nil", "not", "or", "repeat", "return", "then", "true", "until", "while" }
+    local keyword_table = {}
+    for _, keyword in ipairs(keywords) do keyword_table[keyword] = true end
+
+    local ranges = {}
+    local state = "default"
+    local buffer = ""
+    local buffer_start = 0
+
+    local function end_of_keyword()
+        if keyword_table[buffer] then
+            table.insert(ranges, { start = buffer_start, length = #buffer })
+        end
+        buffer = ""
+    end
+
+    local total_range = finale.FCRange()
+    edit_text:GetTotalTextRange(total_range)
+    
+    local function next_char_equals(i, value)
+        if i >= total_range.Length - 1 then
+            return false
+        end
+        return utf8.char(edit_text:GetCharacterAtIndex(i + 1)) == value
+    end
+
+    if total_range.Length <= 0 then return {} end
+    for i = total_range.Start, total_range.Length - 1 do
+        local char = utf8.char(edit_text:GetCharacterAtIndex(i))
+        if state == "default" then
+            if char:match("%w") or char == "_" then
+                if buffer == "" then buffer_start = i end
+                buffer = buffer .. char
+            else
+                end_of_keyword()
+                if char == "-" and next_char_equals(i, "-") then
+                    state = "singlecomment"
+                elseif char == "\"" then
+                    state = "doublequote"
+                elseif char == "\'" then
+                    state = "singlequote"
+                elseif char == "[" and next_char_equals(i, "[") then
+                    state = "longstring"
+                end
+            end
+        elseif state == "singlecomment" then
+            if char == "\n" then state = "default" end
+        elseif state == "doublequote" then
+            if char == "\"" then state = "default" end
+        elseif state == "singlequote" then
+            if char == "\'" then state = "default" end
+        elseif state == "longstring" then
+            if char == "]" and next_char_equals(i, "]") then state = "default" end
+        end
+    end
+
+    end_of_keyword()
+
+    return ranges
+end
+
 function on_text_change(control)
     if in_text_change_event then
         return
@@ -540,6 +603,13 @@ function on_text_change(control)
     -- Syntax highlighting could happen here, but it is non-trivial due issues
     -- around performance and disruption of the Undo stack. (Not to mention the need
     -- to intelligently parse Lua code.)
+    local total_range = finale.FCRange()
+    edit_text:GetTotalTextRange(total_range)
+    edit_text:SetFontInRange(finale.FCFontInfo(config.font_name, config.font_size), total_range)
+    local ranges = parse_lua_code()
+    for _, range in pairs(ranges) do
+        edit_text:SetFontBoldInRange(true, finale.FCRange(range.start, range.length))
+    end
     in_text_change_event = false
 end
 
