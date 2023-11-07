@@ -751,7 +751,7 @@ local function on_config_dialog()
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
         config.word_wrap = word_wrap:GetCheck() ~= 0
-        config.output_tabstop_width = math.max(0, output_tab_width:GetInteger())
+        config.output_tabstop_width = math.max(1, output_tab_width:GetInteger())
         local fcstr = finale.FCString()
         font:GetNameString(fcstr)
         config.font_name = fcstr.LuaString
