@@ -39,6 +39,8 @@ local clear_output_chk      -- Clear Before Run checkbox
 local run_as_trusted_chk    -- Run As Trusted checkbox
 local run_as_debug_chk      -- Run As Debug checkbox
 local line_ending_show      -- Static control to show line endings
+local run_script_cmd        -- run script command
+local kill_script_cmd       -- kill running script command
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
@@ -229,8 +231,16 @@ local function select_script(fullpath, scripts_items_index)
         if file then
             script_text = file:read("a")
         else
-            global_dialog:CreateChildUI():AlertInfo("Unable to read filepath " .. encode_file_path(fullpath), "File Path Encoding Error")
+            global_dialog:CreateChildUI():AlertInfo("Unable to read filepath " .. encode_file_path(fullpath),
+                "File Path Encoding Error")
             return false
+        end
+    end
+    if context.selected_script_item > 0 then
+        for item in each(context.script_items_list[context.selected_script_item].items) do
+            if item:IsExecuting() then
+                item:StopExecuting()
+            end
         end
     end
     local script_items = finenv.CreateLuaScriptItemsFromFilePath(fullpath, script_text)
@@ -403,7 +413,13 @@ local function do_file_close(all_files)
     for menu_index = last_menu_index, first_menu_index, -1 do
         assert(menu_index >= context.first_script_in_menu, "attempt to delete base file menu item")
         file_menu:DeleteItem(menu_index)
-        table.remove(context.script_items_list, first_menu_index - context.first_script_in_menu + 1)
+        local script_items_index = first_menu_index - context.first_script_in_menu + 1
+        for item in each(context.script_items_list[script_items_index].items) do
+            if item:IsExecuting() then
+                item:StopExecuting()
+            end
+        end
+        table.remove(context.script_items_list, script_items_index)
     end
     if all_files then
         context.selected_script_item = 1
@@ -557,9 +573,6 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
         -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
-            if msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION then
-                output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
-            end
         elseif line_number > 0 then
             actual_line_number = context.line_numbers[line_number]
             line_range = finale.FCRange()
@@ -590,11 +603,8 @@ local function on_copy_output(control)
 end
 
 local function on_run_script(control)
-    control:SetEnable(false)
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
-    local x = script_items.Count
-    local s = script_menu:GetSelectedItem()
     local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
     if script_text.LuaString == context.original_script_text then
         script_item.OptionalScriptText = nil -- this allows the filename to be used for error reporting
@@ -612,10 +622,15 @@ local function on_run_script(control)
     end
     line_number_text:ResetColors()
     finenv.ExecuteLuaScriptItem(script_item)
+    edit_text:SetKeyboardFocus()
+end
+
+local function on_terminate_script(control)
+    local script_items = context.script_items_list[context.selected_script_item].items
+    local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
     if script_item:IsExecuting() then
-        script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
+        script_item:StopExecuting()
     end
-    control:SetEnable(true)         -- ToDo: leave it disabled if the script item is still running?
     edit_text:SetKeyboardFocus()
 end
 
@@ -730,7 +745,7 @@ local function on_config_dialog()
     dlg:CreateOkButton()
     dlg:CreateCancelButton()
     if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
-        config.total_width = math.max(500, total_width:GetInteger())
+        config.total_width = math.max(580, total_width:GetInteger())
         config.editor_height = math.max(120, editor_height:GetInteger())
         config.output_console_height = math.max(60, output_height:GetInteger())
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
@@ -904,8 +919,12 @@ local create_dialog = function()
     curr_x = curr_x + check_box_width + x_separator
     line_ending_show = dialog:CreateStatic(curr_x, curr_y)
     line_ending_show:SetWidth(button_width)
-    curr_x = curr_x + check_box_width + x_separator
-    local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y - win_mac(5, 1))
+    curr_x = curr_x + button_width + x_separator
+    kill_script_cmd = dialog:CreateButton(curr_x, curr_y - win_mac(5, 1))
+    kill_script_cmd:SetText(finale.FCString("Stop Script"))
+    kill_script_cmd:SetWidth(button_width)
+    curr_x = curr_x + button_width + x_separator
+    run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y - win_mac(5, 1))
     run_script_cmd:SetText(finale.FCString("Run Script"))
     run_script_cmd:SetWidth(button_width)
     curr_y = curr_y + button_height + y_separator
@@ -939,6 +958,7 @@ local create_dialog = function()
     close_btn:SetWidth(small_button_width)
     -- registrations
     dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
+    dialog:RegisterHandleControlEvent(kill_script_cmd, on_terminate_script)
     dialog:RegisterHandleControlEvent(file_menu, on_file_popup)
     dialog:RegisterHandleControlEvent(edit_text, on_text_change)
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
