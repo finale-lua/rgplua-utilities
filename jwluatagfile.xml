@@ -18073,6 +18073,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>SetRTFString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a0f19b3f67217ebcc26721e7c5298b9b2</anchor>
+      <arglist>(const FCString *pString)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>SetEnigmaString</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>a8f2bce6cc35071f8f8e7ed292f1a0e08</anchor>
