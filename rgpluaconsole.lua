@@ -44,6 +44,7 @@ local kill_script_cmd       -- kill running script command
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
+local in_execute_script_item      -- tracks is we are inside on_run_script
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -560,15 +561,16 @@ function on_text_change(control)
 end
 
 function on_execution_will_start(item)
+    kill_script_cmd:SetEnable(not in_execute_script_item)
     output_to_console("Running [" .. item.MenuItemText .. "] ======>")
     hires_timer = finale.FCUI.GetHiResTimer()
 end
 
 function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
+    local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
+    local processing_time_str = " (Processing time: " .. string.format("%.3f", proc_time) .. " s)"
     if success then
-        local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
-        output_to_console("<======= [" ..
-            item.MenuItemText .. "] succeeded (Processing time: " .. string.format("%.3f", proc_time) .. " s).")
+        output_to_console("<======= [" .. item.MenuItemText .. "] succeeded." .. processing_time_str)
     else
         -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
@@ -585,8 +587,9 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
             line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
             line_number_text:ScrollLineIntoView(actual_line_number)
         end
-        output_to_console("<======= [" .. item.MenuItemText .. "] FAILED.")
+        output_to_console("<======= [" .. item.MenuItemText .. "] FAILED." .. processing_time_str)
     end
+    kill_script_cmd:SetEnable(false)
 end
 
 local function on_clear_output(control)
@@ -621,7 +624,10 @@ local function on_run_script(control)
         output_text:SetText(finale.FCString(""))
     end
     line_number_text:ResetColors()
+    in_execute_script_item = true
     finenv.ExecuteLuaScriptItem(script_item)
+    in_execute_script_item = false
+    kill_script_cmd:SetEnable(script_item:IsExecuting())
     edit_text:SetKeyboardFocus()
 end
 
@@ -779,7 +785,7 @@ local function on_init_window()
     for idx, str in pairsbykeys(context.file_menu_base) do
         file_menu:AddString(finale.FCString(str))
     end
-    for idx, itemcontext in pairsbykeys(context.script_items_list) do
+    for _, itemcontext in pairsbykeys(context.script_items_list) do
         local items = itemcontext.items
         local str = items:GetItemAt(0).FilePath
         if not itemcontext.exists then
@@ -798,6 +804,7 @@ local function on_init_window()
         file_menu:GetItemText(menu_idx, fc_str)
         select_script(fc_str.LuaString, context.selected_script_item)
     end
+    kill_script_cmd:SetEnable(false)
     clear_output_chk:SetCheck(config.clear_output_before_run and 1 or 0)
     run_as_debug_chk:SetCheck(config.run_as_debug and 1 or 0)
     run_as_trusted_chk:SetCheck(config.run_as_trusted and run_as_trusted_chk:GetEnable() and 1 or 0)
