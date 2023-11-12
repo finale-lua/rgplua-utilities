@@ -9803,8 +9803,8 @@
       <type>virtual bool</type>
       <name>HandleSaveRequest</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a67f1f77e7bb340c0a583114439ff52da</anchor>
-      <arglist>()</arglist>
+      <anchor>a62f47165e971e736f02d1eb24e93ebd8</anchor>
+      <arglist>(FCControl *pControl)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -18830,8 +18830,8 @@
       <type>bool</type>
       <name>HandleSaveRequest</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>ac1890111ae6b14a85d9a5695b6d6e734</anchor>
-      <arglist>() override</arglist>
+      <anchor>ab7942c2995b34828cddcf7530a2adc44</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>

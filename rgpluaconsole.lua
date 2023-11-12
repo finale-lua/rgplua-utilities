@@ -975,7 +975,9 @@ local create_dialog = function()
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     dialog:RegisterHandleTimer(on_timer)
-    dialog:RegisterHandleSaveRequest(file_save)
+    --dialog:RegisterHandleSaveRequest(function(control)
+    --    file_save()
+    --end)
     return dialog
 end
 
