@@ -9787,17 +9787,24 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
-      <name>HandleTextSelectionChanged</name>
+      <name>TextSelectionChanged</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>ac1a691f8616137cbe611f1293f172f21</anchor>
+      <anchor>a065f5f0a9c78c52d91b53ff744d92731</anchor>
       <arglist>(FCControl *pControl)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
-      <name>HandleScrollChanged</name>
+      <name>ScrollChanged</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>aaa561fed61b53b79802927e5b432c1e3</anchor>
+      <anchor>a716a58e3c692b5cb45108c483891b2c5</anchor>
       <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>HandleSaveRequest</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a67f1f77e7bb340c0a583114439ff52da</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -18695,16 +18702,23 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterHandleTextSelectionChanged</name>
+      <name>RegisterTextSelectionChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>ac7d1bebcc5153b77fe2bc44cd08fd0ae</anchor>
+      <anchor>a4ee594d3a9b793b03542530aa1c03e98</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterHandleScrollChanged</name>
+      <name>RegisterScrollChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a20ca4c95268f32b8010e7ccf3b1fdd84</anchor>
+      <anchor>a1ffac9676409696154271fc95fef225e</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterHandleSaveRequest</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a15b043296d9e78ad908dac207801e1dc</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
@@ -18800,17 +18814,24 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>HandleTextSelectionChanged</name>
+      <name>TextSelectionChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>aa4a6a1c771d4021de6901f8679db8687</anchor>
+      <anchor>aa0e632f1a24899849b3600c03bc57219</anchor>
       <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>HandleScrollChanged</name>
+      <name>ScrollChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a6a7bc5a846b3e1a6cbad8469ea5d89ce</anchor>
+      <anchor>aa54749128ff3ac6508aceaeac3f2a207</anchor>
       <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>HandleSaveRequest</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ac1890111ae6b14a85d9a5695b6d6e734</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>

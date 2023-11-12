@@ -971,10 +971,11 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterHandleControlEvent(config_btn, on_config_dialog)
-    dialog:RegisterHandleScrollChanged(on_scroll)
+    dialog:RegisterScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     dialog:RegisterHandleTimer(on_timer)
+    dialog:RegisterHandleSaveRequest(file_save)
     return dialog
 end
 
