@@ -18372,6 +18372,13 @@
       <anchor>a826d70ab29f57494725b6245e8195392</anchor>
       <arglist>(int pos) const</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>TextToClipboard</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a8514e7341b853889c6679eced2a2d291</anchor>
+      <arglist>() const</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCtrlTree</name>
