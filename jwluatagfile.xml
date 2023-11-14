@@ -16617,8 +16617,8 @@
       <type>virtual void</type>
       <name>GetText</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a2663c4f773c72deca32d8f20abfdf9e7</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a78eeebc7ac598513dca23811f8ad84a9</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -58191,8 +58191,8 @@
       <type>void</type>
       <name>GetText</name>
       <anchorfile>class_f_c_tree_node.html</anchorfile>
-      <anchor>a8dca3cdff3e96ccbe7a7d495f543e514</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a744204805b3f1cef28816e1a363dadb9</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
