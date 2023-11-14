@@ -18059,10 +18059,10 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>AppendTextWithFontInfo</name>
+      <name>AppendTextWithFormat</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>aa1ae3878a724c0253378396ffd73bf9a</anchor>
-      <arglist>(const FCString *pText, const FCFontInfo *pFont)</arglist>
+      <anchor>aaba7c535c7a5b957b34480c9cfd092b2</anchor>
+      <arglist>(const FCString *pText, const FCEnigmaTextStyle *pStyle)</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
@@ -21294,6 +21294,88 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCEnigmaTextStyle</name>
+    <filename>class_f_c_enigma_text_style.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>af5c3064cb5d49844dda244be644aead0</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a101cb6405263d2faed1966810b1109d4</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCEnigmaTextStyle</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a7c69ad8a47428eaeb46c2f83161a2ece</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCEnigmaTextStyle</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>afe9355a753da3db077a4d8ea2b591050</anchor>
+      <arglist>(const FCFontInfo &amp;font)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>GetFont</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>aec267d81a84b86de10bcdbf516b63982</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>fourbyte</type>
+      <name>GetInterLetterSpacing</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a9152a96965340a0851276c4780c24905</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetBaselineShift</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>add686a703c6d7f0446a100a77ae7a25e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetSuperscript</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>aceb4405aefb714cd7056f1f2b091b310</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetInterLetterSpacing</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>af3b2b0a02cd48f9cbc651f750dfb7734</anchor>
+      <arglist>(fourbyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBaselineShift</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a2c44d16423ee568dbd928ba93edeb97b</anchor>
+      <arglist>(Evpu32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSuperscript</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a2d87cabb4d41517c9e9cce17d46f8167</anchor>
+      <arglist>(Evpu32 value)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCEntryAlterMod</name>
     <filename>class_f_c_entry_alter_mod.html</filename>
     <base>__FCEntryDetail</base>
@@ -22545,8 +22627,8 @@
       <type>void</type>
       <name>CopyFrom</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a2fb1a18bc8e81fe57aa1ec56b3d2c49b</anchor>
-      <arglist>(FCFontInfo *pInfo)</arglist>
+      <anchor>a0bc369bb2de6e7fcc6e42ef52f48d0ad</anchor>
+      <arglist>(const FCFontInfo *pInfo)</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
@@ -60798,6 +60880,7 @@
     <filename>group__lua__classes.html</filename>
     <class kind="class">__FCBaseData</class>
     <class kind="class">FCFontInfo</class>
+    <class kind="class">FCEnigmaTextStyle</class>
     <class kind="class">FCString</class>
     <class kind="class">FCCellMetrics</class>
     <class kind="class">FCEntryMetrics</class>
