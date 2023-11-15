@@ -21334,9 +21334,9 @@
     </member>
     <member kind="function">
       <type>fourbyte</type>
-      <name>GetInterLetterSpacing</name>
+      <name>GetInterletterSpacing</name>
       <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
-      <anchor>a9152a96965340a0851276c4780c24905</anchor>
+      <anchor>a74bac5f23f9036626a8152cc0d1ac345</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21355,9 +21355,9 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetInterLetterSpacing</name>
+      <name>SetInterletterSpacing</name>
       <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
-      <anchor>af3b2b0a02cd48f9cbc651f750dfb7734</anchor>
+      <anchor>a4857a9b11dca11fc6d79c489005aea42</anchor>
       <arglist>(fourbyte value)</arglist>
     </member>
     <member kind="function">
