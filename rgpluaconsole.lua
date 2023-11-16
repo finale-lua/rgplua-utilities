@@ -67,6 +67,7 @@ if not finenv.RetainLuaState then
         total_width = 960,
         editor_height = 280,
         output_console_height = 130,
+        curr_script_item = 0,
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -841,6 +842,7 @@ local function on_close_window()
             config.recent_files[recent_files_index] = items_entry.items:GetItemAt(0).FilePath
         end
     end
+    config.curr_script_item = context.selected_script_item
     global_dialog:StorePosition()
     config.window_pos_x = global_dialog.StoredX
     config.window_pos_y = global_dialog.StoredY
@@ -996,7 +998,11 @@ local open_console = function()
             end
         end
         if script_items_index > 0 then
-            context.selected_script_item = 1
+            if config.curr_script_item >= 1 then
+                context.selected_script_item = config.curr_script_item
+            else
+                context.selected_script_item = 1
+            end
         end
     end
     global_dialog = create_dialog()
