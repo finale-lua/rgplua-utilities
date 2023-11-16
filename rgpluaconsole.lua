@@ -211,6 +211,16 @@ local function menu_index_from_current_script()
     return script_item_index - 1 + context.first_script_in_menu
 end
 
+local function kill_executing_items(item_index)
+    if item_index > 0 then
+        for item in each(context.script_items_list[item_index].items) do
+            if item:IsExecuting() then
+                item:StopExecuting()
+            end
+        end
+    end
+end
+
 local function select_script(fullpath, scripts_items_index)
     local original_fullpath = fullpath
     local fc_fullpath = finale.FCString(fullpath)
@@ -238,13 +248,7 @@ local function select_script(fullpath, scripts_items_index)
             return false
         end
     end
-    if context.selected_script_item > 0 then
-        for item in each(context.script_items_list[context.selected_script_item].items) do
-            if item:IsExecuting() then
-                item:StopExecuting()
-            end
-        end
-    end
+    kill_executing_items(context.selected_script_item)
     local script_items = finenv.CreateLuaScriptItemsFromFilePath(fullpath, script_text)
     assert(script_items.Count > 0, "No script items returned for " .. fullpath .. ".")
     if not context.script_items_list[scripts_items_index] then
@@ -338,6 +342,7 @@ local function file_save()
                 context.modification_time = file_info.modification
             end
             assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
+            kill_executing_items(script_item_index)
             context.script_items_list[script_item_index].items = items
             retval = true
             update_script_menu(items)
@@ -416,11 +421,7 @@ local function do_file_close(all_files)
         assert(menu_index >= context.first_script_in_menu, "attempt to delete base file menu item")
         file_menu:DeleteItem(menu_index)
         local script_items_index = first_menu_index - context.first_script_in_menu + 1
-        for item in each(context.script_items_list[script_items_index].items) do
-            if item:IsExecuting() then
-                item:StopExecuting()
-            end
-        end
+        kill_executing_items(script_items_index)
         table.remove(context.script_items_list, script_items_index)
     end
     if all_files then
