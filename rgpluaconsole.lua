@@ -243,9 +243,9 @@ local function select_script(fullpath, scripts_items_index)
         if file then
             script_text = file:read("a")
         else
-            global_dialog:CreateChildUI():AlertInfo("Unable to read filepath " .. encode_file_path(fullpath),
-                "File Path Encoding Error")
-            return false
+            global_dialog:CreateChildUI():AlertInfo(
+                "File does not exist, or there was as error in the encoding of the file path: " .. encode_file_path(fullpath), "File Error")
+            file_exists = false
         end
     end
     kill_executing_items(context.selected_script_item)
@@ -836,14 +836,16 @@ local function on_close_window()
     config.run_as_trusted = run_as_trusted_chk:GetCheck() ~= 0
     local recent_files_index = 0
     config.recent_files = {}
+    config.curr_script_item = context.selected_script_item
     for idx, items_entry in ipairs(context.script_items_list) do
         if items_entry.exists and items_entry.items.Count > 0 then
             recent_files_index = recent_files_index + 1
             local fp = items_entry.items:GetItemAt(0).FilePath
             config.recent_files[recent_files_index] = items_entry.items:GetItemAt(0).FilePath
+        elseif idx <= context.selected_script_item then
+            config.curr_script_item = config.curr_script_item - 1
         end
     end
-    config.curr_script_item = context.selected_script_item
     global_dialog:StorePosition()
     config.window_pos_x = global_dialog.StoredX
     config.window_pos_y = global_dialog.StoredY
