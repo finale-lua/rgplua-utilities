@@ -18075,8 +18075,8 @@
       <type>FCString *</type>
       <name>CreateEnigmaString</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>ae4daa13de257492e58b21adae9e62362</anchor>
-      <arglist>() const</arglist>
+      <anchor>a107e59af66a949584aeae5e357641d99</anchor>
+      <arglist>(const FCRange *pRange=nullptr) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
