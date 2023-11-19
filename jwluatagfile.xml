@@ -18031,6 +18031,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>ReplaceTextInRangeWithFormat</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a5913ff3a3fe8c16a532adfda2b630475</anchor>
+      <arglist>(const FCString *pText, const FCEnigmaTextStyle *pStyle, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetSelectedText</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>a69bdb12002ef585b490f4edc78fa12c9</anchor>
