@@ -13,7 +13,7 @@ function plugindef()
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
     ]]
-    return "RGP Lua Console...", "RGP Lua Console", "Allows immediate editing and testing of scripts in RGP Lua."
+    return "RGP Lua Console...", "RGP Lua Console", "Allows immediate execution and editing of scripts in RGP Lua."
 end
 
 local cjson = require('cjson')
@@ -589,7 +589,8 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
             line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
             line_number_text:ScrollLineIntoView(actual_line_number)
         end
-        output_to_console("<======= [" .. item.MenuItemText .. "] FAILED." .. processing_time_str)
+        local final_result = (msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION) and "terminated" or "FAILED"
+        output_to_console("<======= [" .. item.MenuItemText .. "] " .. final_result .. "." .. processing_time_str)
     end
     kill_script_cmd:SetEnable(false)
 end
