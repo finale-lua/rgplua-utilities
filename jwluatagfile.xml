@@ -38850,8 +38850,15 @@
       <type>bool</type>
       <name>IsPortrait</name>
       <anchorfile>class_f_c_page.html</anchorfile>
-      <anchor>a22386a8d8f850addfae07ebd7b713a7c</anchor>
-      <arglist>()</arglist>
+      <anchor>ad44ff7192c39f21fd906b7cdb3de3fde</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsBlank</name>
+      <anchorfile>class_f_c_page.html</anchorfile>
+      <anchor>a6da624d529caada95a48ddaa6e1545d3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>Evpu32</type>
@@ -39798,6 +39805,13 @@
       <anchorfile>class_f_c_pages.html</anchorfile>
       <anchor>abaf831352a3740203228250aa4ebf14e</anchor>
       <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCPage *</type>
+      <name>FindSystemNumber</name>
+      <anchorfile>class_f_c_pages.html</anchorfile>
+      <anchor>ae09244efc00783b9d9b840bdd44bcfc4</anchor>
+      <arglist>(eSsys systemnumber)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static bool</type>
