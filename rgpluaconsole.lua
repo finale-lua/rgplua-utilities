@@ -61,6 +61,7 @@ if not finenv.RetainLuaState then
         word_wrap = false,
         run_as_trusted = false,
         run_as_debug = false,
+        show_timestamps = false,
         font_name = win_mac("Consolas", "Menlo"),
         font_size = win_mac(9, 11),
         font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
@@ -493,6 +494,11 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
 end
 
 function output_to_console(...)
+    local time_stamp = ""
+    if config.show_timestamps then
+        local proc_time = hires_timer and (finale.FCUI.GetHiResTimer() - hires_timer) or 0
+        time_stamp = string.format("%.3f", proc_time) .. ": "
+    end
     local args = { ... } -- Pack all arguments into a table
     local formatted_args = {}
     for i, arg in ipairs(args) do
@@ -500,7 +506,7 @@ function output_to_console(...)
     end
     local range = finale.FCRange()
     output_text:GetTotalTextRange(range)
-    local new_line = range.Length > 0 and "\n" or ""
+    local new_line = range.Length > 0 and "\n"..time_stamp or time_stamp
     local formatted_string = new_line .. table.concat(formatted_args, "\t") -- Concatenate arguments with tabs
     output_text:AppendText(finale.FCString(formatted_string))
     output_text:ScrollToBottom()
@@ -592,6 +598,7 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
         local final_result = (msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION) and "terminated" or "FAILED"
         output_to_console("<======= [" .. item.MenuItemText .. "] " .. final_result .. "." .. processing_time_str)
     end
+    hires_timer = nil
     kill_script_cmd:SetEnable(false)
 end
 
@@ -719,9 +726,15 @@ local function on_config_dialog()
     curr_y = curr_y + y_separator
     --
     local word_wrap = dlg:CreateCheckbox(0, curr_y)
-    word_wrap:SetText(finale.FCString("Wrap Text In Editor"))
+    word_wrap:SetText(finale.FCString("Wrap Text in Editor"))
     word_wrap:SetWidth(x_rightcol - 20)
     word_wrap:SetCheck(config.word_wrap and 1 or 0)
+    curr_y = curr_y + y_separator
+    --
+    local show_time = dlg:CreateCheckbox(0, curr_y)
+    show_time:SetText(finale.FCString("Show Timestamps in Output"))
+    show_time:SetWidth(x_rightcol + 20)
+    show_time:SetCheck(config.show_timestamps and 1 or 0)
     curr_y = curr_y + y_separator
     --
     local output_tab_width_label = dlg:CreateStatic(0, curr_y)
@@ -760,6 +773,7 @@ local function on_config_dialog()
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
         config.word_wrap = word_wrap:GetCheck() ~= 0
+        config.show_timestamps = show_time:GetCheck() ~= 0
         config.output_tabstop_width = math.max(1, output_tab_width:GetInteger())
         local fcstr = finale.FCString()
         font:GetNameString(fcstr)

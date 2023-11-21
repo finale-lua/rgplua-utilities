@@ -39813,6 +39813,13 @@
       <anchor>ae09244efc00783b9d9b840bdd44bcfc4</anchor>
       <arglist>(eSsys systemnumber)</arglist>
     </member>
+    <member kind="function">
+      <type>FCPage *</type>
+      <name>FindMeasureNumber</name>
+      <anchorfile>class_f_c_pages.html</anchorfile>
+      <anchor>a5c73c8b34dde3d2b8fa2f4ed2da8dff6</anchor>
+      <arglist>(eMeas measurenumber)</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static bool</type>
       <name>AppendBlank</name>
