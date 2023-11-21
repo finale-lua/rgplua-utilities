@@ -869,7 +869,10 @@ local function on_close_window()
     if finenv.RetainLuaState then
         context.script_text = get_edit_text(edit_text).LuaString
         if context.script_text == context.original_script_text then
-            context.script_text = nil -- no need to save it if we in a saved state
+            -- if we are in a saved state, do not keep the current contents.
+            -- an external editor could modify the file and if we kept our current
+            -- version, we would erroneously believe we had edited it.
+            context.script_text = nil
         end
         context.output_text = get_edit_text(output_text).LuaString
     end
