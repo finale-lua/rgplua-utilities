@@ -868,6 +868,9 @@ local function on_close_window()
     config_write()
     if finenv.RetainLuaState then
         context.script_text = get_edit_text(edit_text).LuaString
+        if context.script_text == context.original_script_text then
+            context.script_text = nil -- no need to save it if we in a saved state
+        end
         context.output_text = get_edit_text(output_text).LuaString
     end
 end
