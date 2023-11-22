@@ -15201,8 +15201,15 @@
       <type>FCChordSuffixElements *</type>
       <name>CreateChordSuffixElements</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
-      <anchor>aa5ce94b09a2aeb8af38080b15a9d36d6</anchor>
-      <arglist>()</arglist>
+      <anchor>a91664240eceb77b7fdd73d67bbc50e19</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretboardGroupDef *</type>
+      <name>CreateFretboardGroupDef</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>a752b0afd4aa4cb6dc488e9316143ef53</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCTransposer *</type>
@@ -15401,6 +15408,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetFretboardGroupDefIncident</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>acf0b5ffd5f42e42c9f68231e6d6f9b7e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetChordSuffixID</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
@@ -15588,6 +15602,13 @@
       <anchorfile>class_f_c_chord.html</anchorfile>
       <anchor>a3fa347a2bc26ed790b5dfc2f9edf85e8</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretboardGroupDefIncident</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>a8708998df4113f0365617e810163f70f</anchor>
+      <arglist>(int value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
