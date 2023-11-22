@@ -23667,6 +23667,34 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>CMPER</type>
+      <name>GetFretInstrumentNumber</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>aad2b3957344634c0edb282edeac258da</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretInstrumentNumber</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>afdaf5b22f6040c55954bbb6995ca9a25</anchor>
+      <arglist>(CMPER value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>GetName</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>a67475a42dd4bed6f605df179ca10c19c</anchor>
+      <arglist>(FCString *pString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetName</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>ac4d908ab9a5d1d3946953e3da186011e</anchor>
+      <arglist>(const FCString *pString)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
@@ -23729,8 +23757,8 @@
       <type>void</type>
       <name>GetName</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>aea9df952a15bc6d8756d2d6c1d0772b0</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a0ccf64f7084d5b6bc6604bd41860336e</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>Efix32</type>
@@ -23806,8 +23834,8 @@
       <type>void</type>
       <name>GetFretNumberText</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>a37ad8d5b01e2ca1fdc327a1ec7fb7d41</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a6a933531661b852006dd3ba1e0719128</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>Efix32</type>
@@ -23904,8 +23932,8 @@
       <type>void</type>
       <name>SetName</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>ae24996171793788afb3f0836eb58d453</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ada9bd31487d41e1e64bf96d919e7bc46</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
