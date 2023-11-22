@@ -16009,6 +16009,20 @@
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
+      <type>FCNumbers *</type>
+      <name>CreateKeyNumberOffsets</name>
+      <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
+      <anchor>a2e6276124988042715a32cb21282e3f9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveKeyNumberOffsets</name>
+      <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
+      <anchor>ae9011d2276321670e0ea1e8e96b0fa10</anchor>
+      <arglist>(FCNumbers *values)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
