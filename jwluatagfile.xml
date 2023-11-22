@@ -16009,20 +16009,6 @@
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
-      <type>FCNumbers *</type>
-      <name>CreateKeyNumberOffsets</name>
-      <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
-      <anchor>a2e6276124988042715a32cb21282e3f9</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>SaveKeyNumberOffsets</name>
-      <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
-      <anchor>ae9011d2276321670e0ea1e8e96b0fa10</anchor>
-      <arglist>(FCNumbers *values)</arglist>
-    </member>
-    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_chord_suffix_element.html</anchorfile>
@@ -16047,6 +16033,53 @@
       <anchorfile>class_f_c_chord_suffix_elements.html</anchorfile>
       <anchor>ab13c986eb668fa7bdc9256bf4ef1f7e9</anchor>
       <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCChordSuffixKeyNumberOffsets</name>
+    <filename>class_f_c_chord_suffix_key_number_offsets.html</filename>
+    <base>FCNumbers</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a63445494e7d3c98fe1d53e8573814585</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCChordSuffixKeyNumberOffsets</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a4da517b9e14fd92eccce04bd2cde4b50</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a63e63c3ac78f3fb92d28bab7aa1a3592</anchor>
+      <arglist>(CMPER suffixno)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a4979ae9a8be587d3aabb3fc65dedaf05</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a372d53818b000dbc7dff4fd1b23920fe</anchor>
+      <arglist>(CMPER suffixno)</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetChordSuffixID</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a3a7f53c7e233b1335dc80ee63bbe3c22</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -61181,6 +61214,7 @@
     <class kind="class">__FCCollectionNoInciOther</class>
     <class kind="class">FCStrings</class>
     <class kind="class">FCRanges</class>
+    <class kind="class">FCChordSuffixKeyNumberOffsets</class>
     <class kind="class">FCCells</class>
     <class kind="class">FCSeparateMeasureNumbers</class>
     <class kind="class">FCCellGraphics</class>
