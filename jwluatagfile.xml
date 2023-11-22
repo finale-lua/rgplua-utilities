@@ -24009,8 +24009,8 @@
       <type>void</type>
       <name>SetFretNumberText</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>a6b7b066dc35f4cb66d7d5dea127f1b52</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a187623fd7dea88a0b1107f3e82de45d5</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
