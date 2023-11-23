@@ -15409,9 +15409,9 @@
     </member>
     <member kind="function">
       <type>int</type>
-      <name>GetFretboardGroupDefIncident</name>
+      <name>GetFretboardID</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
-      <anchor>acf0b5ffd5f42e42c9f68231e6d6f9b7e</anchor>
+      <anchor>a70d0d8d7d9cdc29e2e2e2d6d44c46e0f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15605,9 +15605,9 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetFretboardGroupDefIncident</name>
+      <name>SetFretboardID</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
-      <anchor>a8708998df4113f0365617e810163f70f</anchor>
+      <anchor>aaed55fb593c3c089a02191ae477a69da</anchor>
       <arglist>(int value)</arglist>
     </member>
     <member kind="function">
