@@ -147,13 +147,15 @@ function get_properties_methods(classname)
         local rettype, args = method_info(class_info, k)
         class_methods[k] = { class = classname, arglist = args, returns = rettype }
     end
-    for k, _ in pairs(classtable.__parent) do
-        local parent_methods, parent_properties = get_properties_methods(k)
-        if type(parent_methods) == "table" then
-            methods = table_merge(methods, parent_methods)
-        end
-        if type(parent_properties) == "table" then
-            properties = table_merge(properties, parent_properties)
+    if classtable.__parent then
+        for k, _ in pairs(classtable.__parent) do
+            local parent_methods, parent_properties = get_properties_methods(k)
+            if type(parent_methods) == "table" then
+                methods = table_merge(methods, parent_methods)
+            end
+            if type(parent_properties) == "table" then
+                properties = table_merge(properties, parent_properties)
+            end
         end
     end
     return methods, properties, class_methods
