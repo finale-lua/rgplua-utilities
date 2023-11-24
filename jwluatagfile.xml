@@ -23804,6 +23804,109 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretboardGroupItem</name>
+    <filename>class_f_c_fretboard_group_item.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a5c854cd696170f964cf295560c3d5bbb</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretboardGroupItem</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a4b6576541c781830bc1503aebda4ba11</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aeec1718fe722d2749e8d7c349ff06391</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci, twobyte rootIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ae2883bd9326d5e137374918f7f85cb66</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7db69a65d338efd7f7b70e43984f9241</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci, twobyte rootIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItems *</type>
+      <name>GetFretItems</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a9d58d1a03bc674239ee4218f94739441</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetNumberOfFrets</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aceb4ab8bf34e38708d4732dff1736caf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNumberOfFrets</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aeefbbff2e42cb2c6ce10b3dd043997f4</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ab822649b528a4f9efced4188c54075ff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7c96d814a2c9d12ce3af3979c9012e81</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLocked</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ae3c1a1ab48ffb35f51e098463bf40118</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLocked</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a65f83d0d210697f286103b0412a9fd0b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetShowFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7fb0609bc9ff1538b661a82aa227ba2a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShowFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7db283add6514d8f06d53475403fad06</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretboardStyleDef</name>
     <filename>class_f_c_fretboard_style_def.html</filename>
     <base>__FCNoInciOther</base>
@@ -24384,9 +24487,244 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretItem</name>
+    <filename>class_f_c_fret_item.html</filename>
+    <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>FRETITEMSYMBOLS</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42aa61baf6dcc8df1d2929fb794c3701ffd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DOT</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a8342e7aedc195d8c52ed51b9bff1efdb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_CIRCLE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a11584f7aae620c04a327c27c69f72ff1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_X</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a96cd2474c8fdab976dc3a1ae3d0a09d5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DIAMOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a56530bcc5d6c256440626e4e696ebb8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>FRETITEMFINGERINGS</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab8008cd1a1c1e4584fd16579191b6b4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FIRST</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba8e9057324083f92050fbbfe1b89c0c44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_SECOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba048f07436995d6a877de9cfeee0869b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THIRD</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab89434d2292320b92edfb191f96d4e7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FOURTH</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba04c3e12a2a0d46ac2fcb88a4af61af14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THUMB</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba7b693214c1305759a7b0e8ff9d77dfb2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42aa61baf6dcc8df1d2929fb794c3701ffd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DOT</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a8342e7aedc195d8c52ed51b9bff1efdb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_CIRCLE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a11584f7aae620c04a327c27c69f72ff1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_X</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a96cd2474c8fdab976dc3a1ae3d0a09d5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DIAMOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a56530bcc5d6c256440626e4e696ebb8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab8008cd1a1c1e4584fd16579191b6b4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FIRST</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba8e9057324083f92050fbbfe1b89c0c44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_SECOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba048f07436995d6a877de9cfeee0869b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THIRD</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab89434d2292320b92edfb191f96d4e7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FOURTH</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba04c3e12a2a0d46ac2fcb88a4af61af14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THUMB</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba7b693214c1305759a7b0e8ff9d77dfb2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a0b6cea214e1db826f9fa83551eeaf211</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretItem</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a4fe90c12538d1d278b4dd1ede2a42792</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetFretNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a373e51733ec797d49d82590610a98159</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a931c66a284ee8ddce7c6d9cc32c37987</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetStringNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a1b11b655a7c0be3325f53d04b91cea7d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetBarreLeftStringNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a5d47865a8040e783e2fa642a90c3b93c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetBarreRightStringNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a1c053f18f9430157fa38765abe273d73</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetFingering</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a8ac0e688191aa026b5d99f85fe2f4360</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSymbol</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a1903c2f41feff3551846f5693f3227b4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsBarre</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a75aec9ae560710dd88ed6fe30b1bd750</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSymbol</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>acde5bef457ab93143fce3ba37cac8f9a</anchor>
+      <arglist>(int symbol, int fretnum, int stringnum, int fingering)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBarre</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a17559d00814a4222b5a4c961f50c97c6</anchor>
+      <arglist>(int fretnum, int leftstringnum, int rightstringnum)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretItems</name>
     <filename>class_f_c_fret_items.html</filename>
-    <base protection="private">__FCCollection</base>
+    <base>__FCCollection</base>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -24412,8 +24750,8 @@
       <type>void</type>
       <name>AddFretItem</name>
       <anchorfile>class_f_c_fret_items.html</anchorfile>
-      <anchor>a4ac04f6f6ae2389b9773760e31e23997</anchor>
-      <arglist>(const FCFretItem *pItem)</arglist>
+      <anchor>a7956299b37cfa0413cc53f70ced07c82</anchor>
+      <arglist>(const FCFretItem &amp;pItem)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -61077,6 +61415,8 @@
     <class kind="class">FCGroup</class>
     <class kind="class">FCBaseline</class>
     <class kind="class">FCActiveLyric</class>
+    <class kind="class">FCFretItem</class>
+    <class kind="class">FCFretboardGroupItem</class>
     <class kind="class">__FCFileDialogBase</class>
     <class kind="class">FCFileOpenDialog</class>
     <class kind="class">FCFileSaveAsDialog</class>
@@ -61263,6 +61603,7 @@
     <class kind="class">FCChords</class>
     <class kind="class">FCGroups</class>
     <class kind="class">FCBaselines</class>
+    <class kind="class">FCFretItems</class>
     <class kind="class">FCArticulations</class>
     <class kind="class">FCPrimaryBeamMods</class>
     <class kind="class">FCSecondaryBeamMods</class>
@@ -61307,7 +61648,6 @@
     <class kind="class">FCShapeDefs</class>
     <class kind="class">FCChordSuffixElements</class>
     <class kind="class">FCFretboardStyleDefs</class>
-    <class kind="class">FCFretItems</class>
     <class kind="class">FCFretboardGroupDefs</class>
     <class kind="class">FCBeatChartElements</class>
     <class kind="class">FCTempoElements</class>
