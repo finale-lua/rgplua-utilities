@@ -59,6 +59,7 @@ if not finenv.RetainLuaState then
         output_tabstop_width = 8,
         clear_output_before_run = false,
         word_wrap = false,
+        output_wrap = true,
         run_as_trusted = false,
         run_as_debug = false,
         show_timestamps = false,
@@ -686,36 +687,38 @@ local function on_config_dialog()
         return
     end
     local curr_y = 0
-    local y_separator = 30 -- includes control height
-    local x_rightcol = 160 --
+    local y_separator = 27 -- includes control height
+    local x_rightcol = 160
+    local win_edit_offset = 5
+    local mac_edit_offset = 3
     local dlg = finale.FCCustomLuaWindow()
     dlg:SetTitle(finale.FCString("Console Preferences"))
     --
     local total_width_label = dlg:CreateStatic(0, curr_y)
     total_width_label:SetText(finale.FCString("Total Width: "))
     total_width_label:SetWidth(x_rightcol-20)
-    local total_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local total_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     total_width:SetInteger(config.total_width)
     curr_y = curr_y + y_separator
     --
     local editor_height_label = dlg:CreateStatic(0, curr_y)
     editor_height_label:SetText(finale.FCString("Editor Height: "))
     editor_height_label:SetWidth(x_rightcol-20)
-    local editor_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local editor_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     editor_height:SetInteger(config.editor_height)
     curr_y = curr_y + y_separator
     --
     local output_height_label = dlg:CreateStatic(0, curr_y)
     output_height_label:SetText(finale.FCString("Output Console Height: "))
     output_height_label:SetWidth(x_rightcol-20)
-    local output_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local output_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     output_height:SetInteger(config.output_console_height)
     curr_y = curr_y + y_separator
     --
     local tab_stop_width_label = dlg:CreateStatic(0, curr_y)
     tab_stop_width_label:SetText(finale.FCString("Tabstop Width: "))
     tab_stop_width_label:SetWidth(x_rightcol-20)
-    local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     tab_stop_width:SetInteger(config.tabstop_width)
     curr_y = curr_y + y_separator
     --
@@ -740,8 +743,14 @@ local function on_config_dialog()
     local output_tab_width_label = dlg:CreateStatic(0, curr_y)
     output_tab_width_label:SetText(finale.FCString("Output Tabstop Width: "))
     output_tab_width_label:SetWidth(x_rightcol-20)
-    local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     output_tab_width:SetInteger(config.output_tabstop_width)
+    curr_y = curr_y + y_separator
+    --
+    local output_wrap = dlg:CreateCheckbox(0, curr_y)
+    output_wrap:SetText(finale.FCString("Wrap Text in Output"))
+    output_wrap:SetWidth(x_rightcol - 20)
+    output_wrap:SetCheck(config.output_wrap and 1 or 0)
     curr_y = curr_y + y_separator
     --
     local font_label = dlg:CreateStatic(0, curr_y)
@@ -753,7 +762,7 @@ local function on_config_dialog()
     end
     local font = finale.FCFontInfo(config.font_name, config.font_size)
     set_font_text(font)
-    local font_change = dlg:CreateButton(x_rightcol, curr_y - win_mac(5, 1))
+    local font_change = dlg:CreateButton(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     font_change:SetText(finale.FCString("Change..."))
     font_change:SetWidth(70)
     dlg:RegisterHandleControlEvent(font_change, function(control)
@@ -774,6 +783,7 @@ local function on_config_dialog()
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
         config.word_wrap = word_wrap:GetCheck() ~= 0
         config.show_timestamps = show_time:GetCheck() ~= 0
+        config.output_wrap = output_wrap:GetCheck() ~= 0
         config.output_tabstop_width = math.max(1, output_tab_width:GetInteger())
         local fcstr = finale.FCString()
         font:GetNameString(fcstr)
@@ -980,6 +990,7 @@ local create_dialog = function()
     curr_y = curr_y + button_height
     output_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), total_width, output_height, false,
         config.output_tabstop_width)
+    output_text:SetWordWrap(config.output_wrap)
     curr_y = curr_y + output_height + y_separator
     -- close button line
     curr_x = 0
