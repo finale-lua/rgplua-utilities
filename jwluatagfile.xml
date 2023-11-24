@@ -23743,16 +23743,16 @@
     </member>
     <member kind="function">
       <type>CMPER</type>
-      <name>GetFretInstrumentNumber</name>
+      <name>GetFretInstrumentID</name>
       <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
-      <anchor>aad2b3957344634c0edb282edeac258da</anchor>
+      <anchor>a3db1dff142e3cfe77a3d488c66c9d332</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetFretInstrumentNumber</name>
+      <name>SetFretInstrumentID</name>
       <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
-      <anchor>afdaf5b22f6040c55954bbb6995ca9a25</anchor>
+      <anchor>a00ea5ca90c637341d2a5448ced71760d</anchor>
       <arglist>(CMPER value)</arglist>
     </member>
     <member kind="function">
