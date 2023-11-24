@@ -24384,6 +24384,39 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretItems</name>
+    <filename>class_f_c_fret_items.html</filename>
+    <base protection="private">__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a85c501bbbe675dc26719278cfa286ec7</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretItems</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a43def7e0ae2dc33bcdeda157510333bd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a2bc051b7226f5a27fa667c5571b5d982</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AddFretItem</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a4ac04f6f6ae2389b9773760e31e23997</anchor>
+      <arglist>(const FCFretItem *pItem)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCGeneralPrefs</name>
     <filename>class_f_c_general_prefs.html</filename>
     <base>__FCPrefsBase</base>
@@ -61274,6 +61307,8 @@
     <class kind="class">FCShapeDefs</class>
     <class kind="class">FCChordSuffixElements</class>
     <class kind="class">FCFretboardStyleDefs</class>
+    <class kind="class">FCFretItems</class>
+    <class kind="class">FCFretboardGroupDefs</class>
     <class kind="class">FCBeatChartElements</class>
     <class kind="class">FCTempoElements</class>
     <class kind="class">FCPercussionLayoutNotes</class>
