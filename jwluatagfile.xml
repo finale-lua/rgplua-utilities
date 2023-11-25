@@ -1928,6 +1928,46 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>__FCFretItemBase</name>
+    <filename>class_____f_c_fret_item_base.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>ae2a6263f4ac225fe1215f3e07b355f28</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__FCFretItemBase</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a1bb2e0137c41c16cfd64b7cc005effac</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetFretNumber</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>ab9588b76276dac6069ee31db148b04f8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretNumber</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a323249662af0a669606e8fb925d4457c</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsBarre</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a09c030e8754e574c12e2b4102934fcb0</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>__FCFretItemsBase</name>
     <filename>class_____f_c_fret_items_base.html</filename>
     <base>__FCCollection</base>
@@ -1944,20 +1984,6 @@
       <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
       <anchor>ac80b3e4a0e0e6b4c2cabc7d413c6fc7c</anchor>
       <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>FCFretItem *</type>
-      <name>GetItemAt</name>
-      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
-      <anchor>aeeec8b849e5b8143ded13c988a593627</anchor>
-      <arglist>(int index)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>AddFretItem</name>
-      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
-      <anchor>ab6cd62a11ae2bece351f032eaebe64ae</anchor>
-      <arglist>(const FCFretItem &amp;item)=0</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -23736,6 +23762,60 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretBarreItem</name>
+    <filename>class_f_c_fret_barre_item.html</filename>
+    <base>__FCFretItemBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>aab7ecec4339ba9604dd75cd16d70eb38</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretBarreItem</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>a958f0f89cf792c3acd5f03590acb1f03</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetLeftStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>ae7bb6867f9c9bca43542f7c53153991f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>af7ac9dac116bdf94b626974ad2ca6651</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetRightStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>ad27e53dedcf2e565998f177bfea18095</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>af8a1ba322cffc2d3d12e8073c51da9fe</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetupBarre</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>a80f539be50a4b1ed7035eb8547325473</anchor>
+      <arglist>(int fretnum, int leftstringnum, int rightstringnum)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretBarreItems</name>
     <filename>class_f_c_fret_barre_items.html</filename>
     <base>__FCFretItemsBase</base>
@@ -23757,8 +23837,15 @@
       <type>bool</type>
       <name>AddFretItem</name>
       <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
-      <anchor>a3a99fe05f351237da30894397bae45cc</anchor>
-      <arglist>(const FCFretItem &amp;item) override</arglist>
+      <anchor>a0e10b2d42b964eb1a9db6b94ab45aeba</anchor>
+      <arglist>(const FCFretBarreItem &amp;item)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretBarreItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>afde4800c6119cfc4b2b20ba4c1b174fb</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -24637,7 +24724,7 @@
   <compound kind="class">
     <name>FCFretItem</name>
     <filename>class_f_c_fret_item.html</filename>
-    <base>__FCBase</base>
+    <base>__FCFretItemBase</base>
     <member kind="enumeration">
       <type></type>
       <name>FRETITEMSYMBOLS</name>
@@ -24800,38 +24887,17 @@
     </member>
     <member kind="function">
       <type>int</type>
-      <name>GetFretNumber</name>
-      <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>a373e51733ec797d49d82590610a98159</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetFretNumber</name>
-      <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>a931c66a284ee8ddce7c6d9cc32c37987</anchor>
-      <arglist>(int value)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
       <name>GetStringNumber</name>
       <anchorfile>class_f_c_fret_item.html</anchorfile>
       <anchor>a1b11b655a7c0be3325f53d04b91cea7d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>int</type>
-      <name>GetBarreLeftStringNumber</name>
+      <type>void</type>
+      <name>SetStringNumber</name>
       <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>a5d47865a8040e783e2fa642a90c3b93c</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>GetBarreRightStringNumber</name>
-      <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>a1c053f18f9430157fa38765abe273d73</anchor>
-      <arglist>() const</arglist>
+      <anchor>a3599d71c8b4e89da0a52ff4f1ba05ce1</anchor>
+      <arglist>(int value)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -24841,6 +24907,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>SetFingering</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a499e649c509aa7a52e3ec574502273e9</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
       <type>int</type>
       <name>GetSymbol</name>
       <anchorfile>class_f_c_fret_item.html</anchorfile>
@@ -24848,25 +24921,18 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
-      <name>IsBarre</name>
-      <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>a75aec9ae560710dd88ed6fe30b1bd750</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
       <type>void</type>
       <name>SetSymbol</name>
       <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>acde5bef457ab93143fce3ba37cac8f9a</anchor>
-      <arglist>(int symbol, int fretnum, int stringnum, int fingering)</arglist>
+      <anchor>a085fcd87b8d56dd5579738912af09749</anchor>
+      <arglist>(int value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetBarre</name>
+      <name>SetupItem</name>
       <anchorfile>class_f_c_fret_item.html</anchorfile>
-      <anchor>a17559d00814a4222b5a4c961f50c97c6</anchor>
-      <arglist>(int fretnum, int leftstringnum, int rightstringnum)</arglist>
+      <anchor>a7d19f87c4690781f1d4243ba3ed57077</anchor>
+      <arglist>(int symbol, int fretnum, int stringnum, int fingering)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -24891,8 +24957,15 @@
       <type>bool</type>
       <name>AddFretItem</name>
       <anchorfile>class_f_c_fret_items.html</anchorfile>
-      <anchor>a7a4cd14676f4da4c060cf74f8a71cbb0</anchor>
-      <arglist>(const FCFretItem &amp;item) override</arglist>
+      <anchor>af22ae5abf7338ba462abc9f106721c81</anchor>
+      <arglist>(const FCFretItem &amp;item)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a2bc051b7226f5a27fa667c5571b5d982</anchor>
+      <arglist>(int index)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -61556,7 +61629,9 @@
     <class kind="class">FCGroup</class>
     <class kind="class">FCBaseline</class>
     <class kind="class">FCActiveLyric</class>
+    <class kind="class">__FCFretItemBase</class>
     <class kind="class">FCFretItem</class>
+    <class kind="class">FCFretBarreItem</class>
     <class kind="class">FCFretboardGroupItem</class>
     <class kind="class">__FCFileDialogBase</class>
     <class kind="class">FCFileOpenDialog</class>
