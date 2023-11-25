@@ -23703,6 +23703,60 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretboardGroup</name>
+    <filename>class_f_c_fretboard_group.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a26a66e307ec8f2e8d0741ffa0880b83a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretboardGroup</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a5e43dfb48a13691b5db855c4e58f3cca</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretboardGroupItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>afffb7d0706dada80a5c107ba3d0341f6</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadAllForItem</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a090cd4b76183f93c36ccc2d40a4bf78c</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAll</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>ad5c0121f8afe170889a1c6abbcf8db7a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAllForItem</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a6da85b75b672f3d1248ebc7a4607e950</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeleteAllForItem</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>ae20fefc622e825581f55564569648b8f</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretboardGroupDef</name>
     <filename>class_f_c_fretboard_group_def.html</filename>
     <base>__FCInciOther</base>
@@ -23740,6 +23794,20 @@
       <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
       <anchor>a482a33cdc2719b9afce6c0cda23dde4a</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretInstrumentDef *</type>
+      <name>CreateFretInstrumentDef</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>a2733cd6799fb8d2c321cda52cedda410</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretboardGroup *</type>
+      <name>CreateFretboardGroup</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>acf2e77079404e6bd28e35242a3a1dd60</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>CMPER</type>
@@ -23843,10 +23911,24 @@
       <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci, twobyte rootIndex)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>Delete</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ad71e1732ddaa3341e9698d067403f31d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>FCFretItems *</type>
       <name>GetFretItems</name>
       <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
       <anchor>a9d58d1a03bc674239ee4218f94739441</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItems *</type>
+      <name>GetBarreItems</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a0267bbd7c48aa9a5b52dbcfed70c46de</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -61604,6 +61686,7 @@
     <class kind="class">FCGroups</class>
     <class kind="class">FCBaselines</class>
     <class kind="class">FCFretItems</class>
+    <class kind="class">FCFretboardGroup</class>
     <class kind="class">FCArticulations</class>
     <class kind="class">FCPrimaryBeamMods</class>
     <class kind="class">FCSecondaryBeamMods</class>
