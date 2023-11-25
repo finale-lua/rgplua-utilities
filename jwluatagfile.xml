@@ -23753,6 +23753,13 @@
       <anchor>aed2c60f8a3f038b0933ef02427785fbe</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AddFretItem</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>a3a99fe05f351237da30894397bae45cc</anchor>
+      <arglist>(const FCFretItem &amp;item) override</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCFretboardGroup</name>
@@ -23800,11 +23807,11 @@
       <anchor>a6da85b75b672f3d1248ebc7a4607e950</anchor>
       <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
     </member>
-    <member kind="function" static="yes">
-      <type>static bool</type>
-      <name>DeleteAllForItem</name>
+    <member kind="function">
+      <type>bool</type>
+      <name>DeleteDataForItem</name>
       <anchorfile>class_f_c_fretboard_group.html</anchorfile>
-      <anchor>ae20fefc622e825581f55564569648b8f</anchor>
+      <anchor>a5a1faf8bb1e3721fb27a254bc7d0eaeb</anchor>
       <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
     </member>
   </compound>
@@ -23947,6 +23954,13 @@
       <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
       <anchor>aeec1718fe722d2749e8d7c349ff06391</anchor>
       <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci, twobyte rootIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Reload</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aa0e10ce97e934209f2ebc8e5d5abdaf7</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24872,6 +24886,13 @@
       <anchorfile>class_f_c_fret_items.html</anchorfile>
       <anchor>a43def7e0ae2dc33bcdeda157510333bd</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AddFretItem</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a7a4cd14676f4da4c060cf74f8a71cbb0</anchor>
+      <arglist>(const FCFretItem &amp;item) override</arglist>
     </member>
   </compound>
   <compound kind="class">
