@@ -1928,6 +1928,39 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>__FCFretItemsBase</name>
+    <filename>class_____f_c_fret_items_base.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
+      <anchor>ac7f6e596db0cbae0de69e6cdfd202457</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__FCFretItemsBase</name>
+      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
+      <anchor>ac80b3e4a0e0e6b4c2cabc7d413c6fc7c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
+      <anchor>aeeec8b849e5b8143ded13c988a593627</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual bool</type>
+      <name>AddFretItem</name>
+      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
+      <anchor>ab6cd62a11ae2bece351f032eaebe64ae</anchor>
+      <arglist>(const FCFretItem &amp;item)=0</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>__FCGlobals</name>
     <filename>class_____f_c_globals.html</filename>
     <base>__FCBaseData</base>
@@ -23703,6 +23736,25 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretBarreItems</name>
+    <filename>class_f_c_fret_barre_items.html</filename>
+    <base>__FCFretItemsBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>a8b8d3ccdfd742ee6d46cce64f319ba3c</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretBarreItems</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>aed2c60f8a3f038b0933ef02427785fbe</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretboardGroup</name>
     <filename>class_f_c_fretboard_group.html</filename>
     <base>__FCCollection</base>
@@ -23925,10 +23977,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>FCFretItems *</type>
-      <name>GetBarreItems</name>
+      <type>FCFretBarreItems *</type>
+      <name>GetFretBarreItems</name>
       <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
-      <anchor>a0267bbd7c48aa9a5b52dbcfed70c46de</anchor>
+      <anchor>a51979bb8764173931dd2b415f08b1702</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -24806,7 +24858,7 @@
   <compound kind="class">
     <name>FCFretItems</name>
     <filename>class_f_c_fret_items.html</filename>
-    <base>__FCCollection</base>
+    <base>__FCFretItemsBase</base>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -24820,20 +24872,6 @@
       <anchorfile>class_f_c_fret_items.html</anchorfile>
       <anchor>a43def7e0ae2dc33bcdeda157510333bd</anchor>
       <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>FCFretItem *</type>
-      <name>GetItemAt</name>
-      <anchorfile>class_f_c_fret_items.html</anchorfile>
-      <anchor>a2bc051b7226f5a27fa667c5571b5d982</anchor>
-      <arglist>(int index)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>AddFretItem</name>
-      <anchorfile>class_f_c_fret_items.html</anchorfile>
-      <anchor>a7956299b37cfa0413cc53f70ced07c82</anchor>
-      <arglist>(const FCFretItem &amp;pItem)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -61685,7 +61723,9 @@
     <class kind="class">FCChords</class>
     <class kind="class">FCGroups</class>
     <class kind="class">FCBaselines</class>
+    <class kind="class">__FCFretItemsBase</class>
     <class kind="class">FCFretItems</class>
+    <class kind="class">FCFretBarreItems</class>
     <class kind="class">FCFretboardGroup</class>
     <class kind="class">FCArticulations</class>
     <class kind="class">FCPrimaryBeamMods</class>
