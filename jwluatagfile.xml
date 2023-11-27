@@ -1939,13 +1939,6 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
-      <type></type>
-      <name>__FCFretItemBase</name>
-      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
-      <anchor>a1bb2e0137c41c16cfd64b7cc005effac</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
       <type>int</type>
       <name>GetFretNumber</name>
       <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
@@ -1965,6 +1958,13 @@
       <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
       <anchor>a09c030e8754e574c12e2b4102934fcb0</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>__FCFretItemBase</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a1bb2e0137c41c16cfd64b7cc005effac</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
