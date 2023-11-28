@@ -584,7 +584,8 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
         -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
-        elseif line_number > 0 then
+        end
+        if line_number > 0 then
             actual_line_number = context.line_numbers[line_number]
             line_range = finale.FCRange()
             line_number_text:GetLineRangeForLine(actual_line_number, line_range)
