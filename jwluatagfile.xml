@@ -30726,6 +30726,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>NUMBERING_LOWERCASEDOUBLE</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41ab24d84782459eaac64ed3df75f96e883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>NUMBERING_UPPERCASEDOUBLE</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
       <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41a20308c63d99f044eb1b08cc16c127da9</anchor>
@@ -30786,6 +30792,24 @@
       <anchor>ac05e39a92a34c044193c2d07c0666163</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_ALL</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a0a9ab7ce3bfc721fb475d0408195233a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_PAGEONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163ae367eaf907cc6ee6a36571d44d6645bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_SCROLLONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a7c58cfdc4e37fb238605cccb8f6c51c5</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumeration">
       <type></type>
       <name>MNALIGNMENTS</name>
@@ -30843,6 +30867,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>NUMBERING_LOWERCASEDOUBLE</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41ab24d84782459eaac64ed3df75f96e883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>NUMBERING_UPPERCASEDOUBLE</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
       <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41a20308c63d99f044eb1b08cc16c127da9</anchor>
@@ -30894,6 +30924,24 @@
       <name>NUMBERING_CUSTOM</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
       <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41a3a0e7e706acbbe0f8eb669975c1f7c53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_ALL</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a0a9ab7ce3bfc721fb475d0408195233a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_PAGEONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163ae367eaf907cc6ee6a36571d44d6645bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_SCROLLONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a7c58cfdc4e37fb238605cccb8f6c51c5</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -33041,6 +33089,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAlignMeasureNumbersWithBarline</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a6b17e3cc227bf8ab2ed6a65646029c0e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLegacyDotPositionOnFlippedStems</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a322521489605575ad6567ab4a1504805</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetAlwaysSlashGraceNote</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
@@ -33451,6 +33513,20 @@
       <name>SetKeepOctaveTransposition</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>aaeed98d1f8184b409cfa7a1913b5a23a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAlignMeasureNumbersWithBarline</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a060c72796355d8c5c33c764b8369d1a8</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLegacyDotPositionOnFlippedStems</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>adf815573ba0f64805a31747a4872cfd6</anchor>
       <arglist>(bool state)</arglist>
     </member>
   </compound>
