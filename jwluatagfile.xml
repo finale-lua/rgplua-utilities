@@ -32789,6 +32789,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetLeftBarlineDisplayMultiple</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>ae2782155e466c9b885b3134af0e7ad50</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetLeftBarlineDisplayMultipe</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>a0f642edb62a31537aeb576d101d80e36</anchor>
@@ -33247,6 +33254,13 @@
       <name>SetLeftBarlineDisplaySingle</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>ac999ab1b72e08f10eee2d1e5d49c2b19</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftBarlineDisplayMultiple</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a13c7e572261d302d7c51076fb29f7267</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
