@@ -1928,6 +1928,65 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>__FCFretItemBase</name>
+    <filename>class_____f_c_fret_item_base.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>ae2a6263f4ac225fe1215f3e07b355f28</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetFretNumber</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>ab9588b76276dac6069ee31db148b04f8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretNumber</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a323249662af0a669606e8fb925d4457c</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsBarre</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a09c030e8754e574c12e2b4102934fcb0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>__FCFretItemBase</name>
+      <anchorfile>class_____f_c_fret_item_base.html</anchorfile>
+      <anchor>a1bb2e0137c41c16cfd64b7cc005effac</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>__FCFretItemsBase</name>
+    <filename>class_____f_c_fret_items_base.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
+      <anchor>ac7f6e596db0cbae0de69e6cdfd202457</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>__FCFretItemsBase</name>
+      <anchorfile>class_____f_c_fret_items_base.html</anchorfile>
+      <anchor>ac80b3e4a0e0e6b4c2cabc7d413c6fc7c</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>__FCGlobals</name>
     <filename>class_____f_c_globals.html</filename>
     <base>__FCBaseData</base>
@@ -9787,16 +9846,23 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
-      <name>HandleTextSelectionChanged</name>
+      <name>TextSelectionChanged</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>ac1a691f8616137cbe611f1293f172f21</anchor>
+      <anchor>a065f5f0a9c78c52d91b53ff744d92731</anchor>
       <arglist>(FCControl *pControl)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
-      <name>HandleScrollChanged</name>
+      <name>ScrollChanged</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>aaa561fed61b53b79802927e5b432c1e3</anchor>
+      <anchor>a716a58e3c692b5cb45108c483891b2c5</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>HandleSaveRequest</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a62f47165e971e736f02d1eb24e93ebd8</anchor>
       <arglist>(FCControl *pControl)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -15194,8 +15260,22 @@
       <type>FCChordSuffixElements *</type>
       <name>CreateChordSuffixElements</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
-      <anchor>aa5ce94b09a2aeb8af38080b15a9d36d6</anchor>
-      <arglist>()</arglist>
+      <anchor>a91664240eceb77b7fdd73d67bbc50e19</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>CalcFretboardGroupID</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>ad6724cce4977758735a0f21245bb1810</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretboardGroupDef *</type>
+      <name>CreateFretboardGroupDef</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>a752b0afd4aa4cb6dc488e9316143ef53</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCTransposer *</type>
@@ -15394,6 +15474,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>GetFretboardID</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>a70d0d8d7d9cdc29e2e2e2d6d44c46e0f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetChordSuffixID</name>
       <anchorfile>class_f_c_chord.html</anchorfile>
@@ -15581,6 +15668,13 @@
       <anchorfile>class_f_c_chord.html</anchorfile>
       <anchor>a3fa347a2bc26ed790b5dfc2f9edf85e8</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretboardID</name>
+      <anchorfile>class_f_c_chord.html</anchorfile>
+      <anchor>aaed55fb593c3c089a02191ae477a69da</anchor>
+      <arglist>(int value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -16005,6 +16099,53 @@
       <anchorfile>class_f_c_chord_suffix_elements.html</anchorfile>
       <anchor>ab13c986eb668fa7bdc9256bf4ef1f7e9</anchor>
       <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCChordSuffixKeyNumberOffsets</name>
+    <filename>class_f_c_chord_suffix_key_number_offsets.html</filename>
+    <base>FCNumbers</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a63445494e7d3c98fe1d53e8573814585</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCChordSuffixKeyNumberOffsets</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a4da517b9e14fd92eccce04bd2cde4b50</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a63e63c3ac78f3fb92d28bab7aa1a3592</anchor>
+      <arglist>(CMPER suffixno)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a4979ae9a8be587d3aabb3fc65dedaf05</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a372d53818b000dbc7dff4fd1b23920fe</anchor>
+      <arglist>(CMPER suffixno)</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetChordSuffixID</name>
+      <anchorfile>class_f_c_chord_suffix_key_number_offsets.html</anchorfile>
+      <anchor>a3a7f53c7e233b1335dc80ee63bbe3c22</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -16610,8 +16751,8 @@
       <type>virtual void</type>
       <name>GetText</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a2663c4f773c72deca32d8f20abfdf9e7</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a78eeebc7ac598513dca23811f8ad84a9</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -18024,6 +18165,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>ReplaceTextInRangeWithFormat</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a5913ff3a3fe8c16a532adfda2b630475</anchor>
+      <arglist>(const FCString *pText, const FCEnigmaTextStyle *pStyle, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ReplaceTextInRangeWithEnigmaString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a3d19847dd799fcb174a9b922d90f9424</anchor>
+      <arglist>(const FCString *pString, const FCRange *pRange)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetSelectedText</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>a69bdb12002ef585b490f4edc78fa12c9</anchor>
@@ -18052,10 +18207,10 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>AppendTextWithFontInfo</name>
+      <name>AppendTextWithFormat</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>aa1ae3878a724c0253378396ffd73bf9a</anchor>
-      <arglist>(const FCString *pText, const FCFontInfo *pFont)</arglist>
+      <anchor>aaba7c535c7a5b957b34480c9cfd092b2</anchor>
+      <arglist>(const FCString *pText, const FCEnigmaTextStyle *pStyle)</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
@@ -18068,8 +18223,15 @@
       <type>FCString *</type>
       <name>CreateEnigmaString</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>ae4daa13de257492e58b21adae9e62362</anchor>
-      <arglist>() const</arglist>
+      <anchor>a107e59af66a949584aeae5e357641d99</anchor>
+      <arglist>(const FCRange *pRange=nullptr) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetRTFString</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a0f19b3f67217ebcc26721e7c5298b9b2</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -18357,6 +18519,13 @@
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>a826d70ab29f57494725b6245e8195392</anchor>
       <arglist>(int pos) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>TextToClipboard</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a8514e7341b853889c6679eced2a2d291</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -18688,16 +18857,23 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterHandleTextSelectionChanged</name>
+      <name>RegisterTextSelectionChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>ac7d1bebcc5153b77fe2bc44cd08fd0ae</anchor>
+      <anchor>a4ee594d3a9b793b03542530aa1c03e98</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterHandleScrollChanged</name>
+      <name>RegisterScrollChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a20ca4c95268f32b8010e7ccf3b1fdd84</anchor>
+      <anchor>a1ffac9676409696154271fc95fef225e</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterHandleSaveRequest</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a15b043296d9e78ad908dac207801e1dc</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
@@ -18793,16 +18969,23 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>HandleTextSelectionChanged</name>
+      <name>TextSelectionChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>aa4a6a1c771d4021de6901f8679db8687</anchor>
+      <anchor>aa0e632f1a24899849b3600c03bc57219</anchor>
       <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>HandleScrollChanged</name>
+      <name>ScrollChanged</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a6a7bc5a846b3e1a6cbad8469ea5d89ce</anchor>
+      <anchor>aa54749128ff3ac6508aceaeac3f2a207</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>HandleSaveRequest</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ab7942c2995b34828cddcf7530a2adc44</anchor>
       <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
@@ -21259,6 +21442,88 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCEnigmaTextStyle</name>
+    <filename>class_f_c_enigma_text_style.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>af5c3064cb5d49844dda244be644aead0</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a101cb6405263d2faed1966810b1109d4</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCEnigmaTextStyle</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a7c69ad8a47428eaeb46c2f83161a2ece</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCEnigmaTextStyle</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>afe9355a753da3db077a4d8ea2b591050</anchor>
+      <arglist>(const FCFontInfo &amp;font)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>GetFont</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>aec267d81a84b86de10bcdbf516b63982</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>fourbyte</type>
+      <name>GetInterletterSpacing</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a74bac5f23f9036626a8152cc0d1ac345</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetBaselineShift</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>add686a703c6d7f0446a100a77ae7a25e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Evpu32</type>
+      <name>GetSuperscript</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>aceb4405aefb714cd7056f1f2b091b310</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetInterletterSpacing</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a4857a9b11dca11fc6d79c489005aea42</anchor>
+      <arglist>(fourbyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBaselineShift</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a2c44d16423ee568dbd928ba93edeb97b</anchor>
+      <arglist>(Evpu32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSuperscript</name>
+      <anchorfile>class_f_c_enigma_text_style.html</anchorfile>
+      <anchor>a2d87cabb4d41517c9e9cce17d46f8167</anchor>
+      <arglist>(Evpu32 value)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCEntryAlterMod</name>
     <filename>class_f_c_entry_alter_mod.html</filename>
     <base>__FCEntryDetail</base>
@@ -22510,8 +22775,8 @@
       <type>void</type>
       <name>CopyFrom</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a2fb1a18bc8e81fe57aa1ec56b3d2c49b</anchor>
-      <arglist>(FCFontInfo *pInfo)</arglist>
+      <anchor>a0bc369bb2de6e7fcc6e42ef52f48d0ad</anchor>
+      <arglist>(const FCFontInfo *pInfo)</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
@@ -23497,6 +23762,147 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretBarreItem</name>
+    <filename>class_f_c_fret_barre_item.html</filename>
+    <base>__FCFretItemBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>aab7ecec4339ba9604dd75cd16d70eb38</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretBarreItem</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>a958f0f89cf792c3acd5f03590acb1f03</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetLeftStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>ae7bb6867f9c9bca43542f7c53153991f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>af7ac9dac116bdf94b626974ad2ca6651</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetRightStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>ad27e53dedcf2e565998f177bfea18095</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetRightStringNumber</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>af8a1ba322cffc2d3d12e8073c51da9fe</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetupBarre</name>
+      <anchorfile>class_f_c_fret_barre_item.html</anchorfile>
+      <anchor>a80f539be50a4b1ed7035eb8547325473</anchor>
+      <arglist>(int fretnum, int leftstringnum, int rightstringnum)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCFretBarreItems</name>
+    <filename>class_f_c_fret_barre_items.html</filename>
+    <base>__FCFretItemsBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>a8b8d3ccdfd742ee6d46cce64f319ba3c</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretBarreItems</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>aed2c60f8a3f038b0933ef02427785fbe</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AddFretItem</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>a0e10b2d42b964eb1a9db6b94ab45aeba</anchor>
+      <arglist>(const FCFretBarreItem &amp;item)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretBarreItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
+      <anchor>afde4800c6119cfc4b2b20ba4c1b174fb</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCFretboardGroup</name>
+    <filename>class_f_c_fretboard_group.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a26a66e307ec8f2e8d0741ffa0880b83a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretboardGroup</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a5e43dfb48a13691b5db855c4e58f3cca</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretboardGroupItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>afffb7d0706dada80a5c107ba3d0341f6</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadAllForItem</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a090cd4b76183f93c36ccc2d40a4bf78c</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAll</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>ad5c0121f8afe170889a1c6abbcf8db7a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAllForItem</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a6da85b75b672f3d1248ebc7a4607e950</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DeleteDataForItem</name>
+      <anchorfile>class_f_c_fretboard_group.html</anchorfile>
+      <anchor>a5a1faf8bb1e3721fb27a254bc7d0eaeb</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretboardGroupDef</name>
     <filename>class_f_c_fretboard_group_def.html</filename>
     <base>__FCInciOther</base>
@@ -23536,6 +23942,48 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCFretInstrumentDef *</type>
+      <name>CreateFretInstrumentDef</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>a2733cd6799fb8d2c321cda52cedda410</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretboardGroup *</type>
+      <name>CreateFretboardGroup</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>acf2e77079404e6bd28e35242a3a1dd60</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetFretInstrumentID</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>a3db1dff142e3cfe77a3d488c66c9d332</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretInstrumentID</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>a00ea5ca90c637341d2a5448ced71760d</anchor>
+      <arglist>(CMPER value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>GetName</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>a67475a42dd4bed6f605df179ca10c19c</anchor>
+      <arglist>(FCString *pString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetName</name>
+      <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
+      <anchor>ac4d908ab9a5d1d3946953e3da186011e</anchor>
+      <arglist>(const FCString *pString)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_fretboard_group_def.html</anchorfile>
@@ -23570,6 +24018,130 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCFretboardGroupItem</name>
+    <filename>class_f_c_fretboard_group_item.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a5c854cd696170f964cf295560c3d5bbb</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretboardGroupItem</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a4b6576541c781830bc1503aebda4ba11</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aeec1718fe722d2749e8d7c349ff06391</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci, twobyte rootIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Reload</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aa0e10ce97e934209f2ebc8e5d5abdaf7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ae2883bd9326d5e137374918f7f85cb66</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7db69a65d338efd7f7b70e43984f9241</anchor>
+      <arglist>(CMPER fretboardGroupID, twobyte fretboardGroupInci, twobyte rootIndex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Delete</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ad71e1732ddaa3341e9698d067403f31d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItems *</type>
+      <name>GetFretItems</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a9d58d1a03bc674239ee4218f94739441</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretBarreItems *</type>
+      <name>GetFretBarreItems</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a51979bb8764173931dd2b415f08b1702</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetNumberOfFrets</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aceb4ab8bf34e38708d4732dff1736caf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetNumberOfFrets</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>aeefbbff2e42cb2c6ce10b3dd043997f4</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ab822649b528a4f9efced4188c54075ff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7c96d814a2c9d12ce3af3979c9012e81</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLocked</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>ae3c1a1ab48ffb35f51e098463bf40118</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLocked</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a65f83d0d210697f286103b0412a9fd0b</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetShowFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7fb0609bc9ff1538b661a82aa227ba2a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShowFretboardNumber</name>
+      <anchorfile>class_f_c_fretboard_group_item.html</anchorfile>
+      <anchor>a7db283add6514d8f06d53475403fad06</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCFretboardStyleDef</name>
     <filename>class_f_c_fretboard_style_def.html</filename>
     <base>__FCNoInciOther</base>
@@ -23598,8 +24170,8 @@
       <type>void</type>
       <name>GetName</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>aea9df952a15bc6d8756d2d6c1d0772b0</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a0ccf64f7084d5b6bc6604bd41860336e</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>Efix32</type>
@@ -23675,8 +24247,8 @@
       <type>void</type>
       <name>GetFretNumberText</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>a37ad8d5b01e2ca1fdc327a1ec7fb7d41</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a6a933531661b852006dd3ba1e0719128</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>Efix32</type>
@@ -23773,8 +24345,8 @@
       <type>void</type>
       <name>SetName</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>ae24996171793788afb3f0836eb58d453</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ada9bd31487d41e1e64bf96d919e7bc46</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -23850,8 +24422,8 @@
       <type>void</type>
       <name>SetFretNumberText</name>
       <anchorfile>class_f_c_fretboard_style_def.html</anchorfile>
-      <anchor>a6b7b066dc35f4cb66d7d5dea127f1b52</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a187623fd7dea88a0b1107f3e82de45d5</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24146,6 +24718,253 @@
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fret_instrument_defs.html</anchorfile>
       <anchor>aa1f8c456e2b38076362192ba9e43b9c3</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCFretItem</name>
+    <filename>class_f_c_fret_item.html</filename>
+    <base>__FCFretItemBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>FRETITEMSYMBOLS</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42aa61baf6dcc8df1d2929fb794c3701ffd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DOT</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a8342e7aedc195d8c52ed51b9bff1efdb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_CIRCLE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a11584f7aae620c04a327c27c69f72ff1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_X</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a96cd2474c8fdab976dc3a1ae3d0a09d5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DIAMOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a56530bcc5d6c256440626e4e696ebb8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>FRETITEMFINGERINGS</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab8008cd1a1c1e4584fd16579191b6b4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FIRST</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba8e9057324083f92050fbbfe1b89c0c44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_SECOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba048f07436995d6a877de9cfeee0869b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THIRD</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab89434d2292320b92edfb191f96d4e7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FOURTH</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba04c3e12a2a0d46ac2fcb88a4af61af14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THUMB</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba7b693214c1305759a7b0e8ff9d77dfb2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42aa61baf6dcc8df1d2929fb794c3701ffd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DOT</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a8342e7aedc195d8c52ed51b9bff1efdb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_CIRCLE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a11584f7aae620c04a327c27c69f72ff1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_X</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a96cd2474c8fdab976dc3a1ae3d0a09d5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETITEM_DIAMOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a23899192d58df7396fcb8c4cd91c2c42a56530bcc5d6c256440626e4e696ebb8a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_NONE</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab8008cd1a1c1e4584fd16579191b6b4f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FIRST</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba8e9057324083f92050fbbfe1b89c0c44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_SECOND</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba048f07436995d6a877de9cfeee0869b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THIRD</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47bab89434d2292320b92edfb191f96d4e7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_FOURTH</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba04c3e12a2a0d46ac2fcb88a4af61af14</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>FRETFINGERING_THUMB</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a6e61946a0feffab0bce36591cd5ce47ba7b693214c1305759a7b0e8ff9d77dfb2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a0b6cea214e1db826f9fa83551eeaf211</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretItem</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a4fe90c12538d1d278b4dd1ede2a42792</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetStringNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a1b11b655a7c0be3325f53d04b91cea7d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStringNumber</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a3599d71c8b4e89da0a52ff4f1ba05ce1</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetFingering</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a8ac0e688191aa026b5d99f85fe2f4360</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFingering</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a499e649c509aa7a52e3ec574502273e9</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetSymbol</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a1903c2f41feff3551846f5693f3227b4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSymbol</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a085fcd87b8d56dd5579738912af09749</anchor>
+      <arglist>(int value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetupItem</name>
+      <anchorfile>class_f_c_fret_item.html</anchorfile>
+      <anchor>a7d19f87c4690781f1d4243ba3ed57077</anchor>
+      <arglist>(int symbol, int fretnum, int stringnum, int fingering)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCFretItems</name>
+    <filename>class_f_c_fret_items.html</filename>
+    <base>__FCFretItemsBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a85c501bbbe675dc26719278cfa286ec7</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCFretItems</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a43def7e0ae2dc33bcdeda157510333bd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AddFretItem</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>af22ae5abf7338ba462abc9f106721c81</anchor>
+      <arglist>(const FCFretItem &amp;item)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFretItem *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_fret_items.html</anchorfile>
+      <anchor>a2bc051b7226f5a27fa667c5571b5d982</anchor>
       <arglist>(int index)</arglist>
     </member>
   </compound>
@@ -29907,6 +30726,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>NUMBERING_LOWERCASEDOUBLE</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41ab24d84782459eaac64ed3df75f96e883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>NUMBERING_UPPERCASEDOUBLE</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
       <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41a20308c63d99f044eb1b08cc16c127da9</anchor>
@@ -29967,6 +30792,24 @@
       <anchor>ac05e39a92a34c044193c2d07c0666163</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_ALL</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a0a9ab7ce3bfc721fb475d0408195233a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_PAGEONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163ae367eaf907cc6ee6a36571d44d6645bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_SCROLLONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a7c58cfdc4e37fb238605cccb8f6c51c5</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumeration">
       <type></type>
       <name>MNALIGNMENTS</name>
@@ -30024,6 +30867,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>NUMBERING_LOWERCASEDOUBLE</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41ab24d84782459eaac64ed3df75f96e883</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>NUMBERING_UPPERCASEDOUBLE</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
       <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41a20308c63d99f044eb1b08cc16c127da9</anchor>
@@ -30075,6 +30924,24 @@
       <name>NUMBERING_CUSTOM</name>
       <anchorfile>class_f_c_measure_number_region.html</anchorfile>
       <anchor>ae5f1d6b85d51e6c82ba8beccf67b1b41a3a0e7e706acbbe0f8eb669975c1f7c53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_ALL</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a0a9ab7ce3bfc721fb475d0408195233a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_PAGEONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163ae367eaf907cc6ee6a36571d44d6645bc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NUMBERVIEW_SCROLLONLY</name>
+      <anchorfile>class_f_c_measure_number_region.html</anchorfile>
+      <anchor>ac05e39a92a34c044193c2d07c0666163a7c58cfdc4e37fb238605cccb8f6c51c5</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -31922,6 +32789,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetLeftBarlineDisplayMultiple</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>ae2782155e466c9b885b3134af0e7ad50</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetLeftBarlineDisplayMultipe</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>a0f642edb62a31537aeb576d101d80e36</anchor>
@@ -32222,6 +33096,20 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAlignMeasureNumbersWithBarline</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a6b17e3cc227bf8ab2ed6a65646029c0e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetLegacyDotPositionOnFlippedStems</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a322521489605575ad6567ab4a1504805</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetAlwaysSlashGraceNote</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
@@ -32366,6 +33254,13 @@
       <name>SetLeftBarlineDisplaySingle</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>ac999ab1b72e08f10eee2d1e5d49c2b19</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLeftBarlineDisplayMultiple</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a13c7e572261d302d7c51076fb29f7267</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
@@ -32632,6 +33527,20 @@
       <name>SetKeepOctaveTransposition</name>
       <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
       <anchor>aaeed98d1f8184b409cfa7a1913b5a23a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAlignMeasureNumbersWithBarline</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>a060c72796355d8c5c33c764b8369d1a8</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLegacyDotPositionOnFlippedStems</name>
+      <anchorfile>class_f_c_misc_doc_prefs.html</anchorfile>
+      <anchor>adf815573ba0f64805a31747a4872cfd6</anchor>
       <arglist>(bool state)</arglist>
     </member>
   </compound>
@@ -38719,8 +39628,15 @@
       <type>bool</type>
       <name>IsPortrait</name>
       <anchorfile>class_f_c_page.html</anchorfile>
-      <anchor>a22386a8d8f850addfae07ebd7b713a7c</anchor>
-      <arglist>()</arglist>
+      <anchor>ad44ff7192c39f21fd906b7cdb3de3fde</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsBlank</name>
+      <anchorfile>class_f_c_page.html</anchorfile>
+      <anchor>a6da624d529caada95a48ddaa6e1545d3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>Evpu32</type>
@@ -39667,6 +40583,20 @@
       <anchorfile>class_f_c_pages.html</anchorfile>
       <anchor>abaf831352a3740203228250aa4ebf14e</anchor>
       <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCPage *</type>
+      <name>FindSystemNumber</name>
+      <anchorfile>class_f_c_pages.html</anchorfile>
+      <anchor>ae09244efc00783b9d9b840bdd44bcfc4</anchor>
+      <arglist>(eSsys systemnumber)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCPage *</type>
+      <name>FindMeasureNumber</name>
+      <anchorfile>class_f_c_pages.html</anchorfile>
+      <anchor>a5c73c8b34dde3d2b8fa2f4ed2da8dff6</anchor>
+      <arglist>(eMeas measurenumber)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static bool</type>
@@ -58156,8 +59086,8 @@
       <type>void</type>
       <name>GetText</name>
       <anchorfile>class_f_c_tree_node.html</anchorfile>
-      <anchor>a8dca3cdff3e96ccbe7a7d495f543e514</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a744204805b3f1cef28816e1a363dadb9</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
@@ -60763,6 +61693,7 @@
     <filename>group__lua__classes.html</filename>
     <class kind="class">__FCBaseData</class>
     <class kind="class">FCFontInfo</class>
+    <class kind="class">FCEnigmaTextStyle</class>
     <class kind="class">FCString</class>
     <class kind="class">FCCellMetrics</class>
     <class kind="class">FCEntryMetrics</class>
@@ -60788,6 +61719,10 @@
     <class kind="class">FCGroup</class>
     <class kind="class">FCBaseline</class>
     <class kind="class">FCActiveLyric</class>
+    <class kind="class">__FCFretItemBase</class>
+    <class kind="class">FCFretItem</class>
+    <class kind="class">FCFretBarreItem</class>
+    <class kind="class">FCFretboardGroupItem</class>
     <class kind="class">__FCFileDialogBase</class>
     <class kind="class">FCFileOpenDialog</class>
     <class kind="class">FCFileSaveAsDialog</class>
@@ -60965,6 +61900,7 @@
     <class kind="class">__FCCollectionNoInciOther</class>
     <class kind="class">FCStrings</class>
     <class kind="class">FCRanges</class>
+    <class kind="class">FCChordSuffixKeyNumberOffsets</class>
     <class kind="class">FCCells</class>
     <class kind="class">FCSeparateMeasureNumbers</class>
     <class kind="class">FCCellGraphics</class>
@@ -60973,6 +61909,10 @@
     <class kind="class">FCChords</class>
     <class kind="class">FCGroups</class>
     <class kind="class">FCBaselines</class>
+    <class kind="class">__FCFretItemsBase</class>
+    <class kind="class">FCFretItems</class>
+    <class kind="class">FCFretBarreItems</class>
+    <class kind="class">FCFretboardGroup</class>
     <class kind="class">FCArticulations</class>
     <class kind="class">FCPrimaryBeamMods</class>
     <class kind="class">FCSecondaryBeamMods</class>
@@ -61017,6 +61957,7 @@
     <class kind="class">FCShapeDefs</class>
     <class kind="class">FCChordSuffixElements</class>
     <class kind="class">FCFretboardStyleDefs</class>
+    <class kind="class">FCFretboardGroupDefs</class>
     <class kind="class">FCBeatChartElements</class>
     <class kind="class">FCTempoElements</class>
     <class kind="class">FCPercussionLayoutNotes</class>

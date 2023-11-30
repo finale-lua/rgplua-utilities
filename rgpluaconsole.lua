@@ -13,7 +13,7 @@ function plugindef()
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
     ]]
-    return "RGP Lua Console...", "RGP Lua Console", "Allows immediate editing and testing of scripts in RGP Lua."
+    return "RGP Lua Console...", "RGP Lua Console", "Allows immediate execution and editing of scripts in RGP Lua."
 end
 
 local cjson = require('cjson')
@@ -39,9 +39,12 @@ local clear_output_chk      -- Clear Before Run checkbox
 local run_as_trusted_chk    -- Run As Trusted checkbox
 local run_as_debug_chk      -- Run As Debug checkbox
 local line_ending_show      -- Static control to show line endings
+local run_script_cmd        -- run script command
+local kill_script_cmd       -- kill running script command
 local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
+local in_execute_script_item      -- tracks is we are inside on_run_script
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -55,11 +58,18 @@ if not finenv.RetainLuaState then
         tabs_to_spaces = true,
         output_tabstop_width = 8,
         clear_output_before_run = false,
+        word_wrap = false,
+        output_wrap = true,
         run_as_trusted = false,
         run_as_debug = false,
+        show_timestamps = false,
         font_name = win_mac("Consolas", "Menlo"),
         font_size = win_mac(9, 11),
         font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
+        total_width = 960,
+        editor_height = 280,
+        output_console_height = 130,
+        curr_script_item = 0,
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -73,6 +83,7 @@ if not finenv.RetainLuaState then
         output_text = nil,          -- holds current contents of output box when our window is not open
         script_items_list = {},     -- each member is a table of 'items' (script items) and 'exists' (boolean)
         selected_script_item = 0,   -- 1-based Lua index into script_items_list
+        line_numbers = {},
         line_ending_type = 0,       -- tracks the line ending type (used in Windows only)
         file_menu_base = { "< New >", "< Open... >", "< Save >", "< Save As... >", "< Close >", "-", "< Close All >", "-" },
         first_script_in_menu = 8,
@@ -202,6 +213,16 @@ local function menu_index_from_current_script()
     return script_item_index - 1 + context.first_script_in_menu
 end
 
+local function kill_executing_items(item_index)
+    if item_index > 0 then
+        for item in each(context.script_items_list[item_index].items) do
+            if item:IsExecuting() then
+                item:StopExecuting()
+            end
+        end
+    end
+end
+
 local function select_script(fullpath, scripts_items_index)
     local original_fullpath = fullpath
     local fc_fullpath = finale.FCString(fullpath)
@@ -224,10 +245,12 @@ local function select_script(fullpath, scripts_items_index)
         if file then
             script_text = file:read("a")
         else
-            global_dialog:CreateChildUI():AlertInfo("Unable to read filepath " .. encode_file_path(fullpath), "File Path Encoding Error")
-            return false
+            global_dialog:CreateChildUI():AlertInfo(
+                "File does not exist, or there was as error in the encoding of the file path: " .. encode_file_path(fullpath), "File Error")
+            file_exists = false
         end
     end
+    kill_executing_items(context.selected_script_item)
     local script_items = finenv.CreateLuaScriptItemsFromFilePath(fullpath, script_text)
     assert(script_items.Count > 0, "No script items returned for " .. fullpath .. ".")
     if not context.script_items_list[scripts_items_index] then
@@ -321,6 +344,7 @@ local function file_save()
                 context.modification_time = file_info.modification
             end
             assert(items.Count > 0, "no items returned for " .. file_path.LuaString)
+            kill_executing_items(script_item_index)
             context.script_items_list[script_item_index].items = items
             retval = true
             update_script_menu(items)
@@ -398,7 +422,9 @@ local function do_file_close(all_files)
     for menu_index = last_menu_index, first_menu_index, -1 do
         assert(menu_index >= context.first_script_in_menu, "attempt to delete base file menu item")
         file_menu:DeleteItem(menu_index)
-        table.remove(context.script_items_list, first_menu_index - context.first_script_in_menu + 1)
+        local script_items_index = first_menu_index - context.first_script_in_menu + 1
+        kill_executing_items(script_items_index)
+        table.remove(context.script_items_list, script_items_index)
     end
     if all_files then
         context.selected_script_item = 1
@@ -469,6 +495,11 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
 end
 
 function output_to_console(...)
+    local time_stamp = ""
+    if config.show_timestamps then
+        local proc_time = hires_timer and (finale.FCUI.GetHiResTimer() - hires_timer) or 0
+        time_stamp = string.format("%.3f", proc_time) .. ": "
+    end
     local args = { ... } -- Pack all arguments into a table
     local formatted_args = {}
     for i, arg in ipairs(args) do
@@ -476,7 +507,7 @@ function output_to_console(...)
     end
     local range = finale.FCRange()
     output_text:GetTotalTextRange(range)
-    local new_line = range.Length > 0 and "\n" or ""
+    local new_line = range.Length > 0 and "\n"..time_stamp or time_stamp
     local formatted_string = new_line .. table.concat(formatted_args, "\t") -- Concatenate arguments with tabs
     output_text:AppendText(finale.FCString(formatted_string))
     output_text:ScrollToBottom()
@@ -494,9 +525,27 @@ local function write_line_numbers(num_lines)
         return string.rep(" ", leading_spaces) .. str_num .. trailing_space
     end
     local numbers_text = ""
+    line_number = 1
+    context.line_numbers = {}
     for i = 1, num_lines do
+        local do_number = true
+        if config.word_wrap and i > 1 then
+            local line_range = finale.FCRange()
+            edit_text:GetLineRangeForLine(i, line_range)
+            local unichar = edit_text:GetCharacterAtIndex(line_range.Start - 1)
+            if unichar ~= string.byte("\n") and unichar ~= string.byte("\r") then
+                do_number = false
+            end
+            print(line_number, unichar, do_number)
+        end
         local line_ending = i < num_lines and "\n" or ""
-        numbers_text = numbers_text .. format_number(i, 6) .. line_ending
+        if do_number then
+            context.line_numbers[line_number] = i
+            numbers_text = numbers_text .. format_number(line_number, 6) .. line_ending
+            line_number = line_number + 1
+        else
+            numbers_text = numbers_text .. line_ending
+        end
     end
     line_number_text:SetText(finale.FCString(numbers_text))
     line_number_text:ResetColors() -- mainly needed on macOS
@@ -510,7 +559,7 @@ function on_text_change(control)
     assert(control:GetControlID() == edit_text:GetControlID(), "on_text_change called for wrong control")
     local num_lines = control:GetNumberOfLines() -- this matches code lines because there is no word-wrap
     if num_lines < 1 then num_lines = 1 end
-    if num_lines ~= line_number_text:GetNumberOfLines() then
+    if config.word_wrap or num_lines ~= line_number_text:GetNumberOfLines() then
         -- checking if the number of lines changed avoids churn.
         write_line_numbers(num_lines)
     end
@@ -521,35 +570,38 @@ function on_text_change(control)
 end
 
 function on_execution_will_start(item)
+    kill_script_cmd:SetEnable(not in_execute_script_item)
     output_to_console("Running [" .. item.MenuItemText .. "] ======>")
     hires_timer = finale.FCUI.GetHiResTimer()
 end
 
 function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
+    local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
+    local processing_time_str = " (Processing time: " .. string.format("%.3f", proc_time) .. " s)"
     if success then
-        local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
-        output_to_console("<======= [" ..
-            item.MenuItemText .. "] succeeded (Processing time: " .. string.format("%.3f", proc_time) .. " s).")
+        output_to_console("<======= [" .. item.MenuItemText .. "] succeeded." .. processing_time_str)
     else
         -- script results have already been sent to ouput by RGP Lua, so skip them
         if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
             output_to_console(msg)
-            if msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION then
-                output_to_console("The RGP Lua Console does not support retaining Lua state or running modeless dialogs.")
-            end
-        elseif line_number > 0 then
+        end
+        if line_number > 0 then
+            actual_line_number = context.line_numbers[line_number]
             line_range = finale.FCRange()
-            line_number_text:GetLineRangeForLine(line_number, line_range)
+            line_number_text:GetLineRangeForLine(actual_line_number, line_range)
             total_range = finale.FCRange()
             line_number_text:GetTotalTextRange(total_range)
             if line_range.End < total_range.End then
                 line_range.Length = line_range.Length + 1
             end
             line_number_text:SetBackgroundColorInRange(255, 102, 102, line_range) -- Red background suitable for both white and black foreground
-            line_number_text:ScrollLineIntoView(line_number)
+            line_number_text:ScrollLineIntoView(actual_line_number)
         end
-        output_to_console("<======= [" .. item.MenuItemText .. "] FAILED.")
+        local final_result = (msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION) and "terminated" or "FAILED"
+        output_to_console("<======= [" .. item.MenuItemText .. "] " .. final_result .. "." .. processing_time_str)
     end
+    hires_timer = nil
+    kill_script_cmd:SetEnable(false)
 end
 
 local function on_clear_output(control)
@@ -566,11 +618,8 @@ local function on_copy_output(control)
 end
 
 local function on_run_script(control)
-    control:SetEnable(false)
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
-    local x = script_items.Count
-    local s = script_menu:GetSelectedItem()
     local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
     if script_text.LuaString == context.original_script_text then
         script_item.OptionalScriptText = nil -- this allows the filename to be used for error reporting
@@ -587,11 +636,19 @@ local function on_run_script(control)
         output_text:SetText(finale.FCString(""))
     end
     line_number_text:ResetColors()
+    in_execute_script_item = true
     finenv.ExecuteLuaScriptItem(script_item)
+    in_execute_script_item = false
+    kill_script_cmd:SetEnable(script_item:IsExecuting())
+    edit_text:SetKeyboardFocus()
+end
+
+local function on_terminate_script(control)
+    local script_items = context.script_items_list[context.selected_script_item].items
+    local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
     if script_item:IsExecuting() then
-        script_item:StopExecuting() -- for now, no support for modeless dialogs or RetainLuaState.
+        script_item:StopExecuting()
     end
-    control:SetEnable(true)         -- ToDo: leave it disabled if the script item is still running?
     edit_text:SetKeyboardFocus()
 end
 
@@ -631,27 +688,72 @@ local function on_config_dialog()
         return
     end
     local curr_y = 0
-    local y_separator = 30 -- includes control height
-    local x_rightcol = 160 --
+    local y_separator = 27 -- includes control height
+    local x_rightcol = 160
+    local win_edit_offset = 5
+    local mac_edit_offset = 3
     local dlg = finale.FCCustomLuaWindow()
     dlg:SetTitle(finale.FCString("Console Preferences"))
+    --
+    local total_width_label = dlg:CreateStatic(0, curr_y)
+    total_width_label:SetText(finale.FCString("Total Width: "))
+    total_width_label:SetWidth(x_rightcol-20)
+    local total_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+    total_width:SetInteger(config.total_width)
+    curr_y = curr_y + y_separator
+    --
+    local editor_height_label = dlg:CreateStatic(0, curr_y)
+    editor_height_label:SetText(finale.FCString("Editor Height: "))
+    editor_height_label:SetWidth(x_rightcol-20)
+    local editor_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+    editor_height:SetInteger(config.editor_height)
+    curr_y = curr_y + y_separator
+    --
+    local output_height_label = dlg:CreateStatic(0, curr_y)
+    output_height_label:SetText(finale.FCString("Output Console Height: "))
+    output_height_label:SetWidth(x_rightcol-20)
+    local output_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+    output_height:SetInteger(config.output_console_height)
+    curr_y = curr_y + y_separator
+    --
     local tab_stop_width_label = dlg:CreateStatic(0, curr_y)
-    tab_stop_width_label:SetText(finale.FCString("Tabstop width: "))
+    tab_stop_width_label:SetText(finale.FCString("Tabstop Width: "))
     tab_stop_width_label:SetWidth(x_rightcol-20)
-    local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     tab_stop_width:SetInteger(config.tabstop_width)
     curr_y = curr_y + y_separator
+    --
     local tabs_to_spaces = dlg:CreateCheckbox(0, curr_y)
-    tabs_to_spaces:SetText(finale.FCString("Use spaces for tabs"))
+    tabs_to_spaces:SetText(finale.FCString("Use Spaces for Tabs"))
     tabs_to_spaces:SetWidth(x_rightcol - 20)
     tabs_to_spaces:SetCheck(config.tabs_to_spaces and 1 or 0)
     curr_y = curr_y + y_separator
+    --
+    local word_wrap = dlg:CreateCheckbox(0, curr_y)
+    word_wrap:SetText(finale.FCString("Wrap Text in Editor"))
+    word_wrap:SetWidth(x_rightcol - 20)
+    word_wrap:SetCheck(config.word_wrap and 1 or 0)
+    curr_y = curr_y + y_separator
+    --
+    local show_time = dlg:CreateCheckbox(0, curr_y)
+    show_time:SetText(finale.FCString("Show Timestamps in Output"))
+    show_time:SetWidth(x_rightcol + 20)
+    show_time:SetCheck(config.show_timestamps and 1 or 0)
+    curr_y = curr_y + y_separator
+    --
     local output_tab_width_label = dlg:CreateStatic(0, curr_y)
-    output_tab_width_label:SetText(finale.FCString("Output tabstop width: "))
+    output_tab_width_label:SetText(finale.FCString("Output Tabstop Width: "))
     output_tab_width_label:SetWidth(x_rightcol-20)
-    local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(5, 1))
+    local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     output_tab_width:SetInteger(config.output_tabstop_width)
     curr_y = curr_y + y_separator
+    --
+    local output_wrap = dlg:CreateCheckbox(0, curr_y)
+    output_wrap:SetText(finale.FCString("Wrap Text in Output"))
+    output_wrap:SetWidth(x_rightcol - 20)
+    output_wrap:SetCheck(config.output_wrap and 1 or 0)
+    curr_y = curr_y + y_separator
+    --
     local font_label = dlg:CreateStatic(0, curr_y)
     font_label:SetWidth(x_rightcol-20)
     local function set_font_text(font_info)
@@ -661,7 +763,7 @@ local function on_config_dialog()
     end
     local font = finale.FCFontInfo(config.font_name, config.font_size)
     set_font_text(font)
-    local font_change = dlg:CreateButton(x_rightcol, curr_y - win_mac(5, 1))
+    local font_change = dlg:CreateButton(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     font_change:SetText(finale.FCString("Change..."))
     font_change:SetWidth(70)
     dlg:RegisterHandleControlEvent(font_change, function(control)
@@ -671,12 +773,19 @@ local function on_config_dialog()
             set_font_text(font)
         end
     end)
+    --
     dlg:CreateOkButton()
     dlg:CreateCancelButton()
     if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
-        config.tabstop_width = tab_stop_width:GetInteger()
+        config.total_width = math.max(580, total_width:GetInteger())
+        config.editor_height = math.max(120, editor_height:GetInteger())
+        config.output_console_height = math.max(60, output_height:GetInteger())
+        config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
-        config.output_tabstop_width = output_tab_width:GetInteger()
+        config.word_wrap = word_wrap:GetCheck() ~= 0
+        config.show_timestamps = show_time:GetCheck() ~= 0
+        config.output_wrap = output_wrap:GetCheck() ~= 0
+        config.output_tabstop_width = math.max(1, output_tab_width:GetInteger())
         local fcstr = finale.FCString()
         font:GetNameString(fcstr)
         config.font_name = fcstr.LuaString
@@ -704,7 +813,7 @@ local function on_init_window()
     for idx, str in pairsbykeys(context.file_menu_base) do
         file_menu:AddString(finale.FCString(str))
     end
-    for idx, itemcontext in pairsbykeys(context.script_items_list) do
+    for _, itemcontext in pairsbykeys(context.script_items_list) do
         local items = itemcontext.items
         local str = items:GetItemAt(0).FilePath
         if not itemcontext.exists then
@@ -723,6 +832,7 @@ local function on_init_window()
         file_menu:GetItemText(menu_idx, fc_str)
         select_script(fc_str.LuaString, context.selected_script_item)
     end
+    kill_script_cmd:SetEnable(false)
     clear_output_chk:SetCheck(config.clear_output_before_run and 1 or 0)
     run_as_debug_chk:SetCheck(config.run_as_debug and 1 or 0)
     run_as_trusted_chk:SetCheck(config.run_as_trusted and run_as_trusted_chk:GetEnable() and 1 or 0)
@@ -752,11 +862,14 @@ local function on_close_window()
     config.run_as_trusted = run_as_trusted_chk:GetCheck() ~= 0
     local recent_files_index = 0
     config.recent_files = {}
+    config.curr_script_item = context.selected_script_item
     for idx, items_entry in ipairs(context.script_items_list) do
         if items_entry.exists and items_entry.items.Count > 0 then
             recent_files_index = recent_files_index + 1
             local fp = items_entry.items:GetItemAt(0).FilePath
             config.recent_files[recent_files_index] = items_entry.items:GetItemAt(0).FilePath
+        elseif idx <= context.selected_script_item then
+            config.curr_script_item = config.curr_script_item - 1
         end
     end
     global_dialog:StorePosition()
@@ -766,6 +879,12 @@ local function on_close_window()
     config_write()
     if finenv.RetainLuaState then
         context.script_text = get_edit_text(edit_text).LuaString
+        if context.script_text == context.original_script_text then
+            -- if we are in a saved state, do not keep the current contents.
+            -- an external editor could modify the file and if we kept our current
+            -- version, we would erroneously believe we had edited it.
+            context.script_text = nil
+        end
         context.output_text = get_edit_text(output_text).LuaString
     end
 end
@@ -806,10 +925,10 @@ local create_dialog = function()
     local small_button_width = 70
     local button_height = 20
     local check_box_width = win_mac(105, 120)
-    local edit_text_height = 280
-    local output_height = edit_text_height / 2.2
+    local edit_text_height = config.editor_height
+    local output_height = config.output_console_height
     local line_number_width = math.ceil(config.font_advance_points * win_mac(7, 6) + 35)
-    local total_width = 960 -- make divisible by 3
+    local total_width = config.total_width
     local curr_y = 0
     local curr_x = 0
     -- script selection
@@ -824,10 +943,12 @@ local create_dialog = function()
     if finenv.UI():IsOnWindows() then
         line_number_text:SetUseRichText(true) -- this is needed on Windows for color flagging.
     end
+    line_number_text:SetWordWrap(config.word_wrap) -- this matches the presence/absence of a horizonal scrollbar on the editor
     edit_text = setup_editor_control(dialog:CreateTextEditor(line_number_width + x_separator, curr_y),
         total_width - line_number_width - x_separator, edit_text_height, true, config.tabstop_width)
     edit_text:SetConvertTabsToSpaces(config.tabs_to_spaces and config.tabstop_width or 0)
     edit_text:SetAutomaticallyIndent(true)
+    edit_text:SetWordWrap(config.word_wrap)
     curr_y = curr_y + y_separator + edit_text_height
     -- command buttons, misc.
     curr_x = 0
@@ -842,8 +963,12 @@ local create_dialog = function()
     curr_x = curr_x + check_box_width + x_separator
     line_ending_show = dialog:CreateStatic(curr_x, curr_y)
     line_ending_show:SetWidth(button_width)
-    curr_x = curr_x + check_box_width + x_separator
-    local run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y - win_mac(5, 1))
+    curr_x = curr_x + button_width + x_separator
+    kill_script_cmd = dialog:CreateButton(curr_x, curr_y - win_mac(5, 1))
+    kill_script_cmd:SetText(finale.FCString("Stop Script"))
+    kill_script_cmd:SetWidth(button_width)
+    curr_x = curr_x + button_width + x_separator
+    run_script_cmd = dialog:CreateButton(total_width - button_width, curr_y - win_mac(5, 1))
     run_script_cmd:SetText(finale.FCString("Run Script"))
     run_script_cmd:SetWidth(button_width)
     curr_y = curr_y + button_height + y_separator
@@ -866,6 +991,7 @@ local create_dialog = function()
     curr_y = curr_y + button_height
     output_text = setup_editor_control(dialog:CreateTextEditor(0, curr_y), total_width, output_height, false,
         config.output_tabstop_width)
+    output_text:SetWordWrap(config.output_wrap)
     curr_y = curr_y + output_height + y_separator
     -- close button line
     curr_x = 0
@@ -877,15 +1003,20 @@ local create_dialog = function()
     close_btn:SetWidth(small_button_width)
     -- registrations
     dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
+    dialog:RegisterHandleControlEvent(kill_script_cmd, on_terminate_script)
     dialog:RegisterHandleControlEvent(file_menu, on_file_popup)
     dialog:RegisterHandleControlEvent(edit_text, on_text_change)
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterHandleControlEvent(config_btn, on_config_dialog)
-    dialog:RegisterHandleScrollChanged(on_scroll)
+    dialog:RegisterScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     dialog:RegisterHandleTimer(on_timer)
+    dialog:RegisterHandleSaveRequest(function(control)
+        file_save()
+        return true
+    end)
     return dialog
 end
 
@@ -903,7 +1034,11 @@ local open_console = function()
             end
         end
         if script_items_index > 0 then
-            context.selected_script_item = 1
+            if config.curr_script_item >= 1 then
+                context.selected_script_item = config.curr_script_item
+            else
+                context.selected_script_item = 1
+            end
         end
     end
     global_dialog = create_dialog()
