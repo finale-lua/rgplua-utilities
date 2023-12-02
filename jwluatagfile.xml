@@ -18054,9 +18054,9 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
-      <name>STRFINDOPT_REGEXP</name>
+      <name>STRFINDOPT_REGEX</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba90a20ee1319296ee4b68db3cbdabcc42</anchor>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba09d2e7360c97158ce7d92f0e7e1e6de0</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -18072,9 +18072,9 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
-      <name>STRFINDOPT_REGEXP</name>
+      <name>STRFINDOPT_REGEX</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba90a20ee1319296ee4b68db3cbdabcc42</anchor>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba09d2e7360c97158ce7d92f0e7e1e6de0</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
