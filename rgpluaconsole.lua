@@ -4,7 +4,7 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.HandlesUndo = true
-    finaleplugin.MinJWLuaVersion = 0.68
+    finaleplugin.MinJWLuaVersion = 0.69
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
@@ -915,6 +915,16 @@ local function on_timer(timer_id)
     end
 end
 
+local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new }
+local function on_keyboard_command(control, character)
+    local char_string = utf8.char(character)
+    if not keyboard_command_funcs[char_string] then
+        return false
+    end
+    keyboard_command_funcs[char_string]()
+    return true
+end
+
 local create_dialog = function()
     local dialog = finale.FCCustomLuaWindow()
     dialog:SetTitle(finale.FCString("RGP Lua - Console"))
@@ -1013,10 +1023,7 @@ local create_dialog = function()
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     dialog:RegisterHandleTimer(on_timer)
-    dialog:RegisterHandleSaveRequest(function(control)
-        file_save()
-        return true
-    end)
+    dialog:RegisterHandleKeyboardCommand(on_keyboard_command)
     return dialog
 end
 
