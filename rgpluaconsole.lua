@@ -70,6 +70,9 @@ if not finenv.RetainLuaState then
         editor_height = 280,
         output_console_height = 130,
         curr_script_item = 0,
+        search_regex = false,
+        search_ignore_case = false,
+        search_whole_words = false,
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -96,7 +99,8 @@ if not finenv.RetainLuaState then
             end
             return str.LuaString
         end)(),
-        working_directory_valid = false
+        working_directory_valid = false,
+        search_pattern = nil
     }
 end
 
@@ -915,7 +919,24 @@ local function on_timer(timer_id)
     end
 end
 
-local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new }
+local function find_again()
+    local options = 0
+    if config.search_regex then
+        options = options | finale.STRFINDOPT_REGEX
+    end
+    if config.search_ignore_case then
+        options = options | finale.STRFINDOPT_IGNORECASE
+    end
+    if config.search_whole_words then
+        options = options | finale.STRFINDOPT_WHOLEWORDS
+    end
+    -- ToDo: search here
+end
+
+local function find_text()
+end
+
+local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = find_text, G = find_again }
 local function on_keyboard_command(control, character)
     local char_string = utf8.char(character)
     if not keyboard_command_funcs[char_string] then
