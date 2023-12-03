@@ -73,6 +73,7 @@ if not finenv.RetainLuaState then
         search_regex = false,
         search_ignore_case = false,
         search_whole_words = false,
+        search_currsel = false,
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -919,7 +920,11 @@ local function on_timer(timer_id)
     end
 end
 
-local function find_again()
+local function find_again(from_current)
+    assert(context.search_pattern == nil or type(context.search_pattern) == "string", "search pattern is not a string")
+    if not context.search_pattern or #context.search_pattern == 0 then
+        return
+    end
     local options = 0
     if config.search_regex then
         options = options | finale.STRFINDOPT_REGEX
@@ -930,10 +935,108 @@ local function find_again()
     if config.search_whole_words then
         options = options | finale.STRFINDOPT_WHOLEWORDS
     end
-    -- ToDo: search here
+    local selected_range = finale.FCRange()
+    edit_text:GetSelection(selected_range)
+    local curr_pos = selected_range.Start
+    local use_curr_sel = from_current and config.search_currsel and selected_range.Length > 0
+    if not use_curr_sel then
+        edit_text:GetTotalTextRange(selected_range)
+    end
+    local ranges = edit_text:CreateRangesForString(finale.FCString(context.search_pattern), options, selected_range)
+    local found_range = nil
+    if ranges then
+        if from_current then
+            curr_pos = curr_pos - 1
+        end
+        for range in each(ranges) do
+            if range.Start > curr_pos then
+                found_range = range
+                break
+            end
+        end
+        if not found_range then
+            found_range = ranges:GetItemAt(0)
+        end
+    end
+    if found_range then
+        edit_text:SetSelection(found_range)
+        edit_text:ScrollLineIntoView(edit_text:GetLineForPosition(found_range.Start))
+    else
+        local message = "Search pattern not found"
+        if use_curr_sel then
+            message = message .. " in current selection"
+        end
+        global_dialog:CreateChildUI():AlertInfo(message .. ".", "Not Found")
+    end
+    edit_text:SetKeyboardFocus()
 end
 
 local function find_text()
+    local curr_y = 0
+    local curr_x = 0
+    local y_separator = 27 -- includes control height
+    local x_separator = 5
+    local win_edit_offset = 5
+    local mac_edit_offset = 3
+    local check_box_width = 100
+    local dlg = finale.FCCustomLuaWindow()
+    dlg:SetTitle(finale.FCString("Find Text"))
+    --
+    local find_text_label = dlg:CreateStatic(curr_x, curr_y)
+    find_text_label:SetText(finale.FCString("Text:"))
+    find_text_label:SetWidth(40)
+    curr_x = curr_x + 45
+    local find_text = dlg:CreateEdit(curr_x, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+    find_text:SetText(finale.FCString(context.search_text))
+    find_text:SetWidth(check_box_width * 3)
+    curr_y = curr_y + y_separator
+    --
+    curr_x = 0
+    local case_sensitive = dlg:CreateCheckbox(curr_x, curr_y)
+    case_sensitive:SetText(finale.FCString("Case Sensitive"))
+    case_sensitive:SetWidth(check_box_width)
+    curr_x = curr_x + check_box_width + x_separator
+    local whole_words = dlg:CreateCheckbox(curr_x, curr_y)
+    whole_words:SetText(finale.FCString("Whole Words"))
+    whole_words:SetWidth(check_box_width)
+    curr_x = curr_x + check_box_width + x_separator
+    local regular_expressions = dlg:CreateCheckbox(curr_x, curr_y)
+    regular_expressions:SetText(finale.FCString("Regular Expressions"))
+    regular_expressions:SetWidth(check_box_width + 30)
+    dlg:RegisterHandleControlEvent(regular_expressions, function(control)
+        whole_words:SetEnable(control:GetCheck() == 0)
+    end)
+    curr_y = curr_y + y_separator
+    --
+    curr_x = 0
+    local current_selection_only = dlg:CreateCheckbox(curr_x, curr_y)
+    current_selection_only:SetText(finale.FCString("Current Selection Only"))
+    current_selection_only:SetWidth(2*check_box_width)
+    curr_y = curr_y + y_separator
+    --
+    dlg:CreateOkButton()
+    dlg:CreateCancelButton()
+    dlg:RegisterInitWindow(function()
+        find_text:SetText(finale.FCString(context.search_pattern))
+        case_sensitive:SetCheck(not config.search_ignore_case and 1 or 0)
+        whole_words:SetCheck(config.search_whole_words and 1 or 0)
+        whole_words:SetEnable(not config.search_regex)
+        regular_expressions:SetCheck(config.search_regex and 1 or 0)
+        current_selection_only:SetCheck(config.search_currsel and 1 or 0)
+        local sel_range = finale.FCRange()
+        edit_text:GetSelection(sel_range)
+        current_selection_only:SetEnable(sel_range.Length > 0)
+    end)
+    if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
+        local fctext = finale.FCString()
+        find_text:GetText(fctext)
+        context.search_pattern = fctext.LuaString
+        config.search_ignore_case = case_sensitive:GetCheck() == 0
+        config.search_whole_words = whole_words:GetCheck() ~= 0
+        config.search_regex = regular_expressions:GetCheck() ~= 0
+        config.search_currsel = current_selection_only:GetCheck() ~= 0
+        find_again(true)
+    end
 end
 
 local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = find_text, G = find_again }
