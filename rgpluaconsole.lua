@@ -45,6 +45,8 @@ local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
 local in_execute_script_item      -- tracks is we are inside on_run_script
+local find_requested         -- used by Windows to trigger the Find dialog box
+local in_timer              -- used to prevent timer reentrancy
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -894,32 +896,6 @@ local function on_close_window()
     end
 end
 
-local function on_timer(timer_id)
-    if timer_id ~= global_timer_id then return end
-    local list_item = context.script_items_list[context.selected_script_item]
-    if list_item.exists then
-        assert(list_item.items.Count > 0, "list items exist but there are no script items")
-        assert(context.modification_time, "modification time was not set")
-        local filepath = list_item.items:GetItemAt(0).FilePath
-        local file_info = lfs.attributes(encode_file_path(filepath))
-        if file_info and file_info.modification ~= context.modification_time then
-            local script_text = get_edit_text(edit_text)
-            if context.original_script_text == script_text.LuaString then -- no modifications here
-                local file <close> = io.open(encode_file_path(filepath), "rb")
-                if file then
-                    local modified_text = file:read("a")
-                    local curr_scroll_pos = line_number_text:GetVerticalScrollPosition()
-                    set_edit_text(edit_text, finale.FCString(modified_text))
-                    context.modification_time = file_info.modification
-                    line_number_text:ScrollToVerticalPosition(curr_scroll_pos)
-                    list_item.items = finenv.CreateLuaScriptItemsFromFilePath(filepath, modified_text)
-                    update_script_menu(list_item.items)
-                end
-            end
-        end
-    end
-end
-
 local function find_again(from_current)
     assert(context.search_pattern == nil or type(context.search_pattern) == "string", "search pattern is not a string")
     if not context.search_pattern or #context.search_pattern == 0 then
@@ -959,8 +935,8 @@ local function find_again(from_current)
         end
     end
     if found_range then
+        edit_text:ScrollLineIntoView(edit_text:GetLineForPosition(found_range.Start)) -- Windows needs to scroll before setting selection
         edit_text:SetSelection(found_range)
-        edit_text:ScrollLineIntoView(edit_text:GetLineForPosition(found_range.Start))
     else
         local message = "Search pattern not found"
         if use_curr_sel then
@@ -1011,7 +987,7 @@ local function find_text()
     curr_x = 0
     local current_selection_only = dlg:CreateCheckbox(curr_x, curr_y)
     current_selection_only:SetText(finale.FCString("Current Selection Only"))
-    current_selection_only:SetWidth(2*check_box_width)
+    current_selection_only:SetWidth(2 * check_box_width)
     curr_y = curr_y + y_separator
     --
     dlg:CreateOkButton()
@@ -1039,7 +1015,50 @@ local function find_text()
     end
 end
 
-local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = find_text, G = find_again }
+local function on_timer(timer_id)
+    if timer_id ~= global_timer_id then return end
+    if in_timer then
+        return
+    end
+    in_timer = true
+    if find_requested then
+        find_text()
+        find_requested = false
+    end
+    local list_item = context.script_items_list[context.selected_script_item]
+    if list_item.exists then
+        assert(list_item.items.Count > 0, "list items exist but there are no script items")
+        assert(context.modification_time, "modification time was not set")
+        local filepath = list_item.items:GetItemAt(0).FilePath
+        local file_info = lfs.attributes(encode_file_path(filepath))
+        if file_info and file_info.modification ~= context.modification_time then
+            local script_text = get_edit_text(edit_text)
+            if context.original_script_text == script_text.LuaString then -- no modifications here
+                local file <close> = io.open(encode_file_path(filepath), "rb")
+                if file then
+                    local modified_text = file:read("a")
+                    local curr_scroll_pos = line_number_text:GetVerticalScrollPosition()
+                    set_edit_text(edit_text, finale.FCString(modified_text))
+                    context.modification_time = file_info.modification
+                    line_number_text:ScrollToVerticalPosition(curr_scroll_pos)
+                    list_item.items = finenv.CreateLuaScriptItemsFromFilePath(filepath, modified_text)
+                    update_script_menu(list_item.items)
+                end
+            end
+        end
+    end
+    in_timer = false
+end
+
+local function on_find_text()
+    if finenv:UI():IsOnMac() then
+        return find_text()
+    end
+    -- It appears FX_Dialog cannot open a new dialog inside a WM_KEYDOWN handler, so work around it
+    find_requested = true
+end
+
+local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = on_find_text, G = find_again }
 local function on_keyboard_command(control, character)
     local char_string = utf8.char(character)
     if not keyboard_command_funcs[char_string] then
@@ -1132,7 +1151,11 @@ local create_dialog = function()
     local config_btn = dialog:CreateButton(curr_x, curr_y)
     config_btn:SetText(finale.FCString("Preferences..."))
     config_btn:SetWidth(100)
-    curr_x = curr_x + 40 + x_separator
+    curr_x = curr_x + 100 + x_separator
+    local search_btn = dialog:CreateButton(curr_x, curr_y)
+    search_btn:SetWidth(80)
+    search_btn:SetText(finale.FCString("Search..."))
+    curr_x = curr_x + 80 + x_separator
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
@@ -1143,6 +1166,9 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterHandleControlEvent(config_btn, on_config_dialog)
+    dialog:RegisterHandleControlEvent(search_btn, function(control)
+        find_text()
+    end)
     dialog:RegisterScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
