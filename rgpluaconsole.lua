@@ -1058,7 +1058,7 @@ local function on_find_text()
     find_requested = true
 end
 
-local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = on_find_text, G = find_again }
+local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = on_find_text, G = find_again, W = do_file_close }
 local function on_keyboard_command(control, character)
     local char_string = utf8.char(character)
     if not keyboard_command_funcs[char_string] then
@@ -1167,7 +1167,11 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterHandleControlEvent(config_btn, on_config_dialog)
     dialog:RegisterHandleControlEvent(search_btn, function(control)
-        find_text()
+        if dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+            find_again()
+        else
+            find_text()
+        end
     end)
     dialog:RegisterScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
