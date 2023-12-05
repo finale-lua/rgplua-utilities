@@ -22748,6 +22748,97 @@
     <name>FCFontInfo</name>
     <filename>class_f_c_font_info.html</filename>
     <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>ENIGMASTYLES</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_PLAIN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaafd7866780faea5e675484018baeb280</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_BOLD</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda7474785f49e5a7d40d1239d789462117</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ITALIC</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaef8119118235d06225068456205833a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_UNDERLINE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddabee67a45f86aa69a5286bb9873b92445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_STRIKEOUT</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda233b06e6086a663806df8a771516ee22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ABSOLUTE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddacf05c2e00f3a609c33f3d8b87cfe1fff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_HIDDEN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaa5650ff4d938dc8c7dde1d64bd054e36</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_PLAIN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaafd7866780faea5e675484018baeb280</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_BOLD</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda7474785f49e5a7d40d1239d789462117</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ITALIC</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaef8119118235d06225068456205833a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_UNDERLINE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddabee67a45f86aa69a5286bb9873b92445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_STRIKEOUT</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda233b06e6086a663806df8a771516ee22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ABSOLUTE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddacf05c2e00f3a609c33f3d8b87cfe1fff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_HIDDEN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaa5650ff4d938dc8c7dde1d64bd054e36</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -22773,8 +22864,8 @@
       <type></type>
       <name>FCFontInfo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a02c6398596ae3c6bd5f01ff6e9857195</anchor>
-      <arglist>(const FCString &amp;name, double size, FLAG_16 enigmastyles=0)</arglist>
+      <anchor>ab833aa9f6b5a507318a25fcb552f6aaa</anchor>
+      <arglist>(const FCString &amp;name, double size, FLAG_16 enigmastyles=ENIGMASTYLE_PLAIN)</arglist>
     </member>
     <member kind="function">
       <type></type>
