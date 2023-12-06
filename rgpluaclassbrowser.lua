@@ -225,7 +225,7 @@ function on_classname_changed(new_classname)
     if namespace then
         name_for_display = namespace.."."..name_for_display
         local classtable = _G[namespace][current_class_name]
-        if type(classtable) == "table" then
+        if type(classtable) == "table" and classtable.__parent then
             for k, _ in pairs(classtable.__parent) do
                 name_for_display = name_for_display.." : "..k
             end
