@@ -618,7 +618,7 @@ end
 
 local function on_copy_output(control)
     local text_for_output = finale.FCString()
-    text_for_output:GetText(text_for_output)
+    output_text:GetText(text_for_output)
     local line_ending = #text_for_output.LuaString > 0 and "\n" or ""
     finenv.UI():TextToClipboard(text_for_output.LuaString .. line_ending)
     edit_text:SetKeyboardFocus()
