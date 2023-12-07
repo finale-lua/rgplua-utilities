@@ -410,7 +410,8 @@ create_class_index_xml = function()
             local class_info = { _attr = { kind = 'class' }, __members = {} }
             class_info.name = compound:FirstChildElement("name"):GetText()
             class_info.filename = compound:FirstChildElement("filename"):GetText()
-            class_info.base = compound:FirstChildElement("filename"):GetText()
+            local base_element = compound:FirstChildElement("base")
+            class_info.base = base_element and base_element:GetText() or nil
             for member in xmlelements(compound, "member") do
                 if member:Attribute("kind", "function") then
                     local member_info = { _attr = { kind = 'function' } }
