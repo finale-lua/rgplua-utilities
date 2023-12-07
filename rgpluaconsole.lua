@@ -4,7 +4,7 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.HandlesUndo = true
-    finaleplugin.MinJWLuaVersion = 0.68
+    finaleplugin.MinJWLuaVersion = 0.69
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
@@ -45,6 +45,8 @@ local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
 local in_execute_script_item      -- tracks is we are inside on_run_script
+local find_requested         -- used by Windows to trigger the Find dialog box
+local in_timer              -- used to prevent timer reentrancy
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -70,6 +72,10 @@ if not finenv.RetainLuaState then
         editor_height = 280,
         output_console_height = 130,
         curr_script_item = 0,
+        search_regex = false,
+        search_ignore_case = false,
+        search_whole_words = false,
+        search_currsel = false,
         window_pos_valid = false,
         window_pos_x = 0, -- must be non-nil so config reader captures it
         window_pos_y = 0, -- must be non-nil so config reader captures it
@@ -96,7 +102,8 @@ if not finenv.RetainLuaState then
             end
             return str.LuaString
         end)(),
-        working_directory_valid = false
+        working_directory_valid = false,
+        search_pattern = nil
     }
 end
 
@@ -611,7 +618,7 @@ end
 
 local function on_copy_output(control)
     local text_for_output = finale.FCString()
-    text_for_output:GetText(text_for_output)
+    output_text:GetText(text_for_output)
     local line_ending = #text_for_output.LuaString > 0 and "\n" or ""
     finenv.UI():TextToClipboard(text_for_output.LuaString .. line_ending)
     edit_text:SetKeyboardFocus()
@@ -889,8 +896,135 @@ local function on_close_window()
     end
 end
 
+local function find_again(from_current)
+    assert(context.search_pattern == nil or type(context.search_pattern) == "string", "search pattern is not a string")
+    if not context.search_pattern or #context.search_pattern == 0 then
+        return
+    end
+    local options = 0
+    if config.search_regex then
+        options = options | finale.STRFINDOPT_REGEX
+    end
+    if config.search_ignore_case then
+        options = options | finale.STRFINDOPT_IGNORECASE
+    end
+    if config.search_whole_words then
+        options = options | finale.STRFINDOPT_WHOLEWORDS
+    end
+    local selected_range = finale.FCRange()
+    edit_text:GetSelection(selected_range)
+    local curr_pos = selected_range.Start
+    local use_curr_sel = from_current and config.search_currsel and selected_range.Length > 0
+    if not use_curr_sel then
+        edit_text:GetTotalTextRange(selected_range)
+    end
+    local ranges = edit_text:CreateRangesForString(finale.FCString(context.search_pattern), options, selected_range)
+    local found_range = nil
+    if ranges then
+        if from_current then
+            curr_pos = curr_pos - 1
+        end
+        for range in each(ranges) do
+            if range.Start > curr_pos then
+                found_range = range
+                break
+            end
+        end
+        if not found_range then
+            found_range = ranges:GetItemAt(0)
+        end
+    end
+    if found_range then
+        edit_text:ScrollLineIntoView(edit_text:GetLineForPosition(found_range.Start)) -- Windows needs to scroll before setting selection
+        edit_text:SetSelection(found_range)
+    else
+        local message = "Search pattern not found"
+        if use_curr_sel then
+            message = message .. " in current selection"
+        end
+        global_dialog:CreateChildUI():AlertInfo(message .. ".", "Not Found")
+    end
+    edit_text:SetKeyboardFocus()
+end
+
+local function find_text()
+    local curr_y = 0
+    local curr_x = 0
+    local y_separator = 27 -- includes control height
+    local x_separator = 5
+    local win_edit_offset = 5
+    local mac_edit_offset = 3
+    local check_box_width = 100
+    local dlg = finale.FCCustomLuaWindow()
+    dlg:SetTitle(finale.FCString("Find Text"))
+    --
+    local find_text_label = dlg:CreateStatic(curr_x, curr_y)
+    find_text_label:SetText(finale.FCString("Text:"))
+    find_text_label:SetWidth(40)
+    curr_x = curr_x + 45
+    local find_text = dlg:CreateEdit(curr_x, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+    find_text:SetText(finale.FCString(context.search_text))
+    find_text:SetWidth(check_box_width * 3)
+    curr_y = curr_y + y_separator
+    --
+    curr_x = 0
+    local case_sensitive = dlg:CreateCheckbox(curr_x, curr_y)
+    case_sensitive:SetText(finale.FCString("Case Sensitive"))
+    case_sensitive:SetWidth(check_box_width)
+    curr_x = curr_x + check_box_width + x_separator
+    local whole_words = dlg:CreateCheckbox(curr_x, curr_y)
+    whole_words:SetText(finale.FCString("Whole Words"))
+    whole_words:SetWidth(check_box_width)
+    curr_x = curr_x + check_box_width + x_separator
+    local regular_expressions = dlg:CreateCheckbox(curr_x, curr_y)
+    regular_expressions:SetText(finale.FCString("Regular Expressions"))
+    regular_expressions:SetWidth(check_box_width + 30)
+    dlg:RegisterHandleControlEvent(regular_expressions, function(control)
+        whole_words:SetEnable(control:GetCheck() == 0)
+    end)
+    curr_y = curr_y + y_separator
+    --
+    curr_x = 0
+    local current_selection_only = dlg:CreateCheckbox(curr_x, curr_y)
+    current_selection_only:SetText(finale.FCString("Current Selection Only"))
+    current_selection_only:SetWidth(2 * check_box_width)
+    curr_y = curr_y + y_separator
+    --
+    dlg:CreateOkButton()
+    dlg:CreateCancelButton()
+    dlg:RegisterInitWindow(function()
+        find_text:SetText(finale.FCString(context.search_pattern))
+        case_sensitive:SetCheck(not config.search_ignore_case and 1 or 0)
+        whole_words:SetCheck(config.search_whole_words and 1 or 0)
+        whole_words:SetEnable(not config.search_regex)
+        regular_expressions:SetCheck(config.search_regex and 1 or 0)
+        current_selection_only:SetCheck(config.search_currsel and 1 or 0)
+        local sel_range = finale.FCRange()
+        edit_text:GetSelection(sel_range)
+        current_selection_only:SetEnable(sel_range.Length > 0)
+    end)
+    if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
+        local fctext = finale.FCString()
+        find_text:GetText(fctext)
+        context.search_pattern = fctext.LuaString
+        config.search_ignore_case = case_sensitive:GetCheck() == 0
+        config.search_whole_words = whole_words:GetCheck() ~= 0
+        config.search_regex = regular_expressions:GetCheck() ~= 0
+        config.search_currsel = current_selection_only:GetCheck() ~= 0
+        find_again(true)
+    end
+end
+
 local function on_timer(timer_id)
     if timer_id ~= global_timer_id then return end
+    if in_timer then
+        return
+    end
+    in_timer = true
+    if find_requested then
+        find_text()
+        find_requested = false
+    end
     local list_item = context.script_items_list[context.selected_script_item]
     if list_item.exists then
         assert(list_item.items.Count > 0, "list items exist but there are no script items")
@@ -913,6 +1047,25 @@ local function on_timer(timer_id)
             end
         end
     end
+    in_timer = false
+end
+
+local function on_find_text()
+    if finenv:UI():IsOnMac() then
+        return find_text()
+    end
+    -- It appears FX_Dialog cannot open a new dialog inside a WM_KEYDOWN handler, so work around it
+    find_requested = true
+end
+
+local keyboard_command_funcs = { S = file_save, O = file_open, N = file_new, F = on_find_text, G = find_again, W = do_file_close }
+local function on_keyboard_command(control, character)
+    local char_string = utf8.char(character)
+    if not keyboard_command_funcs[char_string] then
+        return false
+    end
+    keyboard_command_funcs[char_string]()
+    return true
 end
 
 local create_dialog = function()
@@ -998,7 +1151,11 @@ local create_dialog = function()
     local config_btn = dialog:CreateButton(curr_x, curr_y)
     config_btn:SetText(finale.FCString("Preferences..."))
     config_btn:SetWidth(100)
-    curr_x = curr_x + 40 + x_separator
+    curr_x = curr_x + 100 + x_separator
+    local search_btn = dialog:CreateButton(curr_x, curr_y)
+    search_btn:SetWidth(80)
+    search_btn:SetText(finale.FCString("Search..."))
+    curr_x = curr_x + 80 + x_separator
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
@@ -1009,14 +1166,18 @@ local create_dialog = function()
     dialog:RegisterHandleControlEvent(clear_now, on_clear_output)
     dialog:RegisterHandleControlEvent(copy_output, on_copy_output)
     dialog:RegisterHandleControlEvent(config_btn, on_config_dialog)
+    dialog:RegisterHandleControlEvent(search_btn, function(control)
+        if dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+            find_again()
+        else
+            find_text()
+        end
+    end)
     dialog:RegisterScrollChanged(on_scroll)
     dialog:RegisterInitWindow(on_init_window)
     dialog:RegisterCloseWindow(on_close_window)
     dialog:RegisterHandleTimer(on_timer)
-    dialog:RegisterHandleSaveRequest(function(control)
-        file_save()
-        return true
-    end)
+    dialog:RegisterHandleKeyboardCommand(on_keyboard_command)
     return dialog
 end
 

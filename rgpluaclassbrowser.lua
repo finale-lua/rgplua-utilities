@@ -225,7 +225,7 @@ function on_classname_changed(new_classname)
     if namespace then
         name_for_display = namespace.."."..name_for_display
         local classtable = _G[namespace][current_class_name]
-        if type(classtable) == "table" then
+        if type(classtable) == "table" and classtable.__parent then
             for k, _ in pairs(classtable.__parent) do
                 name_for_display = name_for_display.." : "..k
             end
@@ -410,7 +410,8 @@ create_class_index_xml = function()
             local class_info = { _attr = { kind = 'class' }, __members = {} }
             class_info.name = compound:FirstChildElement("name"):GetText()
             class_info.filename = compound:FirstChildElement("filename"):GetText()
-            class_info.base = compound:FirstChildElement("filename"):GetText()
+            local base_element = compound:FirstChildElement("base")
+            class_info.base = base_element and base_element:GetText() or nil
             for member in xmlelements(compound, "member") do
                 if member:Attribute("kind", "function") then
                     local member_info = { _attr = { kind = 'function' } }

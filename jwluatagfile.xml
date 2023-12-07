@@ -9860,10 +9860,10 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
-      <name>HandleSaveRequest</name>
+      <name>HandleKeyboardCommand</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a62f47165e971e736f02d1eb24e93ebd8</anchor>
-      <arglist>(FCControl *pControl)</arglist>
+      <anchor>af18176ed3f6ab5a672595f7bedeb16ae</anchor>
+      <arglist>(FCControl *pControl, eUniChar16 character)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -18054,6 +18054,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>STRFINDOPT_REGEX</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba09d2e7360c97158ce7d92f0e7e1e6de0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>STRFINDOPT_IGNORECASE</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>aef23e2e6644e95b4e0b4cec53653fbeba0e4ebb2a448f2e743d817bf024b247b4</anchor>
@@ -18063,6 +18069,12 @@
       <name>STRFINDOPT_WHOLEWORDS</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>aef23e2e6644e95b4e0b4cec53653fbebaaf42098a6f97da349475892af530a9fe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRFINDOPT_REGEX</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aef23e2e6644e95b4e0b4cec53653fbeba09d2e7360c97158ce7d92f0e7e1e6de0</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -18871,9 +18883,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>RegisterHandleSaveRequest</name>
+      <name>RegisterHandleKeyboardCommand</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a15b043296d9e78ad908dac207801e1dc</anchor>
+      <anchor>aae366b645c19c147e4c3734a48ff7e07</anchor>
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
@@ -18983,10 +18995,10 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>HandleSaveRequest</name>
+      <name>HandleKeyboardCommand</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>ab7942c2995b34828cddcf7530a2adc44</anchor>
-      <arglist>(FCControl *pControl) override</arglist>
+      <anchor>affc1ecc298360dac938d83b9c6d5be24</anchor>
+      <arglist>(FCControl *pControl, eUniChar16 character) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -22736,6 +22748,97 @@
     <name>FCFontInfo</name>
     <filename>class_f_c_font_info.html</filename>
     <base>__FCBase</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>ENIGMASTYLES</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_PLAIN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaafd7866780faea5e675484018baeb280</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_BOLD</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda7474785f49e5a7d40d1239d789462117</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ITALIC</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaef8119118235d06225068456205833a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_UNDERLINE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddabee67a45f86aa69a5286bb9873b92445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_STRIKEOUT</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda233b06e6086a663806df8a771516ee22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ABSOLUTE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddacf05c2e00f3a609c33f3d8b87cfe1fff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_HIDDEN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaa5650ff4d938dc8c7dde1d64bd054e36</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_PLAIN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaafd7866780faea5e675484018baeb280</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_BOLD</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda7474785f49e5a7d40d1239d789462117</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ITALIC</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaef8119118235d06225068456205833a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_UNDERLINE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddabee67a45f86aa69a5286bb9873b92445</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_STRIKEOUT</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cdda233b06e6086a663806df8a771516ee22</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_ABSOLUTE</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddacf05c2e00f3a609c33f3d8b87cfe1fff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ENIGMASTYLE_HIDDEN</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>ac52dd376a24069038ac379c8b8fe8cddaa5650ff4d938dc8c7dde1d64bd054e36</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
@@ -22761,8 +22864,8 @@
       <type></type>
       <name>FCFontInfo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a02c6398596ae3c6bd5f01ff6e9857195</anchor>
-      <arglist>(const FCString &amp;name, double size, FLAG_16 enigmastyles=0)</arglist>
+      <anchor>ab833aa9f6b5a507318a25fcb552f6aaa</anchor>
+      <arglist>(const FCString &amp;name, double size, FLAG_16 enigmastyles=ENIGMASTYLE_PLAIN)</arglist>
     </member>
     <member kind="function">
       <type></type>
