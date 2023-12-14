@@ -21,6 +21,18 @@ local lfs = require("lfs")
 local osutils = require("luaosutils")
 local text = osutils.text
 
+-- Keep configured_script_items at the top level so that it exists as long as the script runs.
+-- This guarantees that browser_script_item does not get destroyed.
+local configured_script_items = finenv.CreateLuaScriptItems()
+local browser_script_item = (function()
+    for item in each(configured_script_items) do
+        if item.MenuItemText == "RGP Lua Class Browser..." then
+            return item
+        end
+    end
+    return nil
+end)()
+
 local function win_mac(winval, macval)
     if finenv.UI():IsOnWindows() then return winval end
     return macval
@@ -1156,6 +1168,11 @@ local create_dialog = function()
     search_btn:SetWidth(80)
     search_btn:SetText(finale.FCString("Search..."))
     curr_x = curr_x + 80 + x_separator
+    local browser_btn = dialog:CreateButton(curr_x, curr_y)
+    browser_btn:SetText(finale.FCString("Class Browser..."))
+    browser_btn:SetWidth(110)
+    browser_btn:SetEnable(browser_script_item ~= nil)
+    curr_x = curr_x + 110 + x_separator
     local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
@@ -1171,6 +1188,11 @@ local create_dialog = function()
             find_again()
         else
             find_text()
+        end
+    end)
+    dialog:RegisterHandleControlEvent(browser_btn, function(control)
+        if browser_script_item then
+            finenv.ExecuteLuaScriptItem(browser_script_item)
         end
     end)
     dialog:RegisterScrollChanged(on_scroll)
