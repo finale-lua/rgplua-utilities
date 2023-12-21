@@ -143,16 +143,16 @@ function get_properties_methods(classname)
     for k, v in pairs(classtable.__class) do
         local metadata = get_metadata(v)
         local rettype, args = method_info(class_info, k)
-        methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1] }
+        methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
     end
     for k, v in pairs(classtable.__propget) do
         local metadata = get_metadata(v)
-        properties[k] = { class = classname, readable = true, writeable = false, deprecated = metadata[1] }
+        properties[k] = { class = classname, readable = true, writeable = false, deprecated = metadata[1], first_avail = metadata[2]}
     end
     for k, v in pairs(classtable.__propset) do
         if nil == properties[k] then
             local metadata = get_metadata(v)
-            properties[k] = { class = classname, readable = false, writeable = true, deprecated = metadata[1] }
+            properties[k] = { class = classname, readable = false, writeable = true, deprecated = metadata[1], first_avail = metadata[2]}
         else
             properties[k].writeable = true
         end
@@ -160,7 +160,7 @@ function get_properties_methods(classname)
     for k, v in pairs(classtable.__static) do
         local metadata = get_metadata(v)
         local rettype, args = method_info(class_info, k)
-        class_methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1] }
+        class_methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
     end
     if classtable.__parent then
         for k, _ in pairs(classtable.__parent) do
@@ -322,7 +322,9 @@ function on_method_selection(list_control, index)
                     set_text(list_info.arglist_static, method_info.arglist)
                     set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
                 end
-                set_text(list_info.first_avail, method_info.first_avail or "JW Lua")
+                if global_metadata_available then
+                    set_text(list_info.first_avail, #method_info.first_avail > 0 and method_info.first_avail or "JW Lua")
+                end
                 if get_edit_text(list_info.fullname_static) ~= "" then
                     show = true
                 end
