@@ -69,6 +69,7 @@ global_dialog_info = {}     -- key: list control id or hard-coded string, value:
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
 global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
 global_progress_label = nil
+global_metadata_available = false
 
 current_class_name = ""
 changing_class_name_in_progress = false
@@ -129,23 +130,37 @@ function get_properties_methods(classname)
     local classtable = _G[namespace][classname]
     if type(classtable) ~= "table" then return nil end
     local class_info = global_class_index[classname]
-    for k, _ in pairs(classtable.__class) do
+    local function get_metadata(v)
+        -- versions before RGP Lua 0.70 return a meaningless string
+        if type(v) == "table" then
+            if not global_metadata_available then
+                global_metadata_available = true
+            end
+            return v
+        end
+        return {false, ""}
+    end
+    for k, v in pairs(classtable.__class) do
+        local metadata = get_metadata(v)
         local rettype, args = method_info(class_info, k)
-        methods[k] = { class = classname, arglist = args, returns = rettype }
+        methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1] }
     end
-    for k, _ in pairs(classtable.__propget) do
-        properties[k] = { class = classname, readable = true, writeable = false }
+    for k, v in pairs(classtable.__propget) do
+        local metadata = get_metadata(v)
+        properties[k] = { class = classname, readable = true, writeable = false, deprecated = metadata[1] }
     end
-    for k, _ in pairs(classtable.__propset) do
+    for k, v in pairs(classtable.__propset) do
         if nil == properties[k] then
-            properties[k] = { class = classname, readable = false, writeable = true }
+            local metadata = get_metadata(v)
+            properties[k] = { class = classname, readable = false, writeable = true, deprecated = metadata[1] }
         else
             properties[k].writeable = true
         end
     end
-    for k, _ in pairs(classtable.__static) do
+    for k, v in pairs(classtable.__static) do
+        local metadata = get_metadata(v)
         local rettype, args = method_info(class_info, k)
-        class_methods[k] = { class = classname, arglist = args, returns = rettype }
+        class_methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1] }
     end
     if classtable.__parent then
         for k, _ in pairs(classtable.__parent) do
@@ -188,6 +203,9 @@ function update_list(list_control, source_table, search_text)
                         end
                         str = str .. "]"
                         fcstring.LuaString = fcstring.LuaString .. str
+                    end
+                    if v.deprecated then
+                        fcstring.LuaString = fcstring.LuaString .. " ⚠️"
                     end
                 end
                 list_control:AddString(fcstring)
@@ -266,6 +284,11 @@ function hide_show_display_area(list_info, show)
         list_info.arglist_label:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
         list_info.arglist_static:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
     end
+    if global_metadata_available then
+        list_info.first_avail_label:SetVisible(show)
+        list_info.first_avail:SetVisible(show)
+    end
+    list_info.show_deprecated:SetVisible(show)
 end
 
 function get_plain_string(list_control, index)
@@ -289,14 +312,17 @@ function on_method_selection(list_control, index)
                 if list_info.is_property then
                     local methods_list_info = global_dialog_info[global_control_xref["methods"]]
                     local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
-                                                    or methods_list_info.current_strings[method_name]
+                        or methods_list_info.current_strings[method_name]
                     if property_getter_info then
                         set_text(list_info.returns_static, property_getter_info.returns)
                     end
+                    set_text(list_info.show_deprecated, property_getter_info.deprecated and "**deprecated**" or "")
                 else
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
+                    set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
                 end
+                set_text(list_info.first_avail, method_info.first_avail or "JW Lua")
                 if get_edit_text(list_info.fullname_static) ~= "" then
                     show = true
                 end
@@ -603,6 +629,9 @@ local create_dialog = function()
             returns_static = nil,
             arglist_label = nil,
             arglist_static = nil,
+            first_avail_label = nil,
+            first_avail = nil,
+            show_deprecated = nil,
             method_doc_button = nil,
             selection_function = sel_func,
             current_index = -1,
@@ -663,8 +692,24 @@ local create_dialog = function()
             list_info.arglist_static = dialog:CreateStatic(my_x, y)
             list_info.arglist_static:SetWidth(width - doc_button_width - my_x + x)
             list_info.arglist_static:SetVisible(false)
+        else
+            y = y + my_vert_sep -- get even on all columns
         end
-        y = y + vert_sep
+        y = y + my_vert_sep + 5
+        my_x = x
+        list_info.first_avail_label = dialog:CreateStatic(my_x, y)
+        set_text(list_info.first_avail_label, "First Available:")
+        list_info.first_avail_label:SetWidth(85)
+        list_info.first_avail_label:SetVisible(false)
+        my_x = my_x + 85 + my_x_sep
+        list_info.first_avail = dialog:CreateStatic(my_x, y)
+        list_info.first_avail:SetWidth(width - my_x + x)
+        list_info.first_avail:SetVisible(false)
+        y = y + my_vert_sep
+        my_x = x
+        list_info.show_deprecated = dialog:CreateStatic(my_x, y)
+        list_info.show_deprecated:SetWidth(85)
+        list_info.show_deprecated:SetVisible(false)
     end
     
     local handle_edit_control = function(control)
