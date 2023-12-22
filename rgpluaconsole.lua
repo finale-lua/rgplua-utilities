@@ -419,6 +419,7 @@ function file_save_as()
     if result then
         context.script_items_list[script_item_index].exists = true
         local fc_new_path = finale.FCString()
+        file_save_dlg:AssureFileExtension(".lua")
         file_save_dlg:GetFileName(fc_new_path, nil)
         fc_new_path:SplitToPathAndFile(fc_folder, nil)
         context.working_directory = fc_folder.LuaString
