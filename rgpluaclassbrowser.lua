@@ -314,14 +314,14 @@ function on_method_selection(list_control, index)
                     local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
                         or methods_list_info.current_strings[method_name]
                     if property_getter_info then
-                        set_text(list_info.returns_static, property_getter_info.returns)
+                        method_info = property_getter_info
+                        set_text(list_info.returns_static, method_info.returns)
                     end
-                    set_text(list_info.show_deprecated, property_getter_info.deprecated and "**deprecated**" or "")
                 else
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
-                    set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
                 end
+                set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
                 if global_metadata_available then
                     set_text(list_info.first_avail, #method_info.first_avail > 0 and method_info.first_avail or "JW Lua")
                 end
