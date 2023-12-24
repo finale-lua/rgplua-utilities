@@ -120,15 +120,17 @@ function method_info(class_info, method_name)
 end
 
 function get_properties_methods(classname)
+    assert(type(classname) == "string", "string expected for argument 1, got " .. type(classname))
+    if classname == "" then return nil end
     isparent = isparent or false
     local properties = {}
     local methods = {}
     local class_methods = {}
     local namespace = eligible_classes[classname]
     namespace = namespace or "finale"
-    if type(namespace) ~= "string" then return nil end
-    local classtable = _G[namespace][classname]
-    if type(classtable) ~= "table" then return nil end
+    assert(type(namespace) == "string", "namespace " .. tostring(namespace) .. " is not a string")
+    local classtable = classname == namespace and _G[namespace] or _G[namespace][classname]
+    assert(type(classtable) == "table", namespace .. "." .. classname .. " is not a table")
     local class_info = global_class_index[classname]
     local function get_metadata(v)
         -- versions before RGP Lua 0.70 return a meaningless string
@@ -140,27 +142,35 @@ function get_properties_methods(classname)
         end
         return {false, ""}
     end
-    for k, v in pairs(classtable.__class) do
-        local metadata = get_metadata(v)
-        local rettype, args = method_info(class_info, k)
-        methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
-    end
-    for k, v in pairs(classtable.__propget) do
-        local metadata = get_metadata(v)
-        properties[k] = { class = classname, readable = true, writeable = false, deprecated = metadata[1], first_avail = metadata[2]}
-    end
-    for k, v in pairs(classtable.__propset) do
-        if nil == properties[k] then
+    if classtable.__class then
+        for k, v in pairs(classtable.__class) do
             local metadata = get_metadata(v)
-            properties[k] = { class = classname, readable = false, writeable = true, deprecated = metadata[1], first_avail = metadata[2]}
-        else
-            properties[k].writeable = true
+            local rettype, args = method_info(class_info, k)
+            methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
         end
     end
-    for k, v in pairs(classtable.__static) do
-        local metadata = get_metadata(v)
-        local rettype, args = method_info(class_info, k)
-        class_methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
+    if classtable.__propget then
+        for k, v in pairs(classtable.__propget) do
+            local metadata = get_metadata(v)
+            properties[k] = { class = classname, readable = true, writeable = false, deprecated = metadata[1], first_avail = metadata[2]}
+        end
+    end
+    if classtable.__propset then
+        for k, v in pairs(classtable.__propset) do
+            if nil == properties[k] then
+                local metadata = get_metadata(v)
+                properties[k] = { class = classname, readable = false, writeable = true, deprecated = metadata[1], first_avail = metadata[2]}
+            else
+                properties[k].writeable = true
+            end
+        end
+    end
+    if classtable.__static then
+        for k, v in pairs(classtable.__static) do
+            local metadata = get_metadata(v)
+            local rettype, args = method_info(class_info, k)
+            class_methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
+        end
     end
     if classtable.__parent then
         for k, _ in pairs(classtable.__parent) do
@@ -241,7 +251,9 @@ function on_classname_changed(new_classname)
     local name_for_display = current_class_name
     local namespace = eligible_classes[new_classname]
     if namespace then
-        name_for_display = namespace.."."..name_for_display
+        if namespace ~= name_for_display then
+            name_for_display = namespace.."."..name_for_display
+        end
         local classtable = _G[namespace][current_class_name]
         if type(classtable) == "table" and classtable.__parent then
             for k, _ in pairs(classtable.__parent) do
@@ -360,21 +372,22 @@ function launch_docsite(namespace, html_file, anchor)
     if type(doc_site) ~= "string" then
         error("no documentation site provided for namespace "..tostring(namespace), 2)
     end
+    local url = doc_site
     if html_file then
-        local url = doc_site .. html_file
+        url = url .. html_file
         if anchor then
             url = url .. "#" .. anchor
         end
-        if luaosutils and luaosutils.internet.launch_website then
-            luaosutils.internet.launch_website(url)
+    end
+    if luaosutils and luaosutils.internet.launch_website then
+        luaosutils.internet.launch_website(url)
+    else
+        if finenv.UI():IsOnWindows() then
+            url = "start " .. url
         else
-            if finenv.UI():IsOnWindows() then
-                url = "start " .. url
-            else
-                url = "open " .. url
-            end
-            os.execute(url)
+            url = "open " .. url
         end
+        os.execute(url)
     end
 end
 
@@ -386,22 +399,34 @@ function on_doc_button(button_control)
         if #method_name > 0 then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                if list_info.is_property then
-                    -- ToDo: validate that getter starts with "Get"
-                    method_name = "Get" .. method_name -- use property getter for properties
-                end
-                local class_info = global_class_index[method_info.class]
+                local class_info = (function()
+                    if eligible_classes[method_info.class] == method_info.class then
+                        local class_name_xref = global_class_index[method_info.class]
+                        if class_name_xref then
+                            return global_class_index[class_name_xref[method_name]]
+                        end
+                        return nil
+                    end
+                    return global_class_index[method_info.class]
+                end)()
                 if class_info then
+                    local method_metadata = class_info.__members[method_name]
+                    if not method_metadata and list_info.is_property then
+                        method_metadata = class_info.__members["Get" .. method_name] -- use property getter for properties
+                    end
                     local filename = class_info.filename
                     local anchor = nil
-                    local method_metadata = class_info.__members[method_name]
                     if method_metadata then
                         anchor = method_metadata.anchor
                         if method_metadata.anchorfile then
                             filename = method_metadata.anchorfile
                         end
                     end
-                    launch_docsite(eligible_classes[current_class_name], filename, anchor)
+                    launch_docsite(class_info.namespace, filename, anchor)
+                elseif eligible_classes[method_info.class] == method_info.class then
+                    -- just launch to the base site if no information about constant property
+                    -- (mainly this is tinyxml2 constants)
+                    launch_docsite(method_info.class)
                 end
             end
         end
@@ -413,6 +438,7 @@ get_eligible_classes = function()
     local retval = {}
     local function process_namespace(namespace, startswith)
         if not _G[namespace] then return end
+        retval[namespace] = namespace
         for k, v in pairs(_G[namespace]) do
             local kstr = tostring(k)
             if kstr:find(startswith) == 1 then
@@ -432,25 +458,35 @@ create_class_index_xml = function()
         error("Unable to find jwluatagfile.xml. Is it in the same folder with this script?")
     end
     local class_collection = {}
+    class_collection.finale = {} -- cross reference from namespace to class for namespace constants
     local tagfile = tinyxml2.XMLHandle(xml):FirstChildElement("tagfile"):ToNode()
     for compound in xmlelements(tagfile, "compound") do
         if compound:Attribute("kind", "class") then
             local class_info = { _attr = { kind = 'class' }, __members = {} }
             class_info.name = compound:FirstChildElement("name"):GetText()
+            class_info.namespace = "finale"
             class_info.filename = compound:FirstChildElement("filename"):GetText()
             local base_element = compound:FirstChildElement("base")
             class_info.base = base_element and base_element:GetText() or nil
             for member in xmlelements(compound, "member") do
-                if member:Attribute("kind", "function") then
-                    local member_info = { _attr = { kind = 'function' } }
-                    member_info.type = member:FirstChildElement("type"):GetText()
+                local kind_attr = member:Attribute("kind")
+                if kind_attr then
+                    local member_info = { _attr = { kind = kind_attr } }
+                    local type_element =  member:FirstChildElement("type")
+                    member_info.type = type_element and type_element:GetText() or kind_attr
                     member_info.name = member:FirstChildElement("name"):GetText()
                     member_info.anchorfile = member:FirstChildElement("anchorfile"):GetText()
                     member_info.anchor = member:FirstChildElement("anchor"):GetText()
-                    member_info._attr.protection = member:Attribute("protection")
-                    member_info._attr.static = member:Attribute("static")
-                    member_info._attr.virtualness = member:Attribute("virtualness")
-                    member_info.arglist = member:FirstChildElement("arglist"):GetText()
+                    if kind_attr == "function" then
+                        member_info._attr.protection = member:Attribute("protection")
+                        member_info._attr.static = member:Attribute("static")
+                        member_info._attr.virtualness = member:Attribute("virtualness")
+                        member_info.arglist = member:FirstChildElement("arglist"):GetText()
+                    end
+                    if kind_attr ~= "function" then
+                        -- cross reference to get back to the member info from the constant name
+                        class_collection.finale[member_info.name] = class_info.name
+                    end
                     class_info.__members[member_info.name] = member_info
                 end
             end
@@ -468,6 +504,7 @@ add_xml_classes_to_index = function(class_collection)
             if kstr:find("XML") == 1 then
                 local class_info = { _attr = { kind = 'class' }, __members = {} }
                 class_info.name = kstr
+                class_info.namespace = "tinyxml2"
                 class_info.filename = "classtinyxml2_1_1_x_m_l_"..kstr:sub(4):lower()..".html"
                 class_collection[class_info.name] = class_info
                 -- no hard-coded method anchors: too unreliable
@@ -487,23 +524,31 @@ create_class_index_str = function()
     local xml = file:read('*a')
     file:close()
     local class_collection = {}
+    class_collection.finale = {} -- cross reference from namespace to class for namespace constants
     for class_block in string.gmatch(xml, '<compound kind=%"class%">.-</compound>') do
         local class_info = { _attr = { kind = 'class' }, __members = {} }
         class_info.name = string.match(class_block, '<name>(.-)</name>')
+        class_info.namespace = "finale"
         class_info.filename = string.match(class_block, '<filename>(.-)</filename>')
         class_info.base = string.match(class_block, '<base>(.-)</base>')
         for member_block in string.gmatch(class_block, '<member.-</member>') do
             local kind = string.match(member_block, 'kind=%"(%w+)%"')
-            if kind == 'function' then
-                local member_info = { _attr = { kind = 'function' } }
-                member_info.type = string.match(member_block, '<type>(.-)</type>')
+            if kind then
+                local member_info = { _attr = { kind = kind } }
+                local type_element = string.match(member_block, '<type>(.-)</type>')
+                member_info.type = type_element or kind
                 member_info.name = string.match(member_block, '<name>(.-)</name>')
                 member_info.anchorfile = string.match(member_block, '<anchorfile>(.-)</anchorfile>')
                 member_info.anchor = string.match(member_block, '<anchor>(.-)</anchor>')
-                member_info._attr.protection = string.match(member_block, 'protection=%"(%w+)%"')
-                member_info._attr.static = string.match(member_block, 'static=%"(%w+)%"')
-                member_info._attr.virtualness = string.match(member_block, 'virtualness=%"(%w+)%"')
-                member_info.arglist = string.match(member_block, '<arglist>(%([^\n]*%)%s*.-)</arglist>')
+                if kind == "function" then
+                    member_info._attr.protection = string.match(member_block, 'protection=%"(%w+)%"')
+                    member_info._attr.static = string.match(member_block, 'static=%"(%w+)%"')
+                    member_info._attr.virtualness = string.match(member_block, 'virtualness=%"(%w+)%"')
+                    member_info.arglist = string.match(member_block, '<arglist>(%([^\n]*%)%s*.-)</arglist>')
+                end
+                if kind ~= "function" then
+                    class_collection.finale[member_info.name] = class_info.name
+                end
                 class_info.__members[member_info.name] = member_info
             end
         end
@@ -760,9 +805,13 @@ local create_dialog = function()
     class_doc:SetWidth(col_width)
     dialog:RegisterHandleControlEvent(class_doc,
         function(control)
-            local class_info = global_class_index[current_class_name]
-            if class_info then
-                launch_docsite(eligible_classes[current_class_name], class_info.filename)
+            if current_class_name == eligible_classes[current_class_name] then
+                launch_docsite(current_class_name)
+            else
+                local class_info = global_class_index[current_class_name]
+                if class_info then
+                    launch_docsite(class_info.namespace, class_info.filename)
+                end
             end
         end
     )
