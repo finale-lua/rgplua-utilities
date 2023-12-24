@@ -83,6 +83,11 @@ function table_merge (t1, t2)
     return t1
 end
 
+local function win_mac(winval, macval)
+    if finenv.UI():IsOnWindows() then return winval end
+    return macval
+end
+
 function get_edit_text(edit_control)
     if not edit_control then return "" end
     local fcstring = finale.FCString()
@@ -300,6 +305,7 @@ function hide_show_display_area(list_info, show)
         list_info.first_avail_label:SetVisible(show)
         list_info.first_avail:SetVisible(show)
     end
+    list_info.method_copy_button:SetVisible(show)
     list_info.show_deprecated:SetVisible(show)
 end
 
@@ -412,7 +418,8 @@ function on_doc_button(button_control)
                 if class_info then
                     local method_metadata = class_info.__members[method_name]
                     if not method_metadata and list_info.is_property then
-                        method_metadata = class_info.__members["Get" .. method_name] -- use property getter for properties
+                        method_metadata = class_info.__members
+                        ["Get" .. method_name]                                       -- use property getter for properties
                     end
                     local filename = class_info.filename
                     local anchor = nil
@@ -430,6 +437,15 @@ function on_doc_button(button_control)
                 end
             end
         end
+    end
+end
+
+function on_copy_button(button_control)
+    local list_info = global_dialog_info[global_control_xref[button_control:GetControlID()]]
+    if list_info then
+        local index = list_info.list_box:GetSelectedItem()
+        local method_name = get_plain_string(list_info.list_box, index)
+        finenv.UI():TextToClipboard(method_name)
     end
 end
 
@@ -680,6 +696,7 @@ local create_dialog = function()
             first_avail = nil,
             show_deprecated = nil,
             method_doc_button = nil,
+            method_copy_button = nil,
             selection_function = sel_func,
             current_index = -1,
             in_progress = false,
@@ -721,7 +738,7 @@ local create_dialog = function()
         list_info.returns_static:SetWidth(return_static_width)
         list_info.returns_static:SetVisible(false)
         my_x = my_x + return_static_width + my_x_sep
-        list_info.method_doc_button = dialog:CreateButton(my_x, y)
+        list_info.method_doc_button = dialog:CreateButton(my_x, y - win_mac(5,1))
         list_info.method_doc_button:SetWidth(doc_button_width)
         list_info.method_doc_button:SetVisible(false)
         global_control_xref[list_info.method_doc_button:GetControlID()] = list_info.list_box:GetControlID()
@@ -750,8 +767,16 @@ local create_dialog = function()
         list_info.first_avail_label:SetVisible(false)
         my_x = my_x + 85 + my_x_sep
         list_info.first_avail = dialog:CreateStatic(my_x, y)
-        list_info.first_avail:SetWidth(width - my_x + x)
+        list_info.first_avail:SetWidth(width - doc_button_width - my_x - my_x_sep + x)
         list_info.first_avail:SetVisible(false)
+        -- right justified button
+        list_info.method_copy_button = dialog:CreateButton(x + width - doc_button_width, y - win_mac(5,1))
+        list_info.method_copy_button:SetWidth(doc_button_width)
+        list_info.method_copy_button:SetVisible(false)
+        global_control_xref[list_info.method_copy_button:GetControlID()] = list_info.list_box:GetControlID()
+        set_text(list_info.method_copy_button, "Copy")
+        list_info.method_copy_button:SetVisible(false)
+        dialog:RegisterHandleControlEvent(list_info.method_copy_button, on_copy_button)
         y = y + my_vert_sep
         my_x = x
         list_info.show_deprecated = dialog:CreateStatic(my_x, y)
@@ -799,22 +824,31 @@ local create_dialog = function()
                 update_classlist()
             end
         end)
+    local copy_button_width = 40
     global_control_xref["classes"] = classes_list:GetControlID()
-    local class_doc = dialog:CreateButton(x, y)
-    set_text(class_doc, "Class Documentation")
-    class_doc:SetWidth(col_width)
-    dialog:RegisterHandleControlEvent(class_doc,
-        function(control)
-            if current_class_name == eligible_classes[current_class_name] then
-                launch_docsite(current_class_name)
-            else
-                local class_info = global_class_index[current_class_name]
-                if class_info then
-                    launch_docsite(class_info.namespace, class_info.filename)
-                end
+    local class_doc = dialog:CreateButton(x, y - win_mac(5,1))
+    set_text(class_doc, "Documentation")
+    class_doc:SetWidth(col_width - copy_button_width - 5)
+    dialog:RegisterHandleControlEvent(class_doc, function(control)
+        if current_class_name == eligible_classes[current_class_name] then
+            launch_docsite(current_class_name)
+        else
+            local class_info = global_class_index[current_class_name]
+            if class_info then
+                launch_docsite(class_info.namespace, class_info.filename)
             end
         end
-    )
+    end)
+    local class_copy = dialog:CreateButton(x + col_width - copy_button_width, y - win_mac(5, 1))
+    set_text(class_copy, "Copy")
+    class_copy:SetWidth(copy_button_width)
+    dialog:RegisterHandleControlEvent(class_copy, function(control)
+        if current_class_name == eligible_classes[current_class_name] then
+            finenv.UI():TextToClipboard(current_class_name)
+        else
+            finenv.UI():TextToClipboard(eligible_classes[current_class_name] .. "." .. current_class_name)
+        end
+    end)
     local bottom_y = y
     x = x + col_width + sep_width
     global_progress_label = dialog:CreateStatic(x, bottom_y)
