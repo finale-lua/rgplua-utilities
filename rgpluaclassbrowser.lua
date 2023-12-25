@@ -35,7 +35,6 @@ function plugindef()
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
-
 --global variables prevent garbage collection until script terminates and releases Lua State
 
 if not finenv.RetainLuaState then
@@ -440,12 +439,14 @@ function on_doc_button(button_control)
     end
 end
 
-function on_copy_button(button_control)
-    local list_info = global_dialog_info[global_control_xref[button_control:GetControlID()]]
-    if list_info then
-        local index = list_info.list_box:GetSelectedItem()
-        local method_name = get_plain_string(list_info.list_box, index)
-        finenv.UI():TextToClipboard(method_name)
+function on_copy(list_box_id)
+    if list_box_id then
+        local list_info = global_dialog_info[list_box_id]
+        if list_info then
+            local index = list_info.list_box:GetSelectedItem()
+            local method_name = get_plain_string(list_info.list_box, index)
+            finenv.UI():TextToClipboard(method_name)
+        end
     end
 end
 
@@ -776,7 +777,9 @@ local create_dialog = function()
         global_control_xref[list_info.method_copy_button:GetControlID()] = list_info.list_box:GetControlID()
         set_text(list_info.method_copy_button, "Copy")
         list_info.method_copy_button:SetVisible(false)
-        dialog:RegisterHandleControlEvent(list_info.method_copy_button, on_copy_button)
+        dialog:RegisterHandleControlEvent(list_info.method_copy_button, function(button)
+            on_copy(global_control_xref[button:GetControlID()])
+        end)
         y = y + my_vert_sep
         my_x = x
         list_info.show_deprecated = dialog:CreateStatic(my_x, y)
@@ -878,6 +881,15 @@ local create_dialog = function()
     set_text(close_button, "Close")
     if dialog.RegisterCloseWindow then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
         dialog:RegisterCloseWindow(on_close)
+    end
+    if dialog.RegisterHandleKeyboardCommand then
+        dialog:RegisterHandleKeyboardCommand(function(list_box, character)
+            if utf8.char(character) == "C" then
+                on_copy(list_box:GetControlID())
+                return true
+            end
+            return false
+        end)
     end
     return dialog
 end
