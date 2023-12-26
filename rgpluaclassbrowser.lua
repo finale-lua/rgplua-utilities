@@ -469,12 +469,13 @@ function on_copy(control)
     finenv.UI():TextToClipboard(method_name)
 end
 
-function on_double_click(control)
+function on_item_selected(control)
     local list_info = global_dialog_info[control:GetControlID()]
     assert(list_info, "invalid list_box_id: " .. control:GetControlID())
     local index = list_info.list_box:GetSelectedItem()
     local method_name = get_plain_string(list_info.list_box, index)
     finenv:UI():AlertInfo(method_name, "Method")
+    return true
 end
 
 get_eligible_classes = function()
@@ -913,7 +914,10 @@ local create_dialog = function()
         end)
     end
     if dialog.RegisterHandleListDoubleClick then
-        dialog:RegisterHandleListDoubleClick(on_double_click)
+        dialog:RegisterHandleListDoubleClick(on_item_selected)
+    end
+    if dialog.RegisterHandleListEnterKey then
+        dialog:RegisterHandleListEnterKey(on_item_selected)
     end
     return dialog
 end

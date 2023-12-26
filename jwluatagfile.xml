@@ -9901,6 +9901,13 @@
       <arglist>(FCControl *pControl)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>HandleListEnterKey</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a7dd60416e6d567f58deb01ff3ab6dc26</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>HandleTimer</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
@@ -18925,6 +18932,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterHandleListEnterKey</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a14abdcfd7db27cebefbfca06d1af4cb4</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleCancelButtonPressed</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a09fe8a8ed70c21da0e8279dd9f0b0b76</anchor>
@@ -19040,6 +19054,13 @@
       <name>HandleListDoubleClick</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>abceddc9afbb7a8288caa0f09e0106713</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>HandleListEnterKey</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ab88fee1c89dfad34b99f1f505bd2a01f</anchor>
       <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
