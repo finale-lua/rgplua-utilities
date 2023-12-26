@@ -115,9 +115,9 @@ function method_info(class_info, method_name)
     if class_info then
         local method = class_info.__members[method_name]
         if method then
-            args = method.arglist:gsub(" override", "")
-            rettype = method.type:gsub("virtual ", "")
-            rettype = rettype:gsub("static ", "")
+            args = method.arglist and method.arglist:gsub(" override", "")
+            rettype = method.type and method.type:gsub("virtual ", "")
+            rettype = rettype and rettype:gsub("static ", "")
         end
     end
     return rettype, args
@@ -156,7 +156,14 @@ function get_properties_methods(classname)
     if classtable.__propget then
         for k, v in pairs(classtable.__propget) do
             local metadata = get_metadata(v)
-            properties[k] = { class = classname, readable = true, writeable = false, deprecated = metadata[1], first_avail = metadata[2]}
+            local rettype
+            if namespace == classname then
+                if class_info then
+                    rettype = method_info(global_class_index[class_info[k]], k)
+                end
+                rettype = rettype or "constant" -- hard-code something if not found
+            end
+            properties[k] = { class = classname, readable = true, writeable = false, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
         end
     end
     if classtable.__propset then
@@ -332,8 +339,8 @@ function on_method_selection(list_control, index)
                         or methods_list_info.current_strings[method_name]
                     if property_getter_info then
                         method_info = property_getter_info
-                        set_text(list_info.returns_static, method_info.returns)
                     end
+                    set_text(list_info.returns_static, method_info.returns)
                 else
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
@@ -439,15 +446,27 @@ function on_doc_button(button_control)
     end
 end
 
-function on_copy(list_box_id)
-    if list_box_id then
-        local list_info = global_dialog_info[list_box_id]
-        if list_info then
-            local index = list_info.list_box:GetSelectedItem()
-            local method_name = get_plain_string(list_info.list_box, index)
-            finenv.UI():TextToClipboard(method_name)
+function on_copy(control)
+    local list_box_id = (function()
+        if control:ClassName() == "FCCtrlListBox" then
+            return control:GetControlID()
         end
+        return global_control_xref[control:GetControlID()]
+    end)()
+    assert(type(list_box_id) == "number", control:ClassName() .. " control id " .. control:GetControlID() .. " not found")
+    local list_info = global_dialog_info[list_box_id]
+    assert(list_info, "invalid list_box_id: " .. list_box_id)
+    local index = list_info.list_box:GetSelectedItem()
+    local method_name = get_plain_string(list_info.list_box, index)
+    if list_box_id == global_control_xref["classes"] then
+        local namespace = eligible_classes[method_name]
+        if namespace ~= method_name then
+            method_name = namespace .. "." .. method_name
+        end
+    elseif current_class_name == eligible_classes[current_class_name] and list_box_id == global_control_xref["properties"] then
+        method_name = current_class_name .. "." .. method_name
     end
+    finenv.UI():TextToClipboard(method_name)
 end
 
 get_eligible_classes = function()
@@ -777,9 +796,7 @@ local create_dialog = function()
         global_control_xref[list_info.method_copy_button:GetControlID()] = list_info.list_box:GetControlID()
         set_text(list_info.method_copy_button, "Copy")
         list_info.method_copy_button:SetVisible(false)
-        dialog:RegisterHandleControlEvent(list_info.method_copy_button, function(button)
-            on_copy(global_control_xref[button:GetControlID()])
-        end)
+        dialog:RegisterHandleControlEvent(list_info.method_copy_button, on_copy)
         y = y + my_vert_sep
         my_x = x
         list_info.show_deprecated = dialog:CreateStatic(my_x, y)
@@ -831,6 +848,7 @@ local create_dialog = function()
     global_control_xref["classes"] = classes_list:GetControlID()
     local class_doc = dialog:CreateButton(x, y - win_mac(5,1))
     set_text(class_doc, "Documentation")
+    global_control_xref[class_doc:GetControlID()] = classes_list:GetControlID()
     class_doc:SetWidth(col_width - copy_button_width - 5)
     dialog:RegisterHandleControlEvent(class_doc, function(control)
         if current_class_name == eligible_classes[current_class_name] then
@@ -844,14 +862,9 @@ local create_dialog = function()
     end)
     local class_copy = dialog:CreateButton(x + col_width - copy_button_width, y - win_mac(5, 1))
     set_text(class_copy, "Copy")
+    global_control_xref[class_copy:GetControlID()] = classes_list:GetControlID()
     class_copy:SetWidth(copy_button_width)
-    dialog:RegisterHandleControlEvent(class_copy, function(control)
-        if current_class_name == eligible_classes[current_class_name] then
-            finenv.UI():TextToClipboard(current_class_name)
-        else
-            finenv.UI():TextToClipboard(eligible_classes[current_class_name] .. "." .. current_class_name)
-        end
-    end)
+    dialog:RegisterHandleControlEvent(class_copy, on_copy)
     local bottom_y = y
     x = x + col_width + sep_width
     global_progress_label = dialog:CreateStatic(x, bottom_y)
@@ -885,7 +898,7 @@ local create_dialog = function()
     if dialog.RegisterHandleKeyboardCommand then
         dialog:RegisterHandleKeyboardCommand(function(list_box, character)
             if utf8.char(character) == "C" then
-                on_copy(list_box:GetControlID())
+                on_copy(list_box)
                 return true
             end
             return false

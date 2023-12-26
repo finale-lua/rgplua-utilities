@@ -36318,6 +36318,42 @@
       <anchor>a5211b17aaca4cbd75bbda824bf78b79e</anchor>
       <arglist></arglist>
     </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_NONE</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea6b8b5082ba9a37a26e302d44d1c2cf13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_DIFFERENTNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea9f5028dc9fada524c9a8e04435bfaea1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_ALLNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea5b0b3148d25ca2d8c514ee4b7a00efbc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_NONE</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea6b8b5082ba9a37a26e302d44d1c2cf13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_DIFFERENTNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea9f5028dc9fada524c9a8e04435bfaea1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_ALLNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea5b0b3148d25ca2d8c514ee4b7a00efbc</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>const char *</type>
       <name>ClassName</name>
