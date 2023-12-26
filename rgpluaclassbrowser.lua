@@ -469,6 +469,14 @@ function on_copy(control)
     finenv.UI():TextToClipboard(method_name)
 end
 
+function on_double_click(control)
+    local list_info = global_dialog_info[control:GetControlID()]
+    assert(list_info, "invalid list_box_id: " .. control:GetControlID())
+    local index = list_info.list_box:GetSelectedItem()
+    local method_name = get_plain_string(list_info.list_box, index)
+    finenv:UI():AlertInfo(method_name, "Method")
+end
+
 get_eligible_classes = function()
     set_text(global_progress_label, "Getting eligible classes from Lua state...")
     local retval = {}
@@ -903,6 +911,9 @@ local create_dialog = function()
             end
             return false
         end)
+    end
+    if dialog.RegisterHandleListDoubleClick then
+        dialog:RegisterHandleListDoubleClick(on_double_click)
     end
     return dialog
 end
