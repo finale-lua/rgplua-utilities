@@ -7,8 +7,8 @@ function plugindef()
     finaleplugin.LoadLuaOSUtils = true
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.3"
-    finaleplugin.Date = "March 26, 2023"
+    finaleplugin.Version = "2.0"
+    finaleplugin.Date = "December 27, 2023"
     finaleplugin.Notes = [[
         This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
         the framework classes and their methods and properties. Use the edit text boxes at the top
