@@ -67,6 +67,8 @@ global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
 global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
+global_popup_timer_id = 2   -- this is used on Windows to create a popup window, since FX_Dialog cannot do it from WM_KEYDOWN
+global_list_box = nil       -- this is used to store the list control for the popup window, since FX_Dialog cannot do it from WM_KEYDOWN
 global_progress_label = nil
 global_metadata_available = false
 
@@ -425,7 +427,7 @@ function on_doc_button(button_control)
                     local method_metadata = class_info.__members[method_name]
                     if not method_metadata and list_info.is_property then
                         method_metadata = class_info.__members
-                        ["Get" .. method_name]                                       -- use property getter for properties
+                            ["Get" .. method_name] -- use property getter for properties
                     end
                     local filename = class_info.filename
                     local anchor = nil
@@ -446,6 +448,23 @@ function on_doc_button(button_control)
     end
 end
 
+local function get_full_method_name(list_box_id, method_name)
+    local retval = method_name
+    local namespace = eligible_classes[current_class_name]
+    if list_box_id == global_control_xref["classes"] then
+        if namespace ~= retval then
+            retval = namespace .. "." .. retval
+        end
+    elseif list_box_id == global_control_xref["class_methods"] then
+        retval = namespace .. "." .. current_class_name .."." .. retval
+    elseif list_box_id == global_control_xref["properties"] then
+        if current_class_name == namespace then
+            retval = current_class_name .. "." .. retval
+        end
+    end
+    return retval
+end
+
 function on_copy(control)
     local list_box_id = (function()
         if control:ClassName() == "FCCtrlListBox" then
@@ -457,25 +476,30 @@ function on_copy(control)
     local list_info = global_dialog_info[list_box_id]
     assert(list_info, "invalid list_box_id: " .. list_box_id)
     local index = list_info.list_box:GetSelectedItem()
-    local method_name = get_plain_string(list_info.list_box, index)
-    if list_box_id == global_control_xref["classes"] then
-        local namespace = eligible_classes[method_name]
-        if namespace ~= method_name then
-            method_name = namespace .. "." .. method_name
-        end
-    elseif current_class_name == eligible_classes[current_class_name] and list_box_id == global_control_xref["properties"] then
-        method_name = current_class_name .. "." .. method_name
-    end
+    local method_name = get_full_method_name(list_box_id, get_plain_string(list_info.list_box, index))
     finenv.UI():TextToClipboard(method_name)
 end
 
 function on_item_selected(control)
-    local list_info = global_dialog_info[control:GetControlID()]
-    assert(list_info, "invalid list_box_id: " .. control:GetControlID())
+    local list_box_id = control:GetControlID()
+    local list_info = global_dialog_info[list_box_id]
+    assert(list_info, "invalid list_box_id: " .. list_box_id)
     local index = list_info.list_box:GetSelectedItem()
-    local method_name = get_plain_string(list_info.list_box, index)
-    global_dialog:CreateChildUI():AlertInfo(method_name, "Method")
-    return true
+    local method_name = get_full_method_name(list_box_id, get_plain_string(list_info.list_box, index))
+    local dialog = finale.FCCustomWindow()
+    local show_method_name = dialog:CreateEdit(0, 0)
+    show_method_name:SetWidth(340)
+    set_text(show_method_name, method_name)
+    --show_method_name:SetEnable(false)
+    local y = 20
+    local y_increment = 20
+    if list_box_id == global_control_xref["properties"] then
+
+    elseif list_box_id == global_control_xref["classes"] then
+    else
+    end
+    dialog:CreateOkButton()
+    dialog:ExecuteModal(global_dialog)
 end
 
 get_eligible_classes = function()
@@ -615,6 +639,12 @@ coroutine_build_class_index = coroutine.create(function()
     end)
 
 function on_timer(timer_id)
+    if timer_id == global_popup_timer_id then
+        global_dialog:StopTimer(timer_id)
+        on_item_selected(global_list_box)
+        global_list_box = nil
+        return
+    end
     if timer_id ~= global_timer_id then return end
     local success, errmsg = coroutine.resume(coroutine_build_class_index)
     if coroutine.status(coroutine_build_class_index) == "dead" then
@@ -917,7 +947,12 @@ local create_dialog = function()
         dialog:RegisterHandleListDoubleClick(on_item_selected)
     end
     if dialog.RegisterHandleListEnterKey then
-        dialog:RegisterHandleListEnterKey(on_item_selected)
+        dialog:RegisterHandleListEnterKey(function(control)
+            -- use a timer to handle this, because Windows FX_Dialog can't open a dialog inside WM_KEYDOWN
+            global_list_box = control
+            global_dialog:SetTimer(global_popup_timer_id, 1)
+            return true
+        end)
     end
     return dialog
 end
