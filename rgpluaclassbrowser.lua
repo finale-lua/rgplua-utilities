@@ -96,11 +96,12 @@ function get_edit_text(edit_control)
     return fcstring.LuaString
 end
 
-function set_text(control, text)
+function set_text(control, text, setter_name)
     if not control then return end
+    setter_name = setter_name or "SetText"
     local fcstring = finale.FCString()
     fcstring.LuaString = text or ""
-    control:SetText(fcstring)
+    control[setter_name](control, fcstring)
 end
 
 function set_list_selected_item(list_control, index, selection_func)
@@ -481,22 +482,72 @@ function on_copy(control)
 end
 
 function on_item_selected(control)
+    local total_width = 400
     local list_box_id = control:GetControlID()
     local list_info = global_dialog_info[list_box_id]
     assert(list_info, "invalid list_box_id: " .. list_box_id)
     local index = list_info.list_box:GetSelectedItem()
-    local method_name = get_full_method_name(list_box_id, get_plain_string(list_info.list_box, index))
+    local method_name = get_plain_string(list_info.list_box, index)
+    local full_method_name = get_full_method_name(list_box_id, method_name)
     local dialog = finale.FCCustomWindow()
+    set_text(dialog, "Details", "SetTitle")
     local show_method_name = dialog:CreateEdit(0, 0)
-    show_method_name:SetWidth(340)
-    set_text(show_method_name, method_name)
-    --show_method_name:SetEnable(false)
-    local y = 20
-    local y_increment = 20
-    if list_box_id == global_control_xref["properties"] then
-
-    elseif list_box_id == global_control_xref["classes"] then
+    show_method_name:SetWidth(total_width)
+    set_text(show_method_name, full_method_name)
+    local namespace = eligible_classes[current_class_name]
+    local y = 30
+    local y_increment = 16
+    local x_increment = 5
+    local r_column = 75
+    local is_class = list_box_id == global_control_xref["classes"]
+    local method_info = not is_class and list_info.current_strings[method_name]
+    local classtable = _G[namespace][method_info and method_info.class or current_class_name]
+    local base_class = ""
+    if type(classtable) == "table" and classtable.__parent then
+        for k, _ in pairs(classtable.__parent) do
+            base_class = k
+            break
+        end
+    end
+    local function create_item(label, value)
+        local label_control = dialog:CreateStatic(0, y)
+        label_control:SetWidth(r_column - x_increment)
+        set_text(label_control, label)
+        local value_control = dialog:CreateStatic(r_column, y)
+        value_control:SetWidth(total_width - r_column)
+        set_text(value_control, value)
+        y = y + y_increment
+    end
+    if method_info then
+        local class_desc = method_info.class
+        if #base_class > 0 then
+            class_desc = class_desc .. " : " .. base_class
+        end
+        local label_desc = method_info.class == namespace and "Namespace:" or "Class:"
+        create_item(label_desc, class_desc)
     else
+        create_item("Base Class:", base_class)
+    end
+    if method_info then
+        if list_info.is_property then
+            local methods_list_info = global_dialog_info[global_control_xref["methods"]]
+            local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
+                or methods_list_info.current_strings[method_name]
+            if property_getter_info then
+                method_info = property_getter_info
+            end
+            create_item("Type:", method_info.returns)
+        else
+            create_item("Returns:", method_info.returns)
+            create_item("Arguments:", method_info.arglist)
+        end
+        if global_metadata_available then
+            local meta_desc = #method_info.first_avail > 0 and method_info.first_avail or "JW Lua"
+            if method_info.deprecated then
+                meta_desc = meta_desc .. " **deprecated**"
+            end
+            create_item("Available:", meta_desc)
+        end
     end
     dialog:CreateOkButton()
     dialog:ExecuteModal(global_dialog)
@@ -859,9 +910,7 @@ local create_dialog = function()
 
     -- create a new dialog
     local dialog = finale.FCCustomLuaWindow()
-    local str = finale.FCString() -- scratch
-    str.LuaString = "RGP Lua - Class Browser"
-    dialog:SetTitle(str)
+    set_text(dialog, "RGP Lua - Class Browser", "SetTitle")
     dialog:RegisterHandleCommand(on_list_select)
     --[[
     -- normally we would just use RegisterInitWindow to populate a modeless dialog,
