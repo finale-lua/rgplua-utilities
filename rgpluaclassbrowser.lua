@@ -474,7 +474,7 @@ function on_item_selected(control)
     assert(list_info, "invalid list_box_id: " .. control:GetControlID())
     local index = list_info.list_box:GetSelectedItem()
     local method_name = get_plain_string(list_info.list_box, index)
-    finenv:UI():AlertInfo(method_name, "Method")
+    global_dialog:CreateChildUI():AlertInfo(method_name, "Method")
     return true
 end
 
