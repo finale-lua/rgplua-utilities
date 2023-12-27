@@ -9895,6 +9895,20 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
+      <name>HandleListDoubleClick</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>ab2eaf8be101cadf33ad959ed2e1707a6</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>HandleListEnterKey</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a7dd60416e6d567f58deb01ff3ab6dc26</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>HandleTimer</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
       <anchor>ae15e12dbb3c5bae8b2f6eb73742d4d0f</anchor>
@@ -18911,6 +18925,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterHandleListDoubleClick</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a28815b381469b5f28cf5cf3112423776</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterHandleListEnterKey</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a14abdcfd7db27cebefbfca06d1af4cb4</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>RegisterHandleCancelButtonPressed</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a09fe8a8ed70c21da0e8279dd9f0b0b76</anchor>
@@ -19020,6 +19048,20 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a7308f9a97989f83c586ed5fd5fa880f1</anchor>
       <arglist>(FCCtrlDataList *pControl, int lineindex, bool checkstate) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HandleListDoubleClick</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>abceddc9afbb7a8288caa0f09e0106713</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>HandleListEnterKey</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ab88fee1c89dfad34b99f1f505bd2a01f</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -36316,6 +36358,42 @@
       <name>UNISONS_MODE</name>
       <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
       <anchor>a5211b17aaca4cbd75bbda824bf78b79e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_NONE</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea6b8b5082ba9a37a26e302d44d1c2cf13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_DIFFERENTNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea9f5028dc9fada524c9a8e04435bfaea1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_ALLNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea5b0b3148d25ca2d8c514ee4b7a00efbc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_NONE</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea6b8b5082ba9a37a26e302d44d1c2cf13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_DIFFERENTNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea9f5028dc9fada524c9a8e04435bfaea1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>UNISSPACE_ALLNOTEHEADS</name>
+      <anchorfile>class_f_c_music_spacing_prefs.html</anchorfile>
+      <anchor>a5211b17aaca4cbd75bbda824bf78b79ea5b0b3148d25ca2d8c514ee4b7a00efbc</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
