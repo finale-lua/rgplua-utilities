@@ -17273,6 +17273,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetExpandLastColumn</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a20215fef00fca70392f1d85f8d8f7618</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetExpandLastColumn</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a9f8a5fc3ff7dc38a498ec475d77fdd6f</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>ExpandLastColumn</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
