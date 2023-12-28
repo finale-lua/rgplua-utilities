@@ -17189,6 +17189,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetShowHeader</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a41638d9efae25eec5bc54feae40d84b3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShowHeader</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>ad55adcc835a5515dc4c91b4250badfd3</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>UseGrid</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
