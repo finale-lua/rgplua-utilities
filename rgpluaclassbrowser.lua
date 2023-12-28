@@ -773,7 +773,11 @@ local create_dialog = function()
         list:SetWidth(this_col_width)
         list:SetHeight(height)
         if finenv.UI():IsOnMac() then
-            list:UseAlternatingBackgroundRowColors(true)
+            if list.SetAlternatingBackgroundRowColors then -- property is available in this RGP Lua version
+                list.AlternatingBackgroundRowColors = true
+            else
+                list:UseAlternatingBackgroundRowColors() -- use deprecated function if property not available
+            end
         end
         return list
     end

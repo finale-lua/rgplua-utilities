@@ -17203,6 +17203,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetAlternatingBackgroundRowColors</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>ac153690938ebd426e372c392665d2638</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAlternatingBackgroundRowColors</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a7983cfdd339457c4a75c13479abf39f4</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>UseAlternatingBackgroundRowColors</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
