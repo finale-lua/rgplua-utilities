@@ -17190,6 +17190,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetAllowsMultipleSelection</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a7cf194dd111bb8d0148bdbcaad1a7fc4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAllowsMultipleSelection</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a2f7770b5688f2f292d068b904f892c55</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetShowHeader</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
       <anchor>a41638d9efae25eec5bc54feae40d84b3</anchor>
