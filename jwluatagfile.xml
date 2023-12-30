@@ -17276,8 +17276,36 @@
       <type>bool</type>
       <name>SelectLine</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
-      <anchor>a30c4827d44114e849fca2820efd2772a</anchor>
-      <arglist>(int lineindex, bool ensurevisible)</arglist>
+      <anchor>a524cf6f1fcc7b561564f55be6646e60c</anchor>
+      <arglist>(int lineindex, bool ensurevisible=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AddSelectedLine</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>add3344e3262634566ab80fa5f3bf94ca</anchor>
+      <arglist>(int lineindex, bool ensurevisible=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsLineSelected</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a2fefa6b4da85ae110f90dda7a120a52a</anchor>
+      <arglist>(int lineindex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>UnselectLine</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>a6cd20d0e7c9de24ddd779def849640c0</anchor>
+      <arglist>(int lineindex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>UnselectAll</name>
+      <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
+      <anchor>ac5debe873bdc80c1b371f0b1f93c5d4b</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
