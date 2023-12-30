@@ -17346,14 +17346,14 @@
       <type>virtual void</type>
       <name>HandleSelectChange</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
-      <anchor>ab34e102f9d2adf701ba67607ae290555</anchor>
+      <anchor>ae672f3f46db29aa00ac708c81df94acf</anchor>
       <arglist>(int lineindex)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>HandleUnselect</name>
       <anchorfile>class_f_c_ctrl_data_list.html</anchorfile>
-      <anchor>a0bc4848eac7679c551d36b83aeeba8a6</anchor>
+      <anchor>a24db4cf1964c054e0776647aa0434ef2</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
