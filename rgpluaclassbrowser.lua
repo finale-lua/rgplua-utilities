@@ -591,12 +591,14 @@ get_eligible_classes = function()
         end
     end
     process_namespace("finale", "FC")
-    process_namespace("finenv", "")
-    for k, v in pairs(finenv) do
-        if type(k) == "string" and k:find("_") ~= 1 and type(v) == "table" then
-            local nested_namespace = "finenv." .. k
-            retval[nested_namespace] = nested_namespace
-            documentation_sites[nested_namespace] = documentation_sites["finenv"]
+    if finenv.__propget then -- if it's there, then we can reflect finenv
+        process_namespace("finenv", "")
+        for k, v in pairs(finenv) do
+            if type(k) == "string" and k:find("_") ~= 1 and type(v) == "table" then
+                local nested_namespace = "finenv." .. k
+                retval[nested_namespace] = nested_namespace
+                documentation_sites[nested_namespace] = documentation_sites["finenv"]
+            end
         end
     end
     process_namespace("tinyxml2", "XML")
