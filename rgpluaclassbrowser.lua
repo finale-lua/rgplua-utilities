@@ -336,6 +336,10 @@ function on_method_selection(list_control, index)
             if method_info then
                 local dot = list_info.is_property and "." or ":"
                 set_text(list_info.fullname_static, method_info.class .. dot .. method_name)
+                set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
+                if global_metadata_available then
+                    set_text(list_info.first_avail, #method_info.first_avail > 0 and method_info.first_avail or "JW Lua")
+                end
                 if list_info.is_property then
                     local methods_list_info = global_dialog_info[global_control_xref["methods"]]
                     local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
@@ -347,10 +351,6 @@ function on_method_selection(list_control, index)
                 else
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
-                end
-                set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
-                if global_metadata_available then
-                    set_text(list_info.first_avail, #method_info.first_avail > 0 and method_info.first_avail or "JW Lua")
                 end
                 if get_edit_text(list_info.fullname_static) ~= "" then
                     show = true
