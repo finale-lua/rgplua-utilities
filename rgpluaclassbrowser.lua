@@ -46,6 +46,7 @@ if not finenv.RetainLuaState then
     {
         finale = "https://pdk.finalelua.com/",
         finenv = "https://robertgpatterson.com/-fininfo/-rgplua/docs/rgp-lua/finenv-properties.html",
+        --finenv = "https://finalelua.com/docs/rgp-lua/finenv-properties",
         tinyxml2 = "http://leethomason.github.io/tinyxml2/"
     }
     eligible_classes = {}
@@ -402,6 +403,28 @@ function update_classlist()
     end
 end
 
+local function compute_anchor(method_name, list_info)
+    local retval
+    local namespace = eligible_classes[current_class_name]
+    if namespace:find("finenv") == 1 then
+        local dot_index = namespace:find("%.")
+        if dot_index then
+            retval = namespace:sub(dot_index + 1) .. "-constants"
+        elseif list_info then
+            if list_info.is_property then
+                if get_namespace_table(namespace).__propset[method_name] then
+                    retval = method_name .. "-readwrite-property"
+                else
+                    retval = method_name .. "-read-only-property"
+                end
+            else
+                retval = method_name .. "-function"
+            end
+        end
+    end
+    return retval and retval:lower()
+end
+
 function launch_docsite(namespace, html_file, anchor)
     local doc_site = documentation_sites[namespace]
     if type(doc_site) ~= "string" then
@@ -461,8 +484,8 @@ function on_doc_button(button_control)
                     launch_docsite(class_info.namespace, filename, anchor)
                 elseif eligible_classes[method_info.class] == method_info.class then
                     -- just launch to the base site if no information about constant property
-                    -- (mainly this is tinyxml2 constants)
-                    launch_docsite(method_info.class)
+                    local anchor = compute_anchor(method_name, list_info)
+                    launch_docsite(method_info.class, nil, anchor)
                 end
             end
         end
@@ -978,7 +1001,11 @@ local create_dialog = function()
     class_doc:SetWidth(col_width - copy_button_width - 5)
     dialog:RegisterHandleControlEvent(class_doc, function(control)
         if current_class_name == eligible_classes[current_class_name] then
-            launch_docsite(current_class_name)
+            local anchor
+            if current_class_name:find(".") then
+                anchor = compute_anchor(current_class_name, nil)
+            end
+            launch_docsite(current_class_name, nil, anchor)
         else
             local class_info = global_class_index[current_class_name]
             if class_info then
