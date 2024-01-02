@@ -45,7 +45,8 @@ if not finenv.RetainLuaState then
     documentation_sites =
     {
         finale = "https://pdk.finalelua.com/",
-        tinyxml2 = "http://leethomason.github.io/tinyxml2/",
+        finenv = "https://robertgpatterson.com/-fininfo/-rgplua/docs/rgp-lua/finenv-properties.html",
+        tinyxml2 = "http://leethomason.github.io/tinyxml2/"
     }
     eligible_classes = {}
     global_class_index = nil
@@ -126,6 +127,24 @@ function method_info(class_info, method_name)
     return rettype, args
 end
 
+function get_namespace_table(namespace)
+    if namespace:find(".") then
+        local parts = {}
+        for part in namespace:gmatch("[^.]+") do
+            table.insert(parts, part)
+        end
+        local currentTable = _G
+        for _, part in ipairs(parts) do
+            currentTable = currentTable[part]
+            if not currentTable then
+                break
+            end
+        end            
+        return currentTable        
+    end
+    return _G[namespace]
+end
+
 function get_properties_methods(classname)
     assert(type(classname) == "string", "string expected for argument 1, got " .. type(classname))
     if classname == "" then return nil end
@@ -136,7 +155,7 @@ function get_properties_methods(classname)
     local namespace = eligible_classes[classname]
     namespace = namespace or "finale"
     assert(type(namespace) == "string", "namespace " .. tostring(namespace) .. " is not a string")
-    local classtable = classname == namespace and _G[namespace] or _G[namespace][classname]
+    local classtable = classname ~= namespace and _G[namespace][classname] or get_namespace_table(namespace)
     assert(type(classtable) == "table", namespace .. "." .. classname .. " is not a table")
     local class_info = global_class_index[classname]
     local function get_metadata(v)
@@ -164,7 +183,7 @@ function get_properties_methods(classname)
                 if class_info then
                     rettype = method_info(global_class_index[class_info[k]], k)
                 end
-                rettype = rettype or "constant" -- hard-code something if not found
+                rettype = rettype or type(get_namespace_table(namespace)[k])
             end
             properties[k] = { class = classname, readable = true, writeable = false, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
         end
@@ -268,7 +287,7 @@ function on_classname_changed(new_classname)
         if namespace ~= name_for_display then
             name_for_display = namespace.."."..name_for_display
         end
-        local classtable = _G[namespace][current_class_name]
+        local classtable = _G[namespace] and _G[namespace][current_class_name]
         if type(classtable) == "table" and classtable.__parent then
             for k, _ in pairs(classtable.__parent) do
                 name_for_display = name_for_display.." : "..k
@@ -328,13 +347,14 @@ end
 
 function on_method_selection(list_control, index)
     local list_info = global_dialog_info[list_control:GetControlID()]
+    local is_class_methods = global_control_xref["class_methods"] == list_control:GetControlID()
     local show = false
     if list_info and index >= 0 then
         local method_name = get_plain_string(list_control, index)
         if #method_name > 0 and list_info.current_strings then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                local dot = list_info.is_property and "." or ":"
+                local dot = (list_info.is_property or is_class_methods) and "." or ":"
                 set_text(list_info.fullname_static, method_info.class .. dot .. method_name)
                 set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
                 if global_metadata_available then
@@ -457,7 +477,10 @@ local function get_full_method_name(list_box_id, method_name)
             retval = namespace .. "." .. retval
         end
     elseif list_box_id == global_control_xref["class_methods"] then
-        retval = namespace .. "." .. current_class_name .."." .. retval
+        retval = current_class_name .. "." .. retval
+        if namespace ~= current_class_name then
+            retval = namespace .. "." .. retval
+        end
     elseif list_box_id == global_control_xref["properties"] then
         if current_class_name == namespace then
             retval = current_class_name .. "." .. retval
@@ -501,7 +524,7 @@ function on_item_selected(control)
     local r_column = 75
     local is_class = list_box_id == global_control_xref["classes"]
     local method_info = not is_class and list_info.current_strings[method_name]
-    local classtable = _G[namespace][method_info and method_info.class or current_class_name]
+    local classtable = get_namespace_table(namespace)[method_info and method_info.class or current_class_name]
     local base_class = ""
     if type(classtable) == "table" and classtable.__parent then
         for k, _ in pairs(classtable.__parent) do
@@ -560,13 +583,22 @@ get_eligible_classes = function()
         if not _G[namespace] then return end
         retval[namespace] = namespace
         for k, v in pairs(_G[namespace]) do
-            local kstr = tostring(k)
-            if kstr:find(startswith) == 1 then
-                retval[kstr] = namespace
+            if type(k) == "string" and k:find("_") ~= 1 then
+                if #startswith > 0 and k:find(startswith) == 1 then
+                    retval[k] = namespace
+                end
             end
         end
     end
     process_namespace("finale", "FC")
+    process_namespace("finenv", "")
+    for k, v in pairs(finenv) do
+        if type(k) == "string" and k:find("_") ~= 1 and type(v) == "table" then
+            local nested_namespace = "finenv." .. k
+            retval[nested_namespace] = nested_namespace
+            documentation_sites[nested_namespace] = documentation_sites["finenv"]
+        end
+    end
     process_namespace("tinyxml2", "XML")
     return retval
 end
@@ -625,7 +657,7 @@ add_xml_classes_to_index = function(class_collection)
                 local class_info = { _attr = { kind = 'class' }, __members = {} }
                 class_info.name = kstr
                 class_info.namespace = "tinyxml2"
-                class_info.filename = "classtinyxml2_1_1_x_m_l_"..kstr:sub(4):lower()..".html"
+                class_info.filename = "classtinyxml2_1_1_x_m_l_" .. kstr:sub(4):lower() .. ".html"
                 class_collection[class_info.name] = class_info
                 -- no hard-coded method anchors: too unreliable
             end

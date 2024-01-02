@@ -906,6 +906,7 @@ local function on_close_window()
             context.script_text = nil
         end
         context.output_text = get_edit_text(output_text).LuaString
+        on_terminate_script()
     end
 end
 
