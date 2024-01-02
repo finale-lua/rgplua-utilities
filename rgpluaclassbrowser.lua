@@ -410,9 +410,9 @@ function launch_docsite(namespace, html_file, anchor)
     local url = doc_site
     if html_file then
         url = url .. html_file
-        if anchor then
-            url = url .. "#" .. anchor
-        end
+    end
+    if anchor then
+        url = url .. "#" .. anchor
     end
     if luaosutils and luaosutils.internet.launch_website then
         luaosutils.internet.launch_website(url)
