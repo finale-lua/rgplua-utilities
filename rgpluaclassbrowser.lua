@@ -411,14 +411,21 @@ local function compute_anchor(method_name, list_info)
         if dot_index then
             retval = namespace:sub(dot_index + 1) .. "-constants"
         elseif list_info then
+            retval = method_name
             if list_info.is_property then
+                if get_namespace_table(namespace).__propget[method_name][1] then --deprecated
+                    retval = retval .. "-deprecated"
+                end
                 if get_namespace_table(namespace).__propset[method_name] then
-                    retval = method_name .. "-readwrite-property"
+                    retval = retval .. "-readwrite-property"
                 else
-                    retval = method_name .. "-read-only-property"
+                    retval = retval .. "-read-only-property"
                 end
             else
-                retval = method_name .. "-function"
+                if get_namespace_table(namespace).__static[method_name][1] then --deprecated
+                    retval = retval .. "-deprecated"
+                end
+                retval = retval .. "-function"
             end
         end
     end
