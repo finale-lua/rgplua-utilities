@@ -419,6 +419,7 @@ function file_save_as()
     if result then
         context.script_items_list[script_item_index].exists = true
         local fc_new_path = finale.FCString()
+        file_save_dlg:AssureFileExtension(".lua")
         file_save_dlg:GetFileName(fc_new_path, nil)
         fc_new_path:SplitToPathAndFile(fc_folder, nil)
         context.working_directory = fc_folder.LuaString
@@ -555,7 +556,6 @@ local function write_line_numbers(num_lines)
             if unichar ~= string.byte("\n") and unichar ~= string.byte("\r") then
                 do_number = false
             end
-            print(line_number, unichar, do_number)
         end
         local line_ending = i < num_lines and "\n" or ""
         if do_number then
@@ -897,6 +897,7 @@ local function on_close_window()
     config.window_pos_valid = true
     config_write()
     if finenv.RetainLuaState then
+        on_terminate_script()
         context.script_text = get_edit_text(edit_text).LuaString
         if context.script_text == context.original_script_text then
             -- if we are in a saved state, do not keep the current contents.

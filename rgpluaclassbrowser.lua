@@ -7,8 +7,8 @@ function plugindef()
     finaleplugin.LoadLuaOSUtils = true
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.3"
-    finaleplugin.Date = "March 26, 2023"
+    finaleplugin.Version = "2.0"
+    finaleplugin.Date = "December 27, 2023"
     finaleplugin.Notes = [[
         This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
         the framework classes and their methods and properties. Use the edit text boxes at the top
@@ -35,7 +35,6 @@ function plugindef()
     return "RGP Lua Class Browser...", "RGP Lua Class Browser", "Explore the PDK Framework classes in RGP Lua."
 end
 
-
 --global variables prevent garbage collection until script terminates and releases Lua State
 
 if not finenv.RetainLuaState then
@@ -46,7 +45,9 @@ if not finenv.RetainLuaState then
     documentation_sites =
     {
         finale = "https://pdk.finalelua.com/",
-        tinyxml2 = "http://leethomason.github.io/tinyxml2/",
+        finenv = "https://robertgpatterson.com/-fininfo/-rgplua/docs/rgp-lua/finenv-properties.html",
+        --finenv = "https://finalelua.com/docs/rgp-lua/finenv-properties",
+        tinyxml2 = "http://leethomason.github.io/tinyxml2/"
     }
     eligible_classes = {}
     global_class_index = nil
@@ -68,7 +69,10 @@ global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
 global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
+global_popup_timer_id = 2   -- this is used on Windows to create a popup window, since FX_Dialog cannot do it from WM_KEYDOWN
+global_list_box = nil       -- this is used to store the list control for the popup window, since FX_Dialog cannot do it from WM_KEYDOWN
 global_progress_label = nil
+global_metadata_available = false
 
 current_class_name = ""
 changing_class_name_in_progress = false
@@ -82,6 +86,11 @@ function table_merge (t1, t2)
     return t1
 end
 
+local function win_mac(winval, macval)
+    if finenv.UI():IsOnWindows() then return winval end
+    return macval
+end
+
 function get_edit_text(edit_control)
     if not edit_control then return "" end
     local fcstring = finale.FCString()
@@ -89,11 +98,12 @@ function get_edit_text(edit_control)
     return fcstring.LuaString
 end
 
-function set_text(control, text)
+function set_text(control, text, setter_name)
     if not control then return end
+    setter_name = setter_name or "SetText"
     local fcstring = finale.FCString()
     fcstring.LuaString = text or ""
-    control:SetText(fcstring)
+    control[setter_name](control, fcstring)
 end
 
 function set_list_selected_item(list_control, index, selection_func)
@@ -110,42 +120,91 @@ function method_info(class_info, method_name)
     if class_info then
         local method = class_info.__members[method_name]
         if method then
-            args = method.arglist:gsub(" override", "")
-            rettype = method.type:gsub("virtual ", "")
-            rettype = rettype:gsub("static ", "")
+            args = method.arglist and method.arglist:gsub(" override", "")
+            rettype = method.type and method.type:gsub("virtual ", "")
+            rettype = rettype and rettype:gsub("static ", "")
         end
     end
     return rettype, args
 end
 
+function get_namespace_table(namespace)
+    if namespace:find(".") then
+        local parts = {}
+        for part in namespace:gmatch("[^.]+") do
+            table.insert(parts, part)
+        end
+        local currentTable = _G
+        for _, part in ipairs(parts) do
+            currentTable = currentTable[part]
+            if not currentTable then
+                break
+            end
+        end            
+        return currentTable        
+    end
+    return _G[namespace]
+end
+
 function get_properties_methods(classname)
+    assert(type(classname) == "string", "string expected for argument 1, got " .. type(classname))
+    if classname == "" then return nil end
     isparent = isparent or false
     local properties = {}
     local methods = {}
     local class_methods = {}
     local namespace = eligible_classes[classname]
     namespace = namespace or "finale"
-    if type(namespace) ~= "string" then return nil end
-    local classtable = _G[namespace][classname]
-    if type(classtable) ~= "table" then return nil end
+    assert(type(namespace) == "string", "namespace " .. tostring(namespace) .. " is not a string")
+    local classtable = classname ~= namespace and _G[namespace][classname] or get_namespace_table(namespace)
+    assert(type(classtable) == "table", namespace .. "." .. classname .. " is not a table")
     local class_info = global_class_index[classname]
-    for k, _ in pairs(classtable.__class) do
-        local rettype, args = method_info(class_info, k)
-        methods[k] = { class = classname, arglist = args, returns = rettype }
+    local function get_metadata(v)
+        -- versions before RGP Lua 0.70 return a meaningless string
+        if type(v) == "table" then
+            if not global_metadata_available then
+                global_metadata_available = true
+            end
+            return v
+        end
+        return {false, ""}
     end
-    for k, _ in pairs(classtable.__propget) do
-        properties[k] = { class = classname, readable = true, writeable = false }
-    end
-    for k, _ in pairs(classtable.__propset) do
-        if nil == properties[k] then
-            properties[k] = { class = classname, readable = false, writeable = true }
-        else
-            properties[k].writeable = true
+    if classtable.__class then
+        for k, v in pairs(classtable.__class) do
+            local metadata = get_metadata(v)
+            local rettype, args = method_info(class_info, k)
+            methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
         end
     end
-    for k, _ in pairs(classtable.__static) do
-        local rettype, args = method_info(class_info, k)
-        class_methods[k] = { class = classname, arglist = args, returns = rettype }
+    if classtable.__propget then
+        for k, v in pairs(classtable.__propget) do
+            local metadata = get_metadata(v)
+            local rettype
+            if namespace == classname then
+                if class_info then
+                    rettype = method_info(global_class_index[class_info[k]], k)
+                end
+                rettype = rettype or type(get_namespace_table(namespace)[k])
+            end
+            properties[k] = { class = classname, readable = true, writeable = false, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
+        end
+    end
+    if classtable.__propset then
+        for k, v in pairs(classtable.__propset) do
+            if nil == properties[k] then
+                local metadata = get_metadata(v)
+                properties[k] = { class = classname, readable = false, writeable = true, deprecated = metadata[1], first_avail = metadata[2]}
+            else
+                properties[k].writeable = true
+            end
+        end
+    end
+    if classtable.__static then
+        for k, v in pairs(classtable.__static) do
+            local metadata = get_metadata(v)
+            local rettype, args = method_info(class_info, k)
+            class_methods[k] = { class = classname, arglist = args, returns = rettype, deprecated = metadata[1], first_avail = metadata[2]}
+        end
     end
     if classtable.__parent then
         for k, _ in pairs(classtable.__parent) do
@@ -189,6 +248,9 @@ function update_list(list_control, source_table, search_text)
                         str = str .. "]"
                         fcstring.LuaString = fcstring.LuaString .. str
                     end
+                    if v.deprecated then
+                        fcstring.LuaString = fcstring.LuaString .. " ⚠️"
+                    end
                 end
                 list_control:AddString(fcstring)
                 if first_string == nil then
@@ -223,8 +285,10 @@ function on_classname_changed(new_classname)
     local name_for_display = current_class_name
     local namespace = eligible_classes[new_classname]
     if namespace then
-        name_for_display = namespace.."."..name_for_display
-        local classtable = _G[namespace][current_class_name]
+        if namespace ~= name_for_display then
+            name_for_display = namespace.."."..name_for_display
+        end
+        local classtable = _G[namespace] and _G[namespace][current_class_name]
         if type(classtable) == "table" and classtable.__parent then
             for k, _ in pairs(classtable.__parent) do
                 name_for_display = name_for_display.." : "..k
@@ -266,6 +330,12 @@ function hide_show_display_area(list_info, show)
         list_info.arglist_label:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
         list_info.arglist_static:SetVisible(show and get_edit_text(list_info.arglist_static) ~= "")
     end
+    if global_metadata_available then
+        list_info.first_avail_label:SetVisible(show)
+        list_info.first_avail:SetVisible(show)
+    end
+    list_info.method_copy_button:SetVisible(show)
+    list_info.show_deprecated:SetVisible(show)
 end
 
 function get_plain_string(list_control, index)
@@ -278,21 +348,27 @@ end
 
 function on_method_selection(list_control, index)
     local list_info = global_dialog_info[list_control:GetControlID()]
+    local is_class_methods = global_control_xref["class_methods"] == list_control:GetControlID()
     local show = false
     if list_info and index >= 0 then
         local method_name = get_plain_string(list_control, index)
         if #method_name > 0 and list_info.current_strings then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                local dot = list_info.is_property and "." or ":"
+                local dot = (list_info.is_property or is_class_methods) and "." or ":"
                 set_text(list_info.fullname_static, method_info.class .. dot .. method_name)
+                set_text(list_info.show_deprecated, method_info.deprecated and "**deprecated**" or "")
+                if global_metadata_available then
+                    set_text(list_info.first_avail, #method_info.first_avail > 0 and method_info.first_avail or "JW Lua")
+                end
                 if list_info.is_property then
                     local methods_list_info = global_dialog_info[global_control_xref["methods"]]
                     local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
-                                                    or methods_list_info.current_strings[method_name]
+                        or methods_list_info.current_strings[method_name]
                     if property_getter_info then
-                        set_text(list_info.returns_static, property_getter_info.returns)
+                        method_info = property_getter_info
                     end
+                    set_text(list_info.returns_static, method_info.returns)
                 else
                     set_text(list_info.returns_static, method_info.returns)
                     set_text(list_info.arglist_static, method_info.arglist)
@@ -327,26 +403,54 @@ function update_classlist()
     end
 end
 
+local function compute_anchor(method_name, list_info)
+    local retval
+    local namespace = eligible_classes[current_class_name]
+    if namespace:find("finenv") == 1 then
+        local dot_index = namespace:find("%.")
+        if dot_index then
+            retval = namespace:sub(dot_index + 1) .. "-constants"
+        elseif list_info then
+            retval = method_name
+            local method_info = list_info.current_strings[method_name]
+            if method_info and method_info.deprecated then
+                retval = retval .. "-deprecated"
+            end
+            if list_info.is_property then
+                if get_namespace_table(namespace).__propset[method_name] then
+                    retval = retval .. "-readwrite-property"
+                else
+                    retval = retval .. "-read-only-property"
+                end
+            else
+                retval = retval .. "-function"
+            end
+        end
+    end
+    return retval and retval:lower()
+end
+
 function launch_docsite(namespace, html_file, anchor)
     local doc_site = documentation_sites[namespace]
     if type(doc_site) ~= "string" then
         error("no documentation site provided for namespace "..tostring(namespace), 2)
     end
+    local url = doc_site
     if html_file then
-        local url = doc_site .. html_file
-        if anchor then
-            url = url .. "#" .. anchor
-        end
-        if luaosutils and luaosutils.internet.launch_website then
-            luaosutils.internet.launch_website(url)
+        url = url .. html_file
+    end
+    if anchor then
+        url = url .. "#" .. anchor
+    end
+    if luaosutils and luaosutils.internet.launch_website then
+        luaosutils.internet.launch_website(url)
+    else
+        if finenv.UI():IsOnWindows() then
+            url = "start " .. url
         else
-            if finenv.UI():IsOnWindows() then
-                url = "start " .. url
-            else
-                url = "open " .. url
-            end
-            os.execute(url)
+            url = "open " .. url
         end
+        os.execute(url)
     end
 end
 
@@ -358,26 +462,146 @@ function on_doc_button(button_control)
         if #method_name > 0 then
             local method_info = list_info.current_strings[method_name]
             if method_info then
-                if list_info.is_property then
-                    -- ToDo: validate that getter starts with "Get"
-                    method_name = "Get" .. method_name -- use property getter for properties
-                end
-                local class_info = global_class_index[method_info.class]
+                local class_info = (function()
+                    if eligible_classes[method_info.class] == method_info.class then
+                        local class_name_xref = global_class_index[method_info.class]
+                        if class_name_xref then
+                            return global_class_index[class_name_xref[method_name]]
+                        end
+                        return nil
+                    end
+                    return global_class_index[method_info.class]
+                end)()
                 if class_info then
+                    local method_metadata = class_info.__members[method_name]
+                    if not method_metadata and list_info.is_property then
+                        method_metadata = class_info.__members
+                            ["Get" .. method_name] -- use property getter for properties
+                    end
                     local filename = class_info.filename
                     local anchor = nil
-                    local method_metadata = class_info.__members[method_name]
                     if method_metadata then
                         anchor = method_metadata.anchor
                         if method_metadata.anchorfile then
                             filename = method_metadata.anchorfile
                         end
                     end
-                    launch_docsite(eligible_classes[current_class_name], filename, anchor)
+                    launch_docsite(class_info.namespace, filename, anchor)
+                elseif eligible_classes[method_info.class] == method_info.class then
+                    -- just launch to the base site if no information about constant property
+                    local anchor = compute_anchor(method_name, list_info)
+                    launch_docsite(method_info.class, nil, anchor)
                 end
             end
         end
     end
+end
+
+local function get_full_method_name(list_box_id, method_name)
+    local retval = method_name
+    local namespace = eligible_classes[current_class_name]
+    if list_box_id == global_control_xref["classes"] then
+        if namespace ~= retval then
+            retval = namespace .. "." .. retval
+        end
+    elseif list_box_id == global_control_xref["class_methods"] then
+        retval = current_class_name .. "." .. retval
+        if namespace ~= current_class_name then
+            retval = namespace .. "." .. retval
+        end
+    elseif list_box_id == global_control_xref["properties"] then
+        if current_class_name == namespace then
+            retval = current_class_name .. "." .. retval
+        end
+    end
+    return retval
+end
+
+function on_copy(control)
+    local list_box_id = (function()
+        if control:ClassName() == "FCCtrlListBox" then
+            return control:GetControlID()
+        end
+        return global_control_xref[control:GetControlID()]
+    end)()
+    assert(type(list_box_id) == "number", control:ClassName() .. " control id " .. control:GetControlID() .. " not found")
+    local list_info = global_dialog_info[list_box_id]
+    assert(list_info, "invalid list_box_id: " .. list_box_id)
+    local index = list_info.list_box:GetSelectedItem()
+    local method_name = get_full_method_name(list_box_id, get_plain_string(list_info.list_box, index))
+    finenv.UI():TextToClipboard(method_name)
+end
+
+function on_item_selected(control)
+    local total_width = 400
+    local list_box_id = control:GetControlID()
+    local list_info = global_dialog_info[list_box_id]
+    assert(list_info, "invalid list_box_id: " .. list_box_id)
+    local index = list_info.list_box:GetSelectedItem()
+    local method_name = get_plain_string(list_info.list_box, index)
+    local full_method_name = get_full_method_name(list_box_id, method_name)
+    local dialog = finale.FCCustomWindow()
+    set_text(dialog, "Details", "SetTitle")
+    local show_method_name = dialog:CreateEdit(0, 0)
+    show_method_name:SetWidth(total_width)
+    set_text(show_method_name, full_method_name)
+    local namespace = eligible_classes[current_class_name]
+    local y = 30
+    local y_increment = 16
+    local x_increment = 5
+    local r_column = 75
+    local is_class = list_box_id == global_control_xref["classes"]
+    local method_info = not is_class and list_info.current_strings[method_name]
+    local classtable = get_namespace_table(namespace)[method_info and method_info.class or current_class_name]
+    local base_class = ""
+    if type(classtable) == "table" and classtable.__parent then
+        for k, _ in pairs(classtable.__parent) do
+            base_class = k
+            break
+        end
+    end
+    local function create_item(label, value)
+        local label_control = dialog:CreateStatic(0, y)
+        label_control:SetWidth(r_column - x_increment)
+        set_text(label_control, label)
+        local value_control = dialog:CreateStatic(r_column, y)
+        value_control:SetWidth(total_width - r_column)
+        set_text(value_control, value)
+        y = y + y_increment
+    end
+    if method_info then
+        local class_desc = method_info.class
+        if #base_class > 0 then
+            class_desc = class_desc .. " : " .. base_class
+        end
+        local label_desc = method_info.class == namespace and "Namespace:" or "Class:"
+        create_item(label_desc, class_desc)
+    else
+        create_item("Base Class:", base_class)
+    end
+    if method_info then
+        if list_info.is_property then
+            local methods_list_info = global_dialog_info[global_control_xref["methods"]]
+            local property_getter_info = methods_list_info.current_strings["Get" .. method_name]
+                or methods_list_info.current_strings[method_name]
+            if property_getter_info then
+                method_info = property_getter_info
+            end
+            create_item("Type:", method_info.returns)
+        else
+            create_item("Returns:", method_info.returns)
+            create_item("Arguments:", method_info.arglist)
+        end
+        if global_metadata_available then
+            local meta_desc = #method_info.first_avail > 0 and method_info.first_avail or "JW Lua"
+            if method_info.deprecated then
+                meta_desc = meta_desc .. " **deprecated**"
+            end
+            create_item("Available:", meta_desc)
+        end
+    end
+    dialog:CreateOkButton()
+    dialog:ExecuteModal(global_dialog)
 end
 
 get_eligible_classes = function()
@@ -385,14 +609,26 @@ get_eligible_classes = function()
     local retval = {}
     local function process_namespace(namespace, startswith)
         if not _G[namespace] then return end
+        retval[namespace] = namespace
         for k, v in pairs(_G[namespace]) do
-            local kstr = tostring(k)
-            if kstr:find(startswith) == 1 then
-                retval[kstr] = namespace
+            if type(k) == "string" and k:find("_") ~= 1 then
+                if #startswith > 0 and k:find(startswith) == 1 then
+                    retval[k] = namespace
+                end
             end
         end
     end
     process_namespace("finale", "FC")
+    if finenv.__propget then -- if it's there, then we can reflect finenv
+        process_namespace("finenv", "")
+        for k, v in pairs(finenv) do
+            if type(k) == "string" and k:find("_") ~= 1 and type(v) == "table" then
+                local nested_namespace = "finenv." .. k
+                retval[nested_namespace] = nested_namespace
+                documentation_sites[nested_namespace] = documentation_sites["finenv"]
+            end
+        end
+    end
     process_namespace("tinyxml2", "XML")
     return retval
 end
@@ -404,25 +640,35 @@ create_class_index_xml = function()
         error("Unable to find jwluatagfile.xml. Is it in the same folder with this script?")
     end
     local class_collection = {}
+    class_collection.finale = {} -- cross reference from namespace to class for namespace constants
     local tagfile = tinyxml2.XMLHandle(xml):FirstChildElement("tagfile"):ToNode()
     for compound in xmlelements(tagfile, "compound") do
         if compound:Attribute("kind", "class") then
             local class_info = { _attr = { kind = 'class' }, __members = {} }
             class_info.name = compound:FirstChildElement("name"):GetText()
+            class_info.namespace = "finale"
             class_info.filename = compound:FirstChildElement("filename"):GetText()
             local base_element = compound:FirstChildElement("base")
             class_info.base = base_element and base_element:GetText() or nil
             for member in xmlelements(compound, "member") do
-                if member:Attribute("kind", "function") then
-                    local member_info = { _attr = { kind = 'function' } }
-                    member_info.type = member:FirstChildElement("type"):GetText()
+                local kind_attr = member:Attribute("kind")
+                if kind_attr then
+                    local member_info = { _attr = { kind = kind_attr } }
+                    local type_element =  member:FirstChildElement("type")
+                    member_info.type = type_element and type_element:GetText() or kind_attr
                     member_info.name = member:FirstChildElement("name"):GetText()
                     member_info.anchorfile = member:FirstChildElement("anchorfile"):GetText()
                     member_info.anchor = member:FirstChildElement("anchor"):GetText()
-                    member_info._attr.protection = member:Attribute("protection")
-                    member_info._attr.static = member:Attribute("static")
-                    member_info._attr.virtualness = member:Attribute("virtualness")
-                    member_info.arglist = member:FirstChildElement("arglist"):GetText()
+                    if kind_attr == "function" then
+                        member_info._attr.protection = member:Attribute("protection")
+                        member_info._attr.static = member:Attribute("static")
+                        member_info._attr.virtualness = member:Attribute("virtualness")
+                        member_info.arglist = member:FirstChildElement("arglist"):GetText()
+                    end
+                    if kind_attr ~= "function" then
+                        -- cross reference to get back to the member info from the constant name
+                        class_collection.finale[member_info.name] = class_info.name
+                    end
                     class_info.__members[member_info.name] = member_info
                 end
             end
@@ -440,7 +686,8 @@ add_xml_classes_to_index = function(class_collection)
             if kstr:find("XML") == 1 then
                 local class_info = { _attr = { kind = 'class' }, __members = {} }
                 class_info.name = kstr
-                class_info.filename = "classtinyxml2_1_1_x_m_l_"..kstr:sub(4):lower()..".html"
+                class_info.namespace = "tinyxml2"
+                class_info.filename = "classtinyxml2_1_1_x_m_l_" .. kstr:sub(4):lower() .. ".html"
                 class_collection[class_info.name] = class_info
                 -- no hard-coded method anchors: too unreliable
             end
@@ -459,23 +706,31 @@ create_class_index_str = function()
     local xml = file:read('*a')
     file:close()
     local class_collection = {}
+    class_collection.finale = {} -- cross reference from namespace to class for namespace constants
     for class_block in string.gmatch(xml, '<compound kind=%"class%">.-</compound>') do
         local class_info = { _attr = { kind = 'class' }, __members = {} }
         class_info.name = string.match(class_block, '<name>(.-)</name>')
+        class_info.namespace = "finale"
         class_info.filename = string.match(class_block, '<filename>(.-)</filename>')
         class_info.base = string.match(class_block, '<base>(.-)</base>')
         for member_block in string.gmatch(class_block, '<member.-</member>') do
             local kind = string.match(member_block, 'kind=%"(%w+)%"')
-            if kind == 'function' then
-                local member_info = { _attr = { kind = 'function' } }
-                member_info.type = string.match(member_block, '<type>(.-)</type>')
+            if kind then
+                local member_info = { _attr = { kind = kind } }
+                local type_element = string.match(member_block, '<type>(.-)</type>')
+                member_info.type = type_element or kind
                 member_info.name = string.match(member_block, '<name>(.-)</name>')
                 member_info.anchorfile = string.match(member_block, '<anchorfile>(.-)</anchorfile>')
                 member_info.anchor = string.match(member_block, '<anchor>(.-)</anchor>')
-                member_info._attr.protection = string.match(member_block, 'protection=%"(%w+)%"')
-                member_info._attr.static = string.match(member_block, 'static=%"(%w+)%"')
-                member_info._attr.virtualness = string.match(member_block, 'virtualness=%"(%w+)%"')
-                member_info.arglist = string.match(member_block, '<arglist>(%([^\n]*%)%s*.-)</arglist>')
+                if kind == "function" then
+                    member_info._attr.protection = string.match(member_block, 'protection=%"(%w+)%"')
+                    member_info._attr.static = string.match(member_block, 'static=%"(%w+)%"')
+                    member_info._attr.virtualness = string.match(member_block, 'virtualness=%"(%w+)%"')
+                    member_info.arglist = string.match(member_block, '<arglist>(%([^\n]*%)%s*.-)</arglist>')
+                end
+                if kind ~= "function" then
+                    class_collection.finale[member_info.name] = class_info.name
+                end
                 class_info.__members[member_info.name] = member_info
             end
         end
@@ -497,6 +752,12 @@ coroutine_build_class_index = coroutine.create(function()
     end)
 
 function on_timer(timer_id)
+    if timer_id == global_popup_timer_id then
+        global_dialog:StopTimer(timer_id)
+        on_item_selected(global_list_box)
+        global_list_box = nil
+        return
+    end
     if timer_id ~= global_timer_id then return end
     local success, errmsg = coroutine.resume(coroutine_build_class_index)
     if coroutine.status(coroutine_build_class_index) == "dead" then
@@ -574,7 +835,11 @@ local create_dialog = function()
         list:SetWidth(this_col_width)
         list:SetHeight(height)
         if finenv.UI():IsOnMac() then
-            list:UseAlternatingBackgroundRowColors(true)
+            if list.SetAlternatingBackgroundRowColors then -- property is available in this RGP Lua version
+                list.AlternatingBackgroundRowColors = true
+            else
+                list:UseAlternatingBackgroundRowColors() -- use deprecated function if property not available
+            end
         end
         return list
     end
@@ -603,7 +868,11 @@ local create_dialog = function()
             returns_static = nil,
             arglist_label = nil,
             arglist_static = nil,
+            first_avail_label = nil,
+            first_avail = nil,
+            show_deprecated = nil,
             method_doc_button = nil,
+            method_copy_button = nil,
             selection_function = sel_func,
             current_index = -1,
             in_progress = false,
@@ -645,7 +914,7 @@ local create_dialog = function()
         list_info.returns_static:SetWidth(return_static_width)
         list_info.returns_static:SetVisible(false)
         my_x = my_x + return_static_width + my_x_sep
-        list_info.method_doc_button = dialog:CreateButton(my_x, y)
+        list_info.method_doc_button = dialog:CreateButton(my_x, y - win_mac(5,1))
         list_info.method_doc_button:SetWidth(doc_button_width)
         list_info.method_doc_button:SetVisible(false)
         global_control_xref[list_info.method_doc_button:GetControlID()] = list_info.list_box:GetControlID()
@@ -663,8 +932,32 @@ local create_dialog = function()
             list_info.arglist_static = dialog:CreateStatic(my_x, y)
             list_info.arglist_static:SetWidth(width - doc_button_width - my_x + x)
             list_info.arglist_static:SetVisible(false)
+        else
+            y = y + my_vert_sep -- get even on all columns
         end
-        y = y + vert_sep
+        y = y + my_vert_sep + 5
+        my_x = x
+        list_info.first_avail_label = dialog:CreateStatic(my_x, y)
+        set_text(list_info.first_avail_label, "First Available:")
+        list_info.first_avail_label:SetWidth(85)
+        list_info.first_avail_label:SetVisible(false)
+        my_x = my_x + 85 + my_x_sep
+        list_info.first_avail = dialog:CreateStatic(my_x, y)
+        list_info.first_avail:SetWidth(width - doc_button_width - my_x - my_x_sep + x)
+        list_info.first_avail:SetVisible(false)
+        -- right justified button
+        list_info.method_copy_button = dialog:CreateButton(x + width - doc_button_width, y - win_mac(5,1))
+        list_info.method_copy_button:SetWidth(doc_button_width)
+        list_info.method_copy_button:SetVisible(false)
+        global_control_xref[list_info.method_copy_button:GetControlID()] = list_info.list_box:GetControlID()
+        set_text(list_info.method_copy_button, "Copy")
+        list_info.method_copy_button:SetVisible(false)
+        dialog:RegisterHandleControlEvent(list_info.method_copy_button, on_copy)
+        y = y + my_vert_sep
+        my_x = x
+        list_info.show_deprecated = dialog:CreateStatic(my_x, y)
+        list_info.show_deprecated:SetWidth(85)
+        list_info.show_deprecated:SetVisible(false)
     end
     
     local handle_edit_control = function(control)
@@ -683,9 +976,7 @@ local create_dialog = function()
 
     -- create a new dialog
     local dialog = finale.FCCustomLuaWindow()
-    local str = finale.FCString() -- scratch
-    str.LuaString = "RGP Lua - Class Browser"
-    dialog:SetTitle(str)
+    set_text(dialog, "RGP Lua - Class Browser", "SetTitle")
     dialog:RegisterHandleCommand(on_list_select)
     --[[
     -- normally we would just use RegisterInitWindow to populate a modeless dialog,
@@ -707,18 +998,31 @@ local create_dialog = function()
                 update_classlist()
             end
         end)
+    local copy_button_width = 40
     global_control_xref["classes"] = classes_list:GetControlID()
-    local class_doc = dialog:CreateButton(x, y)
-    set_text(class_doc, "Class Documentation")
-    class_doc:SetWidth(col_width)
-    dialog:RegisterHandleControlEvent(class_doc,
-        function(control)
+    local class_doc = dialog:CreateButton(x, y - win_mac(5,1))
+    set_text(class_doc, "Documentation")
+    global_control_xref[class_doc:GetControlID()] = classes_list:GetControlID()
+    class_doc:SetWidth(col_width - copy_button_width - 5)
+    dialog:RegisterHandleControlEvent(class_doc, function(control)
+        if current_class_name == eligible_classes[current_class_name] then
+            local anchor
+            if current_class_name:find(".") then
+                anchor = compute_anchor(current_class_name, nil)
+            end
+            launch_docsite(current_class_name, nil, anchor)
+        else
             local class_info = global_class_index[current_class_name]
             if class_info then
-                launch_docsite(eligible_classes[current_class_name], class_info.filename)
+                launch_docsite(class_info.namespace, class_info.filename)
             end
         end
-    )
+    end)
+    local class_copy = dialog:CreateButton(x + col_width - copy_button_width, y - win_mac(5, 1))
+    set_text(class_copy, "Copy")
+    global_control_xref[class_copy:GetControlID()] = classes_list:GetControlID()
+    class_copy:SetWidth(copy_button_width)
+    dialog:RegisterHandleControlEvent(class_copy, on_copy)
     local bottom_y = y
     x = x + col_width + sep_width
     global_progress_label = dialog:CreateStatic(x, bottom_y)
@@ -748,6 +1052,26 @@ local create_dialog = function()
     set_text(close_button, "Close")
     if dialog.RegisterCloseWindow then -- if this version of RGP Lua has RegisterHandleCloseButtonPressed
         dialog:RegisterCloseWindow(on_close)
+    end
+    if dialog.RegisterHandleKeyboardCommand then
+        dialog:RegisterHandleKeyboardCommand(function(list_box, character)
+            if utf8.char(character) == "C" then
+                on_copy(list_box)
+                return true
+            end
+            return false
+        end)
+    end
+    if dialog.RegisterHandleListDoubleClick then
+        dialog:RegisterHandleListDoubleClick(on_item_selected)
+    end
+    if dialog.RegisterHandleListEnterKey then
+        dialog:RegisterHandleListEnterKey(function(control)
+            -- use a timer to handle this, because Windows FX_Dialog can't open a dialog inside WM_KEYDOWN
+            global_list_box = control
+            global_dialog:SetTimer(global_popup_timer_id, 1)
+            return true
+        end)
     end
     return dialog
 end
