@@ -16754,6 +16754,20 @@
       <anchor>af960a6f2f2dc2a4d60d05632258a144d</anchor>
       <arglist>(FCString *pString)</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAutoResizeWidth</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a54f81d4fa0d7622b6c060501584f0b68</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetAutoResizeWidth</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a5fbdc47c64ad9b09348893464afd1f03</anchor>
+      <arglist>() const</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>SetText</name>
