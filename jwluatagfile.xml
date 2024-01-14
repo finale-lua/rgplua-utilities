@@ -16755,6 +16755,13 @@
       <arglist>(FCString *pString)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>AssureWidthForText</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>ad19ff3445409c0d7764782713e5a9e97</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetAutoResizeWidth</name>
       <anchorfile>class_f_c_control.html</anchorfile>
