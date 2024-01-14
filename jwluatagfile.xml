@@ -16754,8 +16754,8 @@
       <anchor>af960a6f2f2dc2a4d60d05632258a144d</anchor>
       <arglist>(FCString *pString)</arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
       <name>AssureWidthForText</name>
       <anchorfile>class_f_c_control.html</anchorfile>
       <anchor>ad19ff3445409c0d7764782713e5a9e97</anchor>
