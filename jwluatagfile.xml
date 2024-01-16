@@ -16763,6 +16763,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>AssureNoHorizontalOverlap</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a8f7bdba8f72edbb58b1963605020b292</anchor>
+      <arglist>(const FCControl *pControl, int padding)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetAutoResizeWidth</name>
       <anchorfile>class_f_c_control.html</anchorfile>
       <anchor>a54f81d4fa0d7622b6c060501584f0b68</anchor>
