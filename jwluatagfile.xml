@@ -17072,6 +17072,13 @@
       <arglist>(twobyte id)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>AssureWidthForText</name>
+      <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
+      <anchor>aed6cc09ef78b77cbe6e9083f934e632c</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>Clear</name>
       <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
@@ -17786,6 +17793,13 @@
       <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
       <anchor>a6dfc46946874aa160624cf30312f7266</anchor>
       <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AssureWidthForText</name>
+      <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
+      <anchor>ab170d7dd4a408a86cbe97a5894a1a0f1</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
