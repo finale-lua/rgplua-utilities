@@ -16765,22 +16765,22 @@
       <type>void</type>
       <name>AssureNoHorizontalOverlap</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a8f7bdba8f72edbb58b1963605020b292</anchor>
-      <arglist>(const FCControl *pControl, int padding)</arglist>
+      <anchor>a48fab0e7e792770c214d7722bcef94be</anchor>
+      <arglist>(const FCControl &amp;pControl, int padding)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetAutoResizeWidth</name>
+      <name>HorizontallyAlignWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a54f81d4fa0d7622b6c060501584f0b68</anchor>
-      <arglist>(bool state)</arglist>
+      <anchor>a29f5ccd4989c5bae93f090ef7453430c</anchor>
+      <arglist>(const FCControl *pControl)</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
-      <name>GetAutoResizeWidth</name>
+      <type>void</type>
+      <name>DoAutoResizeWidth</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a5fbdc47c64ad9b09348893464afd1f03</anchor>
-      <arglist>() const</arglist>
+      <anchor>a17ade64906db2856e917dc100dc7f277</anchor>
+      <arglist>(bool state)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
