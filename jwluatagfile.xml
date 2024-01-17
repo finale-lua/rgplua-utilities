@@ -16765,15 +16765,15 @@
       <type>void</type>
       <name>AssureNoHorizontalOverlap</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a48fab0e7e792770c214d7722bcef94be</anchor>
-      <arglist>(const FCControl &amp;pControl, int padding)</arglist>
+      <anchor>a3f7b3f495df57c005f8f5999f24cadd5</anchor>
+      <arglist>(const FCControl &amp;control, int padding)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>HorizontallyAlignWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a29f5ccd4989c5bae93f090ef7453430c</anchor>
-      <arglist>(const FCControl *pControl)</arglist>
+      <anchor>ad85355d2f40d3b841728184fcdb0a1c8</anchor>
+      <arglist>(const FCControl &amp;control, bool alignright=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
