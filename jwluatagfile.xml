@@ -16770,10 +16770,24 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>HorizontallyAlignWith</name>
+      <name>HorizontallyAlignLeftWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>ad85355d2f40d3b841728184fcdb0a1c8</anchor>
-      <arglist>(const FCControl &amp;control, bool alignright=false)</arglist>
+      <anchor>a6a1896a590b014d80f1f56476a89414b</anchor>
+      <arglist>(const FCControl &amp;control)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HorizontallyAlignRightWith</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a8f024c1bb2fc49c7cdd676c7613f99ba</anchor>
+      <arglist>(const FCControl &amp;control)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HorizontallyAlignRightWithFurthest</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a31900f195d54ee14fe8cd528800bf0ff</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17608,6 +17622,32 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCtrlHorizontalLine</name>
+    <filename>class_f_c_ctrl_horizontal_line.html</filename>
+    <base>FCCtrlLine</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
+      <anchor>a434055a089e1e6a4be519974a707623f</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlHorizontalLine</name>
+      <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
+      <anchor>a47118618c3c5e42fb0aad8427a76d25d</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>StretchToAlignWithRight</name>
+      <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
+      <anchor>a80ab9af7c329602bac96ef31ba3d6cc3</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCtrlImage</name>
     <filename>class_f_c_ctrl_image.html</filename>
     <base>FCControl</base>
@@ -17657,13 +17697,6 @@
       <anchorfile>class_f_c_ctrl_line.html</anchorfile>
       <anchor>a02d7c28be826e35fbe5d5d25991f1629</anchor>
       <arglist>(twobyte id)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetHorizontal</name>
-      <anchorfile>class_f_c_ctrl_line.html</anchorfile>
-      <anchor>a4b5ed3d679e11c593c261ea7162e9fc2</anchor>
-      <arglist>(bool horiz)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -18915,6 +18948,25 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCtrlVerticalLine</name>
+    <filename>class_f_c_ctrl_vertical_line.html</filename>
+    <base>FCCtrlLine</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_vertical_line.html</anchorfile>
+      <anchor>a3e7869c668236cb7b1ee17eff3190203</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlVerticalLine</name>
+      <anchorfile>class_f_c_ctrl_vertical_line.html</anchorfile>
+      <anchor>ac546dd902875518c62721cbd734712fa</anchor>
+      <arglist>(twobyte id)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCurrentStaffSpec</name>
     <filename>class_f_c_current_staff_spec.html</filename>
     <base>FCStaff</base>
@@ -19866,17 +19918,17 @@
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
-      <type>FCCtrlLine *</type>
+      <type>FCCtrlHorizontalLine *</type>
       <name>CreateHorizontalLine</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
-      <anchor>ae096aa45dacb0a781b6c3f857c8190a0</anchor>
+      <anchor>a5c25cf6f0c52dedf5c803faaaa630fa3</anchor>
       <arglist>(float x, float y, float width)</arglist>
     </member>
     <member kind="function">
-      <type>FCCtrlLine *</type>
+      <type>FCCtrlVerticalLine *</type>
       <name>CreateVerticalLine</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
-      <anchor>ae3c787936e927e76078e0b3f2a51dd88</anchor>
+      <anchor>a635cc169481755e8e39e5729b6c63493</anchor>
       <arglist>(float x, float y, float height)</arglist>
     </member>
     <member kind="function">
@@ -62038,6 +62090,8 @@
     <class kind="class">FCControl</class>
     <class kind="class">FCCtrlUpDown</class>
     <class kind="class">FCCtrlLine</class>
+    <class kind="class">FCCtrlHorizontalLine</class>
+    <class kind="class">FCCtrlVerticalLine</class>
     <class kind="class">FCCtrlEdit</class>
     <class kind="class">FCCtrlPopup</class>
     <class kind="class">FCCtrlComboBox</class>
