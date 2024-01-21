@@ -16772,22 +16772,22 @@
       <type>void</type>
       <name>HorizontallyAlignLeftWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a6a1896a590b014d80f1f56476a89414b</anchor>
-      <arglist>(const FCControl &amp;control)</arglist>
+      <anchor>a623976f35f6a7ff6a184879d7961d953</anchor>
+      <arglist>(const FCControl &amp;control, double offset=0)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>HorizontallyAlignRightWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a8f024c1bb2fc49c7cdd676c7613f99ba</anchor>
-      <arglist>(const FCControl &amp;control)</arglist>
+      <anchor>ae53068e3a663086dd1ec26478fa19321</anchor>
+      <arglist>(const FCControl &amp;control, double offset=0)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>HorizontallyAlignRightWithFurthest</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a31900f195d54ee14fe8cd528800bf0ff</anchor>
-      <arglist>()</arglist>
+      <anchor>a87f4356bd0012fa0cd38858db2b439b6</anchor>
+      <arglist>(double offset=0)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
