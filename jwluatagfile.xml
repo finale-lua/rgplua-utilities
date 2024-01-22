@@ -16772,15 +16772,15 @@
       <type>void</type>
       <name>HorizontallyAlignLeftWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a623976f35f6a7ff6a184879d7961d953</anchor>
-      <arglist>(const FCControl &amp;control, double offset=0)</arglist>
+      <anchor>a678e939a2e1ec6d6e307bcdadc812e57</anchor>
+      <arglist>(const FCControl *pControl, double offset=0)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>HorizontallyAlignRightWith</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>ae53068e3a663086dd1ec26478fa19321</anchor>
-      <arglist>(const FCControl &amp;control, double offset=0)</arglist>
+      <anchor>a7d3aeea7c71b7aa805e5c617fede9d7c</anchor>
+      <arglist>(const FCControl *pControl, double offset=0)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -16793,8 +16793,15 @@
       <type>void</type>
       <name>DoAutoResizeWidth</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a17ade64906db2856e917dc100dc7f277</anchor>
-      <arglist>(bool state)</arglist>
+      <anchor>a46f2e1dad9bf4845be3d12d14616d212</anchor>
+      <arglist>(bool state=true)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>StretchToAlignWithRight</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a2776c24b2e07b7dddc318bed07502cf3</anchor>
+      <arglist>(bool state=true)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -17638,13 +17645,6 @@
       <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
       <anchor>a47118618c3c5e42fb0aad8427a76d25d</anchor>
       <arglist>(twobyte id)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>StretchToAlignWithRight</name>
-      <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
-      <anchor>a80ab9af7c329602bac96ef31ba3d6cc3</anchor>
-      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
