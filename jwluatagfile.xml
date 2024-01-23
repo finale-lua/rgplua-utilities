@@ -2710,6 +2710,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a3604fe3e94ce2c588d5e74752bf694ff</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetIgnoreKeySig</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a3cebba54f581a61276ee7139f8c87874</anchor>
@@ -3203,6 +3210,20 @@
       <name>GetFullNameID</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a06959bcae181c74c49fc6dc03d755a7a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual FCStaffNamePosition *</type>
+      <name>GetFullNamePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>af026fa839345c1740c5e295538d940e3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual FCStaffNamePosition *</type>
+      <name>GetAbbreviatedNamePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>af2028743d9d3e70f522832e38c000df5</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -51064,13 +51085,6 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
-      <name>Save</name>
-      <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>a079eb0729222be0f901e6fc8e995968e</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
       <type>FCInstrumentPlaybackData *</type>
       <name>CreateInstrumentPlaybackData</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
@@ -51117,20 +51131,6 @@
       <name>CalcPercussionLayoutID</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
       <anchor>aaa15d16da6c0268185493ae30b1079de</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>FCStaffNamePosition *</type>
-      <name>GetFullNamePosition</name>
-      <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>af0374dbc1108d27cf4f7804b0588bc80</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>FCStaffNamePosition *</type>
-      <name>GetAbbreviatedNamePosition</name>
-      <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>a641df6b06d0e0640c8899163bbee51c4</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -52482,6 +52482,20 @@
       <anchorfile>class_f_c_staff_style_def.html</anchorfile>
       <anchor>af40a2533240355cce894986cd43cc7b4</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCStaffNamePosition *</type>
+      <name>GetFullNamePosition</name>
+      <anchorfile>class_f_c_staff_style_def.html</anchorfile>
+      <anchor>af0dfb3e766c10d3cf38140b6038e2c63</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCStaffNamePosition *</type>
+      <name>GetAbbreviatedNamePosition</name>
+      <anchorfile>class_f_c_staff_style_def.html</anchorfile>
+      <anchor>af2a73ecd9e061bb0d25a259e48a97a45</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
