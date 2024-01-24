@@ -62,7 +62,6 @@ local in_timer              -- used to prevent timer reentrancy
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
-global_dialog = nil         -- persists thru the running of the modeless window, so reset each time the script runs
 global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
 
 if not finenv.RetainLuaState then
