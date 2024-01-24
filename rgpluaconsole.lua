@@ -4,7 +4,7 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.HandlesUndo = true
-    finaleplugin.MinJWLuaVersion = 0.69
+    finaleplugin.MinJWLuaVersion = 0.71
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
@@ -829,6 +829,9 @@ local function on_scroll(control)
 end
 
 local function on_init_window()
+    local font = finale.FCFontInfo(config.font_name, config.font_size)
+    edit_text:SetLineHeightToMaxForFont(font)
+    line_number_text:SetLineHeightToMaxForFont(font)
     for idx, str in pairsbykeys(context.file_menu_base) do
         file_menu:AddString(finale.FCString(str))
     end
