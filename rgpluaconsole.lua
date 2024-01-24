@@ -81,6 +81,7 @@ if not finenv.RetainLuaState then
         font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
         total_width = 960,
         editor_height = 280,
+        editor_line_spacing = 4.0;
         output_console_height = 130,
         curr_script_item = 0,
         search_regex = false,
@@ -505,6 +506,7 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
     control:SetUseRichText(false)
     control:SetWordWrap(false)
     control:SetAutomaticEditing(false)
+    control:SetLineSpacing(config.editor_line_spacing)
     local font = finale.FCFontInfo(config.font_name, config.font_size)
     control:SetFont(font)
     if tabstop_width then
@@ -714,28 +716,35 @@ local function on_config_dialog()
     dlg:SetTitle(finale.FCString("Console Preferences"))
     --
     local total_width_label = dlg:CreateStatic(0, curr_y)
-    total_width_label:SetText(finale.FCString("Total Width: "))
+    total_width_label:SetText(finale.FCString("Total Width"))
     total_width_label:SetWidth(x_rightcol-20)
     local total_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     total_width:SetInteger(config.total_width)
     curr_y = curr_y + y_separator
     --
     local editor_height_label = dlg:CreateStatic(0, curr_y)
-    editor_height_label:SetText(finale.FCString("Editor Height: "))
+    editor_height_label:SetText(finale.FCString("Editor Height"))
     editor_height_label:SetWidth(x_rightcol-20)
     local editor_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     editor_height:SetInteger(config.editor_height)
     curr_y = curr_y + y_separator
     --
+    local editor_linespacing_label = dlg:CreateStatic(0, curr_y)
+    editor_linespacing_label:SetText(finale.FCString("Editor Line Spacing"))
+    editor_linespacing_label:SetWidth(x_rightcol-20)
+    local editor_linespacing = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+    editor_linespacing:SetFloat(config.editor_line_spacing)
+    curr_y = curr_y + y_separator
+    --
     local output_height_label = dlg:CreateStatic(0, curr_y)
-    output_height_label:SetText(finale.FCString("Output Console Height: "))
+    output_height_label:SetText(finale.FCString("Output Console Height"))
     output_height_label:SetWidth(x_rightcol-20)
     local output_height = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     output_height:SetInteger(config.output_console_height)
     curr_y = curr_y + y_separator
     --
     local tab_stop_width_label = dlg:CreateStatic(0, curr_y)
-    tab_stop_width_label:SetText(finale.FCString("Tabstop Width: "))
+    tab_stop_width_label:SetText(finale.FCString("Tabstop Width"))
     tab_stop_width_label:SetWidth(x_rightcol-20)
     local tab_stop_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     tab_stop_width:SetInteger(config.tabstop_width)
@@ -760,7 +769,7 @@ local function on_config_dialog()
     curr_y = curr_y + y_separator
     --
     local output_tab_width_label = dlg:CreateStatic(0, curr_y)
-    output_tab_width_label:SetText(finale.FCString("Output Tabstop Width: "))
+    output_tab_width_label:SetText(finale.FCString("Output Tabstop Width"))
     output_tab_width_label:SetWidth(x_rightcol-20)
     local output_tab_width = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
     output_tab_width:SetInteger(config.output_tabstop_width)
@@ -775,7 +784,7 @@ local function on_config_dialog()
     local font_label = dlg:CreateStatic(0, curr_y)
     font_label:SetWidth(x_rightcol-20)
     local function set_font_text(font_info)
-        local font_label_text = finale.FCString("Font: ")
+        local font_label_text = finale.FCString("Font")
         font_label_text:AppendString(font_info:CreateDescription())
         font_label:SetText(font_label_text)
     end
@@ -797,6 +806,7 @@ local function on_config_dialog()
     if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
         config.total_width = math.max(580, total_width:GetInteger())
         config.editor_height = math.max(120, editor_height:GetInteger())
+        config.editor_line_spacing = editor_linespacing:GetFloat(0, math.huge)
         config.output_console_height = math.max(60, output_height:GetInteger())
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
@@ -828,10 +838,7 @@ local function on_scroll(control)
 end
 
 local function on_init_window()
-    local font = finale.FCFontInfo(config.font_name, config.font_size)
-    edit_text:SetLineHeightToMaxForFont(font)
-    line_number_text:SetLineHeightToMaxForFont(font)
-    for idx, str in pairsbykeys(context.file_menu_base) do
+    for _, str in pairsbykeys(context.file_menu_base) do
         file_menu:AddString(finale.FCString(str))
     end
     for _, itemcontext in pairsbykeys(context.script_items_list) do
