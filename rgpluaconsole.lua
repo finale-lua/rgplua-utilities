@@ -81,7 +81,7 @@ if not finenv.RetainLuaState then
         font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
         total_width = 960,
         editor_height = 280,
-        editor_line_spacing = 4.0;
+        editor_line_spacing = win_mac(13.75, 4.0);
         output_console_height = 130,
         curr_script_item = 0,
         search_regex = false,
