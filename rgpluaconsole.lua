@@ -734,11 +734,12 @@ local function on_config_dialog()
     -- Windows can't do line spacing when UseRichText is false, so don't provide the option.
     -- The good news is that Windows keeps the line spacing exactly the same even for international
     -- characters, so the main need for it in the console is already addressed.
+    local editor_linespacing
     if finenv.UI():IsOnMac() then
         local editor_linespacing_label = dlg:CreateStatic(0, curr_y)
         editor_linespacing_label:SetText(finale.FCString("Editor Line Spacing"))
         editor_linespacing_label:SetWidth(x_rightcol-20)
-        local editor_linespacing = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+        editor_linespacing = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
         editor_linespacing:SetFloat(config.editor_line_spacing)
         curr_y = curr_y + y_separator
     end
@@ -813,7 +814,7 @@ local function on_config_dialog()
     if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
         config.total_width = math.max(580, total_width:GetInteger())
         config.editor_height = math.max(120, editor_height:GetInteger())
-        config.editor_line_spacing = finenv.UI():IsOnMac() and editor_linespacing:GetFloat(0, math.huge) or 0
+        config.editor_line_spacing = editor_linespacing and editor_linespacing:GetFloat(0, math.huge) or 0
         config.output_console_height = math.max(60, output_height:GetInteger())
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
