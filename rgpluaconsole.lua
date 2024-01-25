@@ -81,7 +81,7 @@ if not finenv.RetainLuaState then
         font_advance_points = win_mac(4.9482421875, 6.62255859375), -- win 10pt Consolas is 5.498046875
         total_width = 960,
         editor_height = 280,
-        editor_line_spacing = win_mac(13.75, 4.0);
+        editor_line_spacing = win_mac(0, 4.0);
         output_console_height = 130,
         curr_script_item = 0,
         search_regex = false,
@@ -506,7 +506,9 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
     control:SetUseRichText(false)
     control:SetWordWrap(false)
     control:SetAutomaticEditing(false)
-    control:SetLineSpacing(config.editor_line_spacing)
+    if finenv.UI():IsOnMac() then
+        control:SetLineSpacing(config.editor_line_spacing)
+    end
     local font = finale.FCFontInfo(config.font_name, config.font_size)
     control:SetFont(font)
     if tabstop_width then
@@ -729,12 +731,17 @@ local function on_config_dialog()
     editor_height:SetInteger(config.editor_height)
     curr_y = curr_y + y_separator
     --
-    local editor_linespacing_label = dlg:CreateStatic(0, curr_y)
-    editor_linespacing_label:SetText(finale.FCString("Editor Line Spacing"))
-    editor_linespacing_label:SetWidth(x_rightcol-20)
-    local editor_linespacing = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
-    editor_linespacing:SetFloat(config.editor_line_spacing)
-    curr_y = curr_y + y_separator
+    -- Windows can't do line spacing when UseRichText is false, so don't provide the option.
+    -- The good news is that Windows keeps the line spacing exactly the same even for international
+    -- characters, so the main need for it in the console is already addressed.
+    if finenv.UI():IsOnMac() then
+        local editor_linespacing_label = dlg:CreateStatic(0, curr_y)
+        editor_linespacing_label:SetText(finale.FCString("Editor Line Spacing"))
+        editor_linespacing_label:SetWidth(x_rightcol-20)
+        local editor_linespacing = dlg:CreateEdit(x_rightcol, curr_y - win_mac(win_edit_offset, mac_edit_offset))
+        editor_linespacing:SetFloat(config.editor_line_spacing)
+        curr_y = curr_y + y_separator
+    end
     --
     local output_height_label = dlg:CreateStatic(0, curr_y)
     output_height_label:SetText(finale.FCString("Output Console Height"))
@@ -806,7 +813,7 @@ local function on_config_dialog()
     if dlg:ExecuteModal(global_dialog) == finale.EXECMODAL_OK then
         config.total_width = math.max(580, total_width:GetInteger())
         config.editor_height = math.max(120, editor_height:GetInteger())
-        config.editor_line_spacing = editor_linespacing:GetFloat(0, math.huge)
+        config.editor_line_spacing = finenv.UI():IsOnMac() and editor_linespacing:GetFloat(0, math.huge) or 0
         config.output_console_height = math.max(60, output_height:GetInteger())
         config.tabstop_width = math.max(0, tab_stop_width:GetInteger())
         config.tabs_to_spaces = tabs_to_spaces:GetCheck() ~= 0
