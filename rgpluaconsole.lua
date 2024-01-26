@@ -555,9 +555,11 @@ local function write_line_numbers(num_lines)
         if config.word_wrap and i > 1 then
             local line_range = finale.FCRange()
             edit_text:GetLineRangeForLine(i, line_range)
-            local unichar = edit_text:GetCharacterAtIndex(line_range.Start - 1)
-            if unichar ~= string.byte("\n") and unichar ~= string.byte("\r") then
-                do_number = false
+            local unichar = finale.FCString()
+            if edit_text:GetCharacterAtIndex(line_range.Start - 1, unichar) then
+                if unichar:GetCharacterAt(0) ~= string.byte("\n") and unichar:GetCharacterAt(0) ~= string.byte("\r") then
+                    do_number = false
+                end
             end
         end
         local line_ending = i < num_lines and "\n" or ""

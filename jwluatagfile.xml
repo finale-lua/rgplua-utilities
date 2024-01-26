@@ -18734,11 +18734,11 @@
       <arglist>(double value)</arglist>
     </member>
     <member kind="function">
-      <type>int</type>
+      <type>bool</type>
       <name>GetCharacterAtIndex</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>a826d70ab29f57494725b6245e8195392</anchor>
-      <arglist>(int pos) const</arglist>
+      <anchor>a0640cea85c38fbcd6406aacdd565fa62</anchor>
+      <arglist>(int pos, FCString &amp;charstring) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
