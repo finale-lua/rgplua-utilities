@@ -17596,15 +17596,15 @@
       <type>void</type>
       <name>SetFloat</name>
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
-      <anchor>a04a73c26b3628d0533389ce6c9fda70d</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>ab6fdfada18e934cc137f401c2c224cc3</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
-      <anchor>a4c15b02ddf9498d8d084c51c8a05897d</anchor>
-      <arglist>(float min, float max)</arglist>
+      <anchor>aee4de75ba4506acca0f1a7f2e6d716d7</anchor>
+      <arglist>(double min, double max)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -18718,6 +18718,20 @@
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
       <anchor>a80dbe71b44ba03760f91ee862d6e3098</anchor>
       <arglist>(int line)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>GetLineSpacing</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>a7a163fa143cd03a3f93cc58f0da82d8c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLineSpacing</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa1b7bae0862b03434c24675581f3cb0a</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
       <type>int</type>

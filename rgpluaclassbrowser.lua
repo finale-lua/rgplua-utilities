@@ -65,7 +65,6 @@ if not finenv.RetainLuaState then
     }
 end
 
-global_dialog = nil
 global_dialog_info = {}     -- key: list control id or hard-coded string, value: table of associated data and controls
 global_control_xref = {}    -- key: non-list control id, value: associated list control id
 global_timer_id = 1         -- per docs, we supply the timer id, starting at 1
