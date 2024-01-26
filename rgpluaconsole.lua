@@ -924,6 +924,11 @@ local function on_close_window()
         end
         context.output_text = get_edit_text(output_text).LuaString
     end
+    -- clear edit controls for speedier exit, esp. on Windows
+    -- See PDK docs for FCCtrlTextEditor::CreateEnigmaString
+    edit_text:SetText(finale.FCString())
+    line_number_text:SetText(finale.FCString())
+    output_text:SetText(finale.FCString())
 end
 
 local function find_again(from_current)
