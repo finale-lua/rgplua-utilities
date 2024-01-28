@@ -600,13 +600,12 @@ end
 function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
     local processing_time_str = " (Processing time: " .. string.format("%.3f", proc_time) .. " s)"
+    if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT and #msg > 0 then
+        output_to_console(msg)
+    end
     if success then
         output_to_console("<======= [" .. item.MenuItemText .. "] succeeded." .. processing_time_str)
     else
-        -- script results have already been sent to ouput by RGP Lua, so skip them
-        if msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
-            output_to_console(msg)
-        end
         if line_number > 0 then
             actual_line_number = context.line_numbers[line_number]
             line_range = finale.FCRange()
