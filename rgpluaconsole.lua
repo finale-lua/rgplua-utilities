@@ -641,8 +641,9 @@ end
 local function on_run_script(control)
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
+    local file_exists = context.script_items_list[context.selected_script_item].exists
     local script_item = script_items:GetItemAt(script_menu:GetSelectedItem())
-    if script_text.LuaString == context.original_script_text then
+    if file_exists and script_text.LuaString == context.original_script_text then
         script_item.OptionalScriptText = nil -- this allows the filename to be used for error reporting
     else
         script_item.OptionalScriptText = script_text.LuaString
