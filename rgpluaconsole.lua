@@ -26,7 +26,7 @@ local text = osutils.text
 local configured_script_items = finenv.CreateLuaScriptItems()
 local browser_script_item = (function()
     for item in each(configured_script_items) do
-        if item.MenuItemText == "RGP Lua Class Browser..." then
+        if item.FileName == "rgpluaclassbrowser.lua" then
             return item
         end
     end
