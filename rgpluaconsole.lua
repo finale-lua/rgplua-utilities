@@ -600,7 +600,7 @@ end
 function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     local proc_time = finale.FCUI.GetHiResTimer() - hires_timer
     local processing_time_str = " (Processing time: " .. string.format("%.3f", proc_time) .. " s)"
-    if msg and msgtype ~= finenv.MessageResultType.SCRIPT_RESULT then
+    if msg and msgtype ~= finenv.MessageResultType.LUA_ERROR then -- Any Lua error was already printed
         output_to_console(msg)
     end
     if success then
