@@ -54229,8 +54229,8 @@
       <type>bool</type>
       <name>AddCopy</name>
       <anchorfile>class_f_c_strings.html</anchorfile>
-      <anchor>a755c4b6d4c3a9dd6b289c2b130d812cb</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a576950a9533f099dceb2efc71440b565</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
