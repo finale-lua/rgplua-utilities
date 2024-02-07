@@ -16814,15 +16814,15 @@
       <type>void</type>
       <name>DoAutoResizeWidth</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a46f2e1dad9bf4845be3d12d14616d212</anchor>
-      <arglist>(bool state=true)</arglist>
+      <anchor>aa25495487b011af3e06327531449236e</anchor>
+      <arglist>(std::optional&lt; double &gt; minimumwidth=std::nullopt)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>StretchToAlignWithRight</name>
       <anchorfile>class_f_c_control.html</anchorfile>
-      <anchor>a2776c24b2e07b7dddc318bed07502cf3</anchor>
-      <arglist>(bool state=true)</arglist>
+      <anchor>ae9689f0802f9bb4addf5f44942f3f028</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
