@@ -2710,6 +2710,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a3604fe3e94ce2c588d5e74752bf694ff</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetIgnoreKeySig</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a3cebba54f581a61276ee7139f8c87874</anchor>
@@ -3203,6 +3210,20 @@
       <name>GetFullNameID</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a06959bcae181c74c49fc6dc03d755a7a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual FCStaffNamePosition *</type>
+      <name>GetFullNamePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>af026fa839345c1740c5e295538d940e3</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual FCStaffNamePosition *</type>
+      <name>GetAbbreviatedNamePosition</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>af2028743d9d3e70f522832e38c000df5</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -16755,6 +16776,55 @@
       <arglist>(FCString *pString)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>AssureWidthForText</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>ad19ff3445409c0d7764782713e5a9e97</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>AssureNoHorizontalOverlap</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a3f7b3f495df57c005f8f5999f24cadd5</anchor>
+      <arglist>(const FCControl &amp;control, int padding)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HorizontallyAlignLeftWith</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a678e939a2e1ec6d6e307bcdadc812e57</anchor>
+      <arglist>(const FCControl *pControl, double offset=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HorizontallyAlignRightWith</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a7d3aeea7c71b7aa805e5c617fede9d7c</anchor>
+      <arglist>(const FCControl *pControl, double offset=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>HorizontallyAlignRightWithFurthest</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>a87f4356bd0012fa0cd38858db2b439b6</anchor>
+      <arglist>(double offset=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DoAutoResizeWidth</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>aa25495487b011af3e06327531449236e</anchor>
+      <arglist>(std::optional&lt; double &gt; minimumwidth=std::nullopt)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>StretchToAlignWithRight</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>ae9689f0802f9bb4addf5f44942f3f028</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>SetText</name>
       <anchorfile>class_f_c_control.html</anchorfile>
@@ -17042,6 +17112,13 @@
       <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
       <anchor>a827b8bf90ac3cdbb3d40bbf644423c0a</anchor>
       <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AssureWidthForText</name>
+      <anchorfile>class_f_c_ctrl_combo_box.html</anchorfile>
+      <anchor>aed6cc09ef78b77cbe6e9083f934e632c</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17519,15 +17596,15 @@
       <type>void</type>
       <name>SetFloat</name>
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
-      <anchor>a04a73c26b3628d0533389ce6c9fda70d</anchor>
-      <arglist>(float value)</arglist>
+      <anchor>ab6fdfada18e934cc137f401c2c224cc3</anchor>
+      <arglist>(double value)</arglist>
     </member>
     <member kind="function">
-      <type>float</type>
+      <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
-      <anchor>a4c15b02ddf9498d8d084c51c8a05897d</anchor>
-      <arglist>(float min, float max)</arglist>
+      <anchor>aee4de75ba4506acca0f1a7f2e6d716d7</anchor>
+      <arglist>(double min, double max)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -17570,6 +17647,25 @@
       <anchorfile>class_f_c_ctrl_edit.html</anchorfile>
       <anchor>afa49474a4092915bf5dacc98aa3ac23c</anchor>
       <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCCtrlHorizontalLine</name>
+    <filename>class_f_c_ctrl_horizontal_line.html</filename>
+    <base>FCCtrlLine</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
+      <anchor>a434055a089e1e6a4be519974a707623f</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlHorizontalLine</name>
+      <anchorfile>class_f_c_ctrl_horizontal_line.html</anchorfile>
+      <anchor>a47118618c3c5e42fb0aad8427a76d25d</anchor>
+      <arglist>(twobyte id)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -17622,13 +17718,6 @@
       <anchorfile>class_f_c_ctrl_line.html</anchorfile>
       <anchor>a02d7c28be826e35fbe5d5d25991f1629</anchor>
       <arglist>(twobyte id)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetHorizontal</name>
-      <anchorfile>class_f_c_ctrl_line.html</anchorfile>
-      <anchor>a4b5ed3d679e11c593c261ea7162e9fc2</anchor>
-      <arglist>(bool horiz)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -17758,6 +17847,13 @@
       <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
       <anchor>a6dfc46946874aa160624cf30312f7266</anchor>
       <arglist>(twobyte id)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AssureWidthForText</name>
+      <anchorfile>class_f_c_ctrl_popup.html</anchorfile>
+      <anchor>ab170d7dd4a408a86cbe97a5894a1a0f1</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -18624,10 +18720,24 @@
       <arglist>(int line)</arglist>
     </member>
     <member kind="function">
-      <type>int</type>
-      <name>GetCharacterAtIndex</name>
+      <type>double</type>
+      <name>GetLineSpacing</name>
       <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
-      <anchor>a826d70ab29f57494725b6245e8195392</anchor>
+      <anchor>a7a163fa143cd03a3f93cc58f0da82d8c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetLineSpacing</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>aa1b7bae0862b03434c24675581f3cb0a</anchor>
+      <arglist>(double value)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateCharacterAtIndex</name>
+      <anchorfile>class_f_c_ctrl_text_editor.html</anchorfile>
+      <anchor>ad6719223d67ec822a6f4e0d5334a2c5f</anchor>
       <arglist>(int pos) const</arglist>
     </member>
     <member kind="function">
@@ -18870,6 +18980,25 @@
       <anchorfile>class_f_c_ctrl_up_down.html</anchorfile>
       <anchor>aef34ba373d7208402cf2c80ef7a05b8d</anchor>
       <arglist>(FCCtrlEdit *pControl, double min, double max)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCCtrlVerticalLine</name>
+    <filename>class_f_c_ctrl_vertical_line.html</filename>
+    <base>FCCtrlLine</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_ctrl_vertical_line.html</anchorfile>
+      <anchor>a3e7869c668236cb7b1ee17eff3190203</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCtrlVerticalLine</name>
+      <anchorfile>class_f_c_ctrl_vertical_line.html</anchorfile>
+      <anchor>ac546dd902875518c62721cbd734712fa</anchor>
+      <arglist>(twobyte id)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -19824,17 +19953,17 @@
       <arglist>(float x, float y)</arglist>
     </member>
     <member kind="function">
-      <type>FCCtrlLine *</type>
+      <type>FCCtrlHorizontalLine *</type>
       <name>CreateHorizontalLine</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
-      <anchor>ae096aa45dacb0a781b6c3f857c8190a0</anchor>
+      <anchor>a5c25cf6f0c52dedf5c803faaaa630fa3</anchor>
       <arglist>(float x, float y, float width)</arglist>
     </member>
     <member kind="function">
-      <type>FCCtrlLine *</type>
+      <type>FCCtrlVerticalLine *</type>
       <name>CreateVerticalLine</name>
       <anchorfile>class_f_c_custom_window.html</anchorfile>
-      <anchor>ae3c787936e927e76078e0b3f2a51dd88</anchor>
+      <anchor>a635cc169481755e8e39e5729b6c63493</anchor>
       <arglist>(float x, float y, float height)</arglist>
     </member>
     <member kind="function">
@@ -29595,6 +29724,13 @@
       <name>GetFilePath</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>aa89e448496487e620be2e41d8ae50076</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>GetFileName</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>afa2633b643fe798b0ea48c6996e4179b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -50970,13 +51106,6 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
-      <name>Save</name>
-      <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>a079eb0729222be0f901e6fc8e995968e</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
       <type>FCInstrumentPlaybackData *</type>
       <name>CreateInstrumentPlaybackData</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
@@ -51023,20 +51152,6 @@
       <name>CalcPercussionLayoutID</name>
       <anchorfile>class_f_c_staff.html</anchorfile>
       <anchor>aaa15d16da6c0268185493ae30b1079de</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>FCStaffNamePosition *</type>
-      <name>GetFullNamePosition</name>
-      <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>af0374dbc1108d27cf4f7804b0588bc80</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>FCStaffNamePosition *</type>
-      <name>GetAbbreviatedNamePosition</name>
-      <anchorfile>class_f_c_staff.html</anchorfile>
-      <anchor>a641df6b06d0e0640c8899163bbee51c4</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -52390,6 +52505,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCStaffNamePosition *</type>
+      <name>GetFullNamePosition</name>
+      <anchorfile>class_f_c_staff_style_def.html</anchorfile>
+      <anchor>af0dfb3e766c10d3cf38140b6038e2c63</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCStaffNamePosition *</type>
+      <name>GetAbbreviatedNamePosition</name>
+      <anchorfile>class_f_c_staff_style_def.html</anchorfile>
+      <anchor>af2a73ecd9e061bb0d25a259e48a97a45</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>GetName</name>
       <anchorfile>class_f_c_staff_style_def.html</anchorfile>
@@ -53444,8 +53573,8 @@
       <type>bool</type>
       <name>ContainsStringFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a282b7afbf074349d5f66dd4092e2e810</anchor>
-      <arglist>(FCString *pSubString, int startindex)</arglist>
+      <anchor>acaa1bf9e134ab8918c4ff41741cf156d</anchor>
+      <arglist>(const FCString *pSubString, int startindex)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54100,8 +54229,8 @@
       <type>bool</type>
       <name>AddCopy</name>
       <anchorfile>class_f_c_strings.html</anchorfile>
-      <anchor>a755c4b6d4c3a9dd6b289c2b130d812cb</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>a576950a9533f099dceb2efc71440b565</anchor>
+      <arglist>(const FCString *pString)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -61996,6 +62125,8 @@
     <class kind="class">FCControl</class>
     <class kind="class">FCCtrlUpDown</class>
     <class kind="class">FCCtrlLine</class>
+    <class kind="class">FCCtrlHorizontalLine</class>
+    <class kind="class">FCCtrlVerticalLine</class>
     <class kind="class">FCCtrlEdit</class>
     <class kind="class">FCCtrlPopup</class>
     <class kind="class">FCCtrlComboBox</class>
