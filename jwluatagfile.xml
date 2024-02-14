@@ -9949,6 +9949,20 @@
       <anchor>a1310823b2bf28c8d02a54b39e6ac9234</anchor>
       <arglist>(int newwidth, int newheight, int oldwidth, int oldheight)</arglist>
     </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>MouseTrackingStarted</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>acb063cf5e629c8f5cc560197955568c4</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>MouseTrackingStopped</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>aeb158c96c258b51084193e5caaeff31c</anchor>
+      <arglist>(FCControl *pControl)</arglist>
+    </member>
     <member kind="function">
       <type>FCControl *</type>
       <name>FindControl</name>
@@ -19208,6 +19222,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>RegisterMouseTrackingStarted</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a7adf95cce0a718dd7fc6389d06e481ae</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterMouseTrackingStopped</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>ab4caea8ecd2be83fb4a3621f692e0cb5</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>HandleControlEvent</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>a06ea38dd1b4c631219e1c06c320eb65e</anchor>
@@ -19331,6 +19359,20 @@
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
       <anchor>aacc4b3823a52f731c5b0a1808d4647ce</anchor>
       <arglist>(EMENUID menuCommand, int menuCommandType) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MouseTrackingStarted</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>aa40eb0180fec407b0dad11058060be50</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>MouseTrackingStopped</name>
+      <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
+      <anchor>a95b3ced348f233051435095ac90b9623</anchor>
+      <arglist>(FCControl *pControl) override</arglist>
     </member>
   </compound>
   <compound kind="class">
