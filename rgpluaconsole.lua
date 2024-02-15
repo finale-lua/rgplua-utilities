@@ -913,8 +913,8 @@ local function on_close_window()
     config.window_pos_y = global_dialog.StoredY
     config.window_pos_valid = true
     config_write()
+    on_terminate_script()
     if finenv.RetainLuaState then
-        on_terminate_script()
         context.script_text = get_edit_text(edit_text).LuaString
         if context.script_text == context.original_script_text then
             -- if we are in a saved state, do not keep the current contents.
