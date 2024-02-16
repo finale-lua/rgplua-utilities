@@ -19084,15 +19084,15 @@
       <type>bool</type>
       <name>ShowModeless</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a002f165377f6191657f809a30e42b0ad</anchor>
-      <arglist>()</arglist>
+      <anchor>aa9dd271bae596714596ad6f84b3bdcf6</anchor>
+      <arglist>(lua_State *WINCODE(L))</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ShowModelessWithGrabbyFocus</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>a726de8e45417d82413175d97aa9439b7</anchor>
-      <arglist>()</arglist>
+      <anchor>a8f7dfc97eefd07fcdbef8cd46e9fca36</anchor>
+      <arglist>(lua_State *L)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
