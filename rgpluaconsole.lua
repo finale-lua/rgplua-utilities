@@ -4,7 +4,7 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.HandlesUndo = true
-    finaleplugin.MinJWLuaVersion = 0.71
+    finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.0"
@@ -238,6 +238,7 @@ local function kill_executing_items(item_index)
             if item:IsExecuting() then
                 item:StopExecuting()
             end
+            item.ControllingWindow = nil -- piece o' the rock
         end
     end
 end
@@ -621,6 +622,7 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
         local final_result = (msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION) and "terminated" or "FAILED"
         output_to_console("<======= [" .. item.MenuItemText .. "] " .. final_result .. "." .. processing_time_str)
     end
+    item.ControllingWindow = nil
     hires_timer = nil
     kill_script_cmd:SetEnable(false)
 end
@@ -651,6 +653,7 @@ local function on_run_script(control)
     script_item.AutomaticallyReportErrors = false
     script_item.Debug = run_as_debug_chk:GetCheck() ~= 0
     script_item.Trusted = run_as_trusted_chk:GetCheck() ~= 0
+    script_item.ControllingWindow = global_dialog
     script_item:RegisterPrintFunction(output_to_console)
     script_item:RegisterOnExecutionWillStart(on_execution_will_start)
     script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
