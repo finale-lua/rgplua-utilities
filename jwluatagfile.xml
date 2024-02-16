@@ -29968,15 +29968,15 @@
       <type>void</type>
       <name>OnExecutionWillStart</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>a4812982be90e0b122fb5f5cd9fb4ed6c</anchor>
-      <arglist>() const</arglist>
+      <anchor>a8304381f8a9bd7671c6317d1fc8ec5fa</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>OnExecutionDidStop</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
-      <anchor>ac5e05e23c391c7fdb833753f3f39141b</anchor>
-      <arglist>(bool success, const char *msg, int msgtype, int linenumber, const char *source) const</arglist>
+      <anchor>ad5e8b5f8ee39d47d92217dff2db9f1fd</anchor>
+      <arglist>(bool success, const char *msg, int msgtype, int linenumber, const char *source)</arglist>
     </member>
   </compound>
   <compound kind="class">
