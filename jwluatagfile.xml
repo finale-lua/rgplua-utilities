@@ -29860,6 +29860,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>__FCUserWindow *</type>
+      <name>GetControllingWindow</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a987473b2e1c9a9c47f689a0015508d9a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>FCString *</type>
       <name>CreateFinalePluginValue</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
@@ -29928,6 +29935,13 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>a9b43bd184762d6064c474af2854d436c</anchor>
       <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetControllingWindow</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>ad69d465449b7d113e08c83c130e3c4a7</anchor>
+      <arglist>(__FCUserWindow *value)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -45885,8 +45899,8 @@
       <type>EXECMODAL_RETURNS</type>
       <name>ExecuteModal</name>
       <anchorfile>class_f_c_resource_window.html</anchorfile>
-      <anchor>a65c56b8170a2b469f7ea905c420412f8</anchor>
-      <arglist>(__FCUserWindow *pParent)</arglist>
+      <anchor>a36c82a61638d0b4014a986adca2be501</anchor>
+      <arglist>(__FCUserWindow *pParent=nullptr)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
