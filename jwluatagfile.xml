@@ -19084,8 +19084,8 @@
       <type>bool</type>
       <name>ShowModeless</name>
       <anchorfile>class_f_c_custom_lua_window.html</anchorfile>
-      <anchor>aa9dd271bae596714596ad6f84b3bdcf6</anchor>
-      <arglist>(lua_State *WINCODE(L))</arglist>
+      <anchor>a0b2ebc3b8b0b64ad7c91c5eb71c6c47f</anchor>
+      <arglist>(MACCODE([[maybe_unused]]) lua_State *L)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
