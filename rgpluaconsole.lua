@@ -186,7 +186,7 @@ function calc_line_ending_type(fcstr)
 end
 
 local function activate_editor()
-    global_dialog.Activate()
+    global_dialog:Activate()
     edit_text:SetKeyboardFocus()
 end
 
@@ -714,7 +714,9 @@ end
 
 local function on_config_dialog()
     if finale.FCDocument().ID <= 0 then
-        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.", "Document Required")
+        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.",
+            "Document Required")
+        activate_editor()
         return
     end
     local curr_y = 0
@@ -1229,6 +1231,7 @@ local create_dialog = function()
         end
     end)
     dialog:RegisterHandleControlEvent(browser_btn, function(control)
+        activate_editor() -- activate first, since this will launch another modeless window
         if browser_script_item then
             finenv.ExecuteLuaScriptItem(browser_script_item)
         end
