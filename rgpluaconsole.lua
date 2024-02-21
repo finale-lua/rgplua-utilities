@@ -185,6 +185,11 @@ function calc_line_ending_type(fcstr)
     return LINE_ENDINGS_UNKNOWN
 end
 
+local function activate_editor()
+    global_dialog:Activate()
+    edit_text:SetKeyboardFocus()
+end
+
 local function get_edit_text(control)
     local retval = finale.FCString()
     control:GetText(retval)
@@ -629,7 +634,7 @@ end
 
 local function on_clear_output(control)
     output_text:SetText(finale.FCString(""))
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_copy_output(control)
@@ -637,7 +642,7 @@ local function on_copy_output(control)
     output_text:GetText(text_for_output)
     local line_ending = #text_for_output.LuaString > 0 and "\n" or ""
     finenv.UI():TextToClipboard(text_for_output.LuaString .. line_ending)
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_run_script(control)
@@ -665,7 +670,7 @@ local function on_run_script(control)
     finenv.ExecuteLuaScriptItem(script_item)
     in_execute_script_item = false
     kill_script_cmd:SetEnable(script_item:IsExecuting())
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_terminate_script(control)
@@ -674,7 +679,7 @@ local function on_terminate_script(control)
     if script_item:IsExecuting() then
         script_item:StopExecuting()
     end
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_file_popup(control)
@@ -709,7 +714,9 @@ end
 
 local function on_config_dialog()
     if finale.FCDocument().ID <= 0 then
-        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.", "Document Required")
+        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.",
+            "Document Required")
+        activate_editor()
         return
     end
     local curr_y = 0
@@ -832,6 +839,7 @@ local function on_config_dialog()
         config.font_advance_points = font:CalcAverageRomanCharacterWidthPoints()
         global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.", "Changes Accepted")
     end
+    activate_editor()
 end
 
 local function on_scroll(control)
@@ -884,7 +892,7 @@ local function on_init_window()
         output_text:SetText(finale.FCString(""))
         output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
     end
-    edit_text:SetKeyboardFocus()
+    activate_editor()
     global_dialog:SetTimer(global_timer_id, 100) --100ms should be plenty for checking if the file has been written externally
 end
 
@@ -982,7 +990,7 @@ local function find_again(from_current)
         end
         global_dialog:CreateChildUI():AlertInfo(message .. ".", "Not Found")
     end
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function find_text()
@@ -1051,6 +1059,7 @@ local function find_text()
         config.search_currsel = current_selection_only:GetCheck() ~= 0
         find_again(true)
     end
+    activate_editor()
 end
 
 local function on_timer(timer_id)
@@ -1101,6 +1110,11 @@ local function on_keyboard_command(control, character)
     local char_string = utf8.char(character)
     if not keyboard_command_funcs[char_string] then
         return false
+    end
+    if finenv.UI():IsOnMac() and char_string == "N" then
+        if not global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+            return false
+        end
     end
     keyboard_command_funcs[char_string]()
     return true
@@ -1217,6 +1231,7 @@ local create_dialog = function()
         end
     end)
     dialog:RegisterHandleControlEvent(browser_btn, function(control)
+        activate_editor() -- activate first, since this will launch another modeless window
         if browser_script_item then
             finenv.ExecuteLuaScriptItem(browser_script_item)
         end
