@@ -15945,6 +15945,90 @@
       <anchor>aba2f317d9f8801c0f79a1037e2ff9d36</anchor>
       <arglist>(CHORDSTYLES style)</arglist>
     </member>
+    <member kind="function">
+      <type>double</type>
+      <name>GetScaleFretboardsBy</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a8b224f211006a08d87c11aa80a6eb7c8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetScaleFretboardsBy</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a8f9ee6de89a33fa3bb76e4e1ae508384</anchor>
+      <arglist>(double value)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>GetScaleChordsBy</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a1b727d599838b0ddb36074b7294424a9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetScaleChordsBy</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>ac4ad336d776bc211ad1d6299ae61cba4</anchor>
+      <arglist>(double value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetShowFretboards</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a37cd4dc0cf0851511e62eb69f77dad2d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetShowFretboards</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a1d471989a857bf2deb78605d660fe6be</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetMultipleItemsPerString</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a2a40861555213656061a9ffb0e65af37</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMultipleItemsPerString</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a0d63f5ee1aba2efcac99627386e55a1a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetItalicizeCapoChords</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a64df3b4cd6911b98ae0478cdd47237b7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetItalicizeCapoChords</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a115252df20fbee8b86dfd0624f11bf1a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetEnableChordPlayback</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a5981be5dd5a1397d8d634be948349e9a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetEnableChordPlayback</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a70a80fd8185f6e5ed1d3e02f66aa5e9a</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCChords</name>
