@@ -646,6 +646,7 @@ local function on_copy_output(control)
 end
 
 local function on_run_script(control)
+    activate_editor() -- do this first, in case the script opens a dialog
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
     local file_exists = context.script_items_list[context.selected_script_item].exists
@@ -670,7 +671,6 @@ local function on_run_script(control)
     finenv.ExecuteLuaScriptItem(script_item)
     in_execute_script_item = false
     kill_script_cmd:SetEnable(script_item:IsExecuting())
-    activate_editor()
 end
 
 local function on_terminate_script(control)
