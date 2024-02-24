@@ -29965,6 +29965,20 @@
       <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>RegisterOnModalWindowWillOpen</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a562661336e70208dcbdbd87884a5bdb8</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>RegisterOnModalWindowDidClose</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>af3c29152da69771dfe94b760e691b399</anchor>
+      <arglist>(luabridge::LuaRef lua_callback_function)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>OnExecutionWillStart</name>
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
@@ -29977,6 +29991,20 @@
       <anchorfile>class_f_c_lua_script_item.html</anchorfile>
       <anchor>ad5e8b5f8ee39d47d92217dff2db9f1fd</anchor>
       <arglist>(bool success, const char *msg, int msgtype, int linenumber, const char *source)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>OnModalWindowWillOpen</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>a4f10bd80cb0dcda4bd2eb15a3e191eec</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>OnModalWindowDidClose</name>
+      <anchorfile>class_f_c_lua_script_item.html</anchorfile>
+      <anchor>afa5f2c104d1b68160812cd0bdc005f05</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">

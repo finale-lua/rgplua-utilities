@@ -7,7 +7,7 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.0"
+    finaleplugin.Version = "1.5"
     finaleplugin.Date = "October 17, 2023"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
@@ -632,6 +632,14 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     kill_script_cmd:SetEnable(false)
 end
 
+function on_modal_window_will_open(item)
+    output_to_console("modal window will open")
+end
+
+function on_modal_window_did_close(item)
+    output_to_console("modal window did close")
+end
+
 local function on_clear_output(control)
     output_text:SetText(finale.FCString(""))
     activate_editor()
@@ -663,6 +671,8 @@ local function on_run_script(control)
     script_item:RegisterPrintFunction(output_to_console)
     script_item:RegisterOnExecutionWillStart(on_execution_will_start)
     script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
+    script_item:RegisterOnModalWindowWillOpen(on_modal_window_will_open)
+    script_item:RegisterOnModalWindowDidClose(on_modal_window_did_close)
     if clear_output_chk:GetCheck() ~= 0 then
         output_text:SetText(finale.FCString(""))
     end
