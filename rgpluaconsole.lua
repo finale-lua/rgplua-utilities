@@ -57,8 +57,9 @@ local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
 local in_execute_script_item      -- tracks is we are inside on_run_script
-local find_requested         -- used by Windows to trigger the Find dialog box
+local find_requested        -- used by Windows to trigger the Find dialog box
 local in_timer              -- used to prevent timer reentrancy
+local modal_depth = 0       -- used to count modal depth of scripts
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -633,15 +634,23 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
 end
 
 function on_modal_window_will_open(_item)
-    kill_script_cmd:SetEnable(false)
-    close_btn:SetEnable(false)
-    global_dialog:SetPreventClosing(true)
+    assert(modal_depth >= 0, "modal_depth is negative")
+    if modal_depth == 0 then
+        kill_script_cmd:SetEnable(false)
+        close_btn:SetEnable(false)
+        global_dialog:SetPreventClosing(true)
+    end
+    modal_depth = modal_depth + 1
 end
 
 function on_modal_window_did_close(item)
-    kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
-    close_btn:SetEnable(true)
-    global_dialog:SetPreventClosing(false)
+    assert(modal_depth > 0, "modal_depth is 0 or less")
+    modal_depth = modal_depth - 1
+    if modal_depth == 0 then
+        kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
+        close_btn:SetEnable(true)
+        global_dialog:SetPreventClosing(false)
+    end
 end
 
 local function on_clear_output(control)
