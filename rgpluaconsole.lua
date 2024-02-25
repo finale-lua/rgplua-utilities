@@ -632,12 +632,16 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     kill_script_cmd:SetEnable(false)
 end
 
-function on_modal_window_will_open(item)
-    output_to_console("modal window will open")
+function on_modal_window_will_open(_item)
+    kill_script_cmd:SetEnable(false)
+    close_btn:SetEnable(false)
+    global_dialog:SetPreventClosing(true)
 end
 
 function on_modal_window_did_close(item)
-    output_to_console("modal window did close")
+    kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
+    close_btn:SetEnable(true)
+    global_dialog:SetPreventClosing(false)
 end
 
 local function on_clear_output(control)
@@ -1223,7 +1227,7 @@ local create_dialog = function()
     browser_btn:SetWidth(110)
     browser_btn:SetEnable(browser_script_item ~= nil)
     curr_x = curr_x + 110 + x_separator
-    local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
+    close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
     dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)

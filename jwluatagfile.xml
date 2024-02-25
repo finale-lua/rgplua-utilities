@@ -9991,6 +9991,20 @@
       <anchor>adf166287462dd18555fc04a26eacb167</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetPreventClosing</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>aab3d3c92e612f69247956e0face09268</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPreventClosing</name>
+      <anchorfile>class_____f_c_user_window.html</anchorfile>
+      <anchor>a0e02f1f896e993d360b999d804e08927</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>CanClose</name>
