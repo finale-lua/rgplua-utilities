@@ -8,7 +8,7 @@ function plugindef()
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
     finaleplugin.Version = "1.5"
-    finaleplugin.Date = "October 17, 2023"
+    finaleplugin.Date = "February 25, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -636,7 +636,9 @@ end
 function on_modal_window_will_open(_item)
     assert(modal_depth >= 0, "modal_depth is negative")
     if modal_depth == 0 then
+        file_menu:SetEnable(false)
         kill_script_cmd:SetEnable(false)
+        run_script_cmd:SetEnable(false)
         close_btn:SetEnable(false)
         global_dialog:SetPreventClosing(true)
     end
@@ -647,7 +649,9 @@ function on_modal_window_did_close(item)
     assert(modal_depth > 0, "modal_depth is 0 or less")
     modal_depth = modal_depth - 1
     if modal_depth == 0 then
+        file_menu:SetEnable(true)
         kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
+        run_script_cmd:SetEnable(true)
         close_btn:SetEnable(true)
         global_dialog:SetPreventClosing(false)
     end
@@ -1139,13 +1143,15 @@ local function on_keyboard_command(control, character)
             return false
         end
     end
-    keyboard_command_funcs[char_string]()
+    if modal_depth <= 0 then
+        keyboard_command_funcs[char_string]()
+    end
     return true
 end
 
 local create_dialog = function()
     local dialog = finale.FCCustomLuaWindow()
-    dialog:SetTitle(finale.FCString("RGP Lua - Console"))
+    dialog:SetTitle(finale.FCString("RGP Lua - Console v" .. finaleplugin.Version))
     -- positioning parameters
     local x_separator = 10
     local y_separator = 10
