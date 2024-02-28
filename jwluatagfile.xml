@@ -37612,6 +37612,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCNoteEntry *</type>
+      <name>NextInBeamedGroup</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a0d8879d2d7e1dc94fc1bc235466e7cf1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>FCArticulations *</type>
       <name>CreateArticulations</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
