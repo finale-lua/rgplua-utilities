@@ -37703,6 +37703,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>FCNoteEntry *</type>
+      <name>PreviousInBeamedGroup</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a0f2b1f5f35d42b73d85747c85eb2994f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>FCArticulations *</type>
       <name>CreateArticulations</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
