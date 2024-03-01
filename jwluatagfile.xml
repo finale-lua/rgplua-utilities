@@ -16043,6 +16043,34 @@
       <anchor>a70a80fd8185f6e5ed1d3e02f66aa5e9a</anchor>
       <arglist>(bool state)</arglist>
     </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetFretboardStyleID</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a52b5e0584ef37e00bdf2870ad213204b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretboardStyleID</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a501db65e911bebaca6dcc77608e9a3a9</anchor>
+      <arglist>(CMPER value)</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetFretboardInstrumentID</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>aad6a31cc72ea8b7a345d9b7c14b53e03</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFretboardInstrumentID</name>
+      <anchorfile>class_f_c_chord_prefs.html</anchorfile>
+      <anchor>a8dc1b247d483af1cbf5631f787f24eef</anchor>
+      <arglist>(CMPER value)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCChords</name>
