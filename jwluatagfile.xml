@@ -19277,6 +19277,20 @@
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>GetHasClefAccidentalPlacements</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a27bb320103f4bf58952a7a22964abacb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHasClefAccidentalPlacements</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a94c13b19abda9dfc57e3c71b5ecf84a7</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>GetAccidentalFontName</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
