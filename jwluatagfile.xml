@@ -19189,6 +19189,107 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCustomKeyModeDef</name>
+    <filename>class_f_c_custom_key_mode_def.html</filename>
+    <base>__FCNoInciOther</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a0eedf03b43ac2f16a006c9073135dab7</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>ab32a1ada2f33aee9d2e30d72ce5d3066</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetHarmonicReference</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a53cf2016a105f2e6cab81096c5f436cc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetHarmonicReference</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>ad0eb141095994f7190008be94a9958aa</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetMiddleKeyNumber</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a5299ad954358d1f743a9fedfb696f08e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMiddleKeyNumber</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a0ccc5fda632b618650fd95afc20b1dd3</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetGoToKeyUnit</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>ad67a18f26bbd3778e52763068488d6b5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetGoToKeyUnit</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a94dff2bb078825ec06709421d916274d</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetAccidentalFontName</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a8ae7bd0c2a68f6f921a840834787eb1d</anchor>
+      <arglist>(FCString *pString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetAccidentalFontName</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a7798b379c9e4711172b8692c014fe45f</anchor>
+      <arglist>(const FCString *pString)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCCustomKeyModeDefs</name>
+    <filename>class_f_c_custom_key_mode_defs.html</filename>
+    <base>__FCCollectionNoInciOther</base>
+    <member kind="function">
+      <type></type>
+      <name>FCCustomKeyModeDefs</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>a9f2081b2502419d749148ee1565f8cb8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>aff7b73183c5324e1c8196b0c21f844a1</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCustomKeyModeDef *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>a76444fbf01e7941e71f656630c9c539c</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCustomLuaWindow</name>
     <filename>class_f_c_custom_lua_window.html</filename>
     <base>FCCustomWindow</base>
@@ -62266,6 +62367,7 @@
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
     <class kind="class">FCBookmarks</class>
+    <class kind="class">FCCustomKeyModeDefs</class>
     <class kind="class">FCSmartShapeMeasureMarks</class>
     <class kind="class">FCSmartShapeEntryMarks</class>
     <class kind="class">FCCustomSmartLineDefs</class>
@@ -62475,6 +62577,7 @@
     <class kind="class">FCGuide</class>
     <class kind="class">FCMetatoolAssignment</class>
     <class kind="class">FCBookmark</class>
+    <class kind="class">FCCustomKeyModeDef</class>
     <class kind="class">FCStaffSystemsLookup</class>
     <class kind="class">FCPart</class>
     <class kind="class">FCPartStaffVoicing</class>
@@ -62609,6 +62712,7 @@
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
     <class kind="class">FCBookmarks</class>
+    <class kind="class">FCCustomKeyModeDefs</class>
     <class kind="class">FCParts</class>
     <class kind="class">FCLuaScriptItems</class>
   </compound>
