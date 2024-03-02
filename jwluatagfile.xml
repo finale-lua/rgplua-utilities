@@ -19207,6 +19207,34 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FCCustomKeyModeDef</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>adb3ebccdd322b9bb22016cae4f47b447</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadFirst</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a7d6eaeeeb2c170efce5408dad1ce7ab0</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadNext</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>ad40ce845f9a5e32f03689b28ce978130</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a190d4928139559f52d974f40f047dd62</anchor>
+      <arglist>(CMPER itemno) override</arglist>
+    </member>
+    <member kind="function">
       <type>twobyte</type>
       <name>GetHarmonicReference</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
@@ -19249,18 +19277,18 @@
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
+      <type>void</type>
       <name>GetAccidentalFontName</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a8ae7bd0c2a68f6f921a840834787eb1d</anchor>
-      <arglist>(FCString *pString) const</arglist>
+      <anchor>a2ce1a783291840b5c04358b4e7907b24</anchor>
+      <arglist>(FCString &amp;string) const</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
+      <type>void</type>
       <name>SetAccidentalFontName</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a7798b379c9e4711172b8692c014fe45f</anchor>
-      <arglist>(const FCString *pString)</arglist>
+      <anchor>a5664f2463c497364efcb80e659aa1fca</anchor>
+      <arglist>(const FCString &amp;string)</arglist>
     </member>
   </compound>
   <compound kind="class">
