@@ -19215,24 +19215,24 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>LoadFirst</name>
+      <name>IsLinear</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a7d6eaeeeb2c170efce5408dad1ce7ab0</anchor>
-      <arglist>() override</arglist>
+      <anchor>a6480e36f4e2fecd4ee0b608d59b28627</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>LoadNext</name>
+      <name>IsNonLinear</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>ad40ce845f9a5e32f03689b28ce978130</anchor>
-      <arglist>() override</arglist>
+      <anchor>adc3151b2b3199ab2f5bd556d003ea1b3</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>Load</name>
+      <name>IsPredefined</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a190d4928139559f52d974f40f047dd62</anchor>
-      <arglist>(CMPER itemno) override</arglist>
+      <anchor>a6d39f854094fc08dbfbf3f41d95f701e</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
@@ -19289,6 +19289,27 @@
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
       <anchor>a5664f2463c497364efcb80e659aa1fca</anchor>
       <arglist>(const FCString &amp;string)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetTotalChromaticSteps</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>acef0075e3c5b5effa38c041080067a60</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTotalChromaticSteps</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>ab7c252fb9765194a7dad8f4b1b984e46</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::shared_ptr&lt; FCNumbers &gt;</type>
+      <name>GetDiatonicStepsMap</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a760915e8143acc082375e92dffa8c5c4</anchor>
+      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -28585,6 +28606,13 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetKeyMode</name>
+      <anchorfile>class_f_c_key_signature.html</anchorfile>
+      <anchor>a7647be2e28aa7002c433e5f2cf6bbfe5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>SetID</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
@@ -28779,13 +28807,6 @@
       <anchorfile>class_f_c_key_signature.html</anchorfile>
       <anchor>ae2775786a50978061f8713a68c5e1c9d</anchor>
       <arglist>() override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>twobyte</type>
-      <name>KeyMode</name>
-      <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>acc6eefb2cb504f24817fd90df67988d4</anchor>
-      <arglist>() const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -40270,6 +40291,20 @@
       <name>HasIntDuplicates</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
       <anchor>a238f40a946794834d726d4ef87f6ae21</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; INTTYPE &gt;</type>
+      <name>GetIntTable</name>
+      <anchorfile>class_f_c_numbers.html</anchorfile>
+      <anchor>ad0b15fbb39177ede5a9e64a6a6d7885a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; FLOATTYPE &gt;</type>
+      <name>GetFloatTable</name>
+      <anchorfile>class_f_c_numbers.html</anchorfile>
+      <anchor>a8043b445fd02972000a8c7e564144a6e</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
