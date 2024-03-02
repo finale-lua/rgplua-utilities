@@ -40301,11 +40301,25 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>SetIntTable</name>
+      <anchorfile>class_f_c_numbers.html</anchorfile>
+      <anchor>a9dc4e318bec98e2661c251080b23a08f</anchor>
+      <arglist>(const std::vector&lt; INTTYPE &gt; table)</arglist>
+    </member>
+    <member kind="function">
       <type>std::vector&lt; FLOATTYPE &gt;</type>
       <name>GetFloatTable</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
       <anchor>a8043b445fd02972000a8c7e564144a6e</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFloatTable</name>
+      <anchorfile>class_f_c_numbers.html</anchorfile>
+      <anchor>aa75fe5bfe82c13af85cbbfe8bd127563</anchor>
+      <arglist>(const std::vector&lt; FLOATTYPE &gt; table)</arglist>
     </member>
   </compound>
   <compound kind="class">
