@@ -19319,11 +19319,18 @@
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
-      <type>std::shared_ptr&lt; FCNumbers &gt;</type>
+      <type>std::vector&lt; eHarmLev &gt;</type>
       <name>GetDiatonicStepsMap</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a760915e8143acc082375e92dffa8c5c4</anchor>
+      <anchor>afcaaf2cbab0cf47418ac5587f6b1ab14</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDiatonicStepsMap</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a4881b36ca8460a87af10da58b9f9aaea</anchor>
+      <arglist>(const std::vector&lt; eHarmLev &gt; &amp;list)</arglist>
     </member>
   </compound>
   <compound kind="class">
