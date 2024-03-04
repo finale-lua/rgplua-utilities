@@ -300,8 +300,8 @@
       <type>virtual bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>a5c3f33c925b4d20a49a6e20981c5e46d</anchor>
-      <arglist>(__FCBase *pCompareObject)</arglist>
+      <anchor>a1b05a184232075e7a1ab7b8327fd2cd1</anchor>
+      <arglist>(__FCBase *pCompareObject) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1117,29 +1117,29 @@
       <type>__FCBase *</type>
       <name>GetItemAt</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>a2021d0725e5805437f23d3b8f7119ff4</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a9ab20c34f1943b6b42251b5e91c4f772</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>__FCBase *</type>
       <name>GetLastItem</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>a67c9c246cd36200a50776cbae287fab3</anchor>
-      <arglist>()</arglist>
+      <anchor>a415a8977d4c07a0abd54d57f0aeebb1a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>__FCBase *</type>
       <name>operator[]</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>af70a080801c68f4c7d7db9150a1ed8af</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a61b36588052e1b060571191872d63f66</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetIndexOf</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>a60ec4c46c35a1e2e24bfc097f3c23fc0</anchor>
-      <arglist>(__FCBase *pObject)</arglist>
+      <anchor>a058699799f72dbaa73cc5762f00c4396</anchor>
+      <arglist>(__FCBase *pObject) const</arglist>
     </member>
     <member kind="function">
       <type>__FCBase *</type>
@@ -1208,8 +1208,8 @@
       <type>bool</type>
       <name>IsEmpty</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>a2600e956bc2d111211bd455d75b8abf2</anchor>
-      <arglist>()</arglist>
+      <anchor>a6e3e60d9424c41284d3019c0c02130a1</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -1222,8 +1222,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>a2d3966a75c5c139472608030dae3e089</anchor>
-      <arglist>(__FCBase *pCompareObject) override</arglist>
+      <anchor>ad8d144862b7e44abcbdb9170511f5df3</anchor>
+      <arglist>(__FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -2384,8 +2384,8 @@
       <type>FCNoteEntry *</type>
       <name>GetItemAt</name>
       <anchorfile>class_____f_c_note_entry_collection.html</anchorfile>
-      <anchor>a92abfc0f67ebbba2331ed46454fe4be3</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a4d817189102235ea057010566d93db6d</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -9645,8 +9645,8 @@
       <type>FCControl *</type>
       <name>GetItemAt</name>
       <anchorfile>class_____f_c_user_window.html</anchorfile>
-      <anchor>a58135654be971249d68721b38eeeb2fb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a63f235c535709a71d4a8dc42720b3c80</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -10369,8 +10369,8 @@
       <type>FCAccidentalMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_accidental_mods.html</anchorfile>
-      <anchor>a7ab40d6c3229f618c3a843893790dad1</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aa8739537561660fd35dd0bcf386eed58</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -10510,8 +10510,8 @@
       <type>FCAllotment *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_allotments.html</anchorfile>
-      <anchor>aa79ccd7f07c1a3c2dbf4fe3b5a180b51</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a7cee355cb5dde0a1f6711c2e50385413</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -11512,8 +11512,8 @@
       <type>FCArticulationDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_articulation_defs.html</anchorfile>
-      <anchor>ab3681a983828d87d1b38b713aa23a737</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a3ef6ed1cc79072fd9ff5ec081ead42e5</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -11545,8 +11545,8 @@
       <type>FCArticulation *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_articulations.html</anchorfile>
-      <anchor>ac0eacf4a9f0a348731179e9a9053b916</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>af75e5407b3fb75238872a9de1b9478e8</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -12083,8 +12083,8 @@
       <type>FCBaseline *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_baselines.html</anchorfile>
-      <anchor>a019a135318473a22ecc4b084531b74a5</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aceaae341587dbca47d0aa5cd83faaa51</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCBaseline *</type>
@@ -12761,8 +12761,8 @@
       <type>FCBeatChartElement *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_beat_chart_elements.html</anchorfile>
-      <anchor>a2e7875ba30b0e129629871115ae40055</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a865767ec9e999c4f25158ea8952e1167</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -12991,8 +12991,8 @@
       <type>FCBookmark *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_bookmarks.html</anchorfile>
-      <anchor>a8eeda32e5f3abea4ae8841c9f93050eb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a401ef424917240e9f0e0d2fe11129f8f</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -13771,8 +13771,8 @@
       <type>virtual bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_category_def.html</anchorfile>
-      <anchor>a72123628cc1e3b7eda5a470f3fd65534</anchor>
-      <arglist>(__FCBase *pObject) override</arglist>
+      <anchor>a584a454906e8621681de0eb7e998b372</anchor>
+      <arglist>(__FCBase *pObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -13820,8 +13820,8 @@
       <type>void</type>
       <name>GetName</name>
       <anchorfile>class_f_c_category_def.html</anchorfile>
-      <anchor>a4010afa904f2384209dd85aa9bc18351</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ad5745697e025dba88deeb07ee0c2a81b</anchor>
+      <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
@@ -14119,8 +14119,8 @@
       <type>FCCategoryDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_category_defs.html</anchorfile>
-      <anchor>a77393a289bcae08fa2abeff86961ed8f</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aec99f7234e052e9e0f60eb0d4a4363f1</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCCategoryDef *</type>
@@ -14470,8 +14470,8 @@
       <type>FCCellClefChange *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cell_clef_changes.html</anchorfile>
-      <anchor>a2e284d3a621f3fa1c783bc30afe98563</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>af3118d69818e55a63fcd2da6d1c67d48</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -14791,8 +14791,8 @@
       <type>FCCellGraphic *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cell_graphics.html</anchorfile>
-      <anchor>ab2a22e9079b7e51d18879194fcf2f7eb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aa7ebf5965ee83624947d6483d200e042</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -15072,8 +15072,8 @@
       <type>FCCell *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cells.html</anchorfile>
-      <anchor>a5703c31abd0b11ca8d6f47eb1ebd2c26</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a04047616cfc3c4f102720019300f7954</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -15215,8 +15215,8 @@
       <type>FCCellText *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cell_texts.html</anchorfile>
-      <anchor>a410eea1a87943a916640dcc9f26b7703</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ae4f164fff76ca3a721b0ee03cfd6c9e2</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -16094,8 +16094,8 @@
       <type>FCChord *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_chords.html</anchorfile>
-      <anchor>a62d2c5e67a408ea07173b35238075eca</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6c9dda55bed6e60d743a83b2bace232c</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -16272,8 +16272,8 @@
       <type>FCChordSuffixElement *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_chord_suffix_elements.html</anchorfile>
-      <anchor>ab13c986eb668fa7bdc9256bf4ef1f7e9</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aa05605db39be9f82f8c7964b914f8257</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -16397,8 +16397,8 @@
       <type>FCChorusSyllable *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_chorus_syllables.html</anchorfile>
-      <anchor>ae58f84a825fb6423021e94a4bf3db3ee</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6d71cf958b71d27dcee1ded045e49cbd</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -16554,8 +16554,8 @@
       <type>FCClefDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_clef_defs.html</anchorfile>
-      <anchor>aaedbd35e7ce425ba02866679784e9e7a</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a5d6191002fcd90e65f13a735fa2ac458</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -17151,8 +17151,8 @@
       <type>FCCrossStaffMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_cross_staff_mods.html</anchorfile>
-      <anchor>a691afb77433db9d419091744191f9dfc</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a3d35d29f857cd437cbbde1cd141dcbcf</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -18156,8 +18156,8 @@
       <type>FCCtrlRadioButton *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_ctrl_radio_button_group.html</anchorfile>
-      <anchor>a8a46498b2ebe043bf349e6465bb61a4f</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>afbbba6b9beaaf06994a3ae1b96ba745c</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -19355,8 +19355,8 @@
       <type>FCCustomKeyModeDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
-      <anchor>a76444fbf01e7941e71f656630c9c539c</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a513ae561af1930649f475b133dd0ccc6</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -20091,8 +20091,8 @@
       <type>FCCustomSmartLineDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_custom_smart_line_defs.html</anchorfile>
-      <anchor>a520e0aa4d359ac2f2d40d04042834955</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a0011717709fe189b7de624bcf55dc97c</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -21059,8 +21059,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>af0a2b495c801a57db1fa311cc9a6a339</anchor>
-      <arglist>(__FCBase *pCompareObject) override</arglist>
+      <anchor>a9341c4099efa18f595c249d55bdf5b97</anchor>
+      <arglist>(__FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21246,8 +21246,8 @@
       <type>FCDocument *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_documents.html</anchorfile>
-      <anchor>a3a68d6a339ecd9b4fab3ae15891b5b06</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ae2d151d0e195eaab4a3526453a5dc8af</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -21361,8 +21361,8 @@
       <type>FCDotMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_dot_mods.html</anchorfile>
-      <anchor>a20c9380ae1bc2b57b23e601118184b8c</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a0f4e6862f07bbb8dcef29b17309aafda</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -22043,8 +22043,8 @@
       <type>FCTieMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_end_tie_mods.html</anchorfile>
-      <anchor>aab187be90f9b22c46f4579c4660310ca</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a5d871cc019013add9a45c5490789fae4</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -22884,8 +22884,8 @@
       <type>FCExpression *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_expressions.html</anchorfile>
-      <anchor>aa81975cc3e771b46d4c0bbc4f8ad2184</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a570e0518f5c1492daa565eaeaf10b283</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -24541,8 +24541,8 @@
       <type>FCFretBarreItem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fret_barre_items.html</anchorfile>
-      <anchor>afde4800c6119cfc4b2b20ba4c1b174fb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6fd1f643f68571d382ac84cb31757680</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -24567,8 +24567,8 @@
       <type>FCFretboardGroupItem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fretboard_group.html</anchorfile>
-      <anchor>afffb7d0706dada80a5c107ba3d0341f6</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a8469a7806089780e05b63de322dfa41e</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24710,8 +24710,8 @@
       <type>FCFretboardGroupDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fretboard_group_defs.html</anchorfile>
-      <anchor>ae22392f8ae60560a5fea58ca3eb45156</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>abddb06da3c8edb5e9f401ce1ef18de8a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -25243,8 +25243,8 @@
       <type>FCFretboardStyleDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fretboard_style_defs.html</anchorfile>
-      <anchor>a66829aef050047d59345100631577828</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a413d04ea11056759f465f724e176c627</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -25414,8 +25414,8 @@
       <type>FCFretInstrumentDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fret_instrument_defs.html</anchorfile>
-      <anchor>aa1f8c456e2b38076362192ba9e43b9c3</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a0eeaad731cd4e12de12272909f0c5cc7</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -25661,8 +25661,8 @@
       <type>FCFretItem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_fret_items.html</anchorfile>
-      <anchor>a2bc051b7226f5a27fa667c5571b5d982</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a0429d8451b44c4fcebc19e4f512fcaee</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -27833,8 +27833,8 @@
       <type>FCGroup *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_groups.html</anchorfile>
-      <anchor>af1b85bca397ddb652556cddc90ed8595</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a1116a228b3aecb99e9b5b8f91dec0a1b</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -27892,8 +27892,8 @@
       <type>FCGuide *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_guides.html</anchorfile>
-      <anchor>a11258da1ed59db8bfb573a7413489d6a</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a030ac45fa52afb0dee7c74ea9baaa55a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCGuide *</type>
@@ -28386,8 +28386,8 @@
       <type>FCInstrumentDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_instrument_defs.html</anchorfile>
-      <anchor>a2b2131230eb4fe62c71f8ae027dd074b</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a7994a81f54ebb6a2295e0f05d65242f0</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -28791,8 +28791,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>a696863f269b5175c73a2c4ee3538e8e4</anchor>
-      <arglist>(__FCBase *pCompareObject) override</arglist>
+      <anchor>ade182e7b6c4f21264a0c5754c8818d85</anchor>
+      <arglist>(__FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -30340,8 +30340,8 @@
       <type>FCLuaScriptItem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_lua_script_items.html</anchorfile>
-      <anchor>aea4dd773dc44167fe8f25366e7240bcb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a244b30d20108715dc85f27d65e83d89b</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -32589,8 +32589,8 @@
       <type>FCMeasureNumberRegion *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_measure_number_regions.html</anchorfile>
-      <anchor>a07bec2dc5b6ce47b3f0fdea99f6fa255</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a37f4897d985084aed6ce68213f605457</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -32615,8 +32615,8 @@
       <type>FCMeasure *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_measures.html</anchorfile>
-      <anchor>a9311b460afa7fb9650675f37b26f7efb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6352682a989bbc909c0a3024c05abe6b</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -32893,8 +32893,8 @@
       <type>FCMetatoolAssignment *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_metatool_assignments.html</anchorfile>
-      <anchor>a3d7d21020d4ad8c91feb163cb5807875</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a03236427b667655b311686d9506aa051</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -33225,8 +33225,8 @@
       <type>FCMidiExpression *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_midi_expressions.html</anchorfile>
-      <anchor>a4446eddf95e3490288c99d78c7ac0749</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a669b53be0131df75963014186f5b05ef</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -34770,8 +34770,8 @@
       <type>FCMultiMeasureRest *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_multi_measure_rests.html</anchorfile>
-      <anchor>aa38c676eeb964c125808ac0134a71523</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a99bfdbab80501fc90363a3cfec2758d8</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -34920,8 +34920,8 @@
       <type>FCMultiStaffInstrument *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_multi_staff_instruments.html</anchorfile>
-      <anchor>a14104836c8ef51812338782697bd807f</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a84e28e7e7da51d2887446c47f53d0b0e</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -36533,8 +36533,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>a94e8982807fe5884b5287072733ec7d1</anchor>
-      <arglist>(__FCBase *pCompareObject) override</arglist>
+      <anchor>a477742c57dcbadbce36bec2acc3481f0</anchor>
+      <arglist>(__FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -37828,8 +37828,8 @@
       <type>FCNote *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
-      <anchor>a03127dfcfcca9cded90c30a1f05b44be</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ae68e40a17e7b9a7ac7df7484d5907b29</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -39435,8 +39435,8 @@
       <type>FCNoteEntry *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_note_entry_cell.html</anchorfile>
-      <anchor>a3607c7e148157536805827a0f52458c7</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6df109e650641f8fc01efdf5f1d20681</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -39475,8 +39475,8 @@
       <type>FCEntryMetrics *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_note_entry_cell_metrics.html</anchorfile>
-      <anchor>a94cc9988a09c49f28c3b12cbcbb8ba14</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a974115c59f57cab9f1f2b10a8cf10168</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -39697,8 +39697,8 @@
       <type>FCNoteEntry *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_note_entry_layer.html</anchorfile>
-      <anchor>a675021e7e4314c67c0da1acca1ab5833</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>afe91073fc114c37932d27011fa99e492</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -39744,8 +39744,8 @@
       <type>FCNoteEntryLayer *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_note_entry_layers.html</anchorfile>
-      <anchor>aeff50b1b464bf3f782cd752111949401</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a40ed1a2e85b88b88421c869e15bcdd61</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -40006,8 +40006,8 @@
       <type>FCNoteheadMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_notehead_mods.html</anchorfile>
-      <anchor>a26ec79c5ca38d9479aa323210807c6a9</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aaa335066568bcf8b0fc2fc799c89c098</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -40044,8 +40044,8 @@
       <type>FCNotePitch *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_note_pitches.html</anchorfile>
-      <anchor>a2def3da48508199d47c40d6623fb0324</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a9fb651b4d5bf5fcae88b71d517f5620c</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -40248,8 +40248,8 @@
       <type>FCNumber *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>afb1cb235b4006ed2a3165c982f3883d6</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>abf5cbe884ebfe2ae44ec7991f34d5ffe</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCNumber *</type>
@@ -40315,32 +40315,32 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; INTTYPE &gt;</type>
+      <type>std::vector&lt; int &gt;</type>
       <name>GetIntTable</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>ad0b15fbb39177ede5a9e64a6a6d7885a</anchor>
-      <arglist>()</arglist>
+      <anchor>ad2c7afc7f2e801c3ef8d0ff243e26eba</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetIntTable</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>a9dc4e318bec98e2661c251080b23a08f</anchor>
-      <arglist>(const std::vector&lt; INTTYPE &gt; table)</arglist>
+      <anchor>ac630ae0e06e46823e07367e4d779cb29</anchor>
+      <arglist>(const std::vector&lt; int &gt; &amp;table)</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; FLOATTYPE &gt;</type>
+      <type>std::vector&lt; double &gt;</type>
       <name>GetFloatTable</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>a8043b445fd02972000a8c7e564144a6e</anchor>
-      <arglist>()</arglist>
+      <anchor>a61621de76d4d4f75e2d67021c2222a8a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetFloatTable</name>
       <anchorfile>class_f_c_numbers.html</anchorfile>
-      <anchor>aa75fe5bfe82c13af85cbbfe8bd127563</anchor>
-      <arglist>(const std::vector&lt; FLOATTYPE &gt; table)</arglist>
+      <anchor>adc775ee2e67b66425d78dec1dcba1d52</anchor>
+      <arglist>(const std::vector&lt; double &gt; &amp;table)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -40419,8 +40419,8 @@
       <type>FCOtherInci *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_other_incis.html</anchorfile>
-      <anchor>a0c0b37a4b938d8cb40687d2987c05dff</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ad249a4d4e12b34058e0fff128f96b2ab</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -41400,8 +41400,8 @@
       <type>FCPageGraphic *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_page_graphics.html</anchorfile>
-      <anchor>a6232eaf316e2ebbbb751c77099f48447</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ac7b9a580b6622574dd61a52aba021804</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -41426,8 +41426,8 @@
       <type>FCPage *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_pages.html</anchorfile>
-      <anchor>abaf831352a3740203228250aa4ebf14e</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a30d132973cd001707d33d4a8e2b3911c</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCPage *</type>
@@ -41894,8 +41894,8 @@
       <type>FCPageText *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_page_texts.html</anchorfile>
-      <anchor>a871d92c6d14e6e16c17f71dd7113bc32</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a8b1ead5819f1bd5762f59c313a58709a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -42082,8 +42082,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_part.html</anchorfile>
-      <anchor>afa15eb79559233fd4a11ddf2b215e682</anchor>
-      <arglist>(__FCBase *pCompareObject) override</arglist>
+      <anchor>a9dd66b7914c7a37d774840f1105301a5</anchor>
+      <arglist>(__FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -42679,8 +42679,8 @@
       <type>FCPart *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_parts.html</anchorfile>
-      <anchor>a9867306689e80c93fe58ece0c80fe18d</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a852aedf5958faf43e649f7b745178cef</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -43533,8 +43533,8 @@
       <type>FCPercussionLayoutNote *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_percussion_layout_notes.html</anchorfile>
-      <anchor>a0ff0101dfb2939fcdab351df90a5c66b</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6f8d30051603d60193c800947a142484</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -43573,8 +43573,8 @@
       <type>FCPercussionLayoutNotes *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_percussion_layout_notes_lookup.html</anchorfile>
-      <anchor>a48686d2573ea7ca5f9114845adb4e6cb</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ac1ea65b1095a991bbe50e1dd1173ac0a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -43686,8 +43686,8 @@
       <type>FCPercussionMapNote *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_percussion_map_notes.html</anchorfile>
-      <anchor>a9200b6bbdc7526d41febc3860ccdcccf</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aea6d65ce0806649ead05ea58b3079135</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCPercussionMapNote *</type>
@@ -43799,8 +43799,8 @@
       <type>FCPercussionNoteMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_percussion_note_mods.html</anchorfile>
-      <anchor>ac8f20671de13d3fe0ddf3f1eaf772833</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>af860f18e20d59c6527403a7355b680d4</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -43914,8 +43914,8 @@
       <type>FCPercussionNoteType *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_percussion_note_types.html</anchorfile>
-      <anchor>a1678a360b3b46a45687912f36886df87</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>acb8e43945aab60ecea78462a3df1e6de</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -44090,8 +44090,8 @@
       <type>FCPerformanceMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_performance_mods.html</anchorfile>
-      <anchor>ae8ceba51a5299cfa7b17c5f04d7aefe9</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a07b8dbb43303918c3ab0f8cfea818ead</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -45048,8 +45048,8 @@
       <type>FCBeamMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_primary_beam_mods.html</anchorfile>
-      <anchor>ac681bef5477f1668552c8e6ab40c9f8b</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a4f0c03e4bcb582dcf96c08d6088b4ea6</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -45400,8 +45400,8 @@
       <type>FCRange *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_ranges.html</anchorfile>
-      <anchor>a002b9b8f2adab67b05fb6993ec5a859e</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a24bb19bb72514a23ada571e89afd902f</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -46617,8 +46617,8 @@
       <type>FCBeamMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
-      <anchor>a4b3fab2ff409218ce7d02fe2438c67ab</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a99519f18517d6db13c7a11f1099da12e</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -46695,8 +46695,8 @@
       <type>FCSectionSyllable *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_section_syllables.html</anchorfile>
-      <anchor>a808878948f7cbc2b4f5b72ba6b206b3b</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a9c99f4f1e6d99afd636fa13c5a6372b2</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -46866,8 +46866,8 @@
       <type>FCSeparateMeasureNumber *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_separate_measure_numbers.html</anchorfile>
-      <anchor>a00a6617a14af232772779c1ba5f8cf5c</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a0306e989919362308bcb11f9f5a44ab4</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -47099,8 +47099,8 @@
       <type>FCSeparatePlacement *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_separate_placements.html</anchorfile>
-      <anchor>ab0cdcc3f038bc737eccc728f971df613</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a9d36a25a710a26682bc6d0d516a85a5c</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCSeparatePlacement *</type>
@@ -47690,8 +47690,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_shape_def_instruction.html</anchorfile>
-      <anchor>a6f520ada4beda7b3b4dc902e6335e19f</anchor>
-      <arglist>(__FCBase *pTestObject) override</arglist>
+      <anchor>a003297d3e21433ddc67b04af4956652e</anchor>
+      <arglist>(__FCBase *pTestObject) const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -47704,8 +47704,8 @@
       <type>fourbyte</type>
       <name>GetFourbyteData</name>
       <anchorfile>class_f_c_shape_def_instruction.html</anchorfile>
-      <anchor>a59767c7f39d3d968df6934ce602a28f0</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a387e9042522dc3a23a2d5050b8152582</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -47877,8 +47877,8 @@
       <type>FCShapeDefInstruction *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_shape_def_instructions.html</anchorfile>
-      <anchor>ae35d9fdf63b4acecdf5a4368aecd5df1</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a68fdd67a6980e72617991adb704f998a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>FCShapeDefInstruction *</type>
@@ -48064,8 +48064,8 @@
       <type>FCShapeDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_shape_defs.html</anchorfile>
-      <anchor>a1ae6f85fd1c595d836c059e4f06e90bf</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aa01b430faeff917dd15dc5e6c37d040f</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -48361,8 +48361,8 @@
       <type>FCShapeExpressionDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_shape_expression_defs.html</anchorfile>
-      <anchor>a7cc5bfd5db9f837a189665dbf97e3eb8</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ad777650e900bce2f9bcceab948b68980</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -50358,8 +50358,8 @@
       <type>FCSmartShapeEntryMark *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_smart_shape_entry_marks.html</anchorfile>
-      <anchor>adf753d5e5597a482d19ef3b39754a1c7</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a5f4136cfda153cc677b5dfd5060d3f3d</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -50522,8 +50522,8 @@
       <type>FCSmartShapeMeasureMark *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_smart_shape_measure_marks.html</anchorfile>
-      <anchor>aad674ec0fbb73c40984426a45b6db4f3</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>af6fe84069e33113f7b834eddc644430a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -51923,8 +51923,8 @@
       <type>FCStaffList *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_staff_lists.html</anchorfile>
-      <anchor>ad576683d0e0bd75f92314db35bec6668</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ac7ee28d0562dec435263185bd97e28e8</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -52324,8 +52324,8 @@
       <type>FCStaffStyleAssign *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_staff_style_assigns.html</anchorfile>
-      <anchor>a0aca9c39928e4bc86a8fcae23ebb815f</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>adb99e43f583b1111d39763a11c7814bb</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -52999,8 +52999,8 @@
       <type>FCStaffStyleDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_staff_style_defs.html</anchorfile>
-      <anchor>ab971db3cb4fcecbbfb774d271dfa09d4</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a543edacb59e6bf63a58557f0deb04879</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -53345,8 +53345,8 @@
       <type>FCStaffSystem *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_staff_systems.html</anchorfile>
-      <anchor>a7574c7ae560a0563ba942a92d60e8d37</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ad68d0ecd9efb193def65ed49d41f2788</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -53418,8 +53418,8 @@
       <type>FCTieMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_start_tie_mods.html</anchorfile>
-      <anchor>a46a8bf6100c9c06488964ce22ae0f8b8</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6a759ba1551958fdd3b8c4b6b15176ee</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -53444,8 +53444,8 @@
       <type>FCStaff *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_staves.html</anchorfile>
-      <anchor>a586adf2a9bc157b63d9a1200435869d0</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a7ab7b9c67fdba04868cf2bdc88c1902f</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static CMPER</type>
@@ -54687,8 +54687,8 @@
       <type>FCString *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_strings.html</anchorfile>
-      <anchor>ac05efc9492619ccb8e3db7e02a6ee7ed</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a6d3afadb25ceeca637995f52247868eb</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -55452,8 +55452,8 @@
       <type>FCSystemStaff *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_system_staves.html</anchorfile>
-      <anchor>a11fc48b67a81e8fdd0cc813572158e37</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a36579653953ebe12517b6d13aa1b0ee5</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -55616,8 +55616,8 @@
       <type>FCTablatureNoteMod *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_tablature_note_mods.html</anchorfile>
-      <anchor>a8458c0f5d391285100677e6ac1329702</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a01b55cd7ffcd07ef6eab8439afa6ab19</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -55731,8 +55731,8 @@
       <type>FCTempoElement *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_tempo_elements.html</anchorfile>
-      <anchor>a84775c8f1a38685e3098d1e9d665d643</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a05ef4524ad44d283ed60bd1c583526ba</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -56098,8 +56098,8 @@
       <type>FCTextBlock *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_text_blocks.html</anchorfile>
-      <anchor>a8b4e12d1e29fc1a160972648e1a3d7e8</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>aecf046239e5a44d67e33699f04228774</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -56926,8 +56926,8 @@
       <type>FCTextExpressionDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_text_expression_defs.html</anchorfile>
-      <anchor>a60f2c57714fcaf1a3884952499ea54c7</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ab7a5e6e25643efacf400e1928eec29e2</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -57906,8 +57906,8 @@
       <type>FCTextRepeatDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_text_repeat_defs.html</anchorfile>
-      <anchor>ac403118b45c932e98168f3600dc9cd84</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a7c8b7b4f7c93f98f753cae3f04a71aed</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -57932,8 +57932,8 @@
       <type>FCTextRepeat *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_text_repeats.html</anchorfile>
-      <anchor>a380ee8471297e998ddfa4eee2b6eeebf</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a9eb9fa55755e78a85abbd30e588cfbd6</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -59732,8 +59732,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a5e9b181d9e49ad7662d7ad137c832876</anchor>
-      <arglist>(__FCBase *pCompareObject) override</arglist>
+      <anchor>a3e1fc01d63a607bcbda73601f03f6aca</anchor>
+      <arglist>(__FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -59910,8 +59910,8 @@
       <type>FCTreeNode *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_tree_node.html</anchorfile>
-      <anchor>a15757f9d3f18c4c996679f99144bb3b7</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a2751525f2405287452f121af5f665e37</anchor>
+      <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -60919,8 +60919,8 @@
       <type>FCTuplet *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_tuplets.html</anchorfile>
-      <anchor>a29798e499d55d445eb7cc6edd60ffae6</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>a06b19375d74e7651dd66d7af24d70398</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -62297,8 +62297,8 @@
       <type>FCVerseSyllable *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_verse_syllables.html</anchorfile>
-      <anchor>af84061a58ab0ce8f99e513e169e18ef4</anchor>
-      <arglist>(int index)</arglist>
+      <anchor>ab7620cfe37c6fc545341102d2643ba0a</anchor>
+      <arglist>(int index) const</arglist>
     </member>
   </compound>
   <compound kind="group">
