@@ -19360,6 +19360,114 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCCustomKeyModeSymbolList</name>
+    <filename>class_f_c_custom_key_mode_symbol_list.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>a6fa63b60300a23cf3bc25f90e37203e8</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCCustomKeyModeSymbolList</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>a658a44775fddec6e77bc956ef7a2bac2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>af9c3b8993823fa02b0fee1f4c1f02d17</anchor>
+      <arglist>(CMPER itemno)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadNext</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>ab53193e29c5a864f5bc145d3c7ce9c6b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadFirst</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>a0b09f7209ac432a045f6cf7884eee19c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>a68f5557a286fa44d5b0cb68efbfa53eb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DeleteData</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>a799062c97af9b6d802008fc3ba857113</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetItemNo</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>af1a7eaaaea3e421ef1e388c84789c6fc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>symbolMap</type>
+      <name>GetList</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>ad99b229706f33e8c9b746e6569b1bab3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetList</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>ac05dd9f05279d667171f440c94975be6</anchor>
+      <arglist>(symbolMap list)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>FCCustomKeyModeSymbolLists</name>
+    <filename>class_f_c_custom_key_mode_symbol_lists.html</filename>
+    <base>__FCCollection</base>
+    <member kind="function">
+      <type></type>
+      <name>FCCustomKeyModeSymbolLists</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_lists.html</anchorfile>
+      <anchor>a76fbf14c010c18740da7f71f88c42189</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_lists.html</anchorfile>
+      <anchor>a48439665e200ff9068f0c69d4190c767</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCustomKeyModeSymbolList *</type>
+      <name>GetItemAt</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_lists.html</anchorfile>
+      <anchor>aa4ff02df548fbd98a8441e580ba9902e</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>LoadAll</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_lists.html</anchorfile>
+      <anchor>a7182670e57cceb72a70ea7bbc1d11166</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCCustomLuaWindow</name>
     <filename>class_f_c_custom_lua_window.html</filename>
     <base>FCCustomWindow</base>
@@ -62375,6 +62483,7 @@
     <class kind="class">FCCellClefChange</class>
     <class kind="class">FCMetatoolAssignment</class>
     <class kind="class">FCBookmark</class>
+    <class kind="class">FCCustomKeyModeDef</class>
     <class kind="class">FCSmartShapeMeasureMark</class>
     <class kind="class">FCSmartShapeEntryMark</class>
     <class kind="class">FCSmartShape</class>
@@ -62465,6 +62574,7 @@
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
     <class kind="class">FCBookmarks</class>
+    <class kind="class">FCCustomKeyModeSymbolLists</class>
     <class kind="class">FCCustomKeyModeDefs</class>
     <class kind="class">FCSmartShapeMeasureMarks</class>
     <class kind="class">FCSmartShapeEntryMarks</class>
@@ -62675,6 +62785,7 @@
     <class kind="class">FCGuide</class>
     <class kind="class">FCMetatoolAssignment</class>
     <class kind="class">FCBookmark</class>
+    <class kind="class">FCCustomKeyModeSymbolList</class>
     <class kind="class">FCCustomKeyModeDef</class>
     <class kind="class">FCStaffSystemsLookup</class>
     <class kind="class">FCPart</class>
@@ -62810,6 +62921,7 @@
     <class kind="class">FCGuides</class>
     <class kind="class">FCMetatoolAssignments</class>
     <class kind="class">FCBookmarks</class>
+    <class kind="class">FCCustomKeyModeSymbolLists</class>
     <class kind="class">FCCustomKeyModeDefs</class>
     <class kind="class">FCParts</class>
     <class kind="class">FCLuaScriptItems</class>
