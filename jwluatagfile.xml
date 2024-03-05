@@ -19277,6 +19277,20 @@
       <arglist>(twobyte value)</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetSymbolListID</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a7b84ec369f4f9edc9584288a7275438d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetSymbolListID</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a375fee63f7ff95a17e745f3d399d55aa</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetHasClefAccidentalPlacements</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
