@@ -19421,6 +19421,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>SaveAs</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>aaecade9186c6fee1779e17e62d1f265d</anchor>
+      <arglist>(CMPER itemno)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>DeleteData</name>
       <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
       <anchor>a799062c97af9b6d802008fc3ba857113</anchor>
