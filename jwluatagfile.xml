@@ -19214,6 +19214,13 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>eKey</type>
+      <name>GetKeyID</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a72d27e2329e5f9ba18a77c98faf3712e</anchor>
+      <arglist>(int accidentalnumber=0) const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>IsLinear</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
