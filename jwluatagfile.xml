@@ -19353,6 +19353,20 @@
       <anchor>a4881b36ca8460a87af10da58b9f9aaea</anchor>
       <arglist>(const std::vector&lt; eHarmLev &gt; &amp;list)</arglist>
     </member>
+    <member kind="function">
+      <type>std::map&lt; twobyte, twobyte &gt;</type>
+      <name>GetTonalCenters</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a432b1366e0b9d02350f94cb41d8091a3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTonalCenters</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>acb033a8b93e3bd2af2fd69d38972ba1b</anchor>
+      <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCustomKeyModeDefs</name>
