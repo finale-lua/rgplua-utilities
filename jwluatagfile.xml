@@ -19367,6 +19367,13 @@
       <anchor>acb033a8b93e3bd2af2fd69d38972ba1b</anchor>
       <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>DeleteItemNo</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a00f8d69d1d253446ab02c31b971f7ff5</anchor>
+      <arglist>(CMPER itemno)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCustomKeyModeDefs</name>
