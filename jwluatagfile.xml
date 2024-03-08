@@ -19367,6 +19367,20 @@
       <anchor>acb033a8b93e3bd2af2fd69d38972ba1b</anchor>
       <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
+    <member kind="function">
+      <type>std::map&lt; twobyte, twobyte &gt;</type>
+      <name>GetAccidentalOrder</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a140547fc45df629d240986dcfd57cb1f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAccidentalOrder</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a25f9a43742482eab26ad5dad2ae98bbf</anchor>
+      <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static bool</type>
       <name>DeleteItemNo</name>
