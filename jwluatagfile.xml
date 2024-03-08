@@ -19381,12 +19381,47 @@
       <anchor>a25f9a43742482eab26ad5dad2ae98bbf</anchor>
       <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
+    <member kind="function">
+      <type>std::map&lt; twobyte, twobyte &gt;</type>
+      <name>GetAccidentalAmounts</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a3f985805cf961327d9a9eb1a0f0e1c5e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetAccidentalAmounts</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a479718b222943441a640bc25ebe793f3</anchor>
+      <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static bool</type>
       <name>DeleteItemNo</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
       <anchor>a00f8d69d1d253446ab02c31b971f7ff5</anchor>
       <arglist>(CMPER itemno)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static std::map&lt; twobyte, twobyte &gt;</type>
+      <name>GetDefaultTonalCenters</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>aac473a4f0434e8315ea947d248449f82</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static std::map&lt; twobyte, twobyte &gt;</type>
+      <name>GetDefaultAccidentalOrder</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a71952ba0adcdec2d24fa3abfb837f53d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static std::map&lt; twobyte, twobyte &gt;</type>
+      <name>GetDefaultAccidentalAmounts</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a06d96b4fd55e7184b8bd1375f5a19349</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
