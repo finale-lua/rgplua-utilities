@@ -19396,18 +19396,18 @@
       <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
     <member kind="function">
-      <type>std::map&lt; twobyte, std::map&lt; twobyte, twobyte &gt; &gt;</type>
+      <type>std::vector&lt; std::map&lt; twobyte, twobyte &gt; &gt;</type>
       <name>GetClefAccidentalPlacements</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a213d0caf9b4c348c5c1062bfaf8e60bf</anchor>
+      <anchor>a8adaedf58787914f02984f571ad4c8a3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetClefAccidentalPlacements</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a41d796eba6472db894f40b965a84e757</anchor>
-      <arglist>(const std::map&lt; twobyte, std::map&lt; twobyte, twobyte &gt; &gt; &amp;values)</arglist>
+      <anchor>affd6eaa497ea9b71ad4fa9d3a10ff523</anchor>
+      <arglist>(const std::vector&lt; std::map&lt; twobyte, twobyte &gt; &gt; &amp;values)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static bool</type>
@@ -19438,10 +19438,10 @@
       <arglist>()</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static std::map&lt; twobyte, std::map&lt; twobyte, twobyte &gt; &gt;</type>
+      <type>static std::vector&lt; std::map&lt; twobyte, twobyte &gt; &gt;</type>
       <name>GetDefaultClefAccidentalPlacements</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a582df19b2e36c6382199ad6af5d70d12</anchor>
+      <anchor>a80e94b24ea94e5641a21b1803225483f</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
