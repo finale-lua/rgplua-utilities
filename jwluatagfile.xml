@@ -19395,6 +19395,20 @@
       <anchor>a479718b222943441a640bc25ebe793f3</anchor>
       <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
+    <member kind="function">
+      <type>std::map&lt; twobyte, std::map&lt; twobyte, twobyte &gt; &gt;</type>
+      <name>GetClefAccidentalPlacements</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a213d0caf9b4c348c5c1062bfaf8e60bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetClefAccidentalPlacements</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a41d796eba6472db894f40b965a84e757</anchor>
+      <arglist>(const std::map&lt; twobyte, std::map&lt; twobyte, twobyte &gt; &gt; &amp;values)</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static bool</type>
       <name>DeleteItemNo</name>
@@ -19421,6 +19435,13 @@
       <name>GetDefaultAccidentalAmounts</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
       <anchor>a06d96b4fd55e7184b8bd1375f5a19349</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static std::map&lt; twobyte, std::map&lt; twobyte, twobyte &gt; &gt;</type>
+      <name>GetDefaultClefAccidentalPlacements</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a582df19b2e36c6382199ad6af5d70d12</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
