@@ -19409,6 +19409,13 @@
       <anchor>affd6eaa497ea9b71ad4fa9d3a10ff523</anchor>
       <arglist>(const std::vector&lt; std::map&lt; twobyte, twobyte &gt; &gt; &amp;values)</arglist>
     </member>
+    <member kind="function">
+      <type>FCKeySignature *</type>
+      <name>CreateKeySignature</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>aecf85cfba9e65996335604f321baa93c</anchor>
+      <arglist>(eHarmAlt alteration=0) const</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static bool</type>
       <name>DeleteItemNo</name>
@@ -28836,8 +28843,8 @@
       <type></type>
       <name>FCKeySignature</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ad6d468cc6082f3d146dcc88ecd751c8e</anchor>
-      <arglist>()</arglist>
+      <anchor>a1856f00b269df673cfa52a3ea8b9a8a3</anchor>
+      <arglist>(eKey key=KEY_C_MAJOR)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
