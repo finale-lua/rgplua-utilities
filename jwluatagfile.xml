@@ -19242,20 +19242,6 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>bool</type>
-      <name>IsPredefinedMajor</name>
-      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a0aef81e06235f2bb76026189d63b8821</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>IsPredefinedMinor</name>
-      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a1924975c1e173fbcb2c1427f5ecad20a</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
       <type>twobyte</type>
       <name>GetHarmonicReference</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
