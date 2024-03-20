@@ -7,8 +7,8 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.5"
-    finaleplugin.Date = "February 25, 2024"
+    finaleplugin.Version = "1.5.1"
+    finaleplugin.Date = "March 20, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -598,6 +598,30 @@ function on_text_change(control)
     in_text_change_event = false
 end
 
+function on_modal_window_will_open(_item)
+    assert(modal_depth >= 0, "modal_depth is negative")
+    if modal_depth == 0 then
+        file_menu:SetEnable(false)
+        kill_script_cmd:SetEnable(false)
+        run_script_cmd:SetEnable(false)
+        close_btn:SetEnable(false)
+        global_dialog:SetPreventClosing(true)
+    end
+    modal_depth = modal_depth + 1
+end
+
+function on_modal_window_did_close(item)
+    assert(modal_depth > 0, "modal_depth is 0 or less")
+    modal_depth = modal_depth - 1
+    if modal_depth == 0 then
+        file_menu:SetEnable(true)
+        kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
+        run_script_cmd:SetEnable(true)
+        close_btn:SetEnable(true)
+        global_dialog:SetPreventClosing(false)
+    end
+end
+
 function on_execution_will_start(item)
     kill_script_cmd:SetEnable(not in_execute_script_item)
     output_to_console("Running [" .. item.MenuItemText .. "] ======>")
@@ -630,31 +654,11 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
     end
     item.ControllingWindow = nil
     hires_timer = nil
+    if modal_depth > 0 then
+        modal_depth = 1
+        on_modal_window_did_close(item)
+    end
     kill_script_cmd:SetEnable(false)
-end
-
-function on_modal_window_will_open(_item)
-    assert(modal_depth >= 0, "modal_depth is negative")
-    if modal_depth == 0 then
-        file_menu:SetEnable(false)
-        kill_script_cmd:SetEnable(false)
-        run_script_cmd:SetEnable(false)
-        close_btn:SetEnable(false)
-        global_dialog:SetPreventClosing(true)
-    end
-    modal_depth = modal_depth + 1
-end
-
-function on_modal_window_did_close(item)
-    assert(modal_depth > 0, "modal_depth is 0 or less")
-    modal_depth = modal_depth - 1
-    if modal_depth == 0 then
-        file_menu:SetEnable(true)
-        kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
-        run_script_cmd:SetEnable(true)
-        close_btn:SetEnable(true)
-        global_dialog:SetPreventClosing(false)
-    end
 end
 
 local function on_clear_output(control)
