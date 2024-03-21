@@ -19368,6 +19368,20 @@
       <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
     <member kind="function">
+      <type>twobyte</type>
+      <name>GetBaseTonalCenter</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a24102db6099dfe2435f550286ca18f92</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetBaseTonalCenter</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a03a949fe0354c93e384c043a7da83f39</anchor>
+      <arglist>(twobyte value)</arglist>
+    </member>
+    <member kind="function">
       <type>std::map&lt; twobyte, twobyte &gt;</type>
       <name>GetAccidentalOrder</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
