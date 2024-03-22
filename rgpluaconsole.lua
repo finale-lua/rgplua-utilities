@@ -23,8 +23,8 @@ local text = osutils.text
 
 -- Keep configured_script_items at the top level so that it exists as long as the script runs.
 -- This guarantees that browser_script_item does not get destroyed.
-local configured_script_items = finenv.CreateLuaScriptItems()
-local browser_script_item = (function()
+configured_script_items = finenv.CreateLuaScriptItems()
+browser_script_item = (function()
     for item in each(configured_script_items) do
         if item.FileName == "rgpluaclassbrowser.lua" then
             return item
