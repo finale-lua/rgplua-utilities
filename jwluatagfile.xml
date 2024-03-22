@@ -19485,6 +19485,20 @@
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>FindIndexForKeySignature</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>a26ab3eb46a51afcecdfb82bbb59f2eea</anchor>
+      <arglist>(const FCKeySignature &amp;keysig) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCCustomKeyModeDef *</type>
+      <name>FindKeySignature</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>a53897534ea5197453352837d05bfdb87</anchor>
+      <arglist>(const FCKeySignature &amp;keysig) const</arglist>
+    </member>
+    <member kind="function">
       <type>FCCustomKeyModeDef *</type>
       <name>GetItemAt</name>
       <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
