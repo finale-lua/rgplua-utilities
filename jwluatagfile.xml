@@ -19486,6 +19486,20 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>LoadAllLinear</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>a3c4d5bfbd093b74022e91118e925b7b5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>LoadAllNonLinear</name>
+      <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
+      <anchor>a80abdff1099db6bff188d58deb4be0c6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>FindIndexForKeySignature</name>
       <anchorfile>class_f_c_custom_key_mode_defs.html</anchorfile>
       <anchor>a26ab3eb46a51afcecdfb82bbb59f2eea</anchor>
