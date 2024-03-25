@@ -19214,6 +19214,20 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>bool</type>
+      <name>SaveNewLinear</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>aa5b0074db7325e161ff2d7e5774d69d2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SaveNewNonLinear</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a56be284c7493e7e1180406e07e131815</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>eKey</type>
       <name>GetKeyID</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
