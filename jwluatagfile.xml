@@ -19615,6 +19615,13 @@
       <anchor>ac05dd9f05279d667171f440c94975be6</anchor>
       <arglist>(symbolMap list)</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static symbolMap</type>
+      <name>GetDefaultList</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>ac71fe4f985f2f8837655ee4acf4bcab3</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>FCCustomKeyModeSymbolLists</name>
@@ -54097,8 +54104,8 @@
       <type>void</type>
       <name>AppendCharacter</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5985956ecb64d284340a5845a0dc94ae</anchor>
-      <arglist>(eUniChar16 character)</arglist>
+      <anchor>a0366c6037f40a6d9c848b932a5e49662</anchor>
+      <arglist>(eUniChar32 character)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
