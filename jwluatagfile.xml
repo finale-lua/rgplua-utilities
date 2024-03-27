@@ -24061,6 +24061,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>IsMacSymbolFont</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>a34078edaec6e6fe8b790bd51d9f20cae</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>IsIdenticalTo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
       <anchor>a91ee582dc3b2536e856b5dea66f5b984</anchor>
@@ -54273,6 +54280,20 @@
       <name>SetPreferencesFolderPath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a6b997f1a6bb595c098e59ebcb17b8999</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetConfigurationFilesFolderPath</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>aaed0e243e009e2d040355372c9ab218a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetPluginComponentsFolderPath</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>aa1a53419715291234deb347507876c8a</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
