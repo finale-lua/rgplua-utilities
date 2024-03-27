@@ -54158,6 +54158,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>EncodeFromMacRoman</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a15f47147dd053d556e08846bdf563a7e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>EncodeToMacRoman</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>aa06e665d83ef029a6da64abf304c5b93</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>SplitAt</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>acef4b305375c6a4ff4d40af73f79db94</anchor>
