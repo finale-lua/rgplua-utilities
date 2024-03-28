@@ -19615,6 +19615,13 @@
       <anchor>ac05dd9f05279d667171f440c94975be6</anchor>
       <arglist>(symbolMap list)</arglist>
     </member>
+    <member kind="function">
+      <type>FCString *</type>
+      <name>CreateListString</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>aeaeec6c2152a6aaeb8f5cd88812dcb63</anchor>
+      <arglist>() const</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static symbolMap</type>
       <name>GetDefaultList</name>
