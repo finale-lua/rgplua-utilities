@@ -54284,13 +54284,6 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetConfigurationFilesFolderPath</name>
-      <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aaed0e243e009e2d040355372c9ab218a</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
       <name>SetRunningLuaFolderPath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>aa57db881cc96481776b35174cdbfc4c5</anchor>
