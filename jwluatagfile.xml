@@ -19326,18 +19326,25 @@
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>GetAccidentalFontName</name>
+      <type>EFONTID</type>
+      <name>GetAccidentalFontID</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a2ce1a783291840b5c04358b4e7907b24</anchor>
-      <arglist>(FCString &amp;string) const</arglist>
+      <anchor>a473d721c15fdcd629f3eb8b8d9a1ce3e</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetAccidentalFontName</name>
+      <name>SetAccidentalFontID</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
-      <anchor>a5664f2463c497364efcb80e659aa1fca</anchor>
-      <arglist>(const FCString &amp;string)</arglist>
+      <anchor>ae0e561adafa16cbac7f645306ee1b3ef</anchor>
+      <arglist>(const EFONTID value)</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateAccidentalFontInfo</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a88b897db152b535514307b91fa82d917</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>twobyte</type>
@@ -23911,6 +23918,13 @@
       <anchorfile>class_f_c_font_info.html</anchorfile>
       <anchor>a4a7634e5d73b77cfcc393c6b30c10d96</anchor>
       <arglist>(const char *pszName)</arglist>
+    </member>
+    <member kind="function">
+      <type>EFONTID</type>
+      <name>GetFontID</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>a89ae3dc60cabc855691219f5eccb192f</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
