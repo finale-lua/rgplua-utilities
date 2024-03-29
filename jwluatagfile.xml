@@ -24101,10 +24101,17 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>twobyte</type>
+      <type>EFONTID</type>
+      <name>GetIDByName</name>
+      <anchorfile>class_f_c_font_info.html</anchorfile>
+      <anchor>af9f92d6e16d0e42e4046e314f0c70c88</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>EFONTID</type>
       <name>GetNameByID</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ae608837bf331b538b31d4c0f6a201eac</anchor>
+      <anchor>ad8290c94466e7ec33444038948d73fef</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
