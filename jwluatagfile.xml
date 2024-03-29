@@ -16405,6 +16405,229 @@
     <name>FCClefDef</name>
     <filename>class_f_c_clef_def.html</filename>
     <base>__FCGlobals</base>
+    <member kind="enumeration">
+      <type></type>
+      <name>DEFAULTCLEFIDS</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TREBLE</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a6aee1951b60f9a4ddf162d38c3935e42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_ALTO</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a14f23719d03d609e266ec469bf745c3e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TENOR</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ad665eaa7320ab5bc6a83306065d245d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BASS</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a7d4961edec766701620d19d4cd0aec47</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_PERCUSSION</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a041dabe2235f825265f07359cb7dbe58</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TREBLE8VB</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a42163f38fbb00a158ca5bb8502ad065a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BASS8VB</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a6f951a82a9d3553bf9471d2b9ae4192e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BARITONE</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ab02dd3f53f3496603f1eba3d04865531</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_FRENCHVIOLIN</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a7f100dbf82c3ebeb795128f93fd0a1ca</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BARITONEC</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a5b5fc80667a9145cd65e3fb8a1872294</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_MEZZOSOPRANO</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ad37d9c4ee32836be3ea2598e758c0c36</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_SOPRANO</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8aa2f60d185664b9da4b80ca62e6490a5e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_ALTPERCUSSION</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a567bbefb845aa73f1d405a642cc5fd6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TREBLE8VA</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a6bd65629df313d60f2131e13e78cd3b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BASS8VA</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ad34d776bd6ef7f42e8fd1cb9c2f2eb9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BLANK</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a8692ff2fdc5dae95fed7e8a3630f2364</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TAB1</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8aa022e59a91ae985b15f08ef6b3dfcd2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TAB2</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8afe88fa33eaf38aee0b2bb971803aa97b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TREBLE</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a6aee1951b60f9a4ddf162d38c3935e42</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_ALTO</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a14f23719d03d609e266ec469bf745c3e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TENOR</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ad665eaa7320ab5bc6a83306065d245d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BASS</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a7d4961edec766701620d19d4cd0aec47</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_PERCUSSION</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a041dabe2235f825265f07359cb7dbe58</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TREBLE8VB</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a42163f38fbb00a158ca5bb8502ad065a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BASS8VB</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a6f951a82a9d3553bf9471d2b9ae4192e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BARITONE</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ab02dd3f53f3496603f1eba3d04865531</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_FRENCHVIOLIN</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a7f100dbf82c3ebeb795128f93fd0a1ca</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BARITONEC</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a5b5fc80667a9145cd65e3fb8a1872294</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_MEZZOSOPRANO</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ad37d9c4ee32836be3ea2598e758c0c36</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_SOPRANO</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8aa2f60d185664b9da4b80ca62e6490a5e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_ALTPERCUSSION</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a567bbefb845aa73f1d405a642cc5fd6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TREBLE8VA</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a6bd65629df313d60f2131e13e78cd3b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BASS8VA</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8ad34d776bd6ef7f42e8fd1cb9c2f2eb9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_BLANK</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8a8692ff2fdc5dae95fed7e8a3630f2364</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TAB1</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8aa022e59a91ae985b15f08ef6b3dfcd2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEFAULTCLEFID_TAB2</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a1c8cdfe86007ae7365a20d4b9e8699c8afe88fa33eaf38aee0b2bb971803aa97b</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>FCClefDef</name>
@@ -16451,8 +16674,15 @@
       <type>bool</type>
       <name>GetFontInfo</name>
       <anchorfile>class_f_c_clef_def.html</anchorfile>
-      <anchor>afe83a77cd990f90b5490992c841ae543</anchor>
-      <arglist>(FCFontInfo *pFontInfo)</arglist>
+      <anchor>ad0d696649e316a5101a00b46cdbd347a</anchor>
+      <arglist>(FCFontInfo *pFontInfo) const</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateEffectiveFontInfo</name>
+      <anchorfile>class_f_c_clef_def.html</anchorfile>
+      <anchor>a3e3badc8e2b9f9659488432f362424d2</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>CMPER</type>
@@ -19466,11 +19696,25 @@
       <arglist>()</arglist>
     </member>
     <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>CalcIsDefaultTonalCenters</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>abf32a80d09e02a8e6012fdd1b5d6c254</anchor>
+      <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
+    </member>
+    <member kind="function" static="yes">
       <type>static std::map&lt; twobyte, twobyte &gt;</type>
       <name>GetDefaultAccidentalOrder</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
       <anchor>a71952ba0adcdec2d24fa3abfb837f53d</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>CalcIsDefaultAccidentalOrder</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a8c5da06c313f8ced69e68e90bf6dce46</anchor>
+      <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static std::map&lt; twobyte, twobyte &gt;</type>
@@ -19480,11 +19724,25 @@
       <arglist>()</arglist>
     </member>
     <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>CalcIsDefaultAccidentalAmounts</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a3d0d3ca96fb13d94550e00cb47e01a11</anchor>
+      <arglist>(const std::map&lt; twobyte, twobyte &gt; &amp;values)</arglist>
+    </member>
+    <member kind="function" static="yes">
       <type>static std::vector&lt; std::map&lt; twobyte, twobyte &gt; &gt;</type>
       <name>GetDefaultClefAccidentalPlacements</name>
       <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
       <anchor>a80e94b24ea94e5641a21b1803225483f</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static bool</type>
+      <name>CalcIsDefaultClefAccidentalPlacements</name>
+      <anchorfile>class_f_c_custom_key_mode_def.html</anchorfile>
+      <anchor>a59904de447c9083e1b81250ea9a9841a</anchor>
+      <arglist>(const std::vector&lt; std::map&lt; twobyte, twobyte &gt; &gt; &amp;values)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -23951,8 +24209,8 @@
       <type>void</type>
       <name>SetNameByID</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>acbcc4d8edf6695bf63d1a9b652025f8d</anchor>
-      <arglist>(twobyte id)</arglist>
+      <anchor>a4acce56f99ee87a5b5e0c8abede5f568</anchor>
+      <arglist>(EFONTID id)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24021,15 +24279,15 @@
       <type>bool</type>
       <name>IsName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ad0c8537b3efe89000250b0e54fa363aa</anchor>
-      <arglist>(const char *pszTestName)</arglist>
+      <anchor>a0ed6665f705b7d52fc0e09edf22222d7</anchor>
+      <arglist>(const char *pszTestName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ab84fb66d9af2ee2ff7c501bc572259df</anchor>
-      <arglist>(FCString *pTestName)</arglist>
+      <anchor>a602d33074f38f8f9ec2cfd1ae40552ee</anchor>
+      <arglist>(FCString *pTestName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
