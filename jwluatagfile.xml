@@ -19629,6 +19629,13 @@
       <anchor>aeaeec6c2152a6aaeb8f5cd88812dcb63</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>CalcIsDefaultList</name>
+      <anchorfile>class_f_c_custom_key_mode_symbol_list.html</anchorfile>
+      <anchor>a457f013e740ebbedaaf8bcf46a234ac0</anchor>
+      <arglist>() const</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static symbolMap</type>
       <name>GetDefaultList</name>
