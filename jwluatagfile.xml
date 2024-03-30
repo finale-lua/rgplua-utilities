@@ -2962,6 +2962,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetShowBeams</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a0c34c847502e31421c1296a40fbbb613</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetShowTies</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a243c076c0ca498d45a7ea0c9e317da8f</anchor>
@@ -3522,6 +3529,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>SetShowBeams</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a5cfbecc1a2ff103d53d484678f59a05f</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetShowTies</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a90290bcace4a7297801c8f84cf9bb6a0</anchor>
@@ -3925,6 +3939,20 @@
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a3fd6467d08111c0fcc2d825bd46d6fb1</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>FCFontInfo *</type>
+      <name>CreateIndependentFontInfo</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a9679a9b86b99c5c91f84e92ab1fe21a3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetIndependentFontInfo</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a3ba76bf25b5b4a086718c1c769fb3638</anchor>
+      <arglist>(const FCFontInfo &amp;font)</arglist>
     </member>
     <member kind="function">
       <type>FCString *</type>
@@ -19386,8 +19414,8 @@
       <type>bool</type>
       <name>LoadForEntry</name>
       <anchorfile>class_f_c_current_staff_spec.html</anchorfile>
-      <anchor>a7b57fab52e555d6f15e30228993e34d5</anchor>
-      <arglist>(FCNoteEntry *pNoteEntry)</arglist>
+      <anchor>a00d134530946d7a8c93dc3d98b287126</anchor>
+      <arglist>(const FCNoteEntry *pNoteEntry)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
