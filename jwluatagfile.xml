@@ -2539,6 +2539,31 @@
     </member>
     <member kind="enumeration">
       <type></type>
+      <name>STAFFSTEMDIRS</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFSTEMDIR_DEFAULT</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6aaf3c07a4811a55ca46597a0afdca6942</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFSTEMDIR_ALWAYS_UP</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6a365c7a594c35228737540d8cd806680b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFSTEMDIR_ALWAYS_DOWN</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6a9a27aef7d9292aec8b1f46212d04439f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
       <name>ALTERNATE_STAFF</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a5f78266004e17852e58d94f14c33f881</anchor>
@@ -2633,6 +2658,24 @@
       <name>STAFFNOTATION_TABLATURE</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a262557f0eaf1ef6150e5420f6d09e480a16111c542ec5856331291dd15811931e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFSTEMDIR_DEFAULT</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6aaf3c07a4811a55ca46597a0afdca6942</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFSTEMDIR_ALWAYS_UP</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6a365c7a594c35228737540d8cd806680b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STAFFSTEMDIR_ALWAYS_DOWN</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a49965d1d710d9ffb80396ef6345221e6a9a27aef7d9292aec8b1f46212d04439f</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -2965,6 +3008,69 @@
       <name>GetShowBeams</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a0c34c847502e31421c1296a40fbbb613</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStemsUseVerticalOffsetForNoteheadEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a53b6487b11cfe7ee1911719a9e7454f1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStemsNoteheadEndFixedToStaff</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a28f78fda22c77fb68d3f7dd055ebbd2f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetStemsUseVerticalOffsetForBeamEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a6b8b73872c9edf99f31586fca721fd3e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Efix32</type>
+      <name>GetStemsUpHorizontalOffset</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>ac13b619e92c9989c75176bb5f378acba</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Efix32</type>
+      <name>GetStemsDownHorizontalOffset</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a3afbba67ee99f848de18b362142037a1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Efix32</type>
+      <name>GetStemsUpVerticalOffsetForNoteheadEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a10ca871882dcbe43e395902ca0c823f0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Efix32</type>
+      <name>GetStemsDownVerticalOffsetForNoteheadEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>aee6f8895a44c694e95d687d851888bda</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Efix32</type>
+      <name>GetStemsUpVerticalOffsetForBeamEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a206d174592de2af2b521445228af81db</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Efix32</type>
+      <name>GetStemsDownVerticalOffsetForBeamEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a204d752eb3f92546499ad44f7c926548</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -3533,6 +3639,69 @@
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a5cfbecc1a2ff103d53d484678f59a05f</anchor>
       <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsUseVerticalOffsetForNoteheadEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>ac27bac31dae0d7d2b32783d5af2f7dff</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsNoteheadEndFixedToStaff</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>acced7002dd7628a7a7490d65e5f20e38</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsUseVerticalOffsetForBeamEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>ac6b4b154953813be148fea1700942283</anchor>
+      <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsUpHorizontalOffset</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>aa6b3a0190619074c253d5ecb968b0851</anchor>
+      <arglist>(Efix32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsDownHorizontalOffset</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a031813dc5f0464a5139525cabd9cb6f2</anchor>
+      <arglist>(Efix32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsUpVerticalOffsetForNoteheadEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>af90d11c04f70ef3560a6d91af94896b4</anchor>
+      <arglist>(Efix32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsDownVerticalOffsetForNoteheadEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a5fe0c665bd7339bb68cca57ea6061958</anchor>
+      <arglist>(Efix32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsUpVerticalOffsetForBeamEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>ab5f71c9dbc7470092cc4a4816c46a5bf</anchor>
+      <arglist>(Efix32 value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsDownVerticalOffsetForBeamEnd</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a0c3e1cea1c1edb3caad11e7c9e14cf42</anchor>
+      <arglist>(Efix32 value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
