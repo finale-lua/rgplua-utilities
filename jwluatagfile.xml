@@ -3011,6 +3011,13 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
+      <type>STAFFSTEMDIRS</type>
+      <name>GetStemsDirection</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>ace010edcf1ebaccd40387784f274a270</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetStemsUseVerticalOffsetForNoteheadEnd</name>
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
@@ -3639,6 +3646,13 @@
       <anchorfile>class_____f_c_staff_base.html</anchorfile>
       <anchor>a5cfbecc1a2ff103d53d484678f59a05f</anchor>
       <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetStemsDirection</name>
+      <anchorfile>class_____f_c_staff_base.html</anchorfile>
+      <anchor>a1549644c5fe2818676c0b4986dc034a8</anchor>
+      <arglist>(STAFFSTEMDIRS value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -53184,6 +53198,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetUseShowPartTimeSignatures</name>
+      <anchorfile>class_f_c_staff_style_def.html</anchorfile>
+      <anchor>af890e14273920b420384b8220ee0d79e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>GetUseShowClefs</name>
       <anchorfile>class_f_c_staff_style_def.html</anchorfile>
       <anchor>ad7133f63d352b5c595b1165a015552dc</anchor>
@@ -53474,6 +53495,13 @@
       <name>SetUseShowTimeSignatures</name>
       <anchorfile>class_f_c_staff_style_def.html</anchorfile>
       <anchor>aefc26ae312ff9ec45404218ee123f8e9</anchor>
+      <arglist>(bool state)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetUseShowPartTimeSignatures</name>
+      <anchorfile>class_f_c_staff_style_def.html</anchorfile>
+      <anchor>addae4158a5b9aa20d2ebd5fc36ff81a7</anchor>
       <arglist>(bool state)</arglist>
     </member>
     <member kind="function">
