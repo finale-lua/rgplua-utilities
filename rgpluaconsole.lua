@@ -4,11 +4,11 @@ function plugindef()
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
     finaleplugin.HandlesUndo = true
-    finaleplugin.MinJWLuaVersion = 0.71
+    finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.0"
-    finaleplugin.Date = "October 17, 2023"
+    finaleplugin.Version = "1.5.1"
+    finaleplugin.Date = "March 20, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -23,8 +23,8 @@ local text = osutils.text
 
 -- Keep configured_script_items at the top level so that it exists as long as the script runs.
 -- This guarantees that browser_script_item does not get destroyed.
-local configured_script_items = finenv.CreateLuaScriptItems()
-local browser_script_item = (function()
+configured_script_items = finenv.CreateLuaScriptItems()
+browser_script_item = (function()
     for item in each(configured_script_items) do
         if item.FileName == "rgpluaclassbrowser.lua" then
             return item
@@ -57,8 +57,9 @@ local hires_timer           -- For timing scripts
 local in_scroll_handler     -- needed to prevent infinite scroll handler loop
 local in_text_change_event  -- needed to prevent infinite text_change handleer loop
 local in_execute_script_item      -- tracks is we are inside on_run_script
-local find_requested         -- used by Windows to trigger the Find dialog box
+local find_requested        -- used by Windows to trigger the Find dialog box
 local in_timer              -- used to prevent timer reentrancy
+local modal_depth = 0       -- used to count modal depth of scripts
 
 --global variables that persist (thru Lua garbage collection) until the script releases its Lua State
 
@@ -185,6 +186,11 @@ function calc_line_ending_type(fcstr)
     return LINE_ENDINGS_UNKNOWN
 end
 
+local function activate_editor()
+    global_dialog:Activate()
+    edit_text:SetKeyboardFocus()
+end
+
 local function get_edit_text(control)
     local retval = finale.FCString()
     control:GetText(retval)
@@ -238,6 +244,7 @@ local function kill_executing_items(item_index)
             if item:IsExecuting() then
                 item:StopExecuting()
             end
+            item.ControllingWindow = nil -- piece o' the rock
         end
     end
 end
@@ -591,6 +598,30 @@ function on_text_change(control)
     in_text_change_event = false
 end
 
+function on_modal_window_will_open(_item)
+    assert(modal_depth >= 0, "modal_depth is negative")
+    if modal_depth == 0 then
+        file_menu:SetEnable(false)
+        kill_script_cmd:SetEnable(false)
+        run_script_cmd:SetEnable(false)
+        close_btn:SetEnable(false)
+        global_dialog:SetPreventClosing(true)
+    end
+    modal_depth = modal_depth + 1
+end
+
+function on_modal_window_did_close(item)
+    assert(modal_depth > 0, "modal_depth is 0 or less")
+    modal_depth = modal_depth - 1
+    if modal_depth == 0 then
+        file_menu:SetEnable(true)
+        kill_script_cmd:SetEnable(item:IsExecuting() and not in_execute_script_item)
+        run_script_cmd:SetEnable(true)
+        close_btn:SetEnable(true)
+        global_dialog:SetPreventClosing(false)
+    end
+end
+
 function on_execution_will_start(item)
     kill_script_cmd:SetEnable(not in_execute_script_item)
     output_to_console("Running [" .. item.MenuItemText .. "] ======>")
@@ -621,13 +652,18 @@ function on_execution_did_stop(item, success, msg, msgtype, line_number, source)
         local final_result = (msgtype == finenv.MessageResultType.EXTERNAL_TERMINATION) and "terminated" or "FAILED"
         output_to_console("<======= [" .. item.MenuItemText .. "] " .. final_result .. "." .. processing_time_str)
     end
+    item.ControllingWindow = nil
     hires_timer = nil
+    if modal_depth > 0 then
+        modal_depth = 1
+        on_modal_window_did_close(item)
+    end
     kill_script_cmd:SetEnable(false)
 end
 
 local function on_clear_output(control)
     output_text:SetText(finale.FCString(""))
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_copy_output(control)
@@ -635,10 +671,11 @@ local function on_copy_output(control)
     output_text:GetText(text_for_output)
     local line_ending = #text_for_output.LuaString > 0 and "\n" or ""
     finenv.UI():TextToClipboard(text_for_output.LuaString .. line_ending)
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_run_script(control)
+    activate_editor() -- do this first, in case the script opens a dialog
     local script_text = get_edit_text(edit_text)
     local script_items = context.script_items_list[context.selected_script_item].items
     local file_exists = context.script_items_list[context.selected_script_item].exists
@@ -651,9 +688,12 @@ local function on_run_script(control)
     script_item.AutomaticallyReportErrors = false
     script_item.Debug = run_as_debug_chk:GetCheck() ~= 0
     script_item.Trusted = run_as_trusted_chk:GetCheck() ~= 0
+    script_item.ControllingWindow = global_dialog
     script_item:RegisterPrintFunction(output_to_console)
     script_item:RegisterOnExecutionWillStart(on_execution_will_start)
     script_item:RegisterOnExecutionDidStop(on_execution_did_stop)
+    script_item:RegisterOnModalWindowWillOpen(on_modal_window_will_open)
+    script_item:RegisterOnModalWindowDidClose(on_modal_window_did_close)
     if clear_output_chk:GetCheck() ~= 0 then
         output_text:SetText(finale.FCString(""))
     end
@@ -662,7 +702,6 @@ local function on_run_script(control)
     finenv.ExecuteLuaScriptItem(script_item)
     in_execute_script_item = false
     kill_script_cmd:SetEnable(script_item:IsExecuting())
-    edit_text:SetKeyboardFocus()
 end
 
 local function on_terminate_script(control)
@@ -671,7 +710,7 @@ local function on_terminate_script(control)
     if script_item:IsExecuting() then
         script_item:StopExecuting()
     end
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function on_file_popup(control)
@@ -706,7 +745,9 @@ end
 
 local function on_config_dialog()
     if finale.FCDocument().ID <= 0 then
-        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.", "Document Required")
+        global_dialog:CreateChildUI():AlertInfo("The Preferences dialog is only available when a document is open.",
+            "Document Required")
+        activate_editor()
         return
     end
     local curr_y = 0
@@ -829,6 +870,7 @@ local function on_config_dialog()
         config.font_advance_points = font:CalcAverageRomanCharacterWidthPoints()
         global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.", "Changes Accepted")
     end
+    activate_editor()
 end
 
 local function on_scroll(control)
@@ -881,7 +923,7 @@ local function on_init_window()
         output_text:SetText(finale.FCString(""))
         output_text:AppendText(finale.FCString(context.output_text)) -- AppendText scrolls to the end
     end
-    edit_text:SetKeyboardFocus()
+    activate_editor()
     global_dialog:SetTimer(global_timer_id, 100) --100ms should be plenty for checking if the file has been written externally
 end
 
@@ -913,8 +955,8 @@ local function on_close_window()
     config.window_pos_y = global_dialog.StoredY
     config.window_pos_valid = true
     config_write()
+    on_terminate_script()
     if finenv.RetainLuaState then
-        on_terminate_script()
         context.script_text = get_edit_text(edit_text).LuaString
         if context.script_text == context.original_script_text then
             -- if we are in a saved state, do not keep the current contents.
@@ -979,7 +1021,7 @@ local function find_again(from_current)
         end
         global_dialog:CreateChildUI():AlertInfo(message .. ".", "Not Found")
     end
-    edit_text:SetKeyboardFocus()
+    activate_editor()
 end
 
 local function find_text()
@@ -1048,6 +1090,7 @@ local function find_text()
         config.search_currsel = current_selection_only:GetCheck() ~= 0
         find_again(true)
     end
+    activate_editor()
 end
 
 local function on_timer(timer_id)
@@ -1099,13 +1142,20 @@ local function on_keyboard_command(control, character)
     if not keyboard_command_funcs[char_string] then
         return false
     end
-    keyboard_command_funcs[char_string]()
+    if finenv.UI():IsOnMac() and char_string == "N" then
+        if not global_dialog:QueryLastCommandModifierKeys(finale.CMDMODKEY_SHIFT) then
+            return false
+        end
+    end
+    if modal_depth <= 0 then
+        keyboard_command_funcs[char_string]()
+    end
     return true
 end
 
 local create_dialog = function()
     local dialog = finale.FCCustomLuaWindow()
-    dialog:SetTitle(finale.FCString("RGP Lua - Console"))
+    dialog:SetTitle(finale.FCString("RGP Lua - Console v" .. finaleplugin.Version))
     -- positioning parameters
     local x_separator = 10
     local y_separator = 10
@@ -1196,7 +1246,7 @@ local create_dialog = function()
     browser_btn:SetWidth(110)
     browser_btn:SetEnable(browser_script_item ~= nil)
     curr_x = curr_x + 110 + x_separator
-    local close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
+    close_btn = dialog:CreateCloseButton(total_width - small_button_width, curr_y)
     close_btn:SetWidth(small_button_width)
     -- registrations
     dialog:RegisterHandleControlEvent(run_script_cmd, on_run_script)
@@ -1214,6 +1264,7 @@ local create_dialog = function()
         end
     end)
     dialog:RegisterHandleControlEvent(browser_btn, function(control)
+        activate_editor() -- activate first, since this will launch another modeless window
         if browser_script_item then
             finenv.ExecuteLuaScriptItem(browser_script_item)
         end

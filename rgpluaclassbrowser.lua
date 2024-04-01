@@ -7,8 +7,8 @@ function plugindef()
     finaleplugin.LoadLuaOSUtils = true
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "2.0"
-    finaleplugin.Date = "December 27, 2023"
+    finaleplugin.Version = "2.1"
+    finaleplugin.Date = "February 25, 2024"
     finaleplugin.Notes = [[
         This script uses the built-in reflection of PDK Framework classes in RGP Lua to display all
         the framework classes and their methods and properties. Use the edit text boxes at the top
@@ -975,7 +975,7 @@ local create_dialog = function()
 
     -- create a new dialog
     local dialog = finale.FCCustomLuaWindow()
-    set_text(dialog, "RGP Lua - Class Browser", "SetTitle")
+    set_text(dialog, "RGP Lua - Class Browser v" .. finaleplugin.Version, "SetTitle")
     dialog:RegisterHandleCommand(on_list_select)
     --[[
     -- normally we would just use RegisterInitWindow to populate a modeless dialog,
