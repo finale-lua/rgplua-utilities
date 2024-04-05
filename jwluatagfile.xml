@@ -37738,6 +37738,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>FixMeasureWidthsInScore</name>
+      <anchorfile>class_f_c_music_region.html</anchorfile>
+      <anchor>a9e0246af5aa4404b4ceb91c5734abcab</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>DebugDump</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
       <anchor>a97557f5700ad859d17e9ba021ea8e8ca</anchor>
