@@ -54846,57 +54846,57 @@
       <type>bool</type>
       <name>ContainsString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acd3dc59ef78234f4d6ca4bbc0e218ea9</anchor>
-      <arglist>(FCString *pSubString)</arglist>
+      <anchor>aca7908cbdee0781a262d941e8aad1a98</anchor>
+      <arglist>(FCString *pSubString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsCString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a4c5a84c29acf01aec397004b3c0c5220</anchor>
-      <arglist>(const char *pszSubString)</arglist>
+      <anchor>ad65c65778074a3b811b1a339b6fe89b2</anchor>
+      <arglist>(const char *pszSubString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsStringFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acaa1bf9e134ab8918c4ff41741cf156d</anchor>
-      <arglist>(const FCString *pSubString, int startindex)</arglist>
+      <anchor>aad8ce752cb853b28a66c4914056e69dd</anchor>
+      <arglist>(const FCString *pSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsCStringFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ada215eb00dfb901fca7bc03ffd2bbadb</anchor>
-      <arglist>(const char *pszSubString, int startindex)</arglist>
+      <anchor>a903e8190c079c3728e128119ac930aee</anchor>
+      <arglist>(const char *pszSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>abe91ced68e0986d30deec0015f420376</anchor>
-      <arglist>(FCString *pSubString)</arglist>
+      <anchor>a73fe1ebda66a5cbf78e5596061e00186</anchor>
+      <arglist>(FCString *pSubString) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcCStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5c4b39411b9f78aba52ab67d5fff320c</anchor>
-      <arglist>(FCString *pSubString, const char *pszSubString)</arglist>
+      <anchor>a3e6e6fe4d6e6eba49bc4f2a5464b2e28</anchor>
+      <arglist>(FCString *pSubString, const char *pszSubString) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcStringPosFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5fcf8a8d88c6728b8201d8eb26fc2ffc</anchor>
-      <arglist>(FCString *pSubString, int startindex)</arglist>
+      <anchor>a2657b46e4259465353abc0b765e7c7a6</anchor>
+      <arglist>(FCString *pSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcCStringPosFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae9472889962796d62dfb17189e1c4a63</anchor>
-      <arglist>(const char *pszSubString, int startindex)</arglist>
+      <anchor>ad8d0b9972e24a480587ad2c2800a57a7</anchor>
+      <arglist>(const char *pszSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -54916,8 +54916,8 @@
       <type>bool</type>
       <name>ContainsEnigmaTextInsert</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a95042d8ab88730e5054590370c433de9</anchor>
-      <arglist>(bool only_file_info_inserts=true)</arglist>
+      <anchor>ab54d1a017c51d31cc802814cf4ac7dff</anchor>
+      <arglist>(bool only_file_info_inserts=true) const</arglist>
     </member>
     <member kind="function">
       <type>FCStrings *</type>
@@ -54937,8 +54937,8 @@
       <type>FCFontInfo *</type>
       <name>CreateLastFontInfo</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>adbc815e2135dc86fcf4829388b31e03d</anchor>
-      <arglist>()</arglist>
+      <anchor>ae06b7af3d85885edca1cfadc906fbe33</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCStrings *</type>
@@ -54979,15 +54979,15 @@
       <type>int</type>
       <name>FindFirst</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acd797dca5b7ba43935580694f15c4084</anchor>
-      <arglist>(const char *pszSubStr)</arglist>
+      <anchor>ad98b602f6f75fed3daa3b5d91bb99743</anchor>
+      <arglist>(const char *pszSubStr) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>FindLast</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa08ad5a0f40200fc06583aa4413fc18d</anchor>
-      <arglist>(const char *pszSubStr)</arglist>
+      <anchor>abfd6771037cc356125f6850cb65a1773</anchor>
+      <arglist>(const char *pszSubStr) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -55063,28 +55063,35 @@
       <type>int</type>
       <name>GetInteger</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa429831db45adfea515305643d42eaed</anchor>
-      <arglist>(int index=0)</arglist>
+      <anchor>a675fe588eeb690a38594f1a2ea7745a6</anchor>
+      <arglist>(int index=0) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetHex</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>afb7a69fadee453c9127ec9640d7bc422</anchor>
-      <arglist>()</arglist>
+      <anchor>abf6347f2ac81903dabced8a6645f1db1</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a8efb9979b771ffa835329153581d7928</anchor>
-      <arglist>(int index=0)</arglist>
+      <anchor>aa3cda536b6ece3267eba5f44a91b4c51</anchor>
+      <arglist>(int index=0) const</arglist>
     </member>
     <member kind="function">
       <type>eUniChar16</type>
       <name>GetCharacterAt</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a1c75a546078406584b9492b2ebd3a902</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::pair&lt; eUniChar32, int &gt;</type>
+      <name>GetCodePointAt</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a108e7036ccd7c65c21b06df4e95cabf4</anchor>
       <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
@@ -55112,8 +55119,8 @@
       <type>void</type>
       <name>InsertString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a4f10264d109eed465051c175a419b36d</anchor>
-      <arglist>(FCString *pString, int insertindex=0)</arglist>
+      <anchor>a4ca832fac4ebe452e6414bd5fceac16b</anchor>
+      <arglist>(const FCString *pString, int insertindex=0)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
