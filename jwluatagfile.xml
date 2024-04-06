@@ -54956,6 +54956,20 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>DeleteCodePointAt</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>af1a05146606d277133021f2650afbcf9</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DeleteCodePointsAt</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ad75f4b052420e64fd057bc4b4b45b2e9</anchor>
+      <arglist>(int index, int count)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>DeleteCharacterAt</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>ae53c241a0aeec5d9c235b0e469e1adbd</anchor>
