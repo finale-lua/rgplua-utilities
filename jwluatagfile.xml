@@ -14337,8 +14337,8 @@
       <type>FCCategoryDef *</type>
       <name>FindName</name>
       <anchorfile>class_f_c_category_defs.html</anchorfile>
-      <anchor>ab5c63cacb6e9eae7c614bf82fae3444a</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>af3559739b8ee921ac93733964c4fea8f</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>FCCategoryDef *</type>
@@ -24504,8 +24504,8 @@
       <type>bool</type>
       <name>IsNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a602d33074f38f8f9ec2cfd1ae40552ee</anchor>
-      <arglist>(FCString *pTestName) const</arglist>
+      <anchor>add8be97400de9fbb984f019843fd2e08</anchor>
+      <arglist>(const FCString &amp;pTestName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -29321,8 +29321,8 @@
       <type>virtual int</type>
       <name>Compare</name>
       <anchorfile>class_f_c_iterator_handler.html</anchorfile>
-      <anchor>a6124af102105df5c2ce522c4169b8b13</anchor>
-      <arglist>(__FCBase *pObject1, __FCBase *pObject2)</arglist>
+      <anchor>a5c54a83673f03b5eb1f5bf167b3603c5</anchor>
+      <arglist>(const __FCBase *pObject1, const __FCBase *pObject2) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
@@ -33369,8 +33369,8 @@
       <type>int</type>
       <name>CalcNumberFromString</name>
       <anchorfile>class_f_c_measure_number_regions.html</anchorfile>
-      <anchor>a323693c67dbf36bf1208a16b65ea09d4</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ab138736f528903105d9237bfb8760112</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -33383,8 +33383,8 @@
       <type>bool</type>
       <name>IsStringUnique</name>
       <anchorfile>class_f_c_measure_number_regions.html</anchorfile>
-      <anchor>a555392353ca457abbb4bc362d74f918f</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ab216e3a2b7b06b4b293c77fe3b9cd5df</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -54601,15 +54601,8 @@
       <type></type>
       <name>FCString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aba1475f723b0437657a45529272e8f40</anchor>
-      <arglist>(const char16_t *pszCString)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>FCString</name>
-      <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ac387a6868b58bcd4dc5f2f336d0d77e3</anchor>
-      <arglist>(const WCHAR *pszCString)</arglist>
+      <anchor>a1cf33ef1efd98dfad392d4d3eabcddf4</anchor>
+      <arglist>(const _fcStringChar *pszCString)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -54706,15 +54699,15 @@
       <type>bool</type>
       <name>SplitAt</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acef4b305375c6a4ff4d40af73f79db94</anchor>
-      <arglist>(int splitpointindex, FCString *pFirstString, FCString *pSecondString, bool includesplitposchar)</arglist>
+      <anchor>a41da4ae47c6f106f79802aa223cb5496</anchor>
+      <arglist>(int splitpointindex, FCString *pFirstString, FCString *pSecondString, bool includesplitposchar) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>SplitToPathAndFile</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>af4f743c5420a8e811fd44f060d53fbac</anchor>
-      <arglist>(FCString *pPathPart, FCString *pFilePart)</arglist>
+      <anchor>a16f76dcc6e47551eb65dc6f122b256ae</anchor>
+      <arglist>(FCString *pPathPart, FCString *pFilePart) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -54832,22 +54825,22 @@
       <type>int</type>
       <name>Compare</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a9cc98d51106a85611b179f8afa9463ad</anchor>
-      <arglist>(const FCString *pString2) const</arglist>
+      <anchor>abb3a50e78b25d1a09ffe09ce1c0d0545</anchor>
+      <arglist>(const FCString &amp;value) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CompareNoCase</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5d4d92cd15420cd1cd1fa83eadea91e4</anchor>
-      <arglist>(const FCString *pString2) const</arglist>
+      <anchor>a99a5c39b605ae95573fd9d61c08ee46d</anchor>
+      <arglist>(const FCString &amp;value) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aca7908cbdee0781a262d941e8aad1a98</anchor>
-      <arglist>(FCString *pSubString) const</arglist>
+      <anchor>a770edef50a67dd0f926c013e30063c4e</anchor>
+      <arglist>(const FCString &amp;pSubString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54860,8 +54853,8 @@
       <type>bool</type>
       <name>ContainsStringFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aad8ce752cb853b28a66c4914056e69dd</anchor>
-      <arglist>(const FCString *pSubString, int startindex) const</arglist>
+      <anchor>a429a17203e383209c3ff21dc830664ad</anchor>
+      <arglist>(const FCString &amp;pSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54874,22 +54867,22 @@
       <type>int</type>
       <name>CalcStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a73fe1ebda66a5cbf78e5596061e00186</anchor>
-      <arglist>(FCString *pSubString) const</arglist>
+      <anchor>a0731182cb778b576395d2c0fbf3b758d</anchor>
+      <arglist>(const FCString &amp;subString) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcCStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a3e6e6fe4d6e6eba49bc4f2a5464b2e28</anchor>
-      <arglist>(FCString *pSubString, const char *pszSubString) const</arglist>
+      <anchor>a2879b154442fe0e627ab604e47006398</anchor>
+      <arglist>(const FCString *pSubString, const char *pszSubString) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcStringPosFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a2657b46e4259465353abc0b765e7c7a6</anchor>
-      <arglist>(FCString *pSubString, int startindex) const</arglist>
+      <anchor>a028ea83eb005e28358d7c4ea3280ccb4</anchor>
+      <arglist>(const FCString &amp;subString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -55028,8 +55021,8 @@
       <type>void</type>
       <name>FormatCharacterNumber</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa648a64a8262084190c971386a17f114</anchor>
-      <arglist>(eUniChar16 character)</arglist>
+      <anchor>a9b521a895d6700cdce7c642da1126fdf</anchor>
+      <arglist>(eUniChar32 character)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -55175,15 +55168,15 @@
       <type>bool</type>
       <name>IsEqualString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a214df350b573e5b8a522d3e98c59304c</anchor>
-      <arglist>(FCString *pString) const</arglist>
+      <anchor>ae110de239de0b6b9c89b42a763358060</anchor>
+      <arglist>(const FCString &amp;value) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsCharacter</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>af6b8b7437468386000c00684f075f428</anchor>
-      <arglist>(int index, eUniChar16 character) const</arglist>
+      <anchor>ae61ae2babb90615170b83892cab58788</anchor>
+      <arglist>(int index, eUniChar32 character) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -55364,8 +55357,8 @@
       <type>double</type>
       <name>GetMeasurement</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aeacc2d9a31b963b298b92c86357d96de</anchor>
-      <arglist>(_ENUMCODE(MEASUREMENTUNITS) _LUACODE(twobyte) unit)</arglist>
+      <anchor>a5b2185107597a84a4d2fc07732ac2b85</anchor>
+      <arglist>(_ENUMCODE(MEASUREMENTUNITS) _LUACODE(twobyte) unit) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
