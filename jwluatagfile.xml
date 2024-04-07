@@ -24277,10 +24277,10 @@
       <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
-      <type>const char *</type>
+      <type>std::string</type>
       <name>GetName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>aa51f8c170a151f5ebd1b8f96681c3587</anchor>
+      <anchor>adfc72c0b0fc5b0c47107502938fbbbae</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -24371,8 +24371,8 @@
       <type>void</type>
       <name>SetName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a4a7634e5d73b77cfcc393c6b30c10d96</anchor>
-      <arglist>(const char *pszName)</arglist>
+      <anchor>a51f07a71b26d25615a0d0d83466fbf87</anchor>
+      <arglist>(const std::string &amp;pszName)</arglist>
     </member>
     <member kind="function">
       <type>EFONTID</type>
