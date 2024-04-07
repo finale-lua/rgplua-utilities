@@ -300,8 +300,8 @@
       <type>virtual bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>a1b05a184232075e7a1ab7b8327fd2cd1</anchor>
-      <arglist>(__FCBase *pCompareObject) const</arglist>
+      <anchor>a8f441d76fd1f5c1e7b4c616a2cc580ca</anchor>
+      <arglist>(const __FCBase *pCompareObject) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1222,8 +1222,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>ad8d144862b7e44abcbdb9170511f5df3</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>ae71535fe3b2f63397b343e4c261b74ed</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -13950,12 +13950,12 @@
       <anchor>adc486112a9fbe13bb3140f3748447b7e</anchor>
       <arglist>()</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
+    <member kind="function">
+      <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_category_def.html</anchorfile>
-      <anchor>a584a454906e8621681de0eb7e998b372</anchor>
-      <arglist>(__FCBase *pObject) const override</arglist>
+      <anchor>a8996066e0666861b5a79e7268d53c40f</anchor>
+      <arglist>(const __FCBase *pObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21818,8 +21818,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a9341c4099efa18f595c249d55bdf5b97</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>aa5683e456624045ffbd53f1a92308357</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24392,8 +24392,8 @@
       <type>void</type>
       <name>SetNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>ac831cf323420eadaf9eb51ede3280bfb</anchor>
-      <arglist>(const FCString &amp;pString)</arglist>
+      <anchor>ad21caf92bcd6a498e5664c1826c94509</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -29571,8 +29571,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ade182e7b6c4f21264a0c5754c8818d85</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a8b4acef7cdc2245242d061a288b07082</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -37313,8 +37313,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>a477742c57dcbadbce36bec2acc3481f0</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a09bca5aab3cc66dd9c1ae9e48b535537</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -42869,8 +42869,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_part.html</anchorfile>
-      <anchor>a9dd66b7914c7a37d774840f1105301a5</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a2340201379ecaafcc62a1957e5153456</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -48477,8 +48477,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_shape_def_instruction.html</anchorfile>
-      <anchor>a003297d3e21433ddc67b04af4956652e</anchor>
-      <arglist>(__FCBase *pTestObject) const override</arglist>
+      <anchor>a6191edae570cfa7398dc13f0eb1196ab</anchor>
+      <arglist>(const __FCBase *pTestObject) const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -60561,8 +60561,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a3e1fc01d63a607bcbda73601f03f6aca</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a56331fbc3383f41edb38023db28e629a</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
