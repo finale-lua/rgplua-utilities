@@ -10976,15 +10976,15 @@
       <type>FCFontInfo *</type>
       <name>CreateMainSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a16f9853e69bb381ff9c05e288db8afa6</anchor>
-      <arglist>()</arglist>
+      <anchor>a24f6272852e30c06f758efb92dd39ffd</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
       <name>CreateFlippedSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a150ad43d68529551effe08aa2219b8f8</anchor>
-      <arglist>()</arglist>
+      <anchor>a49a10dfbc378ce3563f6d713407862a9</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>eUniChar32</type>
@@ -11029,10 +11029,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>const char *</type>
+      <type>std::string</type>
       <name>GetMainSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a5a0e01bab0d8c42fb2909b09d0db36b6</anchor>
+      <anchor>a07b1b3364cc9a3377853754838c238f9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11043,17 +11043,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>const eUniChar16 *</type>
-      <name>GetMainSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a718c9d0ab4d1d039d4cac9b0eae9598b</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const char *</type>
+      <type>std::string</type>
       <name>GetFlippedSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>ac25d8c522dc014fab594cb781983e734</anchor>
+      <anchor>a75254ab81f0ce39feb9f8cc4ded103dd</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11061,13 +11054,6 @@
       <name>GetFlippedSymbolFontID</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a844342663bc57cbf4964900e1e9ae921</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const eUniChar16 *</type>
-      <name>GetFlippedSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>ab1d17c7402861f2b92a71365a8b8e913</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11319,50 +11305,36 @@
       <type>bool</type>
       <name>IsMainSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>afab29cf07f92456146ce0a26f457f45b</anchor>
-      <arglist>(const char *pszFontName)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>IsMainSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>abffbaf21d9bd29e59806662d4eb7cd32</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
+      <anchor>a7eb751b6fc32d12fce373ae0b982ee34</anchor>
+      <arglist>(const char *pszFontName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsFlippedSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>aa1006dbec9416b23fe9ac974e3c12b4d</anchor>
-      <arglist>(const char *pszFontName)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>IsFlippedSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a7c01d2db6091d096d1f1debf2bf60f73</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
+      <anchor>a3754ae705c1c75acf4a5c5f6ed76fd65</anchor>
+      <arglist>(const char *pszFontName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsIdenticalTo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>afd467f219f5c1736ff905683cd43bd0e</anchor>
-      <arglist>(FCArticulationDef *pDef, bool playbackinfo, bool positioningvalues, bool positioningoptions, bool defaultside)</arglist>
+      <anchor>a41f7a80eeb82becde3056a3ed01933ec</anchor>
+      <arglist>(const FCArticulationDef &amp;compareWith, bool playbackinfo, bool positioningvalues, bool positioningoptions, bool defaultside) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>GetMainSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a631e25be11fa9b0e213131081fa3b8a9</anchor>
-      <arglist>(FCFontInfo *pFontInfo)</arglist>
+      <anchor>ac36622429fe11aa23d93f58dff304188</anchor>
+      <arglist>(FCFontInfo *pFontInfo) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>GetFlippedSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a4b717cd4eef9a022a48641c38686a08b</anchor>
-      <arglist>(FCFontInfo *pFontInfo)</arglist>
+      <anchor>ae4e172763ccefcdf287b2121076c972c</anchor>
+      <arglist>(FCFontInfo *pFontInfo) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -11403,29 +11375,29 @@
       <type>void</type>
       <name>SetMainSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a840fca162d1bb13e170db84d66561339</anchor>
-      <arglist>(const char *pszFontName)</arglist>
+      <anchor>a01482e57016ed781dd423dcdf07cf32f</anchor>
+      <arglist>(const std::string &amp;pszFontName)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMainSymbolFontID</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>aef59679ee205982ef2572d61f42a7a0b</anchor>
+      <arglist>(EFONTID fontid)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetFlippedSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>ad428aa5bc42fae6e469a6ae6cd4421c1</anchor>
-      <arglist>(const char *pszFontName)</arglist>
+      <anchor>ab264fadb4bd26b58d7c4b59909f8ff25</anchor>
+      <arglist>(const std::string &amp;pszFontName)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetMainSymbolFontUTF16</name>
+      <name>SetFlippedSymbolFontID</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a939b7293d0d4911d53fa0c2d369deaf8</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetFlippedSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a57fd1f8be20a5dbb14d81bb1d00873da</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
+      <anchor>a5bb9d08a826e013cbbae71a9e647ba36</anchor>
+      <arglist>(EFONTID fontid)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24420,8 +24392,8 @@
       <type>void</type>
       <name>SetNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a3beee4aa5fabcd88958e504287850dca</anchor>
-      <arglist>(const FCString *pString)</arglist>
+      <anchor>ac831cf323420eadaf9eb51ede3280bfb</anchor>
+      <arglist>(const FCString &amp;pString)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24574,8 +24546,8 @@
       <type>bool</type>
       <name>IsIdenticalTo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a91ee582dc3b2536e856b5dea66f5b984</anchor>
-      <arglist>(FCFontInfo *pCompareWith)</arglist>
+      <anchor>ac7271389adae998fcf5f8669c6814509</anchor>
+      <arglist>(const FCFontInfo &amp;compareWith) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
