@@ -24550,10 +24550,10 @@
       <arglist>(const FCFontInfo &amp;compareWith) const</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
+      <type>bool</type>
       <name>MakeDefaultMusicFont</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>af475313f4762e9a2a377d945f12d0a10</anchor>
+      <anchor>a1298496921ab0d78b2a54ced1300e658</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
