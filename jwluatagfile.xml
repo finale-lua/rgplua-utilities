@@ -55252,8 +55252,8 @@
       <type>bool</type>
       <name>MakeSubString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae2ee23a454eb1b250620fa463a1ea128</anchor>
-      <arglist>(int startindex, int substringlength, FCString *pDestinationString) const</arglist>
+      <anchor>ae866ead61b114cee0ae6551f111ba923</anchor>
+      <arglist>(int startindex, int substringlength, FCString *pDestinationString)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
