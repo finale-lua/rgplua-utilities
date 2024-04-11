@@ -300,8 +300,8 @@
       <type>virtual bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_____f_c_base.html</anchorfile>
-      <anchor>a1b05a184232075e7a1ab7b8327fd2cd1</anchor>
-      <arglist>(__FCBase *pCompareObject) const</arglist>
+      <anchor>a8f441d76fd1f5c1e7b4c616a2cc580ca</anchor>
+      <arglist>(const __FCBase *pCompareObject) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1222,8 +1222,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_____f_c_collection.html</anchorfile>
-      <anchor>ad8d144862b7e44abcbdb9170511f5df3</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>ae71535fe3b2f63397b343e4c261b74ed</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -10976,15 +10976,15 @@
       <type>FCFontInfo *</type>
       <name>CreateMainSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a16f9853e69bb381ff9c05e288db8afa6</anchor>
-      <arglist>()</arglist>
+      <anchor>a24f6272852e30c06f758efb92dd39ffd</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCFontInfo *</type>
       <name>CreateFlippedSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a150ad43d68529551effe08aa2219b8f8</anchor>
-      <arglist>()</arglist>
+      <anchor>a49a10dfbc378ce3563f6d713407862a9</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>eUniChar32</type>
@@ -11029,10 +11029,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>const char *</type>
+      <type>std::string</type>
       <name>GetMainSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a5a0e01bab0d8c42fb2909b09d0db36b6</anchor>
+      <anchor>a07b1b3364cc9a3377853754838c238f9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11043,17 +11043,10 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>const eUniChar16 *</type>
-      <name>GetMainSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a718c9d0ab4d1d039d4cac9b0eae9598b</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const char *</type>
+      <type>std::string</type>
       <name>GetFlippedSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>ac25d8c522dc014fab594cb781983e734</anchor>
+      <anchor>a75254ab81f0ce39feb9f8cc4ded103dd</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11061,13 +11054,6 @@
       <name>GetFlippedSymbolFontID</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
       <anchor>a844342663bc57cbf4964900e1e9ae921</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const eUniChar16 *</type>
-      <name>GetFlippedSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>ab1d17c7402861f2b92a71365a8b8e913</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -11319,50 +11305,36 @@
       <type>bool</type>
       <name>IsMainSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>afab29cf07f92456146ce0a26f457f45b</anchor>
-      <arglist>(const char *pszFontName)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>IsMainSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>abffbaf21d9bd29e59806662d4eb7cd32</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
+      <anchor>a7eb751b6fc32d12fce373ae0b982ee34</anchor>
+      <arglist>(const char *pszFontName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsFlippedSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>aa1006dbec9416b23fe9ac974e3c12b4d</anchor>
-      <arglist>(const char *pszFontName)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>IsFlippedSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a7c01d2db6091d096d1f1debf2bf60f73</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
+      <anchor>a3754ae705c1c75acf4a5c5f6ed76fd65</anchor>
+      <arglist>(const char *pszFontName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsIdenticalTo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>afd467f219f5c1736ff905683cd43bd0e</anchor>
-      <arglist>(FCArticulationDef *pDef, bool playbackinfo, bool positioningvalues, bool positioningoptions, bool defaultside)</arglist>
+      <anchor>a41f7a80eeb82becde3056a3ed01933ec</anchor>
+      <arglist>(const FCArticulationDef &amp;compareWith, bool playbackinfo, bool positioningvalues, bool positioningoptions, bool defaultside) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>GetMainSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a631e25be11fa9b0e213131081fa3b8a9</anchor>
-      <arglist>(FCFontInfo *pFontInfo)</arglist>
+      <anchor>ac36622429fe11aa23d93f58dff304188</anchor>
+      <arglist>(FCFontInfo *pFontInfo) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>GetFlippedSymbolFontInfo</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a4b717cd4eef9a022a48641c38686a08b</anchor>
-      <arglist>(FCFontInfo *pFontInfo)</arglist>
+      <anchor>ae4e172763ccefcdf287b2121076c972c</anchor>
+      <arglist>(FCFontInfo *pFontInfo) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -11403,29 +11375,29 @@
       <type>void</type>
       <name>SetMainSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a840fca162d1bb13e170db84d66561339</anchor>
-      <arglist>(const char *pszFontName)</arglist>
+      <anchor>a01482e57016ed781dd423dcdf07cf32f</anchor>
+      <arglist>(const std::string &amp;pszFontName)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetMainSymbolFontID</name>
+      <anchorfile>class_f_c_articulation_def.html</anchorfile>
+      <anchor>aef59679ee205982ef2572d61f42a7a0b</anchor>
+      <arglist>(EFONTID fontid)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>SetFlippedSymbolFont</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>ad428aa5bc42fae6e469a6ae6cd4421c1</anchor>
-      <arglist>(const char *pszFontName)</arglist>
+      <anchor>ab264fadb4bd26b58d7c4b59909f8ff25</anchor>
+      <arglist>(const std::string &amp;pszFontName)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
-      <name>SetMainSymbolFontUTF16</name>
+      <name>SetFlippedSymbolFontID</name>
       <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a939b7293d0d4911d53fa0c2d369deaf8</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>SetFlippedSymbolFontUTF16</name>
-      <anchorfile>class_f_c_articulation_def.html</anchorfile>
-      <anchor>a57fd1f8be20a5dbb14d81bb1d00873da</anchor>
-      <arglist>(const eUniChar16 *pszFontName)</arglist>
+      <anchor>a5bb9d08a826e013cbbae71a9e647ba36</anchor>
+      <arglist>(EFONTID fontid)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -13978,12 +13950,12 @@
       <anchor>adc486112a9fbe13bb3140f3748447b7e</anchor>
       <arglist>()</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
+    <member kind="function">
+      <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_category_def.html</anchorfile>
-      <anchor>a584a454906e8621681de0eb7e998b372</anchor>
-      <arglist>(__FCBase *pObject) const override</arglist>
+      <anchor>a8996066e0666861b5a79e7268d53c40f</anchor>
+      <arglist>(const __FCBase *pObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -14337,8 +14309,8 @@
       <type>FCCategoryDef *</type>
       <name>FindName</name>
       <anchorfile>class_f_c_category_defs.html</anchorfile>
-      <anchor>ab5c63cacb6e9eae7c614bf82fae3444a</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>af3559739b8ee921ac93733964c4fea8f</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>FCCategoryDef *</type>
@@ -21846,8 +21818,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a9341c4099efa18f595c249d55bdf5b97</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>aa5683e456624045ffbd53f1a92308357</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24305,10 +24277,10 @@
       <arglist>(FCString *pString) const</arglist>
     </member>
     <member kind="function">
-      <type>const char *</type>
+      <type>std::string</type>
       <name>GetName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>aa51f8c170a151f5ebd1b8f96681c3587</anchor>
+      <anchor>adfc72c0b0fc5b0c47107502938fbbbae</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -24399,8 +24371,8 @@
       <type>void</type>
       <name>SetName</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a4a7634e5d73b77cfcc393c6b30c10d96</anchor>
-      <arglist>(const char *pszName)</arglist>
+      <anchor>a51f07a71b26d25615a0d0d83466fbf87</anchor>
+      <arglist>(const std::string &amp;pszName)</arglist>
     </member>
     <member kind="function">
       <type>EFONTID</type>
@@ -24420,8 +24392,8 @@
       <type>void</type>
       <name>SetNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a3beee4aa5fabcd88958e504287850dca</anchor>
-      <arglist>(const FCString *pString)</arglist>
+      <anchor>ad21caf92bcd6a498e5664c1826c94509</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24504,8 +24476,8 @@
       <type>bool</type>
       <name>IsNameString</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a602d33074f38f8f9ec2cfd1ae40552ee</anchor>
-      <arglist>(FCString *pTestName) const</arglist>
+      <anchor>add8be97400de9fbb984f019843fd2e08</anchor>
+      <arglist>(const FCString &amp;pTestName) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24574,14 +24546,14 @@
       <type>bool</type>
       <name>IsIdenticalTo</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>a91ee582dc3b2536e856b5dea66f5b984</anchor>
-      <arglist>(FCFontInfo *pCompareWith)</arglist>
+      <anchor>ac7271389adae998fcf5f8669c6814509</anchor>
+      <arglist>(const FCFontInfo &amp;compareWith) const</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
+      <type>bool</type>
       <name>MakeDefaultMusicFont</name>
       <anchorfile>class_f_c_font_info.html</anchorfile>
-      <anchor>af475313f4762e9a2a377d945f12d0a10</anchor>
+      <anchor>a1298496921ab0d78b2a54ced1300e658</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -29321,8 +29293,8 @@
       <type>virtual int</type>
       <name>Compare</name>
       <anchorfile>class_f_c_iterator_handler.html</anchorfile>
-      <anchor>a6124af102105df5c2ce522c4169b8b13</anchor>
-      <arglist>(__FCBase *pObject1, __FCBase *pObject2)</arglist>
+      <anchor>a5c54a83673f03b5eb1f5bf167b3603c5</anchor>
+      <arglist>(const __FCBase *pObject1, const __FCBase *pObject2) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
@@ -29599,8 +29571,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_key_signature.html</anchorfile>
-      <anchor>ade182e7b6c4f21264a0c5754c8818d85</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a8b4acef7cdc2245242d061a288b07082</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -33369,8 +33341,8 @@
       <type>int</type>
       <name>CalcNumberFromString</name>
       <anchorfile>class_f_c_measure_number_regions.html</anchorfile>
-      <anchor>a323693c67dbf36bf1208a16b65ea09d4</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ab138736f528903105d9237bfb8760112</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -33383,8 +33355,8 @@
       <type>bool</type>
       <name>IsStringUnique</name>
       <anchorfile>class_f_c_measure_number_regions.html</anchorfile>
-      <anchor>a555392353ca457abbb4bc362d74f918f</anchor>
-      <arglist>(FCString *pString)</arglist>
+      <anchor>ab216e3a2b7b06b4b293c77fe3b9cd5df</anchor>
+      <arglist>(const FCString &amp;value)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -37341,8 +37313,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_music_region.html</anchorfile>
-      <anchor>a477742c57dcbadbce36bec2acc3481f0</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a09bca5aab3cc66dd9c1ae9e48b535537</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -37735,6 +37707,13 @@
       <anchorfile>class_f_c_music_region.html</anchorfile>
       <anchor>abe6efe31a193a41de51f00587cc539f0</anchor>
       <arglist>(eStaff staffnum, bool playtoend=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>FixMeasureWidthsInScore</name>
+      <anchorfile>class_f_c_music_region.html</anchorfile>
+      <anchor>a9e0246af5aa4404b4ceb91c5734abcab</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -42890,8 +42869,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_part.html</anchorfile>
-      <anchor>a9dd66b7914c7a37d774840f1105301a5</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a2340201379ecaafcc62a1957e5153456</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -48498,8 +48477,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_shape_def_instruction.html</anchorfile>
-      <anchor>a003297d3e21433ddc67b04af4956652e</anchor>
-      <arglist>(__FCBase *pTestObject) const override</arglist>
+      <anchor>a6191edae570cfa7398dc13f0eb1196ab</anchor>
+      <arglist>(const __FCBase *pTestObject) const override</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -54594,15 +54573,8 @@
       <type></type>
       <name>FCString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aba1475f723b0437657a45529272e8f40</anchor>
-      <arglist>(const char16_t *pszCString)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>FCString</name>
-      <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ac387a6868b58bcd4dc5f2f336d0d77e3</anchor>
-      <arglist>(const WCHAR *pszCString)</arglist>
+      <anchor>a1cf33ef1efd98dfad392d4d3eabcddf4</anchor>
+      <arglist>(const _fcStringChar *pszCString)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -54699,15 +54671,15 @@
       <type>bool</type>
       <name>SplitAt</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acef4b305375c6a4ff4d40af73f79db94</anchor>
-      <arglist>(int splitpointindex, FCString *pFirstString, FCString *pSecondString, bool includesplitposchar)</arglist>
+      <anchor>a41da4ae47c6f106f79802aa223cb5496</anchor>
+      <arglist>(int splitpointindex, FCString *pFirstString, FCString *pSecondString, bool includesplitposchar) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>SplitToPathAndFile</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>af4f743c5420a8e811fd44f060d53fbac</anchor>
-      <arglist>(FCString *pPathPart, FCString *pFilePart)</arglist>
+      <anchor>a16f76dcc6e47551eb65dc6f122b256ae</anchor>
+      <arglist>(FCString *pPathPart, FCString *pFilePart) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -54825,71 +54797,71 @@
       <type>int</type>
       <name>Compare</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a9cc98d51106a85611b179f8afa9463ad</anchor>
-      <arglist>(const FCString *pString2) const</arglist>
+      <anchor>abb3a50e78b25d1a09ffe09ce1c0d0545</anchor>
+      <arglist>(const FCString &amp;value) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CompareNoCase</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5d4d92cd15420cd1cd1fa83eadea91e4</anchor>
-      <arglist>(const FCString *pString2) const</arglist>
+      <anchor>a99a5c39b605ae95573fd9d61c08ee46d</anchor>
+      <arglist>(const FCString &amp;value) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acd3dc59ef78234f4d6ca4bbc0e218ea9</anchor>
-      <arglist>(FCString *pSubString)</arglist>
+      <anchor>a770edef50a67dd0f926c013e30063c4e</anchor>
+      <arglist>(const FCString &amp;pSubString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsCString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a4c5a84c29acf01aec397004b3c0c5220</anchor>
-      <arglist>(const char *pszSubString)</arglist>
+      <anchor>ad65c65778074a3b811b1a339b6fe89b2</anchor>
+      <arglist>(const char *pszSubString) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsStringFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acaa1bf9e134ab8918c4ff41741cf156d</anchor>
-      <arglist>(const FCString *pSubString, int startindex)</arglist>
+      <anchor>a429a17203e383209c3ff21dc830664ad</anchor>
+      <arglist>(const FCString &amp;pSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>ContainsCStringFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ada215eb00dfb901fca7bc03ffd2bbadb</anchor>
-      <arglist>(const char *pszSubString, int startindex)</arglist>
+      <anchor>a903e8190c079c3728e128119ac930aee</anchor>
+      <arglist>(const char *pszSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>abe91ced68e0986d30deec0015f420376</anchor>
-      <arglist>(FCString *pSubString)</arglist>
+      <anchor>a0731182cb778b576395d2c0fbf3b758d</anchor>
+      <arglist>(const FCString &amp;subString) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcCStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5c4b39411b9f78aba52ab67d5fff320c</anchor>
-      <arglist>(FCString *pSubString, const char *pszSubString)</arglist>
+      <anchor>a2879b154442fe0e627ab604e47006398</anchor>
+      <arglist>(const FCString *pSubString, const char *pszSubString) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcStringPosFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a5fcf8a8d88c6728b8201d8eb26fc2ffc</anchor>
-      <arglist>(FCString *pSubString, int startindex)</arglist>
+      <anchor>a028ea83eb005e28358d7c4ea3280ccb4</anchor>
+      <arglist>(const FCString &amp;subString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>CalcCStringPosFrom</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae9472889962796d62dfb17189e1c4a63</anchor>
-      <arglist>(const char *pszSubString, int startindex)</arglist>
+      <anchor>ad8d0b9972e24a480587ad2c2800a57a7</anchor>
+      <arglist>(const char *pszSubString, int startindex) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -54909,8 +54881,8 @@
       <type>bool</type>
       <name>ContainsEnigmaTextInsert</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a95042d8ab88730e5054590370c433de9</anchor>
-      <arglist>(bool only_file_info_inserts=true)</arglist>
+      <anchor>ab54d1a017c51d31cc802814cf4ac7dff</anchor>
+      <arglist>(bool only_file_info_inserts=true) const</arglist>
     </member>
     <member kind="function">
       <type>FCStrings *</type>
@@ -54930,8 +54902,8 @@
       <type>FCFontInfo *</type>
       <name>CreateLastFontInfo</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>adbc815e2135dc86fcf4829388b31e03d</anchor>
-      <arglist>()</arglist>
+      <anchor>ae06b7af3d85885edca1cfadc906fbe33</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>FCStrings *</type>
@@ -54946,6 +54918,20 @@
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>ad7960f5a2d19aaf619f6c8b0715163e8</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DeleteCodePointAt</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>af1a05146606d277133021f2650afbcf9</anchor>
+      <arglist>(int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>DeleteCodePointsAt</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>ad75f4b052420e64fd057bc4b4b45b2e9</anchor>
+      <arglist>(int index, int count)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54972,15 +54958,15 @@
       <type>int</type>
       <name>FindFirst</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>acd797dca5b7ba43935580694f15c4084</anchor>
-      <arglist>(const char *pszSubStr)</arglist>
+      <anchor>ad98b602f6f75fed3daa3b5d91bb99743</anchor>
+      <arglist>(const char *pszSubStr) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>FindLast</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa08ad5a0f40200fc06583aa4413fc18d</anchor>
-      <arglist>(const char *pszSubStr)</arglist>
+      <anchor>abfd6771037cc356125f6850cb65a1773</anchor>
+      <arglist>(const char *pszSubStr) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -55007,8 +54993,8 @@
       <type>void</type>
       <name>FormatCharacterNumber</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa648a64a8262084190c971386a17f114</anchor>
-      <arglist>(eUniChar16 character)</arglist>
+      <anchor>a9b521a895d6700cdce7c642da1126fdf</anchor>
+      <arglist>(eUniChar32 character)</arglist>
     </member>
     <member kind="function">
       <type>const char *</type>
@@ -55056,28 +55042,35 @@
       <type>int</type>
       <name>GetInteger</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aa429831db45adfea515305643d42eaed</anchor>
-      <arglist>(int index=0)</arglist>
+      <anchor>a675fe588eeb690a38594f1a2ea7745a6</anchor>
+      <arglist>(int index=0) const</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>GetHex</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>afb7a69fadee453c9127ec9640d7bc422</anchor>
-      <arglist>()</arglist>
+      <anchor>abf6347f2ac81903dabced8a6645f1db1</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>double</type>
       <name>GetFloat</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a8efb9979b771ffa835329153581d7928</anchor>
-      <arglist>(int index=0)</arglist>
+      <anchor>aa3cda536b6ece3267eba5f44a91b4c51</anchor>
+      <arglist>(int index=0) const</arglist>
     </member>
     <member kind="function">
       <type>eUniChar16</type>
       <name>GetCharacterAt</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a1c75a546078406584b9492b2ebd3a902</anchor>
+      <arglist>(int index) const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::pair&lt; eUniChar32, int &gt;</type>
+      <name>GetCodePointAt</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>a108e7036ccd7c65c21b06df4e95cabf4</anchor>
       <arglist>(int index) const</arglist>
     </member>
     <member kind="function">
@@ -55105,8 +55098,8 @@
       <type>void</type>
       <name>InsertString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a4f10264d109eed465051c175a419b36d</anchor>
-      <arglist>(FCString *pString, int insertindex=0)</arglist>
+      <anchor>a4ca832fac4ebe452e6414bd5fceac16b</anchor>
+      <arglist>(const FCString *pString, int insertindex=0)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -55147,15 +55140,15 @@
       <type>bool</type>
       <name>IsEqualString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a214df350b573e5b8a522d3e98c59304c</anchor>
-      <arglist>(FCString *pString) const</arglist>
+      <anchor>ae110de239de0b6b9c89b42a763358060</anchor>
+      <arglist>(const FCString &amp;value) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>IsCharacter</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>af6b8b7437468386000c00684f075f428</anchor>
-      <arglist>(int index, eUniChar16 character) const</arglist>
+      <anchor>ae61ae2babb90615170b83892cab58788</anchor>
+      <arglist>(int index, eUniChar32 character) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -55336,8 +55329,8 @@
       <type>double</type>
       <name>GetMeasurement</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>aeacc2d9a31b963b298b92c86357d96de</anchor>
-      <arglist>(_ENUMCODE(MEASUREMENTUNITS) _LUACODE(twobyte) unit)</arglist>
+      <anchor>a5b2185107597a84a4d2fc07732ac2b85</anchor>
+      <arglist>(_ENUMCODE(MEASUREMENTUNITS) _LUACODE(twobyte) unit) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -60568,8 +60561,8 @@
       <type>bool</type>
       <name>IsIdentical</name>
       <anchorfile>class_f_c_time_signature.html</anchorfile>
-      <anchor>a3e1fc01d63a607bcbda73601f03f6aca</anchor>
-      <arglist>(__FCBase *pCompareObject) const override</arglist>
+      <anchor>a56331fbc3383f41edb38023db28e629a</anchor>
+      <arglist>(const __FCBase *pCompareObject) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -62756,8 +62749,8 @@
       <type>bool</type>
       <name>ExecuteOSMenuCommand</name>
       <anchorfile>class_f_c_u_i.html</anchorfile>
-      <anchor>afd4b22c9dcc626f02feb5e85484610c6</anchor>
-      <arglist>(EMENUID osmenucmd)</arglist>
+      <anchor>a004fbd5bb0e848eb401d7acbacf9467c</anchor>
+      <arglist>(EMENUID osmenucmd, bool usemacfinaleapi=false) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
