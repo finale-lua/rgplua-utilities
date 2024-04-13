@@ -12339,6 +12339,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>UseUpStemData</name>
+      <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
+      <anchor>af804108df6ec394a4b3ec48078805deb</anchor>
+      <arglist>(bool useupstem)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>SetNoteEntry</name>
       <anchorfile>class_f_c_beam_extension_mod.html</anchorfile>
       <anchor>aad1a59000108084c80083b34c7c2d232</anchor>
@@ -12523,6 +12530,13 @@
       <anchorfile>class_f_c_beam_mod.html</anchorfile>
       <anchor>af999e83a8e3a7697a35455b0fd84d2a6</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>UseUpStemData</name>
+      <anchorfile>class_f_c_beam_mod.html</anchorfile>
+      <anchor>ad952f17ee034f7e837e94a561b02f2f3</anchor>
+      <arglist>(bool useupstem)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -47364,6 +47378,13 @@
       <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
       <anchor>a3cb193136f17b694b56d408a72858da5</anchor>
       <arglist>(FCNoteEntry *pConnectEntry)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>UseUpStemData</name>
+      <anchorfile>class_f_c_secondary_beam_mods.html</anchorfile>
+      <anchor>a39e4d2d1d8860c58fe4de819e9afbb5a</anchor>
+      <arglist>(bool useupstem)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
