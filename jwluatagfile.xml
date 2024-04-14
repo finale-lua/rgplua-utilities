@@ -39599,6 +39599,27 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
+      <type>int</type>
+      <name>CalcLowestBeamStart</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a404ecf90ad003dc490cae2d0885c3872</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>CalcLowestBeamEnd</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>a9e4187cfffbb2f4a362f78d5c1fa6b97</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>CalcLowestBeamStub</name>
+      <anchorfile>class_f_c_note_entry.html</anchorfile>
+      <anchor>ae700e223cfc951bfc72bf37288b70d3b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>CalcLargestNoteheadResize</name>
       <anchorfile>class_f_c_note_entry.html</anchorfile>
@@ -47270,6 +47291,13 @@
       <anchorfile>class_f_c_secondary_beam_break_mod.html</anchorfile>
       <anchor>a0598ad6545aec2594d01d0bed611a3a1</anchor>
       <arglist>(bool value)</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>CalcLowestBreak</name>
+      <anchorfile>class_f_c_secondary_beam_break_mod.html</anchorfile>
+      <anchor>aeeb1dd9fe46e69756b53f317a5aff33a</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
