@@ -17391,6 +17391,13 @@
       <anchor>ae9689f0802f9bb4addf5f44942f3f028</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>VerticallyAlignWith</name>
+      <anchorfile>class_f_c_control.html</anchorfile>
+      <anchor>afe391f872805d18721c84479440f39b3</anchor>
+      <arglist>(const FCControl *pControl, double offset=0)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>SetText</name>
