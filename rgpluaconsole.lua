@@ -7,8 +7,8 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.5.1"
-    finaleplugin.Date = "March 20, 2024"
+    finaleplugin.Version = "1.5.2"
+    finaleplugin.Date = "April 29, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -516,11 +516,13 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
     if finenv.UI():IsOnMac() then
         control:SetLineSpacing(config.editor_line_spacing)
     end
+    finenv.StartNewUndoBlock("Console Edit Font", false) -- do not add this font to the doc if it isn't there
     local font = finale.FCFontInfo(config.font_name, config.font_size)
     control:SetFont(font)
     if tabstop_width then
         control:SetTabstopWidth(calc_tab_width(font, tabstop_width))
     end
+    finenv.EndUndoBlock(false) -- rollback, in case we added the console font
     return control
 end
 
@@ -750,6 +752,7 @@ local function on_config_dialog()
         activate_editor()
         return
     end
+    finenv.StartNewUndoBlock("Console Configuration Dialog", false) -- prevent any document updates by rolling back changes (specifically to fonts)
     local curr_y = 0
     local y_separator = 27 -- includes control height
     local x_rightcol = 160
@@ -868,8 +871,10 @@ local function on_config_dialog()
         config.font_name = fcstr.LuaString
         config.font_size = font:GetSize()
         config.font_advance_points = font:CalcAverageRomanCharacterWidthPoints()
-        global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.", "Changes Accepted")
+        global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.",
+            "Changes Accepted")
     end
+    finenv.EndUndoBlock(false) -- roll back changes (specifically to fonts)
     activate_editor()
 end
 
