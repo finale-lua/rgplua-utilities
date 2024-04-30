@@ -3,12 +3,11 @@ function plugindef()
     -- are both reserved for the plug-in definition.
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
-    finaleplugin.HandlesUndo = true
     finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.5.2"
-    finaleplugin.Date = "April 29, 2024"
+    finaleplugin.Version = "1.5.3"
+    finaleplugin.Date = "April 30, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -516,13 +515,11 @@ local function setup_editor_control(control, width, height, editable, tabstop_wi
     if finenv.UI():IsOnMac() then
         control:SetLineSpacing(config.editor_line_spacing)
     end
-    finenv.StartNewUndoBlock("Console Edit Font", false) -- do not add this font to the doc if it isn't there
     local font = finale.FCFontInfo(config.font_name, config.font_size)
     control:SetFont(font)
     if tabstop_width then
         control:SetTabstopWidth(calc_tab_width(font, tabstop_width))
     end
-    finenv.EndUndoBlock(false) -- rollback, in case we added the console font
     return control
 end
 
