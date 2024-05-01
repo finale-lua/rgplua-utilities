@@ -21874,15 +21874,15 @@
       <type>bool</type>
       <name>SwitchTo</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>ac367776ec9bd6e9bc9b4358ee8627345</anchor>
-      <arglist>(FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
+      <anchor>ac2521d2bb92650b55e6f09d0cac9a781</anchor>
+      <arglist>(const FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>SwitchBack</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a310793ea965326171aa16a2dc818bb68</anchor>
-      <arglist>(bool saveedits)</arglist>
+      <anchor>a882a2b7f15e057971c2aa88bc4cba6c5</anchor>
+      <arglist>(bool saveedits, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21902,29 +21902,29 @@
       <type>bool</type>
       <name>Open</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a6a56b5200a8494bd4734eff1ddfc84bb</anchor>
-      <arglist>(FCString *pFilePath, bool createwindow, FCString *pUndoString)</arglist>
+      <anchor>a8ff2d6c3fd0ab49c70065da262f9a13b</anchor>
+      <arglist>(FCString *pFilePath, bool createwindow, const FCString *pUndoString, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>New</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a6a57000d37540b1332289b38655aa71d</anchor>
-      <arglist>(FCString *pUndoString)</arglist>
+      <anchor>a4c2fd94734787131b40ada29abedb862</anchor>
+      <arglist>(const FCString *pUndoString, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>CloseCurrentDocumentWindow</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a3d011a4266d03d9a04c0a2e2d617025d</anchor>
-      <arglist>()</arglist>
+      <anchor>aed27a30142edf89862c53c9d59acc23d</anchor>
+      <arglist>(_state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>Close</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a00bfd4a1eee13886cbef3ba1eb88c036</anchor>
-      <arglist>()</arglist>
+      <anchor>ada03958e5dcc636444df7c72a64066ca</anchor>
+      <arglist>(_state_ptr S _NOLUACODE(=nullptr))</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21953,27 +21953,6 @@
       <anchorfile>class_f_c_document.html</anchorfile>
       <anchor>a8649116e672fe8287a8ce85ae6830d06</anchor>
       <arglist>() override</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>_SetLastUndoString</name>
-      <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a70d75cd9d067ca3ff7924fefaf9e4f24</anchor>
-      <arglist>(const FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>GetLastUndoString</name>
-      <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a353a26a4def8bd679d4c81f5bac544cf</anchor>
-      <arglist>(FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>RemoveLastUndoString</name>
-      <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>af0794e87cb554d1f5be7e860f0aca8dd</anchor>
-      <arglist>(_state_ptr S)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -55448,8 +55427,8 @@
       <type>void</type>
       <name>ToUnicode</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>abc5cfafe6c11fd6b62ba47a3d6d05722</anchor>
-      <arglist>(eUniChar16 *pBuffer, int maxsize)</arglist>
+      <anchor>a97e4214a65941413f86558aa5cf24ae5</anchor>
+      <arglist>(eUniChar16 *pBuffer, int maxsize) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -63087,18 +63066,74 @@
     <filename>class_f_c_undo_block.html</filename>
     <base>__FCBase</base>
     <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a7088df7862bffc09c23650d2176070b6</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCUndoBlock</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a4bb2a65002b14ffdf30415a90bb75243</anchor>
+      <arglist>(_state_ptr S _NOLUACODE(=nullptr))</arglist>
+    </member>
+    <member kind="function">
+      <type>const FCString &amp;</type>
+      <name>GetLastUndoString</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a4ee1a169726b18da78802284eb8a79de</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>StartUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>ab57179915fbf1ffd4e7d51b5b2814d15</anchor>
+      <arglist>(const FCString &amp;undoString, bool savecurrent=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>EndUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a0e1ac84547bcb6ad1b99f48ff879a34b</anchor>
+      <arglist>(bool savecurrent=false)</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>Execute</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
-      <anchor>a03bc5f540d6a56b3d1b494d0bd333127</anchor>
-      <arglist>(__FCUndoBlockHandler *pHandler, FCString *pUndoString)</arglist>
+      <anchor>a79c6069d60062a091c1528d47796d709</anchor>
+      <arglist>(__FCUndoBlockHandler *pHandler, const FCString *pUndoString)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>AddSession</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
-      <anchor>a2a1b2ee7f603e25ae8478155161bc83d</anchor>
-      <arglist>(FCString *pUndoString, bool storecurrentblock)</arglist>
+      <anchor>a9a6507aa71096a3fb80f02b71e5e3bc9</anchor>
+      <arglist>(const FCString *pUndoString, bool storecurrentblock)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>GetLastUndoString</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a9f89af75960fba4928d447680505d23d</anchor>
+      <arglist>(FCString *pString, _state_ptr S _NOLUACODE(=nullptr))</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static FCUndoBlock &amp;</type>
+      <name>GetUndoBlock</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a853fcc7bd80c104c78b87ccfcc828f1a</anchor>
+      <arglist>(_state_ptr S=nullptr)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>RemoveUndoBlock</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a81494992116237512a73dccd3683dbda</anchor>
+      <arglist>(_state_ptr S)</arglist>
     </member>
   </compound>
   <compound kind="class">
