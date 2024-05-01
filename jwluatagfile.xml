@@ -63090,8 +63090,8 @@
       <type>bool</type>
       <name>StartUndo</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
-      <anchor>ab57179915fbf1ffd4e7d51b5b2814d15</anchor>
-      <arglist>(const FCString &amp;undoString, bool savecurrent=false)</arglist>
+      <anchor>a1f9e35d2b51485a578d5124e3005065d</anchor>
+      <arglist>(const FCString &amp;undoString, bool savecurrent=false, bool isexplicit=true)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -63114,6 +63114,34 @@
       <anchor>a9a6507aa71096a3fb80f02b71e5e3bc9</anchor>
       <arglist>(const FCString *pUndoString, bool storecurrentblock)</arglist>
     </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetSandboxMode</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a1022def0667945cb3e03bf88be6a69f2</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetRequireExplicitUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a9858683f9c43ebdfad4fd8a4430ec6eb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetIsRunning</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a190f608368aa3d4ce4367f6a4d1f8e5d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>GetCurrentIsExplicitUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a58e29f0147efc1292f9144cdff405222</anchor>
+      <arglist>() const</arglist>
+    </member>
     <member kind="function" static="yes">
       <type>static void</type>
       <name>GetLastUndoString</name>
@@ -63127,6 +63155,13 @@
       <anchorfile>class_f_c_undo_block.html</anchorfile>
       <anchor>a853fcc7bd80c104c78b87ccfcc828f1a</anchor>
       <arglist>(_state_ptr S=nullptr)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static FCUndoBlock &amp;</type>
+      <name>CreateUndoBlock</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a511d631a57ecf1c47cc2b5eb7f96b8b1</anchor>
+      <arglist>(bool sandboxmode, bool explicitrequired, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
