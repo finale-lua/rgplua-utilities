@@ -63076,8 +63076,8 @@
       <type></type>
       <name>FCUndoBlock</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
-      <anchor>a4bb2a65002b14ffdf30415a90bb75243</anchor>
-      <arglist>(_state_ptr S _NOLUACODE(=nullptr))</arglist>
+      <anchor>af0749ee039e83cfb2e0c8214f2658b13</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const FCString &amp;</type>
