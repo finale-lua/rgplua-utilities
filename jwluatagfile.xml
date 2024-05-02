@@ -63101,6 +63101,27 @@
       <arglist>(bool savecurrent=false)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>SuspendUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a45d6044fa96833a8d9aeb359a6c06b68</anchor>
+      <arglist>(bool savecurrent=false)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>DiscardSuspendedUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a1a28c6f2e6146438b68da3e80294f3a6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ResumeUndo</name>
+      <anchorfile>class_f_c_undo_block.html</anchorfile>
+      <anchor>a3409baa46a16aed68cf15cd08c4df2a7</anchor>
+      <arglist>(bool savecurrent=false)</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>Execute</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
