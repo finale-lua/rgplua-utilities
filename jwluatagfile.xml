@@ -21902,15 +21902,15 @@
       <type>bool</type>
       <name>Open</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a8ff2d6c3fd0ab49c70065da262f9a13b</anchor>
-      <arglist>(FCString *pFilePath, bool createwindow, const FCString *pUndoString, _state_ptr S=nullptr)</arglist>
+      <anchor>a79c264eb413d66553a2fb11950755874</anchor>
+      <arglist>(const FCString *pFilePath, bool createwindow, const FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>New</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a4c2fd94734787131b40ada29abedb862</anchor>
-      <arglist>(const FCString *pUndoString, _state_ptr S=nullptr)</arglist>
+      <anchor>a346085b3dad732a432de8b651a94670c</anchor>
+      <arglist>(const FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -55056,8 +55056,8 @@
       <type>void *</type>
       <name>GetNSString</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>a6f5a0ac5583b9c2969f5c8bbc7fd391b</anchor>
-      <arglist>()</arglist>
+      <anchor>a68ca481f1ebacbafaf0ef1b2966a0b97</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -63109,13 +63109,6 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>DiscardSuspendedUndo</name>
-      <anchorfile>class_f_c_undo_block.html</anchorfile>
-      <anchor>a1a28c6f2e6146438b68da3e80294f3a6</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
       <name>ResumeUndo</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
       <anchor>a3409baa46a16aed68cf15cd08c4df2a7</anchor>
@@ -63151,9 +63144,9 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>GetIsRunning</name>
+      <name>IsRunning</name>
       <anchorfile>class_f_c_undo_block.html</anchorfile>
-      <anchor>a190f608368aa3d4ce4367f6a4d1f8e5d</anchor>
+      <anchor>ad5926404610391312befb7d5930e9793</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
