@@ -3,12 +3,11 @@ function plugindef()
     -- are both reserved for the plug-in definition.
     finaleplugin.RequireDocument = false
     finaleplugin.NoStore = true
-    finaleplugin.HandlesUndo = true
     finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.5.1"
-    finaleplugin.Date = "March 20, 2024"
+    finaleplugin.Version = "1.5.3"
+    finaleplugin.Date = "April 30, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -750,6 +749,7 @@ local function on_config_dialog()
         activate_editor()
         return
     end
+    finenv.StartNewUndoBlock("Console Configuration Dialog", false) -- prevent any document updates by rolling back changes (specifically to fonts)
     local curr_y = 0
     local y_separator = 27 -- includes control height
     local x_rightcol = 160
@@ -868,8 +868,10 @@ local function on_config_dialog()
         config.font_name = fcstr.LuaString
         config.font_size = font:GetSize()
         config.font_advance_points = font:CalcAverageRomanCharacterWidthPoints()
-        global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.", "Changes Accepted")
+        global_dialog:CreateChildUI():AlertInfo("Changes will take effect the next time you open the console.",
+            "Changes Accepted")
     end
+    finenv.EndUndoBlock(false) -- roll back changes (specifically to fonts)
     activate_editor()
 end
 
