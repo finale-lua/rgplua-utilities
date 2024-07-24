@@ -49980,6 +49980,24 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>SS_OFFSTATE</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a71586f1948b98b11de6bb9015f24eb5eac854b957fbcee36d880d7f6737fc15b3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SS_ONSTATE</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a71586f1948b98b11de6bb9015f24eb5eaea300442c8ce89426d6e78a7627a4f76</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SS_AUTOSTATE</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a71586f1948b98b11de6bb9015f24eb5ea7543d7f2123a0b6680fc6b36b8d2ae61</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>SMARTSHAPE_SLURDOWN</name>
       <anchorfile>class_f_c_smart_shape.html</anchorfile>
       <anchor>a29b94a28426154f61cb5bf57d14a8b42a1b3e49a189c8717863ea403629529eba</anchor>
@@ -50223,6 +50241,24 @@
       <name>SMARTSHAPE_DASHEDSLURAUTO</name>
       <anchorfile>class_f_c_smart_shape.html</anchorfile>
       <anchor>a29b94a28426154f61cb5bf57d14a8b42a231328173a106841e44d42d9c27df3eb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SS_OFFSTATE</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a71586f1948b98b11de6bb9015f24eb5eac854b957fbcee36d880d7f6737fc15b3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SS_ONSTATE</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a71586f1948b98b11de6bb9015f24eb5eaea300442c8ce89426d6e78a7627a4f76</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SS_AUTOSTATE</name>
+      <anchorfile>class_f_c_smart_shape.html</anchorfile>
+      <anchor>a71586f1948b98b11de6bb9015f24eb5ea7543d7f2123a0b6680fc6b36b8d2ae61</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
