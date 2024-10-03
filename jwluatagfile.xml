@@ -21902,8 +21902,8 @@
       <type>bool</type>
       <name>Open</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a79c264eb413d66553a2fb11950755874</anchor>
-      <arglist>(const FCString *pFilePath, bool createwindow, const FCString *pUndoString, bool saveedits, _state_ptr S=nullptr)</arglist>
+      <anchor>aff6c528665f01121b896bf7e107620b6</anchor>
+      <arglist>(const FCString *pFilePath, bool createwindow, const FCString *pUndoString, bool saveedits, bool addtorecents, bool hidedialogs, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -21916,15 +21916,15 @@
       <type>bool</type>
       <name>CloseCurrentDocumentWindow</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>aed27a30142edf89862c53c9d59acc23d</anchor>
-      <arglist>(_state_ptr S _NOLUACODE(=nullptr))</arglist>
+      <anchor>a7d7b18f9944b9071c26046951032f226</anchor>
+      <arglist>(_state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>Close</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>ada03958e5dcc636444df7c72a64066ca</anchor>
-      <arglist>(_state_ptr S _NOLUACODE(=nullptr))</arglist>
+      <anchor>a83399587c39fc983bf5ed8b19264c342</anchor>
+      <arglist>(_state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
