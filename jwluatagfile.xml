@@ -21914,17 +21914,17 @@
     </member>
     <member kind="function">
       <type>bool</type>
-      <name>CloseCurrentDocumentWindow</name>
+      <name>CloseCurrentDocumentAndWindow</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a7d7b18f9944b9071c26046951032f226</anchor>
-      <arglist>(_state_ptr S=nullptr)</arglist>
+      <anchor>a59a51015d6829ce949547b53c5929b88</anchor>
+      <arglist>(bool saveedits=true, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>Close</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a83399587c39fc983bf5ed8b19264c342</anchor>
-      <arglist>(_state_ptr S=nullptr)</arglist>
+      <anchor>a0b14febe66821d00b6c07f4d958a796b</anchor>
+      <arglist>(bool saveedits=true, _state_ptr S=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
