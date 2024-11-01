@@ -21895,8 +21895,8 @@
       <type>bool</type>
       <name>Save</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a7490f9f875efbf45af3173b9355bbdbf</anchor>
-      <arglist>()</arglist>
+      <anchor>a36fb5e64409f1dbfcbb2b535a87b14ee</anchor>
+      <arglist>(const FCString *pFilePath=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
