@@ -21895,8 +21895,8 @@
       <type>bool</type>
       <name>Save</name>
       <anchorfile>class_f_c_document.html</anchorfile>
-      <anchor>a7490f9f875efbf45af3173b9355bbdbf</anchor>
-      <arglist>()</arglist>
+      <anchor>a36fb5e64409f1dbfcbb2b535a87b14ee</anchor>
+      <arglist>(const FCString *pFilePath=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -54908,6 +54908,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>CalcLastStringPos</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>acb6f0a817f28abe9d598c212bf023845</anchor>
+      <arglist>(const FCString &amp;subString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>CalcCStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a2879b154442fe0e627ab604e47006398</anchor>
@@ -54938,8 +54945,8 @@
       <type>void</type>
       <name>_SetCFURLRefPath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae2214fd8140497513946ef5a7337863d</anchor>
-      <arglist>(void *cfurl)</arglist>
+      <anchor>a3554d981f1cdc5b080d35ad4a3ed4c38</anchor>
+      <arglist>(CFURLRef cfurl)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
