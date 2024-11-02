@@ -54945,8 +54945,8 @@
       <type>void</type>
       <name>_SetCFURLRefPath</name>
       <anchorfile>class_f_c_string.html</anchorfile>
-      <anchor>ae2214fd8140497513946ef5a7337863d</anchor>
-      <arglist>(void *cfurl)</arglist>
+      <anchor>a3554d981f1cdc5b080d35ad4a3ed4c38</anchor>
+      <arglist>(CFURLRef cfurl)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
