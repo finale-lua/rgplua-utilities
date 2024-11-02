@@ -54908,6 +54908,13 @@
     </member>
     <member kind="function">
       <type>int</type>
+      <name>CalcLastStringPos</name>
+      <anchorfile>class_f_c_string.html</anchorfile>
+      <anchor>acb6f0a817f28abe9d598c212bf023845</anchor>
+      <arglist>(const FCString &amp;subString) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
       <name>CalcCStringPos</name>
       <anchorfile>class_f_c_string.html</anchorfile>
       <anchor>a2879b154442fe0e627ab604e47006398</anchor>
