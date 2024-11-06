@@ -6,8 +6,8 @@ function plugindef()
     finaleplugin.MinJWLuaVersion = 0.72
     finaleplugin.Author = "Robert Patterson"
     finaleplugin.Copyright = "CC0 https://creativecommons.org/publicdomain/zero/1.0/"
-    finaleplugin.Version = "1.5.3"
-    finaleplugin.Date = "April 30, 2024"
+    finaleplugin.Version = "1.5.4"
+    finaleplugin.Date = "November 6, 2024"
     finaleplugin.Notes = [[
         If you want to execute scripts running in Trusted mode, this console script must also be
         configured as Trusted in the RGP Lua Configuration window.
@@ -254,7 +254,7 @@ local function select_script(fullpath, scripts_items_index)
     local fc_path = finale.FCString()
     local fc_name = finale.FCString()
     local file_exists = true
-    if fc_fullpath:SplitToPathAndFile(fc_path, fc_name) then
+    if fc_fullpath:SplitToPathAndFile(fc_path, fc_name) and fc_path.Length > 0 then
         context.working_directory = fc_path.LuaString
         context.working_directory_valid = true
     else
@@ -410,7 +410,7 @@ function file_save_as()
     local file_save_dlg = finale.FCFileSaveAsDialog(global_dialog:CreateChildUI())
     local fc_folder = finale.FCString()
     local fc_name = finale.FCString()
-    if fc_path:SplitToPathAndFile(fc_folder, fc_name) then
+    if fc_path:SplitToPathAndFile(fc_folder, fc_name) and fc_folder.Length > 0 then
         file_save_dlg:SetInitFolder(fc_folder)
         file_save_dlg:SetFileName(fc_name)
     else
