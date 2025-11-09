@@ -23440,6 +23440,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>GetTracksVoice2</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>a095b3e68f6631fed67d75ee57f357bb6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>IsVisibleOnStaff</name>
       <anchorfile>class_f_c_expression.html</anchorfile>
       <anchor>a9dc40c8d4209b151f0f7038caaa8a10a</anchor>
@@ -23612,6 +23619,13 @@
       <anchorfile>class_f_c_expression.html</anchorfile>
       <anchor>a8600982d0b958d0ffa795741c1c20782</anchor>
       <arglist>(twobyte index)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTracksVoice2</name>
+      <anchorfile>class_f_c_expression.html</anchorfile>
+      <anchor>a29f8c7a0860367a477462e57085c0a67</anchor>
+      <arglist>(bool value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
