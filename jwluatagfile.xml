@@ -57974,22 +57974,22 @@
       <type>bool</type>
       <name>LoadString</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a78ac3277f682be59e35437e623a54e2f</anchor>
-      <arglist>(const FCString *pText, const FCFontInfo *pFont, float percent)</arglist>
+      <anchor>ac5826393ee7dc46c1ec5b076723dae85</anchor>
+      <arglist>(const FCString *pText, const FCFontInfo *pFont, double percent)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>LoadSymbol</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>aeb1177c508d2f5d6ff46ab9d736509e5</anchor>
-      <arglist>(eUniChar16 symbolchar, FCFontInfo *pFont, float percent)</arglist>
+      <anchor>a939b8b3a51237eb9e87743e654f5e039</anchor>
+      <arglist>(eUniChar16 symbolchar, FCFontInfo *pFont, double percent)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>LoadArticulation</name>
       <anchorfile>class_f_c_text_metrics.html</anchorfile>
-      <anchor>a49e6bb7da48e8425b5028298433cbd12</anchor>
-      <arglist>(FCArticulationDef *pArticDef, bool flipped, float percent)</arglist>
+      <anchor>add2699885131e78512f846ec8b40c392</anchor>
+      <arglist>(FCArticulationDef *pArticDef, bool flipped, double percent)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
