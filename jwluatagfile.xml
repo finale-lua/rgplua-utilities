@@ -46220,6 +46220,270 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>FCRawData</name>
+    <filename>class_f_c_raw_data.html</filename>
+    <base>__FCBase</base>
+    <member kind="function">
+      <type>const char *</type>
+      <name>ClassName</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>acb7636963a1ca651fc949ac9b6976c7d</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const PDKFRAMEWORK_CLASSID</type>
+      <name>GetClassID</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a2730ba56cb947a99c303383c6ea20441</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>FCRawData</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a3aed3d2e5d6565df26ff8a8bd8b321db</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>AssignTarget</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a004fc7c7837a03a4402c5fea0d46e5f4</anchor>
+      <arglist>(__FCBaseData *pSource)</arglist>
+    </member>
+    <member kind="function">
+      <type>EXTAG</type>
+      <name>GetTag</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a347a4abf725d756998cf80f3464e7489</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTag</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a1036bb7945c97526487130ad02cd0788</anchor>
+      <arglist>(EXTAG tag)</arglist>
+    </member>
+    <member kind="function">
+      <type>EVERSION</type>
+      <name>GetVersion</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a4bf233fb80e0ad86ec74304ea091e12e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetVersion</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae8740593645231010ca13337717e91d0</anchor>
+      <arglist>(EVERSION version)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTagAsOther</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a50438679324728c2fedb8735f1f45374</anchor>
+      <arglist>(const std::string &amp;tagChars, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTagAsDetail</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>aed8513f29d741997eca27c41c8a2cea1</anchor>
+      <arglist>(const std::string &amp;tagChars, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTagAsEntryDetail</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>aa33aca78e48a78f341179a94621d9d0a</anchor>
+      <arglist>(const std::string &amp;tagChars, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDataIDAsOther</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a67daa25bf621da0da2be8ec8ea371a7c</anchor>
+      <arglist>(CMPER cmper, twobyte inci=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDataIDAsDetail</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a74cd122d62c4bb6c9926b875e4c1bb08</anchor>
+      <arglist>(CMPER cmper1, CMPER cmper2, twobyte inci=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetDataIDAsEntryDetail</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae943e03ae0a031b2bdd565930e5c6f6d</anchor>
+      <arglist>(ENTNUM entryNumber, twobyte inci=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetOtherCmper</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a7049f50fc6c3640a79c0c80dfadde583</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetOtherInci</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a51b1e51803d7c54f8c46ba116955507b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetDetailCmper1</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a5f302266e9cdc5d239a38150ae793416</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetDetailCmper2</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>aecfbcbc364e6a6bcac3e044a89614286</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetDetailInci</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>abaeab3ada1fdbb8cc1053279581155da</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ENTNUM</type>
+      <name>GetEntryDetailEntryNumber</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a7809115097e43b38cf5f3941eeea05a8</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetEntryDetailInci</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a19d7ed3ede5edb498f9e874996e25f5f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>ClearData</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a0f9a1f81dde381ff12289dc6c74728cc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetByteCount</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a49ac5efd405598ab6923711dfcf68309</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>GetData</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a03b550b61a6649ea8c0303bd1c76010e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetData</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a3d705d1b27abfb32bf557e376c91ec2f</anchor>
+      <arglist>(const std::string &amp;data)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; int &gt;</type>
+      <name>GetByteTable</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>af881347f3a48cc9e4c0abc3c8cd21d69</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetByteTable</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a97e69537561ba99b01d3a4d299d27fdd</anchor>
+      <arglist>(const std::vector&lt; int &gt; &amp;table)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; int &gt;</type>
+      <name>GetTwoByteTable</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a6fbac88a7af235aad20c2727bfe56666</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTwoByteTable</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae76057300f6c2cd18f1f2425e54d7de4</anchor>
+      <arglist>(const std::vector&lt; int &gt; &amp;table)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Load</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a55f4bdbbd6e959b94972b2c185789fa4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadWithSize</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a29b1989ba3eb9ba6682d6ea14d612e61</anchor>
+      <arglist>(int byteCount)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Save</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a354b7488c9a64180e580414c7eed9607</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Create</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>acf2dc6857133447d7eb6a02a674ed3fc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Delete</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae1f9b655fc4a616e34207337eb4d19fd</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static EXTAG</type>
+      <name>MakeOtherTag</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a7cb22c167079d731470d081f35957afe</anchor>
+      <arglist>(const std::string &amp;tagChars, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static EXTAG</type>
+      <name>MakeDetailTag</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>addf1b1ba599fd31c0dda7098ab3496b1</anchor>
+      <arglist>(const std::string &amp;tagChars, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static EXTAG</type>
+      <name>MakeEntryDetailTag</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a7ee9c964def9371e019cccc2bc97db28</anchor>
+      <arglist>(const std::string &amp;tagChars, int incisPerStruct=1)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>FCRawText</name>
     <filename>class_f_c_raw_text.html</filename>
     <base>__FCBaseData</base>
@@ -63503,6 +63767,7 @@
     <class kind="class">FCCellPos</class>
     <class kind="class">FCCells</class>
     <class kind="class">FCIteratorHandler</class>
+    <class kind="class">FCRawData</class>
     <class kind="class">FCMusicRegion</class>
     <class kind="class">FCUI</class>
     <class kind="class">FCUndoController</class>
@@ -63726,6 +63991,7 @@
     <class kind="class">FCRepeatPrefs</class>
     <class kind="class">FCGridsGuidesPrefs</class>
     <class kind="class">FCPianoBracePrefs</class>
+    <class kind="class">FCRawData</class>
     <class kind="class">FCMusicRegion</class>
     <class kind="class">FCSmartShapeMeasureMark</class>
     <class kind="class">FCSmartShapeEntryMark</class>
