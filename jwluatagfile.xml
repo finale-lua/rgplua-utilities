@@ -742,6 +742,62 @@
       <anchor>a3ab9b81215ed07e709f3970bbd936472</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>EXTAG</type>
+      <name>GetRawTag</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>a1929f632afe1f034caecce521667359b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetRawOtherCmper</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>a02213d378d0e07a6de9a9448bb89a4f9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRawOtherInci</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>a3108d9a69803be3baf3715e05b9e418b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetRawDetailCmper1</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>aaabff71adb621e0ca83d5efc7d21a27f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>CMPER</type>
+      <name>GetRawDetailCmper2</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>a630f52afb135dd5a66540d7990b0fe3a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRawDetailInci</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>a800b62ad21e15e9e267a069412588d83</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ENTNUM</type>
+      <name>GetRawEntryDetailEntryNumber</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>aca7c96fe62bcd66d4e4b668d85335b9d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>twobyte</type>
+      <name>GetRawEntryDetailInci</name>
+      <anchorfile>class_____f_c_base_data.html</anchorfile>
+      <anchor>ad6f8e73b6ddb8982b4ddeeb90b8e71d6</anchor>
+      <arglist>() const</arglist>
+    </member>
     <member kind="function" protection="protected" virtualness="pure">
       <type>virtual void *</type>
       <name>Allocate</name>
@@ -46350,6 +46406,27 @@
       <arglist>(ENTNUM entryNumber, twobyte inci=0)</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>SetTargetAsOther</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae8af9cdf570a5358d6dea598d7c7715a</anchor>
+      <arglist>(const std::string &amp;tagChars, CMPER cmper, twobyte inci=0, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTargetAsDetail</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae473a41f785be305087984496dae3800</anchor>
+      <arglist>(const std::string &amp;tagChars, CMPER cmper1, CMPER cmper2, twobyte inci=0, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetTargetAsEntryDetail</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>afadd9dff65cf2ef2af731e51e198e2bc</anchor>
+      <arglist>(const std::string &amp;tagChars, ENTNUM entryNumber, twobyte inci=0, int incisPerStruct=1)</arglist>
+    </member>
+    <member kind="function">
       <type>CMPER</type>
       <name>GetOtherCmper</name>
       <anchorfile>class_f_c_raw_data.html</anchorfile>
@@ -46396,6 +46473,27 @@
       <name>GetEntryDetailInci</name>
       <anchorfile>class_f_c_raw_data.html</anchorfile>
       <anchor>a19d7ed3ede5edb498f9e874996e25f5f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ETAG</type>
+      <name>GetTagDataType</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ac3e5fd922b93a80d035f4b2636d47cb4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>GetTagChars</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a8827e09cabc5a40943f4bff10b5263eb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetIncisPerStruct</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a7406851a68ccdadd9f8feadb5eab743b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -46455,6 +46553,34 @@
       <arglist>(const std::vector&lt; int &gt; &amp;table)</arglist>
     </member>
     <member kind="function">
+      <type>std::vector&lt; int &gt;</type>
+      <name>GetFourByteTable</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>aa88bcdd2b7b0884c0299588b9f715a34</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>SetFourByteTable</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a40d9619cdd3c0d2649012a3f048f8a6f</anchor>
+      <arglist>(const std::vector&lt; int &gt; &amp;table)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>GetFourByte</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a946f90d82373c7871c5f97e6819b36a4</anchor>
+      <arglist>(int byteOffset) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SetFourByte</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ae5fab1dc76a5b977f4b4c778c0879820</anchor>
+      <arglist>(int byteOffset, int value)</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>Load</name>
       <anchorfile>class_f_c_raw_data.html</anchorfile>
@@ -46467,6 +46593,27 @@
       <anchorfile>class_f_c_raw_data.html</anchorfile>
       <anchor>a29b1989ba3eb9ba6682d6ea14d612e61</anchor>
       <arglist>(int byteCount)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadWithExpectedSize</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>ad7e11ed1d6a2cc8317c5d25c1aaa9800</anchor>
+      <arglist>(int expectedByteCount)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Exists</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a216c047c4b24c2c915cb626dbf2b3fd1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>LoadNextInci</name>
+      <anchorfile>class_f_c_raw_data.html</anchorfile>
+      <anchor>a76970ad2c3c702509040532eb086f6c1</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
