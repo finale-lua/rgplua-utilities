@@ -21850,6 +21850,34 @@
       <arglist>(FCString *pString)</arglist>
     </member>
     <member kind="function">
+      <type>std::string</type>
+      <name>GetCreatedDate</name>
+      <anchorfile>class_f_c_document.html</anchorfile>
+      <anchor>a96ee917a3aa05860de404bde27c6bd84</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>GetModifiedDate</name>
+      <anchorfile>class_f_c_document.html</anchorfile>
+      <anchor>ae98939243a6ed1712901f67da833f721</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>EVERSION</type>
+      <name>GetCreatedVersion</name>
+      <anchorfile>class_f_c_document.html</anchorfile>
+      <anchor>aad618649f89fd6dc74a8f185dce4fb3e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>EVERSION</type>
+      <name>GetModifiedVersion</name>
+      <anchorfile>class_f_c_document.html</anchorfile>
+      <anchor>a06b8be47f346f19cd1151bc65e676316</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>GetPathSpec</name>
       <anchorfile>class_f_c_document.html</anchorfile>
